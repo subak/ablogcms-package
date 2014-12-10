@@ -1,7 +1,4 @@
-ablogcms-package
-================
-
-# ablog cms ver 2.1.1.2
+#ablog cms ver 2.1.1.2
 
 ##a-blog cms利用約款
 
