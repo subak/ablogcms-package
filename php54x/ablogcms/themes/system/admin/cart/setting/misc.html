@@ -1,0 +1,68 @@
+<h2 class="acms-admin-title2">ショップの動作設定</h2>
+<table class="adminTable acms-table-admin-edit">
+	<tr>
+		<th>カートに商品を追加した後の移動先<i class="acms-icon acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="サンプルのテンプレートでは order.html か form.html に設定して下さい。"></i></th>
+		<td>
+		<input type="text" name="shop_tpl_added" value="{shop_tpl_added}" />
+		<input type="hidden" name="config[]" value="shop_tpl_added" />
+		</td>
+	</tr>
+	<tr>
+		<th>在庫管理<i class="acms-icon acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="在庫を管理する場合にチェックをつけてください。"></i></th>
+		<td>
+		<label class="acms-form-checkbox">
+			<input type="checkbox" name="shop_stock_change" value="on"{shop_stock_change:checked#on}><i class="acms-ico-checkbox"></i>有効
+		</label>
+		<input type="hidden" name="config[]" value="shop_stock_change" />
+		</td>
+	</tr>
+</table>
+
+<h2 class="acms-admin-title2">税金の設定</h2>
+<table class="adminTable acms-table-admin-edit">
+	<tr>
+		<th>税率の設定<i class="acms-icon acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="消費税の税率を設定してください。"></i></th>
+		<td>
+		<input type="text" name="shop_tax_rate" value="{shop_tax_rate}" size="5" />
+		<input type="hidden" name="config[]" value="shop_tax_rate" />
+		</td>
+		</tr>
+		<tr>
+		<th>税換算の設定<i class="acms-icon acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="内税・外税の切り替えを行う事ができます。"></i></th>
+		<td>
+			<select name="shop_tax_calculate">
+			<option value="intax"{shop_tax_calculate:selected#intax}>内税</option>
+			<option value="extax"{shop_tax_calculate:selected#extax}>外税</option>
+			</select>&nbsp;方式
+			<input type="hidden" name="config[]" value="shop_tax_calculate" />
+		</td>
+	</tr>
+</table>
+
+<h2 class="acms-admin-title2">合計算出の設定</h2>
+<table class="adminTable acms-table-admin-edit">
+	<tr>
+		<th>合計金額( total )に含める項目<i class="acms-icon acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="合計金額に含める手数料を設定します。"></i></th>
+		<td>
+		<ul class="acms-list-nostyle">
+			<li><label class="acms-form-radio"><input type="radio" name="shop_total_involve[]" value="deliver"{shop_total_involve:checked#deliver}/><i class="acms-ico-radio"></i> 配送手数料</label></li>
+			<li><label class="acms-form-radio"><input type="radio" name="shop_total_involve[]" value="deliver-others"{shop_total_involve:checked#deliver-others}/><i class="acms-ico-radio"></i> 配送手数料＋オプション手数料</label></li>
+			<li><label class="acms-form-radio"><input type="radio" name="shop_total_involve[]" value="deliver-others-payment"{shop_total_involve:checked#deliver-others-payment}/><i class="acms-ico-radio"></i> 配送手数料＋オプション手数料＋支払い手数料</label></li>
+			</ul>
+		<input type="hidden" name="config[]" value="shop_total_involve" />
+		</td>
+	</tr>
+</table>
+
+<!-- 
+<h2 class="acms-admin-title2">Google Analytics</h2>
+<table class="adminTable acms-table-admin-edit">
+	<tbody><tr>
+	<th>ECトラッキングコード<i class="acms-icon acms-icon-tooltip js-acms-tooltip" data-acms-tooltip=""></i></th>
+	<td>
+		<textarea name="shop_order_tracking_code" cols="60" rows="10"></textarea>
+		<input type="hidden" name="config[]" value="shop_order_tracking_code">
+	</td>
+	</tr>
+</tbody></table>
+-->

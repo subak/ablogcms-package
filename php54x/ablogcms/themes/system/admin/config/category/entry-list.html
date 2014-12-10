@@ -1,0 +1,127 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<div class="acms-admin-title acms-module-title-wrapper">
+			<i class="acms-icon acms-icon-config_category_entry-list"></i>
+			<div class="acms-module-title">
+				<!-- BEGIN_MODULE Admin_Rule_Name -->
+				<strong>ルール : {name}</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+				<strong>モジュールID : {label} ( {identifier} )</strong><!-- END_MODULE Admin_Module_Name -->
+				<h1>カテゴリーエントリーリスト<span class="acms-module-en">Category_EntryList</span></h1>
+			</div>
+		</div>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+<!-- BEGIN_MODULE Admin_Config -->
+<!-- BEGIN_IF [{notice_mess}/nem/] -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>Category_EntryList 設定を保存しました</p>
+<!-- END_IF -->
+
+<form action="" method="post" class="acms-form">
+	<div class="acms-form-group acms-margin-sp">
+		<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+
+		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+	</div>
+
+	<h3 class="acms-admin-title2">カテゴリー</h3>
+	<table class="adminTable acms-table-admin-edit">
+		<tr>
+			<th>表示順<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="どのようなルールに従って表示されるかの設定です。"></i></th>
+			<td>
+				<select name="category_entry_list_category_order">
+					<option value="sort-asc"{category_entry_list_category_order:selected#sort-asc}>表示順 ( 昇順 )</option>
+					<option value="sort-desc"{category_entry_list_category_order:selected#sort-desc}>表示順 ( 降順 )</option>
+					<option value="code-asc"{category_entry_list_category_order:selected#code-asc}>コードネーム ( 昇順 )</option>
+					<option value="code-desc"{category_entry_list_category_order:selected#code-desc}>コードネーム ( 降順 )</option>
+					<option value="id-asc"{category_entry_list_category_order:selected#id-asc}>ID ( 昇順 )</option>
+					<option value="id-desc"{category_entry_list_category_order:selected#id-desc}>ID ( 降順 )</option>
+					<!--<option value="amount-asc"{category_entry_list_category_order:selected#amount-asc}>エントリー数 ( 昇順 )</option>-->
+					<!--<option value="amount-desc"{category_entry_list_category_order:selected#amount-desc}>エントリー数 ( 降順 )</option>-->
+				</select>
+				<input type="hidden" name="config[]" value="category_entry_list_category_order" />
+			</td>
+		</tr>
+		<tr>
+			<th>インデキシング<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックを外すと、インデキシングされていないカテゴリーも表示されます。"></i></th>
+			<td>
+				<input type="hidden" name="category_entry_list_category_indexing" value="off" />
+				<label for="input-checkbox-category_entry_list_category_indexing" class="acms-form-checkbox"><input type="checkbox" name="category_entry_list_category_indexing" value="on"{category_entry_list_category_indexing:checked#on} id="input-checkbox-category_entry_list_category_indexing" /><i class="acms-ico-checkbox"></i>インデキシングされているカテゴリーのみ表示する</label>
+				<input type="hidden" name="config[]" value="category_entry_list_category_indexing" />
+			</td>
+		</tr>
+		<tr>
+			<th>階層<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="表示するカテゴリーの階層の深さの設定です。数値で指定します。"></i></th>
+			<td>
+				<input type="text" name="category_entry_list_level" value="{category_entry_list_level}" size="4" class="acms-form-width-mini" />
+				<input type="hidden" name="config[]" value="category_entry_list_level" />
+			</td>
+		</tr>
+	</table>
+
+	<h3 class="acms-admin-title2">エントリー</h3>
+	<table class="adminTable acms-table-admin-edit">
+		<tr>
+			<th>表示順<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="どのようなルールに従って表示されるかの設定です。フィールド、数値フィールドはカスタムフィールドでの検索結果の表示時に利用します。"></i></th>
+			<td>
+				<select name="category_entry_list_entry_order">
+					<option value="datetime-asc"{category_entry_list_entry_order:selected#datetime-asc}>日時 ( 昇順 )</option>
+					<option value="datetime-desc"{category_entry_list_entry_order:selected#datetime-desc}>日時 ( 降順 )</option>
+					<option value="code-asc"{category_entry_list_entry_order:selected#code-asc}>ファイル名 ( 昇順 )</option>
+					<option value="code-desc"{category_entry_list_entry_order:selected#code-desc}>ファイル名 ( 降順 )</option>
+					<option value="id-asc"{category_entry_list_entry_order:selected#id-asc}>ID ( 昇順 )</option>
+					<option value="id-desc"{category_entry_list_entry_order:selected#id-desc}>ID ( 降順 )</option>
+					<option value="sort-asc"{category_entry_list_entry_order:selected#sort-asc}>表示順 ( 昇順 )</option>
+					<option value="sort-desc"{category_entry_list_entry_order:selected#sort-desc}>表示順 ( 降順 )</option>
+					<option value="field-asc"{category_entry_list_entry_order:selected#field-asc}>フィールド ( 昇順 )</option>
+					<option value="field-desc"{category_entry_list_entry_order:selected#field-desc}>フィールド ( 降順 )</option>
+					<option value="intfield-asc"{category_entry_list_entry_order:selected#intfield-asc}>数値フィールド ( 昇順 )</option>
+					<option value="intfield-desc"{category_entry_list_entry_order:selected#intfield-desc}>数値フィールド ( 降順 )</option>
+					<option value="random"{category_entry_list_entry_order:selected#random}>ランダム</option>
+				</select>
+				<input type="hidden" name="config[]" value="category_entry_list_entry_order" />
+			</td>
+		</tr>
+		<tr>
+			<th>表示数<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="一度に表示される件数です。"></i></th>
+			<td>
+				<input type="text" name="category_entry_list_entry_limit" value="{category_entry_list_entry_limit}" size="4" class="acms-form-width-mini" />
+				<input type="hidden" name="config[]" value="category_entry_list_entry_limit" />
+				<input type="hidden" name="category_entry_list_entry_limit:convert" value="a" />
+				<input type="hidden" name="category_entry_list_entry_limit:validator#digits" id="validator-feed_rss2_limit-digits" />
+				<label for="validator-category_entry_list_entry_limit" class="validator-result-{category_entry_list_entry_limit:validator#digits}">数字を入力して下さい。</label>
+			</td>
+		</tr>
+		<tr>
+			<th>インデキシング<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックを外すと、インデキシングされていないエントリーも表示されます。"></i></th>
+			<td>
+				<input type="hidden" name="category_entry_list_entry_indexing" value="off" />
+				<label for="input-checkbox-category_entry_list_entry_indexing" class="acms-form-checkbox"><input type="checkbox" name="category_entry_list_entry_indexing" value="on"{category_entry_list_entry_indexing:checked#on} id="input-checkbox-category_entry_list_entry_indexing" /><i class="acms-ico-checkbox"></i>インデキシングされているエントリーのみ表示する</label>
+				<input type="hidden" name="config[]" value="category_entry_list_entry_indexing" />
+			</td>
+		</tr>
+		<tr>
+			<th>エントリーの有無<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックを外すとエントリーが登録されていないカテゴリーが表示されなくなります。"></i></th>
+			<td>
+				<input type="hidden" name="category_entry_list_entry_amount_zero" value="off" />
+				<label for="input-checkbox-category_entry_list_entry_amount_zero" class="acms-form-checkbox"><input type="checkbox" name="category_entry_list_entry_amount_zero" value="on"{category_entry_list_entry_amount_zero:checked#on} id="input-checkbox-category_entry_list_entry_amount_zero" /><i class="acms-ico-checkbox"></i>エントリーが登録されていないカテゴリーも表示する</label>
+				<input type="hidden" name="config[]" value="category_entry_list_entry_amount_zero" />
+			</td>
+		</tr>
+		<tr>
+			<th>表示エントリー<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックを入れると、URLコンテキストで表示中の（選択中の）カテゴリに含まれるエントリーのみが表示され、選択中ではないカテゴリーのエントリーが表示されなくなります。モジュールの特性上、モジュール設定でカテゴリーIDのチェックを入れ「URLコンテキストを優先」にすると効果がありません"></i></th>
+			<td>
+				<input type="hidden" name="category_entry_list_entry_active_category" value="off" />
+				<label for="input-checkbox-category_entry_list_entry_active_category" class="acms-form-checkbox"><input type="checkbox" name="category_entry_list_entry_active_category" value="on"{category_entry_list_entry_active_category:checked#on} id="input-checkbox-category_entry_list_entry_active_category" /><i class="acms-ico-checkbox"></i>URLコンテキストで表示中のカテゴリに含まれるエントリーのみ表示する</label>
+				<input type="hidden" name="config[]" value="category_entry_list_entry_active_category" />
+			</td>
+		</tr>
+	</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+</form>
+<!-- END_MODULE Admin_Config -->

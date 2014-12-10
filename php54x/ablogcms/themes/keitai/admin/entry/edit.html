@@ -1,0 +1,248 @@
+<!-- BEGIN_MODULE Admin_Entry_Edit -->
+<!-- BEGIN step#apply -->
+<form action="" method="post" enctype="multipart/form-data" id="entryForm">
+	<div class="entryFormWrapper">
+
+      <h3>ステータス</h3>
+      <select name="status">
+		<option value="draft" selected="selected">下書き</option>
+		<option value="open">公開</option>
+		<option value="close">非公開</option>
+	  </select>
+	  <input type="hidden" name="entry[]" value="status" />
+      <!-- BEGIN title:validator -->
+      <p>タイトルが入力されていません。</p>
+      <!-- END title:validator -->
+
+      <h3>タイトル</h3>
+      <input type="text" name="title" size="40" class="entryFormInputText" />
+	  <input type="hidden" name="entry[]" value="title" />
+	  <input type="hidden" name="title:validator#required" id="validator-title-required" />
+
+      <!-- BEGIN title:validator -->
+      <p>タイトルが入力されていません。</p>
+      <!-- END title:validator -->
+
+      <h3>カテゴリー</h3>
+      <select name="category_id">
+		<option value="">なし</option>
+		<!-- BEGIN_MODULE Admin_Category_SelectGlobal -->
+		<!-- BEGIN loop -->
+		<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option>
+		<!-- END loop -->
+		<!-- END_MODULE Admin_Category_SelectGlobal -->
+	  </select>
+	  <input type="hidden" name="entry[]" value="category_id" />
+
+      <h3>タグ</h3>
+      <input type="text" name="tag" />
+	  <input type="hidden" name="entry[]" value="tag" />
+
+
+      <input type="hidden" name="date" value="%{NOW_DATE}" />
+	  <input type="hidden" name="entry[]" value="date" />
+
+
+	  <input type="hidden" name="time" value="%{NOW_TIME}" id="entryTime" />
+	  <input type="hidden" name="entry[]" value="time" />
+
+
+<input type="hidden" name="code" />
+<input type="hidden" name="entry[]" value="code" />
+<input type="hidden" name="start_date" value="1000-01-01" />
+<input type="hidden" name="start_time" value="00:00:00" />
+<input type="hidden" name="entry[]" value="start_date" />
+<input type="hidden" name="entry[]" value="start_time" />
+<input type="hidden" name="end_date" value="9999-12-31" />
+<input type="hidden" name="end_time" value="23:59:59" />
+<input type="hidden" name="entry[]" value="end_date" />
+<input type="hidden" name="entry[]" value="end_time" />
+
+      <h4>概要</h4>
+      <p>
+        上から
+		<select name="summary_range">
+		  <option value="0"{range:selected#none}>なし</option>
+		  <!-- BEGIN range:loop -->
+		  <option value="{value}"{selected}>{value}</option>
+		  <!-- END range:loop -->
+		  <option value=""{range:selected#all}>全て</option>
+		</select>
+		番目までのカラムを抜粋
+        
+        <!-- <input type="hidden" name="summary_range" value="" /> -->
+		<input type="hidden" name="entry[]" value="summary_range" />
+      </p>
+
+<input type="hidden" name="indexing" value="on" />
+<input type="checkbox" name="indexing" value="off" />
+<input type="hidden" name="entry[]" value="indexing" />
+
+<input type="hidden" name="link" />
+<input type="hidden" name="entry[]" value="link" />
+
+<input type="hidden" name="trackback_url" />
+<input type="hidden" name="entry[]" value="trackback_url" />
+
+
+<!-- DELETE -->
+	  <!--##include file="/admin/entry/__.html"-->
+<!-- /DELETE -->
+
+	</div>
+
+
+    <h3>本文</h3>
+
+	<!--#include file="/admin/entry/column.html"-->
+
+<!--#include file="/ajax/column-add-btn.html"-->
+
+	<input type="hidden" name="entry[]" value="primary_image" />
+	<p class="comPost">
+		<!--
+		<input type="submit" name="ACMS_POST_Entry_Confirm" value="プレビュー" />-->
+		<input type="submit" name="ACMS_POST_Entry_Insert" value="作成" class="submitBtn" />
+		<input type="submit" name="ACMS_POST_2GET" value="戻る" class="cancelBtn overlook" onclick="return confirm('エントリーの編集をやめます。\n現在の変更内容が破棄されます、よろしいですか？');" />
+		<input type="hidden" name="cid" value="%{CID}" />
+		<input type="hidden" name="eid" value="%{EID}" />
+		<input type="hidden" name="arg[]" value="cid" />
+		<input type="hidden" name="arg[]" value="eid" />
+	</p>
+</form>
+<!-- END step#apply -->
+<!-- BEGIN step#reapply -->
+<form action="" method="post" enctype="multipart/form-data" id="entryForm">
+	<div class="entryFormWrapper"><!-- BEGIN entry:validator#operable -->
+		<p class="transaction-notice-error">この操作は許可されていません。</p><!-- END entry:validator#operable -->
+
+<h3>ステータス</h3>
+<select name="status">
+<option value="draft"{status:selected#draft}>下書き</option>
+<option value="open"{status:selected#open}>公開</option>
+<option value="close"{status:selected#close}>非公開</option>
+</select>
+<input type="hidden" name="entry[]" value="status" />
+
+<h3>タイトル</h3>
+<input type="text" name="title" value="{title}" />
+<input type="hidden" name="entry[]" value="title" />
+<input type="hidden" name="title:validator#required" id="validator-title-required" />
+<!-- BEGIN title:validator -->
+<p>タイトルが入力されていません。</p>
+<!-- END title:validator -->
+
+<h3>カテゴリー</h3>
+<select name="category_id">
+<option value="">なし</option>
+<!-- BEGIN_MODULE Admin_Category_SelectGlobal -->
+<!-- BEGIN loop -->
+<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option>
+<!-- END loop -->
+<!-- END_MODULE Admin_Category_SelectGlobal -->
+</select>
+<input type="hidden" name="entry[]" value="category_id" />
+
+<h3>タグ</h3>
+<input type="text" name="tag" value="{tag}" />
+<input type="hidden" name="entry[]" value="tag" />
+
+<input type="hidden" name="date" value="{date}" />
+<input type="hidden" name="entry[]" value="date" />
+
+<input type="hidden" name="time" value="{time}" id="entryTime" />
+<input type="hidden" name="entry[]" value="time" /></td>
+
+<input type="hidden" name="code" value="{code}" />
+<input type="hidden" name="entry[]" value="code" />
+
+
+<input type="hidden" name="start_date" value="{start_date}" />
+<input type="hidden" name="start_time" value="{start_time}" />
+<input type="hidden" name="entry[]" value="start_date" />
+<input type="hidden" name="entry[]" value="start_time" />
+
+<input type="hidden" name="end_date" value="{end_date}" />
+<input type="hidden" name="end_time" value="{end_time}" />
+<input type="hidden" name="entry[]" value="end_date" />
+<input type="hidden" name="entry[]" value="end_time" />
+
+<h4>概要</h4>
+<p>上から<select name="summary_range">
+<option value="0"{range:selected#none}>なし</option>
+<!-- BEGIN range:loop -->
+<option value="{value}"{selected}>{value}</option>
+<!-- END range:loop -->
+<option value=""{range:selected#all}>全て</option>
+</select>
+番目までのカラムを抜粋
+<!-- <input type="hidden" name="summary_range" value="{summary_range}" /> -->
+<input type="hidden" name="entry[]" value="summary_range" /></p>
+
+<input type="hidden" name="indexing" value="{indexing}" />
+<input type="hidden" name="entry[]" value="indexing" />
+
+
+<input type="hidden" name="link" value="{link}" />
+<input type="hidden" name="entry[]" value="link" />
+
+<input type="hidden" name="trackback_url" value="{trackback_url}" />
+<input type="hidden" name="entry[]" value="trackback_url" />
+
+</div>
+
+
+<h3>本文</h3>
+
+<!--#include file="./column2.html"-->
+
+	<input type="hidden" name="entry[]" value="primary_image" />
+	<p class="comPost">
+		<!-- BEGIN action#confirm -->
+		<!--
+		<input type="submit" name="ACMS_POST_Entry_Confirm" value="プレビュー" />-->
+		<!-- END action#confirm -->
+		<!-- BEGIN action#insert -->
+		<input type="submit" name="ACMS_POST_Entry_Insert" value="作成" class="submitBtn" />
+		<!-- END action#insert -->
+		<!-- BEGIN action#update -->
+		<input type="submit" name="ACMS_POST_Entry_Update" value="保存" class="submitBtn" />
+		<!-- END action#update -->
+		<!-- BEGIN action#delete -->
+		<!--<input type="submit" name="ACMS_POST_Entry_Delete" value="削除" /> -->
+		<!-- END action#delete -->
+		<input type="submit" name="ACMS_POST_2GET" value="戻る" class="cancelBtn overlook" onclick="return confirm('エントリーの編集を中止します。\n現在の変更内容が破棄されますが、よろしいですか？');" />
+		<input type="hidden" name="cid" value="%{CID}" />
+		<input type="hidden" name="eid" value="%{EID}" />
+		<input type="hidden" name="arg[]" value="cid" />
+		<input type="hidden" name="arg[]" value="eid" />
+	</p>
+</form>
+<!-- END step#reapply -->
+<!-- BEGIN step#confirm -->
+<form action="" method="post" id="entryForm">
+	<div id="adminToolBox">
+		<!-- BEGIN action#insert -->
+		<input type="submit" name="ACMS_POST_Entry_Insert" value="作成" class="submitBtn" />
+		<!-- END action#insert -->
+		<!-- BEGIN action#update -->
+		<input type="submit" name="ACMS_POST_Entry_Update" value="保存" class="submitBtn" />
+		<!-- END action#update -->
+		<input type="submit" name="ACMS_POST_Entry_Apply" value="戻る" class="cancelBtn" />
+		<input type="hidden" name="entry:takeover" value="{entry:takeover}" />
+		<input type="hidden" name="field:takeover" value="{field:takeover}" />
+		<input type="hidden" name="column_object" value="{column:takeover}" />
+	</div>
+</form>
+<!-- END step#confirm -->
+<!-- BEGIN step#result -->
+<form action="" method="post" id="entryForm">
+	<div id="adminToolBox">
+		<p>上記の内容でエントリーを投稿しました。</p>
+		<input type="submit" name="ACMS_POST_2GET" value="戻る" />
+		<input type="hidden" name="cid" value="%{CID}" />
+		<input type="hidden" name="eid" value="%{EID}" />
+	</div>
+</form>
+<!-- END step#result -->
+<!-- END_MODULE Admin_Entry_Edit -->

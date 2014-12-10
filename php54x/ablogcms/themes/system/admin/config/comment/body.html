@@ -1,0 +1,78 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<div class="acms-admin-title acms-module-title-wrapper">
+			<i class="acms-icon acms-icon-comment"></i>
+			<div class="acms-module-title">
+				<!-- BEGIN_MODULE Admin_Rule_Name -->
+				<strong>ルール : {name}</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+				<strong>モジュールID : {label} ( {identifier} )</strong><!-- END_MODULE Admin_Module_Name -->
+				<h1>コメント本文<span class="acms-module-en">Comment_Body</span></h1>
+			</div>
+		</div>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Config -->
+<!-- BEGIN_IF [{notice_mess}/nem/] -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>Comment_Body 設定を保存しました</p><!-- END_IF -->
+
+<form action="" method="post" class="acms-form">
+	<div class="acms-form-group acms-margin-sp">
+		<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+
+		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+		<a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+	</div>
+
+	<table class="adminTable acms-table-admin-edit">
+		<tr>
+			<th>表示形式<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="スレッドはコメントをスレッド形式で表示します。コメントに対して返信されたコメントを階層化して表示します。
+リストはコメントをリスト形式で表示します。スレッド形式とは違い、全てのコメントを同列階層としてリスト表示します。"></i></th>
+			<td>
+				<select name="comment_body_display">
+					<option value="list"{comment_body_display:selected#list}>リスト</option>
+					<option value="thread"{comment_body_display:selected#thread}>スレッド</option>
+				</select>
+				<input type="hidden" name="config[]" value="comment_body_display" />
+			</td>
+		</tr>
+		<tr>
+			<th>表示順 ( リスト表示のみ )<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="表示順で決められたルールでの昇順、降順の設定です。[表示形式]が「リスト表示」のときのみ適用されます。"></i></th>
+			<td>
+				<select name="comment_body_order">
+					<option value="datetime-asc"{comment_body_order:selected#datetime-asc}>日時 ( 昇順 )</option>
+					<option value="datetime-desc"{comment_body_order:selected#datetime-desc}>日時 ( 降順 )</option>
+				</select>
+				<input type="hidden" name="config[]" value="comment_body_order" />
+			</td>
+		</tr>
+		<tr>
+			<th>並び ( リスト表示のみ )<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="[表示順]の設定とは別に、1ページ内で一度に表示されるコメント本文の中での並びの設定です。"></i></th>
+			<td>
+				<select name="comment_body_reverse">
+					<option value="off"{comment_body_reverse:selected#off}>上から並べる</option>
+					<option value="on"{comment_body_reverse:selected#on}>下から並べる</option>
+				</select>
+				<input type="hidden" name="config[]" value="comment_body_reverse" />
+			</td>
+		</tr>
+		<tr>
+			<th>表示件数<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="一度に表示されるコメントの件数です。"></i></th>
+			<td>
+				<input type="text" name="comment_body_limit" value="{comment_body_limit}" size="4" />
+				<input type="hidden" name="config[]" value="comment_body_limit" />
+				<input type="hidden" name="comment_body_limit:convert" value="a" />
+				<input type="hidden" name="comment_body_limit:validator#digits" id="validator-comment_body_limit-digits" />
+				<label for="validator-comment_body_limit-digits" class="validator-result-{comment_body_limit:validator#digits}">数字を入力して下さい。</label>
+			</td>
+		</tr>
+	</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+		
+	</form>
+<!-- END_MODULE Admin_Config -->

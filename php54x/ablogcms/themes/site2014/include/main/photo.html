@@ -1,0 +1,43 @@
+<!-- BEGIN_MODULE Entry_Photo id="photoDefault" -->
+<section class="mainModuleBox">
+<!--#include file="/admin/module/setting.html"-->
+<h2>%{CATEGORY_NAME}</h2>
+<div class="summaryCustom js-autoheight">
+
+	<!-- BEGIN notFound -->
+	<section>
+	<p>記事が見つかりませんでした。</p>
+	</section>
+	<!-- END notFound -->
+	
+	<!-- BEGIN unit:loop -->
+	<!-- BEGIN entry:loop -->
+	<section class="summaryCustomEntry js-biggerlink" style="width:{x}px">
+	<div class="column3">
+		<div class="photo" style="width:{x}px; height:{y}px; overflow:hidden; position:relative;"><!-- BEGIN image:veil -->
+			<img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" style="left:{left}px; top:{top}px; position:relative;" /><!-- END image:veil --><!-- BEGIN noimage -->
+			<img src="/images/noImage.png" width="200" height="200">
+			<!-- END noimage -->
+		</div>
+		<p class="title"><a href="{url}">{title}</a></p>
+	</div>
+	</section><!-- END entry:loop -->
+	<hr class="clearHidden" /><!-- END unit:loop -->
+</div>
+	
+<!-- BEGIN pager:veil -->
+<!-- ページ送り　開始▼▼ -->
+<nav class="acms-pager-container">
+<ul class="acms-pager">
+	<!-- BEGIN backLink --><li><a href="{url}">&lt;&lt;&nbsp;前へ</a></li><!-- END backLink -->
+	<!-- BEGIN firstPage:veil --><li{pageCurAttr}[raw]><span><a href="{firstPageUrl}">{firstPage}</a></span></li><!-- END firstPage:veil -->
+	<!-- BEGIN page:loop --><li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --></span></li><!-- END page:loop -->
+	<!-- BEGIN lastPage:veil --><li{pageCurAttr}[raw]><span><a href="{lastPageUrl}">{lastPage}</a></span></li><!-- END lastPage:veil -->
+	<!-- BEGIN forwardLink --><li><a href="{url}">次へ&nbsp;&gt;&gt;</a></li><!-- END forwardLink -->
+</ul>
+</nav>
+<!-- ページ送り　終了▲▲ -->
+<!-- END pager:veil -->
+
+</section>
+<!-- END_MODULE Entry_Photo -->

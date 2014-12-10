@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Api_Facebook_Touch_NotLike -->
+
+<!-- END_MODULE Api_Facebook_Touch_NotLike -->]]></content>
+	<tabTrigger>!acms:touch</tabTrigger>
+    <description>Facebook_Touch_NotLike</description>
+</snippet>

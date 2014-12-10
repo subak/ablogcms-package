@@ -1,0 +1,329 @@
+// --------------- 
+// clearfix
+// ---------------
+.clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// --------------- 
+// フォントサイズ
+// ---------------
+.font-size(@sizeValue) {
+	font-size: ~"@{sizeValue}px"; 
+	// font-size: (@sizeValue / 10) * 1rem;
+}
+
+// --------------- 
+// ボックスサイズ
+// ---------------
+.box-sizing(@boxmodel) {
+	-webkit-box-sizing: @boxmodel;
+	-moz-box-sizing: @boxmodel;
+	box-sizing: @boxmodel;
+}
+
+// --------------- 
+// 角丸
+// ---------------
+// 上だけ角丸
+.round-top ( @radius ){
+	border-top-left-radius: @radius;
+	border-top-right-radius: @radius;
+}
+// 下だけ角丸
+.round-bottom ( @radius ){
+	border-bottom-left-radius: @radius;
+	border-bottom-right-radius: @radius;
+}
+// 右だけ角丸
+.round-right ( @radius ){
+	border-top-right-radius: @radius;
+	border-bottom-right-radius: @radius;
+}
+// 左だけ角丸
+.round-left ( @radius ){
+	border-top-left-radius: @radius;
+	border-bottom-left-radius: @radius;
+}
+
+// --------------- 
+// 透過
+// ---------------
+// Opacity
+.opacity(@opacity) {
+	opacity: @opacity;
+	filter: ~"alpha(opacity=@{opacity})";
+}
+
+// --------------- 
+// 時間変化
+// ---------------
+// transition-property、 transition-duration、 transition-timing-function、 transition-delay の各プロパティの値
+.transition(@transition) {
+	-webkit-transition: @transition;
+	transition: @transition;
+}
+// プロパティ
+.transition-property(@transition-property) {
+	-webkit-transition-property: @transition-property;
+	transition-property: @transition-property;
+}
+// いつ始まるか
+.transition-delay(@transition-delay) {
+	-webkit-transition-delay: @transition-delay;
+	transition-delay: @transition-delay;
+}
+// かかる時間
+.transition-duration(@transition-duration) {
+	-webkit-transition-duration: @transition-duration;
+	transition-duration: @transition-duration;
+}
+// 時間変化
+.transition-transform(@transition) {
+	-webkit-transition: -webkit-transform @transition;
+	-moz-transition: -moz-transform @transition;
+	-o-transition: -o-transform @transition;
+	transition: transform @transition;
+}
+
+// --------------- 
+// 回転
+// ---------------
+// 回転
+.rotate(@degrees) {
+	-webkit-transform: rotate(@degrees);
+	-ms-transform: rotate(@degrees);
+	transform: rotate(@degrees);
+}
+// X軸に回転
+.rotateX(@degrees) {
+	-webkit-transform: rotateX(@degrees);
+	-ms-transform: rotateX(@degrees); // IE9+
+	transform: rotateX(@degrees);
+}
+// Y軸に回転
+.rotateY(@degrees) {
+	-webkit-transform: rotateY(@degrees);
+	-ms-transform: rotateY(@degrees); // IE9+
+	transform: rotateY(@degrees);
+}
+
+// --------------- 
+// 変形
+// ---------------
+// 拡大・縮小
+.scale(@ratio) {
+	-webkit-transform: scale(@ratio);
+	-ms-transform: scale(@ratio);
+	transform: scale(@ratio);
+}
+// 表示位置を移動
+.translate(@x; @y) {
+	-webkit-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	transform: translate(@x, @y);
+}
+// X方向とY方向とZ方向の距離で3D移動
+.translate3d(@x; @y; @z) {
+	-webkit-transform: translate3d(@x, @y, @z);
+	transform: translate3d(@x, @y, @z);
+}
+// 傾斜変形
+.skew(@x; @y) {
+	-webkit-transform: skew(@x, @y);
+	-ms-transform: skewX(@x) skewY(@y);
+	transform: skew(@x, @y);
+}
+// 3D変形の奥行きの深さ
+.perspective(@perspective) {
+	-webkit-perspective: @perspective;
+	-moz-perspective: @perspective;
+	perspective: @perspective;
+}
+// 遠近投影の基点となる位置を指定
+.perspective-origin(@perspective) {
+	-webkit-perspective-origin: @perspective;
+	-moz-perspective-origin: @perspective;
+	perspective-origin: @perspective;
+}
+// 要素を変形させる際の基準点を指定する
+.transform-origin(@origin) {
+	-webkit-transform-origin: @origin;
+	-moz-transform-origin: @origin;
+	transform-origin: @origin;
+}
+
+// --------------- 
+// UI
+// ---------------
+// ユーザーの選択
+.user-select(@select) {
+	-webkit-user-select: @select;
+	-moz-user-select: @select;
+	-ms-user-select: @select;
+	-o-user-select: @select;
+	user-select: @select;
+}
+
+// リサイズ
+.resizable(@direction) {
+	resize: @direction;
+	overflow: auto;
+}
+
+// 単語途中での改行方法を指定
+.hyphens(@mode: auto) {
+	word-wrap: break-word;
+	-webkit-hyphens: @mode;
+	-moz-hyphens: @mode;
+	-ms-hyphens: @mode;
+	-o-hyphens: @mode;
+	hyphens: @mode;
+}
+
+// --------------- 
+// グラデーション
+// ---------------
+// 水平グラデーション
+.horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+	background-image: -webkit-gradient(linear, @start-percent top, @end-percent top, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
+	background-image: -webkit-linear-gradient(left, color-stop(@start-color @start-percent), color-stop(@end-color @end-percent)); // Safari 5.1+, Chrome 10+
+	background-image: -moz-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // FF 3.6+
+	background-image:  linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10
+	background-repeat: repeat-x;
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down
+}
+// 垂直グラデーション
+.vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+	background-image: -webkit-gradient(linear, left @start-percent, left @end-percent, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
+	background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); // Safari 5.1+, Chrome 10+
+	background-image:  -moz-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); // FF 3.6+
+	background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10
+	background-repeat: repeat-x;
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down
+}
+// 指定グラデーション
+.directional(@start-color: #555; @end-color: #333; @deg: 45deg) {
+	background-repeat: repeat-x;
+	background-image: -webkit-linear-gradient(@deg, @start-color, @end-color); // Safari 5.1+, Chrome 10+
+	background-image: -moz-linear-gradient(@deg, @start-color, @end-color); // FF 3.6+
+	background-image: linear-gradient(@deg, @start-color, @end-color); // Standard, IE10
+}
+// 3つ水平グラデーション
+.horizontal-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+	background-image: -webkit-gradient(left, linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop, @mid-color), to(@end-color));
+	background-image: -webkit-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+	background-image: -moz-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+	background-image: linear-gradient(to right, @start-color, @mid-color @color-stop, @end-color);
+	background-repeat: no-repeat;
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+}
+// 3つ垂直グラデーション
+.vertical-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop, @mid-color), to(@end-color));
+	background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+	background-image: -moz-linear-gradient(top, @start-color, @mid-color @color-stop, @end-color);
+	background-image: linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+	background-repeat: no-repeat;
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+}
+// 円形グラデーション
+.radial(@inner-color: #555; @outer-color: #333) {
+	background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@inner-color), to(@outer-color));
+	background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
+	background-image: -moz-radial-gradient(circle, @inner-color, @outer-color);
+	background-image: radial-gradient(circle, @inner-color, @outer-color);
+	background-repeat: no-repeat;
+}
+// 縞模様グラデーション
+.striped(@color: rgba(255,255,255,.15); @angle: 45deg) {
+	background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, @color), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, @color), color-stop(.75, @color), color-stop(.75, transparent), to(transparent));
+	background-image: -webkit-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+	background-image: -moz-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+	background-image: linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+}
+
+// --------------- 
+// アニメーション
+// ---------------
+// アニメーション
+.animation(@animation) {
+	-webkit-animation: @animation;
+	animation: @animation;
+}
+
+// hoverのアニメーション
+.hover-animation (@duration: 0.1s) {
+	-webkit-transition: all @duration linear;
+	-moz-transition: all @duration linear;
+	-o-transition: all @duration linear;
+	transition: all @duration linear;
+}
+
+// --------------- 
+// ボタン
+// ---------------
+// ボタン
+.btn (@border-radius: 3px, @background-color: #CCCCCC, @border-color: #A7A7AA) {
+	display: inline-block;
+	padding: 7px 10px;
+	border: 1px solid @border-color;
+	border-radius: @border-radius;
+	background-color: @background-color;
+	text-decoration: none;
+	text-align: center;
+	.font-size(11);
+	line-height: 1;
+}
+
+// 色
+.btn-color(@start-color:#F9F9F9, @end-color:#E1E1E1, @color: #333){
+	background-color: @end-color;
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color)));
+	background-image: -moz-linear-gradient(top, @start-color, @end-color);
+	background-image: -ms-linear-gradient(top, @start-color, @end-color);
+	background-image: -o-linear-gradient(top, @start-color, @end-color);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(@start-color), to(@end-color));
+	background-image: -webkit-linear-gradient(top, @start-color, @end-color);
+	background-image: linear-gradient(top, @start-color, @end-color);
+	color: @color;
+}
+// hover
+.btn-color-hover(@start-color:#FCFCFC, @end-color:#E1E1E1, @color: #333){
+	background-color: @end-color;
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color)));
+	background-image: -moz-linear-gradient(top, @start-color, @end-color);
+	background-image: -ms-linear-gradient(top, @start-color, @end-color);
+	background-image: -o-linear-gradient(top, @start-color, @end-color);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(@start-color), to(@end-color));
+	background-image: -webkit-linear-gradient(top, @start-color, @end-color);
+	background-image: linear-gradient(top, @start-color, @end-color);
+	color: @color;
+}
+// active
+.btn-color-active(@background-color:#E1E1E1, @color: #333, @inset-color:#B2B2B2){
+	background-color: @background-color;
+	box-shadow: inset 0 1px 2px @inset-color;
+	color: @color;
+}
+
+.select-color(@start-color:#F6F6F6, @end-color:#F0F0F0, @color: #333){
+	background-color: @end-color;
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color)));
+	background-image: -moz-linear-gradient(top, @start-color, @end-color);
+	background-image: -ms-linear-gradient(top, @start-color, @end-color);
+	background-image: -o-linear-gradient(top, @start-color, @end-color);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(@start-color), to(@end-color));
+	background-image: -webkit-linear-gradient(top, @start-color, @end-color);
+	background-image: linear-gradient(top, @start-color, @end-color);
+	color: @color;
+}
+
+

@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Touch_Admin -->
+
+<!-- END_MODULE Touch_Admin -->]]></content>
+	<tabTrigger>!acms:touch</tabTrigger>
+    <description>Touch_Admin</description>
+</snippet>

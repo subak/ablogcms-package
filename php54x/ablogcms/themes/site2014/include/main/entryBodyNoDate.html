@@ -1,0 +1,94 @@
+<!-- BEGIN_MODULE Entry_Body id="" -->
+<!-- BEGIN notFound -->
+<section class="acms-entry">
+	<h2 id="notFoundTitle">Not found</h2>
+	<p>お探しの記事は見つかりませんでした。</p>
+</section>
+<!-- END notFound -->
+    
+<!-- 1記事▼▼ -->
+<!-- BEGIN entry:loop -->
+<div class="acms-box-medium">
+<!--#include file="/admin/entry/revision-info.html"-->
+</div>
+<article class="acms-entry clearfix">
+	<!--#include file="/admin/entry/title.html"-->
+	
+	<!-- エントリーのタイトル　開始▼▼ -->
+	<!-- BEGIN title:veil -->
+	<header class="entryHeader clearfix">
+		<h2 class="entryTitle"><a href="{titleUrl}">{title}[raw]</a></h2>
+	</header>
+	<!-- END title:veil -->
+
+	<!-- BEGIN leadText:veil -->
+	<section class="entryCustom">
+		<p class="clearfix">
+		<!-- BEGIN thumbnail@path:veil --><img src="%{ARCHIVES_DIR}{thumbnail@path}" width="200" height="200" class="thumbnail" /><!-- END thumbnail@path:veil -->{leadText}[nl2br]
+		</p>
+	</section>
+	<!-- END leadText:veil -->
+	
+	<!-- BEGIN entryColumn:veil -->
+	<section class="entryColumn">
+		<div class="acms-grid-r">
+			<!-- BEGIN unit:veil -->
+			<!--#include file="/include/unit.html"-->
+			<hr class="clearHidden" />
+			<!-- END unit:veil -->
+			<!-- BEGIN continueLink:veil -->
+			<p><a href="{continueUrl}">「{continueName}」の続きを読む</a></p>
+			<!-- END continueLink:veil -->
+		</div>
+	</section>
+	<!-- END entryColumn:veil -->
+
+	<!-- BEGIN formBody -->
+	<!--#include file="/include/form/unit.html"-->
+	<hr class="clearHidden" />
+	<!-- END formBody -->
+
+	<!-- BEGIN adminEntryEdit -->
+	<div class="acms-box-medium">
+		<!--#include file="/admin/entry/edit.html"-->
+		<!--#include file="/admin/entry/add.html"-->
+	</div>
+	<!-- END adminEntryEdit -->
+
+	<!-- BEGIN adminFormEdit -->
+	<!--#include file="/admin/form2/edit.html"-->
+	<!-- END adminFormEdit -->
+
+	<!-- BEGIN tag:veil -->
+	<footer>
+	<dl class="entryTag">
+		<dt>タグ</dt>
+		<!-- BEGIN tag:loop --> 
+		<dd><a href="/entry.html/tag/{name}">{name}</a></dd>
+		<!-- END tag:loop -->
+	</dl>
+    </footer>
+	<!-- END tag:veil -->
+	
+	<div class="acms-box-medium">
+	<!--#include file="/admin/entry/action.html"-->
+	</div>
+</article>
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+
+<!-- BEGIN pager:veil -->
+<!-- ページ送り　開始▼▼ -->
+<nav class="acms-pager-container">
+<ul class="acms-pager">
+	<!-- BEGIN backLink --><li><a href="{url}">&lt;&lt;&nbsp;前へ</a></li><!-- END backLink -->
+	<!-- BEGIN firstPage:veil --><li{pageCurAttr}[raw]><span><a href="{firstPageUrl}">{firstPage}</a></span></li><!-- END firstPage:veil -->
+	<!-- BEGIN page:loop --><li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --></span></li><!-- END page:loop -->
+	<!-- BEGIN lastPage:veil --><li{pageCurAttr}[raw]><span><a href="{lastPageUrl}">{lastPage}</a></span></li><!-- END lastPage:veil -->
+	<!-- BEGIN forwardLink --><li><a href="{url}">次へ&nbsp;&gt;&gt;</a></li><!-- END forwardLink -->
+</ul>
+</nav>
+<!-- ページ送り　終了▲▲ -->
+<!-- END pager:veil -->
+
+<!-- END_MODULE Entry_Body -->

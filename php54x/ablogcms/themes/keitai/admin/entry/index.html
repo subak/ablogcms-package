@@ -1,0 +1,199 @@
+<h1>エントリー管理</h1>
+<!--#include file="/admin/topicpath.html"-->
+<!-- BEGIN_MODULE Admin_Entry_Index -->
+<div class="titleWrapper">
+	<h2>エントリー一覧</h2>
+	<a href="#" class="filter-toggle-head">フィルター</a>
+</div>
+<form action="" method="post" class="filter-toggle-body filter"><!-- BEGIN axis -->
+	階層:
+	<input type="hidden" name="axis" value="self" />
+	<input type="checkbox" name="axis" value="descendant-or-self"{axis:checked#descendant-or-self} id="input-checkbox-axis-descendant-or-self" />
+	<label for="input-checkbox-axis-descendant-or-self">下階層のブログのエントリーも表示する</label>
+	<input type="hidden" name="query[]" value="axis" />
+	<br /><!-- END axis -->
+	絞り込み:
+	<select name="status">
+		<option value="">全てのステータス</option>
+		<option value="open"{status:selected#open}>公開</option>
+		<option value="close"{status:selected#close}>非公開</option>
+		<option value="draft"{status:selected#draft}>下書き</option>
+	</select>
+	<input type="hidden" name="query[]" value="status" />
+
+	<!-- BEGIN userSelect#filter -->
+	<select name="uid">
+		<option value="">全てのユーザー</option><!-- BEGIN_MODULE Admin_User_Select --><!-- BEGIN loop -->
+		<option value="{value}"{selected}>{label}</option><!-- END loop --><!-- END_MODULE Admin_User_Select -->
+	</select><!-- END userSelect#filter -->
+
+	<select name="cid">
+		<option value="">全てのカテゴリー</option><!-- BEGIN_MODULE Admin_Category_Select --><!-- BEGIN loop -->
+		<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option><!-- END loop --><!-- END_MODULE Admin_Category_Select -->
+	</select> 
+	&nbsp;
+	ソート: 
+	<select name="order">
+		<option value="datetime-asc"{order:selected#datetime-asc}>日付 (昇順)</option>
+		<option value="datetime-desc"{order:selected#datetime-desc}>日付 (降順)</option>
+		<option value="code-asc"{order:selected#code-asc}>ファイル名（昇順）</option>
+		<option value="code-desc"{order:selected#code-desc}>ファイル名（降順）</option>
+		<option value="id-asc"{order:selected#id-asc}>ID（昇順）</option>
+		<option value="id-desc"{order:selected#id-desc}>ID（降順）</option>
+		<option value="sort-asc"{order:selected#sort-asc}>表示順（昇順）</option>
+		<option value="sort-desc"{order:selected#sort-desc}>表示順（降順）</option>
+	</select>
+	&nbsp;
+	表示数:
+	<select name="limit"><!-- BEGIN limit:loop -->
+		<option value="{limit}"{selected}>{limit}</option><!-- END limit:loop -->
+	</select>
+	<input type="submit" name="ACMS_POST_2GET" value="表示" />
+	<input type="hidden" name="admin" value="entry_index" />
+</form>
+<div class="contents">
+	<form method="post" action=""><!-- BEGIN refresh -->
+		<p>エントリー一覧を更新しました。</p><!-- END refresh --><!-- BEGIN index#notFound -->
+		<p class="warning">エントリーがありません。</p><!-- END index#notFound --><!-- BEGIN index:veil -->
+		<p style="texe-align:center;">全<strong>{itemsAmount}</strong>件中　<strong>{itemsFrom}</strong>件～<strong>{itemsTo}</strong>件を表示</p>
+	
+		<!-- BEGIN pager:veil -->
+		<ul class="pager"><!-- BEGIN backLink -->
+			<li><a href="{url}">&lt; 前のページ</a></li><!-- END backLink --><!-- BEGIN page:loop -->
+			<li{pageCurAttr}><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></li><!-- END page:loop --><!-- BEGIN lastPage:veil -->
+			<li><a href="{lastPageUrl}">...{lastPage}</a></li><!-- END lastPage:veil --><!-- BEGIN forwardLink -->
+			<li><a href="{url}">次のページ &gt;</a></li><!-- END forwardLink -->
+		</ul><!-- END pager:veil -->
+
+		<table class="adminTable">
+			<thead>
+				<tr>
+					<th><input type="checkbox" id="checkAll" /></th><!-- BEGIN sort#header -->
+					<th>&nbsp;
+						表示順<!-- BEGIN sort#headerUser -->
+						 ( ユーザー )<!-- END sort#headerUser --><!-- BEGIN sort#headerCategory -->
+						 ( カテゴリー )<!-- END sort#headerCategory -->
+					</th><!-- END sort#header -->
+					<th>ID</th>
+					<th>日付 / タイトル / ファイル名</th>
+					<th>ブログ / ユーザー / カテゴリー</th>
+					<th>ステータス</th>
+					<th>アクション</th>
+				</tr>
+			</thead>
+			<tbody><!-- BEGIN entry:loop -->
+				<tr>
+					<td><input type="checkbox" name="checks[]" value="{eid}" /></td><!-- BEGIN sort:veil -->
+					<td><input type="text" name="sort-{sort#eid}" value="{sort}" size="4"{disabled}/></td><!-- END sort:veil -->
+					<td>{eid}</td>
+					<td>
+						<span class="weak">{datetime}</span><br />
+						<a href="{entryUrl}"><strong>{title}</strong></a><br />
+						<span class="weak">{code}</span>
+					</td>
+					<td>
+						<a href="{blogUrl}">{blogName}</a>
+						<br /><a href="{userUrl}">{userName}</a><!-- BEGIN category:veil -->
+						<br /><a href="{categoryUrl}">{categoryName}</a><!-- END category:veil -->
+					</td>
+					<td><!-- BEGIN status#close -->
+						非公開 <!-- END status#close --><!-- BEGIN status#open -->
+						公開 <!-- END status#open --><!-- BEGIN status#draft -->
+						下書き <!-- END status#draft -->
+					</td>
+					<td>
+						<a href="{editUrl}">編集</a>
+					</td>
+				</tr><!-- END entry:loop -->
+			</tbody>
+		</table>
+
+		<table class="adminTable">
+			<!-- BEGIN sort:action#user -->
+			<tr>
+				<td class="systemBtn">
+					選択したエントリーの、<strong>ユーザー</strong>が指定された場合の<strong>表示順</strong>を
+					<input type="submit" name="ACMS_POST_Entry_Index_Sort_User" value="変更" />
+				</td>
+			</tr>
+			<!-- END sort:action#user -->
+			<!-- BEGIN sort:action#category -->
+			<tr>
+				<td class="systemBtn">
+					選択したエントリーの、カテゴリーが指定された場合の表示順を
+					<input type="submit" name="ACMS_POST_Entry_Index_Sort_Category" value="変更" />
+				</td>
+			</tr>
+			<!-- END sort:action#category -->
+			<!-- BEGIN sort:action#entry -->
+			<tr>
+				<td class="systemBtn">
+					選択したエントリーの<strong>表示順</strong>を
+					<input type="submit" name="ACMS_POST_Entry_Index_Sort_Entry" value="変更" />
+				</td>
+			</tr>
+			<!-- END sort:action#entry -->
+			<tr>
+				<td class="systemBtn">
+					選択したエントリーの<strong>ステータス</strong>を
+					<select name="status">
+						<option value="open">公開</option>
+						<option value="close">非公開</option>
+						<option value="draft">下書き</option>
+					</select>
+					に
+					<input type="submit" name="ACMS_POST_Entry_Index_Status" value="変更" />
+				</td>
+			</tr>
+			<!-- BEGIN userSelect#batch --><!-- BEGIN_MODULE Admin_User_Select -->
+			<tr>
+				<td class="systemBtn">
+					選択したエントリーの<strong>ユーザー</strong>を
+					<select name="uid"><!-- BEGIN loop -->
+						<option value="{value}"{selected}>{label}</option><!-- END loop -->
+					</select>
+					に
+					<input type="submit" name="ACMS_POST_Entry_Index_User" value="変更" />
+				</td>
+			</tr>
+			<!-- END_MODULE Admin_User_Select --><!-- END userSelect#batch -->
+			<!-- BEGIN_MODULE Admin_Category_Select -->
+			<tr>
+				<td class="systemBtn">
+					選択したエントリーの<strong>カテゴリー</strong>を
+					<select name="cid">
+						<option value="">なし</option><!-- BEGIN loop -->
+						<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option><!-- END loop -->
+					</select>
+					に
+					<input type="submit" name="ACMS_POST_Entry_Index_Category" value="変更" />
+				</td>
+			</tr>
+			<!-- END_MODULE Admin_Category_Select -->
+			<tr>
+				<td class="systemBtn">
+					選択したエントリーを
+					<input type="submit" name="ACMS_POST_Entry_Index_Delete" value="削除" onclick="return confirm('この操作は元に戻せません。\nよろしいですか？')" />
+				</td>
+			</tr>
+		</table>
+		<!-- END index:veil -->
+	</form>
+</div>
+<!-- END_MODULE Admin_Entry_Index -->
+
+<div class="titleWrapper">
+	<h2>エントリー作成</h2>
+</div>
+<div class="contents">
+	<!-- BEGIN entry#insert -->
+	<form action="" method="post"><!-- BEGIN_MODULE Admin_Category_SelectGlobal -->
+		カテゴリ <select name="cid">
+			<option value="">なし</option><!-- BEGIN loop -->
+			<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option><!-- END loop -->
+		</select><!-- END_MODULE Admin_Category_SelectGlobal -->
+		<input type="hidden" name="admin" value="entry-edit" />
+		<input type="submit" name="ACMS_POST_2GET" value="作成" />
+	</form>
+	<!-- END entry#insert -->
+</div>

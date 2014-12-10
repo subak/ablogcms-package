@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms ドメイン修正ウィザード</title>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="siteTitleBox">
+			<h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+			<span id="setupType">ドメイン修正</span>
+		</div>
+	</div>
+<div id="main">
+
+<!-- BEGIN step#apply -->
+    <h2>ルートブログのドメイン設定を修正します</h2>
+        <h3>ドメイン修正の用途</h3>
+            <p class="noticeMsg">制作環境から公開環境へのサーバーやドメインの変更時に使用する機能です。</p>
+            <p>ルートブログのドメイン設定とconfig.server.phpのDOMAINの項目を修正します。</p>
+            <p>子ブログ等のドメイン設定は、ルートブログからログイン後に管理ページ上から修正します。</p>
+        <h3>注意事項</h3>
+            <p class="errorMsg">登録済みライセンスが有効なシステムに対しては、この機能を使用しないでください。<br />
+            登録と異なるドメインに設定を変更をするとライセンス認証が切れて、サイトを利用できなくなる可能性があります。</p>
+    <form action="" method="post" class="acms-form">
+        <h3>変更後の新しいドメインを指定してください</h3>
+            <label class="acms-form-checkbox"> <input type="checkbox" name="all_blog" /><i class="acms-ico-checkbox"></i> 全ブログのドメインを書き換えをする(チェックをすると全ブログのドメインを書き換え、チェックを外すとルートブログのみ書き換えます。)</label>
+            <p><input type="text" name="domain" value="[*DOMAIN*]" size="20" /></p>
+        <p id="submitBtn"><input type="submit" name="submit" value="ドメインの設定を修正します" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#apply -->
+
+<!-- BEGIN step#error -->
+    <h2>ルートブログのドメイン設定を修正します</h2>
+        <h3>ドメイン修正の用途</h3>
+            <p class="noticeMsg">制作環境から公開環境へのサーバーやドメインの変更時に使用する機能です。</p>
+            <p>ルートブログのドメイン設定とconfig.server.phpのDOMAINの項目を修正します。</p>
+            <p>子ブログ等のドメイン設定は、ルートブログからログイン後に管理ページ上から修正します。</p>
+        <h3>注意事項</h3>
+            <p class="errorMsg">登録済みライセンスが有効なシステムに対しては、この機能を使用しないでください。<br />
+            登録と異なるドメインに設定を変更をするとライセンス認証が切れて、サイトを利用できなくなる可能性があります。</p>
+    <form action="" method="post" class="acms-form">
+        <h3>変更後の新しいドメインを指定してください</h3>
+            <p><input type="text" name="domain" value="{domain}" size="20" /></p>
+        <!-- BEGIN domain_input:error --><p class="errorMsg">ドメインを入力してください。</p><!-- END domain_input:error -->
+        <!-- BEGIN domain_invalid:error --><p class="errorMsg">有効なドメインではありません。</p><!-- END domain_invalid:error -->
+        <!-- BEGIN config_permission:error --><p class="errorMsg">config.server.phpのパーミッションを777に設定してください。</p><!-- END config_permission:error -->
+        <!-- BEGIN rewrite_config:error --><p class="errorMsg">config.server.phpの書き換えに失敗しました。</p><!-- END rewrite_config:error -->
+        <p id="submitBtn"><input type="submit" name="submit" value="ドメインの設定を修正します" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#error -->
+
+<!-- BEGIN step#result -->
+    <h2>ルートブログのドメイン設定を修正しました</h2>
+        <h3>{domain} に書き換えました</h3>
+            <p>表示や動作に問題がある場合は、正しいドメインへの書き換えをセットアップから再試行してください。</p>
+<!-- END step#result -->
+
+<p><a href="./index.php">メンテナンスメニューに戻る</a></p>
+</div>
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

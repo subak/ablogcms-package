@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN ${1:this}:veil -->
+${2:}
+<!-- END ${1:this}:veil -->
+]]></content>
+	<tabTrigger>:veil</tabTrigger>
+</snippet>

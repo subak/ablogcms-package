@@ -1,0 +1,40 @@
+/* ---------------
+ topicpath
+--------------- */
+.acms-topicpath {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+	.font-size(11);
+	line-height: 1;
+	@media screen and (max-width: 768px) {
+		// 右寄せ
+		&.acms-float-right {
+			float: none;
+			padding-left: 10px;
+		}
+	}
+	// 中の要素
+	li {
+		float: left;
+		margin-right: 5px;
+		color: #999999;
+		+ li:before {
+			content: "/";
+			margin-right: 5px;
+			color: #999999;
+		}
+	}
+	// リンク
+	a {
+		color: #333333;
+		.font-size(11);
+		line-height: 1;
+		&:link {
+			text-decoration: none;
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

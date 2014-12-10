@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Links id="${1:module_id}" -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<ul>
+	<!-- BEGIN loop -->
+	<li><a href="{url}">{name}</a></li>
+	<!-- END loop -->
+</ul>
+</div>
+<!-- END_MODULE Links -->]]></content>
+	<tabTrigger>!Links</tabTrigger>
+</snippet>

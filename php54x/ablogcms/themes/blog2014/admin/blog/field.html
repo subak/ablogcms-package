@@ -1,0 +1,29 @@
+<h3 class="acms-admin-title2">カスタム設定</h3>
+<table class="adminTable acms-table-admin-edit" style="margin-bottom:30px">
+	<tr>
+		<th>メインイメージ<i data-acms-tooltip="ヘッダー画像を設定します" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<!-- BEGIN image@path:veil -->
+			<input type="hidden" name="mainImg@old" value="{mainImg@path}" />
+			<input type="hidden" name="mainImg@secret" value="{mainImg@secret}" />
+			<label for="input-checkbox-image@edit" class="acms-form-checkbox">
+			<input type="checkbox" name="mainImg@edit" value="delete" id="input-checkbox-image@edit" />
+			<i class="acms-ico-checkbox"></i> 削除</label><br />
+			<img src="%{ARCHIVES_DIR}{mainImg@path}" width="480" /><br /><!-- END image@path:veil -->
+			<input type="file" name="mainImg" size="20" />
+			<input type="hidden" name="field[]" value="mainImg" />
+			<input type="hidden" name="mainImg:extension" value="image" />
+			<input type="hidden" name="mainImg@width" value="1200" />
+			<input type="hidden" name="mainImg@tinyWidth" value="640" />
+			<br />
+			<span>（サイズ：幅1200px、リサイズ：幅640px）</span>
+		</td>
+	</tr>
+	<tr>
+		<th>Google Analytics<i data-acms-tooltip="Google Analytics の解析用のタグを設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<textarea name="googleAnalytics" cols="60" rows="5">{googleAnalytics}</textarea>
+			<input type="hidden" name="field[]" value="googleAnalytics" />
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,70 @@
+<section id="filter" class="sectionBox">
+
+<h1 class="sectionTitle" id="admin">絞り込みフィルター</h1>
+
+<div class="acms-filter">
+	<form class="acms-form" method="post" action="">
+		<div class="acms-form-group">
+			絞り込み:
+			
+			<select name="status">
+				<option value="">全てのステータス</option>
+				<option value="open">公開</option>
+				<option value="close">非公開</option>
+				<option value="draft">下書き</option>
+			</select>
+			<input type="hidden" value="status" name="query[]">
+			
+			
+			<select name="uid">
+				<option value="">全てのユーザー</option>
+			</select>
+			
+
+			<select id="js-entry_index_category_filter" name="cid">
+				<option value="">全てのカテゴリー</option>
+			</select>
+			<input type="hidden" id="js-entry_index_category_filter_dup" value="" name="_cid">
+			<input type="hidden" value="_cid" name="query[]">
+
+			
+			<select name="_bid">
+				<option value="">現在のブログ</option>
+				<option selected="selected" value="1">a-blog cms</option>
+			</select>
+			<input type="hidden" value="_bid" name="query[]">
+			
+			
+			<label class="acms-form-checkbox" for="input-checkbox-axis-descendant-or-self">
+				<input type="checkbox" id="input-checkbox-axis-descendant-or-self" value="descendant-or-self" name="axis"><i class="acms-ico-checkbox"></i>下階層のブログも表示
+			</label>
+			<input type="hidden" value="self" name="axis">
+		</div>
+
+		<div class="acms-form-group">
+			<label class="acms-show-sp" for="filter-keyword">キーワード:</label>
+			<input type="text" placeholder="タイトル・本文・カスタムフィールドから検索（複数指定可）" id="filter-keyword" class="acms-form-width-medium" value="" name="keyword">
+		</div>
+		&nbsp;
+		<label class="acms-show-sp" for="filter-order">ソート:</label>
+		<select id="filter-order" name="order" class="input-sm">
+			<option value="datetime-asc">日付 (昇順)</option>
+		</select>
+		&nbsp;
+		<label class="acms-show-sp" for="filter-limit">表示数:</label>
+		<select id="filter-limit" name="limit">
+			<option value="5">5</option>
+		</select>
+
+		<input type="submit" class="acms-btn-admin acms-btn-admin-info acms-width-sp" value="表示" name="#">
+
+	</form>
+</div>
+
+<pre class="code HTML">
+&lt;div class="acms-filter"&gt;
+   ...
+&lt;/div&gt;
+</pre>
+
+</section>

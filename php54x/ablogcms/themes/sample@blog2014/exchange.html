@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>データ変換</title>
+<meta name="keywords" content="%{META_KEYWORDS}">
+<meta name="description" content="%{META_DESCRIPTION}" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="%{BASE_URL}rss2.xml" />
+
+<!-- スタイルの読み込み -->
+<!--#include file="/include/link.html"-->
+
+<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--><!-- BEGIN_MODULE Js -->
+<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<script type="text/javascript" src="/js/blog.js"></script>
+<!--BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Blog_Field -->{googleAnalytics}[raw]<!-- END_MODULE Blog_Field --><!-- END_MODULE Touch_Unlogin -->
+
+<!--#include file="/include/css.html"-->
+<!-- BEGIN_MODULE Js -->
+<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<style>
+	body {
+		margin: 0 0 0 10px;
+	}
+	ul {
+		margin-bottom : 10px;
+	}
+	table {
+		margin : 10px;
+		padding : 10px;
+	}
+</style>
+<script type="text/javascript">
+$(function ( )
+{
+	$('select[name="step"]').val($('td.datatype').attr('id'));
+});
+</script>
+</head>
+
+<body>
+<!-- BEGIN_MODULE Form -->
+<form action="" method="post" class="acms-form">
+	<table>
+		<tr>
+			<th>色</th><!-- BEGIN step -->
+			<td class="datatype">
+				<select name="color">
+					<option value="red"{color:selected#red}>赤</option><!-- colorとcolor[0]は同じ -->
+					<option value="green"{color[0]:selected#green}>緑</option>
+					<option value="blue"{color[0]:selected#blue}>青</option>
+				</select>
+			</td><!-- END step --><!-- BEGIN step#radio -->
+			<td id="radio" class="datatype">
+				<ul class="acms-list-nostyle">
+					<li><label class="acms-form-radio"><input type="radio" name="color" value="red"{color:checked#red} /><i class="acms-ico-radio"></i> 赤</label></li>
+					<li><label class="acms-form-radio"><input type="radio" name="color" value="green"{color:checked#green} /><i class="acms-ico-radio"></i> 緑</label></li>
+					<li><label class="acms-form-radio"><input type="radio" name="color" value="blue"{color:checked#blue} /><i class="acms-ico-radio"></i> 青</label></li>
+				</ul>
+			</td><!-- END step#radio --><!-- BEGIN step#text -->
+			<td id="text" class="datatype">
+				<input type="text" name="color" value="{color}" />
+			</td><!-- END step#text --><!-- BEGIN step#checkbox -->
+			<td id="checkbox" class="datatype"><!-- BEGIN color:touch#red -->
+				<label class="acms-form-checkbox"><input type="checkbox" name="color" value="red" checked="checked" /> <i class="acms-ico-checkbox"></i>赤</label><!-- END color:touch#red --><!-- BEGIN color:touch#green -->
+				<label class="acms-form-checkbox"><input type="checkbox" name="color" value="green" checked="checked" /> <i class="acms-ico-checkbox"></i>緑</label><!-- END color:touch#green --><!-- BEGIN color:touch#blue -->
+				<label class="acms-form-checkbox"><input type="checkbox" name="color" value="blue" checked="checked" /> <i class="acms-ico-checkbox"></i>青</label><!-- END color:touch#blue -->
+			</td><!-- END step#checkbox --><!-- BEGIN step#hidden -->
+			<td id="hidden" class="datatype"><!-- BEGIN color:touch#red-->
+				赤 <input type="hidden" name="color" value="red" /><!-- END color:touch#red --><!-- BEGIN color:touch#green -->
+				緑 <input type="hidden" name="color" value="green" /><!-- END color:touch#green --><!-- BEGIN color:touch#blue -->
+				青 <input type="hidden" name="color" value="blue" /><!-- END color:touch#blue -->
+			</td><!-- END step#hidden --><!-- BEGIN step#multiselect -->
+			<td id="multiselect" class="datatype">
+				<select name="color[]" multiple="multiple">
+					<option value="red"{color:selected#red}>赤</option>
+					<option value="green"{color:selected#green}>緑</option>
+					<option value="blue"{color:selected#blue}>青</option>
+				</select>
+			</td><!-- END step#multiselect --><!-- BEGIN step#multicheck -->
+			<td id="multicheck" class="datatype">
+				<ul class="acms-list-nostyle">
+					<li class="acms-form-checkbox"><label><input type="checkbox" name="color[]" value="red"{color:checked#red} /> <i class="acms-ico-checkbox"></i>赤</label></li>
+					<li class="acms-form-checkbox"><label><input type="checkbox" name="color[]" value="green"{color:checked#green} /> <i class="acms-ico-checkbox"></i>緑</label></li>
+					<li class="acms-form-checkbox"><label><input type="checkbox" name="color[]" value="blue"{color:checked#blue} /> <i class="acms-ico-checkbox"></i>青</label></li>
+				</ul>
+			</td><!-- END step#multicheck --><!-- BEGIN step#multitext -->
+			<td id="multitext" class="datatype"><!-- BEGIN color:veil -->
+				<ul class="acms-list-nostyle"><!-- BEGIN color:loop -->
+					<li><input type="text" name="color[]" value="{color}" /></li><!-- END color:loop -->
+				</ul><!-- END color:veil -->
+				<!--<ul class="acms-list-nostyle">
+					<li><input type="text" name="color[]" value="{color}" /></li>
+					<li><input type="text" name="color[]" value="{color[1]}" /></li>
+					<li><input type="text" name="color[]" value="{color[2]}" /></li>
+				</ul>-->
+			</td><!-- END step#multitext --><!-- BEGIN step#multihidden -->
+			<td id="multihidden" class="datatype">
+				<ul class="acms-list-nostyle"><!-- BEGIN color[0]:touch#red -->
+					<li>赤 <input type="hidden" name="color[0]" value="red" /></li><!-- END color[0]:touch#red --><!-- BEGIN color[1]:touch#green -->
+					<li>緑 <input type="hidden" name="color[1]" value="green" /></li><!-- END color[1]:touch#green --><!-- BEGIN color[0]:touch#blue -->
+					<li>青 <input type="hidden" name="color[2]" value="blue" /></li><!-- END color[0]:touch#blue --><!-- BEGIN color[1]:touch#blue -->
+					<li>青 <input type="hidden" name="color[2]" value="blue" /></li><!-- END color[1]:touch#blue --><!-- BEGIN color[2]:touch#blue -->
+					<li>青 <input type="hidden" name="color[2]" value="blue" /></li><!-- END color[2]:touch#blue -->
+				</ul>
+			</td><!-- END step#multihidden --><!-- BEGIN step#radiorepeat -->
+			<td id="radiorepeat" class="datatype">
+				<ul class="acms-list-nostyle">
+					<li>
+						<ul class="acms-list-nostyle">
+							<li><label class="acms-form-radio"><input type="radio" name="color[0]" value="red"{color[0]:checked#red} /><i class="acms-ico-radio"></i> 赤</label></li>
+							<li><label class="acms-form-radio"><input type="radio" name="color[0]" value="green"{color[0]:checked#green} /><i class="acms-ico-radio"></i> 緑</label></li>
+							<li><label class="acms-form-radio"><input type="radio" name="color[0]" value="blue"{color[0]:checked#blue} /><i class="acms-ico-radio"></i> 青</label></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="acms-list-nostyle">
+							<li><label class="acms-form-radio"><input type="radio" name="color[1]" value="red"{color[1]:checked#red} /><i class="acms-ico-radio"></i> 赤</label></li>
+							<li><label class="acms-form-radio"><input type="radio" name="color[1]" value="green"{color[1]:checked#green} /><i class="acms-ico-radio"></i> 緑</label></li>
+							<li><label class="acms-form-radio"><input type="radio" name="color[1]" value="blue"{color[1]:checked#blue} /><i class="acms-ico-radio"></i> 青</label></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="acms-list-nostyle">
+							<li><label class="acms-form-radio"><input type="radio" name="color[2]" value="red"{color[2]:checked#red} /><i class="acms-ico-radio"></i> 赤</label></li>
+							<li><label class="acms-form-radio"><input type="radio" name="color[2]" value="green"{color[2]:checked#green} /><i class="acms-ico-radio"></i> 緑</label></li>
+							<li><label class="acms-form-radio"><input type="radio" name="color[2]" value="blue"{color[2]:checked#blue} /><i class="acms-ico-radio"></i> 青</label></li>
+						</ul>
+					</li>
+				</ul>
+			</td><!-- END step#radiorepeat --><!-- BEGIN step#selectrepeat -->
+			<td id="selectrepeat" class="datatype">
+				<ul class="acms-list-nostyle">
+					<li>
+						<select name="color[0]">
+							<option value="red"{color[0]:selected#red}>赤</option>
+							<option value="green"{color[0]:selected#green}>緑</option>
+							<option value="blue"{color[0]:selected#blue}>青</option>
+						</select>
+					</li>
+					<li>
+						<select name="color[1]">
+							<option value="red"{color[1]:selected#red}>赤</option>
+							<option value="green"{color[1]:selected#green}>緑</option>
+							<option value="blue"{color[1]:selected#blue}>青</option>
+						</select>
+					</li>
+					<li>
+						<select name="color[2]">
+							<option value="red"{color[2]:selected#red}>赤</option>
+							<option value="green"{color[2]:selected#green}>緑</option>
+							<option value="blue"{color[2]:selected#blue}>青</option>
+						</select>
+					</li>
+				</ul>
+			</td><!-- END step#selectrepeat -->
+		</tr>
+	</table>
+	<input type="hidden" name="field[]" value="color" />
+
+	<input type="submit" name="ACMS_POST_Form_Chain" value="切り替える" class="acms-btn-admin" />
+	<select name="step">
+		<option value="">セレクトボックス</option>
+		<option value="radio">ラジオボタン</option>
+		<option value="text">テキスト</option>
+		<option value="checkbox">チェックボックス</option>
+		<option value="hidden">ヒドゥン</option>
+		<option value="multiselect">マルチセレクト</option>
+		<option value="multicheck">マルチチェック</option>
+		<option value="multitext">マルチテキスト</option>
+		<option value="multihidden">マルチヒドゥン</option>
+		<option value="radiorepeat">ラジオリピート</option>
+		<option value="selectrepeat">セレクトリピート</option>
+	</select>
+	<!-- 上の項目から下の項目へは変換可能 -->
+</form><!-- END_MODULE Form -->
+
+</body>
+</html>

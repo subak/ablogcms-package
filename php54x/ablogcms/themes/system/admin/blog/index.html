@@ -1,0 +1,115 @@
+<!-- BEGIN_MODULE Admin_Blog_Index -->
+<!-- BEGIN filter:veil -->
+<div class="acms-filter">
+	<form action="" method="post" class="acms-form">
+		ソート: 
+		<select name="order">
+			<option value="sort-asc"{order:selected#sort-asc}>表示順（昇順）</option>
+			<option value="sort-desc"{order:selected#sort-desc}>表示順（降順）</option>
+			<option value="code-asc"{order:selected#code-asc}>コードネーム（昇順）</option>
+			<option value="code-desc"{order:selected#code-desc}>コードネーム（降順）</option>
+			<option value="id-asc"{order:selected#id-asc}>ID（昇順）</option>
+			<option value="id-desc"{order:selected#id-desc}>ID（降順）</option>
+		</select>
+		表示数:
+		<select name="limit"><!-- BEGIN limit:loop -->
+			<option value="{value}"{selected}>{label}</option><!-- END limit:loop -->
+		</select>
+		<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-btn-admin acms-btn-admin-info acms-width-sp" />
+		<input type="hidden" name="admin" value="blog_index" />
+	</form>
+</div>
+<!-- END filter:veil -->
+
+<!-- BEGIN_MODULE Touch_BlogGlobal --><!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+<form action="" method="post" class="acms-float-right acms-margin-sp">
+	<input type="hidden" name="bid" value="%{BID}" />
+	<input type="hidden" name="admin" value="blog_edit" />
+	<input type="hidden" name="edit" value="insert" />
+	<input type="hidden" name="query[]" value="edit" />
+	<input type="submit" value="子ブログを作成" name="ACMS_POST_2GET" class="acms-btn-admin" />
+</form>
+<!-- END_MODULE Touch_SessionWithAdministration --><!-- END_MODULE Touch_BlogGlobal -->
+
+<!-- END filter:veil -->
+<form method="post" action="" id="sortableForm" class="acms-form">
+	<!-- BEGIN index:veil -->
+	<div class="js-acms-tab-select clearfix acms-margin-sp">
+		<select name="action-blog" class="js-acms-tab-select-value acms-float-left acms-select-large">
+			<option value="action-order"{action-blog:selected#action-order}>表示順</option>
+			<option value="action-status"{action-blog:selected#action-status}>ステータス</option>
+			<option value="action-parent"{action-blog:selected#action-parent}>親ブログを</option>
+			<option value="action-config"{action-blog:selected#action-config}>コンフィグの複製</option>
+		</select>
+		
+		<div id="action-order" class="js-acms-tab-select-panel js-acms-tab-select-active acms-float-left">
+			<input type="submit" name="ACMS_POST_Blog_Index_Sort" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		</div>
+
+		<div id="action-status" class="js-acms-tab-select-panel acms-float-left">
+			<select name="batchStatus">
+				<option value="open">公開</option>
+				<option value="close">非公開</option>
+				<option value="secret">シークレット</option>
+			</select>
+			<input type="submit" name="ACMS_POST_Blog_Index_Status" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		</div>
+
+		<div id="action-parent" class="js-acms-tab-select-panel acms-float-left">
+			<input type="text" name="parent" value="%{BLOG_ID}" size="4" />
+			<input type="submit" name="ACMS_POST_Blog_Index_Parent" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		</div>
+
+		<div id="action-config" class="js-acms-tab-select-panel acms-float-left">
+			コンフィグを現在のブログに
+			<input type="submit" name="ACMS_POST_Blog_Index_Config" value="複製" onclick="return confirm('複製先のブログの元々のコンフィグは削除されます。\n実行してよろしいですか？');" class="acms-btn-admin acms-btn-admin-primary" />
+				<br /><span class="acms-tab-text">( ※選択したブログの元々のコンフィグを削除した後に、複製されたコンフィグが適用されます )</span>
+		</div>
+	</div>
+
+	<table class="adminTable js-admin_table-sortable acms-table-admin acms-table-heading acms-table-hover" data-sort-enable="{sortable}" data-sort-submit="ACMS_POST_Blog_Index_Sort" data-sort-target="#sortableForm">
+		<thead>
+			<tr>
+				<th class="item-handle acms-hide-sp"></th>
+				<th class="acms-table-center acms-th-checkbox acms-show-sp"><label class="acms-form-checkbox"><input type="checkbox" id="checkAll" /><i class="acms-ico-checkbox"></i></label></th>
+				<th class="acms-hide-sp">表示順</th>
+				<th class="acms-hide-sp">bid</th>
+				<th class="acms-show-sp">名前 / URL</th>
+				<th class="acms-hide-sp">アクション</th>
+			</tr>
+		</thead>
+		<tbody><!-- BEGIN blog:loop -->
+			<tr data-sort-level="parallel" data-sort-name="sort-{bid}">
+				<td class="item-handle" style="cursor: move;"><i class="acms-icon-sort"></i></td>
+				<td class="acms-table-center"><label class="acms-form-checkbox"><input type="checkbox" name="checks[]" value="{bid}" /><i class="acms-ico-checkbox"></i></label></td>
+				<td><input type="text" name="sort-{bid}" value="{sort}" size="4" /></td>
+				<td><span class="acms-label label-default admin-eid-label">{bid}</span></td>
+				<td class="acms-show-sp acms-width-sp">
+					<p class="acms-title-sp">
+						<!-- BEGIN status#open -->
+						<span class="acms-label acms-label-info">公開</span><!-- END status#open --><!-- BEGIN status#close -->
+						<span class="acms-label acms-label-danger">非公開</span><!-- END status#close --><!-- BEGIN status#secret -->
+						<span class="acms-label acms-label-warning">シークレット</span><!-- END status#secret -->
+						
+						<strong>{name}</strong><!-- BEGIN branch -->&nbsp;<i class="acms-icon acms-icon-blog-children acms-icon-admin-blog-children"></i><!-- END branch -->
+
+					</p>
+					<p class="acms-blog-index-url"><a href="{urlValue}">{urlLabel}</a></p>
+				</td>
+				<td class="acms-border-bottom-sp acms-show-sp acms-width-sp">
+					<a href="{itemLink}?edit=update" class="acms-btn-admin">移動&nbsp;</a>
+				</td>
+			</tr>
+		<!-- END blog:loop --></tbody>
+	</table>
+	<!-- END index:veil -->
+
+	<!-- BEGIN pager:veil -->
+	<ul class="acms-pager"><!-- BEGIN backLink -->
+		<li><a href="{url}">&lt; 前のページ</a></li><!-- END backLink --><!-- BEGIN page:loop -->
+		<li{pageCurAttr}><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></li><!-- END page:loop --><!-- BEGIN lastPage:veil -->
+		<li><a href="{lastPageUrl}">...{lastPage}</a></li><!-- END lastPage:veil --><!-- BEGIN forwardLink -->
+		<li><a href="{url}">次のページ &gt;</a></li><!-- END forwardLink -->
+	</ul><!-- END pager:veil -->
+</form>
+<!-- END_MODULE Admin_Blog_Index -->

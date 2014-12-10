@@ -1,0 +1,209 @@
+<div class="entryFormColumn">
+	<!-- BEGIN adminEntryColumn -->
+	<!-- BEGIN column:loop -->
+	<div class="entryFormColumnItem entryFormColumnItem-opened">
+		<!-- .entryFormColumnHead -->
+		<div class="entryFormColumnHead clearfix">
+			<div class="sorthandle"><i class="acms-icon-sort"></i></div>
+			<div class="label">{clname}</div>
+			<div class="togglebody acms-sp-hide"><i class="acms-icon acms-icon-close"></i></div>
+			<div class="removethis"><i class="acms-icon acms-icon-delete"></i></div>
+
+			<input type="hidden" name="id[]" value="{uniqid}" />
+			<input type="hidden" name="type[]" value="{cltype}" />
+			<input type="hidden" name="clid[]" value="{clid}" />
+
+			<div class="entryFormColumnHeadLayoutBox"><!-- BEGIN sort:veil -->
+				<select name="sort[]"><!-- BEGIN sort:loop -->
+					<option value="{value}"{selected}>{label}</option><!-- END sort:loop -->
+				</select><!-- END sort:veil -->
+			</div>
+		</div>
+		<!-- /.entryFormColumnHead -->
+		<!-- .entryFormColumnBody -->
+		<div class="entryFormColumnBody">
+			<!-- BEGIN text -->
+			<table class="entryFormColumnSettingTable formUnitLabel">
+				<tr>
+					<th>ラベル</th>
+					<td><input type="text" name="text_label_{id}" value="{label}" class="acms-form-width-3quarters" /></td>
+				</tr>
+				<tr>
+					<th>説明</th>
+					<td><input type="text" name="text_caption_{id}" value="{caption}" class="acms-form-width-3quarters" /></td>
+				</tr>
+			</table>
+			<!-- END text -->
+
+			<!-- BEGIN textarea -->
+			<table class="entryFormColumnSettingTable formUnitLabel">
+				<tr>
+					<th>ラベル</th>
+					<td><input type="text" name="textarea_label_{id}" value="{label}" class="acms-form-width-3quarters" /></td>
+				</tr>
+				<tr>
+					<th>説明</th>
+					<td><input type="text" name="textarea_caption_{id}" value="{caption}" class="acms-form-width-3quarters" /></td>
+				</tr>
+			</table>
+			<!-- END textarea -->
+
+			<!-- BEGIN radio -->
+			<table class="entryFormColumnSettingTable formUnitLabel">
+				<tr>
+					<th>ラベル</th>
+					<td><input type="text" name="radio_label_{id}" value="{label}" class="acms-form-width-3quarters" /></td>
+				</tr>
+				<tr>
+					<th>説明</th>
+					<td><input type="text" name="radio_caption_{id}" value="{caption}" class="acms-form-width-3quarters" /></td>
+				</tr>
+			</table>
+
+			<table class="entryFormImageTable js-formUnitGroup">
+				<tr>
+					<td colspan="2"><input type="button" class="item-insert acms-btn" value="追加" /></td>
+				</tr>
+				<tr>
+					<th class="formUnitGroupValue">値</th>
+					<th>削除</th>
+				</tr>
+				<!-- BEGIN radio_value:loop -->
+				<tr class="sortable-item">
+					<td><input type="text" name="radio_value_{id}[]" value="{value}" class="acms-form-width-3quarters" /></td>
+					<td><input type="button" class="item-delete acms-btn-admin acms-btn-admin-danger" value="削除" /></td>
+				</tr>
+				<!-- END radio_value:loop -->
+				<tr class="sortable-item item-template">
+					<td><input type="text" name="radio_value_{id}[]" value="" class="acms-form-width-3quarters" /></td>
+					<td><input type="button" class="item-delete acms-btn-admin acms-btn-admin-danger" value="削除" /></td>
+				</tr>
+			</table>
+			<!-- END radio -->
+
+			<!-- BEGIN select -->
+			<table class="entryFormColumnSettingTable formUnitLabel">
+				<tr>
+					<th>ラベル</th>
+					<td><input type="text" name="select_label_{id}" value="{label}" class="acms-form-width-3quarters" /></td>
+				</tr>
+				<tr>
+					<th>説明</th>
+					<td><input type="text" name="select_caption_{id}" value="{caption}" class="acms-form-width-3quarters" /></td>
+				</tr>
+			</table>
+
+			<table class="entryFormImageTable js-formUnitGroup">
+				<tr>
+					<td colspan="2"><input type="button" class="item-insert acms-btn" value="追加" /></td>
+				</tr>
+				<tr>
+					<th class="formUnitGroupValue">値</th>
+					<th>削除</th>
+				</tr>
+				<!-- BEGIN select_value:loop -->
+				<tr class="sortable-item">
+					<td><input type="text" name="select_value_{id}[]" value="{value}" class="acms-form-width-3quarters" /></td>
+					<td><input type="button" class="item-delete acms-btn-admin acms-btn-admin-danger" value="削除" /></td>
+				</tr>
+				<!-- END select_value:loop -->
+				<tr class="sortable-item item-template">
+					<td><input type="text" name="select_value_{id}[]" value="" class="acms-form-width-3quarters" /></td>
+					<td><input type="button" class="item-delete acms-btn-admin acms-btn-admin-danger" value="削除" /></td>
+				</tr>
+			</table>
+			<!-- END select -->
+
+			<!-- BEGIN checkbox -->
+			<table class="entryFormColumnSettingTable formUnitLabel">
+				<tr>
+					<th>ラベル</th>
+					<td><input type="text" name="checkbox_label_{id}" value="{label}" class="acms-form-width-3quarters" /></td>
+				</tr>
+				<tr>
+					<th>説明</th>
+					<td><input type="text" name="checkbox_caption_{id}" value="{caption}" class="acms-form-width-3quarters" /></td>
+				</tr>
+			</table>
+
+			<table class="entryFormImageTable js-formUnitGroup">
+				<tr>
+					<td colspan="2"><input type="button" class="item-insert acms-btn" value="追加" /></td>
+				</tr>
+				<tr>
+					<th class="formUnitGroupValue">値</th>
+					<th>削除</th>
+				</tr>
+				<!-- BEGIN checkbox_value:loop -->
+				<tr class="sortable-item">
+					<td><input type="text" name="checkbox_value_{id}[]" value="{value}" class="acms-form-width-3quarters" /></td>
+					<td><input type="button" class="item-delete acms-btn-admin acms-btn-admin-danger" value="削除" /></td>
+				</tr>
+				<!-- END checkbox_value:loop -->
+				<tr class="sortable-item item-template">
+					<td><input type="text" name="checkbox_value_{id}[]" value="" class="acms-form-width-3quarters" /></td>
+					<td><input type="button" class="item-delete acms-btn-admin acms-btn-admin-danger" value="削除" /></td>
+				</tr>
+			</table>
+			<!-- END checkbox -->
+
+			<!-- .entryFormColumnOption -->
+			<table class="entryFormImageTable formUnitGroupOption">
+				<tr class="detail-column-head">
+					<td colspan="3">
+						<a href="#" class="toggle">- 入力チェック</a>
+					</td>
+				</tr>
+				<tr>
+					<th class="acms-sp-hide">オプション</th>
+					<th class="acms-sp-hide formUnitGroupOptionValue">値</th>
+					<th class="acms-sp-hide">メッセージ</th>
+				</tr><!-- BEGIN option:loop -->
+				<tr>
+					<td class="acms-show-sp">
+						<span class="acms-hide-pc acms-show-sp">オプション</span>
+						<select name="column_validator_{id}[]" class="entryFormOption">
+							<option value="">▼ オプションを選択</option>
+							<optgroup label="入力値の制限">
+								<option value="required"{validator:selected#required}>必須 ( required )</option>
+								<option value="minLength"{validator:selected#minLength}>最小文字数 ( minLength )</option>
+								<option value="maxLength"{validator:selected#maxLength}>最大文字数 ( maxLength )</option>
+								<option value="min"{validator:selected#min}>下限値 ( min )</option>
+								<option value="max"{validator:selected#max}>上限値 ( max )</option>
+							</optgroup>
+							<optgroup label="形式チェック">
+								<option value="digits"{validator:selected#digits}>数字チェック ( digits )</option>
+								<option value="email"{validator:selected#email}>メールアドレスチェック ( email )</option>
+								<option value="url"{validator:selected#url}>URLチェック ( url )</option>
+								<option value="dates"{validator:selected#dates}>日付チェック ( dates )</option>
+								<option value="times"{validator:selected#times}>時間チェック ( times )</option>
+								<option value="regex"{validator:selected#regex}>正規表現マッチ ( regex )</option>
+							</optgroup>
+							<optgroup label="その他">
+								<option value="converter"{validator:selected#converter}>入力の変換 ( converter )</option>
+								<option value="duplication"{validator:selected#duplication}>アドレスの重複禁止 ( duplication )</option>
+							</optgroup>
+						</select>
+					</td>
+					<td class="acms-show-sp formUnitGroupOptionValue">
+						<span class="acms-hide-pc acms-show-sp">値</span>
+						<input type="text" name="column_validator-value_{id}[]" value="{validator-value}" class="acms-form-width-3quarters" />
+					</td>
+					<td class="acms-show-sp acms-border-bottom-sp">
+						<span class="acms-hide-pc acms-show-sp">メッセージ</span>
+						<input type="text" name="column_validator-message_{id}[]" value="{validator-message}" />
+					</td>
+				</tr><!-- END option:loop -->
+			</table>
+			<!-- /.entryFormColumnOption -->
+			</div>
+		<!-- /.entryFormColumnBody -->
+		</div><!-- END column:loop -->
+		<!-- END adminEntryColumn -->
+	<div class="formEntryActionUnit ablogcms--column-add-btn">
+		<div class="sorthandle">
+			<span class="adminBtn">追加</span>
+			<span class="buttonlist"></span>
+		</div>
+	</div>
+</div>

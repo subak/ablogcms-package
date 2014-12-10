@@ -1,0 +1,82 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-schedule"></i>スケジュール管理</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Schedule_Edit -->
+
+<!-- BEGIN msg#update -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>スケジュールのデータを保存しました</p><!-- END msg#update -->
+
+<div class="acms-form-group">
+	<form action="" method="post" class="acms-inline-btn">
+		<input type="hidden" name="bid" value="%{BID}" />
+		<input type="hidden" name="admin" value="schedule_index" />
+		<input type="submit" name="ACMS_POST_2GET" value="一覧" class="acms-btn-admin" />
+	</form>
+
+	<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="/bid/%{BID}/admin/shortcut_edit/?scid=%{scid}&action=Schedule_DataUpdate&admin=schedule_edit-data&edit=add&step=reapply" class="acms-btn-admin acms-shortcut-btn"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+</div>
+
+<!-- BEGIN_MODULE Admin_Schedule_View --><!-- BEGIN unit:loop -->
+<div class="unit"><!-- BEGIN month:loop -->
+		
+		<form action="" method="post" class="acms-inline-btn">
+			<input type="submit" name="" value="&laquo; 前月( {prev} )" class="acms-btn-admin" />
+			<input type="hidden" name="dateArgs" value="{prev}" />
+		</form>
+		
+		<form action="" method="post" class="acms-form acms-inline-btn">
+			<select name="yearArg"><!-- BEGIN yearSelect:loop -->
+				<option value="{sYear}"{selected}>{sYear}</option><!-- END yearSelect:loop -->
+			</select>
+			年
+			<select name="monthArg"><!-- BEGIN monthSelect:loop -->
+				<option value="{sMonth}"{selected}>{sMonth}</option><!-- END monthSelect:loop -->
+			</select>
+			月
+			<input type="submit" name="" value="を編集する" class="acms-btn-admin" />
+		</form>
+
+		<form action="" method="post" class="acms-inline-btn">
+			<input type="submit" name="" value="次月( {next} ) &raquo;" class="acms-btn-admin" />
+			<input type="hidden" name="dateArgs" value="{next}" />
+		</form>
+
+		<form action="" method="post" class="acms-form">
+			<input type="submit" name="ACMS_POST_Schedule_EditData" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			
+			<h3 class="acms-admin-title2">{year}年 {month}月</h3>
+			<table class="{mode} adminTable acms-table-admin-edit"><!-- BEGIN week:loop -->
+				<tr class="week wr{weekRowNo}"><!-- BEGIN day:loop -->
+					<th class="day w{weekNo}"><!-- BEGIN day:veil -->{day} ( {week} )<!-- END day:veil --></th>
+					<!-- BEGIN plan -->
+					<td>
+					<input type="text" name="item{no}[]" value="{item}" class="acms-form-width-full" />
+					</td>
+					<td>
+					<select name="label{no}[]">
+						<option value="">設定しない</option><!-- BEGIN label:loop -->
+						<option value="{key}"{selected}>{label}</option><!-- END label:loop -->
+					</select>
+					</td>
+					<!-- END plan -->
+					<input type="hidden" name="schedule{id}[]" value="item{id}" />
+					<input type="hidden" name="schedule{id}[]" value="label{id}" />
+					<!-- END day:loop -->
+				</tr><!-- END week:loop -->
+			</table>
+			<input type="hidden" name="year" value="{_year}" />
+			<input type="hidden" name="schedule[]" value="year" />
+			<input type="hidden" name="month" value="{_month}" />
+			<input type="hidden" name="schedule[]" value="month" />
+	<!-- END month:loop -->
+	</div><!-- END unit:loop -->
+<!-- END_MODULE Admin_Schedule_View -->
+</form>
+<!-- END_MODULE Admin_Schedule_Edit -->
+<!--#include file="/admin/tooltip/module.html"-->

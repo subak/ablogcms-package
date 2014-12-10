@@ -1,0 +1,152 @@
+<h3 class="acms-admin-title2">サイト設定 基本</h3>
+<table class="adminTable acms-table-admin-edit">
+	<tr>
+		<th>サイト ロゴ<i data-acms-tooltip="サイトのロゴ画像を設定します。（リサイズされません）" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<!-- BEGIN siteLogo@path:veil -->
+			<img src="%{ARCHIVES_DIR}{siteLogo@path}" />
+			<input type="hidden" name="siteLogo@old" value="{siteLogo@path}" /><br />
+			<label>
+				<input type="checkbox" name="siteLogo@edit" value="delete" />削除
+			</label>
+			<!-- END siteLogo@path:veil -->
+			<input type="file" name="siteLogo" size="20" />
+			<input type="hidden" name="field[]" value="siteLogo" />
+			<input type="hidden" name="siteLogo:extension" value="image" />
+			<input type="hidden" name="siteLogo@size" value="{#size}" />
+			<input type="hidden" name="siteLogo@filename" value="" /> ※リサイズされません
+		</td>
+	</tr>
+	<tr>
+		<th>サイト タイトル<i data-acms-tooltip="サイトのタイトルを文字で表示させる際に設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<input type="text" name="siteName" value="{siteName}" class="acms-form-width-full" />
+			<input type="hidden" name="field[]" value="siteName" />
+		</td>
+	</tr>
+	<tr>
+		<th>サイト 説明<i data-acms-tooltip="ロゴの下に表示する説明文を設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<input type="text" name="siteDescription" value="{siteDescription}" class="acms-form-width-full" />
+			<input type="hidden" name="field[]" value="siteDescription" />
+		</td>
+	</tr>
+	<tr>
+		<th>フッターテキスト<i data-acms-tooltip="フッターのテキストを設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<input type="text" name="siteFooter" value="{siteFooter}" class="acms-form-width-full" />
+			<input type="hidden" name="field[]" value="siteFooter" />
+		</td>
+	</tr>
+	<tr>
+		<th>ログインヘッダー<i data-acms-tooltip="ログイン画面のヘッダーを設定します。幅：960px" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<!-- BEGIN loginHeaderImage@path:veil -->
+			<img src="%{ARCHIVES_DIR}{loginHeaderImage@path}" width="480" />
+			<input type="hidden" name="loginHeaderImage@old" value="{loginHeaderImage@path}" /><br />
+			<label>
+				<input type="checkbox" name="loginHeaderImage@edit" value="delete" />削除
+			</label>
+			<!-- END loginHeaderImage@path:veil -->
+			<input type="file" name="loginHeaderImage" size="20" />
+			<input type="hidden" name="field[]" value="loginHeaderImage" />
+			<input type="hidden" name="loginHeaderImage:extension" value="image" />
+			<input type="hidden" name="loginHeaderImage@width" value="960" />
+			<input type="hidden" name="loginHeaderImage@tinyWidth" value="480" />
+			<input type="hidden" name="loginHeaderImage@filename" value="" />
+		</td>
+	</tr>
+</table>
+
+<h3 class="acms-admin-title2">HTML HEADタグ設定</h3>
+<table class="adminTable acms-table-admin-edit">
+	<tr>
+		<th>トップ タイトルタグ<i data-acms-tooltip="トップページに利用するタイトルタグ（title）を設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<input type="text" name="topTitleTag" value="{topTitleTag}" class="acms-form-width-full" />
+			<input type="hidden" name="field[]" value="topTitleTag" />
+		</td>
+	</tr>
+	<tr>
+		<th>トップ Keywords<i data-acms-tooltip="トップページに利用するMETAタグ（Keywords）を設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<input type="text" name="blog_meta_keywords" value="{blog_meta_keywords}" class="acms-form-width-full" />
+			<input type="hidden" name="field[]" value="blog_meta_keywords" />
+		</td>
+	</tr>
+	<tr>
+		<th>トップ Description<i data-acms-tooltip="トップページに利用するMETAタグ（Description）を設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<textarea name="blog_meta_description" rows="5" style="width:80%;">{blog_meta_description}</textarea>
+			<input type="hidden" name="field[]" value="blog_meta_description" />
+		</td>
+	</tr>
+	<tr>
+		<th>Facebook admins<i data-acms-tooltip="FacebookのIDを設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<input type="text" name="fbAdmins" value="{fbAdmins}" size="20" />
+			<input type="hidden" name="field[]" value="fbAdmins" />
+		</td>
+	</tr>
+	<tr>
+		<th>OGP画像<i data-acms-tooltip="Facebook等で利用するOGP画像を設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<!-- BEGIN ogpImage@path:veil -->
+			<img src="%{ARCHIVES_DIR}{ogpImage@path}" style="max-width:100%;" />
+			<input type="hidden" name="ogpImage@old" value="{ogpImage@path}" /><br />
+			<label>
+				<input type="checkbox" name="ogpImage@edit" value="delete" />削除
+			</label>
+			<!-- END ogpImage@path:veil -->
+			<input type="file" name="ogpImage" size="20" />
+			<input type="hidden" name="field[]" value="ogpImage" />
+			<input type="hidden" name="ogpImage:extension" value="image" />
+			<input type="hidden" name="ogpImage@size" value="1200" />
+		</td>
+	</tr>
+</table>
+
+<h3 class="acms-admin-title2">会社情報</h3>
+<table class="adminTable acms-table-admin-edit">
+	<tr>
+		<th>会社名<i data-acms-tooltip="会社名を設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<input type="text" name="companyName" value="{companyName}" class="acms-form-width-full" />
+			<input type="hidden" name="field[]" value="companyName" />
+		</td>
+	</tr>
+	<tr>
+		<th>郵便番号<i data-acms-tooltip="郵便番号を設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<input type="text" name="zip" value="{zip}" size="10" />
+			<input type="hidden" name="field[]" value="zip" />
+		</td>
+	</tr>
+	<tr>
+		<th>住所<i data-acms-tooltip="住所を設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<input type="text" name="address" value="{address}" class="acms-form-width-full" />
+			<input type="hidden" name="field[]" value="address" />
+		</td>
+	</tr>
+	<tr>
+		<th>電話番号<i data-acms-tooltip="電話番号を設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<input type="text" name="tel" value="{tel}" class="acms-form-width-full" />
+			<input type="hidden" name="field[]" value="tel" />
+		</td>
+	</tr>
+</table>
+
+<h3 class="acms-admin-title2">アクセス解析</h3>
+<table class="adminTable acms-table-admin-edit">
+	<tr>
+		<th>Google Analytics<i data-acms-tooltip="Google Analytics の解析用のタグを設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<textarea name="googleAnalytics" cols="60" rows="5">{googleAnalytics}</textarea>
+			<input type="hidden" name="field[]" value="googleAnalytics" />
+		</td>
+	</tr>
+</table>
+
+

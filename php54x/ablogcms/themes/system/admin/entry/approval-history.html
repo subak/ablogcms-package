@@ -1,0 +1,102 @@
+<!-- BEGIN_MODULE Admin_Entry_ApprovalHistory -->
+<header class="acms-grid">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-entry"></i>承認履歴</h1>
+	</div>
+</header>
+
+<!-- BEGIN index#notFound -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>承認履歴がありません。</p><!-- END index#notFound -->
+
+<div class="acms-filter">
+	<form action="" method="post" class="acms-form">
+		<label for="filter-order" class="acms-show-sp">ソート:</label>
+		<select class="input-sm" name="order" id="filter-order">
+			<option value="desc"{order:selected#desc}>日付 (降順)</option>
+			<option value="asc"{order:selected#asc}>日付 (昇順)</option>
+		</select>
+		&nbsp;
+		<label for="filter-limit" class="acms-show-sp">表示数:</label>
+		<select name="limit" id="filter-limit"><!-- BEGIN limit:loop -->
+			<option value="{limit}"{selected}>{limit}</option><!-- END limit:loop -->
+		</select>
+		
+		<input type="hidden" name="bid" value="%{BID}" />
+		<input type="hidden" name="eid" value="%{EID}" />
+		<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-btn-admin acms-btn-admin-info acms-width-sp" />
+		<input type="hidden" name="admin" value="entry_approval-history" />
+	</form>
+</div><!-- /.acms-filter -->
+
+<form method="post" action="" id="entry-list-form" class="acms-form">
+	<!-- BEGIN index -->
+	<table class="adminTable acms-table-admin acms-table-heading acms-table-hover">
+		<!-- <thead class="acms-table-admin-title js-acms_fix_target"> -->
+		<thead>
+			<tr>
+				<th class="acms-hide-sp">タイプ</th>
+				<th class="acms-hide-sp">ID / バージョン名</th>
+				<th class="acms-hide-sp">操作ユーザー</th>
+				<th class="acms-show-sp">日時</th>
+				<th class="acms-show-sp">コメント</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- BEGIN history:loop -->
+			<tr data-sort-level="parallel" data-sort-name="sort-{sort#eid}">
+				<td>
+					<small>
+						<!-- BEGIN type#reject -->
+						<span class="acms-label acms-label-warning admin-status-label">承認却下</span><!-- END type#reject --><!-- BEGIN type#public -->
+						<span class="acms-label acms-label-info admin-status-label">最終承認</span><!-- END type#public --><!-- BEGIN type#request -->
+						<span class="acms-label admin-status-label">承認依頼</span><!-- END type#request --><!-- BEGIN type#trash -->
+						<span class="acms-label acms-label-danger admin-status-label">削除依頼</span><!-- END type#trash -->
+					</small>
+				</td>
+				<td>
+					<span class="acms-label label-default">{rvid}</span>
+					<!-- BEGIN_IF [{title}/nem/] -->
+					<a href="{revisionUrl}">{title}</a><!-- ELSE -->
+					<p>バージョンが削除されています</p><!-- END_IF -->
+				</td>
+				<td>
+					<img src="%{ARCHIVES_DIR}{requestUserIcon}" width="24" height="24" class="acms-admin-icon" style="vertical-align:middle;">{requestUser}
+				</td>
+				<td>
+					<ul class="acms-list-inline">
+						<li>{datetime}[date('Y/n/d H:i')]</li>
+					</ul>
+				</td>
+				<td>
+					{comment}
+				</td>
+			</tr>
+			<!-- END history:loop -->
+		</tbody>
+	</table>
+	<!-- END index -->
+
+	<!-- BEGIN index -->
+	<div class="acms-grid">
+		<div class="acms-col-6">
+			<!-- BEGIN pager:veil -->
+			<div class="acms-pager-container">
+				<ul class="acms-pager"><!-- BEGIN backLink -->
+					<li class="prev"><a href="{url}">&laquo;&nbsp;前へ</a></li><!-- END backLink --><!-- BEGIN page:loop -->
+					<li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop --><!-- BEGIN lastPage:veil -->
+					<li class="last"><a href="{lastPageUrl}">...{lastPage}</a></li><!-- END lastPage:veil --><!-- BEGIN forwardLink -->
+					<li class="next"><a href="{url}">次へ&nbsp;&raquo;</a></li><!-- END forwardLink -->
+				</ul>
+			</div>
+			<!-- END pager:veil -->
+		</div>
+		<div class="acms-col-6">
+			<div class="acms-itemsAmount-container">
+				<p>{itemsFrom}件 - {itemsTo}件 / 全{itemsAmount}件</p>
+			</div>
+		</div>
+	</div><!-- /.acms-grid -->
+	<!-- END index -->
+</form>
+<div class="js-acms_fix_target acms_fix_bg"><div class="acms_fix_bg_index"></div></div>
+<!-- END_MODULE Admin_Entry_ApprovalHistory -->

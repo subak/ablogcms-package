@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* ---------------
+汎用スタイル jqm.css
+テンプレートにあるclassの初期値設定
+--------------- */
+/* サイトロゴ */
+#siteLogo{
+	margin: 20px 0;
+	text-align: center;
+}
+
+/* ページャ */
+#pager{
+	text-align: center;
+}
+
+/* PCに切り替える */
+#toPc{
+	text-align: center;
+}
+
+/*   フロート解除(不可視)   */
+.clearHidden {
+   display: block;
+   clear: both;
+   visibility: hidden;
+   height: 0;
+   margin: 0;
+   border: none;
+}
+
+/* ---------------
+エントリー詳細
+--------------- */
+/* エントリーの囲い */
+#sp .entry{
+	padding: 0 0 15px 0;
+}
+
+#sp .entry .entryTitle{
+	margin: 0 0 10px 0;
+}
+
+/* 文字間 */
+.entry ul li,
+.entry ol li{
+	line-height: 1.7;
+}
+
+/* リスト */
+.entry ul{
+	margin: 0 0 20px 10px;
+	padding-left: 10px;
+}
+
+/* 番付きリスト */
+.entry ol{
+	margin: 0 0 20px 15px;
+	padding-left: 10px;
+}
+
+/* テーブル */
+.entry table{
+	width: 100%;
+	margin-bottom: 20px;
+	border-collapse: collapse;
+	border-bottom: 1px solid #ccc;
+}
+
+.entry table th{
+	text-align: left;
+}
+
+.entry table th,
+.entry table td{
+	vertical-align: middle;
+	border-top: 1px solid #ccc;
+	padding: 6px 10px 4px 0;
+}
+
+/* ソース */
+.entry pre{
+	padding: 15px;
+	margin-bottom: 20px;
+	background-color: #FFFFFF;
+	border: solid 1px #CCC;
+
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+/* 画像位置 */
+.entry .column-image-left,
+.entry .column-image-right,
+.entry .column-image-auto,
+.entry .column-image-center{
+	margin-bottom: 20px;
+}
+
+/* 引用 */
+.entry blockquote{
+	margin: 0 0 20px;
+	padding: 5px 0 5px 10px;
+	border-left: solid 4px #CCC;
+}
+
+/* タグ一覧 */
+#tagTitle{
+	margin: 0 0 5px;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 1;
+}
+
+#tagList{
+	margin: 0;
+	padding: 0;
+}
+
+#tagList li{
+	display: inline;
+	margin: 0 10px 10px 0;
+	font-size: 13px;
+}

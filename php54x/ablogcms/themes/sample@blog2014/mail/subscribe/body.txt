@@ -1,0 +1,12 @@
+読者登録の申請を行いました。
+
+名前 : {name}
+パスワード : {pass}
+所属 : {position}
+肩書き : {title}
+自己紹介文 : {profile}
+画像 : %{HTTP_ARCHIVES_DIR}{image@path}
+代替テキスト : {image@alt}
+
+以下のリンクをクリックし、メールアドレス、パスワードを入力してログインして下さい。
+{subscribeUrl}

@@ -1,0 +1,58 @@
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+本メールはシステムからの自動配信メールです。
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+{name#1} 様
+
+%{BLOG_NAME} をご利用いただき、誠にありがとうございます。
+以下のとおり、ご注文を承りました。
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+■ お客様情報
+お名前：{name#1} ( {ruby#1} ) 様
+ご住所：〒{zip#1} {prefecture#1} {city#1} {field_1#1} {field_2#1}
+お電話：{telephone#1}
+
+■ お届け先
+お名前：{name#2} ( {ruby#2} ) 様
+ご住所：〒{zip#2} {prefecture#2} {city#2} {field_1#2} {field_2#2}
+お電話：{telephone#2}
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+[注文番号] {code}
+[決済方法] {payment}
+[配送方法] {deliver}<!-- BEGIN request_date:veil -->
+[配送希望日] {request_date}<!-- END request_date:veil --><!-- BEGIN request_time:veil -->
+[配送希望時間] {request_time}<!-- END request_time:veil --><!-- BEGIN request_others:veil -->
+[その他オプション] {request_others}<!-- END request_others:veil -->
+
+[ご注文の内容]
+{cart}
+
+商品　　計{amount}点
+小計　　￥{subtotal}[number_format]（税抜{tax-omit[number_format]}＋税計{tax-only}[number_format]）
+<!-- BEGIN note:veil -->
+[備考]
+{note}<!-- END note:veil -->
+
+***************************************************************
+ご配送の諸費用　￥{charge#deliver}[number_format]<!-- BEGIN item_except:touch#on -->
+( 上記は概算の配送料です。後ほど正確な配送料をお知らせします。それまでご入金はお控えください。 )<!-- END item_except:touch#on --><!-- BEGIN charge#payment:veil -->
+お支払い手数料　￥{charge#payment}[number_format]<!-- END charge#payment:veil --><!-- BEGIN charge#others:veil -->
+その他の手数料　￥{charge#others}[number_format]<!-- END charge#others:veil -->
+合計　　￥{total}[number_format]
+
+※別途、お支払手数料がかかります。
+
+本メールについて心あたりがない場合は、大変お手数ですが
+本メールをご返送いただきますようお願い申し上げます。
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+□□□□□□□商事 株式会社
+
+〒000-0000
+○○県○○○市○○区 ××の××の××
+TEL: 000-000-0000 FAX: 000-000-0000
+E-mail: mail@example.com

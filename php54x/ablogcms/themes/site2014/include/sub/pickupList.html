@@ -1,0 +1,20 @@
+<!-- BEGIN_MODULE Entry_Summary id="pickupList" -->
+<section class="subModuleBox">
+<!--#include file="/admin/module/setting.html"-->
+<h2>ピックアップリスト</h2>
+<ul id="pickupList">
+	<!-- BEGIN unit:loop -->
+	<!-- BEGIN entry:loop -->
+		<li class="js-biggerlink">
+		<div class="photo" style="width:{x}px; height:{y}px; overflow:hidden; position:relative;"><!-- BEGIN image:veil -->
+			<img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" style="left:{left}px; top:{top}px; position:relative;" /><!-- END image:veil --><!-- BEGIN noimage -->
+			noimage
+			<!-- END noimage -->
+		</div>
+		<p><a href="{url}">{title}</a></p>
+		</li>
+	<!-- END entry:loop -->
+	<!-- END unit:loop -->
+</ul>
+</section>
+<!-- END_MODULE Entry_Summary -->

@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN ${1:this}:loop -->
+${2:}
+<!-- END ${1:this}:loop -->
+]]></content>
+	<tabTrigger>:loop</tabTrigger>
+</snippet>

@@ -1,0 +1,49 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-schedule"></i>スケジュール管理</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<div class="acms-form-group">
+	<form action="" method="post" class="acms-float-right js-acms_fix_marker js-acms_fix_target acms-position-right">
+		<input type="hidden" name="bid" value="%{BID}" />
+		<input type="hidden" name="admin" value="schedule_edit" />
+		<input type="hidden" name="edit" value="insert" />
+		<input type="hidden" name="query[]" value="edit" />
+		<input type="submit" name="ACMS_POST_2GET" value="スケジュールセットを作成" class="acms-btn-admin" />
+	</form>
+</div>
+
+<!-- BEGIN_MODULE Admin_Schedule_Index -->
+
+<!-- BEGIN notFound -->
+<p class="acms-alert acms-alert-danger">スケジュールセットがありません。<button class="js-acms-alert-close">×</button></p><!-- END notFound -->
+
+<!-- BEGIN index:touch#result -->
+<table class="adminTable acms-table-admin acms-table-heading">
+	<thead>
+		<tr>
+			<th class="acms-hide-sp">id</th>
+			<th class="acms-hide-sp">セット名</th>
+			<th class="acms-hide-sp">説明</th>
+			<th class="acms-show-sp">登録データ</th>
+			<th class="acms-hide-sp">ラベル</th>
+			<th class="acms-hide-sp">詳細</th>
+		</tr>
+	</thead>
+	<tbody><!-- BEGIN schedule:loop -->
+		<tr>
+			<td class="acms-show-sp acms-width-sp acms-border-top-sp"><span class="acms-label label-default">{id}</span></td>
+			<td class="acms-title-sp acms-show-sp acms-width-sp"><strong>{name}</strong></td>
+			<td class="acms-show-sp acms-width-sp">{desc}[trim(50,...)]</td>
+			<td><a href="{dataUrl}&edit=update" class="acms-btn-admin">表示</a></td>
+			<td><a href="{labelUrl}&edit=update" class="acms-btn-admin">設定</a></td>
+			<td><a href="{itemUrl}&edit=update" class="acms-btn-admin">変更</a></td>
+		</tr>
+	</tbody><!-- END schedule:loop -->
+</table><!-- END index:touch#result -->
+<div class="js-acms_fix_target acms_fix_bg"><div class="acms_fix_bg_index"></div></div>
+<!-- END_MODULE Admin_Schedule_Index -->

@@ -1,0 +1,32 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title">
+			<i class="acms-icon acms-icon-config"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+				<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+				<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->インポート
+		</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Config_Import -->
+<form action="" method="post" enctype="multipart/form-data"><!-- BEGIN failed#fileNotSelected -->
+	<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>ファイルが選択されていません。</p><!-- END failed#fileNotSelected --><!-- BEGIN failed#fileInvalid -->
+	<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>ファイルが読み込めませんでした。</p><!-- END failed#fileInvalid --><!-- BEGIN success -->
+	<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>コンフィグをインポートしました。</p><!-- END success -->
+	
+	<div class="acms-form-group">
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-inline-btn acms-shortcut-btn">ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+
+		<input type="submit" name="ACMS_POST_Config_Import" value="インポート" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+	</div>
+
+	<!-- BEGIN_MODULE Admin_Rule_Name -->
+	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+	<input type="file" name="file" />
+	
+</form>
+<!-- END_MODULE Admin_Config_Import -->

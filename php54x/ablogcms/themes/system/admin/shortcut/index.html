@@ -1,0 +1,48 @@
+<!-- BEGIN_MODULE Admin_Shortcut_Index -->
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-shortcut"></i>ショートカット管理</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN index#notFound -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>ショートカットがありません。</p><!-- END index#notFound --><!-- BEGIN sort#success -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>表示順を変更しました</p><!-- END sort#success -->
+
+<!-- BEGIN index:veil -->
+<form method="post" action="" id="sortableForm" class="acms-form">
+	<table class="adminTable js-admin_table-sortable exceptionSort acms-table-admin acms-table-heading" data-sort-enable="on" data-sort-submit="ACMS_POST_Shortcut_Index_Sort" data-sort-target="#sortableForm">
+	<thead>
+		<tr>
+			<th class="item-handle acms-hide-sp"></th>
+			<th class="acms-hide-sp">表示順</th>
+			<th class="acms-show-sp">ショートカット名</th>
+			<th class="acms-hide-sp">対象ユーザー</th>
+			<th class="acms-hide-sp">アクション</th>
+		</tr>
+	</thead>
+	<tbody><!-- BEGIN shortcut:loop -->
+		<tr data-sort-level="parallel" data-sort-name="sort">
+			<td class="item-handle acms-hide-sp" style="cursor: move;"><i class="acms-icon-sort"></i></td>
+			<td>
+				<select name="sort[]"><!-- BEGIN sort:loop -->
+					<option value="{value}"{selected}>{label}</option><!-- END sort:loop -->
+				</select>
+			</td>
+			<td class="acms-title-sp acms-show-sp acms-width-sp"><a href="{url}">{name}</a></td>
+			<td><!-- BEGIN auth#administration -->
+				管理権限<!-- END auth#administration --><!-- BEGIN auth#compilation -->
+				編集権限<!-- END auth#compilation --><!-- BEGIN auth#contribution -->
+				投稿権限<!-- END auth#contribution -->
+			</td>
+			<td class="acms-show-sp acms-width-sp acms-border-bottom-sp">
+				<a href="{itemUrl}&edit=update" class="acms-btn-admin">変更</a>
+			</td>
+		</tr>
+	<!-- END shortcut:loop --></tbody>
+	</table>
+</form><!-- END index:veil -->
+<!-- END_MODULE Admin_Shortcut_Index -->

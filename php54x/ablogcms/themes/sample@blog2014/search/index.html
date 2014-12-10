@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title><!-- BEGIN_MODULE Touch_Entry -->%{ENTRY_TITLE} | <!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_Category -->%{CATEGORY_NAME} | <!-- END_MODULE Touch_Category -->%{BLOG_NAME}</title>
+<meta name="keywords" content="%{META_KEYWORDS}" />
+<meta name="description" content="%{META_DESCRIPTION}" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="%{BASE_URL}rss2.xml" />
+
+<!-- スタイルの読み込み -->
+<!--#include file="/include/link.html"-->
+
+<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--><!-- BEGIN_MODULE Js -->
+<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<script type="text/javascript" src="/js/blog.js"></script>
+<!--BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Blog_Field -->{googleAnalytics}[raw]<!-- END_MODULE Blog_Field --><!-- END_MODULE Touch_Unlogin -->
+
+<!--#include file="/include/css.html"-->
+</head>
+<body>
+<div class="titleInner">
+	<div class="mainImg" class="clearfix">
+		<div class="gradient">
+			<div class="acms-container">
+				<div class="acms-grid-r">
+				<h1 class="siteTitle"><a href="%{BASE_URL}">%{BLOG_NAME}</a></h1>
+				<p class="siteCaption">%{META_DESCRIPTION}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--グローバルナビゲーション-->
+<!--#include file="/include/globalNavigation.html"-->
+
+<div class="acms-container">
+	<div class="acms-grid-r contents clearfix">
+		<div class="acms-col-9">
+			<!--#include file="/admin/action.html"-->
+
+			<!-- BEGIN_MODULE Tag_Filter -->
+			<!-- BEGIN tagBox -->
+			<section id="tagFilter">
+				<h2>選択されているタグ : <!-- BEGIN selected:loop --><a href="{url}">{name}</a><!-- BEGIN glue --> , <!-- END glue --><!-- END selected:loop --></h2>
+				<!-- BEGIN choice:veil -->
+				<p id="nextTagTitle">タグを絞り込む : <!-- BEGIN choice:loop --><a href="{url}">{name}</a> <!-- END choice:loop -->
+					<!-- END choice:veil -->
+				</p>
+			</section>
+			<!-- END tagBox -->
+			<!-- END_MODULE Tag_Filter -->
+
+			<!-- BEGIN_MODULE Entry_Body -->
+			<!-- BEGIN notFound -->
+			<section class="acms-entry">
+				<h2 class="notFoundTitle">Not found</h2>
+				<p>お探しの記事は見つかりませんでした。</p>
+			</section>
+			<!-- END notFound -->
+
+			<!-- 1記事▼▼ -->
+			<!-- BEGIN entry:loop -->
+
+			<article class="acms-entry">
+			<div class="acms-inner">
+				<!--#include file="/admin/entry/title.html"-->
+
+				<!-- BEGIN title:veil -->
+				<!-- エントリーのタイトル　開始▼▼ -->
+				<header class="entryHeader clear fix">
+					<p class="entryDate">
+						<!-- BEGIN date:veil -->
+						<time pubdate="pubdate" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日</time>
+						<!-- END date:veil -->
+
+						<!-- BEGIN category:veil --> ｜
+						<!-- BEGIN category:loop -->
+						<span class="entryCategory"><a href="{url}">{name}</a></span>
+						<!-- BEGIN glue -->
+						&lt;
+						<!-- END glue -->
+						<!-- END category:loop -->
+						<!-- END category:veil -->
+					</p>
+					<h1 class="entryTitle"><a href="{titleUrl}">{title}[raw]</a></h1>
+				</header>
+				<!-- エントリーのタイトル　終了▲▲ -->
+				<!-- END title:veil -->
+
+				<section>
+					<!-- BEGIN unit:veil -->
+					<!--#include file="/include/unit.html"-->
+					<hr class="clearHidden" />
+					<!-- END unit:veil -->
+					<!-- BEGIN continueLink:veil -->
+					<p class="continueLink clear"><a href="{continueUrl}">→「{continueName}」の続きを読む</a></p>
+					<!-- END continueLink:veil -->
+					<!-- BEGIN adminEntryEdit -->
+					<!--#include file="/admin/entry/edit.html"-->
+					<!--#include file="/admin/entry/add.html"-->
+					<!-- END adminEntryEdit -->
+					<!-- BEGIN tag:veil -->
+					<dl class="entryTag">
+						<dt>tag</dt>
+						<!-- BEGIN tag:loop -->
+						<dd><a href="{url}">{name}</a></dd><!-- END tag:loop -->
+					</dl><!-- END tag:veil -->
+					<!--#include file="/admin/entry/action.html"-->
+				</section>
+				<!-- BEGIN footer:veil -->
+				<footer>
+					<p class="entryFooter">Posted by {posterName} at <time>{date#H}:{date#i}</time> | <a href="{inheritUrl}">Permalink</a>
+                        <!-- BEGIN commentAmount --> | <a href="{commentUrl}#comment">comment ( {commentAmount} )</a><!-- END commentAmount --></p>
+					<!--#include file="/include/snsButton.html"-->
+				</footer>
+				<!-- END footer:veil -->
+			</div>
+			</article>
+			
+			<!-- BEGIN_MODULE Touch_Entry -->
+			<!-- コメントのインクルード -->
+			<!--#include file="/include/comment.html"-->
+			<!-- END_MODULE Touch_Entry -->
+			
+			<!-- END entry:loop -->
+			<!-- 1記事▲▲ -->
+
+			<!-- BEGIN pager:veil -->
+			<!-- ページ送り　開始▼▼ -->
+			<nav>
+				<ul class="entryListNavi clear fix">
+					<li class="forwardPageLink">&nbsp;<!-- BEGIN forwardLink --><a href="{url}" rel="next">次へ&nbsp;&gt;&gt;</a><!-- END forwardLink --></li>
+					<li class="pageLink"><!-- BEGIN page:loop --><!-- BEGIN link#front --><a href="{url}"><!-- END link#front --><span>{page}</span><!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --><!-- END page:loop --><!-- BEGIN lastPage:veil -->	…<a href="{lastPageUrl}">{lastPage}</a><!-- END lastPage:veil --></li>
+					<li class="backPageLink"><!-- BEGIN backLink --><a href="{url}" rel="prev">&lt;&lt;&nbsp;前へ</a><!-- END backLink -->&nbsp;</li>
+				</ul>
+			</nav>
+			<!-- ページ送り　終了▲▲ -->
+			<!-- END pager:veil -->
+
+			<!-- BEGIN serialNavi:veil -->
+			<nav>
+				<ul class="entryListNavi clear fix">
+					<li class="prev">
+						<!-- BEGIN prevLink -->
+						<a href="{url}" rel="prev">&lt;&lt;&nbsp;{name}[trim(27, '…')|escape]</a>
+						<!-- END prevLink -->
+					 </li>
+					<li class="all"><a href="{upperUrl}">一覧へ</a></li>
+					<li class="next"> 
+						<!-- BEGIN nextLink -->
+						<a href="{url}" rel="next">{name}[trim(27, '…')|escape]&nbsp;&gt;&gt;</a>
+						<!-- END nextLink -->
+					</li>
+				</ul>
+			</nav>
+			<!-- END serialNavi:veil -->
+
+			<!-- END_MODULE Entry_Body -->
+		</div>
+		<div class="sub acms-col-3">
+			<section class="adminMenu" class="subPart"><dl><!--#include file="/search/form.html"--></dl></section>
+		</div>
+	</div>
+</div>
+
+<footer class="footer">
+	<p class="copyright"><small>&copy; %{DOMAIN}</small></p>
+</footer>
+</body>
+</html>

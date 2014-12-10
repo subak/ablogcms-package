@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	ACMS.Config.postIncludeEffect = 'fade';
+</script>
+
+<div class="acms-popup-heading clearfix">
+	<h2 class="acms-popup-heading-title">バージョン一覧</h2>
+	<a class="js-revision_close acms-popup-heading-close" href="#" title="閉じる"><i class="acms-icon-delete"></i></a>
+</div>
+
+<div class="acms-padding-large">
+	<!-- BEGIN_MODULE Admin_Entry_Revision_Index --><!-- BEGIN revisionTmp -->
+	<form class="js-post_include acms-form acms-margin-bottom-large" method="post" target="#revison_box">
+		<input type="text" name="revisionName" value="" size="40" placeholder="バージョン名">
+		<input type="submit" name="ACMS_POST_Revision_Duplicate" class="acms-btn-admin" value="作業領域からバージョンを作成" onclick="return confirm('作業領域からバージョンを作成します。よろしいですか？');" />
+	</form><!-- END revisionTmp -->
+	<!-- END_MODULE Admin_Entry_Revision_Index -->
+
+	<!--#include file="/ajax/revision-index-list.html" -->
+</div>

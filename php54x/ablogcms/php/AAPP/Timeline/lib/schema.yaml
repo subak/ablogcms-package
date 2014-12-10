@@ -1,0 +1,50 @@
+%{PREFIX}timeline: 
+  timeline_id: 
+    Field: 'timeline_id'
+    Type: 'int(11)'
+    Null: 'NO'
+    Key: 'PRI'
+    Default: 
+    Extra: 
+  timeline_text: 
+    Field: 'timeline_text'
+    Type: 'varchar(512)'
+    Null: 'NO'
+    Key: 
+    Default: 
+    Extra: 
+  timeline_image: 
+    Field: 'timeline_image'
+    Type: 'varchar(512)'
+    Null: 'NO'
+    Key: 
+    Default: 
+    Extra: 
+  timeline_geo: 
+    Field: 'timeline_geo'
+    Type: 'varchar(512)'
+    Null: 'NO'
+    Key: 
+    Default: 
+    Extra: 
+  timeline_datetime: 
+    Field: 'timeline_datetime'
+    Type: 'datetime'
+    Null: 'NO'
+    Key: 
+    Default: 
+    Extra: 
+  timeline_uid: 
+    Field: 'timeline_uid'
+    Type: 'int(11)'
+    Null: 'NO'
+    Key: 
+    Default: 
+    Extra: 
+  timeline_bid: 
+    Field: 'timeline_bid'
+    Type: 'int(11)'
+    Null: 'NO'
+    Key: 
+    Default: 
+    Extra: 

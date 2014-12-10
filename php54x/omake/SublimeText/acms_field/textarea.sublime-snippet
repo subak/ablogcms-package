@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<textarea name="${1:name}">\{${1:name}\}</textarea>
+<input type="hidden" name="field[]" value="${1:name}">
+]]></content>
+	<tabTrigger>!acms:field</tabTrigger>
+	<description>Textarea</description>
+</snippet>

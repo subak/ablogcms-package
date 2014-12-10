@@ -1,0 +1,128 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Entry_Body id="${1:module_id}" -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+
+<!-- BEGIN notFound -->
+<p>お探しのエントリーは見つかりませんでした。</p>
+<!-- END notFound -->
+
+<!-- BEGIN serialNavi:veil -->
+<ul>
+	<li>
+		<!-- BEGIN prevNotFound -->prev not found<!-- END prevNotFound -->
+		<!-- BEGIN prevLink -->
+		<a href="{url}"><< {name}[trim(27, '...')|escape]</a>
+		<!-- END prevLink -->
+		 </li>
+	<li><a href="{upperUrl}">一覧へ</a></li>
+	<li> 
+		<!-- BEGIN nextNotFound -->next not found<!-- END nextNotFound -->
+		<!-- BEGIN nextLink -->
+		<a href="{url}">{name}[trim(27, '...')|escape] >></a>
+		<!-- END nextLink -->
+	</li>
+</ul>
+<!-- END serialNavi:veil -->
+
+<!-- BEGIN entry:loop -->
+<!--#include file="/admin/entry/revision-info.html"-->
+<div>
+	<!-- BEGIN date:veil -->
+	<p>{date#Y}.{date#m}.{date#d}</p>
+	<!-- END date:veil --><!-- BEGIN new:touch -->
+	<p>新着</p>
+	<!-- END new:touch -->
+</div>
+<div>
+	<!--#include file="/admin/entry/title.html"-->
+	<!-- BEGIN title:veil -->
+	<div>
+		<h2><a href="{titleUrl}">{title}[raw]</a></h2>
+		<!-- BEGIN category:veil -->
+		<p>カテゴリー：
+			<!-- BEGIN category:loop -->
+			<span><a href="{url}">{name}</a></span>
+			<!-- BEGIN glue -->
+			<
+			<!-- END glue -->
+			<!-- END category:loop -->
+			</p>
+		<!-- END category:veil -->
+	</div>
+	<!-- END title:veil -->
+	<div>
+		<!-- BEGIN unit:veil -->
+		<!--#include file="/include/unit.html"-->
+		<hr />
+		<!-- END unit:veil -->
+		<!-- BEGIN continueLink:veil -->
+		<p><a href="{continueUrl}">「{continueName}」の続きを読む</a></p>
+		<!-- END continueLink:veil -->
+
+		<!-- BEGIN formBody -->
+		<!--#include file="/include/form/unit.html"-->
+		<hr />
+		<!-- END formBody -->
+
+		<!-- BEGIN adminEntryEdit -->
+		<!--#include file="/admin/entry/edit.html"-->
+		<!--#include file="/admin/entry/add.html"-->
+		<!-- END adminEntryEdit -->
+
+		<!-- BEGIN adminFormEdit -->
+		<!--#include file="/admin/form2/edit.html"-->
+		<!-- END adminFormEdit -->
+
+		<!-- BEGIN tag:veil -->
+		<p>関連タグ：<!-- BEGIN tag:loop --><a href="{url}">{name}</a> <!-- END tag:loop --></p>
+		<!-- END tag:veil -->
+		
+		<!--#include file="/admin/entry/action.html"-->
+	</div>
+	<!-- BEGIN footer:veil -->
+	<div>
+		<p>Posted by {posterName} at {date#H}:{date#i}  <a href="{inheritUrl}#permalink">パーマリンク</a>
+			<!-- BEGIN commentAmount -->
+			<a href="{commentUrl}#comment">コメント ( {commentAmount} )</a>
+			<!-- END commentAmount -->
+		</p>
+	</div>
+	<!-- END footer:veil -->
+</div>
+<!-- END entry:loop -->
+
+<!-- BEGIN pager:veil -->
+<p>
+	全 {itemsAmount} 件中 {itemsFrom} 〜 {itemsTo} 件目を表示
+	<!-- BEGIN firstPage:veil --><a href="{firstPageUrl}">{firstPage}</a><!-- END firstPage:veil -->
+	<!-- BEGIN page:loop --><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue -->, <!-- END glue --><!-- END page:loop -->
+	<!-- BEGIN lastPage:veil --> ...<a href="{lastPageUrl}">{lastPage}</a><!-- END lastPage:veil -->
+</p>
+<p>
+	<!-- BEGIN backLink --><a href="{url}">« 前の{backNum}件</a><!-- END backLink -->
+	<!-- BEGIN forwardLink --><a href="{url}">次の{forwardNum}件 »</a><!-- END forwardLink -->
+</p>
+<!-- END pager:veil -->
+
+
+<!-- BEGIN micropager -->
+<p>
+    全 {itemsAmount} 件中 {itemsFrom} 〜 {itemsTo} 件目を表示
+    <!-- BEGIN page:loop --><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue -->, <!-- END glue --><!-- END page:loop -->
+    <!-- BEGIN lastPage:veil --> ...<a href="{lastPageUrl}">{lastPage}</a><!-- END lastPage:veil -->
+</p>
+<p>
+    <!-- BEGIN backLink --><a href="{url}">« 前の{backNum}件</a><!-- END backLink -->
+    <!-- BEGIN forwardLink --><a href="{url}">次の{forwardNum}件 »</a><!-- END forwardLink -->
+</p><!-- END micropager -->
+
+<!-- BEGIN micropage:veil --><!-- BEGIN micropageLink -->
+<p><a href="{url}">{label}</a></p><!-- END micropageLink --><!-- END micropage:veil -->
+
+</div>
+
+<!-- END_MODULE Entry_Body -->]]></content>
+	<tabTrigger>!Entry_Body</tabTrigger>
+	<description>Entry_Body v2.0</description>
+</snippet>

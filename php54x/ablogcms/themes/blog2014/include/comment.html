@@ -1,0 +1,61 @@
+			<!-- コメントエリア　開始▼▼ -->
+
+					
+			<!-- コメントフォームのインクルード -->
+			<!--#include file="/admin/comment/edit.html"-->
+			
+			<!-- BEGIN_MODULE Comment_Body -->
+			<!-- コメント表示　開始▼▼ -->
+			
+			<!-- BEGIN relation:veil -->
+			<div class="relationWrapper">
+				<div class="relation">
+					<!-- BEGIN comment:loop -->
+
+						<!-- BEGIN passBox:veil -->
+						<article class="comment {status}">
+						
+							<!-- BEGIN body:veil -->
+							<!-- コメント本文　開始▼▼ -->
+							<h3 class="comTitle"><a name="comment-{cmid}">{title}<!-- BEGIN awaiting#header -->承認待ち<!-- END awaiting#header --></a></h3>
+			
+							<div class="comBody">
+			
+								<p>{body}[nl2br]
+									<!-- BEGIN awaiting#body -->
+									このコメントは承認待ちです。
+									<!-- END awaiting#body -->
+								</p>
+							
+								<div class="comFooter">
+									<time pubdate="pubdate">{date#Y}年{date#m}月{date#d}日</time> <!-- BEGIN posterName:veil --><span>{posterName}</span><!-- END posterName:veil --> <!-- BEGIN posterLink#front -->
+									<a href="{url}">WEB<!-- END posterLink#front --><!-- BEGIN posterLink#rear --></a><!-- END posterLink#rear -->
+								</div>
+															
+								<!-- コメントの管理操作ボタンのインクルード -->
+								<!--#include file="/admin/comment/action.html"-->
+							
+							</div>
+							
+							<!-- コメント本文　終了▲▲ -->
+							<!-- END body:veil -->
+							
+						</article>
+						<!-- END passBox:veil -->
+						
+					<!-- END comment:loop -->
+					
+					<!-- BEGIN backLink -->
+					<p class="relationNaviNext"><a href="{url}" id="naviNext">&laquo; 前のコメント</a></p>
+					<!-- END backLink -->
+					
+					<!-- BEGIN forwardLink -->
+					<p class="relationNaviPrev">&nbsp;<a href="{url}" id="naviPrev">次のコメント &raquo;</a></p>
+					<!-- END forwardLink -->
+					<hr class="clearHidden" />
+				</div>
+			</div>
+			<!-- END relation:veil -->
+			
+			<!-- コメント表示　終了▲▲ -->
+			<!-- END_MODULE Comment_Body -->

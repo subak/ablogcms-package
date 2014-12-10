@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title><!-- BEGIN_MODULE Touch_Entry -->%{ENTRY_TITLE} | <!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_Category -->%{CATEGORY_NAME} | <!-- END_MODULE Touch_Category -->%{BLOG_NAME}</title>
+<meta name="keywords" content="%{META_KEYWORDS}" />
+<meta name="description" content="%{META_DESCRIPTION}" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="%{BASE_URL}rss2.xml" />
+
+<link href="/css/normalize.css" rel="stylesheet" type="text/css" media="all">
+<link href="/css/acms.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="/css/blog2014.min.css" rel="stylesheet" type="text/css" media="all">
+<!-- <link href="/css/custom.css" rel="stylesheet" type="text/css" media="all"> -->
+
+<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--><!-- BEGIN_MODULE Js -->
+<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<script type="text/javascript" src="/js/blog.js"></script>
+<!--BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Blog_Field -->{googleAnalytics}[raw]<!-- END_MODULE Blog_Field --><!-- END_MODULE Touch_Unlogin -->
+
+<!--#include file="/include/css.html"-->
+</head>
+<body>
+
+<div class="titleInner">
+	<div class="mainImg clearfix">
+		<div class="gradient">
+			<div class="acms-container">
+				<div class="acms-grid-r">
+				<h1 class="siteTitle"><a href="%{BASE_URL}">%{BLOG_NAME}</a></h1>
+				<p class="siteCaption">%{META_DESCRIPTION}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--グローバルナビゲーション-->
+<!--#include file="/include/globalNavigation.html"-->
+
+<div class="acms-container">
+	<div class="acms-grid-r contents clearfix">
+		<div class="main acms-col-9">
+
+			<!-- 管理画面 -->
+			<!--#include file="/admin/action.html"-->
+
+			<!-- タグフィルター -->
+			<!--#include file="/include/tagFilter.html"-->
+
+			<!-- エントリーボディー -->
+			<!--#include file="/include/entryBody.html"-->
+
+		</div>
+		<div class="sub acms-col-3">
+
+			<!-- 編集 -->
+			<!--#include file="/include/subAdmin.html"-->
+
+			<div class="tabletContainer">
+
+				<!-- タブレット用フッター用ナビゲーション -->
+				<!--#include file="/include/footerNavigation.html"-->
+
+				<!-- プロフィール -->
+				<!--#include file="/include/profile.html"-->
+
+				<!--検索フォーム-->
+				<!--#include file="/include/searchForm.html"-->
+
+				<!-- エントリーリスト -->
+				<!--#include file="/include/entryList.html"-->
+
+				<!-- カテゴリーリスト -->
+				<!--#include file="/include/categoryList.html"-->
+
+				<!-- タグクラウド -->
+				<!--#include file="/include/tagCloud.html"-->
+
+				<!-- リンク集 -->
+				<!--#include file="/include/links.html"-->
+
+				<!-- バナー -->
+				<!--#include file="/include/banner.html"-->
+
+				<!-- RSS,Login,a-blog cmsへのリンク -->
+				<!--#include file="/include/subFooterBox.html"-->
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<footer class="footer">
+	<p class="copyright"><small>&copy; %{DOMAIN}</small></p>
+</footer>
+</body>
+</html>

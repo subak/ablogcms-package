@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="%{META_KEYWORDS}">
+		<meta name="description" content="%{META_DESCRIPTION}">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+		<title><!-- BEGIN_MODULE Touch_Entry -->%{ENTRY_TITLE} | <!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_Category -->%{CATEGORY_NAME} | <!-- END_MODULE Touch_Category -->%{BLOG_NAME}</title>
+
+		<!-- Core CSS -->
+		<!--#include file="/include/head/link.html"-->
+
+		<!-- Custom styles for this template -->
+		<link href="offcanvas.css" rel="stylesheet">
+
+		<!-- Core Javascript -->
+		<!--#include file="/include/head/js.html"-->
+	</head>
+
+	<body>
+		<!-- ナビゲーション -->
+		<!-- #include file="/include/header/navigationBlack.html" -->
+
+		<div class="container">
+
+			<div class="row row-offcanvas row-offcanvas-right">
+
+				<div class="col-xs-12 col-sm-9">
+					<p class="pull-right visible-xs">
+						<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+					</p>
+
+					<!-- 管理画面 -->
+					<!--#include file="/admin/action.html"-->
+
+
+					<!-- エントリーボディ -->
+					<!-- #include file="/include/main/entryBody.html" -->
+				</div><!--/span-->
+
+				<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+				<!-- サイドバー -->
+				<!--#include file="/include/sub/sidebarOffcanvas.html" -->
+				</div><!--/span-->
+			</div><!--/row-->
+
+			<hr>
+
+			<!-- フッター -->
+			<!-- #include file="/include/footer/footer.html" -->
+
+		</div><!--/.container-->
+
+
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="offcanvas.js"></script>
+	</body>
+</html>

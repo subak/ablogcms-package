@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Touch_SslEnable -->
+
+<!-- END_MODULE Touch_SslEnable -->]]></content>
+	<tabTrigger>!acms:touch</tabTrigger>
+    <description>Touch_SslEnable</description>
+</snippet>

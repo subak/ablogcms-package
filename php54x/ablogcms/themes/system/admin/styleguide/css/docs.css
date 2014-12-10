@@ -1,0 +1,81 @@
+#navSub{
+	position: fixed;
+	top: 40px;
+	left: 180px;
+}
+
+.acms-grid,
+.acms-grid-r{
+	margin-bottom: 30px;
+}
+
+#grid .panel,
+#a-grid .panel{
+	padding: 10px 15px;
+	border: solid 1px #FF4D4D;
+	background-color: #FFBFBF;
+	font-size: 16px;
+	word-wrap: break-word;
+}
+
+#grid .panel_nest{
+	padding: 10px 15px;
+	border: solid 1px #4D4DFF;
+	background-color: #BFCFFF;
+	font-size: 16px;
+	word-wrap: break-word;
+}
+
+.sectionBox{
+	margin-bottom: 50px;
+	padding: 40px 15px 15px;
+	border: solid 1px #CCCCCC;
+}
+.articleBox{
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	border-bottom: dotted 1px #CCCCCC;
+}
+
+.sectionTitle{
+	margin-top: 0;
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: #EEEEEE;
+	border-radius: 5px;
+	font-size: 20px;
+}
+.sectionTitle2{
+	margin-top: 50px;
+	padding: 3px 0 3px 15px;
+	border-left: solid 15px #DDDDDD;
+	font-size: 18px;
+}
+.sectionTitle3{
+	color: #555555;
+}
+
+.ex-code-prettify-contents{
+	margin-top: 10px;
+	margin-bottom: 35px;
+}
+
+/* webフォント */
+#fonts .acms-dl dt{
+	margin-bottom: 20px;
+}
+
+#fonts li{
+	margin-bottom: 10px;
+}
+
+#fonts .acms-icon{
+	font-size: 26px;
+}
+
+/* iPadの縦のとき */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	#navSub{
+		display: none;
+	}
+}

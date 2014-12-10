@@ -1,0 +1,36 @@
+<meta property="og:url" content="%{PERMALINK}" />
+<meta property="og:site_name" content="%{ROOT_BLOG_NAME}" />
+<!-- BEGIN_MODULE Blog_Field -->
+<meta property="fb:admins" content="{fbAdmins}">
+<!-- END_MODULE Blog_Field -->
+<meta property="og:type" content="website" /><!-- BEGIN_MODULE Blog_Field --><!-- BEGIN ogpImage:veil -->
+<meta property="og:image" content="%{HTTP_ARCHIVES_DIR}{ogpImage@path}" /><!-- END ogpImage:veil --><!-- BEGIN_MODULE Touch_Top -->
+<meta property="og:title" content="{topTitleTag}" />
+<meta name="keywords" content="{blog_meta_keywords}">
+<meta name="description" content="{blog_meta_description}">
+<meta property="og:description" content="{blog_meta_description}" />
+<!-- END_MODULE Touch_Top --><!-- END_MODULE Blog_Field -->
+<!-- BEGIN_MODULE Touch_Index -->
+<meta property="og:title" content="%{CATEGORY_NAME} %{BLOG_NAME} %{PARENT_BLOG_NAME}" />
+<meta property="og:type" content="article" />
+<!-- BEGIN_MODULE Category_Field -->
+<!-- BEGIN category_meta_keywords:veil --><meta name="keywords" content="{category_meta_keywords}"><!-- END category_meta_keywords:veil -->
+<!-- BEGIN category_meta_description:veil --><meta name="description" content="{category_meta_description}">
+<meta property="og:description" content="{category_meta_description}" /><!-- END category_meta_description:veil -->
+<!-- END_MODULE Category_Field -->
+<!-- END_MODULE Touch_Index -->
+
+<!-- BEGIN_MODULE Touch_Entry -->
+<meta property="og:title" content="%{ENTRY_TITLE} %{CATEGORY_NAME} %{BLOG_NAME} %{PARENT_BLOG_NAME}" />
+<meta property="og:type" content="article" />
+<!-- BEGIN_MODULE Entry_Summary id="ogpSummary" -->
+<!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->
+<!-- BEGIN image:veil --><meta property="og:image" content="%{BLOG_URL}{path}" /><!-- END image:veil -->
+<!-- BEGIN entry_meta_keywords:veil --><meta name="keywords" content="{entry_meta_keywords}"><!-- END entry_meta_keywords:veil -->
+<!-- BEGIN entry_meta_description:veil --><meta name="description" content="{entry_meta_description}">
+<meta property="og:description" content="{entry_meta_description}"><!-- END entry_meta_description:veil -->
+<!-- END entry:loop --><!-- END unit:loop -->
+<!-- END_MODULE Entry_Summary -->
+<!-- END_MODULE Touch_Entry -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,  user-scalable=no, initial-scale=1.0">

@@ -1,0 +1,2 @@
+<!-- BEGIN item:loop -->
+<!-- BEGIN item_code:veil -->[{item_code}]<!-- END item_code:veil -->{item_name}：価格{item_price}[number_format]円 x 数量{item_quantity} = {item_price#sum}[number_format]円<!-- END item:loop -->

@@ -1,0 +1,99 @@
+<!-- BEGIN_MODULE Entry_Body -->
+<!-- BEGIN notFound -->
+ <div class="bs-docs-section">
+	<div class="page-header">
+		<h1>Not found</h1>
+	</div>
+	<p>お探しの記事は見つかりませんでした。</p>
+</div>
+<!-- END notFound -->
+
+<!-- 1記事▼▼ -->
+<!-- BEGIN entry:loop -->
+<div class="acms-form-group">
+<!--#include file="/admin/entry/revision-info.html"-->
+</div>
+	<div class="bs-docs-section acms-grid-r">
+		<div class="acms-entry">
+		<!--#include file="/admin/entry/title.html"-->
+
+		<!-- BEGIN title:veil -->
+		<!-- エントリーのタイトル　開始▼▼ -->
+		<div class="page-header">
+			<h1>{title}[raw]</h1>
+		</div>
+		<!-- エントリーのタイトル　終了▲▲ -->
+		<!-- END title:veil -->
+			<!-- BEGIN unit:veil -->
+			<div>
+			<!--#include file="/include/unit.html"-->
+			</div>
+			<hr class="clearHidden" />
+			<!-- END unit:veil -->
+			<!-- BEGIN continueLink:veil -->
+			<p class="continueLink clear"><a href="{continueUrl}">→「{continueName}」の続きを読む</a></p>
+			<!-- END continueLink:veil -->
+
+			<!-- BEGIN formBody -->
+			<!--#include file="/include/form/unit.html"-->
+			<hr class="clearHidden" />
+			<!-- END formBody -->
+
+			<!-- BEGIN adminEntryEdit -->
+			<!--#include file="/admin/entry/edit.html"-->
+			<!--#include file="/admin/entry/add.html"-->
+			<!-- END adminEntryEdit -->
+
+			<!-- BEGIN adminFormEdit -->
+			<!--#include file="/admin/form2/edit.html"-->
+			<!-- END adminFormEdit -->
+							
+			<!-- BEGIN tag:veil -->
+			<dl class="entryTag">
+				<dt>tag</dt>
+				<!-- BEGIN tag:loop -->
+				<dd><a href="{url}">{name}</a></dd><!-- END tag:loop -->
+			</dl><!-- END tag:veil -->
+			<!--#include file="/admin/entry/action.html"-->
+		</div>
+	</div>
+<!-- BEGIN_MODULE Touch_Entry -->
+<!-- コメントのインクルード -->
+<!--#include file="/include/comment.html"-->
+<!-- END_MODULE Touch_Entry -->
+
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+
+<!-- BEGIN pager:veil -->
+<!-- ページ送り　開始▼▼ -->
+<nav class="pagination pagination-centered">
+	<ul>
+		<!-- BEGIN backLink --><li><a href="{url}">&laquo;</a></li><!-- END backLink -->
+		<!-- BEGIN page:loop --><li class="{pageCurAttr}"><!-- BEGIN link#front --><a href="{url}"><!-- END link#front --><span>{page}</span><!-- BEGIN link#rear --></a><!-- END link#rear --></li><!-- BEGIN glue --><!-- END glue --><!-- END page:loop --><!-- BEGIN lastPage:veil --><li><a href="{lastPageUrl}">…{lastPage}</a></li><!-- END lastPage:veil -->
+		<!-- BEGIN forwardLink --><li><a href="{url}">&raquo;</a></li><!-- END forwardLink -->
+		
+	</ul>
+</nav>
+<!-- ページ送り　終了▲▲ -->
+<!-- END pager:veil -->
+
+<!-- BEGIN serialNavi:veil -->
+<nav class="pager">
+	<ul class="entryListNavi clearfix">
+		<li class="previous">
+			<!-- BEGIN prevLink -->
+			<a href="{url}" rel="prev">&lt;&lt;&nbsp;{name}[trim(27, '...')|escape]</a>
+			<!-- END prevLink -->
+		 </li>
+		<li class="all"><a href="{upperUrl}">一覧へ</a></li>
+		<li class="next"> 
+			<!-- BEGIN nextLink -->
+			<a href="{url}" rel="next">{name}[trim(27, '...')|escape]&nbsp;&gt;&gt;</a>
+			<!-- END nextLink -->
+		</li>
+	</ul>
+</nav>
+<!-- END serialNavi:veil -->
+
+<!-- END_MODULE Entry_Body -->

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="%{CHARSET}"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=%{CHARSET}" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="%{BASE_URL}rss2.xml" />
+<title><!-- BEGIN_MODULE Touch_Entry -->%{ENTRY_TITLE} | <!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_Category -->%{CATEGORY_NAME} | <!-- END_MODULE Touch_Category -->%{BLOG_NAME}</title>
+<meta name="keywords" content="%{META_KEYWORDS}" />
+<meta name="description" content="%{META_DESCRIPTION}" />
+</head>
+<body>
+
+<!--#include file="/include/header.html"-->
+
+<!-- メインカラム開始▼▼ -->
+
+<!-- BEGIN_MODULE Touch_NotAdmin --><!-- 管理用パーツのインクルード -->
+<!--#include file="/admin/action.html"-->
+	<!-- END_MODULE Touch_NotAdmin -->
+			
+<!-- エントリー表示▼▼ -->
+<!-- BEGIN_MODULE Entry_Body -->
+
+<!-- BEGIN serialNavi:veil -->
+<p align="center">
+<!-- BEGIN prevLink -->
+<a href="{url}">&lt;&lt;</a>
+<!-- END prevLink -->
+&nbsp;<a href="{upperUrl}">一覧へ</a>&nbsp;
+<!-- BEGIN nextLink -->
+<a href="{url}">&gt;&gt;</a>
+<!-- END nextLink -->
+</p>
+<!-- END serialNavi:veil -->
+
+<!-- タグの絞り込み開始▼▼ -->
+<!-- BEGIN guideBox:veil -->
+
+<!-- BEGIN_MODULE Tag_Filter -->
+<!-- BEGIN tagBox -->
+
+<p id="selectTag">選択されているタグ&nbsp;:&nbsp;
+<!-- BEGIN selected:loop -->
+<span><a href="{url}">{name}</a></span>
+<!-- BEGIN glue -->&gt;<!-- END glue -->
+<!-- END selected:loop -->
+</p>
+
+<!-- BEGIN choice:veil -->
+<p id="nextTagTitle">タグを絞り込む&nbsp;:
+<!-- BEGIN choice:loop -->
+<span><a href="{url}">{name}</a></span>
+<!-- END choice:loop -->
+<!-- END choice:veil -->
+</p>
+<!-- END tagBox -->
+<!-- END_MODULE Tag_Filter -->
+<!-- END guideBox:veil -->
+<!-- タグの絞り込み終了▲▲ -->
+
+<!-- BEGIN notFound -->
+<p>お探しの記事は見つかりませんでした。</p>
+<!-- END notFound -->
+	
+<!-- BEGIN entry:loop -->
+
+<!-- 日付開始▼▼ -->
+<!-- BEGIN date:veil -->
+<p class="dateClass date{date#w}">{date#Y}.{date#m}.{date#d}</p>
+<!-- END date:veil -->
+<!-- 日付終了▲▲ -->
+		
+<!-- 編集時タイトルのインクルード -->
+<!--#include file="/admin/entry/title.html"-->
+			
+<!-- エントリーヘッダー開始▼▼ -->
+<!-- BEGIN title:veil -->
+<h2><a href="{titleUrl}">{title}[raw]</a></h2>
+<!-- BEGIN category:veil -->
+<p>カテゴリー：
+<!-- BEGIN category:loop -->
+<a href="{url}">{name}</a>
+<!-- BEGIN glue -->&lt;<!-- END glue -->
+<!-- END category:loop -->
+</p>
+<!-- END category:veil -->
+<!-- END title:veil -->
+<!-- エントリーヘッダー終了▲▲ -->
+			
+<!-- エントリー本文開始▼▼ -->
+<!-- BEGIN unit:veil -->
+<!-- カラム表示のインクルード -->
+<!--#include file="/include/unit.html"-->
+<!-- END unit:veil -->
+
+<!-- 「続きを読む」開始▼▼ -->
+<!-- BEGIN continueLink:veil -->
+<p><a href="{continueUrl}">「{continueName}」の続きを読む</a></p>
+<!-- END continueLink:veil -->
+<!-- 「続きを読む」終了▲▲ -->
+				
+<!-- BEGIN adminEntryEdit -->
+<!-- エントリーの作成・編集のインクルード -->
+<!--#include file="/admin/entry/edit.html"-->
+<!-- エントリーのユニット追加のインクルード -->
+<!--#include file="/admin/entry/add.html"-->
+<!-- END adminEntryEdit -->
+				
+<!-- BEGIN tag:veil -->
+<p>関連タグ：<!-- BEGIN tag:loop --><a href="{url}">{name}</a>&nbsp;<!-- END tag:loop --></p>
+<!-- END tag:veil -->
+
+<!-- エントリーの管理操作ボタンのインクルード -->
+<!--#include file="/admin/entry/action.html"-->
+<!-- エントリー本文終了▲▲ -->
+
+<!-- END entry:loop -->
+
+<!-- BEGIN pager:veil -->
+<p align="center"><!-- BEGIN page:loop --><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->	{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --><!-- END page:loop --><!-- BEGIN lastPage:veil -->	...<a href="{lastPageUrl}">{lastPage}</a><!-- END lastPage:veil --></p>
+<p align="center"><!-- BEGIN backLink --><a href="{url}">&laquo; 前の{backNum}件</a><!-- END backLink -->&nbsp;&nbsp;<!-- BEGIN forwardLink --><a href="{url}">次の{forwardNum}件 &raquo;</a><!-- END forwardLink --></p>
+<!-- END pager:veil -->
+<!-- END_MODULE Entry_Body -->
+<!-- エントリー表示▲▲ -->
+
+<!-- メインカラム▲▲ -->
+
+<!--#include file="/include/nav.html"-->
+
+<!--#include file="/include/footer.html"-->
+
+</body>
+</html>

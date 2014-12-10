@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/*アイコン画像パス修正*/
+.acms-ico-checkbox {
+	background: url('../../themes/system/images/marker/ico_input.png') no-repeat left top;
+	background-size: 40px 60px;
+}
+.acms-form-checkbox input:checked + .acms-ico-checkbox {
+	background: url('../../themes/system/images/marker/ico_input.png') no-repeat left -20px;
+	background-size: 40px 60px;
+}
+
+.acms-ico-radio {
+	background: url('../../themes/system/images/marker/ico_input.png') no-repeat -20px top;
+	background-size: 40px 60px;
+}
+
+.acms-form-radio input:checked + .acms-ico-radio {
+	background: url('../../themes/system/images/marker/ico_input.png') no-repeat -20px -20px;
+	background-size: 40px 60px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0){
+	.acms-form select{
+		background: url('../../themes/system/images/marker/arrow_black03.png'), -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e1e1e1));
+		background: url('../../themes/system/images/marker/arrow_black03.png'), linear-gradient(top, #f9f9f9, #e1e1e1);
+		background-repeat: no-repeat;
+		background-position: right center;
+	}
+	.acms-form select:hover{
+		background:url(../../themes/system/images/marker/arrow_black03.png), -webkit-gradient(linear, left top, left bottom, from(#FCFCFC), to(#E1E1E1)); 
+		background:url(../../themes/system/images/marker/arrow_black03.png),linear-gradient(top, #FCFCFC, #E1E1E1);
+		background-repeat: no-repeat;
+		background-position:  right center;
+	}
+}
+
+.noticeMsg {
+	border: none;
+	background-color: inherit;
+	text-align: left;
+}

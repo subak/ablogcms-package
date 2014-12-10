@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!--#include file="/include/head.html"-->
+<title><!-- BEGIN_MODULE Touch_Entry -->%{ENTRY_TITLE} | <!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_Category -->%{CATEGORY_NAME} | <!-- END_MODULE Touch_Category -->%{BLOG_NAME}</title>
+</head>
+<body>
+<div data-role="page">
+	<header data-role="header">
+		<h1>検索</h1>
+	</header>
+
+	<div data-role="content">
+		<form action="%{BASE_URL}" method="post">
+			<input type="search" name="keyword" value="%{KEYWORD}" placeholder="検索キーワードを入力" />
+			<input type="hidden" name="ACMS_POST_2GET" value="検索" />
+			<input type="hidden" name="bid" value="%{BID}" />
+			<button type="submit" data-transition="fade" data-theme="b">検索する</button>
+			<a data-role="button" data-rel="back">キャンセル</a>
+		</form>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!--#include file="/include/head/admin-meta.html"-->
+<meta name="viewport" content="width=device-width,  user-scalable=no, initial-scale=1.0">
+<title><!-- BEGIN_MODULE Admin_Trim --><!-- BEGIN_MODULE Admin_Title --><!-- BEGIN topic:loop --><!--#include file="/admin/topicpath-list.html" --><!-- END topic:loop --><!-- END_MODULE Admin_Title --><!-- END_MODULE Admin_Trim -->|%{BLOG_NAME}|管理ページ</title>
+<!--#include file="/include/head/admin-css.html"-->
+<!--#include file="/include/head/admin-js.html"-->
+</head>
+<body>
+<div id="outer-wrap">
+<div id="inner-wrap">
+<header id="top" class="acms-bg-black">
+
+<!-- BEGIN_MODULE Admin_Menu -->
+<nav class="acms-navbar-admin acms-navbar-system">
+	<a class="nav-btn acms-btn" id="nav-open-btn" href="#nav"><i class="acms-icon-sort"></i>メニュー</a>
+	
+	<div class="acms-list-blog js-acms-dropdown-toggle">
+		<h1 class="acms-title-blog"><i class="acms-icon acms-icon-logo acms-blog-color"></i><a href="#" class="js-acms-dropdown-btn">%{BLOG_NAME}<span class="acms-arrow-bottom"></span></a></h1>
+		<!-- BEGIN_MODULE Admin_Blog_SelectGlobal -->
+		<ul class="js-acms-dropdown-menu acms-list-scroll"><!-- BEGIN loop -->
+			<li><a href="{adminUrl2}">{indent}[raw]{label}</a></li><!-- END loop -->
+		</ul><!-- END_MODULE Admin_Blog_SelectGlobal -->
+	</div>
+	<p class="acms-list-blog-sp"><i class="acms-icon acms-icon-logo acms-blog-color"></i></p>
+	<div class="acms-navbar-admin-right">
+		<ul class="acms-navbar-admin-nav">
+			<li><a href="%{BLOG_URL}"><i class="acms-icon acms-icon-exit"></i>サイトを表示</a></li>
+			<!-- BEGIN user#profile -->
+			<li class="js-acms-dropdown-toggle acms-dropdown-right"><a href="#" class="js-acms-dropdown-btn"><img src="%{ARCHIVES_DIR}{icon}" width="18" height="18" alt="%{SESSION_USER_NAME}" class="acms-admin-icon-center">%{SESSION_USER_NAME}<span class="acms-arrow-bottom"></span></a>
+				<ul class="js-acms-dropdown-menu">
+					<li><a href="{url}">プロフィール変更</a></li>
+					<li><a href="#" class="js-admin_action_toggle">管理ボックス</a></li>
+					<li id="submit_logout"><a href="#">ログアウト</a></li>
+				</ul>
+			</li><!-- END user#profile -->
+		</ul>
+	</div>
+	<form action="" method="post" class="js-external_submit" target="#submit_logout">
+		<input type="hidden" name="ACMS_POST_Logout" value="Logout" />
+	</form>
+</nav>
+
+</header>
+
+<div class="acms-grid-r">
+
+<div id="nav">
+	<div id="sidebar" class="acms-bg-gray js-perfectScrollbar">
+		<div class="sidebar-container">
+			<nav class="acms-sidebar acms-sidebar-sp">
+				<ul class="acms-sidebar-link">
+					<!-- BEGIN_MODULE Admin_Blog_SelectGlobal -->
+					<li><a href="#" class="spBloglist-fade-head"><i class="acms-icon acms-icon-blog"></i>ブログ<span class="acms-arrow-bottom"></span></a>
+						<ul class="spBloglist-fade-body"><!-- BEGIN loop -->
+							<li><a href="{adminUrl2}">{indent}[raw]{label}</a></li><!-- END loop -->
+						</ul>
+					</li><!-- END_MODULE Admin_Blog_SelectGlobal -->
+					<li><a href="%{BLOG_URL}"><i class="acms-icon acms-icon-exit"></i>サイトを表示</a></li>
+					<li><a href="#" class="spUser-fade-head"><i class="acms-icon acms-icon-user"></i>%{SESSION_USER_NAME}<span class="acms-arrow-bottom"></span></a>
+						<ul class="spUser-fade-body">
+							<li><a href="/bid/%{SBID}/uid/%{SUID}/admin/user_edit/">プロフィール変更</a></li>
+						</ul>
+					</li>
+				</ul>
+				<p class="acms-sidebar-box"><a href="#" id="submit_logout_sp" class="acms-btn-admin block-level large acms-btn-login">ログアウト</a></p>
+				<form action="" method="post" class="js-external_submit" target="#submit_logout_sp">
+					<input type="hidden" name="ACMS_POST_Logout" value="Logout" />
+				</form>
+			</nav>
+
+			<nav class="acms-sidebar">
+			<div class="acms-sidebar-link">
+				<ul><!-- BEGIN dashboard -->
+					<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-dashboard"></i>ダッシュボード</a></li><!-- END dashboard -->
+				</ul>
+			</div>
+			<dl>
+				<!-- BEGIN post:veil -->
+				<dt class="acms-sidebar-title">投稿管理</dt>
+				<dd class="acms-sidebar-link">
+					<ul><!-- BEGIN entry#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-entry"></i>エントリー</a></li><!-- END entry#index --><!-- BEGIN entry#trash -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-trash"></i>ゴミ箱</a></li><!-- END entry#trash --><!-- BEGIN category#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-category"></i>カテゴリー</a></li><!-- END category#index --><!-- BEGIN tag -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-tag"></i>タグ</a></li><!-- END tag --><!-- BEGIN approval#notification -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-checklist"></i>承認通知<!-- BEGIN badge:veil -->&nbsp;<span class="acms-label acms-label-approval">{badge}</span><!-- END badge:veil --></a></li><!-- END approval#notification -->
+					</ul>
+				</dd>
+				<!-- END post:veil -->
+
+				<!-- BEGIN management:veil -->
+				<dt class="acms-sidebar-title">サイト管理</dt>
+				<dd class="acms-sidebar-link">
+					<ul><!-- BEGIN blog#edit -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-blog"></i>ブログ</a></li><!-- END blog#edit --><!-- BEGIN user#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-user"></i>ユーザー</a></li><!-- END user#index --><!-- BEGIN form#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-form"></i>フォーム</a></li><!-- END form#index --><!-- BEGIN comment -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-comment"></i>コメント</a></li><!-- END comment --><!-- BEGIN media#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-media"></i>メディア</a></li><!-- END media#index --><!-- BEGIN role#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-role"></i>ロール</a></li><!-- END role#index --><!-- BEGIN usergroup#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-user-group"></i>ユーザーグループ</a></li><!-- END usergroup#index --><!-- BEGIN workflow#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-checklist"></i>ワークフロー</a></li><!-- END workflow#index --><!-- BEGIN approval#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-checklist"></i>承認履歴一覧</a></li><!-- END approval#index --><!-- BEGIN schedule#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-schedule"></i>スケジュール</a></li><!-- END schedule#index --><!-- BEGIN shop#menu -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-shop"></i>ショップ</a></li><!-- END shop#menu --><!-- BEGIN cart#menu -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-cart"></i>カート</a></li><!-- END cart#menu -->
+
+					</ul>
+				</dd>
+				<!-- END management:veil -->
+
+				<!-- BEGIN customize:veil -->
+				<dt class="acms-sidebar-title">カスタマイズ管理</dt>
+				<dd class="acms-sidebar-link">
+				<ul><!-- BEGIN config#index -->
+					<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-config"></i>コンフィグ</a></li><!-- END config#index --><!-- BEGIN rule#index -->
+					<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-rule"></i>ルール</a></li><!-- END rule#index --><!-- BEGIN module#index -->
+					<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-module"></i>モジュールID</a></li><!-- END module#index --><!-- BEGIN moduleDefault#index -->
+					<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-module"></i>モジュール</a></li><!-- END moduleDefault#index -->
+				</ul>
+				</dd>
+				<!-- END customize:veil -->
+
+				<!-- BEGIN dashboard:veil -->
+				<dt class="acms-sidebar-title">その他管理</dt>
+				<dd class="acms-sidebar-link">
+					<ul><!-- BEGIN checklist -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-checklist"></i>チェックリスト</a></li><!-- END checklist --><!-- BEGIN shortcut#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-shortcut"></i>ショートカット</a></li><!-- END shortcut#index --><!-- BEGIN alias#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-alias"></i>エイリアス</a></li><!-- END alias#index --><!-- BEGIN publish#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-publish"></i>パブリッシュ</a></li><!-- END publish#index --><!-- BEGIN backup#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-backup"></i>バックアップ</a></li><!-- END backup#index --><!-- BEGIN import#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-import"></i>インポート</a></li><!-- END import#index --><!-- BEGIN app#index -->
+						<li{stay}[raw]><a href="{url}"><i class="acms-icon acms-icon-app"></i>拡張アプリ</a></li><!-- END app#index -->
+					</ul>
+				</dd>
+				<!-- END dashboard:veil -->
+
+				<!-- BEGIN_MODULE Admin_App_Menu --><!-- BEGIN app:veil -->
+				<dt class="acms-sidebar-title">拡張メニュー</dt>
+				<dd class="acms-sidebar-link">
+					<ul><!-- BEGIN app:loop -->
+						<li{stay}[raw]><a href="{url}"><span class="acms-icon acms-icon-app"></span>{name}</a></li><!-- END app:loop -->
+					</ul>
+				</dd><!-- END app:veil -->
+				<!-- END_MODULE Admin_App_Menu -->
+			</dl>
+			</nav>
+			<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+		</div>
+	</div>
+</div>
+<!-- END_MODULE Admin_Menu -->
+
+<div id="acms-main">
+	<div id="js-admin_action_box"<!-- BEGIN_MODULE Touch_NotAdminActionBox --> style="display: none;"<!-- END_MODULE Touch_NotAdminActionBox -->>
+		<!--#include file="/admin/action.html"-->
+	</div>
+	<section id="main" role="main">
+		<!--#include file="/admin/%{ADMIN_PATH}.html"-->
+	</section><!-- /#main -->
+</div>
+
+</div>
+
+</div>
+<!--/#inner-wrap-->
+</div>
+<!--/#outer-wrap-->
+
+<script src="/js/off-canvas/main.js"></script>
+
+</body>
+</html>

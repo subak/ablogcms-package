@@ -1,0 +1,294 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-rule"></i>ルール管理</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Rule_Edit -->
+
+<!-- BEGIN msg#insert -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>ルールを作成しました</p><!-- END msg#insert --><!-- BEGIN msg#update -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>ルールを保存しました</p><!-- END msg#update --><!-- BEGIN msg#delete -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>ルールを削除しました</p><!-- END msg#delete -->
+
+<!-- BEGIN step#reapply -->
+
+<!-- BEGIN headline#insert --><!-- END headline#insert -->
+<!-- BEGIN headline#update --><!-- END headline#update -->
+
+<form method="post" action="" class="acms-form">
+	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+		<div class="acms_fix_bg_index">
+			<a href="%{SCRIPT_ROOT}bid/%{BID}/admin/rule_index/" class="acms-btn-admin">一覧</a>
+
+			<!-- BEGIN submit#insert -->
+			<input type="submit" name="ACMS_POST_Rule_Insert" value="作成" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<!-- END submit#insert -->
+
+			<!-- BEGIN submit#update -->
+			<input type="submit" name="ACMS_POST_Rule_Update" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+
+			<input type="submit" name="ACMS_POST_Rule_Delete" value="削除" onclick="return confirm('ルールに関連づけられたコンフィグも一緒に削除されます。\nよろしいですか？');" class="acms-btn-admin acms-btn-admin-danger" />
+			<input type="hidden" name="takeover" value="{takeover}" />
+			<!-- END submit#update -->
+		</div>
+	</div>
+
+	<h3 class="acms-admin-title2">基本情報</h3>
+	<table class="adminTable acms-table-admin-edit">
+		<tr>
+			<th>ルール名<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このルールを管理するための名前です。（日本語可）"></i></th>
+			<td>
+				<input type="text" name="name" value="{name}" size="50" />
+				<input type="hidden" name="rule[]" value="name" />
+				<input type="hidden" name="name:validator#required" id="input-text-name" />
+				<label for="input-text-name" class="validator-result-{name:validator#required}"> 名前が入力されていません。</label>
+			</td>
+		</tr>
+		<tr>
+			<th>ステータス<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このルールが有効か無効かの設定です。"></i></th>
+			<td>
+				<select name="status">
+					<option value="open"{status:selected#open}>有効</option>
+					<option value="close"{status:selected#close}>無効</option>
+				</select>
+				<input type="hidden" name="rule[]" value="status" />
+				<input type="hidden" name="status:validator#required" />
+				<label for="select-status" class="validator-result-{status:validator#required}"></label>
+			</td>
+		</tr>
+		<tr>
+			<th>説明<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このルールがどのような動作をするかなどのメモです。"></i></th>
+			<td>
+				<textarea name="description" style="width:100%;" rows="3">{description}</textarea>
+				<input type="hidden" name="rule[]" value="description" />
+			</td>
+		</tr>
+		<tr>
+			<th>グローバル<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると、このルールが下の階層のブログでも使用できます。"></i></th>
+			<td>
+				 <!-- BEGIN_MODULE Touch_BlogParent -->
+				<input type="hidden" name="scope" value="local" />
+				<label for="input-checkbox-scope" class="acms-form-checkbox">
+					<input type="checkbox" name="scope" value="global"{scope:checked#global} id="input-checkbox-scope" /><i class="acms-ico-checkbox"></i>下の階層のブログが利用することを許可する
+				</label>
+				<input type="hidden" name="rule[]" value="scope" />
+				 <!-- END_MODULE Touch_BlogParent -->
+				 <!-- BEGIN_MODULE Touch_NotBlogParent -->
+				 <input type="checkbox" disabled="disable"> 下の階層のブログが利用することを許可する ( 子ブログを持たないブログでは設定できません )
+				 <!-- END_MODULE Touch_NotBlogParent -->
+			</td>
+		</tr>
+	</table>
+
+	<h3 class="acms-admin-title2">詳細情報</h3>
+	<table class="adminTable acms-table-admin-edit" id="js-arg_reference">
+		<tr>
+			<th>エイリアスID (aid) <i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エイリアスの管理ID（番号）を指定します。"></i></th>
+			<td>
+				<select name="aid_case">
+					<option value="">指定しない</option>
+					<option value="="{aid_case:selected#=}>=</option>
+					<option value="!="{aid_case:selected#!=}>!=</option>
+					<option value=">"{aid_case:selected#>}>&gt;</option>
+					<option value=">="{aid_case:selected#>=}>&gt;=</option>
+					<option value="<"{aid_case:selected#<}>&lt;</option>
+					<option value="<="{aid_case:selected#<=}>&lt;=</option>
+					<option value="IS NULL"{aid_case:selected#IS NULL}>IS NULL</option>
+					<option value="IS NOT NULL"{aid_case:selected#IS NOT NULL}>IS NOT NULL</option>
+				</select>
+				<input type="hidden" name="rule[]" value="aid_case" />
+			</td>
+			<td>
+				<input type="text" name="aid" value="{aid}" id="input-text-aid" size="6" />
+				<input type="hidden" name="rule[]" value="aid" />
+				<input type="hidden" name="aid:validator#digits" />
+				<label for="input-text-aid" class="validator-result-{aid:validator#digits}">数値を入力して下さい。</label>
+			</td>
+		</tr>
+		<tr>
+			<th>ユーザーID（uid）<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユーザーの管理ID（番号）を指定します。"></i></th>
+			<td>
+				<select name="uid_case">
+					<option value="">指定しない</option>
+					<option value="="{uid_case:selected#=}>=</option>
+					<option value="!="{uid_case:selected#!=}>!=</option>
+					<option value=">"{uid_case:selected#>}>&gt;</option>
+					<option value=">="{uid_case:selected#>=}>&gt;=</option>
+					<option value="<"{uid_case:selected#<}>&lt;</option>
+					<option value="<="{uid_case:selected#<=}>&lt;=</option>
+					<option value="IS NULL"{uid_case:selected#IS NULL}>IS NULL</option>
+					<option value="IS NOT NULL"{uid_case:selected#IS NOT NULL}>IS NOT NULL</option>
+				</select>
+				<input type="hidden" name="rule[]" value="uid_case" />
+			</td>
+			<td>
+				<input type="text" name="uid" value="{uid}" id="input-text-uid" size="6" />　( <a href="#" name="uid" class="js-arg_reference_trigger">ID参照</a> )
+				<input type="hidden" name="rule[]" value="uid" />
+				<input type="hidden" name="uid:validator#digits" />
+				<label for="input-text-uid" class="validator-result-{uid:validator#digits}">数値を入力してください。</label>
+			</td>
+		</tr>
+		<tr>
+			<th>カテゴリーID（cid）<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの管理ID（番号）を指定します。"></i></th>
+			<td>
+				<select name="cid_case">
+					<option value="">指定しない</option>
+					<option value="="{cid_case:selected#=}>=</option>
+					<option value="!="{cid_case:selected#!=}>!=</option>
+					<option value=">"{cid_case:selected#>}>&gt;</option>
+					<option value=">="{cid_case:selected#>=}>&gt;=</option>
+					<option value="<"{cid_case:selected#<}>&lt;</option>
+					<option value="<="{cid_case:selected#<=}>&lt;=</option>
+					<option value="IS NULL"{cid_case:selected#IS NULL}>IS NULL</option>
+					<option value="IS NOT NULL"{cid_case:selected#IS NOT NULL}>IS NOT NULL</option>
+				</select>
+				<input type="hidden" name="rule[]" value="cid_case" />
+			</td>
+			<td>
+				<input type="text" name="cid" value="{cid}" id="input-text-cid" size="6" />　( <a href="#" name="cid" class="js-arg_reference_trigger">ID参照</a> )
+				<input type="hidden" name="rule[]" value="cid" />
+				<input type="hidden" name="cid:validator#digits" />
+				<label for="input-text-cid" class="validator-result-{cid:validator#digits}">数値を入力してください。</label>
+			</td>
+		</tr>
+		<tr>
+			<th>エントリーID（eid）<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーの管理ID（番号）を指定します。"></i></th>
+			<td>
+				<select name="eid_case">
+					<option value="">指定しない</option>
+					<option value="="{eid_case:selected#=}>=</option>
+					<option value="!="{eid_case:selected#!=}>!=</option>
+					<option value=">"{eid_case:selected#>}>&gt;</option>
+					<option value=">="{eid_case:selected#>=}>&gt;=</option>
+					<option value="<"{eid_case:selected#<}>&lt;</option>
+					<option value="<="{eid_case:selected#<=}>&lt;=</option>
+					<option value="IS NULL"{eid_case:selected#IS NULL}>IS NULL</option>
+					<option value="IS NOT NULL"{eid_case:selected#IS NOT NULL}>IS NOT NULL</option>
+				</select>
+				<input type="hidden" name="rule[]" value="eid_case" />
+			</td>
+			<td>
+				<input type="text" name="eid" value="{eid}" id="input-text-eid" size="6" />
+				<input type="hidden" name="rule[]" value="eid" />
+				<input type="hidden" name="eid:validator#digits" />
+				<label for="input-text-eid" class="validator-result-{eid:validator#digits}">数値を入力してください。</label>
+			</td>
+		</tr>
+		<tr>
+			<th>ユーザーコード（ucd）<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユーザーの管理名（英数）を指定します。"></i></th>
+			<td>
+				<select name="ucd_case">
+					<option value="">指定しない</option>
+					<option value="="{ucd_case:selected#=}>=</option>
+					<option value="!="{ucd_case:selected#!=}>!=</option>
+					<option value="LIKE"{ucd_case:selected#LIKE}>LIKE</option>
+					<option value="NOT LIKE"{ucd_case:selected#NOT LIKE}>NOT LIKE</option>
+					<option value="REGEXP"{ucd_case:selected#REGEXP}>REGEXP</option>
+					<option value="NOT REGEXP"{ucd_case:selected#NOT REGEXP}>NOT REGEXP</option>
+					<option value="IS NULL"{ucd_case:selected#IS NULL}>IS NULL</option>
+					<option value="IS NOT NULL"{ucd_case:selected#IS NOT NULL}>IS NOT NULL</option>
+				</select>
+				<input type="hidden" name="rule[]" value="ucd_case" />
+			</td>
+			<td>
+				<input type="text" name="ucd" value="{ucd}" />　( <a href="#" name="ucd" class="js-arg_reference_trigger">CODE参照</a> )
+				<input type="hidden" name="rule[]" value="ucd" />
+			</td>
+		</tr>
+		<tr>
+			<th>カテゴリーコード（ccd）<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの管理名（英数）を指定します。"></i></th>
+			<td>
+				<select name="ccd_case">
+					<option value="">指定しない</option>
+					<option value="="{ccd_case:selected#=}>=</option>
+					<option value="!="{ccd_case:selected#!=}>!=</option>
+					<option value="LIKE"{ccd_case:selected#LIKE}>LIKE</option>
+					<option value="NOT LIKE"{ccd_case:selected#NOT LIKE}>NOT LIKE</option>
+					<option value="REGEXP"{ccd_case:selected#REGEXP}>REGEXP</option>
+					<option value="NOT REGEXP"{ccd_case:selected#NOT REGEXP}>NOT REGEXP</option>
+					<option value="IS NULL"{ccd_case:selected#IS NULL}>IS NULL</option>
+					<option value="IS NOT NULL"{ccd_case:selected#IS NOT NULL}>IS NOT NULL</option>
+				</select>
+				<input type="hidden" name="rule[]" value="ccd_case" />
+			</td>
+			<td>
+				<input type="text" name="ccd" value="{ccd}" />　( <a href="#" name="ccd" class="js-arg_reference_trigger">CODE参照</a> )
+				<input type="hidden" name="rule[]" value="ccd" />
+			</td>
+		</tr>
+		<tr>
+			<th>エントリーコード（ecd）<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーの管理名（英数）を指定します。"></i></th>
+			<td>
+				<select name="ecd_case">
+					<option value="">指定しない</option>
+					<option value="="{ecd_case:selected#=}>=</option>
+					<option value="!="{ecd_case:selected#!=}>!=</option>
+					<option value="LIKE"{ecd_case:selected#LIKE}>LIKE</option>
+					<option value="NOT LIKE"{ecd_case:selected#NOT LIKE}>NOT LIKE</option>
+					<option value="REGEXP"{ecd_case:selected#REGEXP}>REGEXP</option>
+					<option value="NOT REGEXP"{ecd_case:selected#NOT REGEXP}>NOT REGEXP</option>
+					<option value="IS NULL"{ecd_case:selected#IS NULL}>IS NULL</option>
+					<option value="IS NOT NULL"{ecd_case:selected#IS NOT NULL}>IS NOT NULL</option>
+				</select>
+				<input type="hidden" name="rule[]" value="ecd_case" />
+			</td>
+			<td>
+				<input type="text" name="ecd" value="{ecd}" />
+				<input type="hidden" name="rule[]" value="ecd" />
+			</td>
+		</tr>
+		<tr>
+			<th>ユーザーエージェント<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="サイトを表示する機器、ブラウザーなどを指定します。"></i></th>
+			<td>
+				<select name="ua_case">
+					<option value="">指定しない</option>
+					<option value="="{ua_case:selected#=}>=</option>
+					<option value="!="{ua_case:selected#!=}>!=</option>
+				</select>
+				<input type="hidden" name="rule[]" value="ua_case" />
+			</td>
+			<td>
+				<select name="ua"><!-- BEGIN uaoption:loop -->
+					<option value="{value}"{selected}>{label}[raw]</option><!-- END uaoption:loop -->
+				</select>
+				<input type="hidden" name="rule[]" value="ua" />
+			</td>
+		</tr>
+		<tr>
+			<th>期間<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="期間を指定します。"></i></th>
+			<td>
+				<select name="term_case">
+					<option value="">指定しない</option>
+					<option value="BETWEEN"{term_case:selected#BETWEEN}>BETWEEN</option>
+				</select>
+				<input type="hidden" name="rule[]" value="term_case" />
+			</td>
+			<td>
+				<a href="#" class="updateDate" rel="entryStartDate">日付</a>
+				<input type="text" name="term_start_date" value="{term_start_date}" placeholder="1000-01-01" size="15" id="entryStartDate" class="entryFormInputDate" />
+				<a href="#" class="updateTime" rel="entryStartTime">時刻</a>
+				<input type="text" name="term_start_time" value="{term_start_time}" placeholder="00:00:00" size="12" id="entryStartTime" class="entryFormInputDate" />
+				<input type="hidden" name="rule[]" value="term_start_date" />
+				<input type="hidden" name="rule[]" value="term_start_time" />
+				〜
+			</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td></td>
+			<td>
+				<a href="#" class="updateDate" rel="entryEndDate">日付</a>
+				<input type="text" name="term_end_date" value="{term_end_date}" placeholder="9999-12-31" size="15" id="entryEndDate" class="entryFormInputDate" />
+				<a href="#" class="updateTime" rel="entryEndTime">時刻</a>
+				<input type="text" name="term_end_time" value="{term_end_time}" placeholder="23:59:59" size="12" id="entryEndTime" class="entryFormInputDate" />
+				<input type="hidden" name="rule[]" value="term_end_date" />
+				<input type="hidden" name="rule[]" value="term_end_time" /></td>
+			</td>
+		</tr>
+	</table>
+</form>
+<!-- END_MODULE Admin_Rule_Edit -->

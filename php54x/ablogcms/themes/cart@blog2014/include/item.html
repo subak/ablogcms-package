@@ -1,0 +1,50 @@
+<!-- BEGIN_MODULE Touch_Entry -->
+<div id="item">
+	<form action="" method="post" class="acms-form">
+		<table>
+			<tr>
+				<th>価格</th>
+				<td>
+					&yen;{item_price}[number_format]<span></span>
+				</td>
+			</tr><!-- BEGIN item_color:veil -->
+			<tr>
+				<th>色</th>
+				<td>
+					<select name="item_color">
+						<!-- BEGIN select_color:loop -->
+						<option value="{select_color}">{select_color}</option>
+						<!-- END select_color:loop -->
+					</select>
+					<input type="hidden" name="cart[]" value="item_color" />
+					<input type="hidden" name="item_repertory_fields[]" value="item_color" />
+				</td>
+			</tr><!-- END item_color:veil --><!-- BEGIN item_size:veil -->
+			<tr>
+				<th>サイズ</th>
+				<td>
+					<select name="item_size">
+						<!-- BEGIN select_size:loop -->
+						<option value="{select_size}">{select_size}</option>
+						<!-- END select_size:loop -->
+					</select>
+					<input type="hidden" name="cart[]" value="item_size" />
+					<input type="hidden" name="item_repertory_fields[]" value="item_size" />
+				</td>
+			</tr><!-- END item_size:veil -->
+			<!-- BEGIN_MODULE Touch_CartStock -->
+			<tr>
+				<th>在庫数</th>
+				<td>
+					{item_stock}<!-- BEGIN_IF [{item_stock}/em/] -->在庫なし<!-- END_IF -->
+				</td>
+			</tr><!-- BEGIN_IF [{item_stock}/nem/] -->
+				<!--#include file="/include/submit.html" -->
+			<!-- END_IF --><!-- END_MODULE Touch_CartStock -->
+			<!-- BEGIN_MODULE Touch_NotCartStock -->
+				<!--#include file="/include/submit.html" -->
+			<!-- END_MODULE Touch_NotCartStock -->
+		</table>
+	</form>
+</div><!--item-->
+<!-- END_MODULE Touch_Entry -->

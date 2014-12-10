@@ -1,0 +1,84 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-module"></i>モジュールID管理</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Module_Index -->
+
+<!-- BEGIN index#notFound -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>モジュールIDがありません。</p><!-- END index#notFound -->
+
+<div class="acms-filter acms-form">
+	<form action="" method="post">
+		<div class="acms-form-group">
+			絞り込み:
+			<select name="name">
+			<!--#include file="/admin/module/select.html" -->
+			</select>
+			<input type="hidden" name="query[]" value="name" />
+			&nbsp;
+			ソート:
+			<select name="order">
+				<option value="identifier-asc"{order:selected#identifier-asc}>id (昇順)</option>
+				<option value="identifier-desc"{order:selected#identifier-desc}>id (降順)</option>
+				<option value="label-asc"{order:selected#label-asc}>名前（昇順）</option>
+				<option value="label-desc"{order:selected#label-desc}>名前（降順）</option>
+				<option value="name-asc"{order:selected#name-asc}>適用モジュール名（昇順）</option>
+				<option value="name-desc"{order:selected#name-desc}>適用モジュール名（降順）</option>
+			</select>
+			<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-btn-admin acms-btn-admin-info acms-width-sp" />
+			<input type="hidden" name="admin" value="module_index" />
+		</div>
+	</form>
+
+	<label for="searchModuleId">クイック検索:</label>
+	<input type="text" class="js-incremental_search_box" placeholder="例）banner">
+
+</div>
+
+<div class="acms-form-group">
+	<form action="" method="post" class="acms-float-right js-acms_fix_marker js-acms_fix_target acms-position-right">
+		<input type="hidden" name="bid" value="%{BID}" />
+		<input type="hidden" name="admin" value="module_edit" />
+		<input type="hidden" name="edit" value="insert" />
+		<input type="hidden" name="query[]" value="edit" />
+		<input type="submit" name="ACMS_POST_2GET" value="モジュールIDを作成" class="acms-btn-admin" />
+	</form>
+</div>
+
+<!-- BEGIN index:touch#result -->
+<table class="adminTable acms-table-admin acms-table-heading js-incremental_search">
+	<thead>
+		<tr>
+			<th class="acms-hide-sp">id</th>
+			<th class="acms-show-sp">名前</th>
+			<th class="acms-hide-sp">適用モジュール</th>
+			<th class="acms-hide-sp">グローバル</th>
+			<th class="acms-hide-sp">アクション</th>
+		</tr>
+	</thead>
+	<tbody><!-- BEGIN module:loop -->
+		<tr class="search_element">
+			<td><strong>{identifier}</strong></td>
+			<td class="acms-title-sp acms-show-sp acms-width-sp">{label}</td>
+			<td>{name}</td>
+			<td>
+			<!-- BEGIN scope:touch#global --><span class="acms-label acms-label-info admin-status-label">有効</span><!-- END scope:touch#global -->
+			<!-- BEGIN scope:touch#local --> - <!-- END scope:touch#local -->
+			<!-- BEGIN scope:touch#parental --> - <!-- END scope:touch#parental -->
+			</td>
+			<td class="acms-show-sp acms-width-sp acms-border-bottom-sp"><!-- BEGIN link -->
+				<a href="{itemUrl}&edit=update" class="acms-btn-admin">条件設定</a><!-- BEGIN configUrl:veil -->
+				<a href="{configUrl}" class="acms-btn-admin">表示設定</a><!-- END configUrl:veil -->
+				&nbsp;<!-- END link --><!-- BEGIN notMine -->
+				親ブログに所属<!-- END notMine -->
+			</td>
+		</tr>
+	</tbody><!-- END module:loop -->
+</table><!-- END index:touch#result -->
+<div class="js-acms_fix_target acms_fix_bg"><div class="acms_fix_bg_index"></div></div>
+<!-- END_MODULE Admin_Module_Index -->

@@ -1,0 +1,151 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-publish"></i>パブリッシュ管理</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Publish_Index -->
+
+<!-- BEGIN apply -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>パブリッシュ設定を保存しました。</p><!-- END apply --><!-- BEGIN notAllow -->
+<p class="acms-alert acms-alert-danger">
+<button class="js-acms-alert-close">×</button>パブリッシュの実行が許可されていません。このブログがパブリッシュを実行するには、親ブログで設定をする必要があります。</p><!-- END notAllow -->
+
+<!-- BEGIN_MODULE Touch_Role_PublishExec -->
+<div class="js-acms_fix_marker js-acms_fix_target acms-float-left">
+	<form action="" method="post" class="acms-inline-btn">
+		<input type="submit" name="ACMS_POST_Publish_Apply" value="パブリッシュを実行する" onclick="出力先" class="acms-btn-admin acms-btn-admin-info" />
+	</form>
+</div><!-- END_MODULE Touch_Role_PublishExec -->
+
+<!-- BEGIN allow -->
+<form action="" method="post" class="acms-form">
+	<div class="js-acms_fix_target">
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="/bid/%{BID}/admin/shortcut_edit/?action=Publish_Apply&admin=publish_index&edit=add&step=reapply" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+
+		<!-- BEGIN_MODULE Touch_Role_PublishEdit -->
+		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" /><!-- END_MODULE Touch_Role_PublishEdit -->
+	</div>
+
+	<h3 class="acms-admin-title2">入出力パス</h3>
+	<table class="adminTable acms-table-admin-edit">
+		<thead class="acms-hide-sp">
+			<tr>
+				<th class="acms-table-left">生成元URI ( スキーム : http:// または acms:// )</th>
+				<th class="acms-table-left">出力先パス ( テーマ・テンプレート )</th>
+			</tr>
+		</thead>
+		<tbody><!-- BEGIN publish:loop -->
+			<tr>
+				<td>
+					<p class="acms-hide-pc acms-show-sp">
+					生成元URI ( スキーム : http:// または acms:// )
+					</p>
+					<input type="text" name="publish_resource_uri[]" value="{publish_resource_uri}" size="50" />
+					<!-- BEGIN invalid:uri --><p class="validator-result-error">URIが不正です</p><!-- END invalid:uri -->
+					<!-- BEGIN failed:put --><p class="validator-result-error">書き込みに失敗しました</p><!-- END failed:put -->
+					<!-- BEGIN failed:get --><p class="validator-result-error">取得に失敗しました</p><!-- END failed:get -->
+				</td>
+				<td>
+					<p class="acms-hide-pc acms-show-sp">
+					出力先パス ( テーマ・テンプレート )
+					</p>
+					<!-- BEGIN_MODULE Admin_Dashboard_ThemeChanger -->
+					<select name="publish_target_theme[]">
+						<option value=""></option><!-- BEGIN theme:loop -->
+						<option value="{theme}" \{publish_target_theme:selected#{theme}\}>{label}</option><!-- END theme:loop -->
+					</select>
+					<!-- END_MODULE Admin_Dashboard_ThemeChanger -->
+					<input type="text" name="publish_target_path[]" value="{publish_target_path}" size="30" />
+					<!-- BEGIN invalid:mod --><p class="validator-result-error">出力先の書き込み権限がありません</p><!-- END invalid:mod -->
+					<!-- BEGIN invalid:path --><p class="validator-result-error">出力先が存在しない、またはアクセスできません</p><!-- END invalid:path -->
+				</td>
+			</tr><!-- END publish:loop -->
+			<tr>
+				<td>
+					<p class="acms-hide-pc acms-show-sp">
+					生成元URI ( スキーム : http:// または acms:// )
+					</p>
+					<input type="text" name="publish_resource_uri[]" value="{publish_resource_uri}" size="50" />
+				</td>
+				<td class="acms-show-sp acms-width-sp acms-border-bottom-sp">
+					<p class="acms-hide-pc acms-show-sp">
+					出力先パス ( テーマ・テンプレート )
+					</p>
+					<!-- BEGIN_MODULE Admin_Dashboard_ThemeChanger -->
+					<select name="publish_target_theme[]">
+						<option value=""></option><!-- BEGIN theme:loop -->
+						<option value="{theme}" \{publish_target_theme:selected#{theme}\}>{label}</option><!-- END theme:loop -->
+					</select>
+					<!-- END_MODULE Admin_Dashboard_ThemeChanger -->
+					<input type="text" name="publish_target_path[]" value="{publish_target_path}" size="30" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p class="acms-hide-pc acms-show-sp">
+					生成元URI ( スキーム : http:// または acms:// )
+					</p>
+					<input type="text" name="publish_resource_uri[]" value="{publish_resource_uri}" size="50" />
+				</td>
+				<td class="acms-show-sp acms-width-sp acms-border-bottom-sp">
+					<p class="acms-hide-pc acms-show-sp">
+					出力先パス ( テーマ・テンプレート )
+					</p>
+					<!-- BEGIN_MODULE Admin_Dashboard_ThemeChanger -->
+					<select name="publish_target_theme[]">
+						<option value=""></option><!-- BEGIN theme:loop -->
+						<option value="{theme}" \{publish_target_theme:selected#{theme}\}>{label}</option><!-- END theme:loop -->
+					</select>
+					<!-- END_MODULE Admin_Dashboard_ThemeChanger -->
+					<input type="text" name="publish_target_path[]" value="{publish_target_path}" size="30" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p class="acms-hide-pc acms-show-sp">
+					生成元URI ( スキーム : http:// または acms:// )
+					</p>
+					<input type="text" name="publish_resource_uri[]" value="{publish_resource_uri}" size="50" />
+				</td>
+				<td class="acms-show-sp acms-width-sp acms-border-bottom-sp">
+					<p class="acms-hide-pc acms-show-sp">
+					出力先パス ( テーマ・テンプレート )
+					</p>
+					<!-- BEGIN_MODULE Admin_Dashboard_ThemeChanger -->
+					<select name="publish_target_theme[]">
+						<option value=""></option><!-- BEGIN theme:loop -->
+						<option value="{theme}" \{publish_target_theme:selected#{theme}\}>{label}</option><!-- END theme:loop -->
+					</select>
+					<!-- END_MODULE Admin_Dashboard_ThemeChanger -->
+					<input type="text" name="publish_target_path[]" value="{publish_target_path}" size="30" />
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h3 class="acms-admin-title2">子ブログ</h3>
+	<table class="adminTable adminTable acms-table-admin-edit">
+		<tr>
+			<th>子ブログでのパブリッシュ</th>
+			<td>
+				
+				<input type="hidden" name="publish_children_allow" value="off" />
+				<label class="acms-form-checkbox">
+					<input type="checkbox" name="publish_children_allow" value="on"{publish_children_allow:checked#on} /><i class="acms-ico-checkbox"></i>直接の子ブログでのパブリッシュの実行を許可する
+				</label>
+				<input type="hidden" name="config[]" value="publish_children_allow" />
+			</td>
+		</tr>
+	</table>
+	
+	<input type="hidden" name="config[]" value="publish_resource_uri" />
+	<input type="hidden" name="config[]" value="publish_target_theme" />
+	<input type="hidden" name="config[]" value="publish_target_path" />
+</form>
+<div class="js-acms_fix_target acms_fix_bg"><div class="acms_fix_bg_index"></div></div>
+<!-- END allow -->
+<!-- END_MODULE Admin_Publish_Index -->

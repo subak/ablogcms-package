@@ -1,0 +1,44 @@
+/* ---------------
+ label
+--------------- */
+// デフォルト
+.acms-label {
+	padding: 3px 7px;
+	border-radius: 3px;
+	background-color: lighten(@acms-label-black, 40%);
+	color: #ffffff;
+	.font-size(10);
+	vertical-align: middle;
+	& a{
+		color: #fff!important;
+	}
+	& a:hover{
+		text-decoration: underline;
+	}
+}
+
+// success
+.acms-label-success {
+	background-color: @acms-label-color;
+}
+// info
+.acms-label-info {
+	background-color: spin(lighten(@acms-label-color, 10%), 50);
+}
+// warning
+.acms-label-warning {
+	background-color: spin(lighten(@acms-label-color, 10%), -120);
+}
+// danger
+.acms-label-danger {
+	background-color: spin(lighten(@acms-label-color, 10%), -180);
+}
+// box
+.acms-admin-labelbox {
+	min-width: 55px;
+}
+
+.acms-label-approval {
+	border-radius: 10px;
+	background-color: #E20020;
+}

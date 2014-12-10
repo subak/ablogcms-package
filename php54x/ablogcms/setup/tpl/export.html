@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms エクスポートウィザード</title>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <div id="siteTitleBox" class="clearfix">
+            <h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+            <span id="setupType">エクスポート</span>
+        </div>
+    </div>
+<div id="main">
+
+<!-- BEGIN step#apply -->
+    <h2>ブログデータのエクスポートを行います。</h2>
+    <h3>エクスポート時の注意</h3>
+    <h4>エクスポートについて</h4>
+        <p>データのエクスポートはyaml, gzip, zip形式のいずれかで出力します。gzip, zipの圧縮形式の場合はブログのyaml形式データ・テーマ・画像等を圧縮します。</p>
+    	<p class="noticeMsg">圧縮形式の場合、環境によってはうまく行かない場合があります。うまくいかない場合はyaml形式を選択して下さい。また、エクスポートを実行する前に[*SETUP_DIR*]ディレクトリのパーミッションを読み書き可能に設定してください。</p>
+    <h4>gzip, zipエクスポートの制限</h4>
+        <p>圧縮形式でエクスポートできない場合は、標準のyaml形式でエクスポートして、「archives」と「themes」ディレクトリはFTP等で個別にダウンロードしてください。</p>
+    <form action="" method="post" class="acms-form">
+        <h3>1. エクスポートするブログを選択してください。</h3>
+            <ul class="cfgInput"><!-- BEGIN blog:loop -->
+                <li><label class="acms-form-radio"><input type="radio" name="bid" value="{bid}" /><i class="acms-ico-radio"></i>&nbsp;{bid} : {name} (親BID : {parent})</label></li><!-- END blog:loop -->
+            </ul>
+        <h3>2. ダウンロードするファイルの名前と形式を指定してください。</h3>
+            <p><input type="text" name="name" value="export" size="10" />&nbsp;
+            <!-- BEGIN php4 --><select name="ext">
+                <option value="yaml">.yaml</option>
+                <option value="gzip">.gzip</option>
+            </select><!-- END php4 -->
+            <!-- BEGIN php5 --><select name="ext">
+                <option value="yaml">.yaml</option>
+                <option value="gzip">.gzip</option>
+                <option value="zip">.zip</option>
+            </select><!-- END php5 -->
+            </p>
+        <h3>3. オプション設定項目</h3>
+            <p>行頭スペース保持マーカー（通常は変更しません） <input type="text" name="marker" value="|s|" size="1" /></p>
+        <p id="submitBtn"><input type="submit" name="submit" value="エクスポートを実行する" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#apply -->
+
+<!-- BEGIN step#error -->
+    <h2>ブログデータのエクスポートを行います。</h2>
+    <h3>エクスポート時の注意</h3>
+    <h4>エクスポートについて</h4>
+        <p>データのエクスポートはyaml, gzip, zip形式のいずれかで出力します。圧縮形式の場合はブログのyaml形式データ・テーマ・画像等を圧縮します。</p>
+    	<p class="noticeMsg">エクスポートを実行する前に[*SETUP_DIR*]ディレクトリのパーミッションを読み書き可能に設定してください。</p>
+    <h4>gzip, zipエクスポートの制限</h4>
+        <p>圧縮形式でエクスポートできない場合は、標準のyaml形式でエクスポートして、「archives」と「themes」ディレクトリはFTP等で個別にダウンロードしてください。</p>
+    <form action="" method="post" class="acms-form">
+        <h3>1. エクスポートするブログを選択してください。</h3>
+            <ul class="cfgInput"><!-- BEGIN blog:loop -->
+                <li><label class="acms-form-radio"><input type="radio" name="bid" value="{bid}"{checked} /><i class="acms-ico-radio"></i>&nbsp;{bid} : {name} (親BID : {parent})</label></li><!-- END blog:loop -->
+            </ul>
+            <!-- BEGIN blog_exist:error --><p class="errorMsg">システムに存在しないブログが指定されました。</p><!-- END blog_exist:error -->
+            <!-- BEGIN blog_select:error --><p class="errorMsg">エクスポートするブログを選択してください。</p><!-- END blog_select:error -->
+        <h3>2. ダウンロードするファイルの名前と形式を指定してください。</h3>
+            <p><input type="text" name="name" value="{name}" size="10" />&nbsp;
+            <!-- BEGIN php4 --><select name="ext">
+                <option value="yaml">.yaml</option>
+                <option value="gzip">.gzip</option>
+            </select><!-- END php4 -->
+            <!-- BEGIN php5 --><select name="ext">
+                <option value="yaml">.yaml</option>
+                <option value="gzip">.gzip</option>
+                <!--<option value="zip">.zip</option>-->
+            </select><!-- END php5 -->
+            </p>
+            <!-- BEGIN permission:error --><p class="errorMsg">[*SETUP_DIR*]ディレクトリのパーミッションを読み書き可能に設定してください。</p><!-- END permission:error -->
+            <!-- BEGIN zip_archive:error --><p class="errorMsg">zipライブラリ(ZipArchive)が無い、又はPHP4で動作しています。yaml形式を選択してください。</p><!-- END zip_archive:error -->
+            <!-- BEGIN name_input:error --><p class="errorMsg">ファイル名を入力してください。</p><!-- END name_input:error -->
+            <!-- BEGIN name_valid:error --><p class="errorMsg">ファイル名に使用できない文字列が含まれています。</p><!-- END name_valid:error -->
+        <h3>3. オプション設定項目</h3>
+            <p>行頭スペース保持マーカー（通常は変更しません） <input type="text" name="marker" value="{marker}" size="1" /></p>
+        <p id="submitBtn"><input type="submit" name="submit" value="エクスポートを実行する" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#error -->
+
+<!-- BEGIN step#result -->
+<!-- END step#result -->
+
+<p><a href="./index.php">メンテナンスメニューに戻る</a></p>
+</div>
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

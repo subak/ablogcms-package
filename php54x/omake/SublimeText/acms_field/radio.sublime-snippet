@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<label for="input-${1:fieldName}-${2:data1}"><input type="radio" name="${1:fieldName}" value="${2:data1}" id="input-${1:fieldName}-${2:data1}"{${1:fieldName}:checked#${2:data1}} />${2:data1}</label>
+<label for="input-${1:fieldName}-${3:data2}"><input type="radio" name="${1:fieldName}" value="${3:data2}" id="input-${1:fieldName}-${3:data2}"{${1:fieldName}:checked#${3:data2}} />${3:data2}</label>
+<label for="input-${1:fieldName}-${4:data3}"><input type="radio" name="${1:fieldName}" value="${4:data3}" id="input-${1:fieldName}-${4:data3}"{${1:fieldName}:checked#${4:data3}} />${4:data3}</label>
+<input type="hidden" name="field[]" value="${1:fieldName}" />
+]]></content>
+	<tabTrigger>!acms:field</tabTrigger>
+	<description>Radio</description>
+</snippet>

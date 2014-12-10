@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Entry_Photo id="${1:module_id}" -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN notFound -->
+<p>エントリーが見つかりませんでした。</p>
+<!-- END notFound -->
+
+<ul><!-- BEGIN unit:loop -->
+	<!-- BEGIN entry:loop -->
+		<li>
+			<div style="width:{x}px; height:{y}px; overflow:hidden;"><!-- BEGIN image:veil -->
+				<img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" alt="" style="left:{left}px; top:{top}px; position:relative;" /><!-- END image:veil --><!-- BEGIN noimage -->
+				noimage
+				<!-- END noimage -->
+			</div>
+			<p><a href="{url}">{title}</a></p>
+		</li><!-- END entry:loop -->
+	<!-- END unit:loop -->
+</ul>
+</div>
+<!-- END_MODULE Entry_Photo -->]]></content>
+	<tabTrigger>!acms:module</tabTrigger>
+    <description>Entry_Photo</description>
+</snippet>

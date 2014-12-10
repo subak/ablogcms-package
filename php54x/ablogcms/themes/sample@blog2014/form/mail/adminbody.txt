@@ -1,0 +1,22 @@
+管理者用の本文です。カスタムフィールドの項目が使えます。
+
+（例）
+
+受付日時 : %{Y}年%{n}月%{j}日 %{H}:%{i}:%{s}
+
+エントリーがありました。
+
+■■会社情報
+■会社名： {company}
+■仕事内容：{description}
+■職種： <!-- BEGIN job:loop --><!-- BEGIN glue -->, <!-- END glue -->{job}<!-- END job:loop -->
+■勤務地： <!-- BEGIN location:loop --><!-- BEGIN glue -->, <!-- END glue -->{location}<!-- END location:loop -->
+■雇用形態： <!-- BEGIN pattern:loop --><!-- BEGIN glue -->, <!-- END glue -->{pattern}<!-- END pattern:loop -->
+
+■■個人情報
+■性別： {sex}
+■メールマガジン： {subscribe}
+■生年月日： {year}/{month}/{day}
+
+
+

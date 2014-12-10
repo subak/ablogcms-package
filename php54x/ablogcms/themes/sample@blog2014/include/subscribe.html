@@ -1,0 +1,26 @@
+<dt>所属 :</dt>
+<dd>
+	<input type="text" name="name" value="{position}" class="formSizeL" />
+	<input type="hidden" name="field[]" value="position" />
+</dd>
+<dt>肩書き :</dt>
+<dd>
+	<input type="text" name="title" value="{title}" class="formSizeL" />
+	<input type="hidden" name="field[]" value="title" />
+</dd>
+<dt>自己紹介文 :</dt>
+<dd>
+	<textarea name="profile" rows="5" cols="40"></textarea>
+	<input type="hidden" name="field[]" value="profile">
+</dd>
+<dt>画像 :</dt>
+<dd>
+	<input type="file" name="image" size="20">
+	<input type="hidden" name="field[]" value="image">
+	<input type="hidden" name="image:extension" value="image">
+	<input type="hidden" name="image@size" value="160">
+</dd>
+<dt>代替テキスト :</dt>
+<dd>
+	<input type="text" name="image@alt" value="" size="30">
+</dd>

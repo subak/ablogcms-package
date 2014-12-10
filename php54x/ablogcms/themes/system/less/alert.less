@@ -1,0 +1,62 @@
+/* ---------------
+ alert
+--------------- */
+.acms-alert {
+	margin-bottom: 20px;
+	padding: 20px;
+	border: 1px solid lighten(@acms-alert-black, 25%);
+	background: lighten(@acms-alert-black, 55%);
+	border-radius: 5px;
+	color: lighten(@acms-alert-black, 10%);
+	-moz-animation: anime1 2s ease 1 alternate;
+	-webkit-animation: anime1 2s ease  1 alternate;
+	animation: anime1 2s ease  1 alternate;
+}
+
+// アニメーション
+@-moz-keyframes anime1 {
+	0%	{ opacity: 0; }
+	100%	{ opacity: 1;}
+}
+
+@-webkit-keyframes anime1 {
+	0%	{ opacity: 0; }
+	100%	{ opacity: 1;}
+}
+
+@keyframes anime1 {
+	0%	{ opacity: 0; }
+	100%	{ opacity: 1;}
+}
+
+// info
+.acms-alert-info {
+	border: 1px solid spin(lighten(@acms-alert-color, 10%), 50);
+	background: spin(lighten(@acms-alert-color, 35%), 50);
+	color: spin(lighten(@acms-alert-color, 10%), 50);
+	.js-acms-alert-close {
+		color: spin(lighten(@acms-alert-color, 10%), 50);
+	}
+}
+
+// danger
+.acms-alert-danger {
+	border: 1px solid spin(lighten(@acms-alert-color, 10%), -180);
+	background: spin(lighten(@acms-alert-color, 35%), -180);
+	color: spin(lighten(@acms-alert-color, 10%), -180);
+	 .js-acms-alert-close {
+		color: spin(lighten(@acms-alert-color, 10%), -180);
+	}
+}
+
+// 閉じるボタン
+.js-acms-alert-close {
+	float: right;
+	background: transparent;
+	border: 0;
+	-webkit-appearance: none;
+	outline: 0;
+	.font-size(14);
+	padding: 0;
+	margin-top: -3px;
+}

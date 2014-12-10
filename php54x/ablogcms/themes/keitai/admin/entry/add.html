@@ -1,0 +1,18 @@
+<!-- BEGIN_MODULE Admin_Entry_Add -->
+<a name="entry-add"></a>
+<form action="" method="post" enctype="multipart/form-data">
+
+	<!--#include file="/admin/entry/column.html"-->
+
+	<!--#include file="/ajax/column-add-btn.html"-->
+
+	<p class="comPost" >
+		<input type="submit" name="ACMS_POST_Entry_Add" value="ユニット追加" class="submitBtn" />
+		<input type="submit" name="ACMS_POST_2GET" value="戻る" class="cancelBtn" onclick="return confirm('現在の変更が破棄されます、よろしいですか？');" />
+		<input type="hidden" name="cid" value="%{CATEGORY_ID}" />
+		<input type="hidden" name="eid" value="%{ENTRY_ID}" />
+		<input type="hidden" name="arg[]" value="cid" />
+		<input type="hidden" name="arg[]" value="eid" />
+	</p>
+</form>
+<!-- END_MODULE Admin_Entry_Add -->

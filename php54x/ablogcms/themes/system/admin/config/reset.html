@@ -1,0 +1,33 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title">
+			<i class="acms-icon acms-icon-config_reset"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+				<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+				<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->リセット
+		</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Config_Message -->
+<!-- BEGIN config:veil --><p class="noticeMsg acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>{config_name}のコンフィグをリセットしました。</p><!-- END message:veil -->
+<!-- END_MODULE Admin_Config_Message -->
+
+<form action="" method="post" class="acms-form">
+	
+
+	<!-- BEGIN_MODULE Admin_Rule_Name --><input type="hidden" name="rid" value="{rid}" />
+	<input type="hidden" name="rule_name" value="{name}" /><!-- END_MODULE Admin_Rule_Name -->
+
+	<ul>
+		<li>現在のコンフィグを破棄して、コンフィグをリセットします。</li>
+		<li>リセット後は、システムデフォルトのコンフィグ（private/config.system.yamlの設定値）を適用されます。</li>
+		<li>ルール適用時のコンフィグがリセットされると、ブログの元々のコンフィグが適用されます。</li>
+	</ul>
+
+	<div class="acms-form-group">
+		<input class="acms-btn-admin acms-btn-admin-danger acms-margin-sp acms-float-right" type="submit" name="ACMS_POST_Config_Delete" value="リセット" onclick="return confirm('リセットを実行します。よろしいですか？');" />
+	</div>
+</form>

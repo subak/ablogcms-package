@@ -1,0 +1,179 @@
+<!-- BEGIN_MODULE Entry_Body id="" -->
+<!-- BEGIN notFound -->
+<section class="acms-entry">
+	<h2 id="notFoundTitle">Not found</h2>
+	<p>お探しの記事は見つかりませんでした。</p>
+</section>
+<!-- END notFound -->
+    
+<!-- 1記事▼▼ -->
+<!-- BEGIN entry:loop -->
+<div class="acms-box-medium">
+<!--#include file="/admin/entry/revision-info.html"-->
+</div>
+<article class="acms-entry clearfix">
+	<!--#include file="admin/entry/title.html"-->
+	<!-- BEGIN title:veil -->
+	<!-- エントリーのタイトル　開始▼▼ -->
+	<header class="entryHeader clearfix">		
+		<h2 class="entryTitle"><a href="{titleUrl}">{title}[raw]</a></h2>
+	</header>
+
+	<section class="entryColumn">
+		<div class="acms-grid-r">
+			
+			<!-- BEGIN mainPhotoBox:veil -->
+			<div class="acms-col-12">
+				<!-- BEGIN mainPhoto:veil -->
+				<div class="column-image-auto">
+					<a href="%{HTTP_ROOT}archives/{mainPhoto@largePath}" rel="prettyPhoto[custom]"><img src="%{ARCHIVES_DIR}{mainPhoto@path}" rel="prettyPhoto[custom]"></a>
+				</div>
+				<!-- END mainPhoto:veil -->
+				<!-- BEGIN mainCaption:veil --><p class="caption">{mainCaption}</p><!-- END mainCaption:veil -->
+			</div>
+			<!-- END mainPhotoBox:veil -->
+			
+			<!-- BEGIN mainPhotoBox:veil -->
+			<div class="acms-col-4">
+				<!-- BEGIN subPhoto1:veil -->
+				<div class="column-image-left">
+					<a href="%{HTTP_ROOT}archives/{subPhoto1@largePath}" rel="prettyPhoto[custom]">
+						<img class="columnImage" src="%{ARCHIVES_DIR}{subPhoto1@path}" alt="" width="{subPhoto1@x}" height="{subPhoto1@y}" />
+					</a>
+				<!-- BEGIN subCaption1:veil --><p class="caption">{subCaption1}</p><!-- END subCaption1:veil -->
+				</div>
+				<!-- END subPhoto1:veil -->
+			</div>
+			<!-- END mainPhotoBox:veil -->
+
+			<!-- BEGIN mainPhotoBox:veil -->
+			<div class="acms-col-4">
+				<!-- BEGIN subPhoto2:veil -->
+				<div class="column-image-left">
+					<a href="%{HTTP_ROOT}archives/{subPhoto2@largePath}" rel="prettyPhoto[custom]">
+						<img class="columnImage" src="%{ARCHIVES_DIR}{subPhoto2@path}" alt="" width="{subPhoto2@x}" height="{subPhoto2@y}" />
+					</a>
+				<!-- BEGIN subCaption2:veil --><p class="caption">{subCaption2}</p><!-- END subCaption2:veil -->
+				</div>
+				<!-- END subPhoto2:veil -->
+			</div>
+			<!-- END mainPhotoBox:veil -->
+
+			<!-- BEGIN mainPhotoBox:veil -->
+			<div class="acms-col-4">
+				<!-- BEGIN subPhoto3:veil -->
+				<div class="column-image-left">
+					<a href="%{HTTP_ROOT}archives/{subPhoto3@largePath}" rel="prettyPhoto[custom]">
+						<img class="columnImage" src="%{ARCHIVES_DIR}{subPhoto3@path}" alt="" width="{subPhoto3@x}" height="{subPhoto3@y}" />
+					</a>
+				<!-- BEGIN subCaption3:veil --><p class="caption">{subCaption3}</p><!-- END subCaption3:veil -->
+				</div>
+				<!-- END subPhoto3:veil -->
+			</div>
+			<!-- END mainPhotoBox:veil -->
+
+			<!-- BEGIN table:veil -->
+			<div class="acms-col-12">
+				<div class="acms-table-responsive">
+				<table class="acms-table">
+					<tr>
+						<th>所在地</th>
+						<th>最寄駅</th>
+						<th>徒歩</th>
+						<th>区分</th>
+						<th>階/階建</th>
+					</tr>
+					<tr>
+						<td>{address}</td>
+						<td>{station}</td>
+						<td><!-- BEGIN toho:veil -->{toho}分<!-- END toho:veil --></td>
+						<td>{kubun}</td>
+						<td><!-- BEGIN kai:veil -->{kai}階<!-- END kai:veil -->
+						<!-- BEGIN kaidate:veil --> / {kaidate}階建<!-- END kaidate:veil --></td>
+					</tr>
+				</table>
+				<table class="acms-table">
+					<tr>
+						<th>家賃</th>
+						<th>管理費等</th>
+						<th>敷金/礼金</th>
+						<th>間取</th>
+						<th>専有面積</th>
+						<th>築年数</th>
+					</tr>
+					<tr>
+						<td><!-- BEGIN price:veil -->{price}[number_format]円<!-- END price:veil --></td>
+						<td><!-- BEGIN kanri:veil -->{kanri}[number_format]円<!-- END kanri:veil --></td>
+						<td>{shiki} / {rei}</td>
+						<td>{madori}</td>
+						<td><!-- BEGIN menseki:veil -->{menseki}m<sup>2</sup><!-- END menseki:veil --></td>
+						<td><!-- BEGIN chikunen:veil -->{chikunen}年<!-- END chikunen:veil --></td>
+					</tr>
+				</table>
+				</div>
+			</div>
+			<!-- END table:veil -->
+
+			<!-- BEGIN lat:veil -->
+			<div id="realestateMap" class="column-map-auto" style="margin-bottom:20px">
+				<img class="js-s2d-ready" src="http://maps.google.com/maps/api/staticmap?center={mapLat},{mapLng}&zoom={mapZoom}&size=640x300&maptype=roadmap&markers={mapLat},{mapLng}&sensor=false" width="640" height="300" style="display:block;" />
+			</div>
+			<!-- END lat:veil -->
+		</div>
+
+		<!-- BEGIN unit:veil -->
+		<!--#include file="/include/unit.html"-->
+		<hr class="clearHidden" />
+		<!-- END unit:veil -->
+		<!-- BEGIN continueLink:veil -->
+		<p><a href="{continueUrl}">「{continueName}」の続きを読む</a></p>
+		<!-- END continueLink:veil -->
+		
+	</section>
+
+	<!-- BEGIN formBody -->
+	<!--#include file="/include/form/unit.html"-->
+	<hr class="clearHidden" />
+	<!-- END formBody -->
+
+	<!-- BEGIN adminEntryEdit -->
+	<!--#include file="/admin/entry/edit.html"-->
+	<!--#include file="/admin/entry/add.html"-->
+	<!-- END adminEntryEdit -->
+	
+	<!-- BEGIN adminFormEdit -->
+	<!--#include file="/admin/form2/edit.html"-->
+	<!-- END adminFormEdit -->
+
+	<!-- BEGIN tag:veil -->
+	<footer>
+	<dl class="entryTag">
+		<dt>タグ</dt>
+		<!-- BEGIN tag:loop --> 
+		<dd><a href="/entry.html/tag/{name}">{name}</a></dd>
+		<!-- END tag:loop -->
+	</dl>
+    </footer>
+	<!-- END tag:veil -->
+	
+	<!--#include file="/admin/entry/action.html"-->
+
+</article>
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+
+<!-- BEGIN pager:veil -->
+<!-- ページ送り　開始▼▼ -->
+<nav class="acms-pager-container">
+<ul class="acms-pager">
+	<!-- BEGIN backLink --><li><a href="{url}">&lt;&lt;&nbsp;前へ</a></li><!-- END backLink -->
+	<!-- BEGIN firstPage:veil --><li{pageCurAttr}[raw]><span><a href="{firstPageUrl}">{firstPage}</a></span></li><!-- END firstPage:veil -->
+	<!-- BEGIN page:loop --><li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --></span></li><!-- END page:loop -->
+	<!-- BEGIN lastPage:veil --><li{pageCurAttr}[raw]><span><a href="{lastPageUrl}">{lastPage}</a></span></li><!-- END lastPage:veil -->
+	<!-- BEGIN forwardLink --><li><a href="{url}">次へ&nbsp;&gt;&gt;</a></li><!-- END forwardLink -->
+</ul>
+</nav>
+<!-- ページ送り　終了▲▲ -->
+<!-- END pager:veil -->
+
+<!-- END_MODULE Entry_Body -->

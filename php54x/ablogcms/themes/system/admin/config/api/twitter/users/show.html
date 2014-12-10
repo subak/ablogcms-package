@@ -1,0 +1,39 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title">
+			<i class="acms-icon acms-icon-config"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+				<strong>ルール : {name}</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+				<strong>モジュールID : {label} ( {identifier} )</strong><!-- END_MODULE Admin_Module_Name -->Twitterユーザー詳細 ( Twitter_Users_Show )
+		</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Config -->
+<form action="" method="post" class="acms-form">
+	<div class="acms-form-group">
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-inline-btn acms-shortcut-btn">ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+
+		<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+
+		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+	</div>
+
+	<table class="adminTable acms-table-admin-edit">
+		<tr>
+			<th>APIリクエスト キャッシュ有効時間</th>
+			<td>
+				<input type="text" name="twitter_users_show_cache_expire" value="{twitter_users_show_cache_expire}" size="8" /> 秒
+				<input type="hidden" name="config[]" value="twitter_users_show_cache_expire" />
+				<input type="hidden" name="twitter_users_show_cache_expire:validator#digits" id="validator-twitter_users_show_cache_expire-digits" />
+				<label for="validator-twitter_users_show_cache_expire-digits" class="validator-result-{twitter_users_show_cache_expire:validator#digits}">数字を入力して下さい。</label>
+			</td>
+		</tr>
+	</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+</form>
+<!-- END_MODULE Admin_Config -->
+<!--#include file="/admin/tooltip/config/api/twitter/users/show.html"-->

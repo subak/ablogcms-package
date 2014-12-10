@@ -1,0 +1,50 @@
+<h2>会社情報</h2>
+<table>
+	<tr>
+		<td align="right">会社名 :</td>
+		<td>{company}</td>
+	</tr>
+	<tr>
+		<td align="right">仕事内容 :</td>
+		<td>{description}[nl2br]</td>
+	</tr>
+	<tr>
+		<td align="right">職種 :</td>
+		<td><!-- BEGIN job:veil -->
+			<ul><!-- BEGIN job:loop -->
+				<li>{job}</li><!-- END job:loop -->
+			</ul><!-- END job:veil -->
+		</td>
+	</tr>
+	<tr>
+		<td align="right">勤務地 :</td>
+		<td>
+			<!-- BEGIN location:loop --><!-- BEGIN glue -->, <!-- END glue -->
+			{location}<!-- END location:loop -->
+		</td>
+	</tr>
+	<tr>
+		<td align="right">雇用形態</td>
+		<td><!-- BEGIN pattern:veil -->
+			<ul><!-- BEGIN pattern:loop -->
+				<li>{pattern}</li><!-- END pattern:loop -->
+			</ul><!-- END pattern:veil -->
+		</td>
+	</tr>
+</table>
+
+<h2>個人情報</h2>
+<table>
+	<tr>
+		<td align="right">性別 :</td>
+		<td>{sex}</td>
+	</tr>
+	<tr>
+		<td align="right">メールマガジン :</td>
+		<td>{subscribe}</td>
+	</tr>
+	<tr>
+		<td align="right">生年月日 :</td>
+		<td>{year} / {month} / {day}</td>
+	</tr>
+</table>

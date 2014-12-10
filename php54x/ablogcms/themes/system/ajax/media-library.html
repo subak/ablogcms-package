@@ -1,0 +1,84 @@
+<div id="js-media_view_inner" class="acms-media-insert">
+	<div class="acms-popup-heading clearfix">
+		<h2 class="acms-popup-heading-title">メディア一覧</h2>
+		<a class="js-media_close acms-popup-heading-close" href="#" title="閉じる"><i class="acms-icon-delete"></i></a>
+	</div>
+	<div class="acms-media-body acms-form">
+		<div class="acms-filter form-inline">
+			<label for="input-checkbox-axis-descendant-or-self" class="acms-form-checkbox">
+				<input type="checkbox" name="axis" value="descendant-or-self" id="input-checkbox-axis-descendant-or-self" /><i class="acms-ico-checkbox"></i> 下階層のブログも表示
+			</label>
+			
+			<!-- BEGIN_MODULE Admin_Blog_Select -->
+			<span class="acms-show-sp acms-margin-bottom-sp">
+				<select name="_bid">
+					<option value="">現在のブログ</option><!-- BEGIN loop -->
+					<option value="{value}">{indent}[raw]{label}</option><!-- END loop -->
+				</select>
+			</span>
+			<!-- END_MODULE Admin_Blog_Select -->
+			
+			<!-- BEGIN_MODULE Admin_Media_Tag -->
+			<span class="acms-show-sp acms-margin-bottom-sp">
+				ラベル:
+				<select name="label">
+					<option value="">ラベルを選択</option><!-- BEGIN tag:loop -->
+					<option value="{name}">{name}</option><!-- END tag:loop -->
+				</select>&nbsp;
+			</span>
+			<!-- END_MODULE Admin_Media_Tag -->
+			<span class="acms-show-sp acms-margin-bottom-sp">
+				ソート:
+				<select name="order">
+					<option value="upload_date-asc">日付 (昇順)</option>
+					<option value="upload_date-desc">日付 (降順)</option>
+					<option value="file_name-asc">ファイル名（昇順）</option>
+					<option value="file_name-desc">ファイル名（降順）</option>
+					<option value="id-asc">ID（昇順）</option>
+					<option value="id-desc">ID（降順）</option>
+				</select>&nbsp;
+			</span>
+			<button id="js-media_reload" class="acms-btn-admin acms-btn-admin-info">表示</button>
+		</div>
+		<div class="acms-filter form-inline">
+			<button id="js-media_insert" name="" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save">挿入</button>
+		</div>
+		<div class="acms-media-list">
+			<ul class="clearfix">
+				<script id="js-media_list" type="text/template">
+				<% _.each(data.MediaList, function(media) { %>
+				<li>
+					<div class="js-media_thumbnail">
+						<% if ( media.type == 'image' ) { %> 
+						<img class="acms-media-preview" src="%{HTTP_MEDIA_ARCHIVES_DIR}<%- media.tinyPath %>" />
+						<% } else if ( media.thumbnail ) { %>
+						<img class="acms-media-preview" src="%{ARCHIVES_DIR}<%- media.thumbnail %>" />
+						<% } else { %>
+						<img class="acms-media-preview" src="%{ROOT_DIR}<%- media.icon %>" />
+						<% } %>
+						<p style="text-align:center; margin:2px;"><small><%- media.datetime %></small></p>
+						<p style="text-align:center; margin:2px;"><%- media.name %>.<%- media.ext %></p>
+						<input type="hidden" name="mid" value="<%- media.mid %>" />
+						<input type="hidden" name="bid" value="<%- media.bid %>" />
+						<input type="hidden" name="datetime" value="<%- media.datetime %>" />
+						<input type="hidden" name="name" value="<%- media.name %>" />
+						<input type="hidden" name="size" value="<%- media.size %>" />
+						<input type="hidden" name="type" value="<%- media.type %>" />
+						<input type="hidden" name="permalink" value="<%- media.permalink %>" />
+						<input type="hidden" name="normalSize" value="<%- media.normalPath %>" />
+						<input type="hidden" name="largeSize" value="<%- media.largePath %>" />
+						<input type="hidden" name="tinySize" value="<%- media.tinyPath %>" />
+						<input type="hidden" name="squareSize" value="<%- media.squarePath %>" />
+					</div>
+				</li><% }); %>
+				<% if ( data.NextPage > 1 ) { %>
+				<li>
+					<div class="js-media_more">
+						<p>続きを読み込む</p>
+					</div>
+				</li><% } %>
+				</script>
+			</ul>
+		</div>
+	</div>
+</div>

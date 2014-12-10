@@ -1,0 +1,3 @@
+%{PREFIX}timeline:
+  - PRIMARY KEY (timeline_id)
+  - KEY timeline_datetime (timeline_id,timeline_datetime)

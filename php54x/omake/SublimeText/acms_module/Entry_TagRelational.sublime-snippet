@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Entry_TagRelational id="${1:module_id}" -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<ul>
+	<!-- BEGIN entry:loop -->
+	<li><span>関連度</span> {grade} : <a href="{url}">{title}</a></li>
+	<!-- END entry:loop -->
+</ul>
+
+<!-- BEGIN pager:veil -->
+<p>
+	全 {itemsAmount} 件中 {itemsFrom} 〜 {itemsTo} 件目を表示
+	<!-- BEGIN page:loop --><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue -->, <!-- END glue --><!-- END page:loop -->
+	<!-- BEGIN lastPage:veil --> ...<a href="{lastPageUrl}">{lastPage}</a><!-- END lastPage:veil -->
+</p>
+<p>
+	<!-- BEGIN backLink --><a href="{url}">« 前の{backNum}件</a><!-- END backLink -->
+	<!-- BEGIN forwardLink --><a href="{url}">次の{forwardNum}件 »</a><!-- END forwardLink -->
+</p>
+<!-- END pager:veil -->
+</div>
+<!-- END_MODULE Entry_TagRelational -->]]></content>
+	<tabTrigger>!acms:module</tabTrigger>
+    <description>Entry_TagRelational</description>
+</snippet>

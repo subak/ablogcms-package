@@ -1,0 +1,96 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-app"></i>拡張アプリ管理</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_App_Index -->
+
+<!-- BEGIN requirementsNotEnough -->
+<p class="acms-alert acms-alert-danger">インストールに必要な要件を満たしていません。</p><!-- END requirementsNotEnough -->
+<!-- BEGIN installSucceed -->
+<p class="acms-alert acms-alert-info">インストールに成功しました。</p><!-- END installSucceed -->
+<!-- BEGIN installFailed -->
+<p class="acms-alert acms-alert-danger">インストールに失敗しました。</p><!-- END installFailed -->
+<!-- BEGIN uninstallSucceed -->
+<p class="acms-alert acms-alert-info">アンインストールに成功しました。</p><!-- END uninstallSucceed -->
+<!-- BEGIN uninstallFailed -->
+<p class="acms-alert acms-alert-danger">アンインストールに失敗しました。</p><!-- END uninstallFailed -->
+<!-- BEGIN activateSucceed -->
+<p class="acms-alert acms-alert-info">アプリ有効化に成功しました。</p><!-- END activateSucceed -->
+<!-- BEGIN activateFailed -->
+<p class="acms-alert acms-alert-danger">アプリ有効化に失敗しました。</p><!-- END activateFailed -->
+<!-- BEGIN deactivateSucceed -->
+<p class="acms-alert acms-alert-info">アプリ無効化に成功しました。</p><!-- END deactivateSucceed -->
+<!-- BEGIN deactivateFailed -->
+<p class="acms-alert acms-alert-danger">アプリ無効化に失敗しました。</p><!-- END deactivateFailed -->
+<!-- BEGIN index#notFound -->
+<p class="acms-alert acms-alert-danger">拡張アプリが見つかりません。</p><!-- END index#notFound -->
+
+<table class="adminTable acms-table-admin acms-table-heading">
+	<thead>
+		<tr>
+			<th class="acms-show-sp">アプリ名</th>
+			<th class="acms-hide-sp">状態</th>
+			<th class="acms-hide-sp">提供</th>
+			<th class="acms-hide-sp">説明</th>
+			<th class="acms-hide-sp">アクション</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN notFound -->
+		<tr>
+			<td colspan="5" style="text-align: center;padding: 1em;">
+				利用可能な拡張アプリはありません。子ブログで利用するにはルートブログでインストールを行ってください。
+			</td>
+		</tr>
+		<!-- END notFound -->
+		<!-- BEGIN app:loop -->
+		<tr>
+			<td class="acms-show-sp acms-width-sp acms-title-sp"><strong>{name}</strong></td>
+			<td nowrap>
+				<!-- BEGIN status:touch#on --><span class="acms-label acms-label-info">有効</span><!-- END status:touch#on -->
+				<!-- BEGIN status:touch#off --><span class="acms-label acms-label-danger">無効</span><!-- END status:touch#off -->
+				<!-- BEGIN status:touch#init --><span class="acms-label">未インストール</span><!-- END status:touch#init -->
+				<!-- BEGIN status:touch#update --><span class="acms-label">要アップデート</span><!-- END status:touch#update -->
+			</td>
+			<td>
+				{author}
+			</td>
+			<td>{desc}</td>
+			<td class="acms-show-sp acms-width-sp acms-border-bottom-sp">
+				<form action="" method="post">
+					<input type="hidden" name="class_name" value="{className}" />
+				<!-- BEGIN action:touch#on -->
+					<input type="submit" name="ACMS_POST_App_Deactivate" value="無効化" onclick="return confirm('アプリを無効化をします。よろしいですか？');" class="acms-btn-admin" />
+					<!-- BEGIN_MODULE Touch_RootBlog -->
+					<input type="submit" name="ACMS_POST_App_Uninstall" value="アンインストール" onclick="return confirm('アプリのアンインストールをします。またデータも削除されます。よろしいですか？');" class="acms-btn-admin acms-btn-admin-danger" />
+					<!-- END_MODULE Touch_RootBlog -->
+				<!-- END action:touch#on -->
+				<!-- BEGIN action:touch#init -->
+					<input type="submit" name="ACMS_POST_App_Install" value="インストール" onclick="return confirm('アプリのインストールをします。よろしいですか？');" class="acms-btn-admin acms-btn-admin-primary" />
+				<!-- END action:touch#init -->
+				<!-- BEGIN action:touch#off -->
+					<input type="submit" name="ACMS_POST_App_Activate" value="有効化" onclick="return confirm('アプリを有効化をします。よろしいですか？？');" class="acms-btn-admin acms-btn-admin-primary" />
+					<!-- BEGIN_MODULE Touch_RootBlog -->
+					<input type="submit" name="ACMS_POST_App_Uninstall" value="アンインストール" onclick="return confirm('アプリのアンインストールをします。またデータも削除されます。よろしいですか？');" class="acms-btn-admin acms-btn-admin-danger" />
+					<!-- END_MODULE Touch_RootBlog -->
+				<!-- END action:touch#off -->
+				<!-- BEGIN action:touch#update -->
+					<!-- BEGIN_MODULE Touch_RootBlog -->
+					<input type="submit" name="ACMS_POST_App_Update" value="アップデート" onclick="return confirm('アプリのアップデートをします。よろしいですか？');" class="acms-btn-admi" />
+					<input type="submit" name="ACMS_POST_App_Uninstall" value="アンインストール" onclick="return confirm('アプリのアンインストールをします。またデータも削除されます。よろしいですか？');" class="acms-btn-admin acms-btn-admin-danger" />
+					<!-- END_MODULE Touch_RootBlog -->
+					<!-- BEGIN_MODULE Touch_NotRootBlog -->
+					ルートブログで操作してください
+					<!-- END_MODULE Touch_NotRootBlog -->
+				<!-- END action:touch#update -->
+				</form>
+			</td>
+		</tr>
+	</tbody><!-- END app:loop -->
+</table>
+<!-- END_MODULE Admin_App_Index -->

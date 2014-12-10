@@ -1,0 +1,524 @@
+/* ---------------
+ ボタン デフォルト
+--------------- */
+.acms-btn {
+	.btn;
+	.btn-color;
+	// hover
+	&:hover,
+	&.acms-btn-hover {
+		border: 1px solid #A5A5A5;
+		.btn-color-hover;
+		text-decoration: none;
+	}
+	// 色
+	&.acms-btn-active,
+	&:link ,
+	&:hover,
+	&:active,
+	&:visited {
+		color: #333333;
+	}
+	// active
+	&.acms-btn-active,
+	&:active {
+		border: 1px solid #AAAAAA;
+		.btn-color-active;
+		text-decoration: none;
+	}
+	// focus
+	&:focus {
+		outline: none;
+		border-color: #137AF3;
+	}
+	// --------------- 
+	// primary
+	// --------------- 
+	&.acms-btn-primary {
+		border: 1px solid #004CC5;
+		.btn-color(@start-color:#005BED, @end-color:#004CC5, @color: #FFFFFF);
+		// hover
+		&:hover,
+		&.hover{
+			border: 1px solid #002A6E;
+			.btn-color-hover(@start-color:#006CFF, @end-color:#0059D8, @color: #FFFFFF);
+			text-decoration: none;
+		}
+		// 色
+		&:link,
+		&:hover,
+		&:active,
+		&:visited {
+			color: #FFFFFF;
+		}
+		// active
+		&.active,
+		&:active {
+			border: 1px solid #002A6E;
+			.btn-color-active(@background-color:#004CC5, @color: #FFFFFF,@inset-color:#002A6E);
+			text-decoration: none;
+		}
+		&:focus {
+			outline: none;
+			border-color: #002A6E;
+		}	
+	}
+
+	// --------------- 
+	// info
+	// --------------- 
+	&.acms-btn-info {
+		border: 1px solid #4B4B4B;
+		.btn-color(@start-color:#5E5E5E, @end-color:#4B4B4B, @color: #FFFFFF);
+		// hover
+		&:hover {
+			border: 1px solid #2A2A2A;
+			.btn-color-hover(@start-color:#727272, @end-color:#545454, @color: #FFFFFF);
+			text-decoration: none;
+		}
+		// 色
+		&:link ,
+		&:hover,
+		&:active,
+		&:visited {
+			color: #FFFFFF;
+		}
+		// active
+		&.active,
+		&:active {
+			border: 1px solid #2A2A2A;
+			.btn-color-active(@background-color:#4B4B4B, @color: #FFFFFF,@inset-color:#2A2A2A);
+			text-decoration: none;
+		}
+		&:focus {
+			outline: none;
+			border-color: #2A2A2A;
+		}
+	}
+
+	// --------------- 
+	// success
+	// --------------- 
+	&.acms-btn-success {
+		border: 1px solid #618E00;
+		.btn-color(@start-color:#7AB400, @end-color:#618E00, @color: #FFFFFF);
+		// hover
+		&:hover {
+			border: 1px solid #354F00;
+			.btn-color-hover(@start-color:#98DE00, @end-color:#6D9E00, @color: #FFFFFF);
+			text-decoration: none;
+		}
+		// 色
+		&:link ,
+		&:hover,
+		&:active,
+		&:visited {
+			color: #FFFFFF;
+		}
+		// active
+		&.active,
+		&:active {
+			border: 1px solid #354F00;
+			.btn-color-active(@background-color:#618E00, @color: #FFFFFF,@inset-color:#354F00);
+			text-decoration: none;
+		}
+		&:focus {
+			outline: none;
+			border-color: #354F00;
+		}
+	}
+
+	// --------------- 
+	// warning
+	// --------------- 
+	&.acms-btn-warning {
+		border: 1px solid #B56800;
+		.btn-color(@start-color:#DB7F00, @end-color:#B56800, @color: #FFFFFF);
+		// hover
+		&:hover {
+			border: 1px solid #643A00;
+			.btn-color-hover(@start-color:#FF9500, @end-color:#C77400, @color: #FFFFFF);
+			text-decoration: none;
+		}
+		// 色
+		&:link ,
+		&:hover,
+		&:active,
+		&:visited {
+			color: #FFFFFF;
+		}
+		// active
+		&.active,
+		&:active {
+			border: 1px solid #643A00;
+			.btn-color-active(@background-color:#B56800, @color: #FFFFFF,@inset-color:#643A00);
+			text-decoration: none;
+		}
+		&:focus {
+			outline: none;
+			border-color: #643A00;
+		}
+	}
+
+	// --------------- 
+	// danger
+	// --------------- 
+	&.acms-btn-danger {
+		border: 1px solid #B50000;
+		.btn-color(@start-color:#DC0000, @end-color:#B50000, @color: #FFFFFF);
+		// hover
+		&:hover {
+			border: 1px solid #51000D;
+			.btn-color-hover(@start-color:#FF0000, @end-color:#C70012, @color: #FFFFFF);
+			text-decoration: none;
+		}
+		// 色
+		&:link ,
+		&:hover,
+		&:active,
+		&:visited {
+			color: #FFFFFF;
+		}
+		// active
+		&.active,
+		&:active {
+			border: 1px solid #640002;
+			.btn-color-active(@background-color:#B50000, @color: #FFFFFF,@inset-color:#640002);
+			text-decoration: none;
+		}
+		&:focus {
+			outline: none;
+			border-color: #640002;
+		}
+	}
+
+	// --------------- 
+	// link
+	// --------------- 
+	&.acms-btn-link,
+	.acms-btn-link:hover,
+	.acms-btn-link:active,
+	.acms-btn-link:visited {
+		border: 0!important;
+		color: #428bca;
+		text-decoration: underline;
+		background: none;
+		border-radius: 0;
+	}
+	// hover
+	&.acms-btn-link:hover {
+		color: #2e67a5;
+	}
+	// active
+	&.acms-btn-link:active {
+		box-shadow:none;
+	}
+	// --------------- 
+	// disabled
+	// --------------- 
+	&.acms-btn-disabled,
+	[disabled],
+	fieldset[disabled] & {
+		pointer-events: none;
+		cursor: not-allowed;
+		opacity: 0.65;
+		filter: alpha(opacity=65);
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	// hover
+	&.acms-btn-disabled:hover,
+	&[disabled]:hover {
+		cursor: not-allowed;
+	}
+}
+
+/* ---------------
+ ボタン フラット
+--------------- */ 
+.acms-btn-flat {
+	.btn(@border-radius:6px, @background-color:#FFFFFF);
+	border-top: 1px solid rgba(0, 0, 0, 0.4)!important;
+	// hover
+	&:hover {
+		border-top: 1px solid rgba(0, 0, 0, 0.2)!important;
+		background: @acms-btn-hover-background;
+		text-decoration: none;
+	}
+	// 色
+	&.active,
+	&:link ,
+	&:hover,
+	&:active,
+	&:visited {
+		box-shadow: none;
+		color: #333333;
+	}
+	// active
+	&.active,
+	&:active {
+		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+		background: @acms-btn-active-background;
+		text-decoration: none;
+	}
+}
+
+/* ---------------
+ ボタン アクア
+--------------- */
+.acms-btn-aqua {
+	.btn(@background-color:#f6f8f9);
+	background: #f6f8f9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f8f9), color-stop(50%,#e5ebee), color-stop(51%,#d7dee3), color-stop(100%,#f5f7f9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+	// hover
+	&:hover {
+		background: #DDDDDD;
+		text-decoration: none;
+	}
+	// 色
+	&.active,
+	&:link ,
+	&:hover,
+	&:active,
+	&:visited {
+		box-shadow: none;
+		color: #333333;
+	}
+	// active
+	&.active,
+	&:active {
+		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+		background: @acms-btn-active-background;
+		text-decoration: none;
+	}
+}
+
+
+.acms-btn-flat.active,
+.acms-btn.large:active {
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+// block
+.acms-btn-block,
+.block-level {
+	display: block;
+	width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+	.box-sizing(border-box);
+	&:hover {
+		background: #DDD;
+		border-top: 1px solid rgba(0, 0, 0, 0.3)!important;
+		cursor: pointer;
+	}
+
+	&:active {
+		background: #DDD;
+		border-top: 1px solid rgba(0, 0, 0, 0.3)!important;
+		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+		outline: -webklit-ring
+	}
+}
+
+
+/* ---------------
+ 管理画面のボタン
+--------------- */
+.acms-btn-admin,
+.formEntryActionUnit .btn {
+	.btn;
+	.btn-color;
+	// hover
+	&:hover,
+	&.hover{
+		border: 1px solid #868688;
+		.btn-color-hover;
+		text-decoration: none;
+	}
+	// 色
+	&.active,
+	&:link ,
+	&:hover,
+	&:active,
+	&:visited {
+		color: #333333;
+	}
+	&.active,
+	&:active {
+		border: 1px solid #AAAAAA;
+		.btn-color-active;
+		text-decoration: none;
+	}
+	&:focus {
+		outline: none;
+		border-color: #137AF3;
+	}
+}
+
+@-moz-document url-prefix() {
+	a.acms-btn-admin,
+	button.acms-btn-admin{
+		line-height: normal;
+	}
+}
+
+.formEntryActionUnit .btn:hover  {
+	border: 1px solid #868688;
+	.btn-color-hover;
+	text-decoration: none;
+}
+
+// --------------- 
+// 管理画面のボタン primary
+// --------------- 
+.acms-btn-admin-primary {
+	border: 1px solid #004CC5;
+	.btn-color(@start-color:#005BED, @end-color:#004CC5, @color: #FFFFFF);
+	// hover
+	&:hover,
+	&.hover{
+		border: 1px solid #002A6E;
+		.btn-color-hover(@start-color:#006CFF, @end-color:#0059D8, @color: #FFFFFF);
+		text-decoration: none;
+	}
+	// 色
+	&:link,
+	&:hover,
+	&:active,
+	&:visited {
+		color: #FFFFFF;
+	}
+	// active
+	&.active,
+	&:active {
+		border: 1px solid #002A6E;
+		.btn-color-active(@background-color:#004CC5, @color: #FFFFFF,@inset-color:#002A6E);
+		text-decoration: none;
+	}
+	&:focus {
+		outline: none;
+		border-color: #002A6E;
+	}
+}
+
+// --------------- 
+// 管理画面のボタン info
+// --------------- 
+.acms-btn-admin-info {
+	border: 1px solid #4B4B4B;
+	.btn-color(@start-color:#5E5E5E, @end-color:#4B4B4B, @color: #FFFFFF);
+	// hover
+	&:hover {
+		border: 1px solid #2A2A2A;
+		.btn-color-hover(@start-color:#727272, @end-color:#545454, @color: #FFFFFF);
+		text-decoration: none;
+	}
+	// 色
+	&:link ,
+	&:hover,
+	&:active,
+	&:visited {
+		color: #FFFFFF;
+	}
+	// active
+	&.active,
+	&:active {
+		border: 1px solid #2A2A2A;
+		.btn-color-active(@background-color:#4B4B4B, @color: #FFFFFF,@inset-color:#2A2A2A);
+		text-decoration: none;
+	}
+	&:focus {
+		outline: none;
+		border-color: #2A2A2A;
+	}
+}
+
+// --------------- 
+// 管理画面のボタン danger
+// --------------- 
+.acms-btn-admin-danger {
+	border: 1px solid #B50000;
+	.btn-color(@start-color:#DC0000, @end-color:#B50000, @color: #FFFFFF);
+	// hover
+	&:hover {
+		border: 1px solid #51000D;
+		.btn-color-hover(@start-color:#FF0000, @end-color:#C70012, @color: #FFFFFF);
+		text-decoration: none;
+	}
+	// 色
+	&:link ,
+	&:hover,
+	&:active,
+	&:visited {
+		color: #FFFFFF;
+	}
+	// active
+	&.active,
+	&:active {
+		border: 1px solid #640002;
+		.btn-color-active(@background-color:#B50000, @color: #FFFFFF,@inset-color:#640002);
+		text-decoration: none;
+	}
+	&:focus {
+		outline: none;
+		border-color: #640002;
+	}
+}
+
+// リンクのとき
+a.acms-btn,
+a.acms-btn-admin,
+a.acms-btn-flat,
+a.acms-btn-aqua{
+	text-decoration: none;
+}
+a.acms-btn,
+a.acms-btn-admin{
+	border: 1px solid #A7A7AA;
+}
+
+.acms-btn-admin.acms-float-right.acms-btn-admin-danger{
+	margin-right: 4px;
+}
+
+// 保存ボタン
+.acms-btn-admin-save {
+	padding-right: 60px!important;
+	padding-left: 60px!important;
+}
+
+// インライン
+.acms-inline-btn {
+	display: inline-block;
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 10px;
+}
+
+// small
+.acms-btn-small {
+	padding: 4px 6px;
+	.font-size(10);
+}
+// large
+.acms-btn-large {
+	padding: 12px 15px;
+	.font-size(18);
+	border-radius: 6px;
+}
+
+@media screen and (max-width: 768px) {
+	[class*='acms-btn'],
+	.formEntryActionUnit .btn {
+		.font-size(15);
+		padding-top: 14px;
+		padding-bottom: 14px;
+	}
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms フルテキストの修正ウィザード</title>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="siteTitleBox">
+			<h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+			<span id="setupType">フルテキストの修正</span>
+		</div>
+	</div>
+<div id="main">
+
+<!-- BEGIN step#apply -->
+    <h2>フルテキストを修正します</h2>
+        <h3>フルテキストの修正</h3>
+            <p class="noticeMsg">ブログ、カテゴリー、エントリーのフルテキストを再生成します。 ver2.1.0正式版以前以前のデータですと、KEYWORDコンテキストを利用したブログ、カテゴリーの全文検索時に検索対象に含まれていないので修正を行って下さい。</p>
+        <h3>注意事項</h3>
+            <p class="errorMsg">現在、正しく検索できている場合は実行する必要がありません。</p>
+    <form action="" method="post">
+        <h3>フルテキストを修正する対象の項目を選択してください。</h3>
+            <ul>
+                <li><label class="acms-form-radio"><input type="radio" name="type" value="blog" /><i class="acms-ico-radio"></i>&nbsp;ブログ</label></li>
+                <li><label class="acms-form-radio"><input type="radio" name="type" value="category" /><i class="acms-ico-radio"></i>&nbsp;カテゴリー</label></li>
+                <li><label class="acms-form-radio"><input type="radio" name="type" value="user" /><i class="acms-ico-radio"></i>&nbsp;ユーザー</label></li>
+                <li><label class="acms-form-radio"><input type="radio" name="type" value="entry" /><i class="acms-ico-radio"></i>&nbsp;エントリー</label></li>
+            </ul>
+        <p id="submitBtn"><input type="submit" name="submit" value="フルテキストを修正します" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#apply -->
+
+<!-- BEGIN step#error -->
+    <h2>フルテキストを修正します</h2>
+        <h3>フルテキストの修正</h3>
+            <p class="noticeMsg">ブログ、カテゴリー、エントリーのフルテキストを再生成します。 ver2.1.0正式版以前以前のデータですと、KEYWORDコンテキストを利用したブログ、カテゴリーの全文検索時に検索対象に含まれていないので修正を行って下さい。</p>
+        <h3>注意事項</h3>
+            <p class="errorMsg">現在、正しく検索できている場合は実行する必要がありません。</p>
+    <form action="" method="post">
+        <h3>フルテキストを修正する対象の項目を選択してください。</h3>
+            <ul>
+                <li><label class="acms-form-radio"><input type="radio" name="type" value="blog" /><i class="acms-ico-radio"></i>&nbsp;ブログ</label></li>
+                <li><label class="acms-form-radio"><input type="radio" name="type" value="category" /><i class="acms-ico-radio"></i>&nbsp;カテゴリー</label></li>
+                <li><label class="acms-form-radio"><input type="radio" name="type" value="user" /><i class="acms-ico-radio"></i>&nbsp;ユーザー</label></li>
+                <li><label class="acms-form-radio"><input type="radio" name="type" value="entry" /><i class="acms-ico-radio"></i>&nbsp;エントリー</label></li>
+            </ul>
+            <!-- BEGIN type_input:error --><p class="errorMsg">対象の項目を選択してください。</p><!-- END type_input:error -->
+            <!-- BEGIN execute:error --><p class="errorMsg">実行時にエラーが発生しました</p><!-- END execute:error -->
+        <p id="submitBtn"><input type="submit" name="submit" value="フルテキストを修正します" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#error -->
+
+<!-- BEGIN step#result -->
+    <h2>フルテキストを修正しました</h2>
+        <h3>公開ページにアクセスし、修正後の結果を確認してください</h3>
+            <p>問題が解決しない場合は、他の原因が考えられます。問題についてフォーラムにご報告ください。</p>
+<!-- END step#result -->
+
+<p><a href="./index.php">メンテナンスメニューに戻る</a></p>
+</div>
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

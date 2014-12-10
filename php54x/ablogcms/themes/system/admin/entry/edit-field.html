@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!--#include file="/include/head/admin-meta.html"-->
+<meta name="viewport" content="width=device-width,  user-scalable=no, initial-scale=1.0">
+<link href="/css/normalize.css" rel="stylesheet" type="text/css" media="all">
+<link href="/css/acms.css" rel="stylesheet" type="text/css" media="all">
+
+<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--><!-- BEGIN_MODULE Js -->
+<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+
+</head>
+<body>
+
+<!-- BEGIN_MODULE Admin_Entry_Edit -->
+<!-- BEGIN step#reapply -->
+<!-- BEGIN message -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>カスタムフィールドを保存しました</p><!-- END message -->
+
+<form action="" method="post" enctype="multipart/form-data" id="entryForm" class="acms-form acms-form-edit">
+	<div class="entryFormWrapper">
+		<!--#include file="/admin/entry/field.html" -->
+		<!--#include file="/admin/entry/field_foot.html" -->
+	</div>
+	<p class="comPost">
+		<input type="submit" name="ACMS_POST_Ios_EntryUpdateField" value="カスタムフィールドを保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+		<input type="hidden" name="bid" value="%{BID}" />
+		<input type="hidden" name="cid" value="%{CID}" />
+		<input type="hidden" name="eid" value="%{EID}" />
+		<input type="hidden" name="arg[]" value="bid" />
+		<input type="hidden" name="arg[]" value="cid" />
+		<input type="hidden" name="arg[]" value="eid" />
+	</p>
+</form>
+<!-- END step#reapply -->
+<!-- END_MODULE Admin_Entry_Edit -->
+
+</body>
+</html>

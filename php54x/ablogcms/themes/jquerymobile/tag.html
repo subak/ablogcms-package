@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!--#include file="/include/head.html"-->
+<title><!-- BEGIN_MODULE Touch_Entry -->%{ENTRY_TITLE} | <!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_Category -->%{CATEGORY_NAME} | <!-- END_MODULE Touch_Category -->%{BLOG_NAME}</title>
+</head>
+<body>
+<div data-role="page">
+
+	<!--#include file="/include/header.html"-->
+	
+	<div data-role="content">
+		<!-- BEGIN_MODULE Tag_Cloud -->
+		<ul data-role="listview" data-inset="true">
+			<li data-role="list-divider">登録されているタグ</li><!-- BEGIN tag:loop -->
+			<li><a href="{url}">{name} <span class="ui-li-count">{amount}</span></a></li><!-- END tag:loop -->
+		</ul>
+		<!-- END_MODULE Tag_Cloud -->
+	</div>
+	
+	<!--#include file="/include/footer.html"-->
+
+</div>
+</body>
+</html>

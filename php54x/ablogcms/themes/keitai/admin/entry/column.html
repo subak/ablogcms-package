@@ -1,0 +1,193 @@
+<div class="entryFormColumn">
+<!-- BEGIN adminEntryColumn -->
+
+	<!-- BEGIN column:loop -->
+
+		<!-- .entryFormColumnHead -->
+		<div class="entryFormColumnHead clearfix">
+
+<p>{clname}</p>
+<p><input type="hidden" name="id[]" value="{uniqid}" />
+<input type="hidden" name="type[]" value="{cltype}" />
+<input type="hidden" name="clid[]" value="{clid}" />
+
+<select name="sort[]">
+<!-- BEGIN sort:loop -->
+<option value="{value}"{selected}>{label}</option>
+<!-- END sort:loop -->
+</select>
+
+配置:
+<select name="align[]">
+<!-- BEGIN align#liquid -->
+<option value="auto"{align:selected#auto}>おまかせ</option>
+<option value="center"{align:selected#center}>全体</option>
+<!-- END align#liquid -->
+<!-- BEGIN align#solid -->
+<option value="auto"{align:selected#auto}>おまかせ</option>
+<option value="left"{align:selected#left}>左</option>
+<option value="right"{align:selected#right}>右</option>
+<option value="center"{align:selected#center}>中央</option>
+<!-- END align#solid -->
+</select>
+
+<!-- BEGIN clattr#none -->
+<input type="hidden" name="attr[]" value="" />
+<!-- END clattr#none -->
+<!-- BEGIN clattr:veil -->
+
+属性:
+<select name="attr[]">
+<!-- BEGIN clattr:loop -->
+<option value="{value}"{selected}>{label}</option>
+<!-- END clattr:loop -->
+</select>
+<!-- END clattr:veil -->
+</p>
+        
+
+<!-- BEGIN text -->
+<textarea type="text" name="text_text_{id}" rows="10">{text}[raw]</textarea>
+<br />
+<select name="text_tag_{id}">
+<!-- BEGIN textTag:loop -->
+<option value="{value}" {selected}>{label}</option>
+<!-- END textTag:loop -->
+</select>
+<!-- END text -->
+            
+<!-- BEGIN image -->
+<dl>
+<!-- BEGIN FormImages:veil -->
+<dt>プレビュー</dt>
+<!-- BEGIN preview:veil --><dd>
+<a href="%{ARCHIVES_DIR}{popup}"><img src="%{ARCHIVES_DIR}{tiny}" width="{tinyX}" height="{tinyY}" alt="プレビュー" /></a>
+</dd>
+<!-- END preview:veil -->
+<!-- END FormImages:veil -->
+<dd><input type="file" name="image_file_{id}" /></dd>
+<dd>
+<select name="image_size_{id}">
+<!-- BEGIN size:loop -->
+<option value="{value}"{selected}>{label}</option>
+<!-- END size:loop -->
+</select>
+</dd>
+<dd><select name="image_edit_{id}">
+<option value="none"{edit:selected#none}>編集しない</option>
+<option value="deleteLarge"{edit:selected#deleteLarge}>拡大表示させない</option>
+<!-- BEGIN rotate -->
+<option value="rotate270"{selectedEditRotate270}>時計回りで90度回転</option>
+<option value="rotate90"{selectedEditRotate90}>反時計回りで90度回転</option>
+<!-- END rotate -->
+<option value="delete"{edit:selected#delete}>削除</option>
+</select></dd>
+<!-- BEGIN normal:veil -->
+<dt>Normal</dt>
+<dd>{normalX} x {normalY}</dd>
+<!-- END normal:veil -->
+<!-- BEGIN large:veil -->
+<dt>Large</dt>
+<dd>{largeX} x {largeY}</dd>
+<!-- END large:veil -->
+<dt>キャプション</dt>
+<dd><input type="text" name="image_caption_{id}" value="{caption}" class="entryFormFileCaption" />
+<input type="hidden" name="image_old_{id}" value="{old}" /></dd>
+<dt>リンク</dt>
+<dd><input type="text" name="image_link_{id}" value="{link}" /></dd>
+<dt>代替テキスト</dt>
+<dd><input type="text" name="image_alt_{id}" value="{alt}" /></dd>
+
+<!-- BEGIN primaryImage:veil -->   
+<dt><label for="input-radio-image_primary_image_{primaryImageId}">メイン画像</label></dt>
+<dd><input type="radio" name="primary_image" value="{primaryImageId}"{primaryImageChecked}[raw] id="input-radio-image_primary_image_{primaryImageId}" /></dd>
+<!-- END primaryImage:veil -->
+</dl>
+
+<!-- END image -->
+            
+<!-- BEGIN file -->
+<dl>
+<dt>アイコン</dt>
+<!-- BEGIN icon#none -->
+<dd><img src="%{IMAGES_DIR}default/noimage.gif" width="64" height="64" /></dd>
+<!-- END icon#none -->
+<!-- BEGIN icon:veil -->
+<dd><a href="%{ARCHIVES_DIR}{path}"><img src="%{IMAGES_DIR}fileicon/{icon}.gif" class="icon" alt="{type}" width="64" height="64" /></dd>
+<dd><a href="%{ARCHIVES_DIR}{path}">{filename}</a></dd>
+<dd><input type="checkbox" name="file_edit_{deleteId}" value="delete" id="input-checkbox-file_edit_{deleteId}" />
+<label for="input-checkbox-file_edit_{deleteId}"> 削除</label></dd>
+<!-- END icon:veil -->
+<dt>ファイル</dt>
+<dd><input type="file" name="file_file_{id}" /></dd>
+<dt>キャプション</dt>
+<dd><input type="text" name="file_caption_{id}" value="{caption}" /></dd>
+</dl>
+<input type="hidden" name="file_old_{id}" value="{old}" />
+<!-- END file -->
+
+<!-- BEGIN map -->
+<img class="column-map" src="http://maps.google.com/staticmap?center={lat},{lng}&zoom={zoom}&size=320x320&maptype=roadmap&markers={lat},{lng}" width="220" height="220" />
+<dl>
+<dt>緯度</dt>
+<dd><input type="text" name="map_lat_{id}" value="{lat}" /></dd>
+<dt>経度</dt>
+<dd><input type="text" name="map_lng_{id}" value="{lng}" /></dd>
+<dt>ズーム</dt>
+<dd><input type="text" name="map_zoom_{id}" value="{zoom}" /></dd>
+<dt>吹き出し ( HTML可 )</dt>
+<dd><textarea name="map_msg_{id}" rows="9" class="map_msg_id">{msg}</textarea></dd>
+<dt>地図の大きさ</dt>
+<dd><select name="map_size_{id}">
+<!-- BEGIN size:loop -->
+<option value="{value}"{selected}>{label}</option>
+<!-- END size:loop -->
+</select></dd>
+</dl>
+<!-- END map -->
+
+<!-- BEGIN youtube -->
+<dl>
+<dt>YouTube ID</dt>
+<dd><input name="youtube_id_{id}" type="text" value="{youtubeId}" /></dd>
+<dt>サイズ</dt>
+<dd><select name="youtube_size_{id}">
+<!-- BEGIN size:loop -->
+<option value="{value}"{selected}>{label}</option>
+<!-- END size:loop -->
+</select></dd>
+</dl>
+<!-- END youtube -->
+
+<!-- BEGIN eximage -->
+<dl>
+<!-- BEGIN preview:veil -->
+<dt>プレビュー</dt>
+<dd><img src="{normal}" width="220" height="" alt="プレビュー" /></dd>
+<!-- END preview:veil -->
+<dt>標準画像</dt>
+<dd><input type="text" name="eximage_normal_{id}" value="{normal}" /></dd>
+<dt>拡大画像</dt>
+<dd><input type="text" name="eximage_large_{id}" value="{large}" /></dd>
+<dt>キャプション</dt>
+<dd><input type="text" name="eximage_caption_{id}" value="{caption}" /></dd>
+<dt>リンク</dt>
+<dd><input type="text" name="eximage_link_{id}" value="{link}" /></dd>
+<dt>代替テキスト</dt>
+<dd><input type="text" name="eximage_alt_{id}" value="{alt}" /></dd>
+<dt>画像の大きさ</dt>
+<dd><select name="eximage_size_{id}">
+<!-- BEGIN size:loop -->
+<option value="{value}"{selected}>{label}</option>
+<!-- END size:loop -->
+<option value=""{size:selected#none}>そのまま</option>
+</select></dd>
+</dl>
+<!-- END eximage -->
+
+</div>
+		<!-- /.entryFormColumnBody -->
+	</div>
+	<!-- END column:loop -->
+<!-- END adminEntryColumn -->
+</div>

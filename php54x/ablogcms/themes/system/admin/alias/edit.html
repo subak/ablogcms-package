@@ -1,0 +1,108 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-alias"></i>エイリアス管理</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Alias_Edit -->
+
+<!-- BEGIN msg#insert -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>エイリアスを作成しました</p><!-- END msg#insert --><!-- BEGIN msg#update -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>エイリアスを保存しました</p><!-- END msg#update --><!-- BEGIN msg#delete -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>エイリアスを削除しました</p><!-- END msg#delete --><!-- BEGIN alias:validator#operable -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>この操作は許可されていません。</p><!-- END alias:validator#operable --><!-- BEGIN alias:validator#primary -->
+<p class="acms-alert acms-alert-danger">
+	<button class="js-acms-alert-close">×</button>
+	エイリアスを削除できませんでした。<br />
+	プライマリに指定されているエイリアスは削除出来ません。<br />
+</p><!-- END alias:validator#primary -->
+
+
+<!-- BEGIN headline#insert --><!-- END headline#insert -->
+<!-- BEGIN headline#update --><!-- END headline#update -->
+
+<form action="" method="post" class="acms-inline-btn">
+	<input type="hidden" name="bid" value="%{BID}" />
+	<input type="hidden" name="admin" value="alias_index" />
+	<input type="submit" value="一覧" name="ACMS_POST_2GET" class="acms-btn-admin" />
+</form>
+
+<form action="" method="post" enctype="multipart/form-data" class="acms-form">
+	<input type="hidden" name="scope" value="local" />
+	<input type="hidden" name="category[]" value="scope" />
+
+	<!-- BEGIN submit#insert -->
+	<input type="submit" name="ACMS_POST_Alias_Insert" value="作成" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+	<!-- END submit#insert -->
+
+	<!-- BEGIN submit#update -->
+	<input type="submit" name="ACMS_POST_Alias_Update" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+
+	<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+	<input type="submit" name="ACMS_POST_Alias_Delete" value="削除" onclick="return confirm('この操作は取り消せません。\nよろしいですか？');" class="acms-btn-admin acms-btn-admin-danger" />
+	<input type="hidden" name="takeover" value="{takeover}" />
+	<!-- END_MODULE Touch_SessionWithAdministration -->
+	<!-- END submit#update -->
+	
+	<table class="adminTable acms-table-admin-edit"><!-- BEGIN id:veil -->
+		<tr>
+			<th>ID<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エイリアスの管理番号です"></i></th>
+			<td>{id}</td>
+		</tr><!-- END id:veil -->
+		<tr>
+			<th>ステータス<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エイリアスの有効・無効を変更します。"></i></th>
+			<td>
+				<input type="hidden" name="status" value="close" />
+				<label for="input-checkbox-status" class="acms-form-checkbox"> 
+					<input type="checkbox" name="status" value="open"{status:checked#open} id="input-checkbox-status" /><i class="acms-ico-checkbox"></i>公開
+				</label>
+				
+				<input type="hidden" name="alias[]" value="status" />
+			</td>
+		</tr>
+		<tr>
+			<th>名前<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エイリアスの名前を変更します。（日本語可）"></i></th>
+			<td>
+				<input type="text" name="name" value="{name}" />
+				<input type="hidden" name="alias[]" value="name" />
+				<input type="hidden" name="name:validator#required" id="validator-name-required" />
+				<label for="validator-name-required" class="validator-result-{name:validator#required}">名前が入力されていません。</label>
+			</td>
+		</tr>
+		<tr>
+			<th>ドメイン<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エイリアスのドメイン名を変更します。"></i></th>
+			<td>
+				<input type="text" name="domain" value="{domain}" size="40" /> (英数字)
+				<input type="hidden" name="alias[]" value="domain" />
+				<input type="hidden" name="domain:validator#required" id="validator-domain-required" />
+				<label for="validator-domain-required" class="validator-result-{domain:validator#required}">ドメインが入力されていません。</label>
+				<label for="validator-domain-domain" class="validator-result-{domain:validator#domain}">入力されたドメイン名はご利用できません。</label>
+				<label for="validator-code-identify" class="validator-result-{code:validator#exists}">入力されたドメインとコードネームの組み合わせは既に使用されています。</label>
+			</td>
+		</tr>
+		<tr>
+			<th>コードネーム<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="URL上で表示されるディレクトリ名を変更します。"></i></th>
+			<td>
+				<input type="text" name="code" value="{code}" size="20" /> (英数字)
+				<input type="hidden" name="alias[]" value="code" />
+				<label for="validator-code-identify" class="validator-result-{code:validator#exists}">入力されたドメインとコードネームの組み合わせは既に使用されています。</label>
+				<label for="validator-code-reserved" class="validator-result-{code:validator#reserved}">システムで予約されているキーワードです。</label>
+			</td>
+		</tr>
+		<tr>
+			<th>インデキシング<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックが外されたエイリアスは、エイリアスの一覧を出力するモジュールに表示されなくなります。"></i></th>
+			<td>
+				<input type="hidden" name="indexing" value="off" />
+				<label for="input-checkbox-indexing" class="acms-form-checkbox">
+					<input type="checkbox" name="indexing" value="on"{indexing:checked#on} id="input-checkbox-indexing" /><i class="acms-ico-checkbox"></i>リストに出す
+				</label>
+				<input type="hidden" name="alias[]" value="indexing" />
+			</td>
+		</tr>
+	</table>
+</form>
+<!-- END step#reapply -->
+<!-- END_MODULE Admin_Alias_Edit -->

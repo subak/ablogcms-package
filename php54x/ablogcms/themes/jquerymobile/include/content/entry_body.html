@@ -1,0 +1,52 @@
+<!-- BEGIN_MODULE Entry_Body -->
+<article class="entry acms-entry">
+	<!-- BEGIN entry:loop -->
+	<p>
+		<time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}/{date#m}/{date#d}（{date#week}）</time>-
+		<!-- カテゴリー表示　開始▼▼ -->
+		<!-- BEGIN category:veil -->
+		<!-- BEGIN category:loop --><a href="{url}">{name}</a><!-- BEGIN glue --> &lt; <!-- END glue --><!-- END category:loop -->
+		<!-- END category:veil -->
+		<!-- カテゴリー表示　終了▲▲ -->
+	</p>
+
+	<!-- BEGIN title:veil -->
+	<h2 class="entryTitle"><a href="{titleUrl}">{title}[raw]</a></h2><!-- END title:veil -->
+
+	<!-- BEGIN unit:veil -->
+	<!--#include file="/include/unit.html"-->
+	<!-- END unit:veil -->
+
+	<!-- BEGIN tag:veil -->
+	<p id="tagTitle">タグ：</p>
+	<ul id="tagList">
+	<!-- BEGIN tag:loop --><li><a href="{url}">{name}</a></li><!-- END tag:loop -->
+	</ul>
+	<!-- END tag:veil -->
+
+	<!-- END entry:loop -->
+
+	<!-- BEGIN serialNavi:veil -->
+	<nav id="pager" data-role="controlgroup" data-type="horizontal" style="margin: 30px 0;text-align:center;">
+		<!-- BEGIN prevLink --><a href="{url}" data-role="button" data-icon="arrow-l" data-direction="reverse" data-transition="slide">前へ</a><!-- END prevLink -->
+		<a href="{upperUrl}" data-role="button" data-icon="grid" data-transition="slideup">一覧</a>
+		<!-- BEGIN nextLink --><a href="{url}" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="slide">次へ</a><!-- END nextLink -->
+	</nav>
+	<!-- END serialNavi:veil -->
+
+</article>
+<!-- END_MODULE Entry_Body -->
+
+<!-- BEGIN_MODULE Entry_TagRelational -->
+<!-- BEGIN EntryTagRelational:veil -->
+<ul data-role="listview" data-inset="true">
+	<li data-role="list-divider">関連エントリー</li><!-- BEGIN entry:loop -->
+	<li>
+		<a href="{url}" data-transition="flip">
+			<p><time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}/{date#m}/{date#d} ({date#week})</time> - {categoryName}</p>
+			<h3>{title}</h3>
+		</a>
+	</li><!-- END entry:loop -->
+</ul>
+<!-- END EntryTagRelational:veil -->
+<!-- END_MODULE Entry_TagRelational -->

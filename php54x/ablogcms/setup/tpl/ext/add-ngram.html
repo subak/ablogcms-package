@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ja" lang="ja" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" /> 
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms N-gramインデックスの付与ウィザード</title>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="siteTitleBox">
+			<h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+			<span id="setupType">N-gramインデックスの付与</span>
+		</div>
+	</div>
+<div id="main">
+
+<!-- BEGIN step#apply -->
+    <h2>N-gramインデックスを付与します</h2>
+        <h3>N-gramインデックスの付与</h3>
+            <p>既存コンテンツにN-gramインデックスを付与します。文字列を指定した文字数(gram)で切り分けることで検索用のキーを生成します。<br />
+            この処理を実行した後に、config.system.yamlなどからngramを有効にすると、サイト内検索の内部処理が変更されます。</p>
+    <form action="" method="post" class="acms-form">
+        <h3>N-gramの値を指定してください。</h3>
+        <p><input type="text" name="ngram" value="2" size="1" />&nbsp;gram<br />
+        ./private/config.system.yamlのngramの値と同じ（標準は2）である必要があります。</p>
+        <p id="submitBtn"><input type="submit" name="submit" value="N-gramインデックスを付与します" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#apply -->
+
+<!-- BEGIN step#error -->
+    <h2>N-gramインデックスを付与します</h2>
+        <h3>N-gramインデックスの付与</h3>
+            <p>既存コンテンツにN-gramインデックスを付与します。文字列を指定した文字数(gram)で切り分けることで検索用のキーを生成します。<br />
+            この処理を実行した後に、config.system.yamlなどからngramを有効にすると、サイト内検索の内部処理が変更されます。</p>
+    <form action="" method="post" class="acms-form">
+        <h3>N-gramの値を指定してください。</h3>
+        <p><input type="text" name="ngram" value="{ngram}" size="1" />&nbsp;gram<br />
+        ./private/config.system.yamlのngramの値と同じ（標準は2）である必要があります。</p>
+        <!-- BEGIN ngram_input:error --><p class="errorMsg">N-gramの値を指定してください。</p><!-- END ngram_input:error -->
+        <!-- BEGIN ngram_invalid:error --><p class="errorMsg">1桁の数字を入力してください。</p><!-- END ngram_invalid:error -->
+        <p id="submitBtn"><input type="submit" name="submit" value="N-gramインデックスを付与します" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#error -->
+
+<!-- BEGIN step#result -->
+    <h2>N-gramインデックスを付与しました</h2>
+        <h3>[*ROOT_DIR*][*SETUP_DIR*]/を削除し、メンテナンスツールを終了してください</h3>
+            <p>config.system.yamlのngramの設定を有効にし、N-gram検索を有効にしてください。</p>
+<!-- END step#result -->
+
+<p><a href="./index.php">メンテナンスメニューに戻る</a></p>
+</div>
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

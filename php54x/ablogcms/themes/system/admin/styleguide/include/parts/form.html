@@ -1,0 +1,339 @@
+<section id="form" class="sectionBox">
+	<h1 class="sectionTitle">フォーム</h1>
+	<h2 class="sectionTitle2">フォームの機能</h2>
+	<p>formタグに .acms-form をつけるとinputタグに装飾がつきます。</p>
+	<p>フォーカスすると青色に変わります。</p>
+
+	<h3 class="sectionTitle3">基本のHTML</h3>
+<pre class="code HTML">
+&lt;form class=&quot;acms-form&quot;&gt;
+	&lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;ex) info@hoge.com&quot;&gt;
+&lt;/form&gt;
+</pre>
+
+	<h2 class="sectionTitle2">ブロック</h2>
+	<h3 class="sectionTitle3">.acms-form-group</h3>
+
+<pre class="code HTML">
+&lt;div class=&quot;acms-form-group&quot;&gt;
+	&lt;label for=&quot;email&quot;&gt;メールアドレス&lt;/label&gt;
+	&lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;ex) info@example.com&quot;&gt;
+&lt;/div&gt;
+</pre>
+
+<form class="acms-form">
+	<div class="acms-form-group">
+		<label for="email">メールアドレス</label>
+		<input type="email" id="email" placeholder="ex) info@example.com">
+	</div>
+
+	<div class="acms-form-group">
+		<label for="password">パスワード</label>
+		<input type="password" class="form-control" id="password" placeholder="Password">
+	</div>
+
+	<div class="acms-form-group">
+		<label>住んでいるところ</label>
+		<select>
+			<option value="">---</option>
+			<option value="愛知県">愛知県</option>
+			<option value="岐阜県">岐阜県</option>
+			<option value="三重県">三重県</option>
+		</select>
+	</div>
+
+	<div class="acms-form-group">
+		<label for="file">画像</label>
+		<input type="file" id="file">
+		<p class="acms-helptext">jpeg、gif、ping形式でアップロードしてください。</p>
+	</div>
+
+	<div class="acms-form-group">
+		<label for="color1">
+			<input type="radio" name="color" value="青色" id="color1"> 青色
+		</label>
+
+		<label for="color2">
+			<input type="radio" name="color" value="青色" id="color2"> 赤色
+		</label>
+
+		<label for="color3">
+			<input type="radio" name="color" value="青色" id="color3"> 黄色
+		</label>
+	</div>
+
+	<div class="acms-form-group">
+		<label>
+			<input type="checkbox"> パスワードを保存する
+		</label>
+	</div>
+
+	<button type="submit" class="acms-btn">送信</button>
+</form>
+
+	<h2 class="sectionTitle2">ラベルもブロックにする</h2>
+	<h3 class="sectionTitle3">.acms-form-block</h3>
+
+<p>ラベルをブロックするとinputが下にきます。</p>
+<form class="acms-form">
+	<div class="acms-form-group">
+		<label for="blockEmail" class="acms-form-block">メールアドレス</label>
+		<input type="email" id="blockEmail" placeholder="ex) info@example.com">
+		</div>
+</form>
+
+<pre class="code HTML">
+&lt;div class=&quot;acms-form-group&quot;&gt;
+	&lt;label for=&quot;email&quot; class=&quot;acms-form-block&quot;&gt;メールアドレス&lt;/label&gt;
+	&lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;ex) info@example.com&quot;&gt;
+&lt;/div&gt;
+</pre>
+
+<h2 class="sectionTitle2">インライン（横並び）</h2>
+
+<form class="acms-form">
+	<label for="inlineEmail">メールアドレス</label>
+	<input type="email" id="inlineEmail" placeholder="ex) info@example.com">
+
+	<label for="inlinePassword">パスワード</label>
+	<input type="password" class="form-control" id="inlinePassword" placeholder="Password">
+
+	<button type="submit" class="acms-btn">送信</button>
+</form>
+
+<h2 class="sectionTitle2">無効化</h2>
+<p>disabled属性をつける</p>
+
+<form class="acms-form">
+	<label for="disabledEmail">メールアドレス</label>
+	<input type="email" id="disabledEmail" disabled>
+
+	<label for="password">選択</label>
+	<select disabled>
+		<option value="">---</option>
+		<option value="愛知県">愛知県</option>
+		<option value="岐阜県">岐阜県</option>
+		<option value="三重県">三重県</option>
+	</select>
+
+	<label>
+		<input type="checkbox" disabled> 保存する
+	</label>
+
+	<button type="submit" class="acms-btn" disabled="disabled">送信</button>
+</form>
+
+<pre class="code HTML">
+&lt;input type=&quot;email&quot; id=&quot;email&quot; disabled&gt;
+
+&lt;select disabled&gt;
+	&lt;option value=&quot;&quot;&gt;---&lt;/option&gt;
+	&lt;option value=&quot;...&quot;&gt;...&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+
+<h2 class="sectionTitle2">エラー</h2>
+<h3 class="sectionTitle3">.acms-text-error</h3>
+<p>テキストの色が赤色になります。</p>
+<p class="acms-text-error">お名前を入力してください。</p>
+<pre class="code HTML">
+&lt;p class=&quot;acms-text-error&quot;&gt;お名前を入力してください。&lt;/p&gt;
+</pre>
+
+<h3 class="sectionTitle3">.acms-form-error</h3>
+<p>inputが赤色に変わる</p>
+
+<form class="acms-form">
+	<label for="errorEmail">メールアドレス</label>
+	<input type="email" id="errorEmail" placeholder="ex) info@example.com" class="acms-form-error">
+</form>
+
+<pre class="code HTML">
+&lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;ex) info@example.com&quot; class=&quot;acms-form-error&quot;&gt;
+</pre>
+
+
+
+<h2 class="sectionTitle2">フォームサイズ</h2>
+<h3 class="sectionTitle3">.acms-form-large</h3>
+<p>大きい</p>
+<form class="acms-form">
+	<label for="largeForm">メールアドレス</label>
+	<input type="email" id="largeForm" placeholder="ex) info@example.com" class="acms-form-large">
+</form>
+
+
+<h3 class="sectionTitle3">.acms-form-small</h3>
+<p>小さい</p>
+<form class="acms-form">
+	<label for="smallForm">メールアドレス</label>
+	<input type="email" id="smallForm" placeholder="ex) info@example.com" class="acms-form-small">
+</form>
+
+<pre class="code HTML">
+&lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;ex) info@example.com&quot; class=&quot;acms-form-large&quot;&gt;
+
+&lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;ex) info@example.com&quot; class=&quot;acms-form-small&quot;&gt;
+</pre>
+
+<h2 class="sectionTitle2">フォーム長さ</h2>
+<form class="acms-form">
+	<div class="acms-form-group">
+		<label for="widthLarge" class="acms-form-block">.acms-form-width-large</label>
+		<input type="email" id="widthLarge" class="acms-form-width-large">
+	</div>
+
+	<div class="acms-form-group">
+		<label for="widthMedium" class="acms-form-block">.acms-form-width-medium</label>
+		<input type="email" id="widthMedium" class="acms-form-width-medium">
+	</div>
+
+	<div class="acms-form-group">
+		<label for="widthSmall" class="acms-form-block">.acms-form-width-small</label>
+		<input type="email" id="widthSmall" class="acms-form-width-small">
+	</div>
+
+	<div class="acms-form-group">
+		<label for="widthMini" class="acms-form-block">.acms-form-width-mini</label>
+		<input type="email" id="widthMini" class="acms-form-width-mini">
+	</div>
+
+	<div class="acms-form-group">
+		<label for="widthFull" class="acms-form-block">.acms-form-width-full(100%)</label>
+		<input type="email" id="widthFull" class="acms-form-width-full">
+	</div>
+
+	<div class="acms-form-group">
+		<label for="width3quarters" class="acms-form-block">.acms-form-width-3quarters(75%)</label>
+		<input type="email" id="width3quarters" class="acms-form-width-3quarters">
+	</div>
+
+	<div class="acms-form-group">
+		<label for="widthHalf" class="acms-form-block">.acms-form-width-half(50%)</label>
+		<input type="email" id="widthHalf" class="acms-form-width-half">
+	</div>
+
+	<div class="acms-form-group">
+		<label for="widthQuarter" class="acms-form-block">.acms-form-width-quarter(25%)</label>
+		<input type="email" id="widthQuarter" class="acms-form-width-quarter">
+	</div>
+</form>
+
+<pre class="code HTML">
+&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-large&quot;&gt;
+
+&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-medium&quot;&gt;
+
+&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-small&quot;&gt;
+
+&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-mini&quot;&gt;
+
+&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-full&quot;&gt;
+
+&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-3quarters&quot;&gt;
+
+&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-half&quot;&gt;
+
+&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-quarter&quot;&gt;
+</pre>
+
+<h2 class="sectionTitle2">チェックボックスとラジオボタンのデザインを変える</h2>
+<p>Internet Explorerは11以上で対応しています。</p>
+
+<form class="acms-form">
+	<h3>チェックボックス（左にアイコン）</h3>
+	<div class="acms-form-group acms-checkbox">
+		<label class="acms-form-checkbox">
+			<input checked="checked" type="checkbox">
+			<i class="acms-ico-checkbox"></i>
+			りんご
+		</label>
+
+		<label class="acms-form-checkbox">
+			<input type="checkbox">
+			<i class="acms-ico-checkbox"></i>
+			もも
+		</label>
+
+		<label class="acms-form-checkbox">
+			<input type="checkbox">
+			<i class="acms-ico-checkbox"></i>
+			ぶどう
+		</label>
+
+		<label class="acms-form-checkbox">
+			<input type="checkbox" disabled>
+			<i class="acms-ico-checkbox"></i>
+			みかん(disabledあり)
+		</label>
+	</div>
+</form>
+<pre class="code HTML">
+&lt;label class=&quot;acms-form-checkbox&quot;&gt;
+	&lt;input checked=&quot;checked&quot; type=&quot;checkbox&quot;&gt;&lt;i class=&quot;acms-ico-checkbox&quot;&gt;&lt;/i&gt;りんご
+&lt;/label&gt;
+</pre>
+
+<form class="acms-form">
+	<h3 class="sectionTitle3">チェックボックス（ボタン）</h3>  
+	<div class="acms-form-group acms-checkbox-btn">
+		<input type="checkbox" id="checkbox-1-1" class="acms-btn-checkbox" /><label for="checkbox-1-1">りんご</label>
+		<input type="checkbox" id="checkbox-1-2" class="acms-btn-checkbox" /><label for="checkbox-1-2">もも</label>
+		<input type="checkbox" id="checkbox-1-3" class="acms-btn-checkbox" /><label for="checkbox-1-3">ぶどう</label>
+		<input type="checkbox" id="checkbox-1-4" class="acms-btn-checkbox" /><label for="checkbox-1-4">みかん</label>
+	</div>
+</form>
+
+<pre class="code HTML">
+&lt;input type=&quot;checkbox&quot; id=&quot;checkbox-1-1&quot; class=&quot;acms-btn-checkbox&quot; /&gt;&lt;label for=&quot;checkbox-1-1&quot;&gt;りんご&lt;/label&gt;
+</pre>
+
+<form class="acms-form">
+	<h3 class="sectionTitle3">ラジオボタン（左にアイコン）</h3>
+	<div class="acms-form-group acms-radio">
+		<label class="acms-form-radio">
+			<input name="custom-radio" checked="checked" type="radio">
+			<i class="acms-ico-radio"></i>
+			うどん
+		</label>
+
+		<label class="acms-form-radio">
+			<input name="custom-radio" type="radio">
+			<i class="acms-ico-radio"></i>
+			そば
+		</label>
+
+		<label class="acms-form-radio">
+			<input name="custom-radio" type="radio">
+			<i class="acms-ico-radio"></i>
+			カレー
+		</label>
+
+		<label class="acms-form-radio">
+			<input name="custom-radio" type="radio" disabled>
+			<i class="acms-ico-radio"></i>
+			牛丼(disabledあり)
+		</label>
+	</div>
+</form>
+
+<pre class="code HTML">
+&lt;label class=&quot;acms-form-radio&quot;&gt;
+	&lt;input name=&quot;custom-radio&quot; checked=&quot;checked&quot; type=&quot;radio&quot;&gt;&lt;i class=&quot;acms-ico-radio&quot;&gt;&lt;/i&gt;うどん
+&lt;/label&gt;
+</pre>
+
+<form class="acms-form">
+	<h3 class="sectionTitle3">ラジオボタン（ボタン）</h3>  
+	<div class="acms-form-group acms-radio-btn">
+		<input type="radio" id="radio-1-1" name="radio-1-set" class="acms-btn-radio" checked /><label for="radio-1-1">うどん</label>
+		<input type="radio" id="radio-1-2" name="radio-1-set" class="acms-btn-radio" /><label for="radio-1-2">そば</label>
+		<input type="radio" id="radio-1-3" name="radio-1-set" class="acms-btn-radio" /><label for="radio-1-3">カレー</label>
+	</div>
+</form>
+
+<pre class="code HTML">
+&lt;input type=&quot;radio&quot; id=&quot;radio-1-2&quot; name=&quot;radio-1-set&quot; class=&quot;acms-btn-radio&quot; /&gt;&lt;label for=&quot;radio-1-2&quot;&gt;そば&lt;/label&gt;
+</pre>
+
+</section>

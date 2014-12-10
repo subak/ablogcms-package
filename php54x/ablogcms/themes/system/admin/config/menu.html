@@ -1,0 +1,107 @@
+<!-- BEGIN_MODULE Admin_Menu -->
+<!-- BEGIN entryMenu:veil -->
+<h2>エントリーメニュー</h2>
+<div class="subContents">
+	<!-- BEGIN entry:veil -->
+	<h3 class="infoHeading">エントリーを書く</h3>
+	<ul class="entryInfoList"><!-- BEGIN entry#index -->
+		<li><a href="{url}">一覧</a></li><!-- END entry#index --><!-- BEGIN entry#insert -->
+		<li>
+			<form action="" method="post"><!-- BEGIN_MODULE Admin_Category_SelectGlobal -->
+				<select name="cid">
+					<option value="">なし</option><!-- BEGIN loop -->
+					<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option><!-- END loop -->
+				</select><!-- END_MODULE Admin_Category_SelectGlobal -->
+				<input type="hidden" name="admin" value="entry-edit" />
+				<input type="submit" name="ACMS_POST_2GET" value="作成" class="btn" />
+			</form>
+		</li><!-- END entry#insert -->
+	</ul><!-- END entry:veil -->
+
+	<!-- BEGIN category:veil -->
+	<h3 class="infoHeading">カテゴリー</h3>
+	<ul class="entryInfoList"><!-- BEGIN category#index -->
+		<li><a href="{url}">一覧</a></li><!-- END category#index --><!-- BEGIN category#insert -->
+		<li><a href="{url}">作成</a></li><!-- END category#insert -->
+	</ul><!-- END category:veil -->
+
+	<!-- BEGIN tag -->
+	<h3 class="infoHeading">タグ</h3>
+	<ul class="entryInfoList">
+		<li><a href="{url}">一覧</a></li>
+	</ul><!-- END tag -->
+
+</div><!-- END entryMenu:veil -->
+
+<!-- BEGIN management:veil -->
+<h2>サイト管理</h2>
+<div class="subContents">
+
+	<!-- BEGIN blog:veil -->
+	<h3 class="infoHeading">ブログ</h3>
+	<ul class="entryInfoList"><!-- BEGIN blog#index -->
+		<li><a href="{url}">一覧</a></li><!-- END blog#index --><!-- BEGIN blog#insert -->
+		<li><a href="{url}">作成</a></li><!-- END blog#insert --><!-- BEGIN blog#update -->
+		<li><a href="{url}">編集</a></li><!-- END blog#update -->
+	</ul><!-- END blog:veil -->
+
+	<!-- BEGIN user:veil -->
+	<h3 class="infoHeading">ユーザー</h3>
+	<ul class="entryInfoList"><!-- BEGIN user#index -->
+		<li><a href="{url}">一覧</a></li><!-- END user#index --><!-- BEGIN user#insert -->
+		<li><a href="{url}">作成</a></li><!-- END user#insert -->
+	</ul><!-- END user:veil -->
+
+	<!--<h3 class="infoHeading">メール</h3>
+	<ul class="entryInfoList">
+		<li><a href="{url}">送信履歴</a></li>
+	</ul>-->
+
+	<!-- BEGIN config:veil -->
+	<h3 class="infoHeading">設定</h3>
+	<ul class="entryInfoList"><!-- BEGIN config#general -->
+		<li><a href="{url}">一般</a></li><!-- END config#general --><!-- BEGIN config#theme -->
+		<li><a href="{url}">テーマ設定</a></li><!-- END config#theme --><!-- BEGIN config#column -->
+		<li><a href="{url}">カラム設定</a></li><!-- END config#column -->
+		<li>モジュール<ul><!-- BEGIN config#entry/body -->
+			<li><a href="{url}">エントリー本文</a></li><!-- END config#entry/body --><!-- BEGIN config#entry/list -->
+			<li><a href="{url}">エントリーリスト</a></li><!-- END config#entry/list --><!-- BEGIN config#entry/photo -->
+			<li><a href="{url}">フォト</a></li><!-- END config#entry/photo --><!-- BEGIN config#entry/headline -->
+			<li><a href="{url}">ヘッドライン</a></li><!-- END config#entry/headline --><!-- BEGIN config#entry/summary -->
+			<li><a href="{url}">サマリー</a></li><!-- END config#entry/summary --><!-- BEGIN config#category/list -->
+			<li><a href="{url}">カテゴリーリスト</a></li><!-- END config#category/list --><!-- BEGIN config#tag/cloud -->
+			<li><a href="{url}">タグクラウド</a></li><!-- END config#tag/cloud --><!-- BEGIN config#calendar/month -->
+			<li><a href="{url}">カレンダー</a></li><!-- END config#calendar/month --><!-- BEGIN config#links -->
+			<li><a href="{url}">リンク集</a></li><!-- END config#links --><!-- BEGIN config#navigation -->
+			<li><a href="{url}">ナビゲーション<a/></li><!-- END config#navigation --><!-- BEGIN config#comment/body -->
+			<li><a href="{url}">コメント本文</a></li><!-- END config#comment/body -->
+		</ul></li><!-- BEGIN config#export -->
+		<li><a href="{url}">エクスポート</a></li><!-- END config#export --><!-- BEGIN config#import -->
+		<li><a href="{url}">インポート</a></li><!-- END config#import -->
+	</ul><!-- END config:veil -->
+
+	<!-- BEGIN rule:veil -->
+	<h3 class="infoHeading">ルール</h3>
+	<ul class="entryInfoList"><!-- BEGIN rule#index -->
+		<li><a href="{url}">一覧</a></li><!-- END rule#index --><!-- BEGIN rule#insert -->
+		<li><a href="{url}">作成</a></li><!-- END rule#insert -->
+	</ul><!-- END rule:veil -->
+
+	<!-- BEGIN module:veil -->
+	<h3 class="infoHeading">モジュールID</h3>
+	<ul class="entryInfoList"><!-- BEGIN module#index -->
+		<li><a href="{url}">一覧</a></li><!-- END module#index --><!-- BEGIN module#insert -->
+		<li><a href="{url}">作成</a></li><!-- END module#insert -->
+	</ul><!-- END module:veil -->
+</div><!-- END management:veil -->
+
+<!-- BEGIN acount:veil -->
+<h2>アカウント</h2>
+<div class="subContents">
+	<!-- BEGIN profile:veil -->
+	<h3 class="infoHeading">プロフィール</h3>
+	<ul class="entryInfoList"><!-- BEGIN user#profile -->
+		<li><a href="{url}">ユーザー</a></li><!-- END user#profile -->
+	</ul><!-- END profile:veil -->
+</div><!-- END acount:veil -->
+<!-- END_MODULE Admin_Menu -->
