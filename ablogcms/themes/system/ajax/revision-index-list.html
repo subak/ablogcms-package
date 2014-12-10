@@ -1,0 +1,112 @@
+<!-- BEGIN_MODULE Admin_Entry_Revision_Index -->
+<!-- BEGIN revision#notFound -->
+<p>バージョンがありません。</p>
+<!-- END revision#notFound -->
+
+<div id="revison_box">
+<form action="" method="post">
+
+<!-- BEGIN tmpVersion:veil -->
+<h3 class="acms-title">作業領域<!-- BEGIN_MODULE Touch_Approval -->（作業領域からバージョンを作成する事ができます）
+<!-- END_MODULE Touch_Approval --></h3>
+<div class="acms-table-responsive">
+	<table class="acms-table-admin acms-table-admin-striped acms-table-heading acms-table-hover acms-table-revison acms-table-workarea acms-margin-bottom-large">
+	<thead>
+	<tr>
+		<th class="th1">ID</th>
+		<th class="th2">バージョン名</th>
+		<th class="th3">作成者</th>
+		<th class="th4">作成日時</th>
+		<th class="th5">確認</th><!-- BEGIN_MODULE Touch_Approval -->
+		<th class="th6">承認ステータス</th><!-- END_MODULE Touch_Approval -->
+		<th class="th7">変更</th><!-- BEGIN_MODULE Touch_RevisionAdministrator -->
+		<th class="th8"></th><!-- END_MODULE Touch_RevisionAdministrator -->
+	</tr>
+	</thead>
+	<tbody><!-- BEGIN revisionTmp -->
+	<tr{current}[raw]>
+		<td class="th1">
+			<label for="input-radio-{rvid}" class="acms-form-radio">
+				<input type="radio" name="revision" id="input-radio-{rvid}" value="{rvid}"{checked} /><i class="acms-ico-radio"></i>{rvid}
+			</label>
+		</td>
+		<td class="th2"><span class="acms-table-revison-title">{memo}</span><!-- BEGIN touch:status#open --><!-- END touch:status#open --><!-- BEGIN touch:status#close -->（非公開）<!-- END touch:status#close --><!-- BEGIN touch:status#draft -->（下書き）<!-- END touch:status#draft --><!-- BEGIN touch:status#trash -->（ゴミ箱）<!-- END touch:status#trash --></td>
+		<td class="th3"><img src="%{ARCHIVES_DIR}{icon}" width="28" height="28" style="vertical-align:middle; margin-right:10px;" />{author}</td>
+		<td class="th4">{datetime}[date('Y/m/d H:i:s')]</td>
+		<td class="th5">
+			<a href="{confirmUrl}" class="js-get_revision_preview acms-btn-admin">確認</a>
+		</td><!-- BEGIN_MODULE Touch_Approval -->
+		<td class="th6">
+			<span class="acms-label">作業領域</span>
+		</td><!-- END_MODULE Touch_Approval -->
+		<td class="th7">
+			<a href="{dupEditUrl}" class="acms-btn-admin">変更</a>
+		</td><!-- BEGIN_MODULE Touch_RevisionAdministrator -->
+		<td class="th8"></td><!-- END_MODULE Touch_RevisionAdministrator -->
+	</tr>
+	</tbody>
+	</table>
+</div>
+<!-- END revisionTmp --><!-- END tmpVersion:veil -->
+
+<!-- BEGIN index:veil -->
+<h3 class="acms-title">バージョン一覧<!-- BEGIN_MODULE Touch_Approval -->（バージョンの確認画面から承認依頼をする事ができます）<!-- END_MODULE Touch_Approval --></h3>
+<div class="acms-table-revison-scroll">
+
+<table class="acms-table-admin acms-table-admin-striped acms-table-heading acms-table-hover acms-table-revison">
+<thead>
+<tr>
+	<th class="th1">ID</th>
+	<th class="th2">バージョン名</th>
+	<th class="th3">作成者</th>
+	<th class="th4">作成日時</th>
+	<th class="th5">確認</th><!-- BEGIN_MODULE Touch_Approval -->
+	<th class="th6">承認ステータス</th><!-- END_MODULE Touch_Approval -->
+	<th class="th7">変更</th><!-- BEGIN_MODULE Touch_RevisionAdministrator -->
+	<th class="th8"></th><!-- END_MODULE Touch_RevisionAdministrator -->
+</tr>
+</thead>
+<tbody><!-- BEGIN revision:loop -->
+<tr{current}[raw]>
+	<td class="th1">
+		<label for="input-radio-{rvid}" class="acms-form-radio">
+			<input type="radio" name="revision" id="input-radio-{rvid}" value="{rvid}"{checked} /><i class="acms-ico-radio"></i>{rvid}
+		</label>
+	</td>
+	<td class="th2"><span class="acms-table-revison-title">{memo}</span><!-- BEGIN touch:status#open --><!-- END touch:status#open --><!-- BEGIN touch:status#close -->（非公開）<!-- END touch:status#close --><!-- BEGIN touch:status#draft -->（下書き）<!-- END touch:status#draft --><!-- BEGIN touch:status#trash -->（ゴミ箱）<!-- END touch:status#trash --></td>
+	<td class="th3"><img src="%{ARCHIVES_DIR}{icon}" width="28" height="28" style="vertical-align:middle; margin-right:10px;" />{author}</td>
+	<td class="th4">{datetime}[date('Y/m/d H:i:s')]</td>
+	<td class="th5">
+		<a href="{confirmUrl}" class="js-get_revision_preview acms-btn-admin">確認</a>
+	</td><!-- BEGIN_MODULE Touch_Approval -->
+	<td class="th6">
+		<!-- BEGIN_IF [{rvid}/neq/1] -->
+		<!-- BEGIN touch:rev_status#approved -->
+		<span class="acms-label acms-label-info">承認済</span><!-- END touch:rev_status#approved --><!-- BEGIN touch:rev_status#in_review -->
+		<span class="acms-label acms-label-warning">承認中</span><!-- END touch:rev_status#in_review --><!-- BEGIN touch:rev_status#reject -->
+		<span class="acms-label acms-label-danger">却下</span><!-- END touch:rev_status#reject --><!-- BEGIN touch:rev_status#reject -->
+		<span class="acms-label acms-label-danger">却下</span><!-- END touch:rev_status#reject --><!-- BEGIN touch:rev_status#trash -->
+		<span class="acms-label acms-label-danger">削除依頼</span><!-- END touch:rev_status#trash --><!-- BEGIN touch:rev_status#none -->
+		<span class="acms-label">承認前</span><!-- END touch:rev_status#none -->
+		<!-- ELSE -->
+		<span class="acms-label">作業領域</span>
+		<!-- END_IF -->
+	</td><!-- END_MODULE Touch_Approval -->
+	<td class="th7">
+		<a href="{dupEditUrl}" class="acms-btn-admin">変更</a>
+	</td><!-- BEGIN_MODULE Touch_RevisionAdministrator -->
+	<td class="th8"><!-- BEGIN delete -->
+		<input id="%{BID}-%{EID}-{_rvid}" type="button" class="js-revision_delete acms-btn-admin acms-btn-admin-danger" value="削除" /><!-- END delete -->
+	</td><!-- END_MODULE Touch_RevisionAdministrator -->
+</tr><!-- END revision:loop -->
+</tbody>
+</table>
+</div>
+<!-- BEGIN_MODULE Touch_RevisionAdministrator -->
+<input type="submit" name="ACMS_POST_Revision_Change" value="選択したバージョンを公開" class="acms-btn-admin acms-btn-admin-primary" style="float:right; margin-top:20px;"  onclick="return confirm('選択したバージョンを公開してもよろしいですか？');" />
+<hr class="clearHidden" />
+<!-- END_MODULE Touch_RevisionAdministrator -->
+</form>
+</div>
+<!-- END index:veil -->
+<!-- END_MODULE Admin_Entry_Revision_Index -->

@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_IF [${1:条件式}] -->
+
+<!-- END_IF -->]]></content>
+	<tabTrigger>!acms:if</tabTrigger>
+    <description>IF</description>
+</snippet>

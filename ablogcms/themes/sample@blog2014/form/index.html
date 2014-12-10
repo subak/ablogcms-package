@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title><!-- BEGIN_MODULE Touch_Entry -->%{ENTRY_TITLE} | <!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_Category -->%{CATEGORY_NAME} | <!-- END_MODULE Touch_Category -->%{BLOG_NAME}</title>
+<meta name="keywords" content="%{META_KEYWORDS}" />
+<meta name="description" content="%{META_DESCRIPTION}" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="%{BASE_URL}rss2.xml" />
+
+<!-- スタイルの読み込み -->
+<!--#include file="/include/link.html"-->
+
+<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--><!-- BEGIN_MODULE Js -->
+<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<script type="text/javascript" src="/js/blog.js"></script>
+<!--BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Blog_Field -->{googleAnalytics}[raw]<!-- END_MODULE Blog_Field --><!-- END_MODULE Touch_Unlogin -->
+
+<!--#include file="/include/css.html"-->
+</head>
+<body>
+
+<div class="titleInner">
+	<div class="mainImg" class="clearfix">
+		<div class="gradient">
+			<div class="acms-container">
+				<div class="acms-grid-r">
+				<h1 class="siteTitle"><a href="%{BASE_URL}">%{BLOG_NAME}</a></h1>
+				<p class="siteCaption">%{META_DESCRIPTION}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--グローバルナビゲーション-->
+<!--#include file="/include/globalNavigation.html"-->
+
+<div class="acms-container">
+	<div class="acms-grid-r contents clearfix">
+		<div class="acms-col-9">
+			<!--#include file="/admin/action.html"-->
+			<h1>カスタムフィールドを使ったフォームのサンプル</h1>
+			%{INHERLINK}
+			
+			<!-- BEGIN_MODULE Form -->
+			
+			<!-- BEGIN step -->
+			<form action="?step=reapply" method="post" class="acms-form">
+			<!--#include file="apply.html"-->
+			<input type="hidden" name="step" value="confirm" />
+			<input type="submit" name="ACMS_POST_Form_Confirm" value="確認" class="acms-btn-admin" />
+			</form>
+			<!-- END step -->
+			
+			<!-- BEGIN step#reapply -->
+			<form action="?step=reapply" method="post" class="acms-form">
+			<!--#include file="reapply.html"-->
+			<input type="hidden" name="step" value="confirm" />
+			<input type="submit" name="ACMS_POST_Form_Confirm" value="確認" class="acms-btn-admin" />
+			</form>
+			<!-- END step#reapply -->
+			
+			<!-- BEGIN step#confirm -->
+			<!--#include file="confirm.html"-->
+			<form action="?step=reapply" method="post">
+			<input type="hidden" name="takeover" value="{field:takeover}" />
+			<input type="hidden" name="step" value="result" />
+			<input type="submit" name="ACMS_POST_Form_Submit" value="送信" class="acms-btn-admin" />
+			
+			
+			<!-- 以下の[*]のメールアドレス等の項目を設定してください。-->
+			<!-- 必要ない場合は項目を削除してください -->
+			<!-- また送信メールの件名や本文となるsubject.txt、body.txt、
+			adminsubject.txt、adminbody.txtを編集してください。 -->
+			
+			<!-- [*]宛先（To）の設定 -->
+			<!-- nameにはToおよびTo[]が設定可能 -->
+			<!-- To[]の場合、複数のアドレスが設定可能 -->
+			<input type="hidden" name="To[]" value="送信先１ <to1@example.com>" />
+			<input type="hidden" name="To[]" value="送信先２ <to2@example.com>" />
+			
+			<!-- [*]送信元（Sender）の設定 -->
+			<input type="hidden" name="Sender" value="送信者 <sender@example.com>" />
+			
+			<!-- [*]送信元（From）の設定 -->
+			<!-- nameにはFromおよびFrom[]が設定可能 -->
+			<!-- From[]の場合、複数のアドレスが設定可能 -->
+			<input type="hidden" name="From[]" value="送信者１ <from1@example.com>" />
+			<input type="hidden" name="From[]" value="送信者２ <from2@example.com>" />
+			
+			<!-- [*]返信先（Reply-To）の設定 -->
+			<input type="hidden" name="Reply-To" value="返信先 <replyto@example.com>" />
+			
+			<!-- [*]カーボンコピー（Cc）の設定 -->
+			<!-- nameにはCcおよびCc[]が設定可能 -->
+			<!-- Cc[]の場合、複数のアドレスが設定可能 -->
+			<input type="hidden" name="Cc[]" value="カーボンコピー１ <cc1@example.com>" />
+			<input type="hidden" name="Cc[]" value="カーボンコピー２ <cc2@example.com>" />
+			
+			<!-- [*]ブラインドコピー（Bcc）の設定 -->
+			<!-- nameにはBccおよびBcc[]が設定可能 -->
+			<!-- Bcc[]の場合、複数のアドレスが設定可能 -->
+			<input type="hidden" name="Bcc[]" value="ブラインドコピー１ <bcc1@example.com>" />
+			<input type="hidden" name="Bcc[]" value="ブラインドコピー２ <bcc2@example.com>" />
+			
+			<!-- 文字コードの設定 -->
+			<input type="hidden" name="Charset" value="ISO-2022-JP" />
+			
+			<!-- 送信メールの件名の設定 -->
+			<input type="hidden" name="SubjectTpl" value="/form/mail/subject.txt" />
+			<!-- 送信メールの本文の設定 -->
+			<input type="hidden" name="BodyTpl" value="/form/mail/body.txt" />
+			
+			<!-- [*]管理者の宛先（AdminFrom）の設定 -->
+			<input type="hidden" name="AdminTo" value="管理者の送信先 <adminTo@example.com>" />
+			<!-- [*]管理者の送信元（AdminFrom）の設定 -->
+			<input type="hidden" name="AdminFrom" value="管理者の送信者 <adminFrom@example.com>" />
+			
+			<!-- 管理者メールの件名の設定 -->
+			<input type="hidden" name="AdminSubjectTpl" value="/form/mail/adminsubject.txt" />
+			<!-- 管理者メールの本文の設定 -->
+			<input type="hidden" name="AdminBodyTpl" value="/form/mail/adminbody.txt" />
+			
+			<!--
+			送信先などのメールアドレスにBase64を用いる事ができます。
+			ご利用の場合には以下のコードを利用します。
+			<input type="hidden" name="Obfuscation" value="Base64" />
+			-->
+			
+			</form>
+			
+			<form action="?step=reapply" method="post">
+			<input type="hidden" name="takeover" value="{field:takeover}" />
+			<input type="hidden" name="step" value="confirm" />
+			<input type="submit" name="ACMS_POST_Form_Apply" value="戻る" />
+			</form>
+			
+			<p>上記の内容で送信します。</p>
+			
+			<!-- END step#confirm -->
+			<!-- BEGIN step#result -->
+			
+			<!--#include file="confirm.html"-->
+			<p>上記の内容で送信しました。</p>
+			<!-- END step#result -->
+			
+			<!-- END_MODULE Form -->
+		</div>
+		<div class="sub acms-col-3">
+		<!-- #include file="/include/navi.html" -->
+		</div>
+	</div>
+</div>
+
+
+<footer class="footer">
+	<p class="copyright"><small>&copy; %{DOMAIN}</small></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+<!-- BEGIN_MODULE Api_Bing_ImageSearch id="${1:module_id}" -->
+
+<!-- BEGIN_MODULE Touch_Keyword -->
+<h1>キーワード： の検索結果</h1>
+<!-- END_MODULE Touch_Keyword -->
+
+<!-- BEGIN notAccountKey -->
+<p>アカウントキーが間違っています</p><!-- END notAccountKey --><!-- BEGIN notQuery -->
+<p>無効なクエリです</p><!-- END notQuery --><!-- BEGIN unavailable -->
+<p>{message}</p><!-- END unavailable --><!-- BEGIN notFound -->
+<p>見つかりませんでした</p><!-- END notFound -->
+
+<dl>
+<!-- BEGIN result:loop -->
+	<dt>{title} ({filesize})</dt>
+	<dd>
+	<img src="{mediaUrl}" width="{width}" height="{height}" alt="{title}" />
+	<!--     <img src="{thumbUrl}" width="{thumbWidth}" height="{thumbHeight}" /> -->
+	</dd>
+<!-- END result:loop -->
+</dl>
+
+<ul><!-- BEGIN next:veil -->
+	<li> <a href="{nextUrl}">次へ >></a></li><!-- END next:veil --><!-- BEGIN prev:veil -->
+	<li><a href="{prevUrl}"><< 前へ</a> </li><!-- END prev:veil -->
+</ul>
+<!-- END_MODULE Api_Bing_ImageSearch -->
+
+]]></content>
+	<tabTrigger>!Api_Bing_ImageSearch</tabTrigger>
+</snippet>

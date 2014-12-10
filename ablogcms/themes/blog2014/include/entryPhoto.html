@@ -1,0 +1,22 @@
+<h2 class="pageTitle">製品情報の一覧</h2>
+<div class="entryPhoto">
+	<!-- BEGIN_MODULE Entry_Photo id="topPhoto" -->
+	
+	<!-- BEGIN notFound -->
+	<p>エントリーが見つかりませんでした。</p>
+	<!-- END notFound -->
+	
+	<ul class="clearfix"><!-- BEGIN unit:loop -->
+		<!-- BEGIN entry:loop -->
+			<li class="js-biggerlink num{iNum}">
+				<div class="photo" style="width:{x}px; height:{y}px; overflow:hidden;"><!-- BEGIN image:veil -->
+					<img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" style="left:{left}px; top:{top}px; position:relative;" /><!-- END image:veil --><!-- BEGIN noimage -->
+					noimage
+					<!-- END noimage -->
+				</div>
+				<p class="title"><a href="{url}">{title}</a></p>
+			</li><!-- END entry:loop -->
+		<!-- END unit:loop -->
+	</ul>
+	<!-- END_MODULE Entry_Photo -->
+</div>

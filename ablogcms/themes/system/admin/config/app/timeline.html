@@ -1,0 +1,56 @@
+<header class="acms-box-medium">
+	<h1 class="acms-admin-title"><i class="acms-icon acms-icon-config"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+		<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+		<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->コンフィグ管理
+	</h1>
+</header>
+<!--#include file="/admin/topicpath.html"-->
+<!-- BEGIN_MODULE Admin_Config -->
+<!-- BEGIN_IF [{notice_mess}/nem/] -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>App_Timeline 設定を保存しました</p>
+<!-- END_IF -->
+
+<div class="acms-panel-title">
+	<h2>タイムライン ( App_Timeline )</h2>
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-shortcut-btn">ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+</div>
+	<div class="acms-panel">
+		<form action="" method="post" class="acms-form">
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<input type="button" name="Config_Index" value="一覧" onclick="location.href='%{SCRIPT_ROOT}bid/%{BID}/admin/config_index/';" class="acms-btn-admin" />
+			<table class="adminTable acms-table-admin-edit">
+				<tr>
+					<th>表示順<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-timelineListOrder" class="tooltipIcon" /></th>
+					<td>
+						<select name="timeline_list_order" class="form-control">
+							<option value="asc"{timeline_list_order:selected#asc}>日時 ( 昇順 )</option>
+							<option value="desc"{timeline_list_order:selected#desc}>日時 ( 降順 )</option>
+						</select>
+						<input type="hidden" name="config[]" value="timeline_list_order" />
+					</td>
+				</tr>
+				<tr>
+					<th>表示件数<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-timelineListLimit" class="tooltipIcon" /></th>
+					<td>
+						<input class="form-control" type="text" name="timeline_list_limit" value="{timeline_list_limit}" size="4" />
+						<input type="hidden" name="config[]" value="timeline_list_limit" />
+						<input type="hidden" name="timeline_list_limit:convert" value="a" />
+						<input type="hidden" name="timeline_list_limit:validator#digits" id="validator-timeline_list_limit-digits" />
+						<label for="validator-timeline_list_limit-digits" class="validator-result-{timeline_list_limit:validator#digits}">数字を入力して下さい。</label>
+					</td>
+				</tr>
+			</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+			<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+			<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+		</form>
+	</div>
+</div>
+<!-- END_MODULE Admin_Config -->
+
+<dl id="tooltip">
+	<dt>表示順</dt>
+		<dd id="tooltipContents-timelineListOrder">どのようなルールに従って表示されるかの設定です。</dd>
+	<dt>表示件数</dt>
+		<dd id="tooltipContents-timelineListLimit">一度に表示される件数です。</dd>
+</dl>
+

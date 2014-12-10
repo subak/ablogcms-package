@@ -1,0 +1,111 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-media"></i>メディア管理</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<form method="post" action="">
+	<input type="hidden" name="bid" value="%{BID}" />
+	<input type="hidden" name="admin" value="media_index" />
+	<input type="submit" class="acms-btn-admin" name="ACMS_POST_2GET" value="メディア一覧" />
+</form>
+
+<div id="js-media_multiple" class="acms-col-12">
+	<div id="js-media_drop_area" class="acms-media">
+		<div class="acms-drop-inside">
+			<i class="acms-icon acms-icon-media" style="font-size:100px; color:#CCC;"></i>
+			<p class="acms-media-dropText">ここにファイルをドロップ</p>
+			<p>または</p>
+			<p><input type="file" id="js-media_files" class="btn btn-default" name="files[]" multiple /></p>
+			<input type="hidden" name="mediaFiles" multiple />
+		</div>
+	</div>
+
+	<div id="js-media_disp_area">
+
+	<div class="acms-form" style="margin-bottom: 20px;">
+		<!-- BEGIN_MODULE Admin_Media_Tag -->
+		<select class="acms-select-large" name="image_size"><!-- BEGIN size:loop -->
+			<option value="{value}">{label}</option><!-- END size:loop -->
+		</select>
+
+		<select class="acms-select-large" name="media_tag_select">
+			<option value="">ラベルを選択</option><!-- BEGIN tag:loop -->
+			<option value="{name}">{name}<!--  ({amount}件) --></option><!-- END tag:loop -->
+		</select>
+		<input type="text" name="media_tag_text" value="" placeholder="新しいラベル" style="width:200px;" class="acms-form" />
+
+		<!-- END_MODULE Admin_Media_Tag -->
+
+		<button id="js-media_upload" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save"><span>アップロード</span></button>
+		<!-- BEGIN_MODULE Admin_Dashboard_PhpStatus -->
+		<!-- <p class="acms-float-right">POSTデータ上限サイズ{post_max_size}</p> -->
+		<!-- END_MODULE Admin_Dashboard_PhpStatus -->
+	</div>
+	<!-- END_MODULE Admin_Config -->
+
+	<table role="presentation" class="acms-table-admin">
+		<tbody class="files">
+		<script id="js-media_tmpl" type="text/template">
+		<% data.size_kb = data.size/1000; %>
+		<tr>
+			<td>
+				<div class="preview">
+					<% if ( data.filetype == 'image' ) { %>
+						<img src="<%= data.preview %>" height="60" />
+					<% } else if ( data.filetype == 'file' ) { %>
+						<span class="acms-icon acms-icon-entry" style="font-size:40px;"></span>
+					<% } %>
+				</div>
+			</td>
+			<td>
+				<p class="name"><%- data.name %></p>
+			</td>
+			<td>
+				<p class="size"><%- data.size_kb %> KB</p>
+				<div class="acms-progress acms-progress-striped acms-active" style="display:none;">
+					<div class="acms-progress-bar acms-progress-bar-info" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+						<span class="acms-progress-mess"></span>
+					</div>
+				</div>
+			</td>
+			<td>
+				<button class="js-media_cancel_btn acms-btn-admin acms-btn-admin">
+					<span>キャンセル</span>
+				</button>
+			</td>
+		</tr>
+		</script>
+		</tbody>
+	</table>
+	</div>
+</div>
+
+<div id="js-media_browser">
+	<!-- BEGIN_MODULE Admin_Config -->
+	<form action="" method="post" class="acms-form" enctype="multipart/form-data">
+		<div class="acms-form-group" style="margin-top: 20px;">
+			<input type="file" class="btn btn-default" name="file" />
+		</div>
+
+		<div class="acms-form-group">
+			<select name="size"><!-- BEGIN column_image_size_group:loop -->
+				<option value="{column_image_size}">{column_image_size_label}</option><!-- END column_image_size_group:loop -->
+			</select>
+
+			<!-- BEGIN_MODULE Admin_Media_Tag -->
+			<select name="tags">
+				<option value="">ラベルを選択</option><!-- BEGIN tag:loop -->
+				<option value="{name}">{name}<!--  ({amount}件) --></option><!-- END tag:loop -->
+			</select><!-- END_MODULE Admin_Media_Tag -->
+			
+			<input type="text" name="tags" value="" placeholder="新しいラベル" />
+
+			<input type="submit" class="acms-btn-admin acms-btn-admin-primary" name="ACMS_POST_Media_Upload" value="アップロード" />
+		</div>
+
+	</form><!-- END_MODULE Admin_Config -->
+</div>

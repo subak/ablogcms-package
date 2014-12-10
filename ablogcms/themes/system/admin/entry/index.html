@@ -1,0 +1,297 @@
+<!-- BEGIN_MODULE Admin_Entry_Index -->
+<header class="acms-grid">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-entry"></i>エントリー管理</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN refresh -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>エントリー一覧を更新しました。</p><!-- END refresh --><!-- BEGIN index#notFound -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>エントリーがありません。</p><!-- END index#notFound --><!-- BEGIN errorMessage -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>子ブログのカテゴリーをグローバル（共有）カテゴリーではないものに変更することはできません。</p><!-- END errorMessage -->
+
+<div class="acms-filter">
+	<form action="" method="post" class="acms-form">
+		<div class="acms-form-group">
+			絞り込み:
+			
+			<select name="status">
+				<option value="">全てのステータス</option>
+				<option value="open"{status:selected#open}>公開</option>
+				<option value="close"{status:selected#close}>非公開</option>
+				<option value="draft"{status:selected#draft}>下書き</option>
+			</select>
+			<input type="hidden" name="query[]" value="status" />
+			
+			<!-- BEGIN userSelect#filter -->
+			<select name="uid">
+				<option value="">全てのユーザー</option><!-- BEGIN_MODULE Admin_User_Select --><!-- BEGIN loop -->
+				<option value="{value}"{selected}>{label}</option><!-- END loop --><!-- END_MODULE Admin_User_Select -->
+			</select>
+			<!-- END userSelect#filter -->
+
+			<select name="cid" id="js-entry_index_category_filter">
+				<option value="">全てのカテゴリー</option>
+				<option value="0"{non_category#selected}>カテゴリーなし</option><!-- BEGIN_MODULE Admin_Category_SelectGlobal --><!-- BEGIN loop -->
+				<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option><!-- END loop --><!-- END_MODULE Admin_Category_SelectGlobal -->
+			</select>
+			<input type="hidden" name="_cid" value="" id="js-entry_index_category_filter_dup"/>
+			<input type="hidden" name="query[]" value="_cid" />
+
+			<!-- BEGIN_MODULE Admin_Blog_Select -->
+			<select name="_bid">
+				<option value="">現在のブログ</option><!-- BEGIN loop -->
+				<option value="{value}"{selected}>{indent}[raw]{label}</option><!-- END loop -->
+			</select>
+			<input type="hidden" name="query[]" value="_bid" />
+			<!-- END_MODULE Admin_Blog_Select -->
+			<!-- BEGIN axis -->
+			<input type="hidden" name="axis" value="self" />
+			<label for="input-checkbox-axis-descendant-or-self" class="acms-form-checkbox">
+				<input type="checkbox" name="axis" value="descendant-or-self"{axis:checked#descendant-or-self} id="input-checkbox-axis-descendant-or-self" /><i class="acms-ico-checkbox"></i>下階層のブログも表示
+			</label>
+			<input type="hidden" value="axis" name="query[]">
+			<!-- END axis -->
+		</div>
+
+		<div class="acms-form-group">
+			<label for="filter-keyword" class="acms-show-sp">キーワード:</label>
+			<input type="text" name="keyword" value="%{KEYWORD}" class="acms-form-width-medium" id="filter-keyword" placeholder="タイトル・本文・カスタムフィールドから検索（複数指定可）"/>
+		</div>
+		&nbsp;
+		<label for="filter-order" class="acms-show-sp">ソート:</label>
+		<select class="input-sm" name="order" id="filter-order">
+			<option value="datetime-asc"{order:selected#datetime-asc}>日付 (昇順)</option>
+			<option value="datetime-desc"{order:selected#datetime-desc}>日付 (降順)</option>
+			<option value="code-asc"{order:selected#code-asc}>ファイル名（昇順）</option>
+			<option value="code-desc"{order:selected#code-desc}>ファイル名（降順）</option>
+			<option value="id-asc"{order:selected#id-asc}>ID（昇順）</option>
+			<option value="id-desc"{order:selected#id-desc}>ID（降順）</option>
+			<option value="sort-asc"{order:selected#sort-asc}>表示順（昇順）</option>
+			<option value="sort-desc"{order:selected#sort-desc}>表示順（降順）</option>
+		</select>
+		&nbsp;
+		<label for="filter-limit" class="acms-show-sp">表示数:</label>
+		<select name="limit" id="filter-limit"><!-- BEGIN limit:loop -->
+			<option value="{limit}"{selected}>{limit}</option><!-- END limit:loop -->
+		</select>
+		
+		<input type="hidden" name="query[]" value="axis" />
+		<input type="hidden" name="bid" value="%{BID}" />
+		<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-btn-admin acms-btn-admin-info acms-width-sp" />
+		<input type="hidden" name="admin" value="entry_index" />
+
+	</form>
+</div><!-- /.acms-filter -->
+<!-- BEGIN sort#header -->
+<div class="acms-alert acms-alert-info">ドラックでエントリーの表示順を変更できます</div>
+<!-- END sort#header --><!-- BEGIN sort#headerUser -->
+<div class="acms-alert acms-alert-info">ドラックでユーザー絞り込み時の表示順を変更できます</div><!-- END sort#headerUser --><!-- BEGIN sort#headerCategory -->
+<div class="acms-alert acms-alert-info">ドラックでカテゴリー絞り込み時の表示順を変更できます</div><!-- END sort#headerCategory -->
+
+<!-- BEGIN_MODULE Touch_NotApprovalORsessionWithApprovalAdministrator -->
+<form action="" method="post" class="acms-form acms-float-right js-acms_fix_target acms-position-right">
+	カテゴリー
+	<!-- BEGIN_MODULE Admin_Category_SelectGlobal -->
+	<select name="cid" class="acms-select">
+		<option value="">なし</option><!-- BEGIN loop -->
+		<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option><!-- END loop -->
+	</select>
+	<!-- END_MODULE Admin_Category_SelectGlobal -->
+	<input type="submit" name="ACMS_POST_2GET" value="作成" class="acms-btn-admin" />
+	<input type="hidden" name="admin" value="entry_editor" />
+	<input type="hidden" name="bid" value="%{BID}" />
+</form>
+<!-- END_MODULE Touch_NotApprovalORsessionWithApprovalAdministrator -->
+
+<!-- BEGIN_MODULE Touch_ApprovalORsessionWithApprovalAdministrator -->
+<form action="" method="post" class="acms-form js-acms_fix_target">
+	カテゴリー
+	<!-- BEGIN_MODULE Admin_Category_SelectGlobal -->
+	<select name="cid" class="acms-select">
+		<option value="">なし</option><!-- BEGIN loop -->
+		<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option><!-- END loop -->
+	</select>
+	<!-- END_MODULE Admin_Category_SelectGlobal -->
+	<input type="submit" name="ACMS_POST_2GET" value="作成" class="acms-btn-admin" />
+	<input type="hidden" name="admin" value="entry_editor" />
+	<input type="hidden" name="bid" value="%{BID}" />
+</form>
+<!-- END_MODULE Touch_ApprovalORsessionWithApprovalAdministrator -->
+
+<form method="post" action="" id="entry-list-form" class="acms-form">
+	<!-- BEGIN_MODULE Touch_NotApprovalORsessionWithApprovalAdministrator -->
+	<div class="js-acms-tab-select clearfix js-acms_fix_marker js-acms_fix_target">
+		<select name="action-entry" class="js-acms-tab-select-value acms-float-left">
+			<option value="action-order"{action-entry:selected#action-order}>表示順</option>
+			<option value="action-status"{action-entry:selected#action-status}>ステータス</option>
+			<option value="action-user"{action-entry:selected#action-user}>ユーザー</option>
+			<option value="action-category"{action-entry:selected#action-category}>カテゴリー</option>
+			<option value="action-blog"{action-entry:selected#action-blog}>ブログ</option>
+			<!-- BEGIN_MODULE Touch_SessionWithCompilation -->
+			<option value="action-duplicate"{action-entry:selected#action-duplicate}>複製</option>
+			<!-- END_MODULE Touch_SessionWithCompilation --><!-- BEGIN adminDeleteAction --> 
+			<option value="action-delete"{action-entry:selected#action-delete}>削除</option><!-- END adminDeleteAction -->
+		</select>
+
+		<!-- BEGIN sort:action#entry -->
+		<div id="action-order" class="js-acms-tab-select-panel js-acms-tab-select-active acms-float-left">
+			<input type="submit" name="ACMS_POST_Entry_Index_Sort_Entry" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		</div><!-- END sort:action#entry --><!-- BEGIN sort:action#category -->
+		<div id="action-order" class="js-acms-tab-select-panel js-acms-tab-select-active acms-float-left">
+			<input type="submit" name="ACMS_POST_Entry_Index_Sort_Category" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		</div><!-- END sort:action#category --><!-- BEGIN sort:action#user -->
+		<div id="action-order" class="js-acms-tab-select-panel js-acms-tab-select-active acms-float-left">
+			<input type="submit" name="ACMS_POST_Entry_Index_Sort_User" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		</div><!-- END sort:action#user -->
+
+		<div id="action-status" class="js-acms-tab-select-panel acms-float-left">
+			<select name="status">
+				<option value="open">公開</option>
+				<option value="close">非公開</option>
+				<option value="draft">下書き</option>
+			</select>
+			<input type="submit" name="ACMS_POST_Entry_Index_Status" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		</div>
+		<!-- BEGIN userSelect#batch --><!-- BEGIN_MODULE Admin_User_Select -->
+		<div id="action-user" class="js-acms-tab-select-panel acms-float-left">
+			<select name="uid"><!-- BEGIN loop -->
+				<option value="{value}"{selected}>{label}</option><!-- END loop -->
+			</select>
+			<input type="submit" name="ACMS_POST_Entry_Index_User" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		</div>
+		<!-- END_MODULE Admin_User_Select --><!-- END userSelect#batch -->
+		
+		<!-- BEGIN_MODULE Admin_Category_SelectGlobal -->
+		<div id="action-category" class="js-acms-tab-select-panel acms-float-left">
+			<select name="cid" class="categoryWidth">
+				<option value="">なし</option><!-- BEGIN loop -->
+				<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )<!-- BEGIN status:touch#close -->【非公開】<!-- END status:touch#close --></option><!-- END loop -->
+			</select>
+			<input type="submit" name="ACMS_POST_Entry_Index_Category" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		</div>
+		<!-- END_MODULE Admin_Category_SelectGlobal -->
+		
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+		<!-- BEGIN_MODULE Admin_Blog_SelectGlobal -->
+		<div id="action-blog" class="js-acms-tab-select-panel acms-float-left">
+			<select name="bid"><!-- BEGIN loop -->
+				<option value="{value}"{selected}>{indent}[raw]{label}</option><!-- END loop -->
+			</select>
+			<input type="submit" name="ACMS_POST_Entry_Index_Blog" value="変更" class="acms-btn-admin acms-btn-admin-primary" /><br /><span class="acms-tab-text">( ※変更されたエントリーはログイン中のユーザーの所有になり、カテゴリーの設定は解除されます。ただし、グローバルカテゴリーとして設定されている場合はカテゴリーが保持されます )</span>
+		</div>
+		<!-- END_MODULE Admin_Blog_SelectGlobal -->
+		<!-- END_MODULE Touch_SessionWithAdministration -->
+		
+		<!-- BEGIN_MODULE Touch_SessionWithCompilation -->
+		<div id="action-duplicate" class="js-acms-tab-select-panel acms-float-left">
+			<input type="submit" name="ACMS_POST_Entry_Index_Duplicate" value="複製" class="acms-btn-admin acms-btn-admin-primary" /><br />
+			<span class="acms-tab-text">( ※この操作は、件数が多いと処理に時間がかかることがあります )</span>
+		</div>
+		<!-- END_MODULE Touch_SessionWithCompilation -->
+		<!-- BEGIN adminDeleteAction2 -->
+		<div id="action-delete" class="js-acms-tab-select-panel acms-float-left">
+			<input type="submit" name="ACMS_POST_Entry_Index_Trash" value="削除" onclick="return confirm('ゴミ箱に移します。\nよろしいですか？')" class="acms-btn-admin acms-btn-admin-danger" />
+		</div><!-- END adminDeleteAction2 -->
+	</div>
+	<!-- END_MODULE Touch_NotApprovalORsessionWithApprovalAdministrator -->
+
+	<table class="adminTable acms-table-admin acms-table-heading js-admin_table-sortable acms-table-hover" data-sort-enable="{sortable}" data-sort-submit="{postSortType}" data-sort-target="#entry-list-form" data-sort-order="%{ORDER}">
+		<!-- <thead class="acms-table-admin-title js-acms_fix_target"> -->
+		<thead>
+			<tr>
+				<th class="item-handle acms-hide-sp"></th>
+				<th class="acms-table-center acms-th-checkbox acms-show-sp"><label class="acms-form-checkbox"><input type="checkbox" id="checkAll" /><i class="acms-ico-checkbox"></i></label></th>
+				<th class="acms-hide-sp">表示順</th>
+				<th class="acms-hide-sp">eid</th>
+				<th class="acms-show-sp">ステータス / タイトル / コード / 日時 / ブログ / カテゴリー</th>
+				<th class="acms-hide-sp" colspan="2">ユーザー</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- BEGIN entry:loop -->
+			<tr data-sort-level="parallel" data-sort-name="sort-{sort#eid}">
+				<td class="item-handle acms-td-sort" style="cursor: move;"><i class="acms-icon-sort"></i></td>
+				<td class="acms-table-center acms-td-checkbox">
+					<label class="acms-form-checkbox"><input type="checkbox" name="checks[]" value="{bid}:{eid}" /><i class="acms-ico-checkbox"></i></label>
+				</td>
+				<td class="acms-td-number">
+					<!-- BEGIN sort:veil -->
+					<input type="text" class="sort-number" name="sort-{sort#eid}" value="{sort}" size="4"{disabled}/><!-- END sort:veil -->
+				</td>
+				<td class="acms-td-id">
+					<span class="acms-label label-default">{eid}</span>
+				</td>
+				<td class="acms-td-status">
+					<a href="{entryUrl}" class="acms-td-title">
+					<!-- <div class="acms-admin-labelbox"> -->
+						<small>
+							<!-- BEGIN status#close -->
+							<span class="acms-label acms-label-danger admin-status-label">非公開</span><!-- END status#close --><!-- BEGIN status#open --><span class="acms-label acms-label-info admin-status-label">公開</span><!-- END status#open --><!-- BEGIN status#draft --><span class="acms-label acms-label-warning admin-status-label">下書き</span><!-- END status#draft -->
+							
+						</small>
+					<!-- </div> -->
+
+					<p class="acms-entryTitle">{title}</p></a> {code}
+					<br>
+					<ul class="acms-list-inline">
+						<li>{datetime}[date('Y/n/d H:i')]</li>
+						<li><a href="{blogUrl}"><i class="acms-icon acms-icon-blog"></i>{blogName}</a></li>
+						<!-- BEGIN category:veil -->
+						<li><a href="{categoryUrl}"><i class="acms-icon acms-icon-category"></i>{categoryName}</a></li>
+						<!-- END category:veil -->
+					</ul>
+				</td>
+				<td class="acms-td-user">
+					<a href="{userUrl}"><img src="%{ARCHIVES_DIR}{userIcon}" width="24" height="24" alt="%{SESSION_USER_NAME}" class="acms-admin-icon">{userName}</a>
+				</td>
+
+				<!--#include file="/admin/entry/field-list.html"-->
+				<td class="acms-td-edit">
+					<div class="acms-btn-group acms-btn-group-entry admin-entry-dropdown-toggle">
+						<div class="js-acms-dropdown-toggle">
+							<button type="button" class="acms-btn-admin" onclick="location.href='{editUrl}'">編集</button><button type="button" class="acms-btn-admin js-acms-dropdown-btn" >
+								<span class="acms-arrow-bottom"></span>
+							</button>
+							<ul class="js-acms-dropdown-menu" role="menu"><!-- BEGIN_MODULE Touch_Approval --><!-- BEGIN_MODULE Touch_sessionWithApprovalAdministrator -->
+								<li><a href="/bid/%{BID}/eid/{eid}/admin/entry_approval-history/">承認履歴</a></li>
+								<li class="acms-divider"></li><!-- END_MODULE Touch_sessionWithApprovalAdministrator --><!-- END_MODULE Touch_Approval --><!-- BEGIN_MODULE Touch_SessionWithContribution -->
+								<li><a href="#" class="js-acms_entry_index_duplicate">複製</a></li>
+								<li class="acms-divider"></li><!-- END_MODULE Touch_SessionWithContribution -->
+								<!-- BEGIN adminDeleteActionLoop -->
+								<li><a href="#" class="js-acms_entry_index_delete">削除</a></li><!-- END adminDeleteActionLoop -->
+							</ul>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<!-- END entry:loop -->
+		</tbody>
+	</table>
+	<!-- BEGIN index -->
+	<div class="acms-grid">
+		<div class="acms-col-6">
+			<!-- BEGIN pager:veil -->
+			<div class="acms-pager-container">
+				<ul class="acms-pager"><!-- BEGIN backLink -->
+					<li class="prev"><a href="{url}">&laquo;&nbsp;前へ</a></li><!-- END backLink --><!-- BEGIN page:loop -->
+					<li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop --><!-- BEGIN lastPage:veil -->
+					<li class="last"><a href="{lastPageUrl}">...{lastPage}</a></li><!-- END lastPage:veil --><!-- BEGIN forwardLink -->
+					<li class="next"><a href="{url}">次へ&nbsp;&raquo;</a></li><!-- END forwardLink -->
+				</ul>
+			</div>
+			<!-- END pager:veil -->
+		</div>
+		<div class="acms-col-6">
+			<div class="acms-itemsAmount-container">
+				<p>{itemsFrom}件 - {itemsTo}件 / 全{itemsAmount}件</p>
+			</div>
+		</div>
+	</div><!-- /.acms-grid -->
+	<!-- END index -->
+</form>
+<div class="js-acms_fix_target acms_fix_bg"><div class="acms_fix_bg_index"></div></div>
+<!-- END_MODULE Admin_Entry_Index -->

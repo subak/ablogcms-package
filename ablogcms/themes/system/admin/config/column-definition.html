@@ -1,0 +1,641 @@
+<!-- BEGIN text -->
+<div class="column-definition-text">
+	<div class="panel-body">
+		<div class="acms-table-container">
+			<table class="acms-table">
+				<tr>
+					<th rowspan="5" class="handle js-hover">
+						<i class="acms-icon-sort"></i>{actualLabel}
+					</th>
+						<input type="hidden" name="{pfx}type[]" value="{actualType}" />
+						<input type="hidden" name="{pfx}class[]" value="" />
+						<input type="hidden" name="{pfx}size[]" value="" />
+						<input type="hidden" name="{pfx}edit[]" value="" />
+						<input type="hidden" name="{pfx}field_3[]" value="" />
+						<input type="hidden" name="{pfx}field_4[]" value="" />
+						<input type="hidden" name="{pfx}field_5[]" value="" />
+					<th>配置:</th>
+					<td>
+						<select class="form-control" name="{pfx}align[]">
+							<option value="auto"{align:selected#auto}>おまかせ</option>
+							<option value="center"{align:selected#center}>全体</option>
+							<option value="hidden"{align:selected#hidden}>非表示</option>
+						</select>
+					</td>
+					<th>
+						グループ:
+					</th>
+					<td>
+					<!-- BEGIN group:veil -->
+						<select class="form-control" name="{group.pfx}group[]"><!-- BEGIN group:loop -->
+							<option value="{group.value}"{group.selected}>{group.label}</option><!-- END group:loop -->
+						</select><!-- END group:veil -->
+					</td>
+					<td rowspan="5" class="acms-table-action">
+						<p class="columnVeil formDelete">
+							<button href="#" class="trigger-delete acms-btn-admin acms-btn-admin-danger">削除</button>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th>タグ:</th>
+					<td>
+						<select id="tag-text" class="form-control" name="{pfx}field_2[]"><!-- BEGIN textTag:loop -->
+							<option value="{value}" {selected}>{label}</option><!-- END textTag:loop -->
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5">
+						<textarea class="form-control" cols="40" rows="3" name="{pfx}field_1[]" style="width:80%;">{field_1}</textarea>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- END text -->
+
+<!-- BEGIN image -->
+<div class="column-definition-image panel panel-default">
+	<div class="panel-body">
+		<div class="acms-table-container">
+			<table class="acms-table">
+				<tr>
+					<input type="hidden" name="{pfx}type[]" value="{actualType}" />
+					<input type="hidden" name="{pfx}class[]" value="" />
+					<input type="hidden" name="{pfx}field_2[]" value="" />
+					<input type="hidden" name="{pfx}field_5[]" value="" />
+					<th class="handle js-hover" rowspan="6">
+						<i class="acms-icon-sort"></i>{actualLabel}
+					</th>
+					<th>配置:</th>
+					<td>
+						<select class="form-control" name="{pfx}align[]">
+							<option value="auto"{align:selected#auto}>おまかせ</option>
+							<option value="left"{align:selected#left}>左</option>
+							<option value="right"{align:selected#right}>右</option>
+							<option value="center"{align:selected#center}>中央</option>
+							<option value="hidden"{align:selected#hidden}>非表示</option>
+						</select>
+					</td>
+					<!-- BEGIN group:veil -->
+					<th>グループ:</th>
+					<td>
+						<select class="form-control" name="{group.pfx}group[]"><!-- BEGIN group:loop -->
+						<option value="{group.value}"{group.selected}>{group.label}</option><!-- END group:loop -->
+						</select><!-- END group:veil -->
+					</td>
+					<td rowspan="6" class="acms-table-action">
+						<button href="#" class="trigger-delete acms-btn-admin acms-btn-admin-danger">削除</button>
+					</td>
+				</tr>
+				<tr>
+					<th>画像の大きさ:</th>
+					<td>
+						<select class="form-control" name="{pfx}size[]">
+						<!-- BEGIN size:loop -->
+						<option value="{value}"{selected}>{label}</option>
+						<!-- END size:loop -->
+						</select>
+					</td>
+
+					<th>画像の編集:</th>
+					<td>
+						<select class="form-control" name="{pfx}edit[]">
+						<option value="none"{edit:selected#none}>編集しない</option>
+						<option value="deleteLarge"{edit:selected#deleteLarge}>拡大表示させない</option>
+					</select></td>
+				</tr>
+				<tr>
+					<th rowspan="4">画像:</th>
+					<td rowspan="4" class="entryFormFileentryFormImages">
+						<img src="%{IMAGES_DIR}default/noimage.gif" width="120" height="90" />
+					</td>
+					<tr>
+						<th>キャプション:</th>
+						<td>
+							<input class="form-control" type="text" name="{pfx}field_1[]" value="{field_1}" />
+						</td>
+					</tr>
+					<tr>
+						<th>リンク:</th>
+						<td>
+						<input class="form-control" type="text" name="{pfx}field_3[]" value="{field_3}" />
+					</td>
+					</tr>
+					<tr>
+						<th>代替テキスト:</th>
+						<td>
+							<input class="form-control" type="text" name="{pfx}field_4[]" value="{field_4}" />
+						</td>
+					</tr>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- END image -->
+
+<!-- BEGIN file -->
+<div class="column-definition-file panel panel-default">
+	<div class="panel-body">
+		<div class="acms-table-container">
+			<input type="hidden" name="{pfx}type[]" value="{actualType}" />
+			<input type="hidden" name="{pfx}class[]" value="" />
+			<input type="hidden" name="{pfx}size[]" value="" />
+			<input type="hidden" name="{pfx}edit[]" value="" />
+			<input type="hidden" name="{pfx}field_2[]" value="" />
+			<input type="hidden" name="{pfx}field_3[]" value="" />
+			<input type="hidden" name="{pfx}field_4[]" value="" />
+			<input type="hidden" name="{pfx}field_5[]" value="" />
+	
+			<table class="acms-table">
+				<tr>
+					<th class="handle js-hover" rowspan="2"><i class="acms-icon-sort"></i>{actualLabel}</th>
+					<th>配置</th>
+					<td><select class="form-control" name="{pfx}align[]">
+						<option value="auto"{align:selected#auto}>おまかせ</option>
+						<option value="left"{align:selected#left}>左</option>
+						<option value="right"{align:selected#right}>右</option>
+						<option value="center"{align:selected#center}>中央</option>
+						<option value="hidden"{align:selected#hidden}>非表示</option>
+						</select>　　
+					</td>
+					<!-- BEGIN group:veil -->
+					<th>グループ</th>
+					<td>
+						<select class="form-control" name="{group.pfx}group[]"><!-- BEGIN group:loop -->
+							<option value="{group.value}"{group.selected}>{group.label}</option><!-- END group:loop -->
+						</select>
+					</td><!-- END group:veil -->
+					<td rowspan="2" class="acms-table-action">
+						<button href="#" class="trigger-delete acms-btn-admin acms-btn-admin-danger">削除</button>
+					</td>
+				</tr>
+				<tr>
+					<th>キャプション</th>
+					<td><input type="text" name="{pfx}field_1[]" value="{field_1}" /></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- END file -->
+
+<!-- BEGIN map -->
+<div class="column-definition-map panel panel-default">
+	<div class="panel-body">
+		<div class="acms-table-container">
+			<input type="hidden" name="{pfx}type[]" value="{actualType}" />
+			<input type="hidden" name="{pfx}class[]" value="" />
+			<input type="hidden" name="{pfx}edit[]" value="" />
+			<input type="hidden" name="{pfx}field_5[]" value="" />
+		
+			<table class="acms-table">
+				<tr>
+					<th class="handle js-hover" rowspan="4">
+						<i class="acms-icon-sort"></i>{actualLabel}
+					</th>
+					<th>配置</th>
+					<td><select class="form-control" name="{pfx}align[]">
+						<option value="auto"{align:selected#auto}>おまかせ</option>
+						<option value="left"{align:selected#left}>左</option>
+						<option value="right"{align:selected#right}>右</option>
+						<option value="center"{align:selected#center}>中央</option>
+						<option value="hidden"{align:selected#hidden}>非表示</option>
+					</select></td>
+					<!-- BEGIN group:veil -->
+					<th>グループ</th>
+					<td>
+						<select class="form-control" name="{group.pfx}group[]"><!-- BEGIN group:loop -->
+							<option value="{group.value}"{group.selected}>{group.label}</option><!-- END group:loop -->
+						</select>
+					</td><!-- END group:veil -->
+					<td rowspan="4" class="acms-table-action">
+						<button href="#" class="trigger-delete acms-btn-admin acms-btn-admin-danger">削除</button>
+					</td>
+				</tr>
+				<tr>
+					<th>緯度</th>
+					<td><input class="form-control" type="text" name="{pfx}field_2[]" value="{field_2}" /></td>
+					<th>経度</th>
+					<td><input class="form-control" type="text" name="{pfx}field_3[]" value="{field_3}" /></td>
+				</tr>
+				<tr>
+					<th>ズーム</th>
+					<td><input class="form-control" type="text" name="{pfx}field_4[]" value="{field_4}" /></td>
+					<th>地図の大きさ</th>
+					<td>
+						<select class="form-control" name="{pfx}size[]"><!-- BEGIN size:loop -->
+							<option value="{value}"{selected}>{label}</option><!-- END size:loop -->
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>吹き出し ( HTML可 )</th>
+					<td><textarea class="form-control" name="{pfx}field_1[]">{field_1}</textarea></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- END map -->
+
+<!-- BEGIN yolp -->
+<div class="column-definition-map panel panel-default">
+	<div class="panel-body">
+		<div class="acms-table-container">
+			<input type="hidden" name="{pfx}type[]" value="{actualType}" />
+			<input type="hidden" name="{pfx}class[]" value="" />
+			<input type="hidden" name="{pfx}edit[]" value="" />
+			<input type="hidden" name="{pfx}field_5[]" value="" />
+		
+			<table class="acms-table">
+				<tr>
+					<th rowspan="4" class="handle js-hover">
+						<i class="acms-icon-sort"></i>{actualLabel}
+					</th>
+					<th>配置</th>
+					<td>
+						<select class="form-control" name="{pfx}align[]">
+							<option value="auto"{align:selected#auto}>おまかせ</option>
+							<option value="left"{align:selected#left}>左</option>
+							<option value="right"{align:selected#right}>右</option>
+							<option value="center"{align:selected#center}>中央</option>
+							<option value="hidden"{align:selected#hidden}>非表示</option>
+						</select>
+					</td>
+					<!-- BEGIN group:veil -->
+					<th>グループ</th>
+					<td>
+						<select class="form-control" name="{group.pfx}group[]"><!-- BEGIN group:loop -->
+							<option value="{group.value}"{group.selected}>{group.label}</option><!-- END group:loop -->
+						</select>
+					</td>
+					<!-- END group:veil -->
+					<td rowspan="4" class="acms-table-action">
+						<button href="#" class="trigger-delete acms-btn-admin acms-btn-admin-danger">削除</button>
+					</td>
+				</tr>
+				<tr>
+					<th>緯度</th>
+					<td><input class="form-control" type="text" name="{pfx}field_2[]" value="{field_2}" /></td>
+					<th>経度</th>
+					<td><input class="form-control" type="text" name="{pfx}field_3[]" value="{field_3}" /></td>
+				</tr>
+				<tr>
+					<th>ズーム</th>
+					<td><input class="form-control" type="text" name="{pfx}field_4[]" value="{field_4}" /></td>
+					<th>レイヤー</th>
+					<td>
+						<input class="form-control" type="text" name="{pfx}field_5[]" value="{field_5}" />
+					</td>
+				</tr>
+				<tr>
+				<!-- 
+					<th>吹き出し ( HTML可 )</th>
+					<td><textarea class="form-control" name="{pfx}field_1[]">{field_1}</textarea></td>
+				 -->
+					<th>地図の大きさ</th>
+					<td>
+						<select class="form-control" name="{pfx}size[]"><!-- BEGIN size:loop -->
+							<option value="{value}"{selected}>{label}</option><!-- END size:loop -->
+						</select>
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" name="{pfx}field_1[]" value="" />
+		</div>
+	</div>
+</div>
+<!-- END yolp -->
+
+<!-- BEGIN youtube -->
+<div class="column-definition-youtube panel panel-default">
+	<div class="panel-body">
+		<div class="acms-table-container">
+			<input type="hidden" name="{pfx}type[]" value="{actualType}" />
+			<input type="hidden" name="{pfx}class[]" value="" />
+			<input type="hidden" name="{pfx}edit[]" value="" />
+			<input type="hidden" name="{pfx}field_1[]" value="" />
+			<input type="hidden" name="{pfx}field_3[]" value="" />
+			<input type="hidden" name="{pfx}field_4[]" value="" />
+			<input type="hidden" name="{pfx}field_5[]" value="" />
+		
+			<table class="acms-table">
+				<tr>
+					<th rowspan="2" class="handle js-hover">
+						<i class="acms-icon-sort"></i>{actualLabel}
+					</th>
+					<th>配置</th>
+					<td>
+						<select class="form-control" name="{pfx}align[]">
+							<option value="auto"{align:selected#auto}>おまかせ</option>
+							<option value="left"{align:selected#left}>左</option>
+							<option value="right"{align:selected#right}>右</option>
+							<option value="center"{align:selected#center}>中央</option>
+							<option value="hidden"{align:selected#hidden}>非表示</option>
+						</select>
+					</td>
+					<!-- BEGIN group:veil -->
+					<th>グループ</th>
+					<td>
+						<select class="form-control" name="{group.pfx}group[]"><!-- BEGIN group:loop -->
+							<option value="{group.value}"{group.selected}>{group.label}</option><!-- END group:loop -->
+						</select>
+					</td><!-- END group:veil -->
+					<td rowspan="2" class="acms-table-action">
+						<button href="#" class="trigger-delete acms-btn-admin acms-btn-admin-danger">削除</button>
+					</td>
+				</tr>
+				<tr>
+					<th>YouTube ID </th>
+					<td><input class="form-control" type="text" name="{pfx}field_2[]" value="{field_2}" /></td>
+					<th>サイズ </th>
+					<td><select class="form-control" name="{pfx}size[]"><!-- BEGIN size:loop -->
+						<option value="{value}"{selected}>{label}</option><!-- END size:loop -->
+					</select></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- END youtube -->
+
+<!-- BEGIN video -->
+<div class="column-definition-video panel panel-default">
+	<div class="panel-body">
+		<div class="acms-table-container">
+			<input type="hidden" name="{pfx}type[]" value="{actualType}" />
+			<input type="hidden" name="{pfx}class[]" value="" />
+			<input type="hidden" name="{pfx}edit[]" value="" />
+			<input type="hidden" name="{pfx}field_1[]" value="" />
+			<input type="hidden" name="{pfx}field_3[]" value="" />
+			<input type="hidden" name="{pfx}field_4[]" value="" />
+			<input type="hidden" name="{pfx}field_5[]" value="" />
+		
+			<table class="acms-table">
+				<tr>
+					<th rowspan="2" class="handle js-hover">
+						<i class="acms-icon-sort"></i>{actualLabel}
+					</th>
+					<th>配置</th>
+					<td>
+						<select class="form-control" name="{pfx}align[]">
+							<option value="auto"{align:selected#auto}>おまかせ</option>
+							<option value="left"{align:selected#left}>左</option>
+							<option value="right"{align:selected#right}>右</option>
+							<option value="center"{align:selected#center}>中央</option>
+							<option value="hidden"{align:selected#hidden}>非表示</option>
+						</select>
+					</td>
+					<!-- BEGIN group:veil -->
+					<th>グループ</th>
+					<td>
+						<select class="form-control" name="{group.pfx}group[]"><!-- BEGIN group:loop -->
+							<option value="{group.value}"{group.selected}>{group.label}</option><!-- END group:loop -->
+						</select>
+					</td><!-- END group:veil -->
+					<td rowspan="2" class="acms-table-action">
+						<button href="#" class="trigger-delete acms-btn-admin acms-btn-admin-danger">削除</button>
+					</td>
+				</tr>
+				<tr>
+					<th>Video ID </th>
+					<td><input class="form-control" type="text" name="{pfx}field_2[]" value="{field_2}" /></td>
+					<th>サイズ </th>
+					<td><select class="form-control" name="{pfx}size[]"><!-- BEGIN size:loop -->
+						<option value="{value}"{selected}>{label}</option><!-- END size:loop -->
+					</select></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- END video -->
+
+<!-- BEGIN eximage -->
+<div class="column-definition-eximage panel panel-default">
+	<div class="panel-body">
+		<div class="acms-table-container">
+			<input type="hidden" name="{pfx}type[]" value="{actualType}" />
+			<input type="hidden" name="{pfx}class[]" value="" />
+		
+			<table class="acms-table">
+				<tr>
+					<th rowspan="7" class="handle js-hover">
+						<i class="acms-icon-sort"></i>{actualLabel}
+					</th>
+					<th>配置</th>
+					<td>
+						<select class="form-control" name="{pfx}align[]">
+							<option value="auto"{align:selected#auto}>おまかせ</option>
+							<option value="left"{align:selected#left}>左</option>
+							<option value="right"{align:selected#right}>右</option>
+							<option value="center"{align:selected#center}>中央</option>
+							<option value="hidden"{align:selected#hidden}>非表示</option>
+						</select>
+					</td>
+					<!-- BEGIN group:veil -->
+					<th>グループ</th>
+					<td>
+						<select class="form-control" name="{group.pfx}group[]"><!-- BEGIN group:loop -->
+							<option value="{group.value}"{group.selected}>{group.label}</option><!-- END group:loop -->
+						</select>
+					</td><!-- END group:veil -->
+					<td rowspan="7" class="acms-table-action">
+						<button href="#" class="trigger-delete acms-btn-admin acms-btn-admin-danger">削除</button>
+					</td>
+				</tr>
+				<tr>
+					<th>標準画像</th>
+					<td colspan="3"><input class="form-control" type="text" name="{pfx}field_2[]" value="{field_1}" size="50" /></td>
+				</tr>
+				<tr>
+					<th>拡大画像</th>
+					<td colspan="3"><input class="form-control" type="text" name="{pfx}field_3[]" value="{field_3}" size="50" /></td>
+				</tr>
+				<tr>
+					<th>キャプション</th>
+					<td colspan="3"><input class="form-control" type="text" name="{pfx}field_1[]" value="{field_1}" size="50" /></td>
+				</tr>
+				<tr>
+					<th>リンク</th>
+					<td colspan="3"><input class="form-control" type="text" name="{pfx}field_4[]" value="{field_4}" size="50" /></td>
+				</tr>
+				<tr>
+					<th>代替テキスト</th>
+					<td colspan="3"><input class="form-control" type="text" name="{pfx}field_5[]" value="{field_5}" size="50" /></td>
+				</tr>
+				<tr>
+					<th>サイズ </th>
+					<td colspan="3">
+						<select class="form-control" name="{pfx}size[]"><!-- BEGIN size:loop -->
+						<option value="{value}"{selected}>{label}</option><!-- END size:loop -->
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- END eximage -->
+
+<!-- BEGIN quote -->
+<div class="column-definition-quote panel panel-default">
+	<div class="panel-body">
+		<div class="acms-table-container">
+			<input type="hidden" name="{pfx}type[]" value="{actualType}" />
+			<input type="hidden" name="{pfx}class[]" value="" />
+			<input type="hidden" name="{pfx}edit[]" value="" />
+			<input type="hidden" name="{pfx}field_1[]" value="" />
+			<input type="hidden" name="{pfx}field_3[]" value="" />
+			<input type="hidden" name="{pfx}field_4[]" value="" />
+			<input type="hidden" name="{pfx}field_5[]" value="" />
+		
+			<table class="acms-table">
+				<tr>
+					<th rowspan="2" class="handle js-hover">
+						<i class="acms-icon-sort"></i>{actualLabel}
+					</th>
+					<th>配置</th>
+					<td>
+						<select class="form-control" name="{pfx}align[]">
+							<option value="auto"{align:selected#auto}>おまかせ</option>
+							<option value="left"{align:selected#left}>左</option>
+							<option value="right"{align:selected#right}>右</option>
+							<option value="center"{align:selected#center}>中央</option>
+							<option value="hidden"{align:selected#hidden}>非表示</option>
+						</select>
+					</td>
+					<!-- BEGIN group:veil -->
+					<th>グループ</th>
+					<td>
+						<select class="form-control" name="{group.pfx}group[]"><!-- BEGIN group:loop -->
+							<option value="{group.value}"{group.selected}>{group.label}</option><!-- END group:loop -->
+						</select>
+					</td><!-- END group:veil -->
+					<td rowspan="2" class="acms-table-action">
+						<button href="#" class="trigger-delete acms-btn-admin acms-btn-admin-danger">削除</button>
+					</td>
+				</tr>
+				<tr>
+					<th>引用URL</th>
+					<td><input class="form-control" type="text" name="{pfx}field_6[]" value="{field_6}" /></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- END quote -->
+
+<!-- BEGIN media -->
+<div class="column-definition-media panel panel-default">
+	<div class="panel-body">
+		<div class="acms-table-container">
+			<input type="hidden" name="{pfx}type[]" value="{actualType}" />
+			<input type="hidden" name="{pfx}class[]" value="" />
+			<input type="hidden" name="{pfx}edit[]" value="" />
+			<input type="hidden" name="{pfx}field_3[]" value="" />
+			<input type="hidden" name="{pfx}field_4[]" value="" />
+			<input type="hidden" name="{pfx}field_5[]" value="" />
+		
+			<table class="acms-table">
+				<tr>
+					<th rowspan="2" class="handle js-hover">
+						<i class="acms-icon-sort"></i>{actualLabel}
+					</th>
+					<th>配置</th>
+					<td>
+						<select class="form-control" name="{pfx}align[]">
+							<option value="auto"{align:selected#auto}>おまかせ</option>
+							<option value="left"{align:selected#left}>左</option>
+							<option value="right"{align:selected#right}>右</option>
+							<option value="center"{align:selected#center}>中央</option>
+							<option value="hidden"{align:selected#hidden}>非表示</option>
+						</select>
+					</td>
+					<!-- BEGIN group:veil -->
+					<th>グループ</th>
+					<td>
+						<select class="form-control" name="{group.pfx}group[]"><!-- BEGIN group:loop -->
+							<option value="{group.value}"{group.selected}>{group.label}</option><!-- END group:loop -->
+						</select>
+					</td><!-- END group:veil -->
+					<td rowspan="2" class="acms-table-action">
+						<button href="#" class="trigger-delete acms-btn-admin acms-btn-admin-danger">削除</button>
+					</td>
+				</tr>
+				<tr>
+					<th>メディアID</th>
+					<td><input class="form-control" type="text" name="{pfx}field_1[]" value="{field_1}" /></td>
+				</tr>
+				<tr>
+					<th>サイズ </th>
+					<td colspan="3">
+						<select class="form-control" name="{pfx}size[]"><!-- BEGIN size:loop -->
+						<option value="{value}"{selected}>{label}</option><!-- END size:loop -->
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- END media -->
+
+<!-- BEGIN break -->
+<div class="column-definition-break panel panel-default">
+	<div class="panel-body">
+		<div class="acms-table-container">
+			<input type="hidden" name="{pfx}type[]" value="{actualType}" />
+			<input type="hidden" name="{pfx}align[]" value="auto" />
+			<input type="hidden" name="{pfx}class[]" value="" />
+			<input type="hidden" name="{pfx}size[]" value="" />
+			<input type="hidden" name="{pfx}edit[]" value="" />
+			<input type="hidden" name="{pfx}field_2[]" value="" />
+			<input type="hidden" name="{pfx}field_3[]" value="" />
+			<input type="hidden" name="{pfx}field_4[]" value="" />
+			<input type="hidden" name="{pfx}field_5[]" value="" />
+			<table class="acms-table">
+				<tr>
+					<th class="handle js-hover"><i class="acms-icon-sort"></i>{actualLabel}</th>
+					<th>ラベル</th>
+					<td><input class="form-control" type="text" name="{pfx}field_1[]" style="width:70%;" value="{field_1}" /></td>
+					<th class="acms-table-action">
+						<button href="#" class="trigger-delete acms-btn-admin acms-btn-admin-danger">削除</button>
+					</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- END break -->
+
+<!-- BEGIN custom -->
+<div class="column-definition-custom panel panel-default">
+	<div class="panel-body">
+		<div class="acms-table-container">
+			<input type="hidden" name="{pfx}type[]" value="{actualType}" />
+			<input type="hidden" name="{pfx}align[]" value="auto" />
+			<input type="hidden" name="{pfx}class[]" value="" />
+			<input type="hidden" name="{pfx}size[]" value="" />
+			<input type="hidden" name="{pfx}edit[]" value="" />
+			<input type="hidden" name="{pfx}field_1[]" value="" />
+			<input type="hidden" name="{pfx}field_2[]" value="" />
+			<input type="hidden" name="{pfx}field_3[]" value="" />
+			<input type="hidden" name="{pfx}field_4[]" value="" />
+			<input type="hidden" name="{pfx}field_5[]" value="" />
+			<table class="acms-table">
+				<tr>
+					<th class="handle js-hover"><i class="acms-icon-sort"></i>{actualLabel}</th>
+					<th class="acms-table-action">
+						<button href="#" class="trigger-delete acms-btn-admin acms-btn-admin-danger">削除</button>
+					</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- END custom -->

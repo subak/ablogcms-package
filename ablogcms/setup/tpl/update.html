@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms アップデートウィザード</title>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="siteTitleBox">
+			<h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+			<span id="setupType">アップデート</span>
+		</div>
+	</div>
+<div id="main">
+
+<!-- BEGIN step#apply -->
+<h2>アップデートの実行</h2>
+<form action="?step=update" method="post">
+    <h3>アップデート処理について</h3>
+        <h4>1. システムファイルの更新 (手動)</h4>
+        <p class="noticeMsg">ダウンロードパッケージ同梱の "お読みください.pdf" を参考に、システムファイルを上書きしてください。</p>
+        <h4>2. データベースの更新 (自動)</h4>
+        <p class="noticeMsg">最新バージョンの定義ファイルに従って、データベースを自動更新・編集を行います。</p>
+        <h4>3. config.server.phpの更新 (自動)</h4>
+        <p class="noticeMsg">追加・削除等がある項目について自動更新・編集を行います。</p>
+
+    <h3>アップデートの前に必ずお読みください</h3>
+        <h4>config.server.phpのパーミッション</h4>
+        <p class="errorMsg"><strong>config.server.php</strong> のパーミッションを <strong>読み書き可能（666等）</strong> に設定してください。</p>
+        <h4>データベースの情報</h4>
+        <p class="errorMsg">phpMyAdmin等からa-blog cmsで利用しているテーブルをエクスポートしバックアップしてください。</p>
+        <h4>アップデートを実行できない場合はシステムファイルを更新しないで下さい</h4>
+        <p class="errorMsg">この下に "アップデートを実行できません" と表示されている場合は、システムファイルの上書きをしないでください。</p>
+    <!-- BEGIN alter_privilege:error -->
+    <h3>アップデートを実行できません</h3>
+        <p class="errorMsg">アップデートするには、DBに対するALTER権限が必要です。</p>
+    <!-- END alter_privilege:error -->
+    <!-- BEGIN mysqlErr:veil --><p style="color:silver;">{mysqlErr}</p><!-- END mysqlErr:veil -->
+
+    <!-- BEGIN permitted:veil -->
+    <h3 class="{permitted}">アップデートを実行できます</h3>
+    <p id="submitBtn"><input type="submit" name="submit" value="データベースの更新処理を実行" class="acms-btn-admin" /></p>
+    <!-- END permitted:veil -->
+</form>
+<!-- END step#apply -->
+
+<!-- BEGIN step#update:error -->
+<h2>アップデートの実行</h2>
+<form action="?step=update" method="post">
+        <h4>1. システムファイルの更新 (手動)</h4>
+        <p class="noticeMsg">ダウンロードパッケージ同梱の "お読みください.pdf" を参考に、システムファイルを上書きしてください。</p>
+        <h4>2. データベースの更新 (自動)</h4>
+        <p class="noticeMsg">最新バージョンの定義ファイルに従って、データベースを自動更新・編集を行います。</p>
+        <h4>3. config.server.phpの更新 (自動)</h4>
+        <p class="noticeMsg">追加・削除等がある項目について自動更新・編集を行います。</p>
+
+    <h3>アップデートの前に必ずお読みください</h3>
+        <h4>config.server.phpのパーミッション</h4>
+        <p class="errorMsg"><strong>config.server.php</strong> のパーミッションを <strong>読み書き可能（666）</strong> に設定してください。</p>
+        <h4>データベースの情報</h4>
+        <p class="errorMsg">phpMyAdmin等からa-blog cmsで利用しているテーブルをエクスポートしバックアップしてください。</p>
+        <h4>アップデートを実行できない場合はシステムファイルを更新しないで下さい</h4>
+        <p class="errorMsg">この下に "アップデートを実行できません" と表示されている場合は、システムファイルの上書きをしないでください。</p>
+
+    <h3>アップデートを実行できませんでした</h3>
+    <!-- BEGIN config_exists:error --><p class="errorMsg">config.server.phpがみつかりません。</p><!-- END config_exists:error -->
+    <!-- BEGIN config_permission:error --><p class="errorMsg">config.server.phpのパーミッションを確認してください。</p><!-- END config_permission:error -->
+    <!-- BEGIN alter_privilege:error --><p class="errorMsg">アップデートするには、DBに対するALTER権限が必要です。</p><!-- END alter_privilege:error -->
+    <!-- BEGIN mysqlErr:veil --><p style="color:silver;">{mysqlErr}</p><!-- END mysqlErr:veil -->
+
+    <!-- BEGIN permitted:veil -->
+    <h3 class="{permitted}">アップデートを実行できます</h3>
+    <p id="submitBtn"><input type="submit" name="submit" value="データベースの更新処理を実行" class="acms-btn-admin" /></p>
+    <!-- END permitted:veil -->
+</form>
+<!-- END step#update:error -->
+
+<!-- BEGIN step#drop -->
+<h2>データベースとconfig.server.phpが更新されました</h2>
+<form action="?step=drop" method="post">
+<h3>使用されていないデータベースのテーブル項目を削除できます</h3>
+    <p>現バージョンのa-blog cmsが使用していないデータベースのテーブル項目がある場合は、ここで削除することができます。</p>
+    <p class="noticeMsg">独自に拡張したテーブル項目がある場合にも、ここに表示されますがそれらは削除する必要はありません。<br />
+    これらのテーブル項目がよく分からない場合は、削除せずにアップデートを終了することもできます。</p>
+    <!-- BEGIN drop:veil -->
+    <h3>a-blog cmsが使用していないテーブル項目の一覧</h3>
+    <ul><!-- BEGIN table:loop -->
+        <li>{table}
+        <ul><!-- BEGIN column:loop -->
+            <li><label class="acms-form-checkbox"><input type="checkbox" name="column[]" value="{table}@{column}" /><i class="acms-ico-checkbox"></i>&nbsp; {column}</label></li><!-- END column:loop -->
+        </ul>
+        </li><!-- END table:loop -->
+    </ul>
+    <input type="hidden" name="done" value="true" />
+    <input type="submit" name="submit" value="選択したテーブル項目を削除します（選択してない場合はアップデートを完了します）" onclick="return confirm(\'現在の入力内容で実行してよろしいですか？\');" class="acms-btn-admin" />
+    <!-- END drop:veil -->
+
+    <!-- BEGIN notFound:veil -->
+    <h3>アップデートを完了します</h3>
+        <p>定義外のカラムはありませんでした。このままアップデートを完了してください。</p>
+    <input type="hidden" name="done" value="true" />
+    <p id="submitBtn"><input type="submit" name="submit" value="アップデートを完了" class="acms-btn-admin" /></p>
+    <!-- END notFound:veil -->
+</form>
+<!-- END step#drop -->
+
+<!-- BEGIN step#drop:error -->
+<h2>データベースとconfig.server.phpが更新されました</h2>
+<form action="?step=drop" method="post">
+<h3>使用されていないデータベースのテーブル項目を削除できます</h3>
+    <p>現バージョンのa-blog cmsが使用していないデータベースのテーブル項目がある場合は、ここで削除することができます。</p>
+    <p class="noticeMsg">独自に拡張したテーブル項目がある場合にも、ここに表示されますがそれらは削除する必要はありません。<br />
+    これらのテーブル項目がよく分からない場合は、削除せずにアップデートを終了することもできます。</p>
+    <!-- BEGIN drop:veil -->
+    <h3>a-blog cmsが使用していないテーブル項目の一覧</h3>
+    <ul><!-- BEGIN table:loop -->
+        <li>{table}
+        <ul><!-- BEGIN column:loop -->
+            <li><label class="acms-form-checkbox"><input type="checkbox" name="column[]" value="{table}@{column}" /><i class="acms-ico-checkbox"></i>&nbsp; {column}</label></li><!-- END column:loop -->
+        </ul>
+        </li><!-- END table:loop -->
+    </ul>
+    <input type="hidden" name="done" value="true" />
+    <p id="submitBtn"><input type="submit" name="submit" value="選択したテーブル項目を削除（選択してない場合はアップデートを完了します）" onclick="return confirm(\'現在の入力内容で実行してよろしいですか？\');" class="acms-btn-admin" /></p>
+    <!-- END drop:veil -->
+</form>
+<!-- END step#drop:error -->
+
+<!-- BEGIN step#complete -->
+<h2>アップデートを完了しました</h2>
+<h3>アップデート結果の確認</h3>
+<p>[*ROOT_DIR*][*SETUP_DIR*]/を削除し、<br /><a href="[*HTTP_ROOT*]">[*HTTP_ROOT*]</a> にアクセスしてアップデート処理を確認してください。</p>
+<!-- END step#complete -->
+
+<p><a href="./index.php">メンテナンスメニューに戻る</a></p>
+</div>
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

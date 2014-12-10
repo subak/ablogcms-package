@@ -1,0 +1,16 @@
+<!-- BEGIN_MODULE Banner id="banner" -->
+<aside class="subModuleBox">
+<!--#include file="/admin/module/setting.html"-->
+<h2>バナー</h2>
+<ul id="banner">
+	<!-- BEGIN banner:loop -->
+	<!-- BEGIN banner#src -->
+	<li>{src}[raw]</li>
+	<!-- END banner#src -->
+	<!-- BEGIN banner#img -->
+	<li><a href="{url}" target="{target}"><img src="%{ARCHIVES_DIR}{img}" width="{x}" height="{y}" alt="{alt}" /></a></li>
+	<!-- END banner#img -->
+	<!-- END banner:loop -->
+</ul>
+</aside>
+<!-- END_MODULE Banner -->

@@ -1,0 +1,70 @@
+/* ---------------
+ sidebar
+--------------- */
+.acms-sidebar{
+	padding-bottom: 40px;
+	ul{
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+	}
+	dl{
+		margin-top: 0;
+	}
+	dd{
+		margin: 0;
+	}
+}
+
+/* タイトル */
+.acms-sidebar-title{
+	padding: 5px 20px;
+	.font-size(11);
+	font-weight: bold;
+	border-top: 1px solid #666;
+}
+
+/* リンク */
+.acms-sidebar-link a{
+	display: block;
+	padding: 11px 20px;
+	line-height: 1.2;
+	&:hover{
+		background-color: #4F4F4F;
+		color: #E0E0E0;
+	}
+}
+
+// 現在いるとき
+.stay,
+.stay a:hover {
+	background-color: #FFF;
+}
+
+.acms-sidebar-link .stay a {
+	color: #333;
+}
+
+// --------------- 
+// スマートフォンのとき
+// ---------------
+.acms-sidebar-sp{
+	display: none;
+	// 表示
+	@media screen and (max-width: 768px) {
+		display: block;
+	}
+	p{
+		margin: 0;
+	}
+	li{
+		border-bottom: solid 1px #FFFFFF;
+	}
+	.acms-sidebar-box{
+		padding: 15px 20px;
+		border-bottom: solid 1px #FFFFFF;
+	}
+	.acms-dropdown a{
+		background: url('@{acms-path-marker}arrow_white03.png') no-repeat 95% center;
+	}
+}

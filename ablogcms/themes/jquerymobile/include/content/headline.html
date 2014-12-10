@@ -1,0 +1,30 @@
+<!-- BEGIN_MODULE Entry_Headline -->
+
+<ul data-role="listview">
+<!-- BEGIN_MODULE Touch_Top --><li data-role="list-divider">新着情報</li><!-- END_MODULE Touch_Top -->
+<!-- BEGIN_MODULE Touch_Keyword --><li data-role="list-divider">%{KEYWORD}の検索結果</li><!-- END_MODULE Touch_Keyword -->
+<!-- BEGIN_MODULE Touch_Category --><li data-role="list-divider">%{CATEGORY_NAME}の一覧</li><!-- END_MODULE Touch_Category -->
+<!-- BEGIN_MODULE Touch_Tag --><li data-role="list-divider">%{TAG}の一覧</li><!-- END_MODULE Touch_Tag -->
+<!-- BEGIN entry:loop -->
+<li>
+	<a href="{url}" data-transition="flip">
+		<p><time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}/{date#m}/{date#d} ({date#week})</time> - {categoryName}</p>
+		<h3>{title}</h3>
+	</a>
+</li>
+<!-- END entry:loop -->
+<!-- BEGIN notFound -->
+<li>エントリーが登録されていません</li>
+<!-- END notFound -->
+</ul>
+
+<!-- BEGIN_MODULE Touch_NotTop -->
+<!-- BEGIN pager:veil -->
+<div id="pager" data-role="controlgroup" data-type="horizontal" style="margin-top: 30px;text-align:center;">
+<!-- BEGIN backLink --><a href="{url}" data-role="button" data-inline="true" data-icon="arrow-l" data-direction="reverse">前へ</a><!-- END backLink -->
+<!-- BEGIN forwardLink --><a href="{url}" data-role="button" data-inline="true" data-icon="arrow-r" data-iconpos="right">次へ</a><!-- END forwardLink -->
+</div>
+<!-- END pager:veil -->
+<!-- END_MODULE Touch_NotTop -->
+
+<!-- END_MODULE Entry_Headline -->

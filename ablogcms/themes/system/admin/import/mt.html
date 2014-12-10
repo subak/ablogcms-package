@@ -1,0 +1,60 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-import"></i>Movable Typeインポート</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+<!-- BEGIN_MODULE Admin_Import_Message -->
+<!-- BEGIN message:veil -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>{importMessage}</p><!-- END message:veil --><!-- BEGIN import:data -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>{blog} ブログ  {category} に {entry_count}件、インポートしました。</p><!-- END import:data -->
+<!-- END_MODULE Admin_Import_Message -->
+
+<p class="acms-margin-sp">Movable Typeのエクスポートデータ<strong>(txt形式)</strong>を、現在のブログにインポートします。</p>
+
+<ul>
+	<li>インポートされるデータは現在ログインしているユーザーでインポートされます</li>
+	<li>カテゴリーコードは、<strong>category-[番号]</strong>という形でインポートされます。カテゴリー名はMovable Typeのものが反映されます。</li>
+</ul>
+
+<form action="" method="post" enctype="multipart/form-data" class="acms-form">
+	<input class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save acms-margin-sp" type="submit" name="ACMS_POST_Import_MovableType" value="インポートを実行する"/ onclick="return confirm('インポートを実行します。よろしいですか？');">
+
+	<h2 class="acms-admin-title2">Movable Typeからの移行</h2>
+	<table class="adminTable acms-table-admin-edit">
+		<tr>
+			<th>インポート先ブログ</th>
+			<td>%{BLOG_NAME}（現在のブログ）</td>
+		</tr>
+		<tr>
+			<th>インポート先カテゴリー</th>
+			<td>
+				<select name="category_id">
+					<option value="-1">MTのカテゴリーを使用</option>
+					<option value="0">なし</option><!-- BEGIN_MODULE Admin_Category_Select --><!-- BEGIN loop -->
+					<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option><!-- END loop --><!-- END_MODULE Admin_Category_Select -->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>MTエクスポートデータ（txt形式）</th>
+			<td><input type="file" name="mt_import_file" ></td>
+		</tr>
+		<tr>
+			<th>投稿データのインポート形式</th>
+			<td>
+				<select name="text_type">
+					<option value="p">pタグで囲む</option>
+					<option value="wysiwyg">ウィジウィグ</option>
+					<option value="markdown">マークダウン</option>
+					<option value="none">自由入力</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+</form>
+<!-- END_MODULE Touch_SessionWithAdministration -->

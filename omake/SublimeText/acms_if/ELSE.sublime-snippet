@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<!-- ELSE -->
+]]></content>
+	<tabTrigger>!acms:if</tabTrigger>
+    <description>ELSE</description>
+</snippet>

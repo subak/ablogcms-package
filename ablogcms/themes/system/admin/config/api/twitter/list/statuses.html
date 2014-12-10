@@ -1,0 +1,65 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<div class="acms-admin-title acms-module-title-wrapper">
+			<i class="acms-icon acms-icon-config_api_twitter_list_statuses"></i>
+			<div class="acms-module-title">
+				<!-- BEGIN_MODULE Admin_Rule_Name -->
+				<strong>ルール : {name}</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+				<strong>モジュールID : {label} ( {identifier} )</strong><!-- END_MODULE Admin_Module_Name -->
+				<h1>Twitterリストタイムライン<span class="acms-module-en">Api_Twitter_List_Statuses</span></h1>
+			</div>
+		</div>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+
+<!-- BEGIN_MODULE Admin_Config -->
+<!-- BEGIN_IF [{notice_mess}/nem/] -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>Api_Twitter_List_Statuses 設定を保存しました</p>
+<!-- END_IF -->
+
+<form action="" method="post" class="acms-form">
+	<div class="acms-form-group acms-margin-sp">
+		<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+
+		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+	</div>
+
+	<table class="adminTable acms-table-admin-edit">
+		<tr>
+			<th>表示件数<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="一度に表示される件数です。"></i></th>
+			<td>
+				<input type="text" name="twitter_list_statuses_limit" value="{twitter_list_statuses_limit}" size="4" class="acms-form-width-mini" />
+				<input type="hidden" name="config[]" value="twitter_list_statuses_limit" />
+				<input type="hidden" name="twitter_list_statuses_limit:convert" value="a" />
+				<input type="hidden" name="twitter_list_statuses_limit:validator#digits" id="validator-twitter_list_statuses_limit-digits" />
+				<label for="validator-twitter_list_statuses_limit-digits" class="validator-result-{twitter_list_statuses_limit:validator#digits}">数字を入力して下さい。</label>
+			</td>
+		</tr>
+		<tr>
+			<th>非公開ツイート<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると非公開アカウントのツイートを表示しません。"></i></th>
+			<td>
+				<input type="hidden" name="twitter_list_statuses_private" value="off" />
+				<label for="input-checkbox-twitter_list_statuses_private" class="acms-form-checkbox"><input type="checkbox" name="twitter_list_statuses_private" value="on"{twitter_list_statuses_private:checked#on} id="input-checkbox-twitter_list_statuses_private" /><i class="acms-ico-checkbox"></i>非公開のステータスを表示しない</label>
+				<input type="hidden" name="config[]" value="twitter_list_statuses_private" />
+			</td>
+		</tr>
+		<tr>
+			<th>APIリクエスト キャッシュ有効時間<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="APIリクエストの結果を、ここで設定した秒数の間だけキャッシュ利用します。ページのキャッシュとは異なることに注意してください。"></i></th>
+			<td>
+				<input type="text" name="twitter_list_statuses_cache_expire" value="{twitter_list_statuses_cache_expire}" size="8" class="acms-form-width-mini" /> 秒
+				<input type="hidden" name="config[]" value="twitter_list_statuses_cache_expire" />
+				<input type="hidden" name="twitter_list_statuses_cache_expire:validator#digits" id="validator-twitter_list_statuses_cache_expire-digits" />
+				<label for="validator-twitter_list_statuses_cache_expire-digits" class="validator-result-{twitter_list_statuses_cache_expire:validator#digits}">数字を入力して下さい。</label>
+				</td>
+				</tr>
+	</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+</form>
+<!-- END_MODULE Admin_Config -->

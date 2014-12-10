@@ -1,0 +1,1435 @@
+@charset "utf-8";
+
+@import "variable.less";
+@import "mixins.less";
+/* ---------------
+ 管理画面の専用
+--------------- */
+// --------------- 
+// フォントサイズ
+// ---------------
+body{
+	margin: 0;
+	.font-size(13);
+	font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W6', Meiryo,'メイリオ','ＭＳ Ｐゴシック','MS PGothic',Verdana,sans-serif;
+}
+
+// --------------- 
+// リンクカラー
+// ---------------
+// リンク
+a {
+	color: #006DEC;
+	text-decoration: none;
+}
+// visited
+a:visited {
+
+}
+// hover
+a:hover {
+	color: #8EBEF7;
+}
+// active
+a:active {
+	color: #8EBEF7;
+}
+
+// --------------- 
+// color
+// ---------------
+.acms-bg-black{
+	background-color: #101013;
+
+}
+.acms-bg-gray{
+	background-color: #25242C;
+}
+
+.acms-bg-black a,
+.acms-bg-gray a{
+	color: #CCCCCC;
+}
+
+
+// --------------- 
+// mixins
+// --------------- 
+.hover-animation (@duration: 0.1s) {
+	-webkit-transition: all @duration linear;
+	-moz-transition: all @duration linear;
+	-o-transition: all @duration linear;
+	transition: all @duration linear;
+}
+
+// --------------- 
+// メインカラム
+// ---------------
+// メインカラム
+#acms-main{
+	padding: 36px 30px 0 190px;
+}
+
+#main{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+@media screen and (max-width: 767px) {
+	#acms-main{
+		padding: 0 10px 0 10px !important;
+	}
+
+	#main{
+		padding-top: 80px;
+	}
+	
+	// グリッドの
+	.acms-grid-r{
+		margin: 0;
+	}
+}
+
+// --------------- 
+// ヘッダー ナビゲーション
+// ---------------
+#outer-wrap #top{
+	position: fixed;
+	width: 100%;
+	@media screen and (max-width: 767px) {
+		position: absolute;
+	}
+}
+
+// ブログ名全体
+.acms-list-blog{
+	float: left;
+	margin: 0;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	.font-size(13);
+}
+
+// ブログ名
+.acms-title-blog{
+	margin: 0;
+	.font-size(13);
+}
+
+// a-blog cmsのロゴ
+.acms-list-blog .acms-icon-logo{
+	.font-size(16);
+	color: #CCCCCC;
+	line-height: 1;
+	vertical-align: middle;
+}
+
+// ロゴ
+.acms-navbar-admin .logo{
+	float: left;
+	margin: 0;
+	line-height: 1;
+}
+
+.acms-title-blog{
+	font-weight: normal;
+}
+
+// hover
+.acms-navbar-admin-nav > li > a:hover,
+.acms-title-blog a:hover{
+	opacity: 0.5;
+}
+
+.acms-navbar-system {
+	border-top: 4px solid @acms-red;
+	padding-top: 2px;
+}
+.acms-list-blog .acms-icon-logo,
+.acms-blog-color {
+	color:  @acms-red;
+}
+.js-acms-color-picker-target{
+	background-color: @acms-red;
+}
+
+// スクロール
+.acms-list-scroll{
+	max-height: 400px;
+	overflow: auto;
+}
+
+// スマートフォンの時
+@media screen and (max-width: 767px) {
+	// ヘッダーのリンクを非表示
+	.acms-navbar-system .acms-navbar-admin-nav,
+	.acms-navbar-system .acms-navbar-admin-right,
+	.acms-list-blog{
+		display: none;
+	}
+	.acms-navbar-system{
+		position: relative;
+		height: 64px;
+	}
+	// a-blog cmsのロゴを固定
+	.acms-navbar-system .acms-list-blog-sp{
+		position: absolute;
+			top: 10px;
+			right: 0;
+		width: auto;
+		margin: 0;
+		.font-size(30);
+		color: #FFFFFF;
+	}
+}
+// --------------- 
+// サイドナビゲーション
+// ---------------
+// ナビゲーション固定
+#sidebar{
+	position: fixed;
+		top: 36px;
+		left: 0;
+	width: 160px;
+	height: 100%;
+	overflow: hidden;
+}
+
+#outer-wrap #nav{
+	position: static;
+}
+
+// ブログ一覧を非表示
+.acms-list-blog-sp{
+	display: none;
+}
+
+.acms-icon-admin-blog-children{
+	color: #999999;
+}
+
+.acms-sidebar-link a{
+	padding: 11px 10px 11px 20px;
+}
+
+// スマートフォン メニューアイコン
+#nav-open-btn{
+	display: none;
+	top: 10px !important;
+	left: 10px !important;
+	padding: 15px 12px;
+	background-color: #EEEEEE;
+	border: solid 1px #CCCCCC;
+	color: #0085CC;
+	@media screen and (max-width: 767px) {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	// 固定解除
+	#sidebar{
+		position: static;
+			top: inherit;
+			left: inherit;
+		width: auto;
+	}
+	
+	// ブログ一覧を表示
+	.acms-list-blog-sp{
+		display: block;
+	}
+	
+	// ナビゲーションが閉じている時
+	#outer-wrap #nav {
+		position: absolute;
+	}
+
+	// ナビゲーションが開いている時
+	.js-nav #outer-wrap #nav{
+		position: static;
+	}
+	.js-nav #acms-main{
+		position: absolute;
+			top: 0;
+			width: 100%;
+	}
+}
+
+@media only screen and (min-device-width : 768px) and
+(max-device-width : 1024px) and
+(orientation : portrait) {
+	#sidebar .acms-btn-login{
+		width: 75%;
+	}
+}
+
+
+
+// --------------- 
+// ボタンの固定
+// ---------------
+// ボタンを固定
+.fixed{
+	position: fixed;
+		top: 47px;
+	z-index: 11;
+}
+@media screen and (max-width: 767px) {
+	.fixed{
+		position: static;
+			top: inherit;
+			left: inherit;
+	}
+}
+
+// ボタンを右に配置
+.fixed.acms-position-right{
+	right: 20px;
+}
+
+// ボタンの固定全体
+.fixed.acms_fix_bg{
+	top: 36px;
+	left: 0;
+	width: 100%;
+	padding: 0 20px 0 180px;
+	.box-sizing(border-box);
+	z-index: 10;
+}
+
+.acms_fix_bg_index{
+	.clearfix();
+}
+/* 固定ボタン */
+.js-acms_fix_target{
+	margin-bottom: 10px;
+}
+.js-acms_fix_target.fixed{
+	margin-bottom: 0;
+}
+
+@media screen and (max-width: 767px) {
+	.fixed.acms_fix_bg{
+		padding: 0;
+			top: inherit;
+			left: inherit;
+	}
+}
+
+// ボタンの固定 白背景
+.fixed .acms_fix_bg_index{
+	height: 32px;
+	margin-right: 0;
+	padding: 10px 0;
+	box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+	background-color: #FFFFFF;
+}
+@media screen and (max-width: 767px) {
+	.fixed .acms_fix_bg_index{
+		height: auto;
+		padding: 0;
+		box-shadow: 0 0 0 #FFFFFF;
+	}
+}
+
+// 固定したボタンの重ね順
+.fixed .acms_fix_bg_index .acms-btn-admin{
+	z-index: 600;
+}
+
+// 固定したボタンの次にタイトルがきたら間隔をあける
+.fixed + .acms-admin-title2{
+	margin-top: 55px;
+}
+.fixed + .acms-table-responsive{
+	margin-top: 70px;
+}
+@media screen and (max-width: 767px) {
+	.fixed + .acms-admin-title2,
+	.fixed + .acms-table-responsive{
+		margin-top: 0;
+	}
+	.js-acms_fix_target{
+		margin-left: 10px;
+		margin-bottom: 10px;
+	}
+	.js-acms_fix_target .acms-btn-admin{
+		margin-bottom: 10px;
+	}
+}
+
+// --------------- 
+// 管理ボックス
+// ---------------
+@media screen and (max-width: 767px) {
+	#js-admin_action_box{
+		display: none !important;
+	}
+}
+
+// --------------- 
+// タブセレクト
+// ---------------
+.acms-tab-text{
+	display: block;
+	max-width: 300px;
+	.font-size(12);
+}
+.fixed .acms-tab-text{
+	display: none;
+}
+
+// --------------- 
+// ユーザーグループ編集
+// ---------------
+.argRefLeft strong,
+.argRefCenter strong,
+.argRefRight strong {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.argRefLeft {
+	float: left;
+	width: 40%;
+	height: 100%;
+}
+.argRefLeft .js-acms_tabs {
+	height: 90%;
+	list-style: none;
+	overflow-y: auto;
+	padding: 0;
+}
+.argRefLeft .js-acms_tabs li a {
+	border: 1px solid silver;
+	display: block;
+	border-right: none;
+	padding: 3px;
+	margin-bottom: 2px;
+}
+.argRefLeft .js-acms_tab-active {
+	background-color: #fff;
+}
+
+.argRefCenter {
+	width: 360px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.argRefRight {
+	float: left;
+	text-align: left;
+	width: 60%;
+	height: 100%;
+}
+.argRefCenter ul,
+.argRefRight ul {
+	padding: 0;
+	border: 1px solid silver;
+	border-left: none;
+	background-color: #fff;
+	height: 90%;
+	overflow-y: auto;
+}
+.argRefCenter ul {
+	border-left: 1px solid silver;
+}
+.argRefCenter ul li,
+.argRefRight ul li {
+	list-style: none;
+	margin-bottom: 3px;
+}
+.argRefCenter ul li a,
+.argRefRight ul li a {
+	display: block;
+	width: 98%;
+	padding: 3px 0 3px 2%;
+}
+.argRefCenter ul li a:hover,
+.argRefRight ul li a:hover {
+	background-color: #FFFFFF;
+	color: white;
+}
+
+.argRefRight:not(:target) {
+	width: 260px\9; /* IE9・IE10 */
+}
+
+// --------------- 
+// タイトル
+// ---------------
+.acms-admin-title2{
+	margin:10px 0 0 0;
+	padding: 4px 10px;
+	.font-size(13);
+
+	+ ul{
+		margin-top: 10px;
+	}
+}
+
+// --------------- 
+// コンフィグ
+// ---------------
+// コンフィグ名
+.acms-config-name{
+	.font-size(16);
+	a{
+		display: block;
+		position: relative;
+		padding-left: 40px;
+	}
+	// アイコン
+	.acms-icon{
+		position: absolute;
+			top: -4px;
+			left: 0;
+		color: #333333;
+		vertical-align: middle;
+	}
+	// モジュール
+	.acms-config-module{
+		display: block;
+		color: #777777;
+		.font-size(11);
+	}
+}
+
+// スニペットと変数表
+.acms-config-code{
+	width: 140px;
+	text-align: right;
+	a{
+		margin-left: 10px;
+		.font-size(11);
+		color: #888888;
+		vertical-align: middle;
+	}
+	.acms-icon{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.acms-config-code{
+		display: none;
+	}
+}
+
+// モジュールのアイコン
+.acms-module-list .acms-config-name .acms-icon{
+	top: 3px;
+}
+
+// モジュールのタイトル
+.acms-module-title-wrapper{
+	position: relative;
+	// アイコン
+	.acms-icon{
+		position: absolute;
+			left: 0;
+			top: 2px;
+	}
+	// モジュール名
+	.acms-module-title{
+		padding-left: 35px;
+	}
+	strong{
+		display: block;
+		margin-bottom: 10px;
+		.font-size(13);
+	}
+	h1{
+		margin: 0;
+		.font-size(20);
+	}
+	.acms-module-en{
+		display: block;
+		margin-top: 5px;
+		color: #666666;
+		.font-size(12);
+	}
+}
+
+
+// --------------- 
+// タグセレクト
+// ---------------
+// プルダウンの絞り込み
+.js-acms-tab-select{
+	margin-bottom: 10px;
+}
+
+.js-acms-tab-select-value{
+	margin-right: 5px;
+}
+
+// --------------- 
+// フォーム
+// ---------------
+// 表示順
+.acms-form input.sort-number{
+	padding: 4px 5px;
+}
+
+// --------------- 
+// エントリ一覧ページ
+// ---------------
+.acms-entryTitle,
+.categoryTitle {
+	display: inline-block;
+	font-weight: bold;
+	.font-size(13);
+}
+
+// カテゴリータイトル
+.categoryTitle{
+	margin: 0 20px 0 10px;
+}
+
+// エントリー
+.acms-entryTitle {
+	margin: 0 20px 10px 10px;
+}
+
+// 日付、ブログ名
+.acms-list-inline {
+	padding-left: 0;
+	margin:0;
+}
+
+#tagList li{
+	.btn;
+	.btn-color;
+	margin-right: 5px;
+	margin-bottom: 10px;
+	& a{
+		color: #333;
+	}
+	.acms-label{
+		margin-left: 5px;
+		padding: 3px 5px;
+		border-radius: 5px;
+	}
+	&:hover {
+		border: 1px solid #A5A5A5;
+		.btn-color-hover;
+		text-decoration: none;
+	}
+}
+
+.admin-entry-index-val{
+	color: #666666;
+}
+
+// --------------- 
+// カテゴリー一覧ページ
+// ---------------
+.acms-title-sp{
+	margin: 0;
+}
+
+// --------------- 
+// 子ブログ一覧ページ
+// ---------------
+.acms-blog-index-url{
+	margin: 8px 0 0;
+}
+
+// --------------- 
+// ページャ
+// ---------------
+// ページャの間隔
+.acms-pager-container {
+	margin-top: 10px;
+}
+.acms-itemsAmount-container {
+	margin-top: 10px;
+	text-align: right;
+}
+
+// --------------- 
+// テーブル
+// ---------------
+// スマートフォンの時
+@media screen and (max-width: 767px) {
+	// テーブル全体に色
+	.acms-table-heading{
+		background-color: #F2F2F4;
+	}
+	.acms-table-heading td{
+		display: inline-block;
+	}
+	.acms-table-heading .acms-td-status,
+	.acms-table-heading .acms-td-edit{
+		display: block;
+		width: 100%;
+	}
+	#main .acms-table-admin td{
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	// エントリ情報の一覧
+	.acms-table-admin td .acms-list-inline{
+		margin-top: 5px;
+	}
+	.acms-table-admin td .acms-list-inline li{
+		line-height: 1.5;
+	}
+	.acms-td-title{
+		display: block;
+	}
+	.acms-td-title .acms-entryTitle{
+		.font-size(16);
+	}
+	.acms-table-admin td,
+	#main .acms-table-heading th,
+	.acms-table-heading td{
+		border-top: none;
+		border-bottom: none;
+	}
+	.acms-table-heading .acms-td-edit{
+		border-bottom: 1px solid #CCCCCC;
+	}
+	// チェックボックス
+	.acms-table-admin .acms-th-checkbox{
+		text-align: left;
+	}
+
+	// テーブルの項目を非表示
+	.acms-table-heading .acms-th-number,
+	.acms-table-heading .acms-th-id{
+		display: none;
+	}
+
+	.acms-table-admin-edit thead th,
+	.acms-table-admin-edit thead td,
+	.acms-table-admin-edit tbody th,
+	.acms-table-admin-edit tbody td {
+		display: block;
+		width: 100% !important;
+		padding: 0;
+	}
+
+	.acms-table-admin-edit tbody th {
+		padding: 22px 10px 5px;
+		text-align: left;
+	}
+
+	.acms-table-admin-edit tbody td {
+		padding: 0 10px 15px;
+	}
+	.acms-table-admin-edit tr:last-child td,
+	.acms-table-admin-edit tr:last-child th{
+		border-bottom: none !important;
+	}
+	.acms-table-hover tr:hover td{
+		background-color: #F2F2F4;
+	}
+
+}
+
+// テーブル内ツールチップ
+.acms-table-admin-edit .tooltipIcon,
+.acms-table-admin .tooltipIcon {
+	margin-left: 10px;
+}
+
+// アイコンを大きく
+.acms-admin-mini-table .acms-icon{
+	.font-size(28);
+}
+
+// miniテーブル IE8
+.acms-admin-mini-table td{
+	padding: 12px 10px\9; 
+	border-bottom: solid 1px #CCCCCC\9;
+}
+
+.acms-admin-mini-table td.caution{
+	background-color: #E1BCC4 !important;
+}
+
+// テーブル内でスクロール
+.acms-admin-table-scroll {
+	overflow-y: scroll;
+	max-height: 320px;
+}
+
+// コンフィグ一覧テーブル
+.acms-admin-config-table tbody th {
+	width: 50px;
+}
+
+// ダッシュボード内テーブル
+.acms-admin-icon-table img {
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+//コンフィグのテーブルのハンドルまわり
+.acms-table-admin-edit .acms-admin-config-table-item-handle{
+	width: 30px;
+}
+.acms-table-admin-edit .acms-admin-config-table-sort{
+	width: 92px;
+}
+.acms-table-admin-edit .acms-admin-config-table-publish{
+	width: 77px;
+}
+.acms-table-admin-edit .acms-admin-config-table-target{
+	width: 50px;
+}
+.acms-table-admin-edit .acms-admin-config-table-parent{
+	width: 50px;
+}
+.acms-table-admin-edit .acms-admin-config-table-action{
+	width: 50px;
+}
+.acms-table-admin-edit .acms-admin-config-table-criterion{
+	width: 50px;
+}
+.acms-table-admin-edit .day{
+	width: 100px;
+}
+
+// iPad 縦のとき
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	.acms-table-admin-edit th,
+	.acms-table-admin-edit td{
+		display: block;
+		text-align: left;
+	}
+}
+
+
+@media screen and (max-width: 767px) {
+	// スマートフォンのときの画像
+	.acms-table-admin-edit img{
+		width: auto;
+		max-width: 260px !important;
+		height: auto;
+	}
+	// スマートフォンのときのプルダウン
+	.acms-table-admin-edit select {
+		display: block;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}
+
+// --------------- 
+// アイコン
+// ---------------
+.acms-admin-icon {
+	margin-right: 10px;
+}
+.acms-admin-icon-center {
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+// --------------- 
+// ショートカットボタン
+// ---------------
+// ボタン
+.acms-shortcut-btn{
+	padding: 7px 10px 6px 10px;
+}
+
+// --------------- 
+// ドロップダウン
+// ---------------
+// ボタンの幅
+.acms-btn-group-entry {
+	min-width: 90px;
+}
+// リンクカラー
+.acms-dropdown-menu > li > a {
+	color: #333333;
+}
+
+.acms-btn-admin + .acms-dropdown-toggle{
+	margin-left: -1px;
+	height: 31px;
+}
+
+.acms-td-edit .js-acms-dropdown-menu {
+	min-width: 120px;
+}
+
+// --------------- 
+// メディア
+// ---------------
+// メディアのドロップエリア
+.acms-media {
+	background-color: #F2F2F4;
+}
+// テキストエリア
+.acms-drop-inside {
+	width: 100%;
+	margin: 20px auto;
+	padding: 30px 0;
+	text-align: center;
+}
+// テキストカラー
+.acms-drop-inside p {
+	color: #999999;
+	text-align: center;
+}
+.acms-media-dropText {
+	.font-size(15);
+}
+
+// プログレスバー内エラー文
+.acms-progress-bar span {
+	display: inline-block;
+	margin-top: 5px;
+	color: #FFF;
+}
+
+// プログレスバー
+.acms-progress.acms-active .acms-progress-bar {
+	-webkit-animation: progress-bar-stripes 1s linear infinite;
+	-moz-animation: progress-bar-stripes 1s linear infinite;
+	-ms-animation: progress-bar-stripes 1s linear infinite;
+	-o-animation: progress-bar-stripes 1s linear infinite;
+	animation: progress-bar-stripes 1s linear infinite;
+}
+// 画像サイズ
+.preview_img {
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+}
+
+// --------------- 
+// ユニット設定
+// ---------------
+// ユニット囲い
+.acms-unitbox {
+	margin: 0 0 20px 0;
+	padding: 10px;
+	border: 1px solid #CCCCCC;
+	background: #F2F2F4;
+}
+// コンテンツ
+.acms-table-container {
+	margin: 0 0 10px 0;
+	background: #E5E5E9;
+	border: 1px solid #CCCCCC;
+}
+
+// テーブル
+.acms-table-container .acms-table {
+	border: none;
+}
+
+.acms-table-container .acms-table th {
+	vertical-align: inherit;
+}
+
+.acms-unitbox .acms-table-container tr,
+.acms-unitbox .acms-table-container th,
+.acms-unitbox .acms-table-container td {
+	border: none;
+}
+.acms-unitbox i.acms-icon-sort{
+	margin-right: 4px;
+}
+
+@media screen and (max-width: 767px) {
+	.acms-unitbox th,
+	.acms-unitbox td{
+		display: block;
+	}
+	// 削除ボタン
+	.acms-unitbox .acms-table td.acms-table-action{
+		width: auto;
+		text-align: right;
+	}
+}
+
+
+// --------------- 
+// ログイン画面
+// ---------------
+// 背景色
+#loginBg{
+	background-color: #E5E5E9;
+}
+
+// コンテンツ
+.acms-loginBox-container {
+	max-width: 480px;
+	margin: 0 auto;
+}
+
+.acms-titleBox{
+	margin: 100px auto 0;
+	max-height: 140px;
+	overflow: hidden;
+}
+
+.acms-login-text {
+	color: #333;
+	.font-size(13);
+	line-height: 1.7;
+}
+
+// ログイン囲い
+.acms-loginBox {
+	max-width: 480px;
+	margin: 0 auto 0;
+	padding: 20px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: #FFF;
+}
+
+// サイトサムネイル
+.acms-siteImage {
+	float: left;
+	margin:0 20px 0 0;
+	border: 1px solid #CCCCCC;
+}
+
+// サイト名
+.acms-siteImageText {
+	display: block;
+	& span {
+		margin-right: 5px;
+	}
+	text-align: center;
+}
+
+.acms-titleBox {
+	text-align: center;
+	// margin-top: 10px;
+}
+
+.acms-loginHeaderImage{
+	width: 480px;
+	height: auto;
+	vertical-align: top;
+		border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.acms-loginLogo{
+	border:none;
+}
+// ログイン名
+// .acms-loginTitle {
+// 	display: inline-block;
+// 	clear: both;
+// 	margin:0;
+// 	.font-size(15);
+// }
+
+// 入力フォーム
+.acms-loginBox .acms-form {
+	margin-top: 25px;
+	input{
+		margin-bottom: 10px;
+	}
+}
+
+// ラベル
+.acms-loginBox .acms-form label {
+	.font-size(13)!important;
+	margin-top: 10px;
+}
+
+.acms-loginBox .acms-form-block {
+	width: 100%;
+}
+
+label.acms-form-block a {
+	margin-left: 15px;
+}
+
+//　読者リンク
+.acms-loginBox-bottom {
+	margin-top: -10px;
+	padding: 20px;
+	border-top: 1px solid #E5E5E9;
+	.round-bottom (5px);
+	background: #FFFFFF;
+}
+
+.acms-loginBox-bottom p {
+	margin: 0;
+}
+
+// エラー
+.acms-loginBox input.validator-result-,
+.acms-loginBox input.validator-result- {
+	display: block;
+}
+
+.acms-loginBox input.validator-result-0,
+.acms-loginBox input.validator-result-0:focus {
+	border: 1px solid #BD3F5E;
+	box-shadow: none;
+	background: #FFF;
+}
+
+// ロゴ
+.loginLogo {
+	float: right;
+	margin-top: 10px;
+}
+
+//ソーシャルログイン
+.acms-border {
+	position: relative;
+	width: 100%;
+	margin: 20px 0 18px 0;
+	text-align: center;
+}
+.acms-border:before {
+	border-top: 1px solid #E5E5E9;
+	content: "";
+	padding: 0 0 0 100%;
+	 position: absolute; 
+	 left: 0; 
+	margin: 10px 0 0 0;
+}
+.acms-borderText {
+	position: relative;
+	padding: 0 10px;
+	background: #FFF;
+}
+
+.acms-btn-snsloginContainer {
+	position: relative;
+	float: left;
+	width: 50%;
+	margin: 0 0 20px 0;
+	.box-sizing(border-box);
+}
+.acms-btn-snsimage {
+	position: absolute;
+	width: 44px;
+	height: 100%;
+	padding: 0;
+	border-right: 1px solid #CCC;
+	.font-size(22);
+	color: #FFF;
+	text-align: center;
+	border-radius: 6px 0 0 6px;
+}
+.acms-btn-snsimage-facebook {
+	background-color:#39579A;
+}
+.acms-btn-snsimage-twitter {
+	background-color:#55ACEE;
+}
+.acms-btn-snsimage {
+	.acms-icon-facebook {
+		position: absolute;
+		bottom: 0;
+		right: 0px;
+		padding: 0;
+		.font-size(30);
+
+		&:before {
+			vertical-align: bottom;
+		}
+	}
+	.acms-icon-twitter {
+		padding: 0;
+
+		&:before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -11px 0 0 -11px;
+		}
+	}
+}
+.acms-btn-snslogin {
+	padding-left: 44px;
+}
+//Facebook ログイン
+.acms-login-facebook {
+	padding: 0 10px 0 0;
+}
+.acms-btn-facebooklogin {
+	border: 1px solid #2D4694;
+	.box-sizing(border-box);
+
+	.btn-color(@start-color:#3754B3, @end-color:#2D4694, @color: #FFFFFF);
+	// hover
+	&:hover,
+	&.hover{
+		border: 1px solid #192752;
+		.btn-color-hover(@start-color:#4765C6, @end-color:#3551A3, @color: #FFFFFF);
+		text-decoration: none;
+	}
+	// 色
+	&:link,
+	&:hover,
+	&:active,
+	&:visited {
+		color: #FFFFFF;
+	}
+	// active
+	&.active,
+	&:active {
+		border: 1px solid #192752;
+		.btn-color-active(@background-color:#2D4694, @color: #FFFFFF,@inset-color:#192752);
+		text-decoration: none;
+	}
+	&:focus {
+		outline: none;
+		border-color: #192752;
+	}
+}
+
+//Twitter ログイン
+.acms-btn-twitterlogin {
+	border: 1px solid #299AF1;
+	.btn-color(@start-color:#55AFF4, @end-color:#299AF1, @color: #FFFFFF);
+	// hover
+	&:hover,
+	&.hover{
+		border: 1px solid #005896;
+		.btn-color-hover(@start-color:#6CB9F5, @end-color:#4BAAF4, @color: #FFFFFF);
+		text-decoration: none;
+	}
+	// 色
+	&:link,
+	&:hover,
+	&:active,
+	&:visited {
+		color: #FFFFFF;
+	}
+	// active
+	&.active,
+	&:active {
+		border: 1px solid #005896;
+		.btn-color-active(@background-color:#299AF1, @color: #FFFFFF,@inset-color:#005896);
+		text-decoration: none;
+	}
+	&:focus {
+		outline: none;
+		border-color: #005896;
+	}
+}
+.acms-login-twitter {
+	padding: 0 0 0 10px;
+}
+
+
+// スマートフォンのとき
+@media (max-width: 479px) {
+	.acms-titleBox{
+		margin: 0 auto;
+	}
+	
+	.acms-loginLogo{
+		border:none;
+		width: 133px;
+		height: 23px;
+	}
+	.acms-loginHeaderImage{
+		width: 100%;
+		height: auto;
+		border-radius: 0;
+	}
+	#loginBg{
+		background-color: #FFF;
+	}
+	.acms-loginBox {
+		margin:0;
+		padding: 10px;
+	}
+	.acms-loginBox .acms-form {
+		margin-top :18px;
+	}
+	.acms-loginTitle {
+		margin:0 auto;
+	}
+
+	// スマートフォンでのみボタンになるスタイル
+	.acms-sp-btn-admin {
+		display: inline-block;
+		margin: 0 5px 5px 0;
+		padding: 13px 11px 10px;
+		border-radius:5px;
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+		border-left: 1px solid rgba(0, 0, 0, 0.2);
+		border-right: 1px solid rgba(0, 0, 0, 0.2);
+		-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+		-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+		-o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+		-ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+		background-color: @acms-btn-admin-background;
+		color: #0085CC;
+		.font-size(10);
+		text-decoration: none;
+		.hover-animation;
+		.box-sizing(border-box);
+		text-align: center;
+	}
+
+	.acms-sp-btn-admin:hover {
+		border-top: 1px solid rgba(0, 0, 0, 0.3);
+		background-color: darken(@acms-btn-admin-background, 5%);
+		text-decoration: none;
+	}
+
+	.acms-sp-btn-admin.active,
+	.acms-sp-btn-admin:link ,
+	.acms-sp-btn-admin:hover,
+	.acms-sp-btn-admin:active,
+	.acms-sp-btn-admin:visited {
+		color: #0085CC;
+	}
+
+	.acms-sp-btn-admin:active {
+		border-top: 1px solid rgba(0, 0, 0, 0.3)!important;
+		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+		text-decoration: none;
+		background-color: darken(@acms-btn-admin-background, 10%);
+	}
+
+	.acms-loginBox,
+	.acms-loginBox-bottom {
+		background: transparent;
+		border: none;
+	}
+
+	// 新規の読者登録ボタン
+	.acms-loginBox-bottom {
+		margin: 0 0 20px 0;
+		padding: 0 10px;
+	}
+
+	// ログインページンのロゴ
+	.loginLogo {
+		float: none;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	//SNSログインのボタン
+	.acms-btn-snsimage {
+		padding: 0;
+	}
+}
+
+
+// --------------- 
+// 表示制御
+// ---------------
+.validator-result-,
+.validator-result-1,
+.transaction-notice-,
+#tooltip,
+#js-processing-notice-,
+#js-processing-notice-show{
+	display: none;
+}
+
+.validator-result-error,
+.validator-result-0 {
+	display: block;
+}
+
+// --------------- 
+// 管理ボタン
+// ---------------
+#adminBox > #loginUserStatus{
+	display: none;
+}
+
+#adminBox{
+	margin-left: -20px;
+	margin-right: -20px;
+	padding: 12px 20px 10px;
+	border: none;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.acms-action-box{
+	margin-bottom: 10px;
+}
+
+// --------------- 
+// acms-admin-title2
+// ---------------
+.acms-admin-title2{
+	clear: both;
+}
+.acms-admin-title2.acms-margin-top-medium {
+	margin-top: 10px;
+}
+
+// --------------- 
+// フィルター
+// ---------------
+.acms-filter{
+	margin: 0 0 20px;
+	padding: 10px;
+	border: none;
+	border: 1px solid #CCC;
+}
+
+@media screen and (max-width: 767px) {
+	.acms-filter select{
+		display: block;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.acms-table-admin input[type="text"],
+	.acms-filter input[type="text"]{
+		width: 100%;
+	}
+}
+
+// --------------- 
+// box
+// ---------------
+.acms-box-group{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+// --------------- 
+// タブ
+// ---------------
+.acms-tabs{
+	margin-bottom: 20px;
+}
+
+// --------------- 
+// チェックリスト
+// ---------------
+.acms-admin-checklist-config-search{
+	margin: 10px 10px 20px;
+}
+
+// --------------- 
+// ベンチマーク
+// ---------------
+.acms-benchmark-contenar{
+	padding-left: 190px;
+}
+
+// --------------- 
+// jQuery UI Tabs
+// ---------------
+// スマートフォンのとき
+@media screen and (max-width: 767px) {
+	#main .ui-tabs{
+		margin-bottom: 20px;
+		.ui-tabs-panel{
+			padding: 0;
+		}
+	}
+}

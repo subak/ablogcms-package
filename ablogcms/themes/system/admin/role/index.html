@@ -1,0 +1,71 @@
+<header class="acms-grid">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-role"></i>ロール一覧</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Role_Index -->
+
+<!-- BEGIN refresh -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>ロール一覧を更新しました。</p><!-- END refresh --><!-- BEGIN index#notFound -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>ロールがありません。</p><!-- END index#notFound -->
+
+<div class="acms-filter">
+	<form action="" method="post" class="filter acms-form">
+		ソート: 
+		<select class="form-control" name="order">
+			<option value="id-asc"{order:selected#id-asc}>ID（昇順）</option>
+			<option value="id-desc"{order:selected#id-desc}>ID（降順）</option>
+			<option value="name-asc"{order:selected#name-asc}>名前順（昇順）</option>
+			<option value="name-desc"{order:selected#name-desc}>名前順（降順）</option>
+		</select>
+		<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-btn-admin acms-btn-admin-info acms-width-sp" />
+		<input type="hidden" name="admin" value="role_index" />
+	</form>
+</div>
+
+<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+<form action="" method="post" class="acms-float-right">
+	<input type="hidden" name="bid" value="1" />
+	<input type="hidden" name="admin" value="role_edit" />
+	<input type="hidden" name="edit" value="insert" />
+	<input type="hidden" name="query[]" value="edit" />
+	<input type="submit" name="ACMS_POST_2GET" value="ロールの作成" class="acms-btn-admin" />
+</form>
+<!-- END_MODULE Touch_SessionWithAdministration -->
+
+
+<!-- BEGIN index -->
+<form method="post" action="" id="sortableForm" class="acms-form">
+	<div class="js-acms-tab-select clearfix">
+		
+	</div>
+
+	<table class="adminTable acms-table-admin acms-table-heading acms-form">
+		<thead>
+			<tr>
+				<th class="acms-hide-sp">ロールID</th>
+				<th>ロール名</th>
+				<th>説明</th>
+				<th class="acms-hide-sp">登録ブログ数</th>
+				<th class="acms-hide-sp">アクション</th>
+			</tr>
+		</thead>
+		<tbody><!-- BEGIN role:loop -->
+			<tr>
+				<td><span class="acms-label">{rid}</span></td>
+				<td class="acms-show-sp acms-width-sp acms-title-sp">{name}</td>
+				<td>{description}</td>
+				<td>{blog_amount}<!-- BEGIN_IF [{blog_amount}/em/] -->存在しません<!-- END_IF --></td>
+				<td class="acms-show-sp acms-width-sp acms-border-bottom-sp">
+					<a href="{itemUrl}&amp;edit=update" class="acms-btn-admin">変更</a>
+				</td>
+			</tr>
+		<!-- END role:loop --></tbody>
+	</table>
+</form><!-- END index -->
+	
+<!-- END_MODULE Admin_Role_Index -->

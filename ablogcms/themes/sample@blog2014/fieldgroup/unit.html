@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title><!-- BEGIN_MODULE Touch_Entry -->%{ENTRY_TITLE} | <!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_Category -->%{CATEGORY_NAME} | <!-- END_MODULE Touch_Category -->%{BLOG_NAME}</title>
+<meta name="keywords" content="%{META_KEYWORDS}" />
+<meta name="description" content="%{META_DESCRIPTION}" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="%{BASE_URL}rss2.xml" />
+
+<!-- スタイルの読み込み -->
+<!--#include file="/include/link.html"-->
+
+<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--><!-- BEGIN_MODULE Js -->
+<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<script type="text/javascript" src="/js/blog.js"></script>
+<!--BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Blog_Field -->{googleAnalytics}[raw]<!-- END_MODULE Blog_Field --><!-- END_MODULE Touch_Unlogin -->
+
+<!--#include file="/include/css.html"-->
+</head>
+<body>
+
+<div class="titleInner">
+	<div class="mainImg" class="clearfix">
+		<div class="gradient">
+			<div class="acms-container">
+				<div class="acms-grid-r">
+				<h1 class="siteTitle"><a href="%{BASE_URL}">%{BLOG_NAME}</a></h1>
+				<p class="siteCaption">%{META_DESCRIPTION}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--グローバルナビゲーション-->
+<!--#include file="/include/globalNavigation.html"-->
+
+<div class="acms-container">
+	<div class="acms-grid-r contents clearfix">
+		<div class="acms-col-9">
+			<!--#include file="/admin/action.html"-->
+			<div>
+			<ul class="fieldgroup">
+				<li><a href="%{BLOG_URL}fieldgroup/index.html">サンプル</a></li>
+				<li><a href="%{BLOG_URL}fieldgroup/table.html">テーブル</a></li>
+				<li><a href="%{BLOG_URL}fieldgroup/unit.html">ユニット</a></li>
+			</ul>
+			</div>
+			<!-- BEGIN_MODULE Form --><!-- BEGIN step --><!-- BEGIN found:veil -->
+			<h1>簡単ユニット ( 表示 )</h1>
+			<div class="section entry"><!-- BEGIN unitgroup:loop -->
+				<div class="textBody"><!-- BEGIN photo:veil -->
+				<p><img src="%{ARCHIVES_DIR}{photo@path}" width="{photo@x}" height="{photo@y}" alt="{photo@alt}" <!-- BEGIN float:veil -->style="float:{float};"<!-- END float:veil --> /></p><!-- END photo:veil -->
+				<p>{notation}[raw]</p>
+				</div><!-- END unitgroup:loop -->
+			</div><!-- END found:veil --><!-- END step --><!-- END_MODULE Form -->
+
+			<h1 id="unit-simple">簡単ユニット ( 編集 )</h1>
+			<div class="section entry"><!-- BEGIN_MODULE Form --><!-- BEGIN step -->
+				<form action="#unit-simple" method="post" enctype="multipart/form-data" class="js-fieldgroup-sortable acms-form"><!-- BEGIN unitgroup:loop -->
+					<table class="sortable-item acms-table-admin">
+						<tr class="item-handle">
+							<th>写真</th>
+							<th>テキスト<a href="#" class="item-delete">削除</a></th>
+						</tr>
+						<tr>
+							<td>
+								<table>
+									<tr>
+										<th>編集</th>
+										<td>
+											<label class="acms-form-checkbox"><input type="checkbox" name="photo@edit[{i}]" value="delete" /> 
+											<i class="acms-ico-checkbox"></i> 
+											削除</label>
+											<input type="hidden" name="photo@old[{i}]" value="{photo@path}" /> 
+										</td>
+									</tr><!-- BEGIN photo:veil -->
+									<tr>
+										<th>イメージ</th>
+										<td><img src="%{ARCHIVES_DIR}{photo@path}" width="200" /></td>
+									</tr><!-- END photo:veil -->
+									<tr>
+										<th>ファイル選択</th>
+										<td>
+											<input type="file" name="photo[{i}]" />
+										</td>
+									</tr>
+									<tr>
+										<th>最大横幅</th>
+										<td>
+											<select name="photo@width[]">
+												<option value="">なし</option>
+												<option value="640">640px</option>
+												<option value="480">480px</option>
+												<option value="320">320px</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th>最大縦幅</th>
+										<td>
+											<select name="photo@height[]">
+												<option value="">なし</option>
+												<option value="480">480px</option>
+												<option value="320">320px</option>
+												<option value="240">240px</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th>最大長辺</th>
+										<td>
+											<select name="photo@size[]">
+												<option value="">なし</option>
+												<option value="640">640px</option>
+												<option value="480">480px</option>
+												<option value="320">320px</option>
+												<option value="240">240px</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th>代替テキスト</th>
+										<td>
+											<input type="text" name="photo@alt[{i}]" value="{photo@alt}" />
+										</td>
+									</tr>
+									<tr>
+										<th>回り込み</th>
+										<td>
+											<select name="float[{i}]">
+												<option value="">なし</option>
+												<option value="left"{float:selected#left}>左</option>
+												<option value="right"{float:selected#right}>右</option>
+											</select>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td><textarea name="notation[{i}]">{notation}</textarea></td>
+						</tr>
+					</table><!-- END unitgroup:loop -->
+					<table class="sortable-item item-template">
+						<tr class="item-handle">
+							<th>写真</th>
+							<th>テキスト<a href="#" class="item-delete">削除</a></th>
+						</tr>
+						<tr>
+							<td>
+								<table>
+									<tr>
+										<th>編集</th>
+										<td>
+											<label class="acms-form-checkbox"><input type="checkbox" name="photo@edit[]" value="delete" /> 
+											<i class="acms-ico-checkbox"></i>
+											削除</label>
+											<input type="hidden" name="photo@old[]" value="" /> 
+										</td>
+									</tr>
+									<tr>
+										<th>ファイル選択</th>
+										<td>
+											<input type="file" name="photo[]" />
+										</td>
+									</tr>
+									<tr>
+										<th>最大横幅</th>
+										<td>
+											<select name="photo@width[]">
+												<option value="">なし</option>
+												<option value="640">640px</option>
+												<option value="480">480px</option>
+												<option value="320">320px</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th>最大縦幅</th>
+										<td>
+											<select name="photo@height[]">
+												<option value="">なし</option>
+												<option value="480">480px</option>
+												<option value="320">320px</option>
+												<option value="240">240px</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th>最大長辺</th>
+										<td>
+											<select name="photo@size[]">
+												<option value="">なし</option>
+												<option value="640">640px</option>
+												<option value="480">480px</option>
+												<option value="320">320px</option>
+												<option value="240">240px</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th>代替テキスト</th>
+										<td>
+											<input type="text" name="photo@alt[]" value="" />
+										</td>
+									</tr>
+									<tr>
+										<th>回り込み</th>
+										<td>
+											<select name="float[]">
+												<option value="">なし</option>
+												<option value="left">左</option>
+												<option value="right">右</option>
+											</select>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td><textarea name="notation[]"></textarea></td>
+						</tr>
+					</table>
+					<input type="hidden" name="photo:extension" value="image" />
+					<input type="hidden" name="@unitgroup[]" value="photo@edit" />
+					<input type="hidden" name="@unitgroup[]" value="photo@old" />
+					<input type="hidden" name="@unitgroup[]" value="photo@path" />
+					<input type="hidden" name="@unitgroup[]" value="photo@alt" />
+					<input type="hidden" name="@unitgroup[]" value="float" />
+					<input type="hidden" name="@unitgroup[]" value="notation" />
+					<input type="hidden" name="field[]" value="photo" />
+					<input type="hidden" name="field[]" value="float" />
+					<input type="hidden" name="field[]" value="notation" />
+					<input type="hidden" name="field[]" value="@unitgroup" />
+					<input type="button" class="item-insert acms-btn" value="追加" />
+					<input type="submit" name="ACMS_POST_Form_Confirm" class="acms-btn" value="送信" />
+				</form><!-- END step --><!-- END_MODULE Form -->
+			</div>
+		</div>
+		<div class="acms-col-3">
+		<!-- #include file="/include/navi.html" -->
+		</div>
+	</div>
+</div>
+
+
+<footer class="footer">
+	<p class="copyright"><small>&copy; %{DOMAIN}</small></p>
+</footer>
+</body>
+</html>

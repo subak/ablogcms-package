@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN ${1:name}@path:veil -->
+<img src="%{ARCHIVES_DIR}{${1:name}@path}"><br>
+<input type="hidden" name="${1:name}@old" value="{${1:name}@path}">
+<label>
+	<input type="checkbox" name="${1:name}@edit" value="delete">削除
+</label>
+<!-- END ${1:name}@path:veil -->
+<input type="file" name="${1:name}" size="20">
+<input type="hidden" name="field[]" value="${1:name}">
+<input type="hidden" name="${1:name}:extension" value="image">
+<input type="hidden" name="${1:name}@size" value="${2:640}">
+<input type="hidden" name="${1:name}@tinyWidth" value="${3:280}">
+<input type="hidden" name="${1:name}@largeWidth" value="${4:1280}">
+<input type="hidden" name="${1:name}@squareWidth" value="${5:200}">
+<input type="hidden" name="${1:name}@filename" value="${6:}">
+]]></content>
+	<tabTrigger>!acms:field</tabTrigger>
+	<description>Image</description>
+</snippet>

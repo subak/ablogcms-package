@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Api_Facebook_Touch_NotSigned -->
+
+<!-- END_MODULE Api_Facebook_Touch_NotSigned -->]]></content>
+	<tabTrigger>!acms:touch</tabTrigger>
+    <description>Facebook_Touch_NotSigned</description>
+</snippet>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="%{CHARSET}"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=%{CHARSET}" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="%{BASE_URL}rss2.xml" />
+<title><!-- BEGIN_MODULE Touch_Entry -->%{ENTRY_TITLE} | <!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_Category -->%{CATEGORY_NAME} | <!-- END_MODULE Touch_Category -->%{BLOG_NAME}</title>
+<meta name="keywords" content="%{META_KEYWORDS}" />
+<meta name="description" content="%{META_DESCRIPTION}" />
+</head>
+<body>
+
+<!--#include file="/include/header.html"-->
+	
+
+<!-- 管理用パーツのインクルード -->
+<!--#include file="/admin/action.html"-->
+
+<!-- BEGIN_MODULE Touch_Top --><p align="center"><img src="images/sampleHeader.gif" width="200" height="80" alt="topImage" /></p><!-- END_MODULE Touch_Top -->
+
+
+<!-- タグの絞り込み開始▼▼ -->
+<!-- BEGIN guideBox:veil -->
+
+<!-- BEGIN_MODULE Tag_Filter -->
+<!-- BEGIN tagBox -->
+
+<p>選択タグ：
+<!-- BEGIN selected:loop -->
+<span><a href="{url}">{name}</a></span>
+<!-- BEGIN glue -->&gt;<!-- END glue -->
+<!-- END selected:loop -->
+</p>
+
+<!-- BEGIN choice:veil -->
+<p>タグ候補：
+<!-- BEGIN choice:loop -->
+<span><a href="{url}">{name}</a></span>
+<!-- END choice:loop -->
+<!-- END choice:veil -->
+</p>
+<!-- END tagBox -->
+<!-- END_MODULE Tag_Filter -->
+<!-- END guideBox:veil -->
+<!-- タグの絞り込み終了▲▲ -->
+
+
+
+<!-- BEGIN_MODULE Entry_Headline -->
+<!-- BEGIN_MODULE Touch_Index --><h2>%{CATEGORY_NAME}</h2><!-- END_MODULE Touch_Index -->
+<ul><!-- BEGIN entry:loop -->
+	<li><a href="{url}">{title}</a><!-- BEGIN category:veil --> 【{categoryName}】<!-- END category:veil -->
+    {date#y}/{date#m}/{date#d}({date#week})</li>
+	<!-- END entry:loop -->
+</ul>
+
+<!-- BEGIN pager:veil -->
+<p align="center"><!-- BEGIN backLink --><a href="{url}">&lt;&lt;</a><!-- END backLink -->
+	<!-- BEGIN page:loop --><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue -->, <!-- END glue --><!-- END page:loop -->
+	<!-- BEGIN lastPage:veil --> ...<a href="{lastPageUrl}">{lastPage}</a><!-- END lastPage:veil -->
+    <!-- BEGIN forwardLink --><a href="{url}">&gt;&gt;</a><!-- END forwardLink -->
+</p>
+
+<!-- END pager:veil -->
+
+<!-- END_MODULE Entry_Headline -->
+
+<!--#include file="/include/nav.html"-->
+
+<!--#include file="/include/footer.html"-->
+
+</body>
+</html>

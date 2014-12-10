@@ -1,0 +1,36 @@
+#<Files ~ "\.(x?html?|xml|css|js|json)$">
+#    FileETag MTime Size
+#    ExpiresActive On
+#    ExpiresDefault "access plus 3 hours"
+#    SetOutputFilter DEFLATE
+#</Files>
+#<Files ~ "\.(gif|jpe?g|png|flv|mp4|ico)$">
+#    FileETag None
+#    ExpiresActive On
+#    ExpiresDefault "access plus 3 days"
+#</Files>
+
+RewriteEngine on
+
+#RewriteBase /
+
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+#RewriteCond %{HTTP_HOST} ^(example\.com)(:80)?
+#RewriteRule ^(.*)$ http://www.example.com/$1 [R=301,L]
+
+#RewriteCond %{REQUEST_URI} !/?other/?
+#RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule .* - [L]
+
+#RewriteCond %{REQUEST_URI} !/?other/?
+RewriteCond %{REQUEST_URI} (.*(^|/)[^\./]+)$
+RewriteRule .* %1/ [L,R=301]
+
+#メンテナンスモード時に503ページを出力 (setup_は環境に合わせて変更して下さい)
+#RewriteRule ^setup_/ - [L]
+#RewriteRule ^(.*)$ setup_/503.php [L]
+
+#RewriteCond %{REQUEST_URI} !/?other/?
+RewriteRule ((\.(html|htm|php|xml|txt|js|json|css|yaml|csv))|/)$ index.php [L]

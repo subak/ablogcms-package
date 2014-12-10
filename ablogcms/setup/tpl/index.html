@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms メンテナンスメニュー</title>
+<style>
+    div#main h3 a {
+        color: #666;
+        display: block;
+        font-size: 21px;
+        text-decoration: none;
+    }
+    div#main h3 a:hover {
+        color: #C40F32;
+    }
+</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="siteTitleBox" class="clearfix">
+			<h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+			<span id="setupType">メンテナンス メニュー</span>
+		</div>
+	</div>
+<div id="main">
+
+<!-- BEGIN curtain -->
+    <h2>システムメンテナンス</h2>
+    <h3>システムのメンテナンス作業が終了するまでしばらくお待ちください。</h3>
+    <p>システムのメンテナンス作業が終了するまでは、すべてのページをご覧いただけません。</p>
+    <p>ご不便をおかけ致しますが、いましばらくお待ちください。</p>
+    <form action="index.php" method="post" style="margin-top:50px; font-size:10px;" class="acms-form">
+        <p>管理者はログインしてメンテナンス操作を完了してください。システムファイルのバージョンは "<strong>[*VERSION*]</strong>" です。</p>
+        <!-- BEGIN login_auth:error --><p style="color:red">ユーザーID / メールアドレス と パスワード を確認してください</p><!-- END login_auth:error -->
+        <p>ユーザーID / メールアドレス : <input type="text" name="id" value="" style="padding:1px;" />　
+           パスワード : <input type="password" name="pass" value="" style="padding:1px;" />　<input type="submit" name="update" value="ログイン" class="acms-btn-admin" /></p>
+    </form>
+<!-- END curtain -->
+
+<!-- BEGIN admin -->
+    <!-- BEGIN current --><!-- システムは最新の状態です。アップデートの必要はありません。 --><!-- END current -->
+
+    <h2>メンテナンス項目を選択してください。</h2>
+    <p>メンテナンス後は、サーバ上から[*ROOT_DIR*][*SETUP_DIR*]/ を削除してください。<!-- <br />
+    [*SETUP_DIR*]ディレクトリを削除するまで、システムはメンテナンスモードで動作します。--></p>
+
+    <!-- BEGIN update -->
+    <h3><a href="./update.php" title="アップデートの実行">アップデート</a></h3>
+        <p class="errorMsg">メンテナンスプログラムはアップデートの必要性を検出しました。</p>
+        <p class="errorMsg">システムファイルのバージョンは "<strong>[*VERSION*]</strong>" です。</p>
+        <p>この操作では、データベースとconfig.server.phpをシステムファイルにあわせて最新の状態にアップデートします。<br />
+        アップデートを行うまでは、システムが正常に動作しません。</p>
+    	<p><a href="./update.php" title="アップデートの実行">→アップデート実行画面へ</a></p>
+    <!-- END update -->
+
+    <!-- BEGIN export -->
+        <h3><a href="./export.php" title="エクスポートの実行">ブログ毎のエクスポート</a></h3>
+        <p>この操作では、指定したブログのデータをyaml形式でエクスポートします。<br />
+        インポートして再利用するにはブログに関連付いているarchivesディレクトリと、themesディレクトリも必要です。</p>
+        <p><a href="./export.php" title="エクスポートの実行">→エクスポート実行画面へ</a></p>
+    <!-- END export -->
+
+    <!-- BEGIN import -->
+    <h3><a href="./import.php" title="インポートの実行">ブログ毎のインポート</a></h3>
+        <p>この操作では、yaml形式でエクスポートされたa-blog cmsのブログデータをインポートします。<br />
+        READMEを参考にyamlファイル、themesディレクトリ、archivesディレクトリを用意してください。</p>
+    	<p><a href="./import.php" title="インポートの実行">→インポート実行画面へ</a></p>
+    <!-- END import -->
+
+    <h3>システムの修正ツール</h3>
+    <ul>
+        <!-- BEGIN fix_domain -->
+        <li><a href="./fix.php?c=domain">ドメインの修正</a></li>
+        <!-- END fix_domain -->
+
+        <!-- BEGIN fix_access -->
+        <li><a href="./fix.php?c=access">アクセス設定の修正</a></li>
+        <!-- END fix_access -->
+
+        <!-- BEGIN fix_field-search -->
+        <li><a href="./fix.php?c=field-search">カスタムフィールド検索フラグの修正</a></li>
+        <!-- END fix_field-search -->
+
+        <!-- BEGIN fix_fulltext -->
+        <li><a href="./fix.php?c=fulltext">フルテキストの修正</a></li>
+        <!-- END fix_fulltext -->
+
+        <!-- BEGIN fix_sequence -->
+        <li><a href="./fix.php?c=sequence">シーケンスの修正</a></li>
+        <!-- END fix_sequence -->
+    
+        <!-- BEGIN fix_blog-align -->
+        <li><a href="./fix.php?c=blog-align">ブログ構造の修正</a></li>
+        <!-- END fix_blog-align -->
+    
+        <!-- BEGIN fix_category-align -->
+        <li><a href="./fix.php?c=category-align">カテゴリー構造の修正</a></li>
+        <!-- END fix_category-align -->
+    
+        <!-- BEGIN fix_comment-align -->
+        <li><a href="./fix.php?c=comment-align">コメント構造の修正</a></li>
+        <!-- END fix_comment_align -->
+        
+        <!-- BEGIN fix_summary -->
+        <li><a href="./fix.php?c=summary">サマリーデータの修正</a></li>
+        <!-- END fix_summary -->
+
+        <!-- BEGIN fix_image -->
+        <li><a href="./fix.php?c=image">画像サイズの修正</a></li>
+        <!-- END fix_image -->
+    </ul>
+    <h3>その他のツール</h3>
+    <ul>
+        <!-- BEGIN extend_add-ngram -->
+        <li><a href="./extend.php?c=ngram">N-gramインデックスの付与</a></li>
+        <!-- END extends_ngram -->
+
+        <!-- BEGIN extend_add-tags -->
+        <li><a href="./extend.php?c=tags">既存エントリーへのタグ追加</a></li>
+        <!-- END extends_tags -->
+
+    </ul>
+
+<!-- END admin -->
+
+</div>
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

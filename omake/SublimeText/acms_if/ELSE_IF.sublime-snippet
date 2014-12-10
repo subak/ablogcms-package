@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<!-- ELSE_IF [${1:条件式}] -->
+]]></content>
+	<tabTrigger>!acms:if</tabTrigger>
+    <description>ELSE_IF</description>
+</snippet>

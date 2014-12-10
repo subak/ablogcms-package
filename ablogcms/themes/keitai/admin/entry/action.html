@@ -1,0 +1,17 @@
+<!-- BEGIN adminEntryAction -->
+<table><tr>
+<!-- BEGIN edit -->
+<td><form action="" method="post" class="adminBtn"><input name="ACMS_POST_2GET" type="submit" value="変更" /><input type="hidden" name="admin" value="entry-edit" /><input type="hidden" name="bid" value="{bid}" /><input type="hidden" name="cid" value="{cid}" /><input type="hidden" name="eid" value="{eid}" /></form></td>
+<td><form action="" method="post" class="adminBtn"><input type="submit" name="ACMS_POST_Entry_Duplicate" value="複製" onclick="javascript:return confirm('エントリーを複製します。よろしいですか？')" /><input type="hidden" name="bid" value="{bid}" /><input type="hidden" name="cid" value="{cid}" /><input type="hidden" name="eid" value="{eid}" /></form></td><!-- END edit --><!-- BEGIN delete -->
+<td><form action="" method="post" class="adminBtn"><input type="submit" name="ACMS_POST_Entry_Delete" value="削除" onclick="javascript:return confirm('エントリーを削除します。よろしいですか？')" /><input type="hidden" name="bid" value="{bid}" /><input type="hidden" name="cid" value="{cid}" /><input type="hidden" name="eid" value="{eid}" /></form></td><!-- END delete --><!-- BEGIN open -->
+<td><form action="" method="post" class="adminBtn"><input type="submit" name="ACMS_POST_Entry_Open" value="公開" /><input type="hidden" name="bid" value="{bid}" /><input type="hidden" name="cid" value="{cid}" /><input type="hidden" name="eid" value="{eid}" /></form></td><!-- END open --><!-- BEGIN close -->
+<td><form action="" method="post" class="adminBtn"><input type="submit" name="ACMS_POST_Entry_Close" value="非公開" /><input type="hidden" name="bid" value="{bid}" /><input type="hidden" name="cid" value="{cid}" /><input type="hidden" name="eid" value="{eid}" /></form></td><!-- END close -->
+</tr>
+</table><!-- BEGIN_MODULE Touch_NotApproval -->
+<table>
+<!-- BEGIN add -->
+<tr>
+<!-- BEGIN add:loop -->
+<td><form action="" method="post" class="adminBtn"><input type="submit" value="{label}" name="ACMS_POST_2GET" /><input type="hidden" name="bid" value="{bid}" /><input type="hidden" name="cid" value="{cid}" /><input type="hidden" name="eid" value="{eid}" /><input type="hidden" name="admin" value="entry-add-{type}" /><input type="hidden" name="fragment" value="entry-add" /></form></td><!-- END add:loop --></tr><!-- END add --><!-- END_MODULE Touch_NotApproval -->
+</table>
+<!-- END adminEntryAction -->

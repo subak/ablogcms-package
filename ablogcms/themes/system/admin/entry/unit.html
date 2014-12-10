@@ -1,0 +1,437 @@
+<div class="entryFormColumn">
+	<!-- BEGIN adminEntryColumn -->
+	<div id="more">
+		<div class="sorthandle"><i class="acms-icon-sort"></i> 以下のユニットが<span class="acms-sp-hide">一覧表示時に</span>「続きを読む」<span class="acms-sp-hide">になります</span></div>
+	</div>
+	<!-- BEGIN column:loop -->
+	<div class="entryFormColumnItem entryFormColumnItem-opened">
+		<!-- .entryFormColumnHead -->
+		<div class="entryFormColumnHead clearfix">
+			<div class="sorthandle"><i class="acms-icon-sort"></i></div>
+			<div class="label">{clname}</div>
+			<div class="togglebody acms-sp-hide"><i class="acms-icon acms-icon-close"></i></div>
+			<div class="removethis"><i class="acms-icon acms-icon-delete"></i></div>
+
+			<input type="hidden" name="id[]" value="{uniqid}" />
+			<input type="hidden" name="type[]" value="{cltype}" />
+			<input type="hidden" name="clid[]" value="{clid}" />
+
+			<div class="entryFormColumnHeadLayoutBox"><!-- BEGIN sort:veil -->
+				<select name="sort[]"><!-- BEGIN sort:loop -->
+					<option value="{value}"{selected}>{label}</option><!-- END sort:loop -->
+				</select><!-- END sort:veil -->
+
+				<span class="js-align_label">配置:</span>
+				<select name="align[]"><!-- BEGIN align#liquid -->
+					<option value="auto"{align:selected#auto}>おまかせ</option>
+					<option value="center"{align:selected#center}>全体</option>
+					<option value="hidden"{align:selected#hidden}>非表示</option><!-- END align#liquid --><!-- BEGIN align#solid -->
+					<option value="auto"{align:selected#auto}>おまかせ</option>
+					<option value="left"{align:selected#left}>左</option>
+					<option value="right"{align:selected#right}>右</option>
+					<option value="center"{align:selected#center}>中央</option>
+					<option value="hidden"{align:selected#hidden}>非表示</option><!-- END align#solid -->
+				</select>
+				<!-- BEGIN group:veil -->
+				<span class="js-group_label">グループ:</span>
+				<select name="group[]" class="entryFormSelectBottom"><!-- BEGIN group:loop -->
+					<option value="{value}"{selected}>{label}</option><!-- END group:loop -->
+				</select><!-- END group:veil --><!-- BEGIN clattr#none -->
+				<input type="hidden" name="attr[]" value="" /><!-- END clattr#none --><!-- BEGIN clattr:veil -->
+				属性:
+				<select name="attr[]" class="entryFormSelectBottom"><!-- BEGIN clattr:loop -->
+					<option value="{value}"{selected}>{label}</option><!-- END clattr:loop -->
+				</select><!-- END clattr:veil -->
+			</div>
+		</div>
+		<!-- /.entryFormColumnHead -->
+		<!-- .entryFormColumnBody -->
+		<div class="entryFormColumnBody">
+			<!-- BEGIN text -->
+			<textarea type="text" name="text_text_{id}" rows="10" style="width:100%;" class="entryFormTextarea {diff}">{text}[escape|escvars]</textarea>
+			<br />
+			<div class="js-extendTagSelect">
+				<select name="text_tag_{id}"><!-- BEGIN textTag:loop -->
+					<option value="{value}" {selected} data-tag_extend="{extend}">{label}</option><!-- END textTag:loop -->
+				</select>
+				<span class="acms-extend-field acms-hide-pc"></span>
+				<input type="text" name="text_extend_tag_{id}" value="{extend_tag}" class="acms-hide-pc" />
+			</div>
+			<div class="editTextInsert">
+				<span class="emoji-edit acms-hide-pc"></span><!-- BEGIN_IF [%{MEDIA_LIBRARY}/eq/on] -->
+				<a href="#" class="js-media_insert">メディアを挿入</a><!-- END_IF -->
+			</div><!-- END text -->
+			<!-- BEGIN image -->
+			<table class="entryFormColumnTable {diff}">
+				<tr>
+					<!-- BEGIN preview:veil -->
+					<td class="entryFormFileentryFormImages">
+						<a href="%{HTTP_ARCHIVES_DIR}{popup}" rel="prettyPhoto[]"><img src="%{ARCHIVES_DIR}{tiny}" width="{tinyX}" height="{tinyY}" alt="プレビュー" class="entryFormFileImage" /></a>
+					</td>
+					<!-- END preview:veil -->
+					<td class="entryFormFileControl"><input type="file" name="image_file_{id}[]" size="20" multiple="multiple" accept="image/*" />
+						<br />
+						<div class="acms-form-group">
+							<select name="image_size_{id}" class="acms-select-block"><!-- BEGIN size:loop -->
+								<option value="{value}:{display}"{selected}>{label}</option><!-- END size:loop -->
+							</select>
+							<select name="image_edit_{id}" class="acms-select-block">
+								<option value="none"{edit:selected#none}>編集しない</option>
+								<option value="deleteLarge"{edit:selected#deleteLarge}>拡大表示させない</option><!-- BEGIN rotate -->
+								<option value="rotate270"{selectedEditRotate270}>時計回りで90度回転</option>
+								<option value="rotate90"{selectedEditRotate90}>反時計回りで90度回転</option><!-- END rotate -->
+								<option value="delete"{edit:selected#delete}>削除</option>
+							</select>
+						</div>
+						<table class="entryFormImageTable">
+							<tr class="detail-column-head" id="detail-column--{id}">
+								<td colspan="2">
+									<a href="#" class="toggle">- 詳細</a><!-- BEGIN normal:veil -->
+									<strong>Normal </strong>({normalX} x {normalY})<!-- END normal:veil --><!-- BEGIN large:veil -->
+									<strong class="imageLargeSize">Large </strong>({largeX} x {largeY})<!-- END large:veil -->
+								</td>
+							</tr>
+							<tr class="textM detail-column-body detail-column-body--{id}">
+								<th>キャプション</th>
+								<td>
+									<input type="text" name="image_caption_{id}" value="{caption}" class="entryFormFileCaption" />
+									<input type="hidden" name="image_old_{id}" value="{old}" />
+								</td>
+							</tr>
+							<tr class="textM detail-column-body detail-column-body--{id}">
+								<th>リンク</th>
+								<td><input type="text" name="image_link_{id}" value="{link}" /></td>
+							</tr>
+							<tr class="textM detail-column-body detail-column-body--{id}">
+								<th>代替テキスト</th>
+								<td><input type="text" name="image_alt_{id}" value="{alt}" /></td>
+							</tr>
+							<tr class="textM detail-column-body detail-column-body--{id}">
+								<th></th>
+								<td><!-- BEGIN primaryImage:veil -->
+									<label for="input-radio-image_primary_image_{primaryImageId}" class="acms-form-radio"><input type="radio" name="primary_image" value="{primaryImageId}"{primaryImageChecked}[raw] id="input-radio-image_primary_image_{primaryImageId}" /><i class="acms-ico-radio"></i>メイン画像</label><!-- END primaryImage:veil -->
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<!-- END image -->
+			<!-- BEGIN file -->
+			<table class="entryFormColumnTable {diff}">
+				<tr>
+					<td class="entryFormFilePreview">
+						<p class="entryFormFileIcon">
+							<!-- BEGIN icon#none -->
+							<img src="%{IMAGES_DIR}default/noimage.gif" width="100" height="100" /><!-- END icon#none --><!-- BEGIN icon:veil -->
+							<a href="%{HTTP_ARCHIVES_DIR}{old}" class="entryFormFileName"><img src="%{IMAGES_DIR}fileicon/{icon}.gif" class="icon" alt="{type}" width="64" height="64" /></a>
+						</p>
+						<div class="entryFormFileData">
+							<p class="entryFormFileName"><a href="%{HTTP_ARCHIVES_DIR}{old}">{basename}</a></p>
+							<label for="input-checkbox-file_edit_{deleteId}" class="acms-form-checkbox"><input type="checkbox" name="file_edit_{deleteId}" value="delete" id="input-checkbox-file_edit_{deleteId}" /><i class="acms-ico-checkbox"></i>削除</label><!-- END icon:veil -->
+							<input type="hidden" name="file_old_{id}" value="{old}" />
+						</div>
+					</td>
+					<td class="entryFormFileControl">
+						<table class="entryFormColumnSettingTable">
+							<tr>
+								<th>ファイル</th>
+								<td><input type="file" name="file_file_{id}[]" multiple="multiple" /></td>
+							</tr>
+							<tr>
+								<th>キャプション</th>
+								<td><input type="text" name="file_caption_{id}" value="{caption}" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<!-- END file -->
+			<!-- BEGIN map -->
+			<table class="formColumnMap {diff}">
+				<tr>
+					<td class="formColumnMapTd">
+						<p>
+							<input type="text" size="34" name="mapSearchTexts[]" value="検索機能は使用できません。" disabled="disabled" class="mapSearchText" />
+							&nbsp;
+							<input type="button" name="mapSearchButtons[]" value="検索" disabled="disabled" class="acms-btn-admin" />
+						</p>
+
+						<img class="column-map" src="http://maps.google.com/maps/api/staticmap?center={lat},{lng}&zoom={zoom}&size=400x400&maptype=roadmap&markers={lat},{lng}&sensor=false" width="400" height="400" />
+						
+					</td>
+					<td class="entryFormFileControl">
+						<table>
+						<tr>
+							<th>地図の大きさ</th>
+							<td>
+								<div class="acms-form-group">
+									<select name="map_size_{id}"><!-- BEGIN size:loop -->
+										<option value="{value}:{display}"{selected}>{label}</option><!-- END size:loop -->
+									</select>
+								</div>
+							</td>
+						</tr>
+						</table>
+
+						<table class="entryFormImageTable">
+							<tr class="detail-column-head" id="detail-column--{id}">
+								<td>
+									<a href="#" class="toggle">- 詳細</a>
+								</td>
+							</tr>
+							<tr class="textM detail-column-body detail-column-body--{id}">
+								<td>
+									<dl>
+										<dt>緯度</dt>
+										<dd><input type="text" name="map_lat_{id}" value="{lat}" size="9" class="acms-form-width-mini" /></dd>
+										<dt>経度</dt>
+										<dd><input type="text" name="map_lng_{id}" value="{lng}" size="10" class="acms-form-width-mini" /></dd>
+										<dt>ズーム</dt>
+										<dd><input type="text" name="map_zoom_{id}" value="{zoom}" size="2" class="acms-form-width-mini" /></dd>
+										<dt>吹き出し ( HTML可 )</dt>
+										<dd><textarea name="map_msg_{id}" rows="9" class="map_msg_id">{msg}</textarea></dd>
+									</dl>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<!-- END map -->
+			<!-- BEGIN yolp -->
+			<table class="formColumnMap {diff}">
+				<tr>
+					<td class="formColumnMapTd"><img class="column-map" src="http://map.olp.yahooapis.jp/OpenLocalPlatform/V1/static?appid=%{YAHOO_API_KEY}&lat={lat}&lon={lng}&z={zoom}&width=400&height=400&pointer=on" width="400" height="400">
+					</td>
+					<td class="entryFormFileControl">
+						<table class="entryFormMapTable">
+						<tr>
+							<th>地図大きさ</th>
+							<td>
+								<select name="yolp_size_{id}"><!-- BEGIN size:loop -->
+									<option value="{value}:{display}"{selected}>{label}</option><!-- END size:loop -->
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>レイヤー</th>
+							<td>
+								<select name="yolp_layer_{id}"><!-- BEGIN layer:loop -->
+									<option value="{value}"{selected}>{label}</option><!-- END layer:loop -->
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>緯度</th>
+							<td>
+								<input type="text" name="yolp_lat_{id}" value="{lat}" size="9" class="acms-form-width-mini" />
+							</td>
+						</tr>
+						<tr>
+							<th>経度</th>
+							<td>
+								<input type="text" name="yolp_lng_{id}" value="{lng}" size="10" class="acms-form-width-mini" />
+							</td>
+						</tr>
+						<tr>
+							<th>ズーム</th>
+							<td>
+								<input type="text" name="yolp_zoom_{id}" value="{zoom}" size="2" class="acms-form-width-mini" />
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" name="yolp_msg_{id}" value="" />
+			<!-- END yolp -->
+			<!-- BEGIN youtube -->
+			<table class="entryFormColumnSettingTable entryFormColumnTable {diff}">
+			<tr>
+				<!-- BEGIN_IF [{youtubeId}/nem/] -->
+				<td class="entryFormFileentryFormImages">
+					<iframe width="240" height="150" src="http://www.youtube.com/embed/{youtubeId}?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+				</td>
+				<!-- END_IF -->
+				<td class="entryFormFileControl">
+					<table>
+					<tr>
+						<th>YouTube ID</th>
+						<td><input name="youtube_id_{id}" type="text" value="{youtubeId}" size="15"></td>
+					</tr>
+					<tr>
+						<th>サイズ</th>
+						<td>
+							<select name="youtube_size_{id}"><!-- BEGIN size:loop -->
+								<option value="{value}:{display}"{selected}>{label}</option><!-- END size:loop -->
+							</select>
+						</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+			<!-- END youtube -->
+			<!-- BEGIN video -->
+			<table class="entryFormColumnSettingTable entryFormColumnTable {diff}">
+			<tr>
+				<!-- BEGIN_IF [{videoId}/nem/] -->
+				<td class="entryFormFileentryFormImages">
+					<iframe width="240" height="150" src="http://www.youtube.com/embed/{videoId}?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+				</td>
+				<!-- END_IF -->
+				<td class="entryFormFileControl">
+					<table>
+					<tr>
+						<th>Video ID</th>
+						<td><input name="video_id_{id}" type="text" value="{videoId}" size="15"></td>
+					</tr>
+					<tr>
+						<th>サイズ</th>
+						<td>
+							<select name="video_size_{id}"><!-- BEGIN size:loop -->
+								<option value="{value}:{display}"{selected}>{label}</option><!-- END size:loop -->
+							</select>
+						</td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+			<!-- END video -->
+			<!-- BEGIN eximage -->
+			<table class="entryFormColumnSettingTable entryFormColumnTable {diff}">
+			<tr><!-- BEGIN FormImages:veil -->
+				<td class="entryFormFileentryFormImages"><!-- BEGIN preview:veil -->
+					<a href="{normal}" rel="prettyPhoto[]"><img src="{normal}" alt="プレビュー" class="entryFormFileImage" /></a><!-- END preview:veil -->
+				</td><!-- END FormImages:veil -->
+				<td class="entryFormFileControl">
+					<dl>
+						<dt>標準画像</dt>
+						<dd><input type="text" name="eximage_normal_{id}" size="45" value="{normal}" class="entryFormInputText acms-form-width-full" /></dd>
+
+						<dt>拡大画像</dt>
+						<dd><input type="text" name="eximage_large_{id}" size="45" value="{large}" class="entryFormInputText acms-form-width-full" /></dd>
+						
+						<dt>画像の大きさ</dt>
+						<dd>
+							<select name="eximage_size_{id}"><!-- BEGIN size:loop -->
+								<option value="{value}:{display}"{selected}>{label}</option><!-- END size:loop -->
+								<option value=""{size:selected#none}>そのまま</option>
+							</select>
+							<!-- BEGIN_IF [%{MEDIA_LIBRARY}/eq/on] -->
+							<a href="#" class="js-media_insert">メディアを挿入</a><!-- END_IF -->
+						</dd>
+					</dl>
+
+					<table class="entryFormImageTable">
+						<tr class="detail-column-head" id="detail-column--{id}">
+							<td colspan="2">
+								<a href="#" class="toggle">- 詳細</a>
+							</td>
+						</tr>
+						<tr class="textM detail-column-body detail-column-body--{id}">
+							<th>キャプション</th>
+							<td><input type="text" name="eximage_caption_{id}" value="{caption}" class="entryFormInputText acms-form-width-full" /></td>
+						</tr>
+						<tr class="textM detail-column-body detail-column-body--{id}">
+							<th>リンク</th>
+							<td><input type="text" name="eximage_link_{id}" value="{link}" class="entryFormInputText acms-form-width-full" /></td>
+						</tr>
+						<tr class="textM detail-column-body detail-column-body--{id}">
+							<th>代替テキスト</th>
+							<td><input type="text" name="eximage_alt_{id}" value="{alt}" class="entryFormInputText acms-form-width-full" /></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+			<!-- END eximage -->
+			<!-- BEGIN media -->
+			<table class="entryFormColumnSettingTable entryFormColumnTable {diff}">
+			<tr class="entryFormFileControl">
+
+				<!-- BEGIN preview:veil -->
+				<td class="entryFormFileentryFormImages"><!-- BEGIN_IF [{type}/eq/image] -->
+					<img src="%{HTTP_MEDIA_ARCHIVES_DIR}{tiny}" /><!-- ELSE_IF [{thumbnail}/nem/] -->
+					<img src="%{ARCHIVES_DIR}{thumbnail}" /><!-- ELSE_IF [{icon}/nem/] -->
+					<img src="%{ROOT_DIR}{icon}" /><!-- END_IF -->
+				</td><!-- END preview:veil -->
+
+				<td class="entryFormFileControl">
+					<dl>
+						<dt>メディアID<!-- BEGIN_IF [%{MEDIA_LIBRARY}/eq/on] -->
+						&nbsp;|&nbsp;<a href="#" class="js-media_insert">メディアを挿入</a><!-- END_IF --></dt>
+						<dd>
+							<!-- BEGIN media_id:veil -->ID : <span class="label">{media_id}</span><!-- END media_id:veil -->
+							<input type="hidden" name="media_id_{id}" value="{media_id}" />
+						</dd>
+						<dt>サイズ</dt>
+						<dd>
+							<select name="media_size_{id}"><!-- BEGIN size:loop -->
+								<option value="{value}:{display}"{selected}>{label}</option><!-- END size:loop -->
+							</select>
+						</dd>
+					</dl>
+
+					<table class="entryFormImageTable">
+						<tr class="detail-column-head" id="detail-column--{id}">
+							<td colspan="2">
+								<a href="#" class="toggle">- 詳細</a>
+							</td>
+						</tr>
+						<tr class="textM detail-column-body detail-column-body--{id}">
+							<th>キャプション</th>
+							<td>{caption}</td>
+						</tr>
+						<tr class="textM detail-column-body detail-column-body--{id}">
+							<th>リンク</th>
+							<td>{link}</td>
+						</tr>
+						<tr class="textM detail-column-body detail-column-body--{id}">
+							<th>代替テキスト</th>
+							<td>{alt}</td>
+						</tr>
+						<tr class="textM detail-column-body detail-column-body--{id}">
+							<th>テキスト</th>
+							<td>{text}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			</table>
+			<!-- END media -->
+			<!-- BEGIN quote -->
+			<table class="entryFormColumnSettingTable entryFormColumnTable {diff}">
+			<tr class="entryFormFileControl">
+				<th>引用URL</th>
+				<td>
+					<input type="text" name="quote_url_{id}" size="45" value="{quote_url}" class="entryFormInputText acms-form-width-full"/>
+					<!-- BEGIN html:veil -->{tw_oembed}[raw]<!-- END html:veil -->
+				</td>
+			</tr>
+			</table>
+			<!-- END quote -->
+
+			<!-- BEGIN break -->
+			<input type="text" name="break_label_{id}" value="{label}" style="width:98%" /><!-- END break -->
+			<!-- BEGIN custom -->
+			<!--#include file="/admin/entry/custom-unit.html" -->
+			<!-- END custom -->
+
+			<!-- BEGIN custom_extend -->
+			<!--#include file="/admin/entry/custom-unit2.html" -->
+			<!-- END custom_extend -->
+		</div>
+		<!-- /.entryFormColumnBody -->
+	</div><!-- END column:loop -->
+	<!-- END adminEntryColumn -->
+
+	<div class="formEntryActionUnit ablogcms--column-add-btn">
+		<div class="sorthandle">
+		  <span class="adminBtn"><i class="acms-icon-sort"></i>追加</span>
+		  <span class="buttonlist"></span>
+		</div>
+	</div>
+</div>

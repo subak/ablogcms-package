@@ -1,0 +1,12 @@
+<!-- BEGIN_MODULE Tag_Filter -->
+<!-- BEGIN tagBox -->
+<section class="tagFilter">
+	<!--#include file="/admin/module/setting.html"-->
+	<h2>選択されているタグ : <!-- BEGIN selected:loop --><a href="{url}">{name}</a><!-- BEGIN glue --> , <!-- END glue --><!-- END selected:loop --></h2>
+	<!-- BEGIN choice:veil -->
+	<p class="nextTagTitle">タグを絞り込む : <!-- BEGIN choice:loop --><a href="{url}">{name}</a> <!-- END choice:loop -->
+		<!-- END choice:veil -->
+	</p>
+</section>
+<!-- END tagBox -->
+<!-- END_MODULE Tag_Filter -->

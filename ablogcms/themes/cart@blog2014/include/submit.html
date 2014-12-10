@@ -1,0 +1,26 @@
+<tr>
+	<th>数量</th>
+	<td>
+		<select name="item_quantity">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+		</select>
+		<input type="hidden" name="cart[]" value="item_quantity" /><!-- BEGIN_MODULE Touch_CartStock -->
+		<input type="hidden" name="item_quantity:v#max" value="{item_stock}" /><!-- END_MODULE Touch_CartStock -->
+	</td>
+</tr>
+<tr>
+	<td colspan="2">
+		<input type="submit" name="ACMS_POST_Shop2_Cart_Add" value="この商品をカートに入れる" class="acms-btn acms-btn-primary acms-float-right" />
+		<input type="hidden" name="item_id" value="{entry:loop.eid}" />
+		<input type="hidden" name="cart[]" value="item_id" />
+		<input type="hidden" name="cart[]" value="item_repertory_fields" />
+	</td>
+</tr>

@@ -1,0 +1,61 @@
+<form id="categoryAddForm">
+	<input type="hidden" name="category[]" value="name" />
+	<input type="hidden" name="category[]" value="code" />
+	<input type="hidden" name="category[]" value="parent" />
+	<input type="hidden" name="category[]" value="scope" /> 
+	<input type="hidden" name="category[]" value="status" /> 
+	<input type="hidden" name="category[]" value="indexing" /> 
+
+	<input type="hidden" name="name:validator#required" id="validator-name-required" />
+	<input type="hidden" name="code:validator#required" id="validator-code-required" />
+	<input type="hidden" name="code:validator#double" id="validator-code-double" />
+	<input type="hidden" name="code:validator#reserved" id="validator-code-reserved" />
+    <input type="hidden" name="scope:validator#required" id="validator-scope-required" />
+    <!--<input type="hidden" name="scope:validator#tree" id="validator-scope-tree" />-->
+
+	<input type="hidden" name="status" value="open" />
+	<input type="hidden" name="indexing" value="on" />
+	<input type="hidden" name="ACMS_POST_Category_Insert" />
+
+	<p id="js-category_add_msg" style="color:red; display:none;">
+		カテゴリーの追加に失敗しました。
+	</p>
+	<table id="">
+		<tbody>
+			<tr>
+				<th>カテゴリー名</th>
+				<td>
+					<input type="text" name="name" value="" />
+					<label for="validator-name-required" class="validator-result-">名前が入力されていません。</label>
+				</td>
+			</tr>
+			<tr>
+				<th>コードネーム</th>
+				<td>
+					<input type="text" name="code" value="" />
+					<label for="validator-code-required" class="validator-result-">コードネームが入力されていません。</label>
+					<label for="validator-code-double" class="validator-result-">既に使用されているコードネームです。</label>
+					<label for="validator-code-reserved" class="validator-result-">システムで予約されているキーワードです。</label>
+				</td>
+			</tr>
+			<tr>
+				<th>親カテゴリー</th>
+				<td>
+					<select name="parent">
+						<option value="0">なし</option><!-- BEGIN_MODULE Admin_Category_Select --><!-- BEGIN loop -->
+						<option value="{value}">{indent}[raw]{label} ( {amount} )</option><!-- END loop --><!-- END_MODULE Admin_Category_Select -->
+					</select>
+				</td>
+			</tr>
+            <tr>
+                <th>スコープ</th>
+                <td>
+                    <input type="hidden" name="scope" value="local" />
+                    <label><input type="checkbox" name="scope" value="global" /> 下の階層のブログと共有する</label>
+                    <label for="validator-scope-required" class="validator-result-">コードネームが入力されていません。</label>
+                    <label for="validator-scope-tree" class="validator-result-">親カテゴリーと異なる共有設定にすることはできません。</label>
+                </td>
+            </tr>
+		</tbody>
+	</table>
+</form>

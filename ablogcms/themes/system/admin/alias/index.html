@@ -1,0 +1,105 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-alias"></i>エイリアス管理</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Alias_Index -->
+
+<!-- BEGIN msg#success -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>エイリアスの一覧を更新しました。</p><!-- END msg#success --><!-- BEGIN msg#error --><!-- BEGIN alias:validator#operable -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>この操作は許可されていません。</p><!-- END alias:validator#operable --><!-- BEGIN checks:validator#required -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>対象が選択されていません。</p><!-- END checks:validator#required --><!-- BEGIN alias:validator#status -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>ステータスが無効のエイリアスはプライマリに設定できません</p><!-- END alias:validator#status --><!-- END msg#error -->
+
+<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+<form action="" method="post" class="acms-float-right js-acms_fix_target acms-position-right">
+	<input type="hidden" name="bid" value="%{BID}" />
+	<input type="hidden" name="admin" value="alias_edit" />
+	<input type="hidden" name="edit" value="insert" />
+	<input type="hidden" name="query[]" value="edit" />
+	<input type="submit" name="ACMS_POST_2GET" value="エイリアスの作成" class="acms-btn-admin" />
+</form>
+<!-- END_MODULE Touch_SessionWithAdministration -->
+
+{debug}
+<form method="post" action="" id="sortableForm" class="acms-form">
+<!-- BEGIN index:veil -->
+
+	<div class="js-acms-tab-select clearfix js-acms_fix_marker js-acms_fix_target">
+		<select name="action-alias" class="js-acms-tab-select-value acms-float-left acms-select-large">
+			<option value="action-order"{action-alias:selected#action-order}>表示順</option>
+			<option value="action-status"{action-alias:selected#action-status}>ステータス</option>
+			<option value="action-primary"{action-alias:selected#action-primary}>プライマリエイリアス</option>
+		</select>
+
+		<div id="action-order" class="js-acms-tab-select-panel js-acms-tab-select-active acms-float-left">
+			<input type="submit" name="ACMS_POST_Alias_Index_Sort" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		</div>
+		<div id="action-status" class="js-acms-tab-select-panel acms-float-left">
+			<select name="status">
+				<option value="open">公開</option>
+				<option value="close">非公開</option>
+			</select>
+			<input type="submit" name="ACMS_POST_Alias_Index_Status" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		</div>
+		<div id="action-primary" class="js-acms-tab-select-panel acms-float-left">
+			<input type="submit" name="ACMS_POST_Alias_Index_Primary" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		</div>
+	</div>
+
+	<p class="acms-margin-sp">※&nbsp;エイリアスに別ドメインを指定していて、index.phpまでのパスにディレクトリが含まれる場合、一覧のURLが正しくないことがあります。<br />
+		手動で「エイリアスのドメイン + index.phpまでのディレクトリパス + エイリアスのコード」のURLにアクセスしてください。</p>
+
+	<table class="adminTable js-admin_table-sortable exceptionSort acms-table-admin acms-table-heading acms-table-hover" data-sort-enable="on" data-sort-submit="ACMS_POST_Alias_Index_Sort" data-sort-target="#sortableForm">
+		<thead>
+			<tr>
+				<th class="item-handle acms-hide-sp"></th>
+				<th class="acms-table-center acms-th-checkbox acms-show-sp"><label class="acms-form-checkbox"><input type="checkbox" id="checkAll" /><i class="acms-ico-checkbox"></i></label></th>
+				<th class="acms-hide-sp">表示順</th>
+				<th class="acms-hide-sp">プライマリ / ID</th>
+				<th class="acms-show-sp">名前 / URL</th>
+				<th class="acms-hide-sp">ステータス</th>
+				<th class="acms-hide-sp">アクション</th>
+			</tr>
+		</thead>
+		<tbody><!-- BEGIN alias:loop -->
+			<tr data-sort-level="parallel" data-sort-name="sort-{aid}">
+				<td class="item-handle acms-hide-sp" style="cursor: move;"><i class="acms-icon-sort"></i></td>
+				<td class="acms-table-center"><label class="acms-form-checkbox"><input type="checkbox" name="checks[]" value="{aid}" /><i class="acms-ico-checkbox"></i></label></td>
+				<td>
+					<!--<input type="hidden" name="_rid[]" value="{aid}" />
+					<input type="hidden" name="_sort[]" value="{sort}" />-->
+					<select name="sort-{aid}"><!-- BEGIN sort:loop -->
+						<option value="{value}"{selected}>{label}</option><!-- END sort:loop -->
+					</select>
+				</td>
+				<td>
+					<label class="acms-form-radio">
+						<input type="radio" name="primary" value="{aid}"{aid:checked} /><i class="acms-ico-radio"></i>
+						{aidLabel}<!-- BEGIN aid#null -->NULL<!-- END aid#null -->
+					</label>
+				</td>
+				<td class="acms-show-sp acms-width-sp acms-title-sp">
+					<strong>{name}</strong>
+					<br />
+					<span class="weak"><a href="{urlValue}">{urlLable}</a></span>
+				</td>
+				<td><!-- BEGIN status:touch#open -->
+					<span class="acms-label acms-label-info admin-status-label">公開</span><!-- END status:touch#open --><!-- BEGIN status:touch#close --><span class="acms-label acms-label-danger">非公開</span><!-- END status:touch#close -->
+				</td>
+				<td class="acms-show-sp acms-width-sp acms-border-bottom-sp"><!-- BEGIN itemUrl:veil -->
+					<a href="{itemUrl}&edit=update" class="acms-btn-admin">変更</a><!-- END itemUrl:veil --><!-- BEGIN action#default -->
+					オリジナル<!-- END action#default -->
+				</td>
+			</tr>
+		<!-- END alias:loop --></tbody>
+	</table>
+
+	<!-- END index:veil -->
+</form>
+<div class="js-acms_fix_target acms_fix_bg"><div class="acms_fix_bg_index"></div></div>
+<!-- END_MODULE Admin_Alias_Index -->

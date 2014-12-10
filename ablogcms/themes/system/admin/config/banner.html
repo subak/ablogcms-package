@@ -1,0 +1,176 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<div class="acms-admin-title acms-module-title-wrapper">
+			<i class="acms-icon acms-icon-config_banner"></i>
+			<div class="acms-module-title">
+				<!-- BEGIN_MODULE Admin_Rule_Name -->
+				<strong>ルール : {name}</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+				<strong>モジュールID : {label} ( {identifier} )</strong><!-- END_MODULE Admin_Module_Name -->
+				<h1>バナー<span class="acms-module-en">Banner</span></h1>
+			</div>
+		</div>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Config_Banner -->
+<!-- BEGIN_IF [{notice_mess}/nem/] -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>Banner 設定を保存しました</p><!-- END_IF -->
+
+<form action="" method="post" enctype="multipart/form-data" id="sortableForm" class="acms-form">
+	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+		<div class="acms-form-group acms_fix_bg_index">
+			<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="js-submitlock acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+		</div>
+	</div>
+	
+	<h2 class="acms-admin-title2">表示順</h2>
+	<table class="adminTable acms-table-admin-edit">
+		<tr>
+			<th>表示順<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="バナーが表示される順番を表示順かランダムかを選びます。"></i></th>
+			<td>{banner_order}
+				<select name="banner_order">
+					<option value="sort-asc"{banner_order:selected#sort-asc}>表示順 ( 昇順 )</option>
+					<option value="sort-desc"{banner_order:selected#sort-desc}>表示順 ( 降順 )</option>
+					<option value="random"{banner_order:selected#random}>ランダム</option>
+				</select>
+				<input type="hidden" name="config[]" value="banner_order" />
+			</td>
+		</tr>
+		<tr>
+			<th>表示数<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="バナーが表示される数です。空白または数値でない場合、全件表示されます。"></i></th>
+			<td>
+				<input type="text" name="banner_limit" value="{banner_limit}" size="5" />
+				<input type="hidden" name="config[]" value="banner_limit" />
+			</td>
+		</tr>
+	</table>
+	
+	<h2 class="acms-admin-title2">画像データ</h2>
+	<table class="js-admin_table-sortable adminTable acms-table-admin-edit acms-table-admin-edit-bordered" data-sort-enable="on" data-sort-submit="ACMS_POST_Config" data-sort-target="#sortableForm">
+		<thead class="acms-hide-sp">
+		<tr>
+			<th class="acms-admin-config-table-item-handle"></th>
+			<th class="borderRight acms-table-left acms-admin-config-table-sort">表示順<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="バナーが表示される順番です。"></i></th>
+			<th class="borderRight acms-table-left acms-admin-config-table-publish">公開<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="バナーの公開状態です。"></i></th>
+			<th class="acms-table-left">バナー<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="表示されるバナーの情報です。"></i></th>
+		</tr>
+		</thead>
+		<tbody><!-- BEGIN banner:loop -->
+		<tr data-sort-level="parallel" data-sort-name="banner-{id}@sort">
+			<td class="item-handle acms-hide-sp" style="cursor: move;"><i class="acms-icon-sort"></i></td>
+			<td class="borderRight alignCenter">
+				<span class="acms-hide-pc acms-show-sp">表示順</span>
+				<select name="banner-{id}@sort"><!-- BEGIN sort:loop -->
+					<option value="{value}"{selected}>{label}</option><!-- END sort:loop -->
+				</select>
+				<input type="hidden" name="config[]" value="banner-{id}@sort" />
+			</td>
+			<td class="borderRight alignCenter">
+				<input type="hidden" name="banner-{id}@status" value="close" />
+				<label class="acms-form-checkbox"><input type="checkbox" name="banner-{id}@status" value="open"{status:checked#open} /><i class="acms-ico-checkbox"></i><span class="acms-hide-pc acms-show-inline-sp">公開</span></label>
+				<input type="hidden" name="config[]" value="banner-{id}@status" />
+			</td>
+			<td>
+				<span class="acms-hide-pc acms-show-sp">バナー</span>
+				<!-- BEGIN banner#src -->
+				<table class="">
+					<tr>
+						<th>ソース<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="HTMLを直接記述してバナーを掲載する場合、この欄にHTMLを入力してください。"></i></th>
+						<td>
+							<textarea name="banner-{banner#src_id}@src" cols="60" rows="5">{src}</textarea>
+							<input type="hidden" name="config[]" value="banner-{banner#src_id}@src" />
+						</td>
+					</tr>
+					<tr>
+						<th>公開日時<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このバナーの公開日時を指定します。バナーの表示には日時の範囲内であっても、公開設定にチェックが入っている必要があります。"></i></th>
+						<td>
+						<input type="text" name="banner-{banner#src_id}@datestart" value="{datestart}" class="js-datepicker" size="10" /> 
+						<input type="text" name="banner-{banner#src_id}@timestart" value="{timestart}" size="7" /> 〜 
+						<input type="text" name="banner-{banner#src_id}@dateend" value="{dateend}" class="js-datepicker" size="10" /> 
+						<input type="text" name="banner-{banner#src_id}@timeend" value="{timeend}" size="7" />
+						<input type="hidden" name="config[]" value="banner-{banner#src_id}@datestart" />
+						<input type="hidden" name="config[]" value="banner-{banner#src_id}@dateend" />
+						<input type="hidden" name="config[]" value="banner-{banner#src_id}@timestart" />
+						<input type="hidden" name="config[]" value="banner-{banner#src_id}@timeend" />
+						</td>
+					</tr>
+				</table>
+				<!-- END banner#src --><!-- BEGIN banner#img -->
+
+				<table class="">
+					<tr>
+						<th>画像<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="表示されるバナー画像です。"></i></th>
+						<td><!-- BEGIN banner@img:veil -->
+							<input type="hidden" name="banner-{banner@img_id}@old" value="{img}" />
+							<label class="acms-form-checkbox" for="input-checkbox-banner-{banner@img_id}@edit">
+							<input type="checkbox" name="banner-{banner@img_id}@edit" value="delete" id="input-checkbox-banner-{banner@img_id}@edit" />
+							<i class="acms-ico-checkbox"></i> 削除</label>
+							<br />
+							<img src="%{ARCHIVES_DIR}{img}" style="max-width: 450px;" alt="" /><br /><!-- END banner@img:veil -->
+							<input type="file" name="banner-{banner#img_id}" size="20" />
+							<input type="hidden" name="config[]" value="banner-{banner#img_id}" />
+							<input type="hidden" name="banner-{banner#img_id}:extension" value="image" />
+						</td>
+					</tr>
+					<tr>
+						<th>URL<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="バナーのリンク先URLです。"></i></th>
+						<td>
+							<input type="text" name="banner-{banner#img_id}@url" value="{url}" style="width:90%;" />
+							<input type="hidden" name="config[]" value="banner-{banner#img_id}@url" />
+						</td>
+					</tr>
+					<tr>
+						<th>代替テキスト<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="バナー画像が表示できなかった場合に表示される代替テキストです。"></i></th>
+						<td><input type="text" name="banner-{banner#img_id}@alt" value="{alt}" style="width:90%;" /></td>
+					</tr>
+					<tr>
+						<th>属性1<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="任意の属性を設定できます。（変数名 attr1）"></i></th>
+						<td><input type="text" name="banner-{banner#img_id}@attr1" value="{attr1}" style="width:90%;" />
+						<input type="hidden" name="config[]" value="banner-{banner#img_id}@attr1" /></td>
+					</tr>
+					<tr>
+						<th>属性2<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="任意の属性を設定できます。（変数名 attr2）"></i></th>
+						<td><input type="text" name="banner-{banner#img_id}@attr2" value="{attr2}" style="width:90%;" />
+						<input type="hidden" name="config[]" value="banner-{banner#img_id}@attr2" /></td>
+					</tr>
+					<tr>
+						<th>新規ページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このバナーのリンクを新しいウィンドウで開くかのチェックです。チェックすると新しいウィンドウで開きます。"></i></th>
+						<td>
+							<input type="hidden" name="banner-{banner#img_id}@target" value="_self" />
+							<label for="input-checkbox-banner-{banner#img_id}@target" class="acms-form-checkbox"><input type="checkbox" name="banner-{banner#img_id}@target" value="_blank"{target:chekced#_blank} id="input-checkbox-banner-{banner#img_id}@target" /><i class="acms-ico-checkbox"></i>新しいウィンドウで開く</label>
+							<input type="hidden" name="config[]" value="banner-{banner#img_id}@target" />
+						</td>
+					</tr>
+					<tr>
+						<th>公開日時<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このバナーの公開日時を指定します。バナーの表示には日時の範囲内であっても、公開設定にチェックが入っている必要があります。"></i></th>
+						<td>
+						<input type="text" name="banner-{banner#img_id}@datestart" value="{datestart}" class="js-datepicker" size="10" /> 
+						<input type="text" name="banner-{banner#img_id}@timestart" value="{timestart}" size="7" /> 〜 
+						<input type="text" name="banner-{banner#img_id}@dateend" value="{dateend}" class="js-datepicker" size="10" /> 
+						<input type="text" name="banner-{banner#img_id}@timeend" value="{timeend}" size="7" />
+						<input type="hidden" name="config[]" value="banner-{banner#img_id}@datestart" />
+						<input type="hidden" name="config[]" value="banner-{banner#img_id}@dateend" />
+						<input type="hidden" name="config[]" value="banner-{banner#img_id}@timestart" />
+						<input type="hidden" name="config[]" value="banner-{banner#img_id}@timeend" />
+						</td>
+					</tr>
+				</table>
+				<!-- END banner#img -->
+
+				<input type="hidden" name="banner@id[]" value="{id}" />
+			</td>
+		</tr><!-- END banner:loop -->
+		</tbody>
+	</table>
+	<input type="hidden" name="config[]" value="banner@id" /><!-- BEGIN_MODULE Admin_Rule_Name -->
+	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+</form>
+<!-- END_MODULE Admin_Config_Banner -->

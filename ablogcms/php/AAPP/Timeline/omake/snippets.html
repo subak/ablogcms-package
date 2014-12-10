@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h1>App_Timeline</h1>
+
+	<!-- BEGIN_MODULE App_Timeline id="" -->
+
+	<!-- BEGIN notFound -->
+	<p>タイムラインがありません</p><!-- END notFound -->
+
+	<!-- BEGIN feed:loop -->
+	<div><!-- BEGIN userField -->
+		<h2><img src="%{ARCHIVES_DIR}{icon}" width="28" alt="{name}">{name}</h2><!-- END userField -->
+		<div>
+			<p>{text}[urltag]</p>
+			<p>{date#}[date('m月d日 H:i')]</p><!-- BEGIN image:veil -->
+			<a href="{largePath}" rel="prettyPhoto[]">
+				<img src="{path}" alt="" />
+			</a><!-- END image:veil -->
+		</div>
+	</div><!-- END feed:loop -->
+</body>
+</html>

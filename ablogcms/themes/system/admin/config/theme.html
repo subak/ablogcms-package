@@ -1,0 +1,156 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title">
+			<i class="acms-icon acms-icon-config_theme"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+				<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+				<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->テーマ設定
+		</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Config -->
+<!-- BEGIN_IF [{notice_mess}/nem/] -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>テーマ設定を保存しました</p><!-- END_IF -->
+
+<!--<p class="infoTxt">テーマとテンプレートを設定します。</p>-->
+<form action="" method="post" class="acms-form">
+	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+		<div class="acms_fix_bg_index">
+			<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+		</div>
+	</div>
+	
+	<!-- BEGIN_MODULE Admin_Config_Theme -->
+	<h2 class="acms-admin-title2">テーマ</h2>
+	<table class="adminTable acms-table-admin-edit">
+		<tr>
+			<th>テーマ ディレクトリ名<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="適用されるテーマのディレクトリ名です。「a-blog cms設置ディレクトリ/themes/」以下のディレクトリになります。"></i></th>
+			<td>
+				<select name="theme" id="js-select_theme_action"><!-- BEGIN theme:loop -->
+					<option value="{name}"{selected} id="{key}">{name}</option><!-- END theme:loop -->
+				</select>
+				<input type="hidden" name="config[]" value="theme" />
+				<input type="hidden" name="theme:validator#required" id="validator-theme-required" />
+				<label for="validator-theme-required" class="validator-result-{theme:validator#required}">テーマが指定されていません。</label>
+			</td>
+		</tr>
+		<tr>
+			<th>テンプレート設定<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックがついている場合テーマディレクトリ直下のtemplate.yamlファイルのテンプレートを優先して読む込みます。（template.yamlは継承されます）"></i></th>
+			<td>
+				<label for="loadYamlTpl" class="acms-form-checkbox"><input type="checkbox" name="load_yaml_tpl" value="on"\{load_yaml_tpl:checked#on\} id="loadYamlTpl"/><i class="acms-ico-checkbox"></i>テンプレート選択ファイル（template.yaml）の値を優先する</label>
+				<input type="hidden" name="config[]" value="load_yaml_tpl" />
+			</td>
+		</tr>
+	</table>
+	
+	<h2 class="acms-admin-title2">template.yamlファイル</h2><!-- BEGIN template:loop -->
+	<div class="tplYamlTable {js-load_hide_box} js-theme_{key} table">
+		<table class="adminTable acms-table-admin-edit"><!-- BEGIN tpl_top:veil -->
+			<tr>
+				<th>トップページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="そのサイト（ブログ）のトップページにアクセスした際に適用されるテンプレートファイルです。"></i></th>
+				<td>{tpl_top}</td>
+			</tr><!-- END tpl_top:veil --><!-- BEGIN tpl_index:veil -->
+			<tr>
+				<th>一覧ページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーのトップページで複数のエントリーを一覧表示する際に適用されるテンプレートファイルです。"></i></th>
+				<td>{tpl_index}</td>
+			</tr><!-- END tpl_index:veil --><!-- BEGIN tpl_detail:veil -->
+			<tr>
+				<th>詳細ページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="個別のエントリーを表示する際に適用されるテンプレートファイルです。"></i></th>
+				<td>{tpl_detail}</td>
+			</tr><!-- END tpl_detail:veil --><!-- BEGIN tpl_404:veil -->
+			<tr>
+				<th>エラーページ(404 Not Found)<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="存在しないURLにアクセスした際に適用されるテンプレートファイルです。"></i></th>
+				<td>{tpl_404}</td>
+			</tr><!-- END tpl_404:veil --><!-- BEGIN tpl_admin:veil -->
+			<tr>
+				<th>管理ページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="管理ページ（このページなど）を表示する際に適用されるテンプレートファイルです。"></i></th>
+				<td>{tpl_admin}</td>
+			</tr><!-- END tpl_admin:veil --><!-- BEGIN tpl_entry_edit:veil -->
+			<tr>
+				<th>エントリー編集ページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーを投稿・編集する際に適用されるテンプレートファイルです。"></i></th>
+				<td>{tpl_entry_edit}</td>
+			</tr><!-- END tpl_entry_edit:veil --><!-- BEGIN tpl_entry_add:veil -->
+			<tr>
+				<th>ユニット追加ページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーにユニットを追加する際に適用されるテンプレートファイルです。"></i></th>
+				<td>{tpl_entry_add}</td>
+			</tr><!-- END tpl_entry_add:veil --><!-- BEGIN tpl_login:veil -->
+			<tr>
+				<th>ログインページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="「設置URL/login/」で表示されるログインページに適用されるテンプレートファイルです。"></i></th>
+				<td>{tpl_login}</td>
+			</tr><!-- END tpl_login:veil -->
+		</table><!-- BEGIN not_found:veil -->
+		<p class="warning">{not_found}テーマにtemplate.yamlが設置されていません。</p><!-- END not_found:veil -->
+	</div><!-- END template:loop -->
+	<!-- END_MODULE Admin_Config_Theme -->
+
+	<h2 class="acms-admin-title2">テンプレートファイル</h2>
+	<table class="adminTable acms-table-admin-edit">
+		<tr>
+			<th>トップページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="そのサイト（ブログ）のトップページにアクセスした際に適用されるテンプレートファイルです。"></i></th>
+			<td>
+				<input type="text" name="tpl_top" value="{tpl_top}" size="20" />
+				<input type="hidden" name="config[]" value="tpl_top" />
+			</td>
+		</tr>
+		<tr>
+			<th>一覧ページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーのトップページで複数のエントリーを一覧表示する際に適用されるテンプレートファイルです。"></i></th>
+			<td>
+				<input type="text" name="tpl_index" value="{tpl_index}" size="20" />
+				<input type="hidden" name="config[]" value="tpl_index" />
+			</td>
+		</tr>
+		<tr>
+			<th>詳細ページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="個別のエントリーを表示する際に適用されるテンプレートファイルです。"></i></th>
+			<td>
+				<input type="text" name="tpl_detail" value="{tpl_detail}" size="20" />
+				<input type="hidden" name="config[]" value="tpl_detail" />
+			</td>
+		</tr>
+		<tr>
+			<th>エラーページ(404 Not Found)<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="存在しないURLにアクセスした際に適用されるテンプレートファイルです。"></i></th>
+			<td>
+				<input type="text" name="tpl_404" value="{tpl_404}" size="20" />
+				<input type="hidden" name="config[]" value="tpl_404" />
+			</td>
+		</tr>
+		<tr>
+			<th>管理ページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="管理ページ（このページなど）を表示する際に適用されるテンプレートファイルです。"></i></th>
+			<td>
+				<input type="text" name="tpl_admin" value="{tpl_admin}" size="20" />
+				<input type="hidden" name="config[]" value="tpl_admin" />
+			</td>
+		</tr>
+		<tr>
+			<th>エントリー編集ページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーを投稿・編集する際に適用されるテンプレートファイルです。"></i></th>
+			<td>
+				<input type="text" name="tpl_entry_edit" value="{tpl_entry_edit}" size="20" />
+				<input type="hidden" name="config[]" value="tpl_entry_edit" />
+			</td>
+		</tr>
+		<tr>
+			<th>ユニット追加ページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーにユニットを追加する際に適用されるテンプレートファイルです。"></i></th>
+			<td>
+				<input type="text" name="tpl_entry_add" value="{tpl_entry_add}" size="20" />
+				<input type="hidden" name="config[]" value="tpl_entry_add" />
+			</td>
+		</tr>
+		<tr>
+			<th>ログインページ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="「設置URL/login/」で表示されるログインページに適用されるテンプレートファイルです。"></i></th>
+			<td>
+				<input type="text" name="tpl_login" value="{tpl_login}" size="20" />
+				<input type="hidden" name="config[]" value="tpl_login" />
+			</td>
+		</tr>
+	</table>
+	<!-- BEGIN_MODULE Admin_Rule_Name -->
+	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+</form>
+<!-- END_MODULE Admin_Config -->

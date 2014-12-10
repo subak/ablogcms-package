@@ -1,0 +1,122 @@
+<!-- BEGIN_MODULE Entry_Body -->
+<!-- BEGIN notFound -->
+<section class="entry">
+	<h2 class="notFoundTitle">Not found</h2>
+	<p>お探しの記事は見つかりませんでした。</p>
+ </section>
+<!-- END notFound -->
+
+<!-- 1記事▼▼ -->
+<!-- BEGIN entry:loop -->
+<div class="acms-form-group">
+<!--#include file="/admin/entry/revision-info.html"-->
+</div>
+<article class="entry">
+	<div class="acms-inner">
+		<!--#include file="/admin/entry/title.html"-->
+
+		<!-- BEGIN title:veil -->
+		<!-- エントリーのタイトル　開始▼▼ -->
+		<header class="entryHeader clearfix">
+			<p class="entryDate">
+				<!-- BEGIN date:veil -->
+				<time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日</time>
+				<!-- END date:veil -->
+
+				<!-- BEGIN category:veil --> ｜
+				<!-- BEGIN category:loop -->
+				<span class="entryCategory"><a href="{url}">{name}</a></span>
+				<!-- BEGIN glue -->
+				&lt;
+				<!-- END glue -->
+				<!-- END category:loop -->
+				<!-- END category:veil -->
+			</p>
+			<h1 class="entryTitle"><a href="{titleUrl}">{title}[raw]</a></h1>
+		</header>
+		<!-- エントリーのタイトル　終了▲▲ -->
+		<!-- END title:veil -->
+
+		<div class="acms-grid-r acms-entry">
+			<!-- BEGIN unit:veil -->
+			<!--#include file="/include/unit.html"-->
+			<hr class="clearHidden" />
+			<!-- END unit:veil -->
+			<!-- BEGIN continueLink:veil -->
+			<p class="continueLink clear"><a href="{continueUrl}">「{continueName}」の続きを読む</a></p>
+			<!-- END continueLink:veil -->
+
+			<!-- BEGIN formBody -->
+			<!--#include file="/include/form/unit.html"-->
+			<hr class="clearHidden" />
+			<!-- END formBody -->
+
+			<!-- BEGIN adminEntryEdit -->
+			<!--#include file="/admin/entry/edit.html"-->
+			<!--#include file="/admin/entry/add.html"-->
+			<!-- END adminEntryEdit -->
+
+			<!-- BEGIN adminFormEdit -->
+			<!--#include file="/admin/form2/edit.html"-->
+			<!-- END adminFormEdit -->
+
+			<!-- BEGIN tag:veil -->
+			<div class="entryTag">
+				<h3>tag</h3>
+				<ul class="acms-list-inline">
+					<!-- BEGIN tag:loop -->
+					<li class="taglist"><a href="{url}">{name}</a></li><!-- END tag:loop -->
+				</ul>
+			</div><!-- END tag:veil -->
+
+			<!--#include file="/admin/entry/action.html"-->
+		</div>
+		<!-- BEGIN footer:veil -->
+		<footer>
+			<p class="entryFooter">Posted by {posterName} at {date#Y}年{date#m}月{date#d}日 <time>{date#H}:{date#i}</time> | <a href="{inheritUrl}">Permalink</a>
+				<!-- BEGIN commentAmount --> | <a href="{commentUrl}#comment">comment ( {commentAmount} )</a><!-- END commentAmount --></p>
+			<!--#include file="/include/snsButton.html"-->
+		</footer>
+		<!-- END footer:veil -->
+	</div>
+</article>
+
+<!-- BEGIN_MODULE Touch_Entry -->
+<!-- コメントのインクルード -->
+<!--#include file="/include/comment.html"-->
+<!-- END_MODULE Touch_Entry -->
+
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+
+<!-- BEGIN pager:veil -->
+<!-- ページ送り　開始▼▼ -->
+<nav>
+	<ul class="entryListNavi clearfix">
+		<li class="forwardPageLink">&nbsp;<!-- BEGIN forwardLink --><a href="{url}" rel="next">次へ&nbsp;&gt;&gt;</a><!-- END forwardLink --></li>
+		<li class="pageLink"><!-- BEGIN page:loop --><!-- BEGIN link#front --><a href="{url}"><!-- END link#front --><span>{page}</span><!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --><!-- END page:loop --><!-- BEGIN lastPage:veil -->	...<a href="{lastPageUrl}">{lastPage}</a><!-- END lastPage:veil --></li>
+		<li class="backPageLink"><!-- BEGIN backLink --><a href="{url}" rel="prev">&lt;&lt;&nbsp;前へ</a><!-- END backLink -->&nbsp;</li>
+	</ul>
+</nav>
+<!-- ページ送り　終了▲▲ -->
+<!-- END pager:veil -->
+
+<!-- BEGIN serialNavi:veil -->
+<nav>
+	<ul class="entryListNavi clearfix">
+		<li class="prev">
+			<!-- BEGIN prevLink -->
+			<a href="{url}" rel="prev">&lt;&lt;&nbsp;{name}[trim(27, '...')|escape]</a>
+			<!-- END prevLink -->
+		 </li>
+		<li class="all"><a href="{upperUrl}">一覧へ</a></li>
+		<li class="next"> 
+			<!-- BEGIN nextLink -->
+			<a href="{url}" rel="next">{name}[trim(27, '...')|escape]&nbsp;&gt;&gt;</a>
+			<!-- END nextLink -->
+		</li>
+	</ul>
+</nav>
+<!-- END serialNavi:veil -->
+
+<!-- END_MODULE Entry_Body -->

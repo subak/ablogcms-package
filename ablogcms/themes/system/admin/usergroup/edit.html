@@ -1,0 +1,105 @@
+<header class="acms-grid">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-user-group"></i>ユーザーグループ詳細</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Usergroup_Edit -->
+
+<!-- BEGIN msg#insert -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>ユーザーグループを作成しました</p><!-- END msg#insert --><!-- BEGIN msg#update -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>ユーザーグループを保存しました</p><!-- END msg#update --><!-- BEGIN msg#delete -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>ユーザーグループを削除しました</p><!-- END msg#delete --><!-- BEGIN usergroup:validator#operable -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>この操作は許可されていません。</p><!-- END usergroup:validator#operable -->
+
+<form action="" method="post" enctype="multipart/form-data" class="acms-form"><!-- BEGIN usergroup:validator#operable -->
+	<p class="transaction-notice-error acms-alert acms-alert-danger">この操作は許可されていません。</p><!-- END usergroup:validator#operable -->
+	<p class="transaction-notice-{insert:validator} acms-alert acms-alert-danger">ユーザーグループを作成できませんでした。</p>
+	<p class="transaction-notice-{update:validator} acms-alert acms-alert-danger">ユーザーグループを保存できませんでした。</p>
+
+	<div class="acms-form-group js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+		<input type="button" name="Config_Index" value="一覧" onclick="location.href='%{SCRIPT_ROOT}bid/%{BID}/admin/usergroup_index/';" class="acms-btn-admin" />
+
+		<!-- BEGIN submit#insert -->
+		<input type="submit" name="ACMS_POST_Usergroup_Insert" value="作成" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+		<!-- END submit#insert -->
+
+		<!-- BEGIN submit#update -->
+		<input type="submit" name="ACMS_POST_Usergroup_Update" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+		<input type="submit" name="ACMS_POST_Usergroup_Delete" value="削除" onclick="return confirm('この操作は取り消せません。\nよろしいですか？');" class="acms-btn-admin acms-btn-admin-danger" />
+		<input type="hidden" name="takeover" value="{takeover}" />
+		<!-- END_MODULE Touch_SessionWithAdministration -->
+		<!-- END submit#update -->
+	</div>
+	
+	<table class="adminTable acms-table-admin-edit"><!-- BEGIN id:veil -->
+		<tr>
+			<th>ID<i data-acms-tooltip="ユーザーグループのIDです。固有の値になります。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<td>{id}</td>
+		</tr><!-- END id:veil -->
+		<tr>
+			<th>ユーザーグループ名<i data-acms-tooltip="ユーザーグループ名を設定します（日本語化）" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<td>
+				<input type="text" name="name" value="{name}" />
+				<input type="hidden" name="usergroup[]" value="name" />
+				<input type="hidden" name="name:validator#required" id="validator-name-required" />
+				<label for="validator-name-required" class="validator-result-{name:validator#required}">名前が入力されていません。</label>
+
+				<input type="hidden" name="name:validator#double" id="validator-name-double" />
+				<label for="validator-name-double" class="validator-result-{name:validator#double}">すでに同じ名前のユーザーグループが存在します。</label>
+			</td>
+		</tr>
+		<tr>
+			<th>説明<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このユーザーグループがどのようなグループなのかをメモします。"></i></th>
+			<td>
+				<textarea name="description" style="width:100%;" rows="3">{description}</textarea>
+				<input type="hidden" name="usergroup[]" value="description" />
+			</td>
+		</tr>
+		<tr><!-- BEGIN_MODULE Admin_Role_Index -->
+			<th>ロール<i data-acms-tooltip="ロールを設定します。ここで設定したロールの権限が設定されます。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<td>
+				<select type="text" name="role_id">
+					<option value="">ロールを選択</option><!-- BEGIN role:loop -->
+					<option value="{rid}"\{role_id:selected#{rid}\}>{name} ( id:{rid} )</option><!-- END role:loop -->
+				</select>
+				<input type="hidden" name="usergroup[]" value="role_id" />
+				<input type="hidden" name="role_id:validator#required" id="validator-role_id-required" />
+				<label for="validator-role_id-required" class="validator-result-\{role_id:validator#required\}">ロールがセットされていません。</label>
+			</td><!-- END_MODULE Admin_Role_Index -->
+		</tr>
+		<tr>
+			<th>承認ポイント<i data-acms-tooltip="並列承認で使用するポイントを設定します。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<td>
+				<input type="text" name="approval_point" value="{approval_point}" />
+				<input type="hidden" name="usergroup[]" value="approval_point" />
+				<input type="hidden" name="approval_point:validator#required" id="validator-approval_point-required" />
+				<label for="validator-approval_point-required" class="validator-result-{approval_point:validator#required}">承認ポイントが入力されていません。</label>
+
+				<input type="hidden" name="approval_point:validator#digits" id="validator-approval_point-digits" />
+				<label for="validator-approval_point-digits" class="validator-result-{approval_point:validator#digits}">数値を入力して下さい。</label>
+			</td>
+		</tr><!-- BEGIN_MODULE Admin_Usergroup_UserList -->
+		<tr>
+			<th>対象ユーザー<i data-acms-tooltip="対象ユーザーを設定します。選択できるユーザはルートブログの投稿者・編集者ユーザになります。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<td>
+				<ul id="user_id-group{blog_id}" class="acms-list-nostyle"><!-- BEGIN user:loop -->
+					<li>
+						<label class="acms-form-checkbox">
+							<input type="checkbox" name="user_list[]" value="{id}"\{user_list:checked#{id}\}/><i class="acms-ico-checkbox"></i><img src="%{ARCHIVES_DIR}{icon}" width="18" height="18" alt="%{SESSION_USER_NAME}" class="acms-admin-icon-center">{name} ( uid:{id} )
+						</label>
+					</li><!-- END user:loop -->
+				</ul>
+				<input type="hidden" name="usergroup[]" value="user_list" />
+			</td>
+		</tr><!-- END_MODULE Admin_Usergroup_UserList -->
+	</table>
+</form>
+<!-- END step#reapply -->
+<!-- END_MODULE Admin_Usergroup_Edit -->
+<!--#include file="/admin/tooltip/usergroup.html"-->

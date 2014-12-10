@@ -1,0 +1,209 @@
+<h2>会社情報</h2>
+<table>
+	<tr>
+		<td align="right">会社名 :</td>
+		<td>
+			<input type="text" name="company" />
+			<input type="hidden" name="field[]" value="company" />
+			<input type="hidden" name="company:v#required" />
+		</td>
+	</tr>
+	<tr>
+		<td align="right">仕事内容 :</td>
+		<td>
+			<textarea name="description" rows="5" style="width:100%;"></textarea>
+			<input type="hidden" name="field[]" value="description" />
+			<input type="hidden" name="description:v#maxLength" value="100" />
+		</td>
+	</tr>
+	<tr>
+		<td align="right">職種 :</td>
+		<td>
+			<ul class="acms-list-nostyle">
+				<li><label class="acms-form-checkbox"><input type="checkbox" name="job[]" value="営業" />
+				<i class="acms-ico-checkbox"></i> 営業</label></li>
+				<li><label class="acms-form-checkbox"><input type="checkbox" name="job[]" value="サービス業" />
+				<i class="acms-ico-checkbox"></i> サービス業</label></li>
+				<li><label class="acms-form-checkbox"><input type="checkbox" name="job[]" value="クリエイティブ" />
+				<i class="acms-ico-checkbox"></i> クリエイティブ</label></li>
+				<li><label class="acms-form-checkbox"><input type="checkbox" name="job[]" value="事務職" />
+				<i class="acms-ico-checkbox"></i> 事務職</label></li>
+				<li><label class="acms-form-checkbox"><input type="checkbox" name="job[]" value="専門職（コンサル・法務）" />
+				<i class="acms-ico-checkbox"></i> 専門職（コンサル・法務）</label></li>
+				<li><label class="acms-form-checkbox"><input type="checkbox" name="job[]" value="技術系（IT技術）" />
+				<i class="acms-ico-checkbox"></i> 技術系（IT）</label></li>
+				<li><label class="acms-form-checkbox"><input type="checkbox" name="job[]" value="技術系（電気・機械）" />
+				<i class="acms-ico-checkbox"></i> 技術系（電気・機械）</label></li>
+				<li><label class="acms-form-checkbox"><input type="checkbox" name="job[]" value="技術系（食品・医療）" />
+				<i class="acms-ico-checkbox"></i> 技術系（食品・医療）</label></li>
+				<li><label class="acms-form-checkbox"><input type="checkbox" name="job[]" value="技術系（建築・土木）" />
+				<i class="acms-ico-checkbox"></i> 技術系（建築・土木）</label></li>
+				<li><label class="acms-form-checkbox"><input type="checkbox" name="job[]" value="その他（公務員など）" />
+				<i class="acms-ico-checkbox"></i> その他（公務員など）</label></li>
+			</ul>
+			<input type="hidden" name="field[]" value="job" />
+			<input type="hidden" name="job:v#required" />
+		</td>
+	</tr>
+	<tr>
+		<td align="right">勤務地 :</td>
+		<td>
+			<select name="location[]" size="10" multiple="multiple">
+    			<option value="北海道">北海道</option>
+    			<option value="青森県">青森県</option>
+    			<option value="岩手県">岩手県</option>
+    			<option value="宮城県">宮城県</option>
+    			<option value="秋田県">秋田県</option>
+    			<option value="山形県">山形県</option>
+    			<option value="福島県">福島県</option>
+    			<option value="茨城県">茨城県</option>
+    			<option value="栃木県">栃木県</option>
+    			<option value="群馬県">群馬県</option>
+    			<option value="埼玉県">埼玉県</option>
+    			<option value="千葉県">千葉県</option>
+    			<option value="東京都">東京都</option>
+    			<option value="神奈川県">神奈川県</option>
+    			<option value="新潟県">新潟県</option>
+    			<option value="富山県">富山県</option>
+    			<option value="石川県">石川県</option>
+    			<option value="福井県">福井県</option>
+    			<option value="山梨県">山梨県</option>
+    			<option value="長野県">長野県</option>
+    			<option value="岐阜県">岐阜県</option>
+    			<option value="静岡県">静岡県</option>
+    			<option value="愛知県">愛知県</option>
+    			<option value="三重県">三重県</option>
+    			<option value="滋賀県">滋賀県</option>
+    			<option value="京都府">京都府</option>
+    			<option value="大阪府">大阪府</option>
+    			<option value="兵庫県">兵庫県</option>
+    			<option value="奈良県">奈良県</option>
+    			<option value="和歌山県">和歌山県</option>
+    			<option value="鳥取県">鳥取県</option>
+    			<option value="島根県">島根県</option>
+    			<option value="岡山県">岡山県</option>
+    			<option value="広島県">広島県</option>
+    			<option value="山口県">山口県</option>
+    			<option value="徳島県">徳島県</option>
+    			<option value="香川県">香川県</option>
+    			<option value="愛媛県">愛媛県</option>
+    			<option value="高知県">高知県</option>
+    			<option value="福岡県">福岡県</option>
+    			<option value="佐賀県">佐賀県</option>
+    			<option value="長崎県">長崎県</option>
+    			<option value="熊本県">熊本県</option>
+    			<option value="大分県">大分県</option>
+    			<option value="宮崎県">宮崎県</option>
+    			<option value="鹿児島県">鹿児島県</option>
+    			<option value="沖縄県">沖縄県</option>
+			</select>
+			<input type="hidden" name="field[]" value="location" />
+			<input type="hidden" name="location:v#required" />
+		</td>
+	</tr>
+	<tr>
+		<td align="right">雇用形態</td>
+		<td>
+			<ul class="acms-list-nostyle">
+				<li><label class="acms-form-checkbox" for="input-checkbox-pattern1"><input type="checkbox" name="pattern[]" value="正社員 (中途)" id="input-checkbox-pattern1" />
+				<i class="acms-ico-checkbox"></i> 正社員 (中途)</label></li>
+				<li><label for="input-checkbox-pattern2" class="acms-form-checkbox"><input type="checkbox" name="pattern[]" value="正社員 (新卒)" id="input-checkbox-pattern2" />
+				<i class="acms-ico-checkbox"></i> 正社員 (新卒)</label></li>
+				<li><label for="input-checkbox-pattern3" class="acms-form-checkbox"><input type="checkbox" name="pattern[]" value="アルバイト" id="input-checkbox-pattern3" />
+				<i class="acms-ico-checkbox"></i> アルバイト</label></li>
+				<li><label for="input-checkbox-pattern4" class="acms-form-checkbox"><input type="checkbox" name="pattern[]" value="短期アルバイト" id="input-checkbox-pattern4" />
+				<i class="acms-ico-checkbox"></i> 短期アルバイト</label></li>
+				<li><label for="input-checkbox-pattern5" class="acms-form-checkbox"><input type="checkbox" name="pattern[]" value="契約社員" id="input-checkbox-pattern5" />
+				<i class="acms-ico-checkbox"></i> 契約社員</label></li>
+				<li><label for="input-checkbox-pattern6" class="acms-form-checkbox"><input type="checkbox" name="pattern[]" value="派遣社員" id="input-checkbox-pattern6" />
+				<i class="acms-ico-checkbox"></i> 派遣社員</label></li>
+				<li><label for="input-checkbox-pattern7" class="acms-form-checkbox"><input type="checkbox" name="pattern[]" value="業務委託・SOHO" id="input-checkbox-pattern7" />
+				<i class="acms-ico-checkbox"></i> 業務委託・SOHO</label></li>
+				<li><label for="input-checkbox-pattern8" class="acms-form-checkbox"><input type="checkbox" name="pattern[]" value="インターン" id="input-checkbox-pattern8" />
+				<i class="acms-ico-checkbox"></i> インターン</label></li>
+			</ul>
+			<input type="hidden" name="field[]" value="pattern" />
+			<input type="hidden" name="pattern:v#required" />
+		</td>
+	</tr>
+</table>
+
+<h2>個人情報</h2>
+<table>
+	<tr>
+		<td align="right">性別 :</td>
+		<td>
+			<label for="input-radio-sex1" class="acms-form-radio"><input type="radio" name="sex" value="男" id="input-radio-sex1" checked="checked" /><i class="acms-ico-radio"></i> 男</label>
+			<label for="input-radio-sex2" class="acms-form-radio"><input type="radio" name="sex" value="女" id="input-radio-sex2" /><i class="acms-ico-radio"></i> 女</label>
+			<input type="hidden" name="field[]" value="sex" />
+			<input type="hidden" name="sex:v#required" />
+		</td>
+	</tr>
+	<tr>
+		<td align="right">メールマガジン :</td>
+		<td>
+			<label for="input-checkbox-subscribe" class="acms-form-checkbox"><input type="checkbox" name="subscribe" value="購読する" id="input-checkbox-subscribe" checked="checked" />
+			<i class="acms-ico-checkbox"></i>メールマガジンの購読を希望する</label>
+			<input type="hidden" name="field[]" value="subscribe" />
+		</td>
+	</tr>
+	<tr>
+		<td align="right">生年月日 :</td>
+		<td>
+			<input type="text" name="year" value="" size="6" /> / <select name="month">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select> / <select name="day">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+			</select>
+			<input type="hidden" name="field[]" value="year" />
+			<input type="hidden" name="field[]" value="month" />
+			<input type="hidden" name="field[]" value="day" />
+			<input type="hidden" name="year:c" value="n" />
+			<input type="hidden" name="year:v#required" />
+			<input type="hidden" name="year:v#digits" />
+			<input type="hidden" name="year:v#min" value="1900" />
+			<input type="hidden" name="year:v#max" value="2009" />
+		</td>
+	</tr>
+</table>

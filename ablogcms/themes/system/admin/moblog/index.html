@@ -1,0 +1,49 @@
+<header class="acms-box-medium">
+	<div class="acms-grid">
+		<div class="acms-col-9">
+			<h1 class="acms-admin-title"><i class="acms-ico-symbol-large acms-ico-moblog"></i>モブログ管理</h1>
+			<!--#include file="/admin/topicpath.html"-->
+		</div>
+		<div class="acms-col-3">
+			<form action="" method="post" class="acms-float-right">
+				<input type="hidden" name="bid" value="%{BID}" />
+				<input type="hidden" name="admin" value="moblog_edit" />
+				<input type="hidden" name="edit" value="insert" />
+				<input type="hidden" name="query[]" value="edit" />
+				<input type="submit" name="ACMS_POST_2GET" value="モブログの作成" class="acms-btn-admin acms-btn-admin-primary" />
+			</form>
+		</div>
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Moblog_Index -->
+
+<!-- BEGIN index#notFound -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>登録されているメールアドレスがありません。</p><!-- END index#notFound -->
+
+<h2 class="acms-panel-title">モブログ一覧</h2>
+<div class="acms-panel">
+	<!-- BEGIN index:touch#result -->
+	<table class="adminTable acms-table-admin acms-table-heading">
+		<thead>
+			<tr>
+				<th>メールアドレス</th>
+				<th>ステータス</th>
+				<th>アクション</th>
+			</tr>
+		</thead>
+		<tbody><!-- BEGIN moblog:loop -->
+			<tr>
+				<td><strong>{mail}</strong></td>
+				<td><!-- BEGIN status#open -->
+					有効<!-- END status#open --><!-- BEGIN status#close -->
+					無効<!-- END status#close -->
+				</td>
+				<td>
+					<a href="{itemUrl}&edit=update">変更</a>
+				</td>
+			</tr>
+		</tbody><!-- END moblog:loop -->
+	</table><!-- END index:touch#result -->
+</div>
+<!-- END_MODULE Admin_Moblog_Index -->

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!--#include file="/include/head/title.html" -->
+<!--#include file="/include/head/meta.html" -->
+<!--#include file="/include/head/link.html" -->
+<!--#include file="/include/head/js.html" -->
+</head>
+
+<body>
+<div id="outer-wrap">
+<div id="inner-wrap">
+	<!-- ヘッダー -->
+	<!--#include file="/include/header.html" -->
+
+	<!-- グローバルナビ -->
+	<!--#include file="/include/header/dynamicGlobalNavi.html" -->
+
+<div class="acms-container">
+
+	<!-- ※管理用パーツ -->
+	<!--#include file="/admin/action.html"-->
+
+	<!-- トピックパス -->
+	<!--#include file="/include/header/topicpath.html" -->
+	
+	<!-- ページタイトル -->
+	<!--#include file="/include/header/pageTitle.html" -->
+
+	<div class="acms-grid-r">
+	
+		<!-- メイン -->
+		<div class="acms-col-9 acms-push-3 main">
+		
+			<!-- タグフィルター -->
+			<!--#include file="/include/main/tagFilter.html" -->
+			
+			<!-- エントリーボディ（日付無） -->
+			<!--#include file="/include/main/entryBodyHistory.html" -->
+			
+		</div>
+
+		<div class="acms-col-3 acms-pull-9 sub">
+			<div id="nav">
+				<div class="acms-show-sp">
+					<!-- グローバルナビ -->
+					<!--#include file="/include/header/spGlobalNavi.html" -->
+				</div>
+			
+				<!-- エントリーリスト -->
+				<!--#include file="/include/sub/entryList.html" -->
+
+				<!-- カテゴリーリスト -->
+				<!--#include file="/include/sub/categoryList.html" -->
+				
+				<!-- ピックアップリスト -->
+				<!--#include file="/include/sub/pickupList.html" -->
+				
+				<!-- バナー -->
+				<!--#include file="/include/sub/banner.html" -->
+				
+				<!-- リンクリスト -->
+				<!--#include file="/include/sub/linkList.html" -->
+				
+				<a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- フッター -->
+<!--#include file="/include/footer.html" -->
+
+</div>
+</div>
+</body>
+</html>

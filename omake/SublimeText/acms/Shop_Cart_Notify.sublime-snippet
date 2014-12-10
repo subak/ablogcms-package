@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Shop_Cart_Notify id="${1:module_id}" -->
+<!-- BEGIN added -->
+<p class="orderMessage">{item_name}を{item_quantity}つ追加しました。1つ¥{item_price}[number_format]</p>
+<!-- END added -->
+
+<!-- BEGIN deleted -->
+<p class="orderMessage">{item_name}を削除しました。</p>
+<!-- END deleted -->
+<!-- END_MODULE Shop_Cart_Notify -->]]></content>
+	<tabTrigger>!Shop_Cart_Notify</tabTrigger>
+</snippet>

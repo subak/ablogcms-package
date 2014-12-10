@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ja" lang="ja" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" /> 
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms 既存エントリーへのタグ追加ウィザード</title>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="siteTitleBox">
+			<h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+			<span id="setupType">既存エントリーへのタグ追加</span>
+		</div>
+	</div>
+<div id="main">
+
+<!-- BEGIN step#apply -->
+    <h2>既存エントリーにタグを追加します</h2>
+        <h3>指定ワードに基づくタグの追加生成</h3>
+            <p>指定ワードを含むエントリーに対して、ワードをタグとして付与します。</p>
+    <form action="" method="post" enctype="multipart/form-data" class="acms-form">
+        <h3>1. タグを追加する対象のブログを選択してください。</h3>
+            <ul><!-- BEGIN blog:loop -->
+                <li><label class="acms-form-radio">
+<input type="radio" name="bid" value="{bid}" /><i class="acms-ico-radio"></i>&nbsp;{bid} : {name} (親BID : {parent})</label></li><!-- END blog:loop -->
+            </ul>
+        <h3>2. 指定ワードを改行区切りで記述したファイルを選択してください。</h3>
+            <p><input type="file" name="source" /></p>
+        <h3>3. オプションを設定してください。</h3>
+            <ul>
+            <li><label class="acms-form-checkbox"><input type="checkbox" name="certainly" value="on" checked="checked" /><i class="acms-ico-checkbox"></i>
+&nbsp;タイトルに指定ワードが含まれていたら、必ずタグを追加する</label></li>
+            <li><input type="text" name="threshold" value="3" size="1" />
+&nbsp;回以上、指定ワードが本文中に出現したときにタグを追加する</li>
+            </ul>
+            <p id="submitBtn"><input type="submit" name="preview" value="プレビュー" class="acms-btn-admin" /><input type="submit" name="submit" value="タグを追加" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#apply -->
+
+<!-- BEGIN step#error -->
+    <h2>既存エントリーにタグを追加します</h2>
+        <h3>指定ワードに基づくタグの追加生成</h3>
+            <p>指定ワードを含むエントリーに対して、ワードをタグとして付与します。</p>
+    <form action="" method="post" enctype="multipart/form-data" class="acms-form">
+        <!-- BEGIN preview -->
+        <h3>タグ追加のプレビュー</h3>
+            <p>指定された設定の場合、以下のエントリーに指定ワードのタグが追加されます。</p><!-- BEGIN word:loop -->
+            <h4>指定ワード: 「<strong class="highlight">{word}</strong>」がタグとして追加されるエントリー</h4>
+            <dl style="margin-left: 30px;"><!-- BEGIN entry:loop -->
+                <dt>{title} ( <label><input type="checkbox" name="ignore[]" value="{eid}@{word}" />&nbsp;タグ追加から除外</label> )</dt>
+                <dd style="margin-left: 20px;">{fulltext}</dd><!-- END entry:loop -->
+            </dl><!-- END word:loop --><!-- BEGIN notFound -->
+            <p>指定された設定で、タグの追加対象になるエントリーは見つかりませんでした。</p><!-- END notFound -->
+        <!-- END preview -->
+        <h3>1. タグを追加する対象のブログを選択してください。</h3>
+            <ul><!-- BEGIN blog:loop -->
+                <li><label class="acms-form-radio"><input type="radio" name="bid" value="{bid}"{checked} /><i class="acms-ico-radio"></i>&nbsp;{bid} : {name} (親BID : {parent})</label></li><!-- END blog:loop -->
+            </ul>
+            <!-- BEGIN blog_select:error --><p class="errorMsg">コンバート先（またはその親）のブログを選択してください。</p><!-- END blog_select:error -->
+        <h3>2. 指定ワードを改行区切りで記述したファイルを選択してください。</h3>
+            <p><input type="file" name="source" /></p>
+            <!-- BEGIN file_extention:error --><p class="errorMsg">拡張子が.txtのファイルをアップロードしてください。</p><!-- END file_extention:error -->
+            <!-- BEGIN file_upload:error --><p class="errorMsg">ファイルをアップロードしてください。</p><!-- END file_upload:error -->
+        <h3>3. オプションを設定してください。</h3>
+            <ul><!-- BEGIN certainly -->
+            <li><label class="acms-form-checkbox"><input type="checkbox" name="certainly" value="on"{certainly:checked} /><i class="acms-ico-checkbox"></i>&nbsp;タイトルに指定ワードが含まれていたら、必ずタグを追加する</label></li><!-- END certainly -->
+            <li><label class="acms-form-checkbox"><input type="text" name="threshold" value="{threshold}" size="1" /><i class="acms-ico-checkbox"></i>&nbsp;回以上、指定ワードが本文中に出現したときにタグを追加する</label></li>
+            </ul>
+            <p id="submitBtn"><input type="submit" name="preview" value="プレビュー" class="acms-btn-admin" /><input type="submit" name="submit" value="タグを追加" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#error -->
+
+<!-- BEGIN step#result -->
+    <h2>既存エントリーにタグを追加しました</h2>
+        <h3>[*ROOT_DIR*][*SETUP_DIR*]/を削除し、メンテナンスツールを終了してください</h3>
+            <p>既存のエントリーにタグを追加しました。</p>
+<!-- END step#result -->
+
+<p><a href="./index.php">メンテナンスメニューに戻る</a></p>
+</div>
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

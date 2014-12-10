@@ -1,0 +1,123 @@
+<!-- BEGIN_MODULE Admin_Form_Log -->
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-form"></i><!-- BEGIN_MODULE Admin_Form_Name -->{name} の <!-- END_MODULE Admin_Form_Name -->投稿データ一覧</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN index#notFound -->
+<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>投稿データがありません。</p><!-- END index#notFound --><!-- BEGIN refresh -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>投稿データ一覧を更新しました</p><!-- END refresh -->
+
+	<div class="acms-filter">
+		<form action="" method="post" class="acms-form">
+			<div class="acms-form-group">
+				絞り込み: 
+				<input class="" type="text" name="start" value="{start}" size="22" />
+				～
+				<input class="" type="text" name="end" value="{end}" size="22" />
+			</div>
+			通番: 
+			<input class="" type="text" name="serial" value="%{serial}" size="5" />
+			<input type="hidden" name="query[]" value="serial" />
+			<input type="hidden" name="fmid" value="%{fmid}" />
+			<input type="hidden" name="query[]" value="fmid" />
+
+			&nbsp;
+			<input type="hidden" name="mailTo" value="to" />
+			<label for="input-checkbox-mailTo" class="acms-form-checkbox">
+				<input type="checkbox" name="mailTo" value="adminTo"{mailTo:checked#adminTo} id="input-checkbox-mailTo" /><i class="acms-ico-checkbox"></i>管理者宛（件名/本文）
+			</label>
+			<input type="hidden" name="query[]" value="mailTo" />
+
+			&nbsp;
+			ソート:
+			<select class="" name="order">
+				<option value="datetime-asc"{order:selected#datetime-asc}>日時（昇順）</option>
+				<option value="datetime-desc"{order:selected#datetime-desc}>日時（降順）</option>
+				<option value="serial-asc"{order:selected#serial-asc}>連番（昇順）</option>
+				<option value="serial-desc"{order:selected#serial-desc}>連番（降順）</option>
+			</select>
+
+			&nbsp;
+			表示数:
+			<select name="limit"><!-- BEGIN limit:loop -->
+				<option value="{value}"{selected}>{value}</option><!-- END limit:loop -->
+			</select>
+			<input type="hidden" name="span" value="true" />
+			<input type="hidden" name="admin" value="form_log" />
+			<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-btn-admin acms-btn-admin-info acms-width-sp" />
+		</form>
+	</div>
+	
+	<div class="acms-form-group acms-margin-sp">
+		<form action="/bid/%{BID}/%{START}/-/%{END}/{formName}.csv?fmid=%{fmid}" method="post" class="acms-form">
+			<strong>{itemsAmount}</strong> 件の投稿データをCSV形式で
+			<select name="charset">
+				<option value="Shift-JIS">Shift-JIS</option>
+				<option value="EUC-JP">EUC-JP</option>
+				<option value="UTF-8" selected="selected">UTF-8</option>
+			</select>
+			<input type="submit" name="ACMS_POST_Log_Form_Download" value="ダウンロード" class="acms-btn-admin acms-btn-admin-primary" />
+		</form>
+	</div>
+
+	<form action="" method="post" class="acms-form">
+	<!-- BEGIN deleteAction -->
+	<div class="acms-form-group acms-margin-sp">
+		チェックした投稿データを
+		<input type="submit" name="ACMS_POST_Log_Form_Index_Delete" value="削除" class="acms-btn-admin acms-btn-admin-danger" onclick="return confirm('この操作は元に戻せません。\nよろしいですか？')" />
+	</div><!-- END deleteAction -->
+
+	<table class="adminTable acms-table-admin acms-table-heading">
+		<thead>
+			<tr>
+				<th class="acms-table-center acms-th-checkbox acms-show-sp"><label class="acms-form-checkbox"><input type="checkbox" id="checkAll" /><i class="acms-ico-checkbox"></i></label></th>
+				<th class="acms-hide-sp">日時</th>
+				<th class="acms-hide-sp">通番</th>
+				<th class="acms-hide-sp">宛先</th>
+				<th>件名 / 本文</th>
+			</tr>
+		</thead>
+		<tbody><!-- BEGIN log:loop -->
+			<tr>
+				<td class="acms-table-center acms-td-checkbox">
+					<label class="acms-form-checkbox"><input type="checkbox" name="checks[]" value="{fmid}:{serial}:{mail_to}" /><i class="acms-ico-checkbox"></i></label>
+				</td>
+				<td nowrap="nowrap">{datetime}[datetime(Y/m/d H:i)]</td>
+				<td><span class="acms-label label-default">{serial}[zero_padding]</span></td>
+				<td class="acms-show-sp acms-width-sp"><p><a href="mailto:{mail_to}[raw]">{mail_to}</a></p></td>
+				<td class="acms-show-sp acms-width-sp acms-border-bottom-sp">
+					<p class="acms-title-sp">件名: {mail_subject}</p>
+					<a href="#" class="{datetime}[datetime('YmdHis')]-fade-head acms-btn-admin">本文を表示</a>
+					<p class="{datetime}[datetime('YmdHis')]-fade-body" style="border-top:1px solid silver;">本文:<br />{mail_body}[nl2br]</p>
+				</td>
+			</tr>
+		</tbody><!-- END log:loop -->
+	</table>
+	</form>
+	<!-- BEGIN index -->
+	<div class="acms-grid">
+		<div class="acms-col-6">
+			<!-- BEGIN pager:veil -->
+			<div class="acms-pager-container">
+				<ul class="acms-pager"><!-- BEGIN backLink -->
+					<li class="prev"><a href="{url}">&laquo;&nbsp;前へ</a></li><!-- END backLink --><!-- BEGIN page:loop -->
+					<li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop --><!-- BEGIN lastPage:veil -->
+					<li class="last"><a href="{lastPageUrl}">...{lastPage}</a></li><!-- END lastPage:veil --><!-- BEGIN forwardLink -->
+					<li class="next"><a href="{url}">次へ&nbsp;&raquo;</a></li><!-- END forwardLink -->
+				</ul>
+			</div>
+			<!-- END pager:veil -->
+		</div>
+		<div class="acms-col-6">
+			<div class="acms-itemsAmount-container">
+				<p>{itemsFrom}件 - {itemsTo}件 / 全{itemsAmount}件</p>
+			</div>
+		</div>
+	</div><!-- /.acms-grid -->
+	<!-- END index -->
+<!-- END_MODULE Admin_Form_Log -->

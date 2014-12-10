@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Touch_Category -->
+
+<!-- END_MODULE Touch_Category -->]]></content>
+	<tabTrigger>!acms:touch</tabTrigger>
+    <description>Touch_Category</description>
+</snippet>

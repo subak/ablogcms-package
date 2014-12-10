@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title><!-- BEGIN_MODULE Touch_Entry -->%{ENTRY_TITLE} | <!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_Category -->%{CATEGORY_NAME} | <!-- END_MODULE Touch_Category -->%{BLOG_NAME}</title>
+<meta name="keywords" content="%{META_KEYWORDS}" />
+<meta name="description" content="%{META_DESCRIPTION}" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="%{BASE_URL}rss2.xml" />
+
+<!-- スタイルの読み込み -->
+<!--#include file="/include/link.html"-->
+
+<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--><!-- BEGIN_MODULE Js -->
+<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<script type="text/javascript" src="/js/blog.js"></script>
+<!--BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Blog_Field -->{googleAnalytics}[raw]<!-- END_MODULE Blog_Field --><!-- END_MODULE Touch_Unlogin -->
+
+<!--#include file="/include/css.html"-->
+</head>
+<body>
+
+<div class="titleInner">
+	<div class="mainImg" class="clearfix">
+		<div class="gradient">
+			<div class="acms-container">
+				<div class="acms-grid-r">
+				<h1 class="siteTitle"><a href="%{BASE_URL}">%{BLOG_NAME}</a></h1>
+				<p class="siteCaption">%{META_DESCRIPTION}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--グローバルナビゲーション-->
+<!--#include file="/include/globalNavigation.html"-->
+
+<div class="acms-container">
+	<div class="acms-grid-r contents clearfix">
+		<div class="acms-col-9">
+			<!--#include file="/admin/action.html"-->
+			<ul class="fieldgroup">
+				<li><a href="%{BLOG_URL}fieldgroup/index.html">サンプル</a></li>
+				<li><a href="%{BLOG_URL}fieldgroup/table.html">テーブル</a></li>
+				<li><a href="%{BLOG_URL}fieldgroup/unit.html">ユニット</a></li>
+			</ul>
+			<h1 id="field" class="clear fix">カスタムフィールド</h1>
+			<div class="section entry"><!-- BEGIN_MODULE Form --><!-- BEGIN step -->
+			<form action="#field" method="post" class="acms-form">
+				<table>
+					<tr>
+					<th>テキスト</th>
+						<td><input type="text" name="field_text" value="{field_text}" /></td>
+					</tr>
+					<tr>
+						<th>チェックボックス</th>
+						<td><label class="acms-form-checkbox"><input type="checkbox" name="field_checkbox" value="A"{field_checkbox:checked#A} />
+						<i class="acms-ico-checkbox"></i>
+						 A</label></td>
+					</tr>
+					<tr>
+						<th>ラジオボタン</th>
+						<td>
+							<ul>
+								<li><label class="acms-form-radio"><input type="radio" name="field_radio" value="A"{field_radio:checked#A} /> 
+								<i class="acms-ico-radio"></i>
+								A</label></li>
+								<li><label class="acms-form-radio"><input type="radio" name="field_radio" value="B"{field_radio:checked#B} />
+								<i class="acms-ico-radio"></i>
+								 B</label></li>
+								<li><label class="acms-form-radio"><input type="radio" name="field_radio" value="C"{field_radio:checked#C} />
+								<i class="acms-ico-radio"></i> 
+								C</label></li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th>テキストエリア</th>
+						<td>
+							<textarea name="field_textarea">{field_textarea}</textarea>
+						</td>
+					</tr>
+					<tr>
+						<th>セレクトボックス</th>
+						<td>
+							<select name="field_select">
+								<option value="A"{field_select:selected#A}>A</option>
+								<option value="B"{field_select:selected#B}>B</option>
+								<option value="C"{field_select:selected#C}>C</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+				<input type="hidden" name="field[]" value="field_text" />
+				<input type="hidden" name="field[]" value="field_checkbox" />
+				<input type="hidden" name="field[]" value="field_radio" />
+				<input type="hidden" name="field[]" value="field_select" />
+				<input type="submit" name="ACMS_POST_Form_Confirm" value="送信" class="acms-btn" />
+			</form><!-- END step --><!-- END_MODULE Form -->
+			</div>
+			
+			<h1 id="field-multi">複数選択カスタムフィールド</h1>
+			<div class="section entry"><!-- BEGIN_MODULE Form --><!-- BEGIN step -->
+			<form action="#field-multi" method="post" class="acms-form">
+				<table>
+					<tr>
+						<th>チェックボックス</th>
+						<td>
+							<ul>
+								<li><label class="acms-form-checkbox"><input type="checkbox" name="field_checkbox[0]" value="A"{field_checkbox:checked#A} />
+								<i class="acms-ico-checkbox"></i> 
+								A</label></li>
+								<li><label class="acms-form-checkbox"><input type="checkbox" name="field_checkbox[1]" value="B"{field_checkbox:checked#B} />
+								<i class="acms-ico-checkbox"></i> 
+								B</label></li>
+								<li><label class="acms-form-checkbox"><input type="checkbox" name="field_checkbox[2]" value="C"{field_checkbox:checked#C} />
+								<i class="acms-ico-checkbox"></i> 
+								C</label></li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<th>セレクトボックス</th>
+						<td>
+							<select name="field_select[]" multiple="multiple">
+								<option value="A"{field_select:selected#A}>A</option>
+								<option value="B"{field_select:selected#B}>B</option>
+								<option value="C"{field_select:selected#C}>C</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+				<input type="hidden" name="field[]" value="field_checkbox" />
+				<input type="hidden" name="field[]" value="field_select" />
+				<input type="submit" name="ACMS_POST_Form_Confirm" value="送信" class="acms-btn" />
+			</form><!-- END step --><!-- END_MODULE Form -->
+			</div>
+			
+			<h1 id="file-validation">ファイルのカスタムフィールド</h1>
+			<div class="section entry"><!-- BEGIN_MODULE Form --><!-- BEGIN step -->
+			<form action="#file-validation" method="post"acms-for enctype="multipart/form-data" class="m">
+				<table><!-- BEGIN pdf:veil -->
+					<tr>
+						<th>編集</th>
+						<td>
+							<label><input type="checkbox" name="pdf@edit" value="delete" /> 削除</label>
+							<input type="hidden" name="pdf@old" value="{pdf@path}" />
+						</td>
+					</tr>
+					<tr>
+						<th>PDF</th>
+						<td>
+							<a href="%{HTTP_ARCHIVES_DIR}{pdf@path}"><img src="/images/fileicon/pdf.gif" width="64" height="64" alt="pdf" /></a>
+						</td>
+					</tr><!-- END pdf:veil -->
+					<tr>
+						<th>ファイル選択</th>
+						<td>
+							<input type="file" name="pdf" />
+							<input type="hidden" name="pdf@extension" value="pdf" />
+							<!-- ファイル名 --><input type="hidden" name="pdf@filename" value="@rawfilename" />
+							<!-- BEGIN pdf@path:validator#required -->
+							<p style="color:red;">ファイルを選択して下さい。</p><!-- END pdf@path:validator#required -->
+						</td>
+					</tr>
+				</table>
+				<input type="hidden" name="pdf:extension" value="file" />
+				<input type="hidden" name="pdf@path:validator#required" />
+				<input type="hidden" name="pdf@path:validator#regex" value="@\.pdf$@" />
+				<input type="hidden" name="field[]" value="pdf" />
+				<input type="submit" name="ACMS_POST_Form_Confirm" value="送信" class="acms-btn" />
+			</form><!-- END step --><!-- END_MODULE Form -->
+			</div>
+			
+			<h1 id="image-validation">画像のカスタムフィールド</h1>
+			<div class="section entry"><!-- BEGIN_MODULE Form --><!-- BEGIN step -->
+			<form action="#image-validation" method="post" enctype="multipart/form-data" class="acms-form">
+				<table><!-- BEGIN photo:veil -->
+					<tr>
+						<th>編集</th>
+						<td>
+							<label><input type="checkbox" name="photo@edit" value="delete" /> 削除</label>
+							<input type="hidden" name="photo@old" value="{photo@path}" /> 
+						</td>
+					</tr>
+					<tr>
+						<th>イメージ</th>
+						<td><img src="%{ARCHIVES_DIR}{photo@path}" /></td>
+					</tr><!-- END photo:veil -->
+					<tr>
+						<th>ファイル選択</th>
+						<td>
+							<input type="file" name="photo" /><!-- BEGIN photo@path:validator#required -->
+							<p style="color:red;">ファイルを選択して下さい。</p><!-- END photo@path:validator#required -->
+						</td>
+					</tr>
+					<tr>
+						<th>代替テキスト</th>
+						<td>
+							<input type="text" name="photo@alt" value="{photo@alt}" /><!-- BEGIN photo@alt:validator#required -->
+							<p style="color:red;">代替テキストが入力されていません。</p><!-- END photo@alt:validator#required -->
+						</td>
+					</tr>
+				</table>
+				<!-- ファイル名 --><input type="hidden" name="photo@filename" value="@rawfilename" />
+				<!-- 拡張子 --><!-- <input type="hidden" name="photo@extension" value="png" /> -->
+				<!-- 最大横幅 --><!-- <input type="hidden" name="photo@width" value="480" /> -->
+				<!-- 最大縦幅 --><!-- <input type="hidden" name="photo@height" value="320" /> -->
+				<!-- 最大長辺 --><!-- <input type="hidden" name="photo@size" value="480" /> --><!-- 縦横どちらかの指定がある場合にはそちらが優先となります -->
+				<!-- 最大横幅（大） --><!-- <input type="hidden" name="photo@largeWidth" value="640" /> -->
+				<!-- 最大縦幅（大） --><!-- <input type="hidden" name="photo@largeHeight" value="480" /> -->
+				<!-- 最大長辺（大） --><!-- <input type="hidden" name="photo@largeSize" value="640" /> -->
+				<!-- 最大横幅（小） --><!-- <input type="hidden" name="photo@tinyWidth" value="320" /> -->
+				<!-- 最大縦幅（小） --><!-- <input type="hidden" name="photo@tinyHeight" value="240" /> -->
+				<!-- 最大長辺（小） --><!-- <input type="hidden" name="photo@tinySize" value="320" /> -->
+				<input type="hidden" name="photo@path:validator#required" />
+				<input type="hidden" name="photo@alt:validator#required" />
+				<input type="hidden" name="photo:extension" value="image" />
+				<input type="hidden" name="field[]" value="photo" />
+				<input type="submit" name="ACMS_POST_Form_Confirm" value="送信" class="acms-btn" />
+			</form><!-- END step --><!-- END_MODULE Form -->
+			</div>
+			
+			<h1 id="field-group">カスタムフィールドのグループ</h1>
+			<div class="section entry"><!-- BEGIN_MODULE Form --><!-- BEGIN step -->
+			<form action="#field-group" method="post" class="acms-form">
+				<ul><!-- BEGIN fieldgroup:loop -->
+					<li>
+						<table>
+							<tr>
+								<th>テキスト</th>
+								<td><input type="text" name="field_text[{i}]" value="{field_text}" /></td>
+							</tr>
+							<tr>
+								<th>チェックボックス</th>
+								<td><label class="acms-form-checkbox"><input type="checkbox" name="field_checkbox[{i}]" value="A"{field_checkbox:checked#A} />
+								<i class="acms-ico-checkbox"></i> 
+								A</label></td>
+							</tr>
+							<tr>
+								<th>ラジオボタン</th>
+								<td>
+									<ul>
+										<li><label class="acms-form-radio"><input type="radio" name="field_radio[{i}]" value="A"{field_radio:checked#A} />
+										<i class="acms-ico-radio"></i> 
+										A</label></li>
+										<li><label class="acms-form-radio"><input type="radio" name="field_radio[{i}]" value="B"{field_radio:checked#B} />
+										<i class="acms-ico-radio"></i> 
+										B</label></li>
+										<li><label class="acms-form-radio"><input type="radio" name="field_radio[{i}]" value="C"{field_radio:checked#C} /> 
+										<i class="acms-ico-radio"></i> C
+										</label></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>テキストエリア</th>
+								<td>
+									<textarea name="field_textarea[{i}]">{field_textarea}</textarea>
+								</td>
+							</tr>
+							<tr>
+								<th>セレクトボックス</th>
+								<td>
+									<select name="field_select[{i}]">
+										<option value="A"{field_select:selected#A}>A</option>
+										<option value="B"{field_select:selected#B}>B</option>
+										<option value="C"{field_select:selected#C}>C</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</li><!-- END fieldgroup:loop -->
+					<li>
+						<table>
+							<tr>
+								<th>テキスト</th>
+								<td><input type="text" name="field_text[]" value="" /></td>
+							</tr>
+							<tr>
+								<th>チェックボックス</th>
+								<td><label class="acms-form-checkbox"><input type="checkbox" name="field_checkbox[]" value="A" />
+								<i class="acms-ico-checkbox"></i> 
+								 A</label></td>
+							</tr>
+							<tr>
+								<th>ラジオボタン</th>
+								<td>
+									<ul>
+										<li><label class="acms-form-radio"><input type="radio" name="field_radio[]" value="A" />
+										<i class="acms-ico-radio"></i> 
+										A</label></li>
+										<li><label class="acms-form-radio"><input type="radio" name="field_radio[]" value="B" />
+										<i class="acms-ico-radio"></i> 
+										B</label></li>
+										<li><label class="acms-form-radio"><input type="radio" name="field_radio[]" value="C" />
+										<i class="acms-ico-radio"></i>
+										C</label></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>テキストエリア</th>
+								<td>
+									<textarea name="field_textarea[]"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<th>セレクトボックス</th>
+								<td>
+									<select name="field_select[]">
+										<option value="A">A</option>
+										<option value="B">B</option>
+										<option value="C">C</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</li>
+				</ul>
+				<input type="hidden" name="@fieldgroup[]" value="field_text" />
+				<input type="hidden" name="@fieldgroup[]" value="field_checkbox" />
+				<input type="hidden" name="@fieldgroup[]" value="field_radio" />
+				<input type="hidden" name="@fieldgroup[]" value="field_select" />
+				<input type="hidden" name="field[]" value="field_text" />
+				<input type="hidden" name="field[]" value="field_checkbox" />
+				<input type="hidden" name="field[]" value="field_radio" />
+				<input type="hidden" name="field[]" value="field_select" />
+				<input type="hidden" name="field[]" value="@fieldgroup" />
+				<input type="submit" name="ACMS_POST_Form_Confirm" value="送信" class="acms-btn" />
+			</form><!-- END step --><!-- END_MODULE Form -->
+			</div>
+			
+			<h1>ファイルのグループ</h1><!-- http://www.a-blogcms.jp/support/manual/customizing/file-upload.html -->
+			<div class="section entry"><!-- BEGIN_MODULE Form --><!-- BEGIN step -->
+			<form action="" method="post" enctype="multipart/form-data" class="acms-form">
+				<ul><!-- BEGIN pdfgroup:loop -->
+					<li>
+						<table><!-- BEGIN pdf:veil -->
+							<tr>
+								<th>編集</th>
+								<td>
+									<label><input type="checkbox" name="pdf@edit[{i}]" value="delete" /> 削除</label>
+									<input type="hidden" name="pdf@old[{i}]" value="{pdf@path}" />
+								</td>
+							</tr>
+							<tr>
+								<th>PDF</th>
+								<td>
+									<a href="%{HTTP_ARCHIVES_DIR}{pdf@path}"><img src="/images/fileicon/pdf.gif" width="64" height="64" alt="pdf" /></a>
+								</td>
+							</tr><!-- END pdf:veil -->
+							<tr>
+								<th>ファイル選択</th>
+								<td>
+									<input type="file" name="pdf[{i}]" />
+									<input type="hidden" name="pdf@extension[{i}]" value="pdf" />
+									<!-- ファイル名 --><!-- <input type="hidden" name="pdf@filename[{i}]" value="sample{i}.pdf" /> -->
+								</td>
+							</tr>
+						</table>
+					</li><!-- END pdfgroup:loop -->
+					<li>
+						<table>
+							<tr>
+								<th>ファイル選択</th>
+								<td>
+									<input type="file" name="pdf[]" />
+									<input type="hidden" name="pdf@extension[]" value="pdf" />
+									<!-- ファイル名 --><!-- <input type="hidden" name="pdf@filename[]" value="sample.pdf" /> -->
+								</td>
+							</tr>
+						</table>
+					</li>
+				</ul>
+				<input type="hidden" name="pdf:extension" value="file" />
+				<input type="hidden" name="@pdfgroup[]" value="pdf@path" />
+				<input type="hidden" name="@pdfgroup[]" value="pdf@old" />
+				<input type="hidden" name="field[]" value="pdf" />
+				<input type="hidden" name="field[]" value="@pdfgroup" />
+				<input type="submit" name="ACMS_POST_Form_Confirm" value="送信" class="acms-btn" />
+			</form><!-- END step --><!-- END_MODULE Form -->
+			</div>
+			
+			<h1 id="photo-group">画像のグループ</h1>
+			<div class="section entry"><!-- BEGIN_MODULE Form --><!-- BEGIN step -->
+			<form action="#photo-group" method="post" enctype="multipart/form-data" class="acms-form">
+				<ul><!-- BEGIN photogroup:loop -->
+					<li>
+						<table><!-- BEGIN photo:veil -->
+							<tr>
+								<th>編集</th>
+								<td>
+									<label><input type="checkbox" name="photo@edit[{i}]" value="delete" /> 
+									<i class="acms-ico-checkbox"></i> 削除</label>
+									<input type="hidden" name="photo@old[{i}]" value="{photo@path}" /> 
+								</td>
+							</tr>
+							<tr>
+								<th>イメージ</th>
+								<td><img src="%{ARCHIVES_DIR}{photo@path}" /></td>
+							</tr><!-- END photo:veil -->
+							<tr>
+								<th>ファイル選択</th>
+								<td><input type="file" name="photo[{i}]" /></td>
+							</tr>
+							<tr>
+								<th>代替テキスト</th>
+								<td><input type="text" name="photo@alt[{i}]" value="{photo@alt}" /></td>
+							</tr>
+						</table>
+					</li><!-- END photogroup:loop -->
+					<li>
+						<table>
+							<tr>
+								<th>ファイル選択</th>
+								<td><input type="file" name="photo[]" /></td>
+							</tr>
+							<tr>
+								<th>代替テキスト</th>
+								<td><input type="text" name="photo@alt[]" value="" /></td>
+							</tr>
+						</table>
+						<!-- ファイル名 --><!-- <input type="hidden" name="photo@filename" value="sample.png" /> -->
+						<!-- 拡張子 --><!-- <input type="hidden" name="photo@extension" value="png" /> -->
+						<!-- 最大横幅 --><!-- <input type="hidden" name="photo@width" value="480" /> -->
+						<!-- 最大縦幅 --><!-- <input type="hidden" name="photo@height" value="320" /> -->
+						<!-- 最大長辺 --><!-- <input type="hidden" name="photo@size" value="480" /> --><!-- 縦横どちらかの指定がある場合にはそちらが優先となります -->
+						<!-- 最大横幅（大） --><!-- <input type="hidden" name="photo@largeWidth" value="640" /> -->
+						<!-- 最大縦幅（大） --><!-- <input type="hidden" name="photo@largeHeight" value="480" /> -->
+						<!-- 最大長辺（大） --><!-- <input type="hidden" name="photo@largeSize" value="640" /> -->
+						<!-- 最大横幅（小） --><!-- <input type="hidden" name="photo@tinyWidth" value="320" /> -->
+						<!-- 最大縦幅（小） --><!-- <input type="hidden" name="photo@tinyHeight" value="240" /> -->
+						<!-- 最大長辺（小） --><!-- <input type="hidden" name="photo@tinySize" value="320" /> -->
+					</li>
+				</ul>
+				<input type="hidden" name="@photogroup[]" value="photo@path" />
+				<input type="hidden" name="@photogroup[]" value="photo@alt" />
+				<input type="hidden" name="@photogroup[]" value="photo@x" />
+				<input type="hidden" name="@photogroup[]" value="photo@y" />
+				<!--
+				<input type="hidden" name="@photogroup[]" value="photo@largePath" />
+				<input type="hidden" name="@photogroup[]" value="photo@largeX" />
+				<input type="hidden" name="@photogroup[]" value="photo@largeY" />
+				<input type="hidden" name="@photogroup[]" value="photo@largeAlt" />
+				-->
+				<!--
+				<input type="hidden" name="@photogroup[]" value="photo@tinyPath" />
+				<input type="hidden" name="@photogroup[]" value="photo@tinyX" />
+				<input type="hidden" name="@photogroup[]" value="photo@tinyY" />
+				<input type="hidden" name="@photogroup[]" value="photo@tinyAlt" />
+				-->
+				<input type="hidden" name="photo:extension" value="image" />
+				<input type="hidden" name="field[]" value="photo" />
+				<input type="hidden" name="field[]" value="@photogroup" />
+				<input type="submit" name="ACMS_POST_Form_Confirm" value="送信" class="acms-btn" />
+			</form><!-- END step --><!-- END_MODULE Form -->
+			</div>
+		</div>
+		<div class="acms-col-3">
+			<!-- #include file="/include/navi.html" -->
+		</div>
+	</div>
+</div>
+
+
+<footer class="footer">
+	<p class="copyright"><small>&copy; %{DOMAIN}</small></p>
+</footer>
+</body>
+</html>

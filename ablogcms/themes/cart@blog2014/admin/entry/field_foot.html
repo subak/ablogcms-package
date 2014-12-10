@@ -1,0 +1,77 @@
+<table class="entryFormTable acms-form">
+	<tr>
+		<th>商品名(必須)</th>
+		<td>
+			<input type="text" name="item_name" value="{item_name}" size="40" />
+			<input type="hidden" name="field[]" value="item_name" />
+			<input type="hidden" name="item_name:v#required" id="validator-item_name-required" />
+			<label for="validator-item_name-required" class="validator-result-{item_name:validator#required}">
+				商品名を入力してください。
+			</label>
+		</td>
+	</tr>
+	<tr>
+		<th>色選択</th>
+		<td>
+			<label class="acms-form-checkbox"><input type="checkbox" name="select_color[]" value="赤"{select_color:checked#赤} /><i class="acms-ico-checkbox"></i>赤</label>
+			<label class="acms-form-checkbox"><input type="checkbox" name="select_color[]" value="青"{select_color:checked#青} /><i class="acms-ico-checkbox"></i>青</label>
+			<label class="acms-form-checkbox"><input type="checkbox" name="select_color[]" value="黄"{select_color:checked#黄} /><i class="acms-ico-checkbox"></i>黄</label>
+			<input type="hidden" name="field[]" value="select_color" />
+		</td>
+	</tr>
+	
+	<tr>
+		<th>サイズ</th>
+		<td>
+			<label class="acms-form-checkbox"><input type="checkbox" name="select_size[]" value="S"{select_size:checked#S} /><i class="acms-ico-checkbox"></i>S</label>
+			<label class="acms-form-checkbox"><input type="checkbox" name="select_size[]" value="M"{select_size:checked#M} /><i class="acms-ico-checkbox"></i>M</label>
+			<label class="acms-form-checkbox"><input type="checkbox" name="select_size[]" value="L"{select_size:checked#L} /><i class="acms-ico-checkbox"></i>L</label>
+			<input type="hidden" name="field[]" value="select_size" />
+		</td>
+	</tr>
+	<tr>
+		<th>価格</th>
+		<td>
+			<input type="text" name="item_price" value="{item_price}" />
+			<input type="hidden" name="field[]" value="item_price" />
+			<input type="hidden" name="item_price:c" value="a" />
+			<input type="hidden" name="item_price:v#digits" id="validator-item_price-digits" />
+			<input type="hidden" name="item_price:v#required" id="validator-item_price-required" />
+			<label for="validator-item_price-required" class="validator-result-{item_price:validator#required}">
+				価格を入力してください。
+			</label>
+			<label for="validator-item_price-digits" class="validator-result-{item_price:validator#digits}">
+				数字のみを入力してください。
+			</label>
+		</td>
+	</tr>
+	<!-- 	
+		在庫管理をしない場合は削除して下さい。
+		サイズや色のようなバリエーションがある場合は
+		在庫数の管理はできません。
+	-->
+	<tr>
+		<th>在庫数</th>
+		<td>
+			<input type="text" name="item_stock" value="{item_stock}" size="14" />
+			<input type="hidden" name="field[]" value="item_stock" />
+		</td>
+	</tr>
+	<!-- <tr>
+		<th>管理コード(JAN, ITF等)</th>
+		<td>
+			<input type="text" name="item_code" value="{item_code}" size="14" />
+			<input type="hidden" name="field[]" value="item_code" />
+		</td>
+	</tr> -->
+	<tr>
+		<th>規定外の送料</th>
+		<td>
+			<!--
+			<label><input type="radio" name="item_except" value="off"{item_except:checked#off} />&nbsp;設定しない</label>
+			-->
+			<label class="acms-form-checkbox"><input type="checkbox" name="item_except" value="on"{item_except:checked#on} /><i class="acms-ico-checkbox"></i>設定する</label>
+			<input type="hidden" name="field[]" value="item_except" />
+		</td>
+	</tr>
+</table>

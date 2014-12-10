@@ -1,0 +1,795 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms インストールウィザード</title>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="siteTitleBox">
+			<h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+			<span id="setupType">インストール</span>
+		</div>
+	</div>
+<!-- BEGIN 1 -->
+	<!-- BEGIN step#apply -->
+	<div id="main">
+	<form action="" method="post">
+		<h2 style="clear:both;">a-blog cmsをダウンロードいただき、ありがとうございます。</h2>
+		<p>a-blog cms Ver.<strong>[*VERSION*]</strong>を新規にインストールします。このインストールウィザードに沿って作業を進めると、インストールのために必要な設定をおこなうことができます。</p>
+	
+		<h3>インストールウィザードの設定内容</h3>
+		<p>このインストールウィザードで設定する内容は、以下のとおりです。</p>
+		<ul id="stepList">
+			<li><img src="img/step1s.gif" alt="Step1" width="16" height="16" />&nbsp;&nbsp;動作環境のチェック</li>
+			<li><img src="img/step2s.gif" alt="Step2" width="16" height="16" />&nbsp;&nbsp;ドメインの設定</li>
+			<li><img src="img/step3s.gif" alt="Step3" width="16" height="16" />&nbsp;&nbsp;データベースの設定</li>
+			<li><img src="img/step4s.gif" alt="Step4" width="16" height="16" />&nbsp;&nbsp;テーブルの作成</li>
+			<li><img src="img/step5s.gif" alt="Step5" width="16" height="16" />&nbsp;&nbsp;ブログとユーザーの設定</li>
+		</ul>
+
+		<h3>事前準備</h3>
+		<p>インストールウィザードを始める前に、以下の準備をしてください。</p>
+		<ul id="checkList">
+			<li>ご利用のサーバーがa-blog cmsの<a href="http://www.a-blogcms.jp/" target="_blank" title="a-blog cms オフィシャルサイト">動作条件</a>を満たしているか確認してください。</li>
+			<li><strong>config.server.php</strong> のパーミッションを <strong>読み書き可能</strong> に設定してください。</li>
+			<li><strong>archives, archives_rev</strong> ディレクトリのパーミッションを <strong>読み書き可能</strong> に設定してください。</li>
+			<li>MySQLデータベースの「<strong>サーバー名</strong>」「<strong>データベース名</strong>」「<strong>ユーザー名</strong>」「<strong>パスワード</strong>」を控えておいてください。※</li>
+			<li>ルートディレクトリおよび、archive, archives_rev, private, themesディレクトリの<strong>htaccess.txtの名前を変更して、.htaccessに変更</strong>してください。</li>
+		</ul>
+		<p>（※読み書き可能なパーミッションの設定は、サーバーの設定に依存します。）</p>
+		<p>（※データベースはサービスによっては契約時に用意されていますが、サービスの管理ページで作成する必要がある事もあります。）</p>
+
+		<p class="notice">準備ができたら、<strong><img src="img/step1s.gif" alt="Step1" width="16" height="16" />&nbsp;動作環境のチェック を実行します。</strong></p>
+		<p id="submitBtn">
+			<input type="hidden" name="phase" value="1" />
+			<input type="hidden" name="do" value="true" />
+			<input type="submit" name="submit" value="Step1 : 動作環境のチェックを実行する" class="acms-btn-admin" />
+		</p>
+	</form>
+	</div>
+	<!-- END step#apply -->
+	
+	<!-- BEGIN step#error -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processing">動作環境のチェック</li>
+			<li id="step2">ドメインの設定</li>
+			<li id="step3">データベースの設定</li>
+			<li id="step4">テーブルの作成</li>
+			<li id="step5">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+	<form action="" method="post">
+		<h2><img src="./img/step1b.gif" width="24" height="24" alt="" />動作環境のチェック</h2>
+		<p>動作環境のチェックを実行しました。</p>
+		<!-- BEGIN php_version:error --><h3>PHPのバージョン</h3>
+		<p class="errorMsg">ご利用の環境のPHPのバージョンが「<strong>[*PHP_VERSION*]</strong>」となっているため、a-blog cmsをインストールすることができません。</p>
+		<p class="errorMsg">PHP 5.1.6 が動作する環境でインストールしてください。</p><!-- END php_version:error -->
+	
+		<!-- BEGIN config_exists:error --><h3>config.server.phpが見つかりません</h3>
+		<p class="errorMsg">config.server.phpが見つかりません。正しくコピーされているか確認してください。</p><!-- END config_exists:error -->
+	
+		<!-- BEGIN config_permission:error --><h3>config.server.phpのパーミッション</h3>
+		<p class="errorMsg">config.server.phpのパーミッションを読み書き可能に設定してください。</p><!-- END config_permission:error -->
+	
+		<!-- BEGIN license_exists:error --><h3>license.phpが見つかりません</h3>
+		<p class="errorMsg">license.phpが見つかりません。正しくコピーされているか確認してください。</p><!-- END license_exists:error -->
+		
+		<!-- BEGIN themes_exists:error --><h3>themesディレクトリが見つかりません</h3>
+		<p class="errorMsg">テーマの保管用のディレクトリが見つかりません。正しくコピーされているか確認してください。</p><!-- END themes_exists:error -->
+
+		<!-- BEGIN archives_exists:error --><h3>archivesディレクトリが見つかりません</h3>
+		<p class="errorMsg">ファイルのアップロード用のディレクトリが見つかりません。正しくコピーされているか確認してください。</p><!-- END archives_exists:error -->
+	
+		<!-- BEGIN archives_permission:error --><h3>archivesディレクトリのパーミッション</h3>
+		<p class="errorMsg">ファイルのアップロード用のディレクトリのパーミッションを読み書き可能に設定してください。</p><!-- END archives_permission:error -->
+		
+		<!-- BEGIN htaccess_exists:error --><h3>.htaccessの有効化</h3>
+		<p class="errorMsg">ルートディレクトリのhtaccess.txtの名前を変更して、.htaccessに変更してください。</p><!-- END htaccess_exists:error -->
+		
+		<!-- BEGIN spl_exists:error --><h3>必須モジュールが足りません（SPL）</h3>
+		<p class="errorMsg">ご利用のPHPがa-blog cmsの動作に必要なモジュールを利用できないため、インストールすることができません。</p>
+		<p class="errorMsg">SPLを利用できる環境でインストールしてください。</p><!-- END spl_exists:error -->
+
+		<!-- BEGIN gd_exists:error --><h3>必須モジュールが足りません（GD）</h3>
+		<p class="errorMsg">ご利用のPHPがa-blog cmsの動作に必要なモジュールを利用できないため、インストールすることができません。</p>
+		<p class="errorMsg">GDを利用できる環境でインストールしてください。</p><!-- END gd_exists:error -->
+
+		<!-- BEGIN safemode_running:error --><h3>PHPのセーフモード</h3>
+		<p class="errorMsg">PHPのセーフモードが有効です。セーフモードを無効(off)にしてから再度セットアップを実行してください。</p><!-- END safemode_running:error -->
+
+		<input type="hidden" name="phase" value="1" />
+		<input type="hidden" name="do" value="true" />
+		<p id="submitBtn"><input type="submit" name="submit" value="再度チェックを実行する" class="acms-btn-admin" /></p>
+	</form>
+	</div>
+	<!-- END step#error -->
+	
+	<!-- BEGIN step#result -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processing">動作環境のチェック</li>
+			<li id="step2">ドメインの設定</li>
+			<li id="step3">データベースの設定</li>
+			<li id="step4">テーブルの作成</li>
+			<li id="step5">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+	<form action="" method="post">
+		<h2><img src="./img/step1b.gif" width="24" height="24" alt="" />動作環境のチェック</h2>
+		<p>動作環境のチェックを実行しました。</p>
+		<h3>PHPのバージョン</h3>
+		<p><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> ご利用の環境のPHPのバージョンは「<strong>[*PHP_VERSION*]</strong>」です。</p>
+		<!-- BEGIN simplexml_exists:notice --><p><img src="./img/checkIcon.gif" alt="" width="13" height="12" /> この環境では、simplexmlライブラリを利用できない為、一部の外部API系モジュールを利用できません。<small>(CMSのインストールは可能です)</small></p><!-- END simplexml_exists:notice -->
+		<!-- BEGIN hash_exists:notice --><p><img src="./img/checkIcon.gif" alt="" width="13" height="12" /> この環境では、hashライブラリを利用できない為、一部の外部API系モジュールを利用できません。<small>(CMSのインストールは可能です)</small></p><!-- END hash_exists:notice -->
+		<h3>パーミッション</h3>
+		<p><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> config.server.phpのパーミッションは、正しく設定されています。</p>
+		<p><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> ファイルのアップロード用のディレクトリのパーミッションは、正しく設定されています。</p>
+		<h3>GD</h3>
+		<p><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> GDを利用する設定になっています。</p>
+		<!-- BEGIN imagerotate_exists:notice --><p><img src="./img/checkIcon.gif" alt="" width="13" height="12" /> この環境では画像の回転処理を利用できません。バンドル版のGDライブラリが必要です。<small>(CMSのインストールは可能です)</small></p><!-- END imagerotate_exists:notice -->
+		<h3>.htaccess</h3>
+		<p><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> ルートディレクトリの.htaccessは有効化されています。</p>
+		<p>archives, private, themesディレクトリ内の.htaccessは必須ではありませんが、有効化を強くお勧めします。</p>
+		<p class="notice">動作環境のチェックを完了しました。<strong><img src="img/step2s.gif" alt="Step2" width="16" height="16" />&nbsp;ドメインの設定 に進みます。</strong></p>
+		<p id="submitBtn">
+			<input type="hidden" name="phase" value="2" />
+			<input type="submit" name="submit" value="Step2 : ドメインの設定 に進む" class="acms-btn-admin" />
+		</p>
+	</form>
+	</div>
+	<!-- END step#result -->
+<!-- END 1 -->
+
+
+
+<!-- BEGIN 2 -->
+	<!-- BEGIN step#apply -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processing">ドメインの設定</li>
+			<li id="step3">データベースの設定</li>
+			<li id="step4">テーブルの作成</li>
+			<li id="step5">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2><img src="./img/step2b.gif" width="24" height="24" alt="" />ドメインの設定</h2>
+		<form action="" method="post" class="acms-form">
+			<p>ここでは、ドメインの設定を行います。ご利用のドメイン名を入力し、[ドメインを設定する]ボタンをクリックしてください。</p>
+			<p>ドメインが間違っていると次のステップに進むことができません。入力欄をご確認の上、設定してください。</p>
+			<dl>
+				<dt>ドメイン名</dt>
+				<dd>
+					<input type="text" name="domain" size="20" value="[*HTTP_HOST*]" />
+				</dd>
+			</dl>
+			<p id="submitBtn">
+				<input type="submit" name="submit" value="ドメインを設定する" class="acms-btn-admin" />
+				<input type="hidden" name="do" value="true" />
+				<input type="hidden" name="phase" value="2" />
+			</p>
+		</form>
+	</div>
+	<!-- END step#apply -->
+	
+	<!-- BEGIN step#error -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processing">ドメインの設定</li>
+			<li id="step3">データベースの設定</li>
+			<li id="step4">テーブルの作成</li>
+			<li id="step5">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2><img src="./img/step2b.gif" width="24" height="24" alt="" />ドメインの設定</h2>
+		<form action="" method="post" class="acms-form">
+			<p>ドメインの設定を実行しました。</p>
+			<!-- BEGIN domain_input:error -->
+			<p class="errorMsg">ドメイン名が入力されていません。ご利用のドメイン名を入力し、[ドメインを設定する]ボタンをクリックしてください。</p><!-- END domain_input:error -->
+			<!-- BEGIN domain_invalid:error -->
+			<p class="errorMsg">ドメイン名が不正です。ご確認の上、もう一度入力してください。</p><!-- END domain_invalid:error -->
+			<!-- BEGIN config_write:error -->
+			<p class="errorMsg">config.server.phpに書き込めませんでした。パーミッションを確認してください。</p><!-- END config_write:error -->
+			<!-- BEGIN config_open:error -->
+			<p class="errorMsg">config.server.phpを開けられませんでした。パーミッションを確認してください。</p><!-- END config_open:error -->
+			<!-- BEGIN config_close:error -->
+			<p class="errorMsg">config.server.phpを閉じられませんでした。パーミッションを確認してください。</p><!-- END config_close:error -->
+			<dl>
+				<dt>ドメイン名</dt>
+				<dd>
+					<input type="text" name="domain" size="20" value="[*HTTP_HOST*]" />
+				</dd>
+			</dl>
+			<p id="submitBtn">
+				<input type="submit" name="setup" value="ドメインを設定する" class="acms-btn-admin" />
+				<input type="hidden" name="do" value="true" />
+				<input type="hidden" name="phase" value="2" />
+			</p>
+		</form>
+	</div>
+	<!-- END step#error -->
+	
+	<!-- BEGIN step#result -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processing">ドメインの設定</li>
+			<li id="step3">データベースの設定</li>
+			<li id="step4">テーブルの作成</li>
+			<li id="step5">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2><img src="./img/step2b.gif" width="24" height="24" alt="" />ドメインの設定</h2>
+		<form action="" method="post" class="acms-form">
+			<dl>
+				<dt>ドメイン名</dt>
+				<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> <strong>{domain}</strong></dd>
+			</dl>
+			<p>誤ったドメインで設定されていると、次のステップに進むことができません。</p>
+			<p>次のステップに進めなかった場合は、セットアップを最初からやり直してください。</p>
+			<p class="notice">ドメインの設定を完了しました。<strong><img src="img/step3s.gif" alt="Step3" width="16" height="16" />&nbsp;データベースの設定 に進みます。</strong></p>
+			<p id="submitBtn">
+				<input type="submit" name="setup" value="Step3 : データベースの設定 に進む" class="acms-btn-admin" />
+				<input type="hidden" name="phase" value="3" />
+			</p>
+		</form>
+	</div>
+	<!-- END step#result -->
+<!-- END 2 -->
+
+<!-- BEGIN 3 -->
+
+	<!-- BEGIN step#apply -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processed">ドメインの設定</li>
+			<li id="step3" class="processing">データベースの設定</li>
+			<li id="step4">テーブルの作成</li>
+			<li id="step5">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2><img src="./img/step3b.gif" width="24" height="24" alt="" />データベースの設定</h2>
+		<form action="" method="post" class="acms-form">
+			<p>ここでは、データベース等の設定を行います。データベース等の情報を入力し、[データベースを設定する]ボタンをクリックしてください。</p>
+			<h3>データベースの設定</h3>
+			<dl>
+				<dt>データベースサーバー名</dt>
+				<dd>
+					<input type="text" name="db_host" size="20" value="{db_host}" />
+				</dd>
+				<dt>データベース名</dt>
+				<dd>
+					<input type="text" name="db_name" size="20" value="{db_name}" /><br />
+					<label class="acms-form-checkbox"><input type="checkbox" name="db_create" value="true" /><i class="acms-ico-checkbox"></i>&nbsp; データベースが存在しなかった場合に、指定された名前でデータベースを作成する&nbsp;(CREATE権限が必要です)</label>
+				</dd>
+				<dt>データベースユーザー名</dt>
+				<dd>
+					<input type="text" name="db_user" value="" style="display:none;" />
+					<input type="text" name="db_user" size="20" value="{db_user}" autocomplete="off" />
+				</dd>
+				<dt>データベースパスワード</dt>
+				<dd>
+					<p>今、あなたのうしろに、誰かがいると、次の画面で入力したパスワードが見えてしまいます。ご注意ください。</p>
+					<input type="password" name="db_pass" value="" style="display:none;" />
+					<input type="password" name="db_pass" size="10" value="{db_pass}" autocomplete="off" />
+				</dd>
+				<dt>テーブル先頭文字列</dt>
+				<dd>
+					<input type="text" name="db_prefix" size="20" value="{db_prefix}" />
+				</dd>
+				<dt>データベース文字コード</dt>
+				<dd>
+					<select name="db_charset">
+						<option value="UTF-8">UTF-8</option>
+						<option value="EUC-JP">EUC-JP</option>
+						<option value="SJIS">Shift JIS</option>
+					</select>
+				</dd>
+			</dl>
+
+			<p id="submitBtn">
+				<input type="submit" name="setup" value="データベースを設定する" onclick="return confirm(\'現在の入力内容で設定してよろしいですか？\');" class="acms-btn-admin" />
+				<input type="hidden" name="do" value="true" />
+				<input type="hidden" name="phase" value="3" />
+			</p>
+		</form>
+	</div>
+	<!-- END step#apply -->
+
+	<!-- BEGIN step#error -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processed">ドメインの設定</li>
+			<li id="step3" class="processing">データベースの設定</li>
+			<li id="step4">テーブルの作成</li>
+			<li id="step5">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2><img src="./img/step3b.gif" width="24" height="24" alt="" />データベースの設定</h2>
+		<form action="" method="post" class="acms-form">
+			<h3>データベースの設定</h3>
+			<!-- BEGIN server_connect:error -->
+				<p class="errorMsg">データベースサーバーに接続できませんでした。サーバー名・ユーザー名・パスワードのいずれかが違う可能性があります。<br />もう一度確認して[設定]ボタンをクリックしてください。</p>
+			<!-- END server_connect:error -->
+			
+			<!-- BEGIN database_connect:error -->
+				<p class="errorMsg">データベースに接続できませんでした。サーバー名・ユーザー名・パスワードは正しいようですが、データベース名が正しくありません。<br />もう一度確認して[設定]ボタンをクリックしてください。</p>
+			<!-- END database_connect:error -->
+
+			<!-- BEGIN mysql_version:error -->
+				<p class="errorMsg">MySQLのバージョンが条件を満たしていません。バージョン4.1.0 以降が必要です。</p>
+			<!-- END mysql_version:error -->
+				<dl>
+					<dt>データベースサーバー名</dt>
+					<dd>
+						<input type="text" name="db_host" size="20" value="{db_host}" />
+						<!-- BEGIN db_host_input:error --><p class="errorMsg">データベースサーバー名を入力してください。</p><!-- END db_host_input:error -->
+					</dd>
+					<dt>データベース名</dt>
+					<dd>
+						<input type="text" name="db_name" size="20" value="{db_name}" /><br />
+						<label class="acms-form-checkbox"><input type="checkbox" name="db_create" value="true" /><i class="acms-ico-checkbox"></i>&nbsp; データベースが存在しなかった場合に、指定された名前でデータベースを作成する&nbsp;(CREATE権限が必要です)</label>
+						<!-- BEGIN db_name_input:error --><p class="errorMsg">データベース名を入力してください。</p><!-- END db_name_input:error -->
+						<!-- BEGIN create_database:error -->
+							<p class="errorMsg">データベースの作成に失敗しました。同名のデータベースが既に存在しているか、MySQLユーザーの権限が十分ではありません。管理者に確認してください。</p>
+						<!-- END create_database:error -->
+					</dd>
+					<dt>データベースユーザー名</dt>
+					<dd>
+						<input type="text" name="db_user" value="" style="display:none;" />
+						<input type="text" name="db_user" size="20" value="{db_user}" autocomplete="off" />
+						<!-- BEGIN db_user_input:error --><p class="errorMsg">データベースユーザー名を入力してください。</p><!-- END db_user_input:error -->
+					</dd>
+					<dt>データベースパスワード</dt>
+					<dd>
+						<p>今、あなたのうしろに、誰かがいると、次の画面で入力したパスワードが見えてしまいます。ご注意ください。</p>
+						<input type="password" name="db_pass" value="" style="display:none;" />
+						<input type="password" name="db_pass" size="10" value="{db_pass}" autocomplete="off" />
+						<!-- BEGIN db_pass_input:error --><p class="errorMsg">データベースパスワードを入力してください。</p><!-- END db_pass_input:error -->
+					</dd>
+					<dt>テーブル先頭文字列</dt>
+					<dd>
+						<input type="text" name="db_prefix" size="20" value="{db_prefix}" />
+						<!-- BEGIN db_prefix_input:error --><p class="errorMsg">テーブル先頭文字列を入力してください。</p><!-- END db_prefix_input:error -->
+					</dd>
+					<dt>データベースの文字コード</dt>
+					<dd>
+						<select name="db_charset">
+							<option value="UTF-8">UTF-8</option>
+							<option value="EUC-JP">EUC-JP</option>
+							<option value="SJIS">Shift JIS</option>
+						</select>
+						<!-- BEGIN db_charset_input:error --><p class="errorMsg">データベースの文字コードを指定してください。</p><!-- END db_charset_input:error -->
+					</dd>
+				</dl>
+			<p id="submitBtn">
+				<input type="submit" name="setup" value="データベースを設定する" onclick="return confirm(\'現在の入力内容で設定してよろしいですか？\');" class="acms-btn-admin" />
+				<input type="hidden" name="do" value="true" />
+				<input type="hidden" name="phase" value="3" />
+			</p>
+		</form>
+	</div>
+	<!-- END step#error -->
+
+	<!-- BEGIN step#result -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processed">ドメインの設定</li>
+			<li id="step3" class="processing">データベースの設定</li>
+			<li id="step4">テーブルの作成</li>
+			<li id="step5">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2><img src="./img/step3b.gif" width="24" height="24" alt="" />データベースの設定</h2>
+		<form action="" method="post">
+			<p>データベースの接続に成功しました。</p>
+
+			<h3>設定した項目</h3>
+			<dl>
+				<dt>データベースサーバー名</dt>
+				<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" />{db_host}</dd>
+				<dt>データベース名</dt>
+				<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" />{db_name}</dd>
+				<dt>データベースユーザー名</dt>
+				<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" />{db_user}</dd>
+				<dt>データベースパスワード</dt>
+				<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" />{db_pass}</dd>
+				<dt>テーブル先頭文字列</dt>
+				<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" />{db_prefix}</dd>
+				<dt>データベースの文字コード</dt>
+				<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" />{db_charset}</dd>
+			</dl>
+			<p class="notice"><strong><img src="img/step4s.gif" alt="Step4" width="16" height="16" />&nbsp;テーブルの作成 に進みます。</strong></p>
+			<p id="submitBtn">
+				<input type="submit" name="setup" value="Step4 : テーブルの作成 に進む" class="acms-btn-admin" />
+				<input type="hidden" name="phase" value="4" />
+			</p>
+		</form>
+	</div>
+	<!-- END step#result -->
+
+<!-- END 3 -->
+
+<!-- BEGIN 4 -->
+	<!-- BEGIN step#apply -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processed">ドメインの設定</li>
+			<li id="step3" class="processed">データベースの設定</li>
+			<li id="step4" class="processing">テーブルの作成</li>
+			<li id="step5">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2><img src="./img/step4b.gif" width="24" height="24" alt="" />テーブルの作成</h2>
+		<form action="" method="post">
+			<p>ここでは、テーブルの作成を行います。[テーブルの作成を実行]ボタンをクリックしてください。</p>
+			<p id="submitBtn">
+				<input type="submit" name="setup" value="テーブルの作成を実行" class="acms-btn-admin" />
+				<input type="hidden" name="do" value="true" />
+				<input type="hidden" name="phase" value="4" />
+			</p>
+		</form>
+	</div>
+	<!-- END step#apply -->
+
+	<!-- BEGIN step#error -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processed">ドメインの設定</li>
+			<li id="step3" class="processed">データベースの設定</li>
+			<li id="step4" class="processing">テーブルの作成</li>
+			<li id="step5">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2><img src="./img/step4b.gif" width="24" height="24" alt="" />テーブルの作成</h2>
+			<p>データベース上に不完全な状態のa-blog cmsのテーブルが存在します。<br /><strong>テーブルを全て削除してから、セットアップを再実行してください。</strong><br /></p>
+			<!-- BEGIN exists_table:loop --><p class="errorMsg"><img src="./img/checkIcon.gif" alt="" width="13" height="12" />&nbsp;{exists_table}テーブルが欠損しています。</p><!-- END exists_table:loop -->
+			<!-- BEGIN shortage_column:loop --><p class="errorMsg"><img src="./img/checkIcon.gif" alt="" width="13" height="12" />&nbsp;{shortage_column}カラムが欠損しています。</p><!-- END shortage_column:loop -->
+			<!-- BEGIN disparity_column:loop --><p class="errorMsg"><img src="./img/checkIcon.gif" alt="" width="13" height="12" />&nbsp;{disparity_column}カラムに相違があります。</p><!-- END disparity_column:loop -->
+
+			<!-- BEGIN create_privilege:error --><p class="errorMsg">データベースのユーザーにCREATE構文の権限がありません。</p><!-- END create_privilege:error -->
+			<!-- BEGIN alter_privilege:error --><p class="errorMsg">データベースのユーザーにALTER TABLE構文の権限がありません。</p><!-- END alter_privilege:error -->
+			<!-- BEGIN select_privilege:error --><p class="errorMsg">データベースのユーザーにSELECT構文の権限がありません。</p><!-- END select_privilege:error -->
+			<!-- BEGIN update_privilege:error --><p class="errorMsg">データベースのユーザーにUPDATE構文の権限がありません。</p><!-- END update_privilege:error -->
+			<!-- BEGIN insert_privilege:error --><p class="errorMsg">データベースのユーザーにINSERT構文の権限がありません。</p><!-- END insert_privilege:error -->
+			<!-- BEGIN delete_privilege:error --><p class="errorMsg">データベースのユーザーにDELETE構文の権限がありません。</p><!-- END delete_privilege:error -->
+			<!-- <p class="notice">データベースユーザーの権限に関するエラーが表示されている場合は、インストールを再実行して十分な権限をもったユーザーに指定するか<br />
+			サーバーシステムの管理者に問い合わせて、データベースユーザーの権限を昇格してください。</p> -->
+	</div>
+	<!-- END step#error -->
+
+	<!-- BEGIN step#result -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processed">ドメインの設定</li>
+			<li id="step3" class="processed">データベースの設定</li>
+			<li id="step4" class="processing">テーブルの作成</li>
+			<li id="step5">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2><img src="./img/step4b.gif" width="24" height="24" alt="" />テーブルの作成</h2>
+		<form action="" method="post">
+			<h3>テーブルの作成を終了しました。</h3>
+			<!-- BEGIN exists_table:notice --><p class="noticeMsg">既にテーブルが作成されていたので、テーブルの作成は行いませんでした。</p><!-- END exists_table:notice -->
+			<!-- BEGIN create_table:notice --><p class="noticeMsg">以下のテーブルを作成しました</p><!-- END create_table:notice -->
+			<!-- BEGIN create_table:loop --><p class="noticeMsg"><img src="./img/checkIcon2.gif" alt="" width="13" height="12" />&nbsp;{create_table}テーブルを作成しました。</p><!-- END create_table:loop -->
+
+			<!-- BEGIN alter_privilege:notice -->
+			<h3>テーブルの変更権限がありません</h3>
+			<p class="noticeMsg">※※※インストールおよび通常運用には問題ありません※※※</p>
+			<p>データベースのユーザーにALTER権限がありません。アップデート時などテーブルの書き換えが発生するときに必要になります。<br />アップデートの際には、システム管理者等に問い合わせてALTER権限を付与してから実行してください。</p><!-- END alter_privilege:notice -->
+
+			<p class="notice"><strong><img src="img/step5s.gif" alt="Step5" width="16" height="16" />&nbsp;ブログの設定 に進みます。</strong></p>
+			<p id="submitBtn">
+				<input type="submit" name="setup" value="Step5 : ブログの設定 に進む" class="acms-btn-admin" />
+				<input type="hidden" name="phase" value="5" />
+			</p>
+		</form>
+	</div>
+	<!-- END step#result -->
+<!-- END 4 -->
+
+<!-- BEGIN 5 -->
+	<!-- BEGIN step#apply -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processed">ドメインの設定</li>
+			<li id="step3" class="processed">データベースの設定</li>
+			<li id="step4" class="processed">テーブルの作成</li>
+			<li id="step5" class="processing">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2><img src="./img/step5b.gif" width="24" height="24" alt="" />ブログとユーザーの設定</h2>
+		<form action="" method="post" class="acms-form">
+			<p>ここでは、ブログとユーザーの設定を行います。ブログとユーザーに関する情報を入力し、[ブログとユーザーを設定する]ボタンをクリックしてください。</p>
+			<h3>ブログの設定</h3>
+			<dl>
+				<dt>ブログの名前</dt>
+				<dd>
+					<input type="text" name="blog_name" size="20" value="a-blog cms" />
+				</dd>
+				<dt>インストール時の初期テーマ</dt>
+				<dd>
+					<label class="selectTheme acms-form-radio">
+						<a href="http://www.a-blogcms.jp/sample/site2014/" target="_blank" title="Site2014テーマのサンプルページ"><img class="border" src="./img/site2014.png" /></a>
+						<br /><input name="select_theme" type="radio" value="site2014" checked="checked" /><i class="acms-ico-radio"></i>&nbsp;<strong>Site2014（サイトカスタマイズ用）</strong>
+					</label>
+					
+					<label class="selectTheme acms-form-radio">
+						<a href="http://www.a-blogcms.jp/sample/blog2014/" target="_blank" title="Blog2014テーマのサンプルページ"><img class="border" src="./img/blog2014.png" /></a>
+						<br /><input name="select_theme" type="radio" value="blog2014" /><i class="acms-ico-radio"></i>&nbsp;<strong>Blog2014（ブログ用）</strong>
+					</label>
+
+					<label class="selectTheme acms-form-radio">
+						<a href="http://www.a-blogcms.jp/sample/bootstrap3/" target="_blank" title="Bootstrap3テーマのサンプルページ"><img class="border" src="./img/bootstrap3.png" /></a>
+						<br /><input name="select_theme" type="radio" value="bootstrap3" /><i class="acms-ico-radio"></i>&nbsp;<strong>Bootstrap3（CSSフレームワーク）</strong>
+					</label>
+
+					<br class="clearHidden" />
+					<ul>
+						<li>インストール後にも、メンテナンスメニューから他のテーマをインストールできます。</li>
+						<!-- <li>Shop1をお試し期間後にも継続してご使用になる際は、オプションライセンスの『ショップ』をご購入いただく必要があります。</li> -->
+					</ul>
+				</dd>
+				<dt>インストールオプション</dt>
+				<dd>
+				<ul>
+					<li><label class="acms-form-checkbox"><input type="checkbox" name="with_keitai" value="true" /><i class="acms-ico-checkbox"></i>&nbsp;携帯端末向けテーマを同時にインストールする</label></li>
+					<li><label class="acms-form-checkbox"><input type="checkbox" name="with_jquerymobile" value="true" /><i class="acms-ico-checkbox"></i>&nbsp;スマートフォン向け（jQuery Mobile版）テーマを同時にインストールする</label></li>
+				</ul>
+				</dd>
+			</dl><br />
+
+			<h3>ユーザーの設定</h3>
+			<dl>
+				<dt>ユーザー名 (ブログ内で名前を表示する際に利用します。日本語でもかまいません。)</dt>
+				<dd>
+					<input type="text" name="user_name" size="10" value="" />
+				</dd>
+				<dt>メールアドレス (パスワードが分からなくなった時に通知する先を設定します。)</dt>
+				<dd>
+					<input type="text" name="user_mail" value="" />
+				</dd>
+				<dt>ユーザーID (半角英数字で設定してください。)</dt>
+				<dd>
+					<input type="text" name="user_code" value="" style="display:none;" />
+					<input type="text" name="user_code" size="10" value="" autocomplete="off" />
+				</dd>
+				<dt>パスワード (半角英数字で設定してください。)</dt>
+				<dd>
+					<p>今、あなたのうしろに、誰かがいると、次の画面で入力したパスワードが見えてしまいます。ご注意ください。</p>
+					<input type="password" name="user_pass" value="" style="display:none;" />
+					<input type="password" name="user_pass" size="10" value="" autocomplete="off" />
+				</dd>
+			</dl>
+			<p id="submitBtn">
+				<input type="submit" name="setup" value="ブログとユーザーを設定する" onclick="return confirm(\'現在の入力内容で設定してよろしいですか？\');" class="acms-btn-admin" />
+				<input type="hidden" name="do" value="true" />
+				<input type="hidden" name="phase" value="5" />
+			</p>
+		</form>
+	</div>
+	<!-- END step#apply -->
+
+	<!-- BEGIN step#error -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processed">ドメインの設定</li>
+			<li id="step3" class="processed">データベースの設定</li>
+			<li id="step4" class="processed">テーブルの作成</li>
+			<li id="step5" class="processing">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2><img src="./img/step5b.gif" width="24" height="24" alt="" />ブログとユーザーの設定</h2>
+		<form action="" method="post" class="acms-form">
+			<p>ここでは、ブログとユーザーの設定を行います。ブログとユーザーに関する情報を入力し、[ブログとユーザーを設定する]ボタンをクリックしてください。</p>
+			<h3>ブログの設定</h3>
+			<dl>
+				<dt>ブログの名前</dt>
+				<dd>
+					<input type="text" name="blog_name" size="20" value="{blog_name}" />
+					<!-- BEGIN blog_name_input:error --><p class="errorMsg">ブログの名前を入力してください。</p><!-- END blog_name_input:error -->
+				</dd>
+				<dt>インストール時の初期テーマ</dt>
+				<dd>
+					<label class="selectTheme acms-form-radio">
+						<a href="http://www.a-blogcms.jp/sample/site2014/" target="_blank" title="Site2014テーマのサンプルページ"><img class="border" src="./img/site2014.png" /></a>
+						<br /><input name="select_theme" type="radio" value="site2014" checked="checked" /><i class="acms-ico-radio"></i>&nbsp;<strong>Site2014（サイトカスタマイズ用）</strong>
+					</label>
+
+					<label class="selectTheme acms-form-radio">
+						<a href="http://www.a-blogcms.jp/sample/blog2014/" target="_blank" title="Blog2014テーマのサンプルページ"><img class="border" src="./img/blog2014.png" /></a>
+						<br /><input name="select_theme" type="radio" value="blog2014" /><i class="acms-ico-radio"></i>&nbsp;<strong>Blog2014（ブログ用）</strong>
+					</label>
+
+					<label class="selectTheme acms-form-radio">
+						<a href="http://www.a-blogcms.jp/sample/bootstrap3/" target="_blank" title="Bootstrap3テーマのサンプルページ"><img class="border" src="./img/bootstrap3.png" /></a>
+						<br /><input name="select_theme" type="radio" value="bootstrap3" /><i class="acms-ico-radio"></i>&nbsp;<strong>Bootstrap3（CSSフレームワーク）</strong>
+					</label>
+
+					<br class="clearHidden" />
+					<ul>
+						<li>インストール後にも、メンテナンスメニューから他のテーマをインストールできます。</li>
+						<!-- <li>Shop1をお試し期間後にも継続してご使用になる際は、オプションライセンスの『ショップ』をご購入いただく必要があります。</li> -->
+					</ul>
+					<!-- BEGIN select_theme_input:error --><p class="errorMsg">テーマを選択してください。</p><!-- END select_theme_input:error -->
+				</dd>
+				<dt>インストールオプション</dt>
+				<dd>
+				<ul>
+					<li><label class="acms-form-checkbox"><input type="checkbox" name="with_keitai" value="true" /><i class="acms-ico-checkbox"></i>&nbsp;携帯端末向けテーマを同時にインストールする</label></li>
+					<li><label class="acms-form-checkbox"><input type="checkbox" name="with_jquerymobile" value="true" /><i class="acms-ico-checkbox"></i>&nbsp;スマートフォン向け（jQuery Mobile版）テーマを同時にインストールする</label></li>
+				</ul>
+				</dd>
+			</dl><br />
+
+			<h3>ユーザーの設定</h3>
+			<dl>
+				<dt>ユーザー名 (ブログ内で名前を表示する際に利用します。日本語でもかまいません。)</dt>
+				<dd>
+					<input type="text" name="user_name" size="10" value="{user_name}" />
+					<!-- BEGIN user_name_input:error --><p class="errorMsg">ユーザー名を入力してください。</p><!-- END user_name_input:error -->
+				</dd>
+				<dt>メールアドレス (パスワードが分からなくなった時に通知する先を設定します。)</dt>
+				<dd>
+					<input type="text" name="user_mail" value="{user_mail}" />
+					<!-- BEGIN user_mail_input:error --><p class="errorMsg">メールアドレスを入力してください。</p><!-- END user_mail_input:error -->
+					<!-- BEGIN user_mail_invalid:error --><p class="errorMsg">有効なメールアドレスではありません。</p><!-- END user_mail_invalid:error -->
+				</dd>
+				<dt>ユーザーID (半角英数字で設定してください。)</dt>
+				<dd>
+					<input type="text" name="user_code" value="" style="display:none;" />
+					<input type="text" name="user_code" size="10" value="{user_code}" autocomplete="off" />
+					<!-- BEGIN user_code_input:error --><p class="errorMsg">ユーザーIDを入力してください。</p><!-- END user_code_input:error -->
+					<!-- BEGIN user_code_invalid:error --><p class="errorMsg">ユーザーIDに利用できない文字が含まれています。</p><!-- END user_code_invalid:error -->
+				</dd>
+				<dt>パスワード (半角英数字で設定してください。)</dt>
+				<dd>
+					<p>今、あなたのうしろに、誰かがいると、次の画面で入力したパスワードが見えてしまいます。ご注意ください。</p>
+					<input type="password" name="user_pass" value="" style="display:none;" />
+					<input type="password" name="user_pass" size="10" value="{user_pass}" autocomplete="off" />
+					<!-- BEGIN user_pass_input:error --><p class="errorMsg">パスワードを入力してください。</p><!-- END user_pass_input:error -->
+					<!-- BEGIN user_pass_invalid:error --><p class="errorMsg">パスワードに利用できない文字が含まれています。</p><!-- END user_pass_invalid:error -->
+				</dd>
+			</dl>
+			<!-- BEGIN yaml_exist:error --><p class="errorMsg">選択されたテーマのyamlファイルが見つかりません</p><!-- END yaml_exist:error -->
+			<p id="submitBtn">
+				<input type="submit" name="setup" value="ブログとユーザーを設定する" onclick="return confirm(\'現在の入力内容で設定してよろしいですか？\');" class="acms-btn-admin" />
+				<input type="hidden" name="do" value="true" />
+				<input type="hidden" name="phase" value="5" />
+			</p>
+		</form>
+	</div>
+	<!-- END step#error -->
+
+	<!-- BEGIN step#result -->
+	<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processed">ドメインの設定</li>
+			<li id="step3" class="processed">データベースの設定</li>
+			<li id="step4" class="processed">テーブルの作成</li>
+			<li id="step5" class="processing">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2>セットアップ完了！お疲れさまでした！</h2>
+			<h3>設定した項目</h3>
+			<dl>
+				<dt>ブログの名前</dt>
+					<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> {blog_name}</dd>
+				<dt>ブログのテーマ</dt>
+					<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> {select_theme}</dd>
+				<dt>ユーザー名</dt>
+					<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> {user_name}</dd>
+				<dt>メールアドレス</dt>
+					<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> {user_mail}</dd>
+				<dt>ユーザーID</dt>
+					<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> {user_code}</dd>
+				<dt>パスワード</dt>
+					<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> {user_pass}</dd>
+			</dl>
+			<p class="notice">お疲れさまでした！セットアップが完了しました。</p>
+			<p class="warning"><strong>setupディレクトリを削除するかリネームしてください。削除またはリネームするまで他ページにアクセス出来ません。</strong></p>
+			
+			<p class="noticeMsg">setupディレクトリをリネームしてログイン画面に移動します。</p>
+			<form action="" method="post" class="acms-form">
+				<p>setupディレクトリを
+				<input type="text" name="setup_dir_name" size="10" value="setup"/> に変更してログインページに
+				<input type="submit" name="setup" value="移動" onclick="return confirm(\'現在の入力内容で設定してよろしいですか？\');" class="acms-btn-admin" />
+				<input type="hidden" name="do" value="true" />
+				<input type="hidden" name="phase" value="6" />
+				</p>
+			</form>
+			
+			<br />
+			<p>それでは、あなたのサイトに早速アクセスしてみましょう！</p>
+			<p>トップページ：<strong><a href="[*HTTP_ROOT*]">[*HTTP_ROOT*]</a></strong></p>
+			<p>管理ログイン：<strong><a href="[*HTTP_ROOT*]login/">[*HTTP_ROOT*]login/</a></strong></p>
+	</div>
+	<!-- END step#result -->
+<!-- END 5 -->
+
+<!-- BEGIN 6 -->
+<!-- BEGIN step#error -->
+<div id="stepPath">
+		<ul>
+			<li id="step1" class="processed">動作環境のチェック</li>
+			<li id="step2" class="processed">ドメインの設定</li>
+			<li id="step3" class="processed">データベースの設定</li>
+			<li id="step4" class="processed">テーブルの作成</li>
+			<li id="step5" class="processing">ブログの設定</li>
+		</ul>
+	</div>
+	<div id="main">
+		<h2>セットアップ完了！お疲れさまでした！</h2>
+			<h3>設定した項目</h3>
+			<dl>
+				<dt>ブログの名前</dt>
+					<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> {blog_name}</dd>
+				<dt>ブログのテーマ</dt>
+					<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> {select_theme}</dd>
+				<dt>ユーザー名</dt>
+					<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> {user_name}</dd>
+				<dt>メールアドレス</dt>
+					<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> {user_mail}</dd>
+				<dt>ユーザーID</dt>
+					<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> {user_code}</dd>
+				<dt>パスワード</dt>
+					<dd><img src="./img/checkIcon2.gif" alt="" width="13" height="12" /> {user_pass}</dd>
+			</dl>
+			<p class="notice">お疲れさまでした！セットアップが完了しました。</p>
+			<p class="warning"><strong>setupディレクトリを削除するかリネームしてください。削除またはリネームするまで他ページにアクセス出来ません。</strong></p>
+			
+			<p class="noticeMsg">setupディレクトをリネームしてログイン画面に移動します。環境によってうまくリネームできないことがあります。その場合手動でリネームしてください。</p>
+			<form action="" method="post" class="acms-form">
+				<p>setupディレクトリを
+				<input type="text" name="setup_dir_name" size="10" value="setup"/> に変更してログインページに
+				<input type="submit" name="setup" value="移動" onclick="return confirm(\'現在の入力内容で設定してよろしいですか？\');" class="acms-btn-admin" />
+				<input type="hidden" name="do" value="true" />
+				<input type="hidden" name="phase" value="6" />
+				</p>
+			</form>
+			<p class="warning"><strong><!-- BEGIN error_rename_setup_dir:error -->リネームに失敗しました。書き込み権限があるか確認して再度実行するか、FTPソフト等でsetupディレクトリ名を書き換えてください。<!-- END error_rename_setup_dir:error --></strong></p>
+
+			<br />
+			<p>それでは、あなたのサイトに早速アクセスしてみましょう！</p>
+			<p>トップページ：<strong><a href="[*HTTP_ROOT*]">[*HTTP_ROOT*]</a></strong></p>
+			<p>管理ログイン：<strong><a href="[*HTTP_ROOT*]login/">[*HTTP_ROOT*]login/</a></strong></p>
+	</div>
+<!-- END step#error -->
+<!-- END 6 -->
+
+
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

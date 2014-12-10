@@ -1,0 +1,103 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<div class="acms-admin-title acms-module-title-wrapper">
+			<i class="acms-icon acms-icon-config_navigation"></i>
+			<div class="acms-module-title">
+				<!-- BEGIN_MODULE Admin_Rule_Name -->
+				<strong>ルール : {name}</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+				<strong>モジュールID : {label} ( {identifier} )</strong><!-- END_MODULE Admin_Module_Name -->
+				<h1>ナビゲーション<span class="acms-module-en">Navigation</span></h1>
+			</div>
+		</div>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+<!-- BEGIN_MODULE Admin_Config -->
+<!-- BEGIN_IF [{notice_mess}/nem/] -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>ナビゲーションを登録しました。</p><!-- END_IF -->
+
+<form action="" method="post" id="navigationForm" class="acms-form">
+	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+		<div class="acms-form-group acms_fix_bg_index">
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+
+			<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+		</div>
+	</div>
+
+	<table class="js-admin_table-sortable exceptionSort adminTable acms-table-admin-edit" data-sort-enable="on" data-sort-submit="ACMS_POST_Config" data-sort-target="#navigationForm">
+		<thead class="acms-hide-sp">
+		<tr>
+			<th class="acms-admin-config-table-item-handle"></th>
+			<th class="acms-table-left acms-admin-config-table-sort">表示順<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ナビゲーションが表示される順番です。"></i></th>
+			<th class="acms-table-left acms-admin-config-table-publish">公開<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをするとナビゲーションを表示できるようになります。親のナビゲーションが非公開だと子のナビゲーションも非公開になります。"></i></th>
+			<th class="acms-table-left">リンク名<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="リンクとして表示される文字列です。"></i></th>
+			<th class="acms-table-left">URL<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="リンク先URLです。"></i></th>
+			<th class="acms-table-left acms-admin-config-table-target">_blank<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このバナーのリンクを新しいウィンドウで開くかのチェックです。チェックすると新しいウィンドウで開きます。"></i></th>
+			<th class="acms-table-left">属性<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このナビゲーション項目の要素に割り当てられる属性です。（変数名 : attr）"></i></th>
+			<th class="acms-table-left">子要素属性<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このナビゲーション項目の子要素に割り当てられる属性です。（変数名 : attr）"></i></th>
+			<th class="acms-table-left acms-admin-config-table-parent">親<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このナビゲーション項目の、親になるナビゲーション項目の設定です。"></i></th>
+		</tr><!-- BEGIN Config_Navigation -->
+		</thead>
+		<tbody><!-- BEGIN navigation:loop -->
+		<tr data-sort-level="level-{level}-{pseq}" data-sort-name="navigation@sort">
+			<td class="item-handle acms-hide-sp" style="cursor: move;"><i class="acms-icon-sort"></i></td>
+			<td nowrap="nowrap">
+				<span class="acms-hide-pc acms-show-sp">表示順</span>
+				<!-- BEGIN indent:loop --><!-- BEGIN descendant -->&#9475;<!-- END descendant --><!-- BEGIN descendant#last -->&#12288;<!-- END descendant#last --><!-- BEGIN child -->&#9507;<!-- END child --><!-- BEGIN child#last -->&#9495;<!-- END child#last --><!-- END indent:loop -->
+				<select name="navigation@sort[]"><!-- BEGIN sort:loop -->
+					<option value="{value}"{selected}>{label}</option><!-- END sort:loop -->
+				</select>
+			</td>
+			<td>
+				<input type="hidden" name="navigation_publish-{seq}" value="off" />
+				<labl class="acms-form-checkbox"><input type="checkbox" name="navigation_publish-{seq}" value="on"{navigation_publish:checked#on} /><i class="acms-ico-checkbox"></i><span class="acms-hide-pc acms-show-inline-sp">公開</span></labl>
+				<input type="hidden" name="config[]" value="navigation_publish-{seq}" />
+			</td>
+			<td>
+				<span class="acms-hide-pc acms-show-sp">リンク名</span>
+				<input type="text" name="navigation_label[]" value="{label}[raw]" size="" class="acms-form-width-full" />
+			</td>
+			<td nowrap="nowrap">
+				<span class="acms-hide-pc acms-show-sp">URL</span>
+				<input type="text" name="navigation_uri[]" value="{uri}" size="" class="acms-form-width-full" />
+				<input type="hidden" name="navigation_target-{seq}" value="_self" />
+			</td>
+			<td>
+				<label class="acms-form-checkbox"><input type="checkbox" name="navigation_target-{seq}" value="_blank"{navigation_target:checked#_blank} /><i class="acms-ico-checkbox"></i><span class="acms-hide-pc acms-show-inline-sp">_blank</span></label>
+				<input type="hidden" name="config[]" value="navigation_target-{seq}" />
+			</td>
+			<td>
+				<span class="acms-hide-pc acms-show-sp">属性</span>
+				<input type="text" name="navigation_attr[]" value="{attr}[escape]" size="8" class="acms-form-width-full" />
+			</td>
+			<td>
+				<span class="acms-hide-pc acms-show-sp">子要素属性</span>
+				<input type="text" name="navigation_a_attr[]" value="{a_attr}[escape]" size="8" class="acms-form-width-full" />
+			</td>
+			<td class="acms-show-sp acms-width-sp acms-border-bottom-sp">
+				<span class="acms-hide-pc acms-show-sp">親</span>
+				<select name="navigation_parent[]">
+					<option value="">なし</option><!-- BEGIN parent:loop -->
+					<option value="{value}"{selected}>{indent}[raw]{label}[raw]</option><!-- END parent:loop -->
+				</select>
+			</td>
+		</tr><!-- END navigation:loop --><!-- END Config_Navigation -->
+		</tbody>
+	</table>
+	<input type="hidden" name="config[]" value="navigation@sort" />
+	<input type="hidden" name="config[]" value="navigation_label" />
+	<input type="hidden" name="config[]" value="navigation_uri" />
+	<input type="hidden" name="config[]" value="navigation_attr" />
+	<input type="hidden" name="config[]" value="navigation_a_attr" />
+	<input type="hidden" name="config[]" value="navigation_parent" />
+
+	<!-- BEGIN_MODULE Admin_Rule_Name -->
+	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+</form>
+<!-- END_MODULE Admin_Config -->

@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms インポートウィザード</title>
+<script type="text/javascript" src="../js/library/jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="siteTitleBox" class="clearfix">
+			<h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+			<span id="setupType">インポート</span>
+		</div>
+	</div>
+<div id="main">
+
+<!-- BEGIN step#apply -->
+    <h2>エクスポートしたブログデータのインポートを行います。</h2>
+    <p>エクスポートしたブログデータのyamlファイルを [*ROOT_DIR*][*SETUP_DIR*]/bin/ からインポートします。</p>
+	<h3>インポート時の注意</h3>
+    <h4>themesとarchivesのインポートについて</h4>
+        <p>エクスポートしたブログデータのディレクトリ内に「themes」または「archives」ディレクトリがある場合は、<br />
+        インポート先のブログの「themes」および「archives」ディレクトリにコピーされます。</p>
+    	<h4>カテゴリーコードとエントリーコードの重複</h4>
+        <p>既存のコンテンツとインポートされるコンテンツとの間で同じコードをもつエントリーやカテゴリーが存在する場合はコードの重複が発生します。<br />
+        その場合はコンテンツが正しく表示されない可能性がありますので、インポート後に管理ページから個別に修正してください。</p>
+    	<h4>コンフィグ・ルール・モジュールIDの設定</h4>
+        <p>コンフィグ・ルール・モジュールIDの情報をインポートする場合は、既存のコンフィグ・ルール・モジュールIDを破棄してください。<br />
+        既存の設定を破棄せずにインポートする場合は予期せぬ不具合が発生する可能性があります。</p>
+    <form action="" method="post" class="acms-form">
+        <h3>1. インポート先またはその親になるブログを選択してください。</h3>
+            <ul class="cfgInput"><!-- BEGIN blog:loop -->
+                <li><label class="acms-form-radio"><input type="radio" name="bid" value="{bid}" /><i class="acms-ico-radio"></i>&nbsp;{bid} : {name} (親BID : {parent})</label></li><!-- END blog:loop -->
+            </ul>
+            <p><label class="acms-form-checkbox"><input type="checkbox" name="parent" value="on" /><i class="acms-ico-checkbox"></i>&nbsp;選択したブログの子ブログとして新規作成する</label></p>
+            <p>( 新規作成時のブログ名：<input type="text" name="blog_name" value="blog_name" /> 新規作成時のブログコード：<input type="text" name="blog_code" value="blog_code" /> )</p>
+        <h3>2. インポートするブログデータ名を選択してください。</h3>
+            <ul class="cfgInput"><!-- BEGIN name:loop -->
+                <li><label class="acms-form-radio"><input type="radio" name="name" value="{name}" /><i class="acms-ico-radio"></i>&nbsp;{name}</label></li><!-- END name:loop -->
+            </ul>
+        <h3>3. コンフィグ関連のインポート設定</h3>
+            <ul class="cfgInput">
+                <li><label class="acms-form-checkbox">
+                    <input type="checkbox" name="config_import" value="true" checked="checked" /><i class="acms-ico-checkbox"></i>&nbsp;エクスポートしたブログデータからコンフィグ・ルール・モジュールIDの設定をインポートする
+                </label></li>
+                <li><label class="acms-form-checkbox">
+                    <input type="checkbox" name="config_delete" value="true" checked="checked" /><i class="acms-ico-checkbox"></i>&nbsp;既存のコンフィグ・ルール・モジュールID・ダッシュボードの設定を破棄する
+                </label></li>
+                <li><label class="acms-form-checkbox">
+                    <input type="checkbox" name="contents_drop" value="true" /><i class="acms-ico-checkbox"></i>&nbsp;既存のコンテンツ（エントリー・カテゴリー・ユニット・コメント・トラックバック・タグ）を破棄する
+                </label></li>
+            </ul>
+        <h3>4. オプション設定項目</h3>
+            <ul class="cfgInput">
+                <li><label>
+                    <input type="text" name="marker" value="|s|" size="1" /> 行頭スペース保持マーカー（通常は変更しません）
+                </label></li>
+            </ul>
+        <!-- BEGIN notFound -->
+            <p class="errorMsg">ブログデータが [*ROOT_DIR*][*SETUP_DIR*]/bin/ 内に見つかりません。<br />
+            エクスポートしたブログデータを [*ROOT_DIR*][*SETUP_DIR*]/bin/ 内にコピーしてから再度実行してください。</p>
+        <!-- END notFound -->
+        <!-- BEGIN binExist -->
+            <p id="submitBtn"><input type="submit" name="submit" value="インポートを実行する" class="acms-btn-admin" /></p>
+        <!-- END binExist -->
+    </form>
+<!-- END step#apply -->
+
+<!-- BEGIN step#error -->
+    <h2>エクスポートしたブログデータのインポートを行います。</h2>
+    <p>エクスポートしたブログデータのyamlファイルを [*ROOT_DIR*]setup/bin/ からインポートします。</p>
+	<h3>インポート時の注意</h3>
+    <h4>themesとarchivesのインポートについて</h4>
+    <p>エクスポートしたブログデータのディレクトリ内に「themes」または「archives」ディレクトリがある場合は、<br />
+    	インポート先のブログの「themes」および「archives」ディレクトリにコピーされます。</p>
+    <h4>カテゴリーコードとエントリーコードの重複</h4>
+        <p>既存のコンテンツとインポートされるコンテンツとの間で同じコードをもつエントリーやカテゴリーが存在する場合はコードの重複が発生します。<br />
+        その場合はコンテンツが正しく表示されない可能性がありますので、インポート後に管理ページから個別に修正してください。</p>
+    	<h4>コンフィグ・ルール・モジュールIDの設定</h4>
+        <p>コンフィグ・ルール・モジュールIDの情報をインポートする場合は、既存のコンフィグ・ルール・モジュールIDを破棄してください。<br />
+        既存の設定を破棄せずにインポートする場合は予期せぬ不具合が発生する可能性があります。</p>
+    <form action="" method="post">
+        <h3>1. インポート先またはその親になるブログを選択してください。</h3>
+            <ul class="cfgInput"><!-- BEGIN blog:loop -->
+                <li><label class="acms-form-radio"><input type="radio" name="bid" value="{bid}"{checked} /><i class="acms-ico-radio"></i>&nbsp;{bid} : {name} (親BID : {parent})</label></li><!-- END blog:loop -->
+            </ul>
+            <!-- BEGIN blog_limit:error --><p class="errorMsg">ご利用のライセンスで作成できるブログの上限を超えているため作成できません。</p><!-- END blog_limit:error -->
+            <!-- BEGIN blog_select:error --><p class="errorMsg">インポート先（またはその親）のブログを選択してください。</p><!-- END blog_select:error -->
+            <!-- BEGIN parent --><p><label><input type="checkbox" name="parent" value="on"{parent:checked} />&nbsp;選択したブログの子ブログとして新規作成する</label></p><!-- END parent -->
+            <p>( 新規作成時のブログ名：<input type="text" name="blog_name" value="{blog_name}" /> 新規作成時のブログコード：<input type="text" name="blog_code" value="{blog_code}" /> )</p>
+            <!-- BEGIN blog_name_input:error --><p class="errorMsg">新規作成するブログの名前を入力してください。</p><!-- END blog_name_input:error -->
+            <!-- BEGIN blog_code_input:error --><p class="errorMsg">新規作成するブログのコードを入力してください。</p><!-- END blog_code_input:error -->
+            <!-- BEGIN blog_code_conflict:error --><p class="errorMsg">重複したブログコードが存在します。違うブログコードを入力してください。</p><!-- END blog_code_conflict:error -->
+        <h3>2. インポートするブログデータ名を選択してください。</h3>
+            <ul class="cfgInput"><!-- BEGIN name:loop -->
+                <li><label class="acms-form-radio"><input type="radio" name="name" value="{name}"{checked} /><i class="acms-ico-radio"></i>&nbsp;{name}</label></li><!-- END name:loop -->
+            </ul>
+            <!-- BEGIN name_select:error --><p class="errorMsg">ブログデータ名を選択してください。</p><!-- END name_select:error -->
+			<!-- BEGIN yaml_exist:error --><p class="errorMsg">選択されたブログデータのyamlファイルが見つかりません</p><!-- END yaml_exist:error -->
+        <h3>3. コンフィグ関連のインポート設定</h3>
+            <ul class="cfgInput"><!-- BEGIN config_import -->
+                <li><label class="acms-form-checkbox">
+                    <input type="checkbox" name="config_import" value="true" {config_import:checked} /><i class="acms-ico-checkbox"></i>&nbsp;エクスポートしたブログデータからコンフィグ・ルール・モジュールIDの設定をインポートする
+                </label></li><!-- END config_import --><!-- BEGIN config_delete -->
+                <li><label class="acms-form-checkbox">
+                    <input type="checkbox" name="config_delete" value="true" {config_delete:checked} /><i class="acms-ico-checkbox"></i>&nbsp;既存のコンフィグ・ルール・モジュールID・ダッシュボードの設定を破棄する
+                </label></li><!-- END config_delete --><!-- BEGIN contents_drop -->
+                <li><label class="acms-form-checkbox">
+                    <input type="checkbox" name="contents_drop" value="true" {contents_drop:checked} /><i class="acms-ico-checkbox"></i>&nbsp;既存のコンテンツ（エントリー・カテゴリー・ユニット・コメント・トラックバック・タグ）を破棄する
+                </label></li><!-- END contents_drop -->
+            </ul>
+        <h3>4. オプション設定項目</h3>
+            <ul class="cfgInput">
+                <li><label>
+                    <input type="text" name="marker" value="{marker}" size="1" /> 行頭スペース保持マーカー（通常は変更しません）
+                </label></li>
+            </ul>
+        <!-- BEGIN marker_input:error --><p class="errorMsg">行頭スペース保持マーカーを入力してください。</p><!-- END marker_input:error -->
+        <!-- BEGIN themes_permission:error --><p class="errorMsg">themesディレクトリのパーミッションを読み書き可能（777）に設定してください。</p><!-- END themes_permission:error -->
+        <!-- BEGIN archives_permission:error --><p class="errorMsg">archivesディレクトリのパーミッションを読み書き可能（777）に設定してください。</p><!-- END archives_permission:error -->
+
+        <!-- BEGIN notFound -->
+            <p class="errorMsg">ブログデータが [*ROOT_DIR*][*SETUP_DIR*]/bin/ 内に見つかりません。<br />
+            エクスポートしたブログデータを [*ROOT_DIR*][*SETUP_DIR*]/bin/ 内にコピーしてから再度実行してください。</p>
+        <!-- END notFound -->
+        <!-- BEGIN binExist -->
+            <p id="submitBtn"><input type="submit" name="submit" value="インポートを実行する" class="acms-btn-admin" /></p>
+        <!-- END binExist -->
+    </form>
+<!-- END step#error -->
+
+<!-- BEGIN step#result -->
+    <h2>ブログデータをインポートしました</h2>
+    <h3>インポートの結果を確認してください。</h3>
+    <p>インポートの結果を確認するには、[*SETUP_DIR*]ディレクトリを削除してから <a href="[*HTTP_ROOT*]bid/{bid}/">[*HTTP_ROOT*]bid/{bid}/</a>にアクセスしてください。</p>
+<!-- END step#result -->
+
+<p><a href="./index.php">メンテナンスメニューに戻る</a></p>
+</div>
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

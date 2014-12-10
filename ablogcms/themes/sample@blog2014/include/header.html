@@ -1,0 +1,30 @@
+<head>
+<meta charset="UTF-8">
+<title><!-- BEGIN_MODULE Touch_Entry -->%{ENTRY_TITLE} | <!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_Category -->%{CATEGORY_NAME} | <!-- END_MODULE Touch_Category -->%{BLOG_NAME}</title>
+<meta name="keywords" content="%{META_KEYWORDS}" />
+<meta name="description" content="%{META_DESCRIPTION}" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="%{BASE_URL}rss2.xml" />
+<link href="/css/reset.css" rel="stylesheet" type="text/css" media="all" />
+<link href="%{BASE_URL}css/blog.css" rel="stylesheet" type="text/css" media="all" />
+<link href="%{BASE_URL}css/responsive.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/acms.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/sample.css" rel="stylesheet" type="text/css" media="all" />
+<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--><!-- BEGIN_MODULE Js -->
+<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<!--BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Blog_Field -->{googleAnalytics}[raw]<!-- END_MODULE Blog_Field --><!-- END_MODULE Touch_Unlogin -->
+</head>
+<body>
+<header id="header">
+	<h1 id="siteTitle"><a href="%{BASE_URL}">%{BLOG_NAME}</a></h1>
+
+	<!-- BEGIN_MODULE Navigation --><!-- BEGIN navigation:loop --><!-- BEGIN ul#front -->
+	<nav id="globalNav">
+		<ul class="clear fix"><!-- END ul#front --><!-- BEGIN li#front -->
+			<li {attar}><!-- END li#front --><!-- BEGIN link#front -->
+				<a href="{url}" target="{target}"><!-- END link#front -->{label}[raw]<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN li#rear -->
+			</li><!-- END li#rear --><!-- BEGIN ul#rear -->
+		</ul>
+	</nav>
+	<!-- END ul#rear --><!-- END navigation:loop --><!-- END_MODULE Navigation -->
+</header>

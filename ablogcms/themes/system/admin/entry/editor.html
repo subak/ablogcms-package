@@ -1,0 +1,33 @@
+<!-- BEGIN_MODULE Entry_Body -->
+<header class="acms-grid">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-entry"></i>エントリー編集</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_IF [{notice_mess}/nem/] -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>エントリーを更新しました。</p><!-- END_IF -->
+
+<!-- BEGIN entry:loop -->
+<div class="acms-box-medium">
+<!--#include file="/admin/entry/revision-info.html"-->
+</div>
+<article class="entry">
+	<section>
+		<!-- BEGIN adminEntryEdit -->
+		<!--#include file="/admin/form2/edit.html"-->
+		<!--#include file="/admin/form2/add.html"-->
+		<!--#include file="/admin/entry/edit.html"-->
+		<!--#include file="/admin/entry/add.html"-->
+		<!-- END adminEntryEdit -->
+		
+		<!--#include file="/admin/entry/action.html"-->
+	</section>
+</article>
+
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+<!-- END_MODULE Entry_Body -->

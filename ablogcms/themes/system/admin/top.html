@@ -1,0 +1,243 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-dashboard"></i>ダッシュボード</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Top -->
+<div class="acms-grid-r">
+	<div class="acms-col-6">
+		<!--#include file="/admin/dashboard-left.html"-->
+
+		<!-- BEGIN_MODULE Admin_Shortcut_List -->
+		<h2 class="acms-admin-title2">ショートカット</h2>
+		<table class="acms-admin-mini-table acms-admin-icon-table">
+			<thead><th>項目</th></thead>
+			<tbody>
+			<!-- BEGIN shortcut:loop -->
+			<tr>
+				<td class="acms-config-name">
+					<a href="{url}"><i class="acms-icon acms-icon-{admin}"></i>{name}</a>
+				</td>
+			</tr>
+			<!-- END shortcut:loop -->
+			</tbody>
+		</table>
+		<!-- END_MODULE Admin_Shortcut_List -->
+
+		<!-- BEGIN_MODULE Admin_Dashboard_LicenseStatus -->
+		<h2 class="acms-admin-title2">ライセンス・バージョン情報</h2>
+		<table class="acms-admin-mini-table">
+			<thead>
+				<tr>
+					<th>項目</th>
+					<th>状態</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>システムバージョン</td>
+				<td>%{VERSION} / {edition}</td>
+			</tr><!-- BEGIN max:veil -->
+			<tr>
+				<td>ユーザーの上限</td>
+				<td><!-- BEGIN amount:veil -->{amount} / {max}<!-- END amount:veil --><!-- BEGIN unlimited -->無制限<!-- END unlimited --><!-- BEGIN trial -->(トライアル)<!-- END trial --></td>
+			</tr><!-- END max:veil --><!-- BEGIN end:veil -->
+			<tr>
+				<td>トライアル終了</td>
+				<td>{end}</td>
+			</tr><!-- END end:veil --><!-- BEGIN term:veil -->
+			<tr>
+				<td>トライアル期限</td>
+				<td>{term}</td>
+			</tr><!-- END term:veil --><!-- BEGIN domain -->
+			<tr>
+				<td>サブドメイン拡張</td>
+				<td>利用可能</td>
+			</tr><!-- END domain --><!-- BEGIN domain2 -->
+			<tr>
+				<td>独自ドメイン拡張</td>
+				<td>利用可能</td>
+			</tr><!-- END domain2 --><!-- BEGIN domain3 -->
+			<tr>
+				<td>プラス独自ドメイン</td>
+				<td>利用可能 / {plus}個</td>
+			</tr><!-- END domain3 --><!-- BEGIN moblogPop -->
+			<tr>
+				<td>モブログ(Cron版) プラグイン</td>
+				<td>利用可能</td>
+			</tr><!-- END moblogPop --><!-- BEGIN shop -->
+			<tr>
+				<td>ショップ プラグイン</td>
+				<td>利用可能</td>
+			</tr><!-- END shop --><!-- BEGIN magazine -->
+			<tr>
+				<td>メールマガジン プラグイン</td>
+				<td>利用可能</td>
+			</tr><!-- END magazine -->
+		</table>
+		<!-- END_MODULE Admin_Dashboard_LicenseStatus -->
+
+		<h2 class="acms-admin-title2">a-blog cms公式サイト</h2>
+		<table class="acms-admin-mini-table">
+			<thead>
+				<tr>
+					<th><a href="http://www.a-blogcms.jp/">a-blog cms</a></th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<div class="acms-col-6">
+		<!--#include file="/admin/dashboard-right.html"-->
+
+		<!-- BEGIN_MODULE Admin_Dashboard_ClearCache -->
+		<h2 class="acms-admin-title2">キャッシュファイル管理</h2>
+		<form action="" method="post">
+			<table class="acms-admin-mini-table">
+				<thead>
+					<tr>
+						<th>項目</th>
+						<th>状態</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>キャッシュ生成の状態</td>
+						<td>
+							<!-- BEGIN cache_enable -->
+							有効
+							<!-- END cache_enable -->
+							<!-- BEGIN cache_disable -->
+							無効
+							<!-- END cache_disable -->
+						</td>
+					</tr>
+					<tr>
+						<td>全体の件数</td>
+						<td>{totalBins}</td>
+					</tr>
+					<tr>
+						<td>全体の総サイズ</td>
+						<td>{totalBytes}バイト</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				<label class="acms-form-checkbox">
+					<input type="checkbox" name="axis" value="descendant-or-self" /><i class="acms-ico-checkbox"></i>子ブログのキャッシュも含める
+				</label>
+				<input type="hidden" name="delete" value="false" />
+				<label class="acms-form-checkbox">
+					<input type="checkbox" name="delete" value="true" /><i class="acms-ico-checkbox"></i>完全消去
+				</label>
+			</p>
+			<p>
+				<input type="submit" name="ACMS_POST_Cache" value="リフレッシュ" class="acms-btn-admin" />
+				<input type="hidden" name="forcing" value="true" />
+			</p>
+		</form>
+
+		<!-- BEGIN cache_reserve:veil -->
+		<h2 class="acms-admin-title2">公開 / 掲載終了 予定の記事</h2>
+		<div class="acms-admin-table-scroll">
+			<table class="acms-admin-mini-table">
+				<tbody><!-- BEGIN cache_reserve:loop -->
+					<tr>
+						<td><a href="{entryUrl}">{title}</a><br><!-- BEGIN type:touch#start -->
+						公開予定<!-- END type:touch#start --><!-- BEGIN type:touch#end -->
+						掲載終了<!-- END type:touch#end --> : {datetime}[datetime('Y/m/d H:i:s')]</td>
+						<td><a href="{entryEdit}" class="acms-btn-admin">編集</a></td>
+					</tr><!-- END cache_reserve:loop -->
+				</tbody>
+			</table>
+		</div>
+		<!-- END cache_reserve:veil -->
+		<!-- END_MODULE Admin_Dashboard_ClearCache -->
+
+		<!-- BEGIN_MODULE Admin_Dashboard_DraftList -->
+		<h2 class="acms-admin-title2">下書きのエントリー</h2>
+		<!-- BEGIN draft#notFound --><p>下書き中のエントリーは見つかりませんでした</p><!-- END draft#notFound -->
+		<div class="acms-admin-table-scroll">
+			<table class="acms-admin-mini-table">
+				<thead>
+					<tr>
+						<th>タイトル</th>
+						<th>アクション</th>
+					</tr>
+				</thead>
+				<tbody><!-- BEGIN entry:loop -->
+					<tr>
+						<td><a href="{entryUrl}">{title}</a><br> <!-- BEGIN category:veil -->( <a href="{categoryUrl}">{categoryName}</a> )<!-- END category:veil -->
+						{userName} {datetime}[datetime(Y年m月d日 H:i:s)]</td>
+						<td><a href="{editUrl}" class="acms-btn-admin">編集</a></td>
+					</tr><!-- END entry:loop -->
+				</tbody>
+			</table>
+		</div>
+		<!-- END_MODULE Admin_Dashboard_DraftList -->
+	
+		<!-- BEGIN_MODULE Admin_Dashboard_Log_Login -->
+		<h2 class="acms-admin-title2">ログイン履歴</h2>
+		<div class="acms-admin-table-scroll">
+			<table class="acms-admin-mini-table">
+				<thead>
+					<tr>
+						<th>最終ログイン日時</th>
+						<th>ユーザー/権限</th>
+					</tr>
+				</thead>
+				<tbody><!-- BEGIN log:loop -->
+					<tr>
+						<td>{datetime}</td>
+						<td>{name}/<!-- BEGIN auth:touch#administrator -->
+							管理者<!-- END auth:touch#administrator --><!-- BEGIN auth:touch#editor -->
+							編集者<!-- END auth:touch#editor --><!-- BEGIN auth:touch#contributor -->
+							投稿者<!-- END auth:touch#contributor --><!-- BEGIN auth:touch#subscriber -->
+							読者<!-- END auth:touch#subscriber -->
+						</td>
+					</tr><!-- END log:loop -->
+				</tbody>
+			</table>
+		</div>
+		<!-- END_MODULE Admin_Dashboard_Log_Login -->
+
+		<!-- BEGIN_MODULE Admin_Dashboard_LoginTerminalRestriction -->
+		<h2 class="acms-admin-title2">ログイン許可/拒否 端末</h2>
+		<div class="acms-admin-table-scroll">
+			<p>端末制限されているユーザーに、この端末でのログインの許可・拒否を設定する</p>
+			<table class="acms-admin-mini-table">
+				<thead>
+					<tr>
+						<th>ステータス</th>
+						<th>設定</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><!-- BEGIN status#permission -->
+							許可端末<!-- END status#permission --><!-- BEGIN status#denial -->
+							拒否端末<!-- END status#denial -->
+						</td>
+						<td><!-- BEGIN status2#denial -->
+							<form action="" method="post" class="acms-inline-btn">
+								<input type="hidden" name="status" value="permission" />
+								<input type="submit" name="ACMS_POST_Login_TerminalRestriction" value="許可端末に設定" class="acms-btn-admin" />
+							</form><!-- END status2#denial -->
+							<!-- BEGIN status2#permission -->
+							<form action="" method="post" class="acms-inline-btn">
+								<input type="hidden" name="status" value="denial" />
+								<input type="submit" name="ACMS_POST_Login_TerminalRestriction" value="拒否端末に設定" class="acms-btn-admin acms-btn-admin-danger" />
+							</form><!-- END status2#permission -->
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- END_MODULE Admin_Dashboard_LoginTerminalRestriction -->
+
+	</div>
+</div>
+<!-- END_MODULE Admin_Top -->

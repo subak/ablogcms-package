@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="src/snippets.css" />
+<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="src/snippets.js" charset="UTF-8"></script>
+</head>
+<body>
+<h1>Shop_Cart_Notify</h1>
+<textarea>
+<!-- BEGIN_MODULE Shop_Cart_Notify -->
+<!-- BEGIN added -->
+<p class="orderMessage">{item_name}を{item_quantity}つ追加しました。1つ&yen;{item_price}[number_format]</p>
+<!-- END added -->
+
+<!-- BEGIN deleted -->
+<p class="orderMessage">{item_name}を削除しました。</p>
+<!-- END deleted -->
+<!-- END_MODULE Shop_Cart_Notify -->
+
+</textarea>
+</body>
+</html>

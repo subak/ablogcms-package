@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title><!-- BEGIN_MODULE Touch_Entry -->%{ENTRY_TITLE} | <!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_Category -->%{CATEGORY_NAME} | <!-- END_MODULE Touch_Category -->%{BLOG_NAME}</title>
+<meta name="keywords" content="%{META_KEYWORDS}" />
+<meta name="description" content="%{META_DESCRIPTION}" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="%{BASE_URL}rss2.xml" />
+
+<!-- スタイルの読み込み -->
+<!--#include file="/include/link.html"-->
+
+<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--><!-- BEGIN_MODULE Js -->
+<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<script type="text/javascript" src="/js/blog.js"></script>
+<!--BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Blog_Field -->{googleAnalytics}[raw]<!-- END_MODULE Blog_Field --><!-- END_MODULE Touch_Unlogin -->
+
+<!--#include file="/include/css.html"-->
+</head>
+<body>
+
+<div class="titleInner">
+	<div class="mainImg" class="clearfix">
+		<div class="gradient">
+			<div class="acms-container">
+				<div class="acms-grid-r">
+				<h1 class="siteTitle"><a href="%{BASE_URL}">%{BLOG_NAME}</a></h1>
+				<p class="siteCaption">%{META_DESCRIPTION}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--グローバルナビゲーション-->
+<!--#include file="/include/globalNavigation.html"-->
+
+<div class="acms-container">
+	<div class="acms-grid-r contents clearfix">
+		<div class="acms-col-9">
+			<!--#include file="/admin/action.html"-->
+			<div>
+			<ul class="fieldgroup">
+				<li><a href="%{BLOG_URL}fieldgroup/index.html">サンプル</a></li>
+				<li><a href="%{BLOG_URL}fieldgroup/table.html">テーブル</a></li>
+				<li><a href="%{BLOG_URL}fieldgroup/unit.html">ユニット</a></li>
+			</ul>
+			</div>
+			<!-- BEGIN_MODULE Form --><!-- BEGIN step --><!-- BEGIN found:veil -->
+			<h1>沿革 ( 表示 )</h1>
+			<div class="section entry">
+				<table><!-- BEGIN historygroup:loop -->
+					<tr>
+						<td>{date}[date('Y年n月')]</td>
+						<td>{business}</td>
+					</tr><!-- END historygroup:loop -->
+				</table>
+			</div><!-- END found:veil --><!-- END step --><!-- END_MODULE Form -->
+
+			<h1 id="history">沿革 ( 編集 )</h1>
+			<div class="section entry"><!-- BEGIN_MODULE Form --><!-- BEGIN step -->
+				<form action="#history" method="post" class="js-fieldgroup-sortable acms-form">
+					<table>
+						<thead>
+							<tr>
+								<th></th>
+								<th>日付</th>
+								<th>事柄</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody><!-- BEGIN historygroup:loop -->
+							<tr class="sortable-item">
+								<th class="item-handle"></th>
+								<td><input type="text" name="date[{i}]" value="{date}" class="js-datepicker" /></td>
+								<td><textarea name="business[{i}]">{business}</textarea></td>
+								<td><input type="button" class="item-delete acms-btn" value="削除" /></td>
+							</tr><!-- END historygroup:loop -->
+							<tr class="sortable-item item-template">
+								<th class="item-handle"></th>
+								<td><input type="text" name="date[]" class="js-datepicker" /></td>
+								<td><textarea name="business[]"></textarea></td>
+								<td><input type="button" class="item-delete acms-btn" value="削除" /></td>
+							</tr>
+						</tbody>
+						<tfooter>
+							<tr>
+								<th></th>
+								<td><input type="button" class="item-insert acms-btn" value="追加" /></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tfooter>
+					</table>
+					
+					<input type="hidden" name="@historygroup[]" value="date" />
+					<input type="hidden" name="@historygroup[]" value="business" />
+					<input type="hidden" name="field[]" value="date" />
+					<input type="hidden" name="field[]" value="business" />
+					<input type="hidden" name="field[]" value="@historygroup" />
+					
+					<input type="submit" name="ACMS_POST_Form_Confirm" value="送信" class="acms-btn" />
+				</form><!-- END step --><!-- END_MODULE Form -->
+			</div>
+		</div>
+		<div class="acms-col-3">
+		<!-- #include file="/include/navi.html" -->
+		</div>
+	</div>
+</div>
+
+<footer class="footer">
+	<p class="copyright"><small>&copy; %{DOMAIN}</small></p>
+</footer>
+</body>
+</html>

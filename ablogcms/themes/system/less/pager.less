@@ -1,0 +1,72 @@
+/* ---------------
+ pager
+--------------- */
+.acms-pager {
+	display: inline-block;
+	list-style: none;
+	padding: 0;
+	.font-size(13);
+	color: #333;
+	.clearfix();
+
+	// ページ
+	li {
+		float: left;
+		margin-left: 4px;
+		text-align: center;
+		// 最初の1件
+		&:first-child {
+			margin-left: 0;
+		}
+		// リンク
+		> a:link {
+			text-decoration: none;
+		}
+		// ページの見栄え
+		span > a,
+		&.cur span,
+		> a {
+			.btn;
+			.btn-color;
+			color: #333;
+
+		}
+		// hover
+		a:hover {
+			.btn-color-hover;
+			border: solid 1px #868688;
+			text-decoration: none;
+		}
+		&.cur span {
+			padding: 7px 10px;
+			border: 1px solid #AAA;
+			background: #CCCCCC;
+			filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(#CCCCCC),argb(#CCCCCC)));
+			text-decoration: none;
+		}
+		// active
+		> a:active {
+			border: 1px solid #AAA;
+			.btn-color-active;
+			text-decoration: none;
+		}
+	}
+}
+
+// スマホ対応
+@media screen and (max-width: 768px) {
+	.acms-pager {
+		margin-left: 10px;
+		margin-right: 10px;
+		// ページ
+		li {
+			
+			span > a,
+			&.cur span,
+			> a {
+				.font-size(15);
+				padding: 14px;
+			}
+		}
+	}
+}

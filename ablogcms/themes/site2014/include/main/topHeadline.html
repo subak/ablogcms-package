@@ -1,0 +1,13 @@
+<!-- BEGIN_MODULE Entry_Headline id="topHeadline" -->
+<section class="mainModuleBox">
+<!--#include file="/admin/module/setting.html"-->
+<h2><a href="{indexUrl}">お知らせ</a></h2>
+<ul class="headline"><!-- BEGIN entry:loop -->
+	<li><a href="{url}">
+		<span class="headlineDat">{date#Y}年{date#m}月{date#d}日( {date#week} )</span>
+		<!-- BEGIN category:veil --><span class="acms-label">{categoryName}</span><!-- END category:veil -->
+		<span class="title">{title}</span>
+	</a></li><!-- END entry:loop -->
+</ul>
+</section>
+<!-- END_MODULE Entry_Headline -->

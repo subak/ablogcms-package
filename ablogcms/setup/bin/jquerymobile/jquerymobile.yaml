@@ -1,0 +1,99 @@
+---
+category: 
+column: 
+config: 
+  - 
+    config_key: theme
+    config_value: jquerymobile
+    config_sort: 1
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_top
+    config_value: top.html
+    config_sort: 2
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_index
+    config_value: index.html
+    config_sort: 3
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_detail
+    config_value: entry.html
+    config_sort: 4
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_404
+    config_value: 404.html
+    config_sort: 5
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_admin
+    config_value: admin.html
+    config_sort: 6
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_edit
+    config_value: entry.html
+    config_sort: 7
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_add
+    config_value: entry.html
+    config_sort: 8
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: login_tpl
+    config_value: 
+    config_sort: 9
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+comment: 
+dashboard: 
+entry: 
+field: 
+form: 
+fulltext: 
+moblog: 
+module: 
+rule: 
+  - 
+    rule_id: 1
+    rule_name: スマートフォンの時（jQuery Mobile）
+    rule_sort: 1
+    rule_status: open
+    rule_description: 
+    rule_uid: 
+    rule_uid_case: 
+    rule_cid: 
+    rule_cid_case: 
+    rule_eid: 
+    rule_eid_case: 
+    rule_ucd: 
+    rule_ucd_case: 
+    rule_ccd: 
+    rule_ccd_case: 
+    rule_ecd: 
+    rule_ecd_case: 
+    rule_ua: SmartPhone
+    rule_ua_case: =
+    rule_blog_id: 1
+tag: 
+trackback: 

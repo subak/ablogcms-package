@@ -1,0 +1,22 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title">
+			<i class="acms-icon acms-icon-config"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+				<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+				<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->エクスポート
+		</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Config_Export -->
+<!--<p class="infoTxt">コンフィグを別ファイルに保存します。</p>-->
+<form action="%{SCRIPT_ROOT}bid/%{BID}/%{BLOG_NAME}.config.yaml" method="post">
+	<input type="submit" name="ACMS_POST_Config_Export" value="エクスポート" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+	<!-- BEGIN_MODULE Admin_Rule_Name -->
+	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+</form>
+<!-- END_MODULE Admin_Config_Export -->

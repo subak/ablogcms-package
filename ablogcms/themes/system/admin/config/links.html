@@ -1,0 +1,76 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<div class="acms-admin-title acms-module-title-wrapper">
+			<i class="acms-icon acms-icon-config_links"></i>
+			<div class="acms-module-title">
+				<!-- BEGIN_MODULE Admin_Rule_Name -->
+				<strong>ルール : {name}</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+				<strong>モジュールID : {label} ( {identifier} )</strong><!-- END_MODULE Admin_Module_Name -->
+				<h1>リンク集<span class="acms-module-en">Links</span></h1>
+			</div>
+		</div>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Config -->
+<!-- BEGIN_IF [{notice_mess}/nem/] -->
+<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>Links 設定を保存しました</p><!-- END_IF -->
+
+<form action="" method="post" class="acms-form">
+	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+		<div class="acms-form-group acms_fix_bg_index">
+			<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+		</div>
+	</div>
+
+	<table class="js-fieldgroup-sortable adminTable acms-table-admin-edit">
+		<tr class="acms-hide-sp">
+			<th class="acms-admin-config-table-item-handle"></th>
+			<th class="acms-table-left">リンク名<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="リンクとして表示される文字列です。"></i></th>
+			<th class="acms-table-left">URL<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="リンク先URLです。"></i></th>
+			<th class="acms-admin-config-table-action"></th>
+		</tr><!-- BEGIN linkgroup:loop -->
+		<tr class="sortable-item">
+			<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+			<td>
+				<span class="acms-hide-pc acms-show-sp">リンク名</span>
+				<input type="text" name="links_label[{i}]" value="{links_label}" class="acms-form-width-full" />
+			</td>
+			<td>
+				<span class="acms-hide-pc acms-show-sp">URL</span>
+				<input type="text" name="links_value[{i}]" value="{links_value}" class="acms-form-width-full" />
+			</td>
+			<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+		</tr><!-- END linkgroup:loop -->
+		<tr class="sortable-item item-template">
+			<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+			<td>
+				<span class="acms-hide-pc acms-show-sp">リンク名</span>
+				<input type="text" name="links_label[]" value="" class="acms-form-width-full" />
+			</td>
+			<td>
+				<span class="acms-hide-pc acms-show-sp">URL</span>
+				<input type="text" name="links_value[]" value="" class="acms-form-width-full" />
+			</td>
+			<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+		</tr>
+		<tr>
+			<td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td>
+		</tr>
+	</table>
+	<input type="hidden" name="@linkgroup[]" value="links_value" />
+	<input type="hidden" name="@linkgroup[]" value="links_label" />
+	<input type="hidden" name="config[]" value="links_value" />
+	<input type="hidden" name="config[]" value="links_label" />
+	<input type="hidden" name="config[]" value="@linkgroup" /><!-- BEGIN_MODULE Admin_Rule_Name -->
+	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+</form>
+<!-- END_MODULE Admin_Config -->

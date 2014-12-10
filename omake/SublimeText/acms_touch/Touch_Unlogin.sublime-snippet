@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Touch_Unlogin -->
+
+<!-- END_MODULE Touch_Unlogin -->]]></content>
+	<tabTrigger>!acms:touch</tabTrigger>
+    <description>Touch_Unlogin</description>
+</snippet>

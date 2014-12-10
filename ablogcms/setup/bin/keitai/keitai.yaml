@@ -1,0 +1,841 @@
+---
+category: 
+column: 
+config: 
+  - 
+    config_key: charset
+    config_value: Shift-JIS
+    config_sort: 1
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: const_file_path
+    config_value: private/const/kddi_utf8.php
+    config_sort: 5
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: const_file_path
+    config_value: private/const/softbank_utf8.php
+    config_sort: 5
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: remove_blank
+    config_value: off
+    config_sort: 4
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_detail
+    config_value: entry.html
+    config_sort: 4
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: addtype_mimetype
+    config_value: application/xhtml+xml
+    config_sort: 7
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: remove_blank
+    config_value: off
+    config_sort: 4
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_index
+    config_value: index.html
+    config_sort: 3
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: zip_http
+    config_value: on
+    config_sort: 2
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_index
+    config_value: index.html
+    config_sort: 3
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_index
+    config_value: index.html
+    config_sort: 3
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_index
+    config_value: index.html
+    config_sort: 3
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: remove_blank
+    config_value: off
+    config_sort: 4
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: remove_comment
+    config_value: off
+    config_sort: 3
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: zip_http
+    config_value: on
+    config_sort: 2
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: charset
+    config_value: UTF-8
+    config_sort: 1
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: zip_http
+    config_value: on
+    config_sort: 2
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_404
+    config_value: 404.html
+    config_sort: 5
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: zip_http
+    config_value: on
+    config_sort: 2
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_detail
+    config_value: entry.html
+    config_sort: 4
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: convert_kana
+    config_value: k
+    config_sort: 3
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_detail
+    config_value: entry.html
+    config_sort: 4
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: remove_comment
+    config_value: off
+    config_sort: 3
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_detail
+    config_value: entry.html
+    config_sort: 4
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: remove_comment
+    config_value: off
+    config_sort: 3
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_detail
+    config_value: entry.html
+    config_sort: 4
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: const_file_path
+    config_value: private/const/docomo.php
+    config_sort: 5
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: theme
+    config_value: keitai
+    config_sort: 1
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: addtype_extension
+    config_value: html
+    config_sort: 8
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: remove_comment
+    config_value: off
+    config_sort: 3
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: convert_kana
+    config_value: k
+    config_sort: 6
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: remove_comment
+    config_value: off
+    config_sort: 3
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: const_file_path
+    config_value: private/const/softbank.php
+    config_sort: 4
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: remove_blank
+    config_value: off
+    config_sort: 4
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: remove_blank
+    config_value: off
+    config_sort: 4
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_admin
+    config_value: admin.html
+    config_sort: 6
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: addtype_mimetype
+    config_value: 
+    config_sort: 5
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: zip_http
+    config_value: on
+    config_sort: 2
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: zip_http
+    config_value: on
+    config_sort: 2
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_detail
+    config_value: entry.html
+    config_sort: 4
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_index
+    config_value: index.html
+    config_sort: 3
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_top
+    config_value: index.html
+    config_sort: 2
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: charset
+    config_value: Shift-JIS
+    config_sort: 1
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_edit
+    config_value: entry.html
+    config_sort: 7
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: const_file_path
+    config_value: private/const/docomo.php
+    config_sort: 5
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: charset
+    config_value: Shift-JIS
+    config_sort: 1
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_404
+    config_value: 404.html
+    config_sort: 5
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: addtype_extension
+    config_value: 
+    config_sort: 6
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_404
+    config_value: 404.html
+    config_sort: 5
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: charset
+    config_value: UTF-8
+    config_sort: 1
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_404
+    config_value: 404.html
+    config_sort: 5
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: charset
+    config_value: UTF-8
+    config_sort: 1
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_404
+    config_value: 404.html
+    config_sort: 5
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: convert_kana
+    config_value: k
+    config_sort: 6
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_404
+    config_value: 404.html
+    config_sort: 5
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_admin
+    config_value: admin.html
+    config_sort: 6
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_admin
+    config_value: admin.html
+    config_sort: 6
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_admin
+    config_value: admin.html
+    config_sort: 6
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_admin
+    config_value: admin.html
+    config_sort: 6
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_admin
+    config_value: admin.html
+    config_sort: 6
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: theme
+    config_value: keitai
+    config_sort: 1
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_top
+    config_value: index.html
+    config_sort: 2
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_index
+    config_value: index.html
+    config_sort: 3
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: theme
+    config_value: keitai
+    config_sort: 1
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_top
+    config_value: index.html
+    config_sort: 2
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: theme
+    config_value: keitai
+    config_sort: 1
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_top
+    config_value: index.html
+    config_sort: 2
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: theme
+    config_value: keitai
+    config_sort: 1
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_top
+    config_value: index.html
+    config_sort: 2
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: theme
+    config_value: keitai
+    config_sort: 1
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_top
+    config_value: index.html
+    config_sort: 2
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: const_file_path
+    config_value: private/const/kddi.php
+    config_sort: 5
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: convert_kana
+    config_value: k
+    config_sort: 6
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: addtype_mimetype
+    config_value: 
+    config_sort: 7
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: addtype_extension
+    config_value: 
+    config_sort: 8
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: convert_kana
+    config_value: k
+    config_sort: 6
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: addtype_mimetype
+    config_value: 
+    config_sort: 7
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: addtype_extension
+    config_value: 
+    config_sort: 8
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: convert_kana
+    config_value: k
+    config_sort: 6
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: addtype_mimetype
+    config_value: 
+    config_sort: 7
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: addtype_extension
+    config_value: 
+    config_sort: 8
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: addtype_mimetype
+    config_value: application/xhtml+xml
+    config_sort: 7
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: addtype_extension
+    config_value: html
+    config_sort: 8
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_add
+    config_value: entry.html
+    config_sort: 8
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: login_tpl
+    config_value: 
+    config_sort: 9
+    config_rule_id: 1
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_edit
+    config_value: entry.html
+    config_sort: 7
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_add
+    config_value: entry.html
+    config_sort: 8
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: login_tpl
+    config_value: 
+    config_sort: 9
+    config_rule_id: 2
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_edit
+    config_value: entry.html
+    config_sort: 7
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_add
+    config_value: entry.html
+    config_sort: 8
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: login_tpl
+    config_value: 
+    config_sort: 9
+    config_rule_id: 3
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_edit
+    config_value: entry.html
+    config_sort: 7
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_add
+    config_value: entry.html
+    config_sort: 8
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: login_tpl
+    config_value: 
+    config_sort: 9
+    config_rule_id: 4
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_edit
+    config_value: entry.html
+    config_sort: 7
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_add
+    config_value: entry.html
+    config_sort: 8
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: login_tpl
+    config_value: 
+    config_sort: 9
+    config_rule_id: 5
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_edit
+    config_value: entry.html
+    config_sort: 7
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: tpl_entry_add
+    config_value: entry.html
+    config_sort: 8
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+  - 
+    config_key: login_tpl
+    config_value: 
+    config_sort: 9
+    config_rule_id: 6
+    config_module_id: 
+    config_blog_id: 1
+comment: 
+dashboard: 
+entry: 
+field: 
+form: 
+fulltext: 
+moblog: 
+module: 
+rule: 
+  - 
+    rule_id: 1
+    rule_name: sjis | kddiの時
+    rule_sort: 1
+    rule_status: open
+    rule_description: 
+    rule_uid: 
+    rule_uid_case: 
+    rule_cid: 
+    rule_cid_case: 
+    rule_eid: 
+    rule_eid_case: 
+    rule_ucd: 
+    rule_ucd_case: 
+    rule_ccd: 
+    rule_ccd_case: 
+    rule_ecd: 
+    rule_ecd_case: 
+    rule_ua: au
+    rule_ua_case: =
+    rule_blog_id: 1
+  - 
+    rule_id: 2
+    rule_name: sjis | docomoの時
+    rule_sort: 2
+    rule_status: open
+    rule_description: 
+    rule_uid: 
+    rule_uid_case: 
+    rule_cid: 
+    rule_cid_case: 
+    rule_eid: 
+    rule_eid_case: 
+    rule_ucd: 
+    rule_ucd_case: 
+    rule_ccd: 
+    rule_ccd_case: 
+    rule_ecd: 
+    rule_ecd_case: 
+    rule_ua: docomo
+    rule_ua_case: =
+    rule_blog_id: 1
+  - 
+    rule_id: 3
+    rule_name: sjis | softbankの時
+    rule_sort: 3
+    rule_status: open
+    rule_description: 
+    rule_uid: 
+    rule_uid_case: 
+    rule_cid: 
+    rule_cid_case: 
+    rule_eid: 
+    rule_eid_case: 
+    rule_ucd: 
+    rule_ucd_case: 
+    rule_ccd: 
+    rule_ccd_case: 
+    rule_ecd: 
+    rule_ecd_case: 
+    rule_ua: SoftBank
+    rule_ua_case: =
+    rule_blog_id: 1
+  - 
+    rule_id: 4
+    rule_name: utf8 | kddiの時
+    rule_sort: 4
+    rule_status: close
+    rule_description: 
+    rule_uid: 
+    rule_uid_case: 
+    rule_cid: 
+    rule_cid_case: 
+    rule_eid: 
+    rule_eid_case: 
+    rule_ucd: 
+    rule_ucd_case: 
+    rule_ccd: 
+    rule_ccd_case: 
+    rule_ecd: 
+    rule_ecd_case: 
+    rule_ua: au
+    rule_ua_case: =
+    rule_blog_id: 1
+  - 
+    rule_id: 5
+    rule_name: utf8 | softbankの時
+    rule_sort: 5
+    rule_status: close
+    rule_description: 
+    rule_uid: 
+    rule_uid_case: 
+    rule_cid: 
+    rule_cid_case: 
+    rule_eid: 
+    rule_eid_case: 
+    rule_ucd: 
+    rule_ucd_case: 
+    rule_ccd: 
+    rule_ccd_case: 
+    rule_ecd: 
+    rule_ecd_case: 
+    rule_ua: SoftBank
+    rule_ua_case: =
+    rule_blog_id: 1
+  - 
+    rule_id: 6
+    rule_name: utf8 | docomoの時
+    rule_sort: 6
+    rule_status: close
+    rule_description: 
+    rule_uid: 
+    rule_uid_case: 
+    rule_cid: 
+    rule_cid_case: 
+    rule_eid: 
+    rule_eid_case: 
+    rule_ucd: 
+    rule_ucd_case: 
+    rule_ccd: 
+    rule_ccd_case: 
+    rule_ecd: 
+    rule_ecd_case: 
+    rule_ua: docomo
+    rule_ua_case: =
+    rule_blog_id: 1
+tag: 
+trackback: 

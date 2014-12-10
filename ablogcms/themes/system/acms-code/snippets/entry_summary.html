@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="src/snippets.css" />
+<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="src/snippets.js" charset="UTF-8"></script>
+</head>
+<body>
+<h1>Entry_Summary</h1>
+<textarea>
+&lt;!-- BEGIN_MODULE Entry_Summary --&gt;
+&lt;div&gt;
+&lt;!--#include file=&quot;/admin/module/setting.html&quot;--&gt;
+&lt;!-- BEGIN notFound --&gt;
+<p>エントリーが見つかりませんでした。</p>
+&lt;!-- END notFound --&gt;
+
+&lt;!-- BEGIN unit:loop --&gt;
+<ul>&lt;!-- BEGIN entry:loop --&gt;
+	<li>
+		<div style="width:{x}px; height:{y}px; overflow:hidden; border: 1px solid black; position:relative;">&lt;!-- BEGIN image:veil --&gt;
+		<img src="&#x0025;{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" alt="" style="left:{left}px; top:{top}px; position:relative;" />&lt;!-- END image:veil --&gt;&lt;!-- BEGIN noimage --&gt;
+		noimage
+		&lt;!-- END noimage --&gt;
+		</div>
+		<p><a href="{url}">{title}</a></p>
+		<p>{summary}[trim(51, '...')]</p>
+	</li>&lt;!-- END entry:loop --&gt;
+</ul>&lt;!-- END unit:loop --&gt;
+
+&lt;!-- BEGIN pager:veil --&gt;
+<p>
+	全 {itemsAmount} 件中 {itemsFrom} 〜 {itemsTo} 件目を表示
+	&lt;!-- BEGIN firstPage:veil --&gt;&lt;a href=&quot;{firstPageUrl}&quot;&gt;{firstPage}&lt;/a&gt;&lt;!-- END firstPage:veil --&gt;
+	&lt;!-- BEGIN page:loop --&gt;&lt;!-- BEGIN link#front --&gt;<a href="{url}">&lt;!-- END link#front --&gt;{page}&lt;!-- BEGIN link#rear --&gt;</a>&lt;!-- END link#rear --&gt;&lt;!-- BEGIN glue --&gt;, &lt;!-- END glue --&gt;&lt;!-- END page:loop --&gt;
+	&lt;!-- BEGIN lastPage:veil --&gt; ...<a href="{lastPageUrl}">{lastPage}</a>&lt;!-- END lastPage:veil --&gt;
+</p>
+<p>
+	&lt;!-- BEGIN backLink --&gt;<a href="{url}">« 前の{backNum}件</a>&lt;!-- END backLink --&gt;
+	&lt;!-- BEGIN forwardLink --&gt;<a href="{url}">次の{forwardNum}件 »</a>&lt;!-- END forwardLink --&gt;
+</p>
+&lt;!-- END pager:veil --&gt;
+&lt;/div&gt;
+&lt;!-- END_MODULE Entry_Summary --&gt;
+</textarea>
+</body>
+</html>

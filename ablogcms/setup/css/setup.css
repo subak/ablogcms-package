@@ -1,0 +1,339 @@
+@charset "utf-8";
+
+/* ---------------
+セットアップ用CSS setup.css
+--------------- */
+
+/* ---------------
+表示調整汎用
+--------------- */
+/* フロート解除 */
+.clear {
+	clear: both !important;
+}
+/*	フロート解除(不可視)(予備)	*/
+.clearHidden {
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+}
+/* フロート解除(不可視) */
+.clearfix:after {
+	clear: both;
+	display: block;
+	visibility: hidden;
+	height: 0;
+	content: ".";
+}
+.clearfix {
+	_display: inline-table;
+	zoom: 1;
+}
+
+*{
+}
+
+#wrapper {
+	width: 900px;
+	margin: 0px auto;
+	background: #F7F7F7 none repeat scroll 0 0;
+    border-top: 7px solid #474752;
+	}
+/* header ▼▼ */
+/* h1タイトル */
+#header{
+    padding: 42px 40px 0 40px;
+	text-align: left;
+	background: #F7F7F7 none repeat scroll 0 0;
+	overflow: hidden;
+}
+
+#siteTitle {
+    float: left;
+	font-size: 2rem;
+}
+
+span#setupType {
+    float: left;
+    background-color: #474752;
+    padding:2px 7px;
+    font-size:1.6rem;
+    margin-left:26px;
+    color:white;
+    font-weight:bold;
+}
+
+/* header ▲▲ main ▼▼ */
+
+/* Stepパスの表示 */
+#stepPath {
+    padding:0 40px;
+    margin-top:47px;
+}
+
+.hidden {
+    display: none;
+}
+
+#stepPath ul {
+    overflow: hidden;
+    background-color: #D4D4D6;
+    height:50px;
+}
+
+#stepPath ul li {
+    float:left;
+    display: block;
+	margin:15px 0 0 0;
+    padding:0px 23px 0 32px;
+    font-size:1.2rem;
+    font-weight: bold;
+    color: #474752;
+    filter:alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity:0.5;
+    background-position: 8px center;
+    background-repeat: no-repeat;
+}
+
+#stepPath ul li#step1 {background-image: url(../img/step1s.gif);}
+#stepPath ul li#step2 {background-image: url(../img/step2s.gif);}
+#stepPath ul li#step3 {background-image: url(../img/step3s.gif);}
+#stepPath ul li#step4 {background-image: url(../img/step4s.gif);}
+#stepPath ul li#step5 {background-image: url(../img/step5s.gif);}
+
+#stepPath ul li.processing {
+    filter:alpha(opacity=100);
+    -moz-opacity: 1;
+    opacity:1;
+}
+
+#stepPath ul li.processed {
+    background-color:#D4D4D6;
+}
+
+#main {
+	float:none;
+	padding:0 40px;
+	text-align:left;
+}
+
+
+/* main ▲▲ sub ▼▼ */
+
+/* sub ▲▲ footer ▼▼ */
+#toTop {
+	text-align: right;
+	margin: 10px 20px 0 0;
+	padding: 10px 0 0 0;
+	font-size: 0.84rem;
+}
+#copyright {
+	text-align: center;
+	font-size: 1rem;
+}
+#main p#submitBtn {
+    text-align: center;
+    background-color: #dadada;
+    margin: 20px 0;
+    padding: 5px;
+}
+    #submitBtn input {
+    }
+
+/* footer ▲▲ */
+
+/* セットアップ画面用 */
+#main {
+	color: #333333;
+	background-color: #F7F7F7;
+}
+#main h2 {
+    color: #474752;
+	margin: 1rem 0;
+	font-size: 1.6rem;
+}
+#main h2 img {
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+#main h3 {
+    color: #474752;
+	margin: 1rem 0 1rem;
+	padding-bottom: 3px;
+	border-bottom: 3px #CFCFCF solid;
+	font-size: 1.2rem;
+}
+
+#main ul {
+	list-style-position: inside;
+	list-style-type: disc;
+	margin: 0.5rem 1rem;
+}
+#main ul li {
+    margin-bottom: 0.5rem;
+    font-size: 13px;
+}
+#main dl {
+	margin: 0 1rem;
+}
+#main dt {
+	margin-top:1.5rem;
+	font-size: 15px;
+	font-weight: bold;
+	color:#555;
+}
+#main dd {
+	margin-bottom: 0.5rem;
+	font-size: 15px;
+}
+#main form {
+	margin: 1rem 0;
+}
+
+#main label {
+	padding: 0;
+	margin: 8px;
+	font-size: 13px;
+}
+/*#main form input {
+	margin: 0.25em 0 0.5em 0;
+	padding: 0.2em;
+	font-size:1.1em;
+	_margin: -0.25em 0 0 0;
+	_padding: 0;
+	_height: 1.5em;
+	_line-height: 1.3em;
+}*/
+/*#main input[type="submit"] {
+    margin:2em 0 0 0;
+}*/
+#main a {
+	color: #0066FF;
+}
+#main p {
+    margin-left:10px;
+    font-size: 13px;
+}
+/*#main fieldset {
+    border: 3px solid #e0e0e0;
+    margin: 15px 0;
+    padding: 10px;
+}
+#main fieldset p {
+    margin-left:0;
+}
+#main fieldset legend {
+    border: 3px solid #e0e0e0;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size:1.1em;
+}*/
+
+/* 警告、エラーメッセージ	 */
+#main .warning,
+#main p.errorMsg {
+	color: #C40F32;
+	font-weight: bold;
+    margin-bottom: 10px;
+}
+#main p.noticeMsg {
+    color: blue;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#main .notice {
+	margin:10px 0 3px 10px;
+	vertical-align:middle;
+}
+#main .notice img {
+	margin-bottom:-3px;
+}
+.clearHidden {
+	margin:0 0 0 0;
+	border:none;
+	padding:0;
+	height:0;
+	width:auto;
+	visibility:hidden;
+	clear:both;
+	display: block;
+	_margin:-40px 0 0 0;
+	_height:20px;
+}
+.left {
+	float:left;
+	margin-right: 0px;
+	margin-left: 10px;
+}
+.selectTheme {
+	float:left;
+    margin: 8px;
+    _margin: 5px;
+}
+.border {
+	border: 1px solid gray;
+	width: 240px;
+}
+#footer {
+	clear: both;
+	margin: 20px auto 0 auto;
+	padding: 10px 0 20px 0;
+	background: #474752 none repeat scroll 0 0;
+	color: #FFFFFF;
+	text-align: center;
+}
+.footer:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+/* setup.phpチェックアイコン  */
+
+#wrapper #main ul#checkList {
+	margin: 10px 0 20px 0;
+	padding: 0px;
+	list-style: none;
+}
+#wrapper #main #checkList li {
+	background: url(../img/checkIcon.gif) no-repeat 0 0.4rem;
+	padding: 0 0 0 20px;
+	_padding: 0 0 0 10px;
+	margin: 0 0 10px 10px;
+}
+*+html #wrapper #main #checkList li {
+padding: 0 0 0 10px;
+}
+#wrapper #main ul#stepList {
+	margin: 10px 0px 20px 10px;
+	_margin: 10px 0px 20px 0px;
+	padding: 0px;
+	list-style: none;
+}
+*+html #wrapper #main ul#stepList {
+	margin: 10px 0px 20px 0px;
+}
+#wrapper #main ul#stepList li {
+	margin: 0px 0px 10px 0;
+	padding: 0 0 0 0;
+}
+
+/* 設定選択リスト */
+#main ul.cfgInput {
+	list-style-type: none;
+}
+
+/* 見出し */
+h4 {
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+.highlight {
+    background-color: yellow;
+}

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="%{CHARSET}"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=%{CHARSET}" />
+<title>a-blog cms login</title>
+</head>
+<body>
+<!-- BEGIN_MODULE Login -->
+<h1 align="center"><a href="http://www.a-blogcms.jp/"><img src="/images/ablogcms.gif" alt="a-blog cms" width="220" height="54" border="0" /></a></h1>
+
+<!-- BEGIN auth -->
+<form action="" method="post" class="loginDl">
+<dl>
+<dt>ユーザーID / メールアドレス :</dt>
+<dd>
+<input type="text" name="mail" value="{mail}" istyle="3" format="*m" mode="alphabet" />
+<input type="hidden" name="login[]" value="mail" />
+</dd>
+<dt>パスワード :</dt>
+<dd>
+<input type="password" name="pass" value="{pass}" istyle="3" format="*m" mode="alphabet" />
+<input type="hidden" name="login[]" value="pass" />
+<br />
+<input type="hidden" name="persistent" value="off" />
+<input type="checkbox" name="persistent" value="on" id="input-checkbox-persistent"{persistent:checked#on} />
+<input type="hidden" name="login[]" value="persistent" />
+<label for="input-checkbox-persistent">パスワードを保存</label>
+</dd>
+</dl>
+<!-- BEGIN pass:validator#auth -->
+<p>ユーザーIDまたはパスワードが違います。</p>
+<!-- END pass:validator#auth -->
+
+<p class="loginLink"><a href="/login/alt/remind/">パスワードをお忘れの方はこちら</a></p>
+<input type="submit" name="ACMS_POST_Login_Auth" value="ログイン" />
+</form>
+
+<!-- BEGIN subscribeLink --><p class="subscribeLink"><a href="/login/alt/subscribe/">読者登録はこちら</a></p><!-- END subscribeLink -->
+<!-- END auth -->
+
+<!-- BEGIN remind -->
+<form action="" method="post" class="loginDl">
+<dl>
+<dt>メールアドレス :</dt>
+<dd>
+<input type="text" name="mail" value="{mail}" istyle="3" format="*m" mode="alphabet" />
+<input type="hidden" name="login[]" value="mail" />
+<input type="hidden" name="mail:validator#required" />
+<input type="hidden" name="mail:validator#exist" />
+</dd>
+</dl>
+
+<!-- BEGIN sendMsg#before -->
+<p>パスワード変更依頼の確認メールを送信します。</p><!-- END sendMsg#before --><!-- BEGIN sendMsg#after -->
+<p>パスワードリセット申請メールを送信しました。</p><!-- END sendMsg#after -->
+
+<!-- BEGIN mail:validator#required -->
+<p>メールアドレスが入力されていません。</p>
+<!-- END mail:validator#required -->
+
+<!-- BEGIN mail:validator#exist -->
+<p>登録されていないメールアドレスです。</p>
+<!-- END mail:validator#exist -->
+
+<p><a href="/login/">ログイン画面に戻る</a></p><!-- BEGIN submit -->
+<p><input type="submit" name="ACMS_POST_Login_Remind" value="パスワード変更依頼" /></p><!-- END submit -->
+</form>
+<!-- END remind -->
+
+<!-- BEGIN subscribe -->
+<form action="" method="post" class="loginDl">
+<dl>
+<dt>名前 :</dt>
+<dd>
+<input type="text" name="name" value="{name}" class="formSizeL" />
+<input type="hidden" name="login[]" value="name" />
+<input type="hidden" name="name:validator#required" />
+</dd>
+<dt>メールアドレス :</dt>
+<dd>
+<input type="text" name="mail" value="{mail}" istyle="3" format="*m" mode="alphabet" />
+<input type="hidden" name="login[]" value="mail" />
+<input type="hidden" name="mail:validator#required" />
+<input type="hidden" name="mail:validator#email" />
+<input type="hidden" name="mail:validator#double" />
+</dd>
+</dl>
+
+<!-- BEGIN sendMsg#before -->
+<p>読者登録を申請します。</p><!-- END sendMsg#before --><!-- BEGIN sendMsg#after -->
+<p>読者登録を申請しました。</p><!-- END sendMsg#after -->
+
+
+<!-- BEGIN name:validator#required -->
+<p>名前が入力されていません。</p>
+<!-- END name:validator#required -->
+
+<!-- BEGIN mail:validator#required -->
+<p>メールアドレスが入力されていません。</p>
+<!-- END mail:validator#required -->
+
+<!-- BEGIN mail:validator#mail -->
+<p>不正なメールアドレスです。</p>
+<!-- END mail:validator#mail -->
+
+<!-- BEGIN mail:validator#double -->
+<p>すでに登録されているメールアドレスです。</p>
+<!-- END mail:validator#double -->
+
+
+<p><a href="/login/">ログイン画面に戻る</a></p><!-- BEGIN submit -->
+<p><input type="submit" name="ACMS_POST_Login_Subscribe" value="読者登録する" /></p><!-- END submit -->
+</form>
+<!-- END subscribe -->
+<!-- END_MODULE Login -->
+</body>
+</html>

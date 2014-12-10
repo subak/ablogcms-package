@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms ブログ構造の修正ウィザード</title>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="siteTitleBox">
+			<h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+			<span id="setupType">ブログ構造の修正</span>
+		</div>
+	</div>
+<div id="main">
+
+<!-- BEGIN step#apply -->
+<!-- BEGIN delete -->
+    <h2>ブログレコードの重複を検出しました</h2>
+    <h3>正しいレコードの選別を行います。</h3>
+    <p>インストールやコンバートの途中に予期しない終了が起こった場合に、不正なレコードが残留することがあります。</p>
+    <p>この状態で運用するとエントリーが2つずつ表示されるなど運用に重大な支障をきたします。</p>
+    <h3>正しいレコードを選択してください。</h3>
+    <form action="" method="post" class="acms-form">
+        <ul><!-- BEGIN blog:loop -->
+            <li>
+                <label class="acms-form-radio"><input type="radio" name="i" value="{i}" /><i class="acms-ico-radio"></i>
+&nbsp;{name} / {code} : [ {domain} ]</label><!-- BEGIN status:touch#open -->
+                公開<!-- END status:touch#open --><!-- BEGIN status:touch#close -->
+                非公開<!-- END status:touch#close --><!-- BEGIN status:touch#secret -->
+                シークレット<!-- END status:touch#secret --><!-- <!-- BEGIN indexing:touch#on -->
+                リストに出す<!-- END indexing:touch#on --><!-- BEGIN indexing:touch#off -->
+                リストに出さない<!-- END indexing:touch#off --> -->
+                
+                <input type="hidden" name="count[]" value="1" />
+                <input type="hidden" name="bid_{i}" value="{bid}" />
+                <input type="hidden" name="code_{i}" value="{code}" />
+                <input type="hidden" name="status_{i}" value="{status}" />
+                <input type="hidden" name="parent_{i}" value="{parent}" />
+                <input type="hidden" name="sort_{i}" value="{sort}" />
+                <input type="hidden" name="left_{i}" value="{left}" />
+                <input type="hidden" name="right_{i}" value="{right}" />
+                <input type="hidden" name="name_{i}" value="{name}" />
+                <input type="hidden" name="domain_{i}" value="{domain}" />
+                <input type="hidden" name="indexing_{i}" value="{indexing}" />
+            </li><!-- END blog:loop -->
+        </ul>
+        <p class="errorMsg">この操作は取り消せません。選択したブログのレコードを入念に確認してから実行してください。</p>
+        <input type="hidden" name="action" value="delete" />
+        <p id="submitBtn"><input type="submit" name="submit" value="選択したレコードを残し、それ以外を削除します" class="acms-btn-admin" /></p>
+    </form>
+
+<!-- END delete -->
+<!-- BEGIN align -->
+    <h2>ブログ構造を修正します</h2>
+        <h3>ブログ構造の修正</h3>
+            <p>ブログ全体ではなく、特定のモジュールやテンプレートの記述で、ブログに不具合が見られる場合は、<br />
+            そのモジュールのバグ、またはテンプレートの記述の誤りである可能性が高いため、構造の修正では改善しない可能性があります。</p>
+        <h3>注意事項</h3>
+            <p class="errorMsg">現在、正しく表示できているブログには実行する必要がありません。</p>
+    <form action="" method="post">
+        <input type="hidden" name="action" value="align" />
+        <p id="submitBtn"><input type="submit" name="submit" value="ブログ構造を修正します" class="acms-btn-admin" /></p>
+    </form>
+<!-- END align -->
+<!-- END step#apply -->
+
+<!-- BEGIN step#error -->
+<!-- BEGIN delete -->
+    <h2>ブログレコードの重複を検出しました</h2>
+    <h3>正しいレコードの選別を行います。</h3>
+    <p>インストールやコンバートの途中に予期しない終了が起こった場合に、不正なレコードが残留することがあります。</p>
+    <p>この状態で運用するとエントリーが2つずつ表示されるなど運用に重大な支障をきたします。</p>
+    <h3>正しいレコードを選択してください。</h3>
+    <form action="" method="post">
+        <!-- BEGIN bid_input:error --><p class="errorMsg">残すブログのレコードを選択してください</p><!-- END bid_input:error -->
+        <ul><!-- BEGIN blog:loop -->
+            <li>
+                <label class="acms-form-radio"><input type="radio" name="i" value="{i}" /><i class="acms-ico-radio"></i>
+&nbsp;{name} / {code} : [ {domain} ]</label><!-- BEGIN status:touch#open -->
+                公開<!-- END status:touch#open --><!-- BEGIN status:touch#close -->
+                非公開<!-- END status:touch#close --><!-- BEGIN status:touch#secret -->
+                シークレット<!-- END status:touch#secret --><!-- <!-- BEGIN indexing:touch#on -->
+                リストに出す<!-- END indexing:touch#on --><!-- BEGIN indexing:touch#off -->
+                リストに出さない<!-- END indexing:touch#off --> -->
+                
+                <input type="hidden" name="count[]" value="1" />
+                <input type="hidden" name="bid_{i}" value="{bid}" />
+                <input type="hidden" name="code_{i}" value="{code}" />
+                <input type="hidden" name="status_{i}" value="{status}" />
+                <input type="hidden" name="parent_{i}" value="{parent}" />
+                <input type="hidden" name="sort_{i}" value="{sort}" />
+                <input type="hidden" name="left_{i}" value="{left}" />
+                <input type="hidden" name="right_{i}" value="{right}" />
+                <input type="hidden" name="name_{i}" value="{name}" />
+                <input type="hidden" name="domain_{i}" value="{domain}" />
+                <input type="hidden" name="indexing_{i}" value="{indexing}" />
+            </li><!-- END blog:loop -->
+        </ul>
+        <p class="errorMsg">この操作は取り消せません。選択したブログのレコードを入念に確認してから実行してください。</p>
+        <input type="hidden" name="action" value="delete" />
+        <p id="submitBtn"><input type="submit" name="submit" value="選択したレコードを残し、それ以外を削除します" class="acms-btn-admin" /></p>
+    </form>
+
+<!-- END delete -->
+<!-- BEGIN align -->
+    <h2>ブログ構造を修正します</h2>
+        <h3>ブログ構造の修正</h3>
+            <p>ブログ全体ではなく、特定のモジュールやテンプレートの記述で、ブログに不具合が見られる場合は、<br />
+            そのモジュールのバグ、またはテンプレートの記述の誤りである可能性が高いため、構造の修正では改善しない可能性があります。</p>
+        <h3>注意事項</h3>
+            <p class="errorMsg">現在、正しく表示できているブログには実行する必要がありません。</p>
+    <form action="" method="post">
+        <input type="hidden" name="action" value="align" />
+        <p id="submitBtn"><input type="submit" name="submit" value="ブログ構造を修正します" class="acms-btn-admin" /></p>
+    </form>
+<!-- END align -->
+<!-- BEGIN execute:error --><p class="errorMsg">ブログの削除時にエラーが発生しました。</p><!-- END execute:error -->
+
+<!-- END step#error -->
+
+<!-- BEGIN step#result -->
+    <h2>ブログ構造を修正しました</h2>
+        <h3>公開ページにアクセスし、修正後の結果を確認してください</h3>
+            <p>問題が解決しない場合は、他の原因が考えられます。問題についてフォーラムにご報告ください。</p>
+<!-- END step#result -->
+
+<p><a href="./index.php">メンテナンスメニューに戻る</a></p>
+</div>
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

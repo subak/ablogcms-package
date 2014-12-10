@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms シーケンスの修正ウィザード</title>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="siteTitleBox">
+			<h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+			<span id="setupType">シーケンスの修正</span>
+		</div>
+	</div>
+<div id="main">
+
+<!-- BEGIN step#apply -->
+    <h2>シーケンスを修正します</h2>
+        <h3>シーケンスの修正</h3>
+            <p class="noticeMsg">IDの発行に異常がある状態のシーケンスを修正します。</p>
+        <h3>注意事項</h3>
+            <p class="errorMsg">現在、正しくIDが発行できている場合は、このツールを実行する必要はありません。</p>
+    <form action="" method="post">
+        <p id="submitBtn"><input type="submit" name="submit" value="シーケンスを修正します" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#apply -->
+
+<!-- BEGIN step#error -->
+    <h2>シーケンスを修正します</h2>
+        <h3>シーケンスの修正</h3>
+            <p class="noticeMsg">IDの発行に異常がある状態のシーケンスを修正します。</p>
+        <h3>注意事項</h3>
+            <p class="errorMsg">現在、正しくIDが発行できているブログには実行する必要がありません。</p>
+    <form action="" method="post">
+        <p id="submitBtn"><input type="submit" name="submit" value="シーケンスを修正します" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#error -->
+
+<!-- BEGIN step#result -->
+    <h2>シーケンスを修正しました</h2>
+        <h3>公開ページにアクセスし、IDの発行が正常に行われるか確認してください。</h3>
+            <p>症状が改善されない場合は、お手数ですがユーザーフォーラムまでお知らせください。</p>
+<!-- END step#result -->
+
+<p><a href="./index.php">メンテナンスメニューに戻る</a></p>
+</div>
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

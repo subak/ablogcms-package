@@ -1,0 +1,49 @@
+<!-- BEGIN_MODULE Admin_Form2_Edit -->
+<!-- BEGIN step#reapply -->
+<form action="" method="post" enctype="multipart/form-data" id="entryForm" class="js-observeFileSize acms-form">
+	<div class="entryFormWrapper">
+		<table class="entryFormTable acms-table-entry">
+			<tr>
+				<th>ステータス</th>
+				<td>
+					<select name="form_status">
+						<option value="open"{form_status:selected#open}>公開</option>
+						<option value="close"{form_status:selected#close}>非公開</option>
+					</select>
+					<input type="hidden" name="form[]" value="form_status" />
+				</td>
+			</tr>
+			<tr>
+				<th>フォームセット</th>
+				<td>
+					<select name="form_id">
+						<option value="">選択して下さい</option><!-- BEGIN form:loop -->
+						<option value="{form_id}"{selected}>{form_name} / {form_code}</option><!-- END form:loop -->
+					</select>
+					<input type="hidden" name="form[]" value="form_id" />
+					<input type="hidden" name="form_id:validator#required" id="validator-form_id-required" />
+					<label for="validator-form_id-required" class="validator-result-{form_id:validator#required}">フォームセットが入力されていません。</label>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<!--#include file="/admin/form2/unit.html"-->
+	<p class="comPost">
+		<!-- BEGIN action#update -->
+		<input type="submit" name="ACMS_POST_Form2_Update" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+		<!-- END action#update -->
+		<input type="submit" name="ACMS_POST_2GET" value="戻る" class="cancelBtn overlook acms-btn" onclick="return confirm('エントリーの編集を中止します。\n現在の変更内容が破棄されますが、よろしいですか？');" />
+		<input type="hidden" name="entry:takeover" value="{entry:takeover}" />
+		<input type="hidden" name="field:takeover" value="{field:takeover}" />
+		<input type="hidden" name="column_object" value="{column:takeover}" />
+		
+		<input type="hidden" name="bid" value="%{BID}" />
+		<input type="hidden" name="cid" value="%{CID}" />
+		<input type="hidden" name="eid" value="%{EID}" />
+		<input type="hidden" name="arg[]" value="bid" />
+		<input type="hidden" name="arg[]" value="cid" />
+		<input type="hidden" name="arg[]" value="eid" />
+	</p>
+</form>
+<!-- END step#reapply -->
+<!-- END_MODULE Admin_Form2_Edit -->

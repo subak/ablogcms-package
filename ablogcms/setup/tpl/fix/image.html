@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms 画像サイズの修正ウィザード</title>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="siteTitleBox">
+			<h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+			<span id="setupType">画像サイズの修正</span>
+		</div>
+	</div>
+<div id="main">
+
+<!-- BEGIN step#apply -->
+    <h2>画像サイズを修正します</h2>
+        <h3>画像サイズの修正</h3>
+            <p class="noticeMsg">
+            ユニットの画像サイズ（拡大画像、通常画像、モバイル画像、正方形画像）を修正します。</p>
+        <h3>注意事項</h3>
+            <p class="errorMsg">拡大画像がない場合や、拡大画像より大きいサイズには修正がされないのでご注意下さい。</p>
+    <form action="" method="post">
+        <h3>画像サイズを修正する対象のブログを選択して下さい。</h3>
+        <ul><!-- BEGIN blog:loop -->
+            <li><label class="acms-form-radio"><input type="radio" name="bid" value="{bid}" /><i class="acms-ico-radio"></i>&nbsp;{bid} : {name} (親BID : {parent})</label></li><!-- END blog:loop -->
+        </ul>
+
+        <!-- BEGIN bid_input:error --><p class="errorMsg">対象のブログを選択してください。</p><!-- END bid_input:error -->
+
+        <input type="hidden" name="step" value="setting" />
+        <p id="submitBtn"><input type="submit" name="submit" value="画像サイズ設定画面に進む" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#apply -->
+
+<!-- BEGIN step#setting -->
+    <h2>画像サイズを設定します</h2>
+        <h3>注意事項</h3>
+            <p class="errorMsg">拡大画像がない場合や、拡大画像より大きいサイズには修正がされないのでご注意下さい。</p>
+    <form action="" method="post" class="acms-form">
+        <h3>リサイズする画像サイズを選択して下さい。</h3><!-- BEGIN size -->
+        <ul>
+            <li>
+                <label class="acms-form-radio"><input type="radio" name="type" value="large" /><i class="acms-ico-radio"></i>&nbsp;拡大画像(Large&nbsp;:&nbsp;{largeSize}px)</label>
+            </li>
+            <li>
+                <label class="acms-form-radio"><input type="radio" name="type" value="normal" /><i class="acms-ico-radio"></i>&nbsp;通常画像(Normal)</label>
+                <select name="normalSize" class="acms-form-select"><!-- BEGIN normalSize:loop -->
+                    <option value="{size}">{size}</option><!-- END normalSize:loop -->
+                </select>
+            </li>
+            <li>
+                <label class="acms-form-radio"><input type="radio" name="type" value="tiny" /><i class="acms-ico-radio"></i>&nbsp;モバイル画像(Tiny&nbsp;:&nbsp;{tinySize}px)</label>
+            </li>
+            <li>
+                <label class="acms-form-radio"><input type="radio" name="type" value="square" /><i class="acms-ico-radio"></i>&nbsp;正方形画像(Square&nbsp;:&nbsp;{squareSize}px)</label>
+            </li>
+        </ul><!-- END size -->
+
+        <!-- BEGIN type:error --><p class="errorMsg">リサイズする画像を選択して下さい。</p><!-- END type:error -->
+
+        <h3>リサイズ後のサイズを選択して下さい。</h3>
+        <select name="imageSizeCriterion">
+            <option value="">長辺</option>
+            <option value="width">横</option>
+            <option value="height">縦</option>
+        </select>
+        <input type="text" name="resize" value="" size="10">&nbsp;px
+
+        <!-- BEGIN resize:error --><p class="errorMsg">リサイズ後のサイズを選択して下さい。</p><!-- END resize:error -->
+
+        <input type="hidden" name="bid" value="{bid}" />
+        <input type="hidden" name="step" value="result" />
+        
+        <p id="submitBtn"><input type="submit" name="submit" value="画像サイズを修正する" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#setting -->
+
+<!-- BEGIN step#result -->
+    <h2>画像サイズを修正しました</h2>
+        <h3>公開ページにアクセスし、修正後の結果を確認してください</h3>
+            <p>問題が解決しない場合は、他の原因が考えられます。問題についてフォーラムにご報告ください。</p>
+<!-- END step#result -->
+
+<p><a href="./index.php">メンテナンスメニューに戻る</a></p>
+</div>
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

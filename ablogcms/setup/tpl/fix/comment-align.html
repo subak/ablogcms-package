@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+<title>a-blog cms コメント構造の修正ウィザード</title>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="siteTitleBox">
+			<h1 id="siteTitle"><img src="img/logo.gif" alt="a-blog cms セットアップ" /></h1>
+			<span id="setupType">コメント構造の修正</span>
+		</div>
+	</div>
+<div id="main">
+
+<!-- BEGIN step#apply -->
+    <h2>コメント構造を修正します</h2>
+        <h3>コメント構造の修正</h3>
+            <p>ブログ全体ではなく、特定のモジュールやテンプレートの記述で、コメントに不具合が見られる場合は、<br />
+            そのモジュールのバグ、またはテンプレートの記述の誤りである可能性が高いため、構造の修正では改善しない可能性があります。</p>
+        <h3>注意事項</h3>
+            <p class="errorMsg">現在、正しく表示できているブログには実行する必要がありません。</p>
+    <form action="" method="post">
+        <h3>コメント構造を修正する対象のブログを選択してください。</h3>
+            <ul><!-- BEGIN blog:loop -->
+                <li><label class="acms-form-radio"><input type="radio" name="bid" value="{bid}" /><i class="acms-ico-radio"></i>
+&nbsp;{bid} : {name} (親BID : {parent})</label></li><!-- END blog:loop -->
+            </ul>
+        <p id="submitBtn"><input type="submit" name="submit" value="コメント構造を修正します" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#apply -->
+
+<!-- BEGIN step#error -->
+    <h2>コメント構造を修正します</h2>
+        <h3>コメント構造の修正</h3>
+            <p>ブログ全体ではなく、特定のモジュールやテンプレートの記述で、コメントに不具合が見られる場合は、<br />
+            そのモジュールのバグ、またはテンプレートの記述の誤りである可能性が高いため、構造の修正では改善しない可能性があります。</p>
+        <h3>注意事項</h3>
+            <p class="errorMsg">現在、正しく表示できているブログには実行する必要がありません。</p>
+    <form action="" method="post">
+        <h3>コメント構造を修正する対象のブログを選択してください。</h3>
+            <ul><!-- BEGIN blog:loop -->
+                <li><label class="acms-form-radio"><input type="radio" name="bid" value="{bid}" /><i class="acms-ico-radio"></i>
+&nbsp;{bid} : {name} (親BID : {parent})</label></li><!-- END blog:loop -->
+            </ul>
+            <!-- BEGIN bid_input:error --><p class="errorMsg">対象のブログを選択してください。</p><!-- END bid_input:error -->
+            <!-- BEGIN execute:error --><p class="errorMsg">実行時にエラーが発生しました</p><!-- END execute:error -->
+        <p id="submitBtn"><input type="submit" name="submit" value="コメント構造を修正します" class="acms-btn-admin" /></p>
+    </form>
+<!-- END step#error -->
+
+<!-- BEGIN step#result -->
+    <h2>コメント構造を修正しました</h2>
+        <h3>公開ページにアクセスし、修正後の結果を確認してください</h3>
+            <p>問題が解決しない場合は、他の原因が考えられます。問題についてフォーラムにご報告ください。</p>
+<!-- END step#result -->
+
+<p><a href="./index.php">メンテナンスメニューに戻る</a></p>
+</div>
+	<div id="footer">
+		<p id="copyright">Copyright(c) appleple.</p>
+	</div>
+</div>
+</body>
+</html>

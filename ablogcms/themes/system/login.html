@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,  user-scalable=no, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex,nofollow">
+
+<link href="/css/acms.css" rel="stylesheet">
+<link href="/css/acms-system.css" rel="stylesheet">
+
+<!--#include file="/include/head/blog-color.html"-->
+
+<title>%{BLOG_NAME}｜ログイン</title>
+<!-- BEGIN_MODULE Js -->
+<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+</head>
+<body id="loginBg">
+<!-- BEGIN_MODULE Login -->
+<div class="acms-loginBox-container">
+	<form action="" method="post" id="formBox">
+		<!-- BEGIN auth -->
+		<div class="acms-titleBox"><!-- BEGIN_MODULE Blog_Field --><!-- BEGIN_IF [{loginHeaderImage@path}/nem/] --><!-- BEGIN loginHeaderImage:veil --><img class="acms-loginHeaderImage" src="%{ARCHIVES_DIR}{loginHeaderImage@path}" alt="%{BLOG_NAME}"><!-- END loginHeaderImage:veil --><!-- ELSE --><img class="acms-loginHeaderImage" src="/images/ablogcms_login.gif" alt="a-blog cms">
+		<!-- END_IF --><!-- END_MODULE Blog_Field --></div>
+
+		<div class="acms-loginBox clearfix">
+			<div class="acms-siteImageText"><span class="acms-label" style="background-color:%{BLOG_THEME_COLOR};">%{BLOG_NAME}</span>&nbsp;<span class="acms-label">ログイン</span></div>
+			<div class="acms-form">
+				<!-- BEGIN_IF [%{login}/eq/failed] -->
+				<label class="validator-result-0 acms-alert acms-alert-danger">ログインに失敗しました</label>
+				<!-- ELSE_IF [%{auth}/eq/failed] -->
+				<label class="validator-result-0 acms-alert acms-alert-danger">認証に失敗しました</label>
+				<!-- ELSE_IF [%{auth}/eq/double] -->
+				<label class="validator-result-0 acms-alert acms-alert-danger">アカウントが既に存在します</label>
+				<!-- ELSE_IF [%{login}/eq/restriction] -->
+				<label class="validator-result-0 acms-alert acms-alert-danger">お使いの端末（ブラウザ）からはログインが禁止されています。<br>管理者にお問い合わせ下さい。</label>
+				<!-- END_IF -->
+
+				<label class="validator-result-{mail:validator#restriction} acms-alert acms-alert-danger">お使いの端末（ブラウザ）からはログインが禁止されています。<br>管理者にお問い合わせ下さい。</label>
+
+				<label class="validator-result-{pass:validator#auth} acms-alert acms-alert-danger">ユーザーIDまたはパスワードが違います。</label>
+				<label class="acms-form-block acms-clear">ユーザーID / メールアドレス</label>
+				<input type="text" name="mail" value="{mail}" class="acms-form-large js-ready-focus acms-form-block validator-result-{pass:validator#auth} acms-sp-form-top" id="input-text-mail" placeholder="" />
+				<input type="hidden" name="login[]" value="mail" />
+				<label class="acms-form-block">パスワード</label>
+				<input type="password" name="pass" value="{pass}"  class="acms-form-large acms-form-block validator-result-{pass:validator#auth} acms-sp-form-bottom" placeholder="" />
+				<input type="hidden" name="login[]" value="pass" />
+				<input type="hidden" name="redirect" value="%{redirect}" />
+				<input type="hidden" name="login[]" value="redirect" />
+				<input type="hidden" name="persistent" value="on" />
+				<input type="hidden" name="login[]" value="persistent" />
+			</div>
+			<p class="loginAction">
+				<button type="submit" class="acms-btn-admin acms-btn-admin-primary acms-btn-block acms-btn-large" name="ACMS_POST_Login_Auth">ログイン</button>
+			</p>
+			<p><a href="/login/alt/remind/">パスワードをお忘れですか？</a></p>
+			<!-- BEGIN_MODULE Touch_SnsLogin -->
+			<p class="acms-border"><span class="acms-borderText acms-login-text">もしくは</span></p>
+			<p class="loginAction acms-login-facebook acms-btn-snsloginContainer">
+				<span class="acms-btn-snsimage acms-btn-snsimage-facebook">
+					<span class="acms-icon acms-icon-facebook"></span>
+				</span>
+				<button type="submit" class="acms-btn-admin acms-btn-facebooklogin acms-btn-block acms-btn-large acms-btn-snslogin" name="ACMS_POST_Api_Facebook_OAuth_Login"><span class="acms-hide-visually">Facebook</span>ログイン</button>
+			</p>
+			<p class="loginAction acms-login-twitter acms-btn-snsloginContainer">
+				<span class="acms-btn-snsimage acms-btn-snsimage-twitter">
+					<span class="acms-icon acms-icon-twitter"></span>
+				</span>
+				<button type="submit" class="acms-btn-admin acms-btn-twitterlogin acms-btn-block acms-btn-large acms-btn-snslogin" name="ACMS_POST_Api_Twitter_OAuth_Login"><span class="acms-hide-visually">Twitter</span>ログイン</button>
+			</p>
+			<!-- END_MODULE Touch_SnsLogin -->
+			<input type="hidden" name="type" value="login" />
+		</div>
+		<!-- BEGIN subscribeLink -->
+		<div class="acms-loginBox-bottom">
+			<p><a href="/login/alt/subscribe/" class="acms-sp-btn-admin ">新規の読者登録はこちら</a></p>
+		</div>
+		<!-- END subscribeLink -->
+
+		<!-- END auth -->
+
+		<!-- BEGIN subscribe -->
+		<div class="acms-titleBox"><!-- BEGIN_MODULE Blog_Field --><!-- BEGIN_IF [{loginHeaderImage@path}/nem/] --><!-- BEGIN loginHeaderImage:veil --><img class="acms-loginHeaderImage" src="%{ARCHIVES_DIR}{loginHeaderImage@path}" alt="%{BLOG_NAME}"><!-- END loginHeaderImage:veil --><!-- ELSE --><img class="acms-loginHeaderImage" src="/images/ablogcms_login.gif" alt="a-blog cms">
+		<!-- END_IF --><!-- END_MODULE Blog_Field --></div>
+		<div class="acms-loginBox">
+			<div class="acms-siteImageText"><span class="acms-label" style="background-color:%{BLOG_THEME_COLOR};">%{BLOG_NAME}</span>&nbsp;<span class="acms-label">新規読者登録</span></div>
+			<!-- BEGIN sendMsg#before -->
+			<p class="acms-login-text">お名前とメールアドスを登録いただくと指定されたメールアドレスに確認メールが送信されます。メールの内容の従って登録をしてください。</p><!-- END sendMsg#before --><!-- BEGIN sendMsg#after -->
+			<p class="acms-alert acms-alert-info">入力されたメールアドレス宛に、確認用URLをパスワードを記載したメールを送信しました。</p><!-- END sendMsg#after -->
+
+			<label for="input-text-mail" class="validator-result-{name:validator#required} acms-alert acms-alert-danger">名前が入力されていません。</label>
+			<label for="input-text-mail" class="validator-result-{mail:validator#required} acms-alert acms-alert-danger">メールアドレスが入力されていません。</label>
+			<label for="input-text-mail" class="validator-result-{mail:validator#email} acms-alert acms-alert-danger">不正なメールアドレスです。</label>
+			<label for="input-text-mail" class="validator-result-{mail:validator#doubleMail} acms-alert acms-alert-danger">すでに登録されているメールアドレスです。</label>
+			<label for="input-text-mail" class="validator-result-{mail:validator#send} acms-alert acms-alert-danger">メールの送信に失敗しました。システムの設定に問題があります。システムの管理者にお問い合わせください。</label>
+
+			<div class="acms-form">
+				<label class="acms-form-block acms-clear">名前</label>
+				<input type="text" name="name" value="{name}" class="acms-form-large  acms-form-block validator-result-{name:validator#required} acms-sp-form-top" placeholder="" />
+				<input type="hidden" name="user[]" value="name" />
+				<input type="hidden" name="name:validator#required" />
+				<label class="acms-form-block acms-clear">メールアドレス</label>
+				<input type="text" name="mail" value="{mail}" class="acms-form-large  acms-form-block validator-result-{mail:validator#required} validator-result-{mail:validator#email} validator-result-{mail:validator#doubleMail} validator-result-{mail:validator#send} acms-sp-form-bottom" placeholder="" />
+				<input type="hidden" name="user[]" value="mail" />
+				<input type="hidden" name="mail:validator#required" />
+				<input type="hidden" name="mail:validator#email" />
+				<input type="hidden" name="mail:validator#doubleMail" />
+
+				<!-- <label class="acms-form-block acms-clear">メールマガジン</label>
+				<input type="hidden" name="mail_magazine" value="off" />
+				<label class="acms-form-checkbox" for="input-checkbox-mail_magazine">
+					<input type="checkbox" name="mail_magazine" value="on"{mail_magazine:checked#on} id="input-checkbox-mail_magazine" />
+					<i class="acms-ico-checkbox"></i>
+					メールマガジンを受け取る
+				</label>
+				<input type="hidden" name="user[]" value="mail_magazine" />
+
+				<label class="acms-form-block acms-clear">モバイルメールマガジン</label>
+				<input type="hidden" name="mail_mobile_magazine" value="off" />
+				<label class="acms-form-checkbox" for="input-checkbox-mail_mobile_magazine">
+					<input type="checkbox" name="mail_mobile_magazine" value="on"{mail_mobile_magazine:checked#on} id="input-checkbox-mail_mobile_magazine" />
+					<i class="acms-ico-checkbox"></i>
+					モバイルメールマガジンを受け取る
+				</label>
+				<input type="hidden" name="user[]" value="mail_mobile_magazine" /> -->
+			</div>
+
+			<!-- BEGIN submit -->
+			<p class="loginAction">
+				<button type="submit" class="acms-btn-admin acms-btn-admin-primary acms-btn-block acms-btn-large" name="ACMS_POST_Login_Subscribe">読者登録</button>
+			</p><!-- BEGIN_MODULE Touch_SnsLogin -->
+			<p class="acms-border"><span class="acms-borderText acms-login-text">もしくは</span></p>
+			<p class="acms-login-text">SNSアカウントで登録するとワンクリックでログインできます。</p>
+			<p class="loginAction acms-login-facebook acms-btn-snsloginContainer">
+				<span class="acms-btn-snsimage acms-btn-snsimage-facebook">
+					<span class="acms-icon acms-icon-facebook"></span>
+				</span>
+				<button type="submit" class="acms-btn-admin acms-btn-facebooklogin acms-btn-block acms-btn-large acms-btn-snslogin" name="ACMS_POST_Api_Facebook_OAuth_Login">読者登録</button>
+			</p>
+			<p class="loginAction acms-login-twitter acms-btn-snsloginContainer">
+				<span class="acms-btn-snsimage acms-btn-snsimage-twitter">
+					<span class="acms-icon acms-icon-twitter"></span>
+				</span>
+				<button type="submit" class="acms-btn-admin acms-btn-twitterlogin acms-btn-block acms-btn-large acms-btn-snslogin" name="ACMS_POST_Api_Twitter_OAuth_Login">読者登録</button>
+			</p>
+			<!-- END_MODULE Touch_SnsLogin -->
+			<input type="hidden" name="type" value="signup" />
+			<!-- END submit -->
+			<p class="loginLink">
+				<a href="/login/">ログイン画面に戻る</a>
+			</p>
+		</div>
+		<!-- END subscribe -->
+
+		<!-- BEGIN select -->
+		<div class="acms-titleBox"><!-- BEGIN_MODULE Blog_Field --><!-- BEGIN_IF [{loginHeaderImage@path}/nem/] --><!-- BEGIN loginHeaderImage:veil --><img class="acms-loginHeaderImage" src="%{ARCHIVES_DIR}{loginHeaderImage@path}" alt="%{BLOG_NAME}"><!-- END loginHeaderImage:veil --><!-- ELSE --><img class="acms-loginHeaderImage" src="/images/ablogcms_login.gif" alt="a-blog cms">
+		<!-- END_IF --><!-- END_MODULE Blog_Field --></div>
+		<div class="acms-loginBox">
+			<div class="acms-siteImageText"><span class="acms-label" style="background-color:%{BLOG_THEME_COLOR};">%{BLOG_NAME}</span>&nbsp;<span class="acms-label">ブログ選択</span></div>
+			
+			<div class="acms-form">
+			<label class="validator-result-0 acms-alert">ログインできるブログ一覧</label>
+
+			<table class="acms-table acms-table-none">
+				<tr>
+					<th>BID</th>
+					<th>ブログ名</th>
+				</tr><!-- BEGIN selectBlog:loop -->
+				<tr>
+					<td>{bid}</td>
+					<td><a href="{url}">{name}</a></td>
+				</tr><!-- END selectBlog:loop -->
+			</table>
+			</div>
+		</div>
+		<!-- END select -->
+
+		<!-- BEGIN remind -->
+		<div class="acms-titleBox"><!-- BEGIN_MODULE Blog_Field --><!-- BEGIN_IF [{loginHeaderImage@path}/nem/] --><!-- BEGIN loginHeaderImage:veil --><img class="acms-loginHeaderImage" src="%{ARCHIVES_DIR}{loginHeaderImage@path}" alt="%{BLOG_NAME}"><!-- END loginHeaderImage:veil --><!-- ELSE --><img class="acms-loginHeaderImage" src="/images/ablogcms_login.gif" alt="a-blog cms">
+		<!-- END_IF --><!-- END_MODULE Blog_Field --></div>
+		<div class="acms-loginBox">
+			<div class="acms-siteImageText"><span class="acms-label" style="background-color:%{BLOG_THEME_COLOR};">%{BLOG_NAME}</span>&nbsp;<span class="acms-label">パスワードの再発行</span></div>
+			<!-- BEGIN sendMsg#before -->
+			<p class="acms-alert acms-alert-info">パスワード再発行依頼の確認メールを送信します。</p><!-- END sendMsg#before --><!-- BEGIN sendMsg#after -->
+			<p class="acms-alert acms-alert-info">パスワードリセット申請メールを送信しました。</p><!-- END sendMsg#after -->
+
+			<label for="input-text-mail" class="validator-result-{mail:validator#required} acms-alert acms-alert-danger">メールアドレスが入力されていません。</label>
+			<label for="input-text-mail" class="validator-result-{mail:validator#exist} acms-alert acms-alert-danger">登録されていないメールアドレスです。</label>
+			<label for="input-text-mail" class="validator-result-{mail:validator#send} acms-alert acms-alert-danger">メールの送信に失敗しました。システムの設定に問題があります。システムの管理者にお問い合わせください。</label>
+
+			<div class="acms-form">
+				<label class="acms-form-block acms-clear">メールアドレス</label>
+				<input type="text" name="mail" value="{mail}" class="acms-form-large js-ready-focus acms-form-block validator-result-{mail:validator#required} validator-result-{mail:validator#exist} validator-result-{mail:validator#send}" id="input-text-mail" placeholder="" />
+				<input type="hidden" name="login[]" value="mail" />
+				<input type="hidden" name="mail:validator#required" />
+				<input type="hidden" name="mail:validator#exist" />
+			</div>
+			<!-- BEGIN submit -->
+			<p class="loginAction">
+				<button type="submit" class="acms-btn-admin acms-btn-admin-primary acms-btn-block acms-btn-large" name="ACMS_POST_Login_Remind">再発行</button>
+			</p><!-- END submit -->
+			<p class="loginLink">
+				<a href="/login/">ログイン画面に戻る</a>
+			</p>
+		</div>
+		<!-- END remind -->
+		</form>
+
+		<!-- BEGIN_MODULE Blog_Field --><!-- BEGIN_IF [{loginHeaderImage@path}/nem/] -->
+		<div class="loginLogo">
+			<a href="http://www.a-blogcms.jp/"><img src="/images/loginLogo.png" alt="powered by a-blog cms" width="208" height="24" /></a>
+		</div>
+		<!-- END_IF --><!-- END_MODULE Blog_Field -->
+	</div>
+
+<!-- BEGIN expired -->
+<div id="expired">
+	<h3>試用期間の終了に伴う 継続利用のご案内</h3>
+	<p>商用・法人等でご利用の場合：「<a href="http://www.a-blogcms.jp/license/" title="ライセンス体系のページ">a-blog cms｜ライセンス体系</a>」をご覧ください。</p>
+</div>
+<!-- END expired -->
+
+<!-- END_MODULE Login -->
+</body>
+</html>

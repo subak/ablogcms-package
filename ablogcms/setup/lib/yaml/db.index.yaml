@@ -1,0 +1,133 @@
+---
+${PREFIX}alias:
+  - PRIMARY KEY  (alias_id)
+  - KEY alias_domain (alias_domain)
+  - KEY alias_code (alias_code)
+${PREFIX}approval:
+  - PRIMARY KEY  (approval_id)
+  - KEY approval_revision_id (approval_id,approval_revision_id,approval_entry_id,approval_blog_id)
+${PREFIX}approval_notification:
+  - KEY notification_rev_id (notification_rev_id,notification_entry_id,notification_blog_id,notification_receive_user_id,notification_receive_usergroup_id)
+%{PREFIX}blog: 
+  - PRIMARY KEY  (blog_id,blog_left,blog_right,blog_status,blog_indexing)
+  - KEY blog_domain (blog_domain)
+%{PREFIX}cache:
+  - PRIMARY KEY  (cache_id)
+  - KEY cache_status (cache_blog_id,cache_expire,cache_status)
+%{PREFIX}cache_reserve:
+  - PRIMARY KEY  (cache_reserve_datetime,cache_reserve_entry_id,cache_reserve_blog_id)
+  - KEY cache_reserve_datetime (cache_reserve_datetime,cache_reserve_blog_id)
+%{PREFIX}category   : 
+  - PRIMARY KEY  (category_id,category_left,category_right,category_status,category_indexing)
+  - KEY category_code (category_code,category_left,category_right)
+  - KEY category_id (category_id,category_status)
+%{PREFIX}column     : 
+  - PRIMARY KEY  (column_id)
+  - KEY entry_sort (column_entry_id,column_sort)
+%{PREFIX}column_rev : 
+  - PRIMARY KEY  (column_id,column_rev_id)
+  - KEY entry_sort (column_entry_id,column_sort,column_rev_id)
+  - KEY entry_revision (column_entry_id,column_rev_id)
+%{PREFIX}comment    :
+  - PRIMARY KEY  (comment_entry_id,comment_id,comment_status)
+%{PREFIX}config     :
+  - KEY config_blog_id (config_blog_id,config_sort,config_rule_id,config_module_id)
+%{PREFIX}dashboard  :
+  - KEY dashboard_key (dashboard_key,dashboard_blog_id)
+  - KEY dashboard_sort (dashboard_sort,dashboard_blog_id)
+%{PREFIX}entry      :
+  - PRIMARY KEY  (entry_id,entry_start_datetime,entry_end_datetime,entry_status)
+  - UNIQUE KEY entry_datetime (entry_datetime,entry_id)
+  - UNIQUE KEY entry_posted_datetime (entry_posted_datetime,entry_id)
+  - UNIQUE KEY entry_category_id (entry_category_id,entry_id)
+  - KEY entry_user_id (entry_user_id)
+  - KEY entry_count (entry_blog_id,entry_datetime,entry_start_datetime,entry_end_datetime,entry_status,entry_indexing)
+%{PREFIX}entry_rev  :
+  - PRIMARY KEY  (entry_id,entry_start_datetime,entry_end_datetime,entry_status,entry_rev_id)
+  - UNIQUE KEY entry_datetime (entry_datetime,entry_id,entry_rev_id)
+  - UNIQUE KEY entry_posted_datetime (entry_posted_datetime,entry_id,entry_rev_id)
+  - UNIQUE KEY entry_category_id (entry_category_id,entry_id,entry_rev_id)
+  - KEY entry_user_id (entry_user_id)
+  - KEY entry_count (entry_blog_id,entry_datetime,entry_start_datetime,entry_end_datetime,entry_status,entry_indexing,entry_rev_id)
+%{PREFIX}field      :
+  - KEY field_cid (field_cid)
+  - KEY field_uid (field_uid)
+  - KEY field_bid (field_bid)
+  - KEY field_eid (field_eid,field_key,field_search)
+  - KEY field_key (field_key)
+%{PREFIX}field_rev  :
+  - KEY field_cid (field_cid)
+  - KEY field_uid (field_uid)
+  - KEY field_bid (field_bid)
+  - KEY field_eid (field_eid,field_key,field_search,field_rev_id)
+  - KEY field_key (field_key)
+%{PREFIX}form       :
+  - PRIMARY KEY  (form_id)
+%{PREFIX}fulltext   :
+  - UNIQUE KEY fulltext_cid (fulltext_cid)
+  - UNIQUE KEY fulltext_uid (fulltext_uid)
+  - UNIQUE KEY fulltext_bid (fulltext_bid)
+  - UNIQUE KEY fulltext_eid (fulltext_eid)
+  - FULLTEXT KEY fulltext_value (fulltext_value)
+  - FULLTEXT KEY fulltext_ngram (fulltext_ngram)
+%{PREFIX}log_access :
+%{PREFIX}media_tag  :
+  - PRIMARY KEY  (media_tag_media_id,media_tag_sort)
+  - KEY media_tag_name_media (media_tag_name,media_tag_media_id)
+  - KEY media_tag_blog_id (media_tag_blog_id,media_tag_name)
+%{PREFIX}media :
+  - PRIMARY KEY  (media_id)
+%{PREFIX}log_form   :
+  - KEY log_form_datetime (log_form_datetime)
+  - KEY log_form_serial (log_form_serial)
+%{PREFIX}moblog     :
+  - PRIMARY KEY  (moblog_id)
+%{PREFIX}module     :
+  - PRIMARY KEY  (module_identifier,module_name,module_blog_id,module_scope)
+%{PREFIX}role     :
+  - PRIMARY KEY  (role_id)
+%{PREFIX}role_blog    :
+  - PRIMARY KEY  (role_id,blog_id)
+%{PREFIX}rule       :
+%{PREFIX}sequence_plugin :
+  - PRIMARY KEY  (sequence_plugin_key)
+%{PREFIX}sequence   :
+%{PREFIX}schedule   :
+  - KEY schedule_id (schedule_id, schedule_year, schedule_month, schedule_blog_id)
+%{PREFIX}shop_address           :
+  - PRIMARY KEY (address_id)
+  - KEY address_user_id (address_primary, address_user_id)
+%{PREFIX}shop_cart              :
+  - UNIQUE KEY (cart_session_id, cart_blog_id)
+%{PREFIX}shop_receipt           :
+  - PRIMARY KEY (receipt_code)
+  - KEY receipt_user_id (receipt_user_id)
+  - KEY receipt_blog_id (receipt_blog_id)
+%{PREFIX}shop_receipt_detail    :
+  - PRIMARY KEY (receipt_detail_id)
+  - KEY (receipt_detail_parent_code)  
+%{PREFIX}session    :
+  - PRIMARY KEY  (session_id)
+  - UNIQUE KEY session_next_id (session_next_id)
+%{PREFIX}tag        :
+  - PRIMARY KEY  (tag_entry_id,tag_sort)
+  - KEY tag_name_entry (tag_name,tag_entry_id)
+  - KEY tag_blog_id (tag_blog_id,tag_name)
+%{PREFIX}tag_rev    :
+  - PRIMARY KEY  (tag_entry_id,tag_sort,tag_rev_id)
+  - KEY tag_name_entry (tag_name,tag_entry_id,tag_rev_id)
+  - KEY tag_blog_id (tag_blog_id,tag_name,tag_rev_id)
+%{PREFIX}trackback  :
+  - PRIMARY KEY  (trackback_entry_id,trackback_id,trackback_status)
+%{PREFIX}user       :
+  - PRIMARY KEY  (user_id)
+%{PREFIX}usergroup  :
+  - PRIMARY KEY  (usergroup_id)
+  - KEY usergroup_role_id (usergroup_role_id)
+  - KEY usergroup_role (usergroup_id,usergroup_role_id)
+%{PREFIX}usergroup_user   :
+  - PRIMARY KEY  (usergroup_id,user_id)
+%{PREFIX}workflow   :
+  - PRIMARY KEY  (workflow_blog_id)
+%{PREFIX}workflow_usergroup   :
+  - PRIMARY KEY  (workflow_blog_id,workflow_sort)

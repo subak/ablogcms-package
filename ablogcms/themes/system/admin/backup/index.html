@@ -1,0 +1,201 @@
+<header class="acms-grid-r">
+	<div class="acms-col-6">
+		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-backup"></i>バックアップ</h1>
+	</div>
+	<div class="acms-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Touch_Role_BackupIndex -->
+
+<!-- BEGIN_MODULE Admin_Dashboard_LogAccess -->
+<div class="acms-box-group">
+	<h2 class="acms-admin-title2">アクセスログ</h2>
+	<form action="" method="post" class="acms-form">
+		<div class="acms-filter">
+			<select name="target_span_start">
+				<option value="">(開始)</option><!-- BEGIN start:loop -->
+				<option value="{start}"{selected}>{date}</option><!-- END start:loop -->
+			</select>
+			〜
+			<select name="target_span_end">
+				<option value="">(終了)</option><!-- BEGIN end:loop -->
+				<option value="{end}"{selected}>{date}</option><!-- END end:loop -->
+			</select>
+			<input type="hidden" name="axis" value="self" />
+			<label for="input-checkbox-axis" class="acms-form-checkbox">
+				<input type="checkbox" name="axis" value="descendant-or-self" id="input-checkbox-axis" /><i class="acms-ico-checkbox"></i>子ブログのログも含める
+			</label>
+			<!-- BEGIN term_not_selected --><label class="validator-result-0">対象期間を選択してください。</label><!-- END term_not_selected -->
+			<!-- BEGIN archives_not_writable --><label class="validator-result-0">archivesディレクトリを書き込み可能にしてください。</label><!-- END archives_not_writable -->
+
+			<input type="submit" name="ACMS_POST_Log_Access_Download" value="CSVダウンロード" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+
+			<!-- <input type="submit" name="ACMS_POST_Log_Access_Delete" value="削除" class="acms-btn-admin" /> -->
+		</div>
+
+		<table class="adminTable acms-table-admin-edit">
+			<tr>
+				<th>ログ収集の状態</th>
+				<td>
+					<!-- BEGIN log_access_enable -->
+					全て取得(GET,POST)
+					<!-- END log_access_enable -->
+					<!-- BEGIN log_access_post_enable -->
+					POSTのみ取得
+					<!-- END log_access_post_enable -->
+					<!-- BEGIN log_access_disable -->
+					無効
+					<!-- END log_access_disable -->
+				</td>
+			</tr>
+			<tr>
+				<th>全体の件数</th>
+				<td>{amount_all}[number_format]件</td>
+			</tr>
+			<!--<tr>-->
+				<!--<td>動的生成時の件数</td>-->
+				<!--<td>{amount_dynamic}[number_format]件</td>-->
+			<!--</tr>-->
+			<!--<tr>-->
+				<!--<td>静的生成時の件数</td>-->
+				<!--<td>{amount_static}[number_format]件</td>-->
+			<!--</tr>-->
+			<!--<tr>-->
+				<!--<td>その他の件数</td>-->
+				<!--<td>{amount_false}[number_format]件</td>-->
+			<!--</tr>-->
+		</table>
+	</form>
+</div>
+<!-- END_MODULE Admin_Dashboard_LogAccess -->
+
+<!-- BEGIN_MODULE Admin_Backup_Message -->
+<h2 class="acms-admin-title">バックアップ</h2>
+<ul>
+	<li>実行する前にarchivesディレクトリに書き込み権限があるか確認してください。</li>
+	<li>zip形式でダウンロードされます。ダウンロード後、解凍はしないでください。</li>
+</ul>
+
+<!-- BEGIN_MODULE Touch_Role_BackupExport -->
+<div class="acms-box-group">
+	<h3 class="acms-admin-title2">エクスポート</h3>
+	<table class="adminTable acms-table-admin-edit acms-table-admin-edit-bordered">
+		<tr>
+			<th>データベースをエクスポート</th>
+			<td>
+				<form action="" method="post">
+					<p><input type="submit" name="ACMS_POST_Backup_Export" value="エクスポートを実行する" onclick="return confirm('データベースのデータを一括ダウンロードします。よろしいですか？');" class="acms-btn-admin acms-btn-admin-primary" />
+					　アクセスログとキャッシュ以外のテーブルをzip形式でダウンロードします。</p>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>アーカイブをエクスポート</th>
+			<td>
+				<form action="" method="post">
+					<p><input type="submit" name="ACMS_POST_Backup_ArchiveExport" value="エクスポートを実行する" onclick="return confirm('全てのarchivesディレクトリを一括ダウンロードします。データが大きい場合にはサーバに負荷がかかります。よろしいですか？');" class="acms-btn-admin acms-btn-admin-primary" />
+					　archives ディレクトリのデータをzip形式でダウンロードします。</p>
+				</form>
+			</td>
+		</tr>
+	</table>
+	<p class="transaction-notice-error">{exportMessage}</p>
+</div><!-- END_MODULE Touch_Role_BackupExport -->
+
+
+<!-- BEGIN_MODULE Touch_Role_BackupImport -->
+<!-- BEGIN_MODULE Admin_Backup_ArchiveZipList -->
+<div class="acms-box-group">
+	<form action="" method="post" enctype="multipart/form-data" class="acms-form">
+		<h3 class="acms-admin-title2">インポート</h3>
+		<table class="adminTable acms-table-admin-edit acms-table-admin-edit-bordered">
+			<tr>
+				<th>元のテーブルを残しておく</th>
+				<td width="10">
+					<input type="hidden" name="drop_table" value="on" />
+					<label class="acms-form-checkbox">
+						<input type="checkbox" name="drop_table" value="off" checked="checked" /><i class="acms-ico-checkbox"></i>
+					</label>
+				</td>
+				<td>
+					<ul style="margin: 0;">
+						<li>チェック時　： "BACKUP_ACMS_(元のテーブル名)" としてバックアップされます。<br />（万が一処理に失敗した場合は、それらのテーブルを元の名前に戻して復旧してください。）</li>
+						<li>非チェック時： インポート後に元のデータベーステーブルを自動で削除します。</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<th>バージョンチェック</th>
+				<td>
+					<label class="acms-form-checkbox">
+						<input type="checkbox" name="version_check" value="on" checked="checked" /><i class="acms-ico-checkbox"></i>
+					</label>
+				</td>
+				<td>
+					<ul style="margin: 0;">
+						<li>チェック時　： エクスポートファイルと現在のシステムをバージョン照合して確認します。</li>
+						<li>非チェック時： バージョンの照合を省略します。<br />（インポートしてもバージョン間の差異によって、正常に動作しない可能性があります。）</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<th>エクスポートファイル</th>
+				<td></td>
+				<td><!-- BEGIN sql:veil -->
+					<select name="sqlfile">
+					<!-- BEGIN sql:loop --><option value="{sqlfile}">{sqlfile}</option><!-- END sql:loop --><!-- END sql:veil -->
+					</select>
+					<p>参照先：/private/backup/</p>
+
+					<input type="submit" name="ACMS_POST_Backup_Import" value="インポートを実行する" onclick="return confirm('全データのインポート処理を行います。よろしいですか？');" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+
+					<p class="transaction-notice-error">※実行する前に必ず、データベース・アーカイブ等のバックアップを行ってください。</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<ul>
+						<li>エクスポートしたZIPファイルを、FTPなどでprivate/backup/ディレクトリにアップロードしてください。</li>
+						<li>テーマファイルはFTP等で別途アップロードしてください。</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+
+<form action="" method="post" enctype="multipart/form-data" class="acms-form">
+	<h3 class="acms-admin-title2">アーカイブインポート</h3>
+	<table class="adminTable acms-table-admin-edit">
+		<tr>
+			<th>エクスポートファイル</th>
+			<td></td>
+			<td><!-- BEGIN zip:veil -->
+				<select name="zipfile">
+				<!-- BEGIN zip:loop --><option value="{zipfile}">{zipfile}</option><!-- END zip:loop --><!-- END zip:veil -->
+				</select>
+				<p>参照先：/archives/backup/</p>
+				<input type="submit" name="ACMS_POST_Backup_ArchiveImport" value="アーカイブインポートを実行する" onclick="return confirm('前のアーカイブディレクトリを削除しインポート処理を行います。よろしいですか？');" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<ul>
+					<li>エクスポートしたZIPアーカイブファイルを、FTPなどでarchives/backup/ディレクトリにアップロードしてください。</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+</form>
+<!-- END_MODULE Admin_Backup_ArchiveZipList -->
+<!-- END_MODULE Touch_Role_BackupImport -->
+
+<p class="transaction-notice-error">{importMessage}</p>
+<p class="transaction-notice-error">{archiveMessage}</p>
+<!-- END_MODULE Admin_Backup_Message -->
+	
+<!-- END_MODULE Touch_Role_BackupIndex -->
+

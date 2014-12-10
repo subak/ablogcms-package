@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Api_Instagram_Users_Media_Liked id="${1:module_id}" -->
+<ul><!-- BEGIN photo:loop -->
+	<li>
+		<img src="{thumbImg}" width="{thumbWidth}" height="{thumbHeight}" />
+		<img src="{smallImg}" width="{smallWidth}" height="{smallHeight}" />
+		<img src="{largeImg}" width="{largeWidth}" height="{largeHeight}" />
+		<p>{caption}</p>
+		<p>{userName} ( {profileImg} )</p>
+		<p>Type: {type} / Link: {link} / Filter: {filter} / Datetime: {createdTime}</p>
+		<p>Comments: {countComments} / Likes: {countLikes}</p>
+	</li><!-- END photo:loop -->
+</ul>
+<!-- BEGIN pager -->
+<p>
+	<!-- 出力される変数を利用して、適切なURLが組立つように記述してください -->
+	<!-- BEGIN next_max_id:veil -->
+	<a href="/field/next_max_id/{next_max_id}/">つぎ</a>
+	<!-- END next_max_id:veil -->
+</p>
+<!-- END pager -->
+<!-- END_MODULE Api_Instagram_Users_Media_Liked -->]]></content>
+	<tabTrigger>!acms:module</tabTrigger>
+    <description>Api_Instagram_Users_Media_Liked</description>
+</snippet>

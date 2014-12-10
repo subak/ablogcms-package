@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[<!-- BEGIN_MODULE Touch_NotSearchEngineKeyword -->
+
+<!-- END_MODULE Touch_NotSearchEngineKeyword -->]]></content>
+	<tabTrigger>!acms:touch</tabTrigger>
+    <description>Touch_NotSearchEngineKeyword</description>
+</snippet>

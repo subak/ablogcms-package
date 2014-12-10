@@ -1,0 +1,445 @@
+<section id="grid" class="sectionBox">
+<h1 class="sectionTitle">グリッドシステム</h1>
+<h2 class="sectionTitle2">デフォルト</h2>
+<p>合計12カラムで計算します。</p>
+<p>.acms-containerで囲うと幅940px中央揃えに変わります。</p>
+<p>ブロックをレイアウトするために使います。</p>
+
+<h3 class="sectionTitle3">.acms-grid（レスポンシブ無し）</h3>
+	<div class="acms-grid">
+		<div class="acms-col-1">
+			<div class="panel">
+			col-1
+			</div>
+		</div>
+
+		<div class="acms-col-11">
+			<div class="panel">
+			acms-col-11
+			</div>
+		</div>
+	</div>
+
+	<div class="acms-grid">
+		<div class="acms-col-2">
+			<div class="panel">
+			acms-col-2
+			</div>
+		</div>
+
+		<div class="acms-col-10">
+			<div class="panel">
+			acms-col-10
+			</div>
+		</div>
+	</div>
+
+	<div class="acms-grid">
+		<div class="acms-col-3">
+			<div class="panel">
+			acms-col-3
+			</div>
+		</div>
+
+		<div class="acms-col-9">
+			<div class="panel">
+			acms-col-9
+			</div>
+		</div>
+	</div>
+
+	<div class="acms-grid">
+		<div class="acms-col-4">
+			<div class="panel">
+			acms-col-4
+			</div>
+		</div>
+
+		<div class="acms-col-8">
+			<div class="panel">
+			acms-col-8
+			</div>
+		</div>
+	</div>
+
+	<div class="acms-grid">
+		<div class="acms-col-5">
+			<div class="panel">
+			acms-col-5
+			</div>
+		</div>
+
+		<div class="acms-col-7">
+			<div class="panel">
+			acms-col-7
+			</div>
+		</div>
+	</div>
+
+	<div class="acms-grid">
+		<div class="acms-col-6">
+			<div class="panel">
+			acms-col-6
+			</div>
+		</div>
+
+		<div class="acms-col-6">
+			<div class="panel">
+			acms-col-6
+			</div>
+		</div>
+	</div>
+
+<pre class="code HTML">
+&lt;div class=&quot;acms-container&quot;&gt;
+	&lt;div class=&quot;acms-grid&quot;&gt;
+		&lt;div class=&quot;acms-col-5&quot;&gt;
+		...
+		&lt;/div&gt;
+
+		&lt;div class=&quot;acms-col-7&quot;&gt;
+		...
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+	<h3 class="sectionTitle3">.acms-grid-r（レスポンシブ有り）</h3>
+	<div class="acms-grid-r">
+		<div class="acms-col-1">
+			<div class="panel">
+			col-1
+			</div>
+		</div>
+
+		<div class="acms-col-11">
+			<div class="panel">
+			acms-col-11
+			</div>
+		</div>
+	</div>
+
+	<div class="acms-grid-r">
+		<div class="acms-col-2">
+			<div class="panel">
+			acms-col-2
+			</div>
+		</div>
+
+		<div class="acms-col-10">
+			<div class="panel">
+			acms-col-10
+			</div>
+		</div>
+	</div>
+
+	<div class="acms-grid-r">
+		<div class="acms-col-3">
+			<div class="panel">
+			acms-col-3
+			</div>
+		</div>
+
+		<div class="acms-col-9">
+			<div class="panel">
+			acms-col-9
+			</div>
+		</div>
+	</div>
+
+	<div class="acms-grid-r">
+		<div class="acms-col-4">
+			<div class="panel">
+			acms-col-4
+			</div>
+		</div>
+
+		<div class="acms-col-8">
+			<div class="panel">
+			acms-col-8
+			</div>
+		</div>
+	</div>
+
+	<div class="acms-grid-r">
+		<div class="acms-col-5">
+			<div class="panel">
+			acms-col-5
+			</div>
+		</div>
+
+		<div class="acms-col-7">
+			<div class="panel">
+			acms-col-7
+			</div>
+		</div>
+	</div>
+
+	<div class="acms-grid-r">
+		<div class="acms-col-6">
+			<div class="panel">
+			acms-col-6
+			</div>
+		</div>
+
+		<div class="acms-col-6">
+			<div class="panel">
+			acms-col-6
+			</div>
+		</div>
+	</div>
+
+<pre class="code HTML">
+&lt;div class=&quot;acms-container&quot;&gt;
+	&lt;div class=&quot;acms-grid-r&quot;&gt;
+		&lt;div class=&quot;acms-col-5&quot;&gt;
+		...
+		&lt;/div&gt;
+
+		&lt;div class=&quot;acms-col-7&quot;&gt;
+		...
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h3 class="sectionTitle3">スマートフォン、タブレット、デスクトップ幅</h3>
+	<div class="acms-grid-r">
+
+		<div class="acms-col-4 acms-col-md-7">
+			<div class="panel">
+			.acms-col-10 .acms-col-md-3
+			</div>
+		</div>
+		<div class="acms-col-8 acms-col-md-5">
+			<div class="panel">
+			.acms-col-2 .acms-col-md-9
+			</div>
+		</div>
+	</div>
+
+	<div class="acms-grid-r">
+		<div class="acms-col-3 acms-col-md-4 acms-col-sm-6">
+			<div class="panel">
+			.acms-col-2 .acms-col-md-5 .acms-col-sm-5
+			</div>
+		</div>
+		<div class="acms-col-3 acms-col-md-4 acms-col-sm-6">
+			<div class="panel">
+			.acms-col-3 .acms-col-md-3 .acms-col-sm-4
+			</div>
+		</div>
+		<div class="acms-col-6 acms-col-md-4 acms-col-sm-6">
+			<div class="panel">
+			.acms-col-7 .acms-col-md-4 .acms-col-sm-3
+			</div>
+		</div>
+	</div>
+
+<pre class="code HTML">
+&lt;div class=&quot;acms-container&quot;&gt;
+	&lt;div class=&quot;acms-grid-r&quot;&gt;
+		&lt;div class=&quot;acms-col-2 acms-col-md-5 acms-col-sm-5&quot;&gt;
+		...
+		&lt;/div&gt;
+
+		&lt;div class=&quot;acms-col-3 acms-col-md-3 acms-col-sm-4&quot;&gt;
+		...
+		&lt;/div&gt;
+
+		&lt;div class=&quot;acms-col-7 acms-col-md-4 acms-col-sm-3&quot;&gt;
+		...
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2 class="sectionTitle2">グリッドの入れ子</h2>
+
+<div class="acms-grid">
+	<div class="acms-col-4">
+		<div class="panel">
+		acms-col-4
+		</div>
+	</div>
+
+	<div class="acms-col-8">
+		<div class="panel">
+		acms-col-8
+
+			<div class="acms-grid">
+				<div class="acms-col-5">
+					<div class="panel_nest">
+					.acms-col-5
+					</div>
+				</div>
+				<div class="acms-col-7">
+					<div class="panel_nest">
+					.acms-col-7
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<pre class="code HTML">
+&lt;div class=&quot;acms-grid&quot;&gt;
+	&lt;div class=&quot;acms-col-4&quot;&gt;
+	...
+	&lt;/div&gt;
+
+	&lt;div class=&quot;acms-col-8&quot;&gt;
+		&lt;div class=&quot;acms-grid&quot;&gt;
+			&lt;div class=&quot;acms-col-5&quot;&gt;
+			...
+			&lt;/div&gt;
+
+			&lt;div class=&quot;acms-col-7&quot;&gt;
+			...
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h3 class="sectionTitle3">グリッドの入れ替え push(左→右) 、pull(右→左)</h3>
+<p>.acms-push-5にするとグリッドが右側にきて、.acms-pull-7にするとグリッドが左側にきます。</p>
+<div class="acms-grid">
+	<div class="acms-col-7 acms-push-5">
+		<div class="panel">
+		.acms-push-5(左から右へ入れ替え)
+		</div>
+	</div>
+
+	<div class="acms-col-5 acms-pull-7">
+		<div class="panel">
+		.acms-pull-7(右から左へ入れ替え)
+		</div>
+	</div>
+</div>
+
+<pre class="code HTML">
+&lt;div class=&quot;acms-grid&quot;&gt;
+	&lt;div class=&quot;acms-col-7 acms-push-5&quot;&gt;
+	...
+	&lt;/div&gt;
+
+	&lt;div class=&quot;acms-col-5 acms-pull-7&quot;&gt;
+	...
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h3 class="sectionTitle3">グリッドの入れ替え push(左→右) 、pull(右→左) タブレット幅</h3>
+<p>タブレット幅のときに.acms-push-md-5にするとグリッドが右側にきて、.acms-pull-md-7にするとグリッドが左側にきます。</p>
+<div class="acms-grid-r">
+	<div class="acms-col-7 acms-col-md-7 acms-push-md-5">
+		<div class="panel">
+		.acms-push-md-5(左から右へ入れ替え)
+		</div>
+	</div>
+
+	<div class="acms-col-5 acms-col-md-5 acms-pull-md-7">
+		<div class="panel">
+		.acms-pull-md-7(右から左へ入れ替え)
+		</div>
+	</div>
+</div>
+
+<pre class="code HTML">
+&lt;div class=&quot;acms-grid-r&quot;&gt;
+	&lt;div class=&quot;acms-col-7 acms-col-md-7 acms-push-md-5&quot;&gt;
+	...
+	&lt;/div&gt;
+
+	&lt;div class=&quot;acms-col-5 acms-col-md-5 acms-pull-md-7&quot;&gt;
+	...
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h3 class="sectionTitle3">グリッドの入れ替え push(左→右) 、pull(右→左) スマートフォン幅</h3>
+<p>スマートフォンの幅のときに.acms-push-sm-5にするとグリッドが右側にきて、.acms-pull-sm-7にするとグリッドが左側にきます。</p>
+<div class="acms-grid-r">
+	<div class="acms-col-7 acms-col-sm-7 acms-push-sm-5">
+		<div class="panel">
+		.acms-push-sm-5(左から右へ入れ替え)
+		</div>
+	</div>
+
+	<div class="acms-col-5 acms-col-sm-5 acms-pull-sm-7">
+		<div class="panel">
+		.acms-pull-sm-7(右から左へ入れ替え)
+		</div>
+	</div>
+</div>
+
+<pre class="code HTML">
+&lt;div class=&quot;acms-grid-r&quot;&gt;
+	&lt;div class=&quot;acms-col-7 acms-col-sm-7 acms-push-sm-5&quot;&gt;
+	...
+	&lt;/div&gt;
+
+	&lt;div class=&quot;acms-col-5 acms-col-sm-5 acms-pull-sm-7&quot;&gt;
+	...
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h3 class="sectionTitle3">グリッドの入れ替え push、pullを解除する スマートフォン幅、タブレット幅</h3>
+<p>タブレット幅のときにpush、pullを解除する</p>
+<div class="acms-grid-r">
+	<div class="acms-col-7 acms-push-5 acms-col-md-7 acms-push-md-auto">
+		<div class="panel">
+		.acms-push-md-auto(左から右→右から左へ入れ替え)
+		</div>
+	</div>
+
+	<div class="acms-col-5 acms-pull-7 acms-col-md-5 acms-pull-md-auto">
+		<div class="panel">
+		.acms-pull-md-auto(右から左→左から右へ入れ替え)
+		</div>
+	</div>
+</div>
+
+<pre class="code HTML">
+&lt;div class=&quot;acms-grid-r&quot;&gt;
+	&lt;div class=&quot;acms-col-7 acms-push-5 acms-col-md-7 acms-push-md-auto&quot;&gt;
+	...
+	&lt;/div&gt;
+
+	&lt;div class=&quot;acms-col-5 acms-pull-7 acms-col-md-5 acms-pull-md-auto&quot;&gt;
+	...
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>スマートフォン幅のときにpush、pullを解除する</p>
+<div class="acms-grid-r">
+	<div class="acms-col-7 acms-push-5 acms-col-md-7 acms-push-md-5 acms-col-sm-7 acms-push-sm-auto">
+		<div class="panel">
+		.acms-push-sm-auto(左から右→右から左へ入れ替え)
+		</div>
+	</div>
+
+	<div class="acms-col-5 acms-pull-7 acms-col-md-5 acms-pull-md-7 acms-col-sm-5 acms-pull-sm-auto">
+		<div class="panel">
+		.acms-pull-sm-auto(右から左→左から右へ入れ替え)
+		</div>
+	</div>
+</div>
+
+<pre class="code HTML">
+&lt;div class=&quot;acms-grid-r&quot;&gt;
+	&lt;div class=&quot;acms-col-7 acms-push-5 acms-col-md-7 acms-push-md-5 acms-col-sm-7 acms-push-sm-auto&quot;&gt;
+	...
+	&lt;/div&gt;
+
+	&lt;div class=&quot;acms-col-5 acms-pull-7 acms-col-md-5 acms-pull-md-7 acms-col-sm-5 acms-pull-sm-auto&quot;&gt;
+	...
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+</section>
