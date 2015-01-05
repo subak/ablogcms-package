@@ -1,4 +1,6 @@
-#ablog cms ver 2.1.1.2
+#ablog cms ver 2.1.1.3
+
+    対応PHP : php5.5.x
 
     対応PHP : php5.5.x
 
