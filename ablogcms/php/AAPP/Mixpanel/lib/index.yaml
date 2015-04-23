@@ -1,0 +1,2 @@
+%{PREFIX}mixpanel:
+  - PRIMARY KEY (distinct_id)

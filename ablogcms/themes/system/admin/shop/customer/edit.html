@@ -1,8 +1,8 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-cart"></i>お客様詳細</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-cart"></i>お客様詳細</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
@@ -12,12 +12,12 @@
 <!-- BEGIN headline --><!-- END headline -->
 
 <!-- BEGIN msg#insert -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>お客様を作成しました</p><!-- END msg#insert --><!-- BEGIN msg#update -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>お客様を保存しました</p><!-- END msg#update --><!-- BEGIN msg#delete -->
-<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>お客様を削除しました</p><!-- END msg#delete -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>お客様を作成しました</p><!-- END msg#insert --><!-- BEGIN msg#update -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>お客様を保存しました</p><!-- END msg#update --><!-- BEGIN msg#delete -->
+<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>お客様を削除しました</p><!-- END msg#delete -->
 
-<h2 class="acms-admin-title2">お客様情報</h2>
-<table class="adminTable acms-table-admin-edit">
+<h2 class="acms-admin-admin-title2">お客様情報</h2>
+<table class="adminTable acms-admin-table-admin-edit">
 	<tr>
 		<th>ユーザーネーム</th>
 		<td>{name}</td>
@@ -40,8 +40,8 @@
 	</tr><!-- END request_others:veil -->
 </table>
 
-<h2 class="acms-admin-title2">登録住所</h2>
-<table class="adminTable acms-table-admin-edit">
+<h2 class="acms-admin-admin-title2">登録住所</h2>
+<table class="adminTable acms-admin-table-admin-edit">
 <tr>
 	<th>名前 ( ふりがな )</th>
 	<td>{address_name} ( {address_ruby} )</td>
@@ -66,11 +66,11 @@
 
 <!-- BEGIN_MODULE Admin_Shop_Receipt_Index -->
 <!-- BEGIN notFound -->
-<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>まだ受注はありません。</p><!-- END notFound --><!-- BEGIN index -->
+<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>まだ受注はありません。</p><!-- END notFound --><!-- BEGIN index -->
 
 <!-- BEGIN takeover -->
 <form action="%{QOL}edit=update&step=reapply" method="post" class="adminBtn">
-	<input type="submit" name="ACMS_POST_Form_Chain" value="変更" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+	<input type="submit" name="ACMS_POST_Form_Chain" value="変更" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 	<input type="hidden" name="takeover" value="{takeover}" />
 </form>
 
@@ -78,7 +78,7 @@
 <form action="" method="post" class="adminBtn">
 	<input type="hidden" name="edit" value="delete" />
 	<input type="hidden" name="step" value="" />
-	<input type="submit" name="ACMS_POST_Shop_Customer_Delete" value="削除" onclick="return confirm('この操作は取り消せません。\nよろしいですか？');" class="acms-btn-admin acms-btn-admin-danger" />
+	<input type="submit" name="ACMS_POST_Shop_Customer_Delete" value="削除" onclick="return confirm('この操作は取り消せません。\nよろしいですか？');" class="acms-admin-btn-admin acms-admin-btn-admin-danger" />
 	<input type="hidden" name="takeover" value="{takeover}" />
 </form><!-- END_MODULE Touch_SessionWithAdministration -->
 <!-- END takeover -->
@@ -87,11 +87,11 @@
 <form action="" method="post" class="adminBtn">
 	<input type="hidden" name="bid" value="%{BID}" />
 	<input type="hidden" name="admin" value="shop_customer_index" />
-	<input type="submit" name="ACMS_POST_2GET" value="一覧" class="acms-btn-admin" />
+	<input type="submit" name="ACMS_POST_2GET" value="一覧" class="acms-admin-btn-admin" />
 </form><!-- END_MODULE Touch_SessionWithAdministration -->
 
-<h2 class="acms-admin-title2">受注履歴</h2>
-<table class="adminTable acms-table-admin acms-table-heading acms-table-hover">
+<h2 class="acms-admin-admin-title2">受注履歴</h2>
+<table class="adminTable acms-admin-table-admin acms-admin-table-heading acms-admin-table-hover">
 	<thead>
 	<tr>
 		<th>受注日時</th>
@@ -109,16 +109,16 @@
 		<td>&yen;{total}[number_format]（&yen;{subtotal}[number_format]）</td>
 		<td>{payment}</td>
 		<td>{deliver}</td>
-		<td><a href="{editUrl}" class="acms-btn-admin">詳細</a></td>
+		<td><a href="{editUrl}" class="acms-admin-btn-admin">詳細</a></td>
 	</tr><!-- END receipt:loop -->
 	</tbody>
 </table>
 
-<div class="acms-grid">
-	<div class="acms-col-6">
+<div class="acms-admin-grid">
+	<div class="acms-admin-col-md-6 acms-admin-col-sm-12">
 		<!-- BEGIN pager:veil -->
-		<div class="acms-pager-container">
-			<ul class="acms-pager"><!-- BEGIN backLink -->
+		<div class="acms-admin-pager-container">
+			<ul class="acms-admin-pager"><!-- BEGIN backLink -->
 				<li class="prev"><a href="{url}">&laquo;&nbsp;前へ</a></li><!-- END backLink --><!-- BEGIN page:loop -->
 				<li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop --><!-- BEGIN lastPage:veil -->
 				<li class="last"><a href="{lastPageUrl}">...{lastPage}</a></li><!-- END lastPage:veil --><!-- BEGIN forwardLink -->
@@ -127,8 +127,8 @@
 		</div>
 		<!-- END pager:veil -->
 	</div>
-	<div class="acms-col-6">
-		<div class="acms-itemsAmount-container">
+	<div class="acms-admin-col-md-6 acms-admin-col-sm-12">
+		<div class="acms-admin-itemsAmount-container">
 		<p>{itemsFrom}件 - {itemsTo}件 / 全{itemsAmount}件</p>
 		</div>
 	</div>
@@ -143,28 +143,28 @@
 <!-- END headline#insert --><!-- BEGIN headline#update -->
 <!-- END headline#update -->
 
-<p class="transaction-notice-{insert:validator} acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>カテゴリーを作成できませんでした。</p>
-<p class="transaction-notice-{update:validator} acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>カテゴリーを保存できませんでした。</p>
+<p class="transaction-notice-{insert:validator} acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>カテゴリーを作成できませんでした。</p>
+<p class="transaction-notice-{update:validator} acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>カテゴリーを保存できませんでした。</p>
 
 <!-- BEGIN footer#insert -->
 <form action="" method="post">
 	<input type="hidden" name="bid" value="%{BID}" />
 	<input type="hidden" name="admin" value="shop_receipt_index" />
-	<input type="submit" name="ACMS_POST_2GET" value="一覧" class="acms-btn-admin" />
+	<input type="submit" name="ACMS_POST_2GET" value="一覧" class="acms-admin-btn-admin" />
 </form>
 <!-- END footer#insert -->
 
 <!-- BEGIN footer#update -->
 <form action="%{QOL}edit&step" method="post">
-	<input type="submit" name="ACMS_POST_Form_Chain" value="戻る" class="acms-btn-admin" />
+	<input type="submit" name="ACMS_POST_Form_Chain" value="戻る" class="acms-admin-btn-admin" />
 </form>
 <!-- END footer#update -->
 
-<form action="" method="post" enctype="multipart/form-data" class="acms-form">
+<form action="" method="post" enctype="multipart/form-data" class="acms-admin-form">
 
 <input type="hidden" name="step" value="" /><!-- BEGIN submit#insert -->
-<input type="submit" name="ACMS_POST_Shop_Customer_Insert" value="作成" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" /><!-- END submit#insert --><!-- BEGIN submit#update -->
-<input type="submit" name="ACMS_POST_Shop_Customer_Update" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" /><!-- END submit#update -->
+<input type="submit" name="ACMS_POST_Shop_Customer_Insert" value="作成" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" /><!-- END submit#insert --><!-- BEGIN submit#update -->
+<input type="submit" name="ACMS_POST_Shop_Customer_Update" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" /><!-- END submit#update -->
 
 <!-- input要素を編集可能な属性に変更することで編集可能です -->
 <input type="hidden" name="charge_payment" value="{charge_payment}" />
@@ -178,8 +178,8 @@
 <input type="hidden" name="total" value="{total}" />
 <input type="hidden" name="receipt[]" value="total" />
 
-<h2 class="acms-admin-title2">お客様情報</h2>
-<table class="adminTable acms-table-admin-edit">
+<h2 class="acms-admin-admin-title2">お客様情報</h2>
+<table class="adminTable acms-admin-table-admin-edit">
 	<tr>
 		<th>名前</th>
 		<td><input type="text" name="name" value="{name}" />
@@ -192,8 +192,8 @@
 	</tr>
 </table>
 
-<h2 class="acms-admin-title2">住所情報</h2>
-<table class="adminTable acms-table-admin-edit">
+<h2 class="acms-admin-admin-title2">住所情報</h2>
+<table class="adminTable acms-admin-table-admin-edit">
 	<tr>
 		<th>お届け先のお名前</th>
 		<td>

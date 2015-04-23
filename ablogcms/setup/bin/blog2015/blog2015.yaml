@@ -1,0 +1,87 @@
+---
+category: ''
+column: ''
+config: ''
+  - 
+    config_key: 'tpl_entry_edit'
+    config_value: 'index.html'
+    config_sort: 8
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'tpl_admin'
+    config_value: 'admin.html'
+    config_sort: 7
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'tpl_404'
+    config_value: '404.html'
+    config_sort: 6
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'tpl_detail'
+    config_value: 'index.html'
+    config_sort: 5
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'tpl_index'
+    config_value: 'index.html'
+    config_sort: 4
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'tpl_top'
+    config_value: 'index.html'
+    config_sort: 3
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'theme'
+    config_value: 'blog2015'
+    config_sort: 1
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'tpl_entry_add'
+    config_value: 'index.html'
+    config_sort: 9
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'tpl_login'
+    config_value: 'login.html'
+    config_sort: 10
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'entry_body_category_order'
+    config_value: 'parent_order'
+    config_sort: 2
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+comment: ''
+dashboard: ''
+entry: ''
+field: ''
+form: ''
+fulltext: ''
+moblog: ''
+module: ''
+rule: ''
+tag: ''
+trackback: ''
+schedule: ''
+layout_grid: ''

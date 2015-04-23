@@ -1,0 +1,69 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_Summary -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<div class="js-animation">
+	<div class="pickup-first acms-slide-top">
+		<!-- BEGIN notFound -->
+		<p>エントリーが見つかりませんでした。</p>
+		<!-- END notFound -->
+
+		<!-- BEGIN unit:loop -->
+			<div class="row">
+				<!-- BEGIN entry:loop -->
+				<div class="text-center col-md-4">
+				<p class="text-left"><time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日</time></p>
+				<p class="summary-title text-left"><a href="{url}">{title}</a></p>
+
+					<div class="pickup-first-img-wrap">
+				<!-- BEGIN image:veil -->
+					<img src="%{ROOT_DIR}{path}"  alt=""  class="img-responsive" /><!-- END image:veil --><!-- BEGIN noimage -->
+					noimage
+					<!-- END noimage -->
+					</div>
+
+					<p class="text-left">{entry_meta_description}</p>
+				</div><!-- END entry:loop -->
+			</div>
+			<!-- END unit:loop -->
+	</div>
+</div>
+</div>
+<!-- END_MODULE Entry_Summary -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div>
+	<div class="pickup-first">
+		<div class="row">
+			<div class="text-center col-md-4">
+				<p class="text-left">2015年01月01日</p>
+				<p class="summary-title text-left"><a href="#">テストのお知らせ</a></p>
+				<div class="pickup-first-img-wrap">
+					<img src="/images/noImage.png"  alt=""  class="img-responsive" />
+				</div>
+
+				<p class="text-left">ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。</p>
+			</div>
+			<div class="text-center col-md-4">
+				<p class="text-left">2015年01月01日</p>
+				<p class="summary-title text-left"><a href="#">テストのお知らせ</a></p>
+				<div class="pickup-first-img-wrap">
+					<img src="/images/noImage.png"  alt=""  class="img-responsive" />
+				</div>
+
+				<p class="text-left">ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。</p>
+			</div>
+			<div class="text-center col-md-4">
+				<p class="text-left">2015年01月01日</p>
+				<p class="summary-title text-left"><a href="#">テストのお知らせ</a></p>
+				<div class="pickup-first-img-wrap">
+					<img src="/images/noImage.png"  alt=""  class="img-responsive" />
+				</div>
+
+				<p class="text-left">ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END layout#dummy -->

@@ -1,0 +1,93 @@
+<!-- BEGIN_MODULE Entry_Body id="" -->
+<!-- BEGIN notFound -->
+<section class="acms-entry entry">
+	<h2 class="notFoundTitle">Not found</h2>
+	<p>お探しの記事は見つかりませんでした。</p>
+</section>
+<!-- END notFound -->
+
+<!-- 1記事▼▼ -->
+<!-- BEGIN entry:loop -->
+<div class="acms-box-medium">
+<!--#include file="/admin/entry/revision-info.html"-->
+</div>
+<article class="entry clearfix">
+	<!--#include file="/admin/entry/title.html"-->
+
+	<!-- エントリーのタイトル　開始▼▼ -->
+	<!-- BEGIN title:veil -->
+	<header class="acms-page-header pageHeader">
+		<!-- BEGIN_MODULE Touch_Entry --><h1 class="entryTitle"><a href="{titleUrl}">{title}[raw]</a></h1><!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_NotEntry --><h1 class="entryTitle"><a href="{titleUrl}">{title}[raw]</a></h1><!-- END_MODULE Touch_NotEntry -->
+	</header>
+	<!-- END title:veil -->
+
+	<!-- BEGIN entryColumn:veil -->
+	<div class="acms-entry entryColumn">
+		<!-- BEGIN customFieldGroup:veil -->
+		<table class="tableHistory">
+			<!-- BEGIN customFieldGroup:loop -->
+			<tr>
+				<th>{historyDate}[wareki('年n月')]</th>
+				<td><!-- BEGIN photo:veil --><div class="tableHistoryImg"><img src="%{ARCHIVES_DIR}{photo@path}" alt="" class="acms-img-responsive" /></div><!-- END photo:veil --><h3>{historyTitle}</h3>{historyText}[markdown]</td>
+			</tr>
+			<!-- END customFieldGroup:loop -->
+		</table>
+		<!-- END customFieldGroup:veil -->
+
+		<!-- BEGIN unit:veil -->
+		<!--#include file="/include/unit.html"-->
+		<hr class="clearHidden" />
+		<!-- END unit:veil -->
+		<!-- 続きを読む -->
+		<!--#include file="/include/module/entry/continue.html"-->
+	</div>
+	<!-- END entryColumn:veil -->
+
+	<!-- BEGIN formBody -->
+	<!--#include file="/include/form/unit.html"-->
+	<hr class="clearHidden" />
+	<!-- END formBody -->
+
+	<!-- BEGIN adminEntryEdit -->
+	<div class="acms-box-medium">
+		<!--#include file="/admin/entry/edit.html"-->
+		<!--#include file="/admin/entry/add.html"-->
+	</div>
+	<!-- END adminEntryEdit -->
+
+	<!-- BEGIN adminFormEdit -->
+	<!--#include file="/admin/form2/edit.html"-->
+	<!-- END adminFormEdit -->
+
+	<!-- BEGIN_MODULE Touch_Entry -->
+	<footer class="entryFooter">
+	<div class="clearfix">
+		<div class="entryTagWrapper acms-col-md-6">
+			<!-- BEGIN tag:veil -->
+			<dl class="entryTag">
+				<dt class="acms-inline-space entryTagIcon"><span class="acms-icon-tag"></span><span class="acms-hide-visually">タグ</span></dt>
+				<!-- BEGIN tag:loop -->
+				<dd class="entryTagItem"><a href="/entry.html/tag/{name}">{name}</a></dd>
+				<!-- END tag:loop -->
+			</dl><!-- END tag:veil -->
+		</div>
+		<div class="acms-col-md-6">
+			<!-- SNSシェアボタン -->
+			<!--#include file="/include/parts/snsCustomize.html"-->
+		</div>
+	</div>
+	</footer>
+	<!-- END_MODULE Touch_Entry -->
+
+	<div class="acms-box-medium">
+	<!-- #include file="/admin/entry/action.html"-->
+	</div>
+
+</article>
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+
+<!-- ページャー -->
+<!-- #include file="/include/module/entry/pager.html" -->
+
+<!-- END_MODULE Entry_Body -->

@@ -1,8 +1,8 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-schedule"></i>スケジュール管理</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-schedule"></i>スケジュール管理</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
@@ -10,31 +10,31 @@
 <!-- BEGIN_MODULE Admin_Schedule_Edit -->
 
 <!-- BEGIN msg#insert -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>スケジュールセットを作成しました</p><!-- END msg#insert --><!-- BEGIN msg#update -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>スケジュールセットを保存しました</p><!-- END msg#update --><!-- BEGIN msg#delete -->
-<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>スケジュールセットを削除しました</p><!-- END msg#delete -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>スケジュールセットを作成しました</p><!-- END msg#insert --><!-- BEGIN msg#update -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>スケジュールセットを保存しました</p><!-- END msg#update --><!-- BEGIN msg#delete -->
+<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>スケジュールセットを削除しました</p><!-- END msg#delete -->
 
 
-<form action="" method="post" class="acms-form">
-	<div class="acms-margin-sp">
-		<a href="%{SCRIPT_ROOT}bid/%{BID}/admin/schedule_index/" class="acms-btn-admin acms-margin-sp">一覧</a>
-		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="/bid/%{BID}/admin/shortcut_edit/?scid=%{scid}&action=Schedule_Update&admin=schedule_edit&edit=add&step=reapply" class="acms-btn-admin acms-inline-btn acms-shortcut-btn"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+<form action="" method="post" class="acms-admin-form">
+	<div class="acms-admin-margin-sp">
+		<a href="%{SCRIPT_ROOT}bid/%{BID}/admin/schedule_index/" class="acms-admin-btn-admin acms-admin-margin-sp">一覧</a>
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="/bid/%{BID}/admin/shortcut_edit/?scid=%{scid}&action=Schedule_Update&admin=schedule_edit&edit=add&step=reapply" class="acms-admin-btn-admin acms-admin-inline-btn acms-admin-shortcut-btn"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
 
 		<!-- BEGIN submit#insert -->
-		<input type="submit" name="ACMS_POST_Schedule_Insert" value="作成" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+		<input type="submit" name="ACMS_POST_Schedule_Insert" value="作成" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 		<!-- END submit#insert -->
 
 		<!-- BEGIN submit#update -->
-		<input type="submit" name="ACMS_POST_Schedule_Update" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+		<input type="submit" name="ACMS_POST_Schedule_Update" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-		<input type="submit" name="ACMS_POST_Schedule_Delete" value="削除" onclick="return confirm('スケジュールセットを削除します。\nよろしいですか？');" class="acms-btn-admin acms-btn-admin-danger" />
+		<input type="submit" name="ACMS_POST_Schedule_Delete" value="削除" onclick="return confirm('スケジュールセットを削除します。\nよろしいですか？');" class="acms-admin-btn-admin acms-admin-btn-admin-danger" />
 		<input type="hidden" name="takeover" value="{takeover}" />
 		<!-- END submit#update -->
 	</div>
 
-	<table class="adminTable acms-table-admin-edit">
+	<table class="adminTable acms-admin-table-admin-edit">
 	<tr>
-		<th>セット名<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このスケジュールを管理するための名前です。（日本語可）"></i></th>
+		<th>セット名<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="このスケジュールを管理するための名前です。（日本語可）"></i></th>
 		<td>
 		<input type="text" name="name" value="{name}" size="50" />
 		<input type="hidden" name="schedule[]" value="name" />
@@ -43,7 +43,7 @@
 		</td>
 	</tr>
 	<tr>
-		<th>説明<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このスケジュールがどのような動作をするかなどのメモです。"></i></th>
+		<th>説明<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="このスケジュールがどのような動作をするかなどのメモです。"></i></th>
 		<td>
 		<input type="text" name="desc" value="{desc}" size="50" />
 		<input type="hidden" name="schedule[]" value="desc" />

@@ -149,7 +149,10 @@
 
     })();
 
-    if (window.addEventListener) {
+    if ( window.addEventListener ) {
+        if ( document.readyState === 'interactive' || document.readyState === 'complete' ) {
+            window.App.init();
+        }
         window.addEventListener('DOMContentLoaded', window.App.init, false);
     }
 

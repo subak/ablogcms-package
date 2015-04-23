@@ -1,76 +1,76 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title">
-			<i class="acms-icon acms-icon-config_edit"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-6">
+		<h1 class="acms-admin-admin-title">
+			<i class="acms-admin-icon acms-admin-icon-config_edit"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
 				<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 				<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->編集設定
 		</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Config -->
 <!-- BEGIN_IF [{notice_mess}/nem/] -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>編集設定を保存しました</p><!-- END_IF -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>編集設定を保存しました</p><!-- END_IF -->
 
-<form action="" method="post" class="acms-form">
-	<p class="transaction-notice-{config:validator} acms-alert acms-alert-danger">コンフィグを保存出来ませんでした。</p>
+<form action="" method="post" class="acms-admin-form">
+	<p class="transaction-notice-{config:validator} acms-admin-alert acms-admin-alert-danger">コンフィグを保存出来ませんでした。</p>
 	
 	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
 		<div class="acms_fix_bg_index">
-			<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+			<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
 
-			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-admin-btn-admin acms-admin-float-right"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
 		</div>
 	</div>
 	
-	<h2 class="acms-admin-title2">拡張機能</h2>
-	<table class="adminTable acms-table-admin-edit">
+	<h2 class="acms-admin-admin-title2">拡張機能</h2>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>ダイレクト編集<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックすると、ダイレクト編集機能が有効になります。"></i></th>
+			<th>ダイレクト編集<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックすると、ダイレクト編集機能が有効になります。"></i></th>
 			<td>
 				<input type="hidden" name="entry_edit_inplace" value="off" />
-				<label class="acms-form-checkbox" for="direct">
-					<input type="checkbox" name="entry_edit_inplace" value="on"{entry_edit_inplace:checked#on} id="direct" /><i class="acms-ico-checkbox"></i>有効
+				<label class="acms-admin-form-checkbox" for="direct">
+					<input type="checkbox" name="entry_edit_inplace" value="on"{entry_edit_inplace:checked#on} id="direct" /><i class="acms-admin-ico-checkbox"></i>有効
 				</label>
 				<input type="hidden" name="config[]" value="entry_edit_inplace" />
 			</td>
 		</tr>
 		<tr>
-			<th>ユニットグループ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックすると、ユニットグループ機能が有効になります。"></i></th>
+			<th>ユニットグループ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックすると、ユニットグループ機能が有効になります。"></i></th>
 			<td>
 				<input type="hidden" name="unit_group" value="off" />
-				<label class="acms-form-checkbox" for="unitgroup">
-					<input type="checkbox" name="unit_group" value="on"{unit_group:checked#on} id="unitgroup" /><i class="acms-ico-checkbox"></i>有効
+				<label class="acms-admin-form-checkbox" for="unitgroup">
+					<input type="checkbox" name="unit_group" value="on"{unit_group:checked#on} id="unitgroup" /><i class="acms-admin-ico-checkbox"></i>有効
 				</label>
 				<input type="hidden" name="config[]" value="unit_group" />
 			</td>
 		</tr>
 	</table>
 
-	<h2 class="acms-admin-title2">ユニット追加ボタン</h2>
-	<table class="js-fieldgroup-sortable adminTable acms-table-admin-edit">
-		<thead class="acms-hide-sp">
+	<h2 class="acms-admin-admin-title2">ユニット追加ボタン</h2>
+	<table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
+		<thead class="acms-admin-hide-sp">
 			<tr>
-				<th class="acms-admin-config-table-item-handle">&nbsp;</th>
-				<th class="acms-table-left">モード
-					<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユニット追加ボタンに追加される、ユニットの種類を設定します。基本モードに続きアンダーバー+適当な文字列で基本ユニットを拡張できます。（例:image_h2）ここで入力したユニット追加ボタンは、ユニット設定で表示内容を編集できます。"></i>
+				<th class="acms-admin-admin-config-table-item-handle">&nbsp;</th>
+				<th class="acms-admin-table-left">モード
+					<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユニット追加ボタンに追加される、ユニットの種類を設定します。基本モードに続きアンダーバー+適当な文字列で基本ユニットを拡張できます。（例:image_h2）ここで入力したユニット追加ボタンは、ユニット設定で表示内容を編集できます。"></i>
 					<label class="validator-result-{column_add_type:validator#regexp}">モードは半角英字で入力して下さい。（image-mobile）</label>
 					<label class="validator-result-{column_add_type:validator#all_unique}">モードの指定が重複しています。一意なモード名を半角英字で入力してください。</label>
 				</th>
-				<th class="acms-table-left">ラベル<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユニット追加ボタンのボタン名を設定します。"></i></th>
-				<th class="acms-admin-config-table-action"></th>
+				<th class="acms-admin-table-left">ラベル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユニット追加ボタンのボタン名を設定します。"></i></th>
+				<th class="acms-admin-admin-config-table-action"></th>
 			</tr>
 		</thead>
 		<tbody><!-- BEGIN column_add_type_group:loop -->
 			<tr class="sortable-item">
-				<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">モード</span>
+					<span class="acms-admin-hide-pc acms-admin-show-sp">モード</span>
 					<select name="column_add_type[{i}]" class="js-acms_column_add_type">
 						<option value="">拡張</option>
 						<option value="text"{column_add_type:selected#text}>テキスト</option>
@@ -83,20 +83,21 @@
 						<option value="quote"{column_add_type:selected#quote}>引用</option>
 						<option value="media"{column_add_type:selected#media}>メディア</option>
 						<option value="break"{column_add_type:selected#break}>改ページ</option>
+						<option value="module"{column_add_type:selected#module}>モジュール</option>
 						<option value="custom"{column_add_type:selected#custom}>カスタム</option>
 					</select>
 					<input type="text" name="column_add_type[{i}]" value="{column_add_type}" />
 				</td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">ラベル</span>
-					<input type="text" name="column_add_type_label[{i}]" value="{column_add_type_label}" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+					<input type="text" name="column_add_type_label[{i}]" value="{column_add_type_label}" class="acms-admin-form-width-full" />
 				</td>
-				<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+				<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 			</tr><!-- END column_add_type_group:loop -->
 			<tr class="sortable-item item-template">
-				<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">モード</span>
+					<span class="acms-admin-hide-pc acms-admin-show-sp">モード</span>
 					<select name="column_add_type[]" class="js-acms_column_add_type">
 						<option value="">拡張</option>
 						<option value="text">テキスト</option>
@@ -108,19 +109,20 @@
 						<option value="eximage">画像URL</option>
 						<option value="quote">引用</option>
 						<option value="media">メディア</option>
+						<option value="module">モジュール</option>
 						<option value="custom">カスタム</option>
 					</select>
 					<input type="text" name="column_add_type[]" value="" />
 				</td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">ラベル</span>
-					<input type="text" name="column_add_type_label[]" value="" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+					<input type="text" name="column_add_type_label[]" value="" class="acms-admin-form-width-full" />
 				</td>
-				<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+				<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 			</tr>
 		</tbody>
 		<tfoot>
-			<tr><td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td></tr>
+			<tr><td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td></tr>
 		</tfoot>
 	</table>
 	<!--<input type="hidden" name="column_add_type:validator#regexp" value="^[a-z-:]+$" />-->
@@ -131,53 +133,166 @@
 	<input type="hidden" name="config[]" value="column_add_type_label" />
 	<input type="hidden" name="config[]" value="@column_add_type_group" />
 
-	<h2 class="acms-admin-title2">テキストタグセレクト</h2>
-	<table class="js-fieldgroup-sortable adminTable acms-table-admin-edit">
-		<thead class="acms-hide-sp">
+	<h2 class="acms-admin-admin-title2">レイアウト追加ボタン</h2>
+	<table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
+		<thead class="acms-admin-hide-sp">
 			<tr>
-				<th class="acms-admin-config-table-item-handle">&nbsp;</th>
-				<th class="acms-table-left">タグ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーのテキストユニットにおける、タグのブロック名を設定します。"></i></th>
-				<th class="acms-table-left">ラベル<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーのテキストユニットにおける、タグのラベル名を設定します。"></i></th>
-				<th class="acms-table-left">拡張<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーのテキストユニットにおける、拡張フィールドラベルを設定します。<変数 : \{extend_tag\}>"></i></th>
-				<th class="acms-admin-config-table-action"></th>
+				<th class="acms-admin-admin-config-table-item-handle">&nbsp;</th>
+				<th class="acms-admin-table-left">モード<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="レイアウトのブロックのモードを設定します。ブロック名はtype#ブロック名になります。"></i>
+					<label class="validator-result-{layout_add_type:validator#regexp}">モードは半角英数字で入力して下さい。</label>
+					<label class="validator-result-{layout_add_type:validator#all_unique}">モードの指定が重複しています。一意なモード名を半角英字で入力してください。</label>
+				</th>
+				<th class="acms-admin-table-left">グループ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="レイアウトのブロックのグループを設定します。"></i></th>
+				</th>
+				<th class="acms-admin-table-left">ラベル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="レイアウトのブロックのラベルを設定します。"></i></th>
+				<th class="acms-admin-admin-config-table-action"></th>
+			</tr>
+		</thead>
+		<tbody><!-- BEGIN layout_add_type_group:loop -->
+			<tr class="sortable-item">
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
+				<td>
+					<span class="acms-admin-hide-pc acms-admin-show-sp">モード</span>
+					<input type="text" name="layout_add_type[{i}]" value="{layout_add_type}" />
+				</td>
+				<td>
+					<select name="layout_add_type_set[{i}]">
+						<option value="">---</option><!-- BEGIN_MODULE admin_config_layoutgroup --><!-- BEGIN group:loop -->
+						<option value="{group}"\{layout_add_type_set:selected#{group}\}>{label}</option><!-- END group:loop --><!-- END_MODULE admin_config_layoutgroup -->
+					</select>
+				</td>
+				<td>
+					<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+					<input type="text" name="layout_add_type_label[{i}]" value="{layout_add_type_label}" class="acms-admin-form-width-full" />
+				</td>
+				<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
+			</tr><!-- END layout_add_type_group:loop -->
+			<tr class="sortable-item item-template">
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
+				<td>
+					<span class="acms-admin-hide-pc acms-admin-show-sp">モード</span>
+					<input type="text" name="layout_add_type[]" value="" />
+				</td>
+				<td>
+					<select name="layout_add_type_set[]">
+						<option value="">---</option><!-- BEGIN_MODULE Admin_Config_LayoutGroup --><!-- BEGIN group:loop -->
+						<option value="{group}">{label}</option><!-- END group:loop --><!-- END_MODULE Admin_Config_LayoutGroup -->
+					</select>
+				</td>
+				<td>
+					<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+					<input type="text" name="layout_add_type_label[]" value="" class="acms-admin-form-width-full" />
+				</td>
+				<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr><td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td></tr>
+		</tfoot>
+	</table>
+	<input type="hidden" name="layout_add_type:validator#regexp" value="^[a-z0-9-_:]+$" />
+	<input type="hidden" name="layout_add_type:validator#all_unique" />
+	<input type="hidden" name="@layout_add_type_group[]" value="layout_add_type" />
+	<input type="hidden" name="@layout_add_type_group[]" value="layout_add_type_set" />
+	<input type="hidden" name="@layout_add_type_group[]" value="layout_add_type_label" />
+	<input type="hidden" name="config[]" value="layout_add_type" />
+	<input type="hidden" name="config[]" value="layout_add_type_set" />
+	<input type="hidden" name="config[]" value="layout_add_type_label" />
+	<input type="hidden" name="config[]" value="@layout_add_type_group" />
+
+	<h2 class="acms-admin-admin-title2">レイアウトグループ</h2>
+	<table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
+		<thead class="acms-admin-hide-sp">
+			<tr>
+				<th class="acms-admin-admin-config-table-item-handle">&nbsp;</th>
+				<th class="acms-admin-table-left">クラス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="レイアウト選択肢のグループにおける、DIV要素のクラス名を設定します。"></i></th>
+				<th class="acms-admin-table-left">ラベル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="レイアウト選択肢のグループのラベル名を設定します。"></i></th>
+				<th class="acms-admin-admin-config-table-action"></th>
+			</tr>
+		</thead>
+		<tbody><!-- BEGIN layout_group:loop -->
+			<tr class="sortable-item">
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
+				<td>
+					<span class="acms-admin-hide-pc acms-admin-show-sp">クラス</span>
+					<input type="text" name="layout_group_class[]" value="{layout_group_class}" size="" class="acms-admin-form-width-full" />
+				</td>
+				<td>
+					<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+					<input type="text" name="layout_group_label[]" value="{layout_group_label}" size="" class="acms-admin-form-width-full" />
+				</td>
+				<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
+			</tr><!-- END layout_group:loop -->
+			<tr class="sortable-item item-template">
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
+				<td>
+					<span class="acms-admin-hide-pc acms-admin-show-sp">クラス</span>
+					<input type="text" name="layout_group_class[]" value="" size="" class="acms-admin-form-width-full" />
+				</td>
+				<td>
+					<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+					<input type="text" name="layout_group_label[]" value="" size="" class="acms-admin-form-width-full" />
+				</td>
+				<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr><td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td>	</tr>
+		</tfoot>
+	</table>
+	<input type="hidden" name="@layout_group[]" value="layout_group_class" />
+	<input type="hidden" name="@layout_group[]" value="layout_group_label" />
+	<input type="hidden" name="config[]" value="layout_group_class" />
+	<input type="hidden" name="config[]" value="layout_group_label" />
+	<input type="hidden" name="config[]" value="@layout_group" />
+
+	<h2 class="acms-admin-admin-title2">テキストタグセレクト</h2>
+	<table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
+		<thead class="acms-admin-hide-sp">
+			<tr>
+				<th class="acms-admin-admin-config-table-item-handle">&nbsp;</th>
+				<th class="acms-admin-table-left">タグ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーのテキストユニットにおける、タグのブロック名を設定します。"></i></th>
+				<th class="acms-admin-table-left">ラベル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーのテキストユニットにおける、タグのラベル名を設定します。"></i></th>
+				<th class="acms-admin-table-left">拡張<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーのテキストユニットにおける、拡張フィールドラベルを設定します。<変数 : \{extend_tag\}>"></i></th>
+				<th class="acms-admin-admin-config-table-action"></th>
 			</tr>
 		</thead>
 		<tbody><!-- BEGIN column_text_tag_group:loop -->
 			<tr class="sortable-item">
-				<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">タグ</span>
-					<input type="text" name="column_text_tag[]" value="{column_text_tag}" size="" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">タグ</span>
+					<input type="text" name="column_text_tag[]" value="{column_text_tag}" size="" class="acms-admin-form-width-full" />
 				</td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">ラベル</span>
-					<input type="text" name="column_text_tag_label[]" value="{column_text_tag_label}" size="" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+					<input type="text" name="column_text_tag_label[]" value="{column_text_tag_label}" size="" class="acms-admin-form-width-full" />
 				</td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">拡張</span>
-					<input type="text" name="column_text_tag_extend_label[]" value="{column_text_tag_extend_label}" size="" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">拡張</span>
+					<input type="text" name="column_text_tag_extend_label[]" value="{column_text_tag_extend_label}" size="" class="acms-admin-form-width-full" />
 				</td>
-				<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+				<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 			</tr><!-- END column_text_tag_group:loop -->
 			<tr class="sortable-item item-template">
-				<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">タグ</span>
-					<input type="text" name="column_text_tag[]" value="" size="" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">タグ</span>
+					<input type="text" name="column_text_tag[]" value="" size="" class="acms-admin-form-width-full" />
 				</td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">ラベル</span>
-					<input type="text" name="column_text_tag_label[]" value="" size="" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+					<input type="text" name="column_text_tag_label[]" value="" size="" class="acms-admin-form-width-full" />
 				</td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">拡張</span>
-					<input type="text" name="column_text_tag_extend_label[]" value="" size="" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">拡張</span>
+					<input type="text" name="column_text_tag_extend_label[]" value="" size="" class="acms-admin-form-width-full" />
 				</td>
-				<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+				<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 			</tr>
 		</tbody>
 		<tfoot>
-			<tr><td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td>	</tr>
+			<tr><td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td>	</tr>
 		</tfoot>
 	</table>
 	<input type="hidden" name="@column_text_tag_group[]" value="column_text_tag" />
@@ -189,25 +304,25 @@
 	<input type="hidden" name="config[]" value="@column_text_tag_group" />
 
 
-	<h2 class="acms-admin-title2">フォームユニット追加ボタン</h2>
-	<table class="js-fieldgroup-sortable adminTable acms-table-admin-edit">
-		<thead class="acms-hide-sp">
+	<h2 class="acms-admin-admin-title2">フォームユニット追加ボタン</h2>
+	<table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
+		<thead class="acms-admin-hide-sp">
 			<tr>
-				<th class="acms-admin-config-table-item-handle">&nbsp;</th>
-				<th class="acms-table-left">モード
-					<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="動的フォームのフォームユニットのタイプを指定します。"></i>
+				<th class="acms-admin-admin-config-table-item-handle">&nbsp;</th>
+				<th class="acms-admin-table-left">モード
+					<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="動的フォームのフォームユニットのタイプを指定します。"></i>
 					<label class="validator-result-{column_form_add_type:validator#regexp}">モードは半角英字で入力して下さい。（image-mobile）</label>
 					<label class="validator-result-{column_form_add_type:validator#all_unique}">モードの指定が重複しています。一意なモード名を半角英字で入力してください。</label>
 				</th>
-				<th class="acms-table-left">ラベル<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="動的フォームのフォームユニット追加ボタンのボタン名を設定します。"></i></th>
-				<th class="acms-admin-config-table-action"></th>
+				<th class="acms-admin-table-left">ラベル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="動的フォームのフォームユニット追加ボタンのボタン名を設定します。"></i></th>
+				<th class="acms-admin-admin-config-table-action"></th>
 			</tr>
 		</thead>
 		<tbody><!-- BEGIN column_form_add_type_group:loop -->
 			<tr class="sortable-item">
-				<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">モード</span>
+					<span class="acms-admin-hide-pc acms-admin-show-sp">モード</span>
 					<select name="column_form_add_type[{i}]">
 						<option value="text"{column_form_add_type:selected#text}>テキスト</option>
 						<option value="textarea"{column_form_add_type:selected#textarea}>テキストエリア</option>
@@ -217,15 +332,15 @@
 					</select>
 				</td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">ラベル</span>
-					<input type="text" name="column_form_add_type_label[{i}]" value="{column_form_add_type_label}" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+					<input type="text" name="column_form_add_type_label[{i}]" value="{column_form_add_type_label}" class="acms-admin-form-width-full" />
 				</td>
-				<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+				<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 			</tr><!-- END column_form_add_type_group:loop -->
 			<tr class="sortable-item item-template">
-				<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">モード</span>
+					<span class="acms-admin-hide-pc acms-admin-show-sp">モード</span>
 					<select name="column_form_add_type[]">
 						<option value="text">テキスト</option>
 						<option value="textarea">テキストエリア</option>
@@ -235,14 +350,14 @@
 					</select>
 				</td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">ラベル</span>
-					<input type="text" name="column_form_add_type_label[]" value="" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+					<input type="text" name="column_form_add_type_label[]" value="" class="acms-admin-form-width-full" />
 				</td>
-				<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+				<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 			</tr>
 		</tbody>
 		<tfoot>
-			<tr><td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td></tr>
+			<tr><td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td></tr>
 		</tfoot>
 	</table>
 	<!--<input type="hidden" name="column_form_add_type:validator#regexp" value="^[a-z-:]+$" />-->
@@ -253,44 +368,44 @@
 	<input type="hidden" name="config[]" value="column_form_add_type_label" />
 	<input type="hidden" name="config[]" value="@column_form_add_type_group" />
 
-	<h2 class="acms-admin-title2">ユニットグループ</h2>
-	<table class="js-fieldgroup-sortable adminTable acms-table-admin-edit">
-		<thead class="acms-hide-sp">
+	<h2 class="acms-admin-admin-title2">ユニットグループ</h2>
+	<table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
+		<thead class="acms-admin-hide-sp">
 			<tr>
-				<th class="acms-admin-config-table-item-handle">&nbsp;</th>
-				<th class="acms-table-left">クラス<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーのユニットグループにおける、DIV要素のクラス名を設定します。"></i></th>
-				<th class="acms-table-left">ラベル<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーのユニットグループにおける、選択肢のラベル名を設定します"></i></th>
-				<th class="acms-admin-config-table-action"></th>
+				<th class="acms-admin-admin-config-table-item-handle">&nbsp;</th>
+				<th class="acms-admin-table-left">クラス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーのユニットグループにおける、DIV要素のクラス名を設定します。"></i></th>
+				<th class="acms-admin-table-left">ラベル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーのユニットグループにおける、選択肢のラベル名を設定します"></i></th>
+				<th class="acms-admin-admin-config-table-action"></th>
 			</tr>
 		</thead>
 		<tbody><!-- BEGIN nesting_unit_group:loop -->
 			<tr class="sortable-item">
-				<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">クラス</span>
-					<input type="text" name="unit_group_class[]" value="{unit_group_class}" size="" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">クラス</span>
+					<input type="text" name="unit_group_class[]" value="{unit_group_class}" size="" class="acms-admin-form-width-full" />
 				</td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">ラベル</span>
-					<input type="text" name="unit_group_label[]" value="{unit_group_label}" size="" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+					<input type="text" name="unit_group_label[]" value="{unit_group_label}" size="" class="acms-admin-form-width-full" />
 				</td>
-				<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+				<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 			</tr><!-- END nesting_unit_group:loop -->
 			<tr class="sortable-item item-template">
-				<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">クラス</span>
-					<input type="text" name="unit_group_class[]" value="" size="" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">クラス</span>
+					<input type="text" name="unit_group_class[]" value="" size="" class="acms-admin-form-width-full" />
 				</td>
 				<td>
-					<span class="acms-hide-pc acms-show-sp">ラベル</span>
-					<input type="text" name="unit_group_label[]" value="" size="" class="acms-form-width-full" />
+					<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+					<input type="text" name="unit_group_label[]" value="" size="" class="acms-admin-form-width-full" />
 				</td>
-				<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+				<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 			</tr>
 		</tbody>
 		<tfoot>
-			<tr><td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td>	</tr>
+			<tr><td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td>	</tr>
 		</tfoot>
 	</table>
 	<input type="hidden" name="@nesting_unit_group[]" value="unit_group_class" />
@@ -299,40 +414,40 @@
 	<input type="hidden" name="config[]" value="unit_group_label" />
 	<input type="hidden" name="config[]" value="@nesting_unit_group" />
 
-	<h2 class="acms-admin-title2">サイズセレクト</h2>
-	<table class="adminTable acms-table-admin-edit acms-table-admin-edit-bordered">
+	<h2 class="acms-admin-admin-title2">サイズセレクト</h2>
+	<table class="adminTable acms-admin-table-admin-edit acms-admin-table-admin-edit-bordered">
 		<tr>
-			<th>イメージサイズ選択肢<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="投稿した画像のサイズを設定します。サイズが200なら縦（または横、または長辺）が200pxになります。"></i></th>
+			<th>イメージサイズ選択肢<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="投稿した画像のサイズを設定します。サイズが200なら縦（または横、または長辺）が200pxになります。"></i></th>
 			<td>
 				<table class="js-fieldgroup-sortable adminTable">
-					<tr class="thX acms-hide-sp"><th class="acms-admin-config-table-item-handle"></th><th class="acms-table-left acms-admin-config-table-criterion">基準</th><th class="acms-table-left">表示サイズ</th><th class="acms-table-left">サイズ</th><th class="acms-table-left">ラベル</th><th class="acms-admin-config-table-action"></th></tr><!-- BEGIN column_image_size_group:loop -->
+					<tr class="thX acms-admin-hide-sp"><th class="acms-admin-admin-config-table-item-handle"></th><th class="acms-admin-table-left acms-admin-admin-config-table-criterion">基準</th><th class="acms-admin-table-left">表示サイズ</th><th class="acms-admin-table-left">サイズ</th><th class="acms-admin-table-left">ラベル</th><th class="acms-admin-admin-config-table-action"></th></tr><!-- BEGIN column_image_size_group:loop -->
 					<tr class="sortable-item">
-						<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">基準</span>
+							<span class="acms-admin-hide-pc acms-admin-show-sp">基準</span>
 							<select  name="column_image_size_criterion[]">
 							<option value="">長辺</option>
 							<option value="width"{column_image_size_criterion:selected#width}>横</option>
 							<option value="height"{column_image_size_criterion:selected#height}>縦</option>
 						</select></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">表示サイズ</span>
-							<input type="text" name="column_image_display_size[]" value="{column_image_display_size}" size="10" class="acms-form-width-3quarters" placeholder="% or class"/>&nbsp;
+							<span class="acms-admin-hide-pc acms-admin-show-sp">表示サイズ</span>
+							<input type="text" name="column_image_display_size[]" value="{column_image_display_size}" size="10" class="acms-admin-form-width-3quarters" placeholder="% or class"/>&nbsp;
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">サイズ</span>
-							<input type="text" name="column_image_size[]" value="{column_image_size}" size="10" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">サイズ</span>
+							<input type="text" name="column_image_size[]" value="{column_image_size}" size="10" class="acms-admin-form-width-full" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">ラベル</span>
-							<input type="text" name="column_image_size_label[]" value="{column_image_size_label}" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+							<input type="text" name="column_image_size_label[]" value="{column_image_size_label}" class="acms-admin-form-width-full" />
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr><!-- END column_image_size_group:loop -->
 					<tr class="sortable-item item-template">
-						<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">基準</span>
+							<span class="acms-admin-hide-pc acms-admin-show-sp">基準</span>
 							<select  name="column_image_size_criterion[]">
 								<option value="">長辺</option>
 								<option value="width"{column_image_size_criterion:selected#width}>横</option>
@@ -340,21 +455,21 @@
 							</select>
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">表示サイズ</span>
-							<input type="text" name="column_image_display_size[]" value="" size="10" class="acms-form-width-3quarters" placeholder="% or class"/>
+							<span class="acms-admin-hide-pc acms-admin-show-sp">表示サイズ</span>
+							<input type="text" name="column_image_display_size[]" value="" size="10" class="acms-admin-form-width-3quarters" placeholder="% or class"/>
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">サイズ</span>
-							<input type="text" name="column_image_size[]" value="" size="10" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">サイズ</span>
+							<input type="text" name="column_image_size[]" value="" size="10" class="acms-admin-form-width-full" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">ラベル</span>
-							<input type="text" name="column_image_size_label[]" value="" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+							<input type="text" name="column_image_size_label[]" value="" class="acms-admin-form-width-full" />
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr>
 					<tr>
-						<td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td>
+						<td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td>
 					</tr>
 				</table>
 				<input type="hidden" name="@column_image_size_group[]" value="column_image_size_criterion" />
@@ -369,44 +484,44 @@
 			</td>
 		</tr>
 		<tr>
-			<th>マップサイズ選択肢<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="地図を表示するサイズを設定します。設定の方法は'横幅x高さ'となり、210x210なら210px の正方形になります。"></i></th>
+			<th>マップサイズ選択肢<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="地図を表示するサイズを設定します。設定の方法は'横幅x高さ'となり、210x210なら210px の正方形になります。"></i></th>
 			<td>
 				<table class="js-fieldgroup-sortable adminTable">
-					<tr class="thX acms-hide-sp"><th class="acms-admin-config-table-item-handle"></th><th class="acms-table-left">表示サイズ</th><th class="acms-table-left">サイズ</th><th class="acms-table-left">ラベル</th><th class="acms-admin-config-table-action"></th></tr><!-- BEGIN column_map_size_group:loop -->
+					<tr class="thX acms-admin-hide-sp"><th class="acms-admin-admin-config-table-item-handle"></th><th class="acms-admin-table-left">表示サイズ</th><th class="acms-admin-table-left">サイズ</th><th class="acms-admin-table-left">ラベル</th><th class="acms-admin-admin-config-table-action"></th></tr><!-- BEGIN column_map_size_group:loop -->
 					<tr class="sortable-item">
-						<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">表示サイズ</span>
-							<input type="text" name="column_map_display_size[]" value="{column_map_display_size}" size="10" class="acms-form-width-3quarters" placeholder="% or class"/>
+							<span class="acms-admin-hide-pc acms-admin-show-sp">表示サイズ</span>
+							<input type="text" name="column_map_display_size[]" value="{column_map_display_size}" size="10" class="acms-admin-form-width-3quarters" placeholder="% or class"/>
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">サイズ</span>
-							<input type="text" name="column_map_size[]" value="{column_map_size}" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">サイズ</span>
+							<input type="text" name="column_map_size[]" value="{column_map_size}" class="acms-admin-form-width-full" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">ラベル</span>
-							<input type="text" name="column_map_size_label[]" value="{column_map_size_label}" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+							<input type="text" name="column_map_size_label[]" value="{column_map_size_label}" class="acms-admin-form-width-full" />
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr><!-- END column_map_size_group:loop -->
 					<tr class="sortable-item item-template">
-						<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">表示サイズ</span>
-							<input type="text" name="column_map_display_size[]" value="" class="acms-form-width-3quarters" placeholder="% or class" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">表示サイズ</span>
+							<input type="text" name="column_map_display_size[]" value="" class="acms-admin-form-width-3quarters" placeholder="% or class" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">サイズ</span>
-							<input type="text" name="column_map_size[]" value="" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">サイズ</span>
+							<input type="text" name="column_map_size[]" value="" class="acms-admin-form-width-full" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">ラベル</span>
-							<input type="text" name="column_map_size_label[]" value="" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+							<input type="text" name="column_map_size_label[]" value="" class="acms-admin-form-width-full" />
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr>
 					<tr>
-						<td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td>
+						<td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td>
 					</tr>
 				</table>
 				<input type="hidden" name="@column_map_size_group[]" value="column_map_display_size" />
@@ -419,44 +534,44 @@
 			</td>
 		</tr>
 		<tr>
-			<th>メディアサイズ選択肢<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="メディアを表示するサイズを設定します。320x205なら横幅320x高さ205px の長方形になります。※画面比率16:9 + 縦25px（コントロールバー）"></i></th>
+			<th>メディアサイズ選択肢<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="メディアを表示するサイズを設定します。320x205なら横幅320x高さ205px の長方形になります。※画面比率16:9 + 縦25px（コントロールバー）"></i></th>
 			<td>
 				<table class="js-fieldgroup-sortable adminTable ">
-					<tr class="thX acms-hide-sp"><th class="acms-admin-config-table-item-handle"></th><th class="acms-table-left">表示サイズ</th><th class="acms-table-left">サイズ</th><th class="acms-table-left">ラベル</th><th class="acms-admin-config-table-action"></th></tr><!-- BEGIN column_media_size_group:loop -->
+					<tr class="thX acms-admin-hide-sp"><th class="acms-admin-admin-config-table-item-handle"></th><th class="acms-admin-table-left">表示サイズ</th><th class="acms-admin-table-left">サイズ</th><th class="acms-admin-table-left">ラベル</th><th class="acms-admin-admin-config-table-action"></th></tr><!-- BEGIN column_media_size_group:loop -->
 					<tr class="sortable-item">
-						<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">表示サイズ</span>
-							<input type="text" name="column_media_display_size[]" value="{column_media_display_size}" size="10" class="acms-form-width-3quarters" placeholder="% or class"/>
+							<span class="acms-admin-hide-pc acms-admin-show-sp">表示サイズ</span>
+							<input type="text" name="column_media_display_size[]" value="{column_media_display_size}" size="10" class="acms-admin-form-width-3quarters" placeholder="% or class"/>
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">サイズ</span>
-							<input type="text" name="column_media_size[]" value="{column_media_size}" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">サイズ</span>
+							<input type="text" name="column_media_size[]" value="{column_media_size}" class="acms-admin-form-width-full" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">ラベル</span>
-							<input type="text" name="column_media_size_label[]" value="{column_media_size_label}" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+							<input type="text" name="column_media_size_label[]" value="{column_media_size_label}" class="acms-admin-form-width-full" />
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr><!-- END column_media_size_group:loop -->
 					<tr class="sortable-item item-template">
-						<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">表示サイズ</span>
-							<input type="text" name="column_media_display_size[]" value="" class="acms-form-width-3quarters" placeholder="% or class"/>
+							<span class="acms-admin-hide-pc acms-admin-show-sp">表示サイズ</span>
+							<input type="text" name="column_media_display_size[]" value="" class="acms-admin-form-width-3quarters" placeholder="% or class"/>
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">サイズ</span>
-							<input type="text" name="column_media_size[]" value="" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">サイズ</span>
+							<input type="text" name="column_media_size[]" value="" class="acms-admin-form-width-full" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">ラベル</span>
-							<input type="text" name="column_media_size_label[]" value="" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+							<input type="text" name="column_media_size_label[]" value="" class="acms-admin-form-width-full" />
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr>
 					<tr>
-						<td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td>
+						<td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td>
 					</tr>
 				</table>
 				<input type="hidden" name="@column_media_size_group[]" value="column_media_display_size" />
@@ -469,44 +584,44 @@
 			</td>
 		</tr>
 		<tr>
-			<th>ビデオサイズ選択肢<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ビデオを表示するサイズを設定します。320x205なら横幅320x高さ205px の長方形になります。※画面比率16:9 + 縦25px（コントロールバー）"></i></th>
+			<th>ビデオサイズ選択肢<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ビデオを表示するサイズを設定します。320x205なら横幅320x高さ205px の長方形になります。※画面比率16:9 + 縦25px（コントロールバー）"></i></th>
 			<td>
 				<table class="js-fieldgroup-sortable adminTable ">
-					<tr class="thX acms-hide-sp"><th class="acms-admin-config-table-item-handle"></th><th class="acms-table-left">表示サイズ</th><th class="acms-table-left">サイズ</th><th class="acms-table-left">ラベル</th><th class="acms-admin-config-table-action"></th></tr><!-- BEGIN column_video_size_group:loop -->
+					<tr class="thX acms-admin-hide-sp"><th class="acms-admin-admin-config-table-item-handle"></th><th class="acms-admin-table-left">表示サイズ</th><th class="acms-admin-table-left">サイズ</th><th class="acms-admin-table-left">ラベル</th><th class="acms-admin-admin-config-table-action"></th></tr><!-- BEGIN column_video_size_group:loop -->
 					<tr class="sortable-item">
-						<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">表示サイズ</span>
-							<input type="text" name="column_video_display_size[]" value="{column_video_display_size}" size="10" class="acms-form-width-3quarters" placeholder="% or class"/>
+							<span class="acms-admin-hide-pc acms-admin-show-sp">表示サイズ</span>
+							<input type="text" name="column_video_display_size[]" value="{column_video_display_size}" size="10" class="acms-admin-form-width-3quarters" placeholder="% or class"/>
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">サイズ</span>
-							<input type="text" name="column_video_size[]" value="{column_video_size}" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">サイズ</span>
+							<input type="text" name="column_video_size[]" value="{column_video_size}" class="acms-admin-form-width-full" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">ラベル</span>
-							<input type="text" name="column_video_size_label[]" value="{column_video_size_label}" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+							<input type="text" name="column_video_size_label[]" value="{column_video_size_label}" class="acms-admin-form-width-full" />
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr><!-- END column_video_size_group:loop -->
 					<tr class="sortable-item item-template">
-						<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">表示サイズ</span>
-							<input type="text" name="column_video_display_size[]" value="" class="acms-form-width-3quarters" placeholder="% or class"/>
+							<span class="acms-admin-hide-pc acms-admin-show-sp">表示サイズ</span>
+							<input type="text" name="column_video_display_size[]" value="" class="acms-admin-form-width-3quarters" placeholder="% or class"/>
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">サイズ</span>
-							<input type="text" name="column_video_size[]" value="" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">サイズ</span>
+							<input type="text" name="column_video_size[]" value="" class="acms-admin-form-width-full" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">ラベル</span>
-							<input type="text" name="column_video_size_label[]" value="" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+							<input type="text" name="column_video_size_label[]" value="" class="acms-admin-form-width-full" />
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr>
 					<tr>
-						<td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td>
+						<td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td>
 					</tr>
 				</table>
 				<input type="hidden" name="@column_video_size_group[]" value="column_video_display_size" />
@@ -520,44 +635,44 @@
 		</tr>
 		<!--
 		<tr>
-			<th>Youtubeサイズ選択肢<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="Youtubeを表示するサイズを設定します。320x205なら横幅320x高さ205px の長方形になります。※画面比率16:9 + 縦25px（コントロールバー）"></i></th>
+			<th>Youtubeサイズ選択肢<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="Youtubeを表示するサイズを設定します。320x205なら横幅320x高さ205px の長方形になります。※画面比率16:9 + 縦25px（コントロールバー）"></i></th>
 			<td>
 				<table class="js-fieldgroup-sortable adminTable ">
-					<tr class="thX acms-hide-sp"><th class="acms-admin-config-table-item-handle"></th><th class="acms-table-left">表示サイズ</th><th class="acms-table-left">サイズ</th><th class="acms-table-left">ラベル</th><th class="acms-admin-config-table-action"></th></tr><!-- BEGIN column_youtube_size_group:loop -->
+					<tr class="thX acms-admin-hide-sp"><th class="acms-admin-admin-config-table-item-handle"></th><th class="acms-admin-table-left">表示サイズ</th><th class="acms-admin-table-left">サイズ</th><th class="acms-admin-table-left">ラベル</th><th class="acms-admin-admin-config-table-action"></th></tr><!-- BEGIN column_youtube_size_group:loop -->
 					<tr class="sortable-item">
-						<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">表示サイズ</span>
-							<input type="text" name="column_youtube_display_size[]" value="{column_youtube_display_size}" size="10" class="acms-form-width-3quarters" placeholder="% or class"/>
+							<span class="acms-admin-hide-pc acms-admin-show-sp">表示サイズ</span>
+							<input type="text" name="column_youtube_display_size[]" value="{column_youtube_display_size}" size="10" class="acms-admin-form-width-3quarters" placeholder="% or class"/>
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">サイズ</span>
-							<input type="text" name="column_youtube_size[]" value="{column_youtube_size}" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">サイズ</span>
+							<input type="text" name="column_youtube_size[]" value="{column_youtube_size}" class="acms-admin-form-width-full" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">ラベル</span>
-							<input type="text" name="column_youtube_size_label[]" value="{column_youtube_size_label}" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+							<input type="text" name="column_youtube_size_label[]" value="{column_youtube_size_label}" class="acms-admin-form-width-full" />
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr><!-- END column_youtube_size_group:loop -->
 					<tr class="sortable-item item-template">
-						<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">表示サイズ</span>
-							<input type="text" name="column_youtube_display_size[]" value="" class="acms-form-width-3quarters" placeholder="% or class"/>
+							<span class="acms-admin-hide-pc acms-admin-show-sp">表示サイズ</span>
+							<input type="text" name="column_youtube_display_size[]" value="" class="acms-admin-form-width-3quarters" placeholder="% or class"/>
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">サイズ</span>
-							<input type="text" name="column_youtube_size[]" value="" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">サイズ</span>
+							<input type="text" name="column_youtube_size[]" value="" class="acms-admin-form-width-full" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">ラベル</span>
-							<input type="text" name="column_youtube_size_label[]" value="" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+							<input type="text" name="column_youtube_size_label[]" value="" class="acms-admin-form-width-full" />
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr>
 					<tr>
-						<td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td>
+						<td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td>
 					</tr>
 				</table>
 				<input type="hidden" name="@column_youtube_size_group[]" value="column_youtube_display_size" />
@@ -570,47 +685,47 @@
 			</td>
 		</tr> -->
 		<tr>
-			<th>画像URLサイズ選択肢<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="画像URLを表示するサイズを設定します。サイズが200なら縦または横の辺の大きい方が200pxになります"></i></th>
+			<th>画像URLサイズ選択肢<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="画像URLを表示するサイズを設定します。サイズが200なら縦または横の辺の大きい方が200pxになります"></i></th>
 			<td>
 				<table class="js-fieldgroup-sortable adminTable">
-					<tr class="thX acms-hide-sp">
-						<th class="acms-admin-config-table-item-handle"></th><th class="acms-table-left">表示サイズ</th><th class="acms-table-left">サイズ</th><th class="acms-table-left">ラベル</th><th class="acms-admin-config-table-action"></th>
+					<tr class="thX acms-admin-hide-sp">
+						<th class="acms-admin-admin-config-table-item-handle"></th><th class="acms-admin-table-left">表示サイズ</th><th class="acms-admin-table-left">サイズ</th><th class="acms-admin-table-left">ラベル</th><th class="acms-admin-admin-config-table-action"></th>
 					</tr>
 					<!-- BEGIN column_eximage_size_group:loop -->
 					<tr class="sortable-item">
-						<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">表示サイズ</span>
-							<input type="text" name="column_eximage_display_size[]" value="{column_eximage_display_size}" size="10" class="acms-form-width-3quarters" placeholder="% or class"/>
+							<span class="acms-admin-hide-pc acms-admin-show-sp">表示サイズ</span>
+							<input type="text" name="column_eximage_display_size[]" value="{column_eximage_display_size}" size="10" class="acms-admin-form-width-3quarters" placeholder="% or class"/>
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">サイズ</span>
-							<input type="text" name="column_eximage_size[]" value="{column_eximage_size}" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">サイズ</span>
+							<input type="text" name="column_eximage_size[]" value="{column_eximage_size}" class="acms-admin-form-width-full" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">ラベル</span>
-							<input type="text" name="column_eximage_size_label[]" value="{column_eximage_size_label}" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+							<input type="text" name="column_eximage_size_label[]" value="{column_eximage_size_label}" class="acms-admin-form-width-full" />
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr><!-- END column_eximage_size_group:loop -->
 					<tr class="sortable-item item-template">
-						<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">表示サイズ</span>
-							<input type="text" name="column_eximage_display_size[]" value="" class="acms-form-width-3quarters" placeholder="% or class"/>
+							<span class="acms-admin-hide-pc acms-admin-show-sp">表示サイズ</span>
+							<input type="text" name="column_eximage_display_size[]" value="" class="acms-admin-form-width-3quarters" placeholder="% or class"/>
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">サイズ</span>
-							<input type="text" name="column_eximage_size[]" value="" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">サイズ</span>
+							<input type="text" name="column_eximage_size[]" value="" class="acms-admin-form-width-full" />
 						</td>
 						<td>
-							<span class="acms-hide-pc acms-show-sp">ラベル</span>
-							<input type="text" name="column_eximage_size_label[]" value="" class="acms-form-width-full" />
+							<span class="acms-admin-hide-pc acms-admin-show-sp">ラベル</span>
+							<input type="text" name="column_eximage_size_label[]" value="" class="acms-admin-form-width-full" />
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr>
 					<tr>
-						<td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td>
+						<td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td>
 					</tr>
 				</table>
 				<input type="hidden" name="@column_eximage_size_group[]" value="column_eximage_display_size" />
@@ -624,39 +739,39 @@
 		</tr>
 	</table>
 
-	<h2 class="acms-admin-title2">エントリー編集</h2>
-	<table class="adminTable acms-table-admin-edit">
+	<h2 class="acms-admin-admin-title2">エントリー編集</h2>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>ファイル名接頭辞<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ファイル名を自動生成するときの接頭辞です。"></i></th>
+			<th>ファイル名接頭辞<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ファイル名を自動生成するときの接頭辞です。"></i></th>
 			<td>
 				<input type="text" name="entry_code_prefix" value="{entry_code_prefix}" size="20" />
 				<input type="hidden" name="config[]" value="entry_code_prefix" />
 			</td>
 		</tr>
 		<tr>
-			<th>ファイル名拡張子<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ファイル名を自動生成するときの拡張子です。"></i></th>
+			<th>ファイル名拡張子<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ファイル名を自動生成するときの拡張子です。"></i></th>
 			<td>
 				<input type="text" name="entry_code_extension" value="{entry_code_extension}" size="20" />
 				<input type="hidden" name="config[]" value="entry_code_extension" />
 			</td>
 		</tr>
 		<tr>
-			<th>ファイル名の自動生成<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックすると、ファイル名が指定されていない時にはエントリーのタイトルをファイル名として使います。"></i></th>
+			<th>ファイル名の自動生成<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックすると、ファイル名が指定されていない時にはエントリーのタイトルをファイル名として使います。"></i></th>
 			<td>
 				<input type="hidden" name="entry_code_title" value="off" /> 
-				<label class="acms-form-checkbox" for="input-checkbox-entry_code_title">
+				<label class="acms-admin-form-checkbox" for="input-checkbox-entry_code_title">
 					<input type="checkbox" name="entry_code_title" value="on"{entry_code_title:checked#on} id="input-checkbox-entry_code_title" />
-					<i class="acms-ico-checkbox"></i>ファイル名が指定されていない時に、タイトルをファイル名として使う
+					<i class="acms-admin-ico-checkbox"></i>ファイル名が指定されていない時に、タイトルをファイル名として使う
 				</label>
 				<input type="hidden" name="config[]" value="entry_code_title" />
 			</td>
 		</tr>
 	</table>
 
-	<h2 class="acms-admin-title2">イメージ編集</h2>
-	<table class="adminTable acms-table-admin-edit">
+	<h2 class="acms-admin-admin-title2">イメージ編集</h2>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>拡大表示時の最大サイズ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="拡大表示時の画像サイズとして使用されます。"></i></th>
+			<th>拡大表示時の最大サイズ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="拡大表示時の画像サイズとして使用されます。"></i></th>
 			<td>
 				<select  name="image_size_large_criterion[]">
 					<option value="">長辺</option>
@@ -673,7 +788,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>モバイル用画像の最大サイズ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="縮小された画像サイズとして使用されます。"></i></th>
+			<th>モバイル用画像の最大サイズ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="縮小された画像サイズとして使用されます。"></i></th>
 			<td>
 				<select  name="image_size_tiny_criterion[]">
 					<option value="">長辺</option>
@@ -690,7 +805,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>正方形画像の一辺サイズ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="正方形画像の一辺のサイズです。画像はトリミングされます。0を設定すると正方形画像を生成しなくなります。"></i></th>
+			<th>正方形画像の一辺サイズ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="正方形画像の一辺のサイズです。画像はトリミングされます。0を設定すると正方形画像を生成しなくなります。"></i></th>
 			<td>
 				<input type="text" name="image_size_square" size="4" value="{image_size_square}" /> px
 				<input type="hidden" name="config[]" value="image_size_square" />
@@ -700,7 +815,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>JPEG画像の圧縮率<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="数字が小さいほど容量を抑えますが画質は低下します。"></i></th>
+			<th>JPEG画像の圧縮率<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="数字が小さいほど容量を抑えますが画質は低下します。"></i></th>
 			<td>
 				<input type="text" name="image_jpeg_quality" size="4" value="{image_jpeg_quality}" /> %
 				<input type="hidden" name="config[]" value="image_jpeg_quality" />
@@ -711,55 +826,55 @@
 		</tr>
 	</table>
 
-	<h2 class="acms-admin-title2">アップロード許可ファイル拡張子</h2>
-	<table class="adminTable acms-table-admin-edit">
+	<h2 class="acms-admin-admin-title2">アップロード許可ファイル拡張子</h2>
+	<table class="adminTable acms-admin-table-admin-edit">
 	<tr>
-		<th>命名方法<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="「ファイル」ユニットでアップロードするファイルの命名方法を選択します。"></i></th>
+		<th>命名方法<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="「ファイル」ユニットでアップロードするファイルの命名方法を選択します。"></i></th>
 		<td>
-			<label class="acms-form-radio">
-				<input type="radio" name="file_savename" value="random"{file_savename:checked#random} /><i class="acms-ico-radio"></i>
+			<label class="acms-admin-form-radio">
+				<input type="radio" name="file_savename" value="random"{file_savename:checked#random} /><i class="acms-admin-ico-radio"></i>
 				ランダム
 			</label>
-			<label class="acms-form-radio">
-				<input type="radio" name="file_savename" value="rawfilename"{file_savename:checked#rawfilename} /><i class="acms-ico-radio"></i>
+			<label class="acms-admin-form-radio">
+				<input type="radio" name="file_savename" value="rawfilename"{file_savename:checked#rawfilename} /><i class="acms-admin-ico-radio"></i>
 				元のファイル名
 			</label>
 			<input type="hidden" name="config[]" value="file_savename" />
 		</td>
 	</tr>
 	<tr>
-		<th><i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると、テキストファイルのアップロードを禁止します。"></i></th>
+		<th><i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると、テキストファイルのアップロードを禁止します。"></i></th>
 		<td>
-			<label class="acms-form-checkbox">
-				<input type="checkbox" name="file_prohibit_textfile" value="on"{file_prohibit_textfile:checked#on} /><i class="acms-ico-checkbox"></i>
+			<label class="acms-admin-form-checkbox">
+				<input type="checkbox" name="file_prohibit_textfile" value="on"{file_prohibit_textfile:checked#on} /><i class="acms-admin-ico-checkbox"></i>
 				テキストファイルのアップロードを禁止
 			</label>
 			<input type="hidden" name="config[]" value="file_prohibit_textfile" />
 		</td>
 	</tr>
 		<tr>
-			<th>ドキュメント<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="「ファイル」ユニットでのアップロードを許可したい文章ファイルの拡張子を追加します。"></i></th>
+			<th>ドキュメント<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="「ファイル」ユニットでのアップロードを許可したい文章ファイルの拡張子を追加します。"></i></th>
 			<td>
 				<textarea name="file_extension_document@list" rows="2" cols="60">{file_extension_document@list}</textarea>
 				<input type="hidden" name="config[]" value="file_extension_document@list" />
 			</td>
 		</tr>
 		<tr>
-			<th>アーカイブ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="「ファイル」ユニットでのアップロードを許可したい圧縮ファイルの拡張子を追加します。"></i></th>
+			<th>アーカイブ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="「ファイル」ユニットでのアップロードを許可したい圧縮ファイルの拡張子を追加します。"></i></th>
 			<td>
 				<textarea name="file_extension_archive@list" rows="2" cols="60">{file_extension_archive@list}</textarea>
 				<input type="hidden" name="config[]" value="file_extension_archive@list" />
 			</td>
 		</tr>
 		<tr>
-			<th>ムービー<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="「ファイル」ユニットでのアップロードを許可したい動画ファイルの拡張子を追加します。"></i></th>
+			<th>ムービー<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="「ファイル」ユニットでのアップロードを許可したい動画ファイルの拡張子を追加します。"></i></th>
 			<td>
 				<textarea name="file_extension_movie@list" rows="2" cols="60">{file_extension_movie@list}</textarea>
 				<input type="hidden" name="config[]" value="file_extension_movie@list" />
 			</td>
 		</tr>
 		<tr>
-			<th>オーディオ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="「ファイル」ユニットでのアップロードを許可したい音声ファイルの拡張子を追加します。"></i></th>
+			<th>オーディオ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="「ファイル」ユニットでのアップロードを許可したい音声ファイルの拡張子を追加します。"></i></th>
 			<td>
 				<textarea name="file_extension_audio@list" rows="2" cols="60">{file_extension_audio@list}</textarea>
 				<input type="hidden" name="config[]" value="file_extension_audio@list" />

@@ -1,15 +1,16 @@
-/* ---------------
- table
---------------- */
+/* ------------------------------
+ テーブル
+------------------------------- */
 .acms-table {
 	width: 100%;
 	max-width: 100%;
-	border-top: 1px solid #AAAAAA;
+	border-top: @acms-table-border;
 	// データ
 	th,
 	td {
-		padding: 10px;
-		border-bottom: 1px solid #AAAAAA;
+		padding: @acms-table-cell-padding;
+		vertical-align: top;
+		border-bottom: @acms-table-border;
 	}
 	th {
 		vertical-align: top;
@@ -20,7 +21,8 @@
 		border-top: 0;
 	}
 	// ボーダーなし 下
-	&.acms-table-none tr {
+	&.acms-table-none th,
+	&.acms-table-none td {
 		border-bottom: 0;
 	}
 }
@@ -30,12 +32,10 @@
 	td {
 		padding: 5px;
 	}
+	.acms-table-container{
+		padding: 10px 5px;
+	}
 }
-
-.panel-body .acms-table-container{
-	padding: 10px 5px;
-}
-
 
 .acms-table,
 .acms-table:before,
@@ -53,65 +53,81 @@
 	.box-sizing(border-box);
 }
 
-// --------------- 
+
+
+
+// ---------------
 // テーブル 見出し
 // ---------------
 .acms-table-heading {
-	border-top: 1px solid #CCCCCC;
+	border-top: @acms-table-heading-border;
 	// データ
 	th,
 	td {
-		border-bottom: 1px solid #CCCCCC;
+		border-bottom: @acms-table-heading-border;
 	}
 	// 見出し
 	th {
-		padding: 5px 10px;
-		border-top: solid 1px #25242C;
-		background-color: #25242C;
-		color: #FFFFFF;
+		padding: @acms-table-heading-th-padding;
+		border-top: @acms-table-heading-th-border;
+		background-color: @acms-table-heading-th-bg;
+		color: @acms-table-heading-th-text-color;
 		font-weight: normal;
 	}
 }
-// --------------- 
+
+
+
+
+// ---------------
 // テーブル ボーダー
 // ---------------
 .acms-table-bordered {
-	border-top: 1px solid #DDD;
-	border-left: 1px solid #DDD;
+	border-top: @acms-table-bordered-border;
+	border-left: @acms-table-bordered-border;
 	th,
 	td {
-		border-bottom: 1px solid #DDD;
-		border-right: 1px solid #DDD;
+		border-bottom: @acms-table-bordered-border;
+		border-right: @acms-table-bordered-border;
 	}
 }
 
-// --------------- 
+
+
+
+// ---------------
 // テーブル striped
 // ---------------
 .acms-table-striped{
 	tr:nth-of-type(odd),
 	tr.odd {
-		background: #FFF;
+		background: @acms-table-border-odd;
 	}
 	tr:nth-of-type(even),
 	tr.even {
-		background: #EEE;
+		background: @acms-table-border-even;
 	}
 }
 
-// --------------- 
+
+
+
+// ---------------
 // テーブル hover
 // ---------------
 .acms-table-hover tr:hover td {
-	background: #E3EEFC;
+	background: @acms-table-hover-bg;
 	cursor: pointer;
 }
 
-.acms-table-hover2 tr:hover {
-	background: #EEEEEE;
+.acms-table-hover-line tr:hover {
+	background: @acms-table-hover-line-bg;
 }
 
-// --------------- 
+
+
+
+// ---------------
 // テーブル 入力テーブル
 // ---------------
 .acms-table-edit{
@@ -124,21 +140,57 @@
 		text-align: right;
 	}
 }
+@media screen and (max-width: @breakpoint-md-max) {
+	.acms-table-admin-edit {
 
-// --------------- 
-// テーブル 入れ替え
-// ---------------
-.acms-table-sortable-active th,
-.acms-table-sortable-active td,
-.acms-table-sortable-active tr:nth-of-type(even) th,
-.acms-table-sortable-active tr:nth-of-type(even) td,
-.acms-table-sortable-active tr.even th,
-.acms-table-sortable-active tr.even td{
-	background-color: #FFFFFF;
+		thead,
+		tbody {
+			th,
+			td {
+				display: block;
+				width: 100% !important;
+				padding: 0;
+			}
+		}
+
+		tbody {
+			th {
+				padding: 10px 10px 5px;
+				text-align: left;
+			}
+			td {
+				padding: 0 10px 15px;
+			}
+		}
+
+		tr:last-child {
+			td,
+			th{
+				border-bottom: none !important;
+			}
+		}
+
+	}
 }
 
-@media (max-width: 768px) {
-	// --------------- 
+
+
+// ---------------
+// テーブル 入れ替え
+// ---------------
+.acms-table-sortable-active {
+	th,
+	td,
+	tr:nth-of-type(even) th,
+	tr:nth-of-type(even) td,
+	tr.even th,
+	tr.even td{
+		background-color: @acms-table-sortable-bg;
+	}
+}
+
+@media (max-width : @breakpoint-md-max) {
+	// ---------------
 	// テーブル レスポンシブ
 	// ---------------
 	.acms-table-responsive {
@@ -146,9 +198,12 @@
 		overflow-x: scroll;
 		overflow-y: hidden;
 		border: 1px solid #dddddd;
+		th,td {
+			white-space: nowrap;
+		}
 	}
 
-	// --------------- 
+	// ---------------
 	// テーブル entry
 	// ---------------
 	.acms-table-entry{
@@ -175,14 +230,17 @@
 	}
 }
 
-// --------------- 
+
+
+
+// ---------------
 // テーブル 管理画面
 // ---------------
 .acms-table-admin {
 	width: 100%;
-	border-top: 1px solid @acms-table-border-color;
-	border-right: 1px solid @acms-table-border-color;
-	border-left: 1px solid @acms-table-border-color;
+	border-top: @acms-table-admin-border;
+	border-right: @acms-table-admin-border;
+	border-left: @acms-table-admin-border;
 	// 見出し
 	thead {
 		border: none;
@@ -194,46 +252,51 @@
 	}
 	th,
 	td {
-		padding: 13px 10px;
-		border-bottom: 1px solid @acms-table-border-color;
+		padding: @acms-table-admin-cell;
+		border-bottom: @acms-table-admin-border;
 		line-height: 1.3;
 	}
 	th {
 		text-align: left;
 	}
 	td{
-		background-color: #F2F2F4;
+		background-color: @acms-table-admin-td-bg;
 	}
 }
 
-// --------------- 
+
+
+// ---------------
 // テーブル 管理画面 striped
 // ---------------
 .acms-table-admin-striped{
-	tr:nth-of-type(even),
-	tr.even {
-		background: #F2F2F4;
-	}
 	tr:nth-of-type(odd),
 	tr.odd {
-		background: #FFFFFF;
+		background: @acms-table-admin-border-odd;
+	}
+	tr:nth-of-type(even),
+	tr.even {
+		background: @acms-table-admin-border-even;
 	}
 }
 
-// --------------- 
+
+
+
+// ---------------
 // テーブル 編集画面
 // ---------------
 .acms-table-admin-edit {
 	width: 100%;
-	border-top: 1px solid @acms-table-border-color;
-	background: #F2F2F4;
+	border-top: @acms-table-admin-edit-border;
+	background: @acms-table-admin-edit-bg;
 	tr {
-		border-right: 1px solid @acms-table-border-color;
-		border-bottom: none;
-		border-left: 1px solid @acms-table-border-color;
+		border-right: @acms-table-admin-edit-border;
+		border-bottom: @acms-table-admin-edit-border;
+		border-left: @acms-table-admin-edit-border;
 	}
 	th {
-		width: 270px;
+		width: @acms-table-admin-edit-th-width;
 		font-weight: bold;
 		text-align: right;
 		vertical-align: top;
@@ -242,131 +305,180 @@
 	th{
 		padding: 5px 10px
 	}
-	tr:first-child td,
+	tr:first-child td {
+		padding: 5px 10px 15px;
+	}
 	tr:first-child th{
-		padding: 20px 10px 5px;
+		padding: 10px 10px 5px;
 	}
-	tr:last-child td,
-	tr:last-child th{
-		padding: 5px 10px 20px;
-		border-bottom: 1px solid #CCC;
+	tr:last-child {
+			td,
+			th{
+			padding: 5px 10px 20px;
+			border-bottom: @acms-table-admin-edit-border;
+		}
 	}
-	thead tr:last-child td,
-	thead tr:last-child th{
-		padding: 5px 10px 5px;
-		border-bottom: 1px solid #CCC;
+	tr:only-child {
+		td,
+		th {
+			padding: 10px;
+			border-bottom: @acms-table-admin-edit-border;
+		}
 	}
-	tbody tr:last-child td,
-	tbody tr:last-child th{
-		padding: 5px 10px 20px;
-		border-bottom: 1px solid #CCC;
+	thead tr:last-child {
+		td,
+		th{
+			padding: 5px 10px 5px;
+			border-bottom: @acms-table-admin-edit-border;
+		}
 	}
-	tfoot tr:last-child td,
-	tfoot tr:last-child th{
-		padding: 5px 10px 20px;
-		border-bottom: 1px solid #CCC;
+	tbody tr:last-child th {
+		padding: 10px 10px 5px;
+		border-bottom: @acms-table-admin-edit-border;
 	}
-	// 下階層のtableは線なし
-	table th,
-	table td,
-	table tr,
-	table tr:first-child th,
-	table tr:first-child td,
-	table tr:last-child th,
-	table tr:last-child td {
-		padding: 5px 10px !important;
-		border: none !important;
+	tr:last-child td{
+		padding: 5px 10px 15px;
+		border-bottom: @acms-table-admin-edit-border;
+	}
+	tfoot tr:last-child {
+		td,
+		th{
+			padding: 5px 10px 20px;
+			border-bottom: @acms-table-admin-edit-border;
+		}
 	}
 
-	@media screen and (max-width: 768px) {
-		tbody th{
-			padding-top: 5px;
+	// 下階層のtableは線なし
+	table {
+		width: 100%;
+		th,
+		td,
+		tr,
+		tr:first-child th,
+		tr:first-child td,
+		tr:last-child th,
+		tr:last-child td {
+			padding: 5px 10px !important;
+			border: none !important;
 		}
-		tr:first-child th{
-			padding: 10px 10px 5px;
+	}
+
+	@media (min-width : @breakpoint-md-min) {
+		tr {
+			border-bottom: 0;
 		}
-		tr:first-child td{
-			padding: 5px 10px 15px;
+		tr:first-child {
+			th,td{
+				padding: 20px 10px 5px;
+			}
 		}
-		tr:last-child th{
-			padding: 10px 10px 5px;
+		tbody tr:last-child th,
+		tr:last-child th,
+		tr:last-child td {
+			padding: 5px 10px 20px;
 		}
-		tr:last-child td{
-			padding: 5px 10px 15px;
+
+		tbody tr:only-child th,
+		tr:only-child th,
+		tr:only-child td {
+			padding: 10px;
+		}
+	}
+}
+
+// タブの直下の編集画面テーブル
+.acms-tabs-panel {
+	& .acms-table-admin-edit {
+		border: 0;
+		tr {
+			border: 0;
+			&:last-child {
+				th,
+				td {
+					border: 0;
+				}
+			}
 		}
 	}
 }
 
 .acms-table-admin-edit-bordered {
 	width: 100%;
-	border-top: 1px solid @acms-table-border-color;
-	background: #F2F2F4;
+	border-top: @acms-table-admin-edit-bordered-border;
+	background: @acms-table-admin-edit-bordered-bg;
+
 	tr {
-		border-right: 1px solid @acms-table-border-color;
-		border-bottom: 1px solid @acms-table-border-color;
-		border-left: 1px solid @acms-table-border-color;
+		border-right: @acms-table-admin-edit-bordered-border;
+		border-bottom: @acms-table-admin-edit-bordered-border;
+		border-left: @acms-table-admin-edit-bordered-border;
 	}
+
 	th {
-		width: 270px;
+		max-width: @acms-table-admin-edit-bordered-th-width;
 		font-weight: bold;
 		text-align: right;
 		vertical-align: top;
 	}
+
 	td,
-	th{
-		padding: 5px 10px
+	th {
+		padding: 5px 10px;
 	}
-	tr:first-child td,
-	tr:first-child th{
-		padding: 10px 10px 5px;
+	tr:first-child {
+		th{
+			padding-top: 10px;
+		}
+		td {
+			padding-bottom: 15px;
+		}
 	}
-	tr:last-child td,
-	tr:last-child th{
-		padding: 5px 10px 10px;
-		border-bottom: 1px solid #CCC;
+	tr:last-child {
+		th{
+			padding-bottom: 10px;
+			border-bottom: @acms-table-admin-edit-bordered-border;
+		}
+		td {
+			padding-bottom: 15px;
+			border-bottom: @acms-table-admin-edit-bordered-border;
+		}
 	}
-	thead tr:last-child td,
-	thead tr:last-child th{
-		padding: 5px 10px 5px;
-		border-bottom: 1px solid #CCC;
+	thead tr:last-child {
+		th,td {
+			border-bottom: @acms-table-admin-edit-bordered-border;
+		}
 	}
-	tbody tr:last-child td,
-	tbody tr:last-child th{
-		padding: 5px 10px 10px;
-		border-bottom: 1px solid #CCC;
-	}
-	tfoot tr:last-child td,
-	tfoot tr:last-child th{
-		padding: 5px 10px 10px;
-		border-bottom: 1px solid #CCC;
-	}
-	// 下階層のtableは線なし
-	table th,
-	table td,
-	table tr,
-	table tr:first-child th,
-	table tr:first-child td,
-	table tr:last-child th,
-	table tr:last-child td {
-		padding: 5px 10px !important;
-		border: none !important;
+	tbody tr:last-child,
+	tfoot tr:last-child {
+		th,
+		td {
+			padding-bottom: 10px;
+			border-bottom: @acms-table-admin-edit-bordered-border;
+		}
 	}
 
-	@media screen and (max-width: 768px) {
-		tbody th{
-			padding-top: 5px;
+	// 下階層のtableは線なし
+	table {
+		th,
+		td,
+		tr,
+		tr:first-child th,
+		tr:first-child td,
+		tr:last-child th,
+		tr:last-child td {
+			padding: 5px 10px !important;
+			border: none !important;
 		}
-		tr:first-child th{
-			padding: 10px 10px 5px;
-		}
+	}
+
+	@media (min-width : @breakpoint-md-min) {
 		tr:first-child td{
-			padding: 5px 10px 15px;
+			padding-top: 10px;
+			padding-bottom: 5px;
 		}
-		tr:last-child th{
-			padding: 10px 10px 5px;
-		}
+		tr:last-child th,
 		tr:last-child td{
-			padding: 5px 10px 15px;
+			padding-bottom: 5px;
+			padding-bottom: 10px;
 		}
 	}
 }
@@ -376,15 +488,17 @@
 }
 
 
-// --------------- 
+
+
+// ---------------
 // テーブル ミニ
 // ---------------
 .acms-admin-mini-table {
 	width: 100%;
 	margin:0 0 30px 0;
 	thead {
-		background: #FFF;
-		border-bottom: 2px solid @acms-table-border-color;
+		background: @acms-admin-mini-table-thead-bg;
+		border-bottom: @acms-admin-mini-table-thead-border;
 	}
 
 	tr,
@@ -396,85 +510,103 @@
 		text-align: left;
 	}
 	td{
-		// IE6 - IE7
-		*border-bottom: solid 1px #CCCCCC;
-		_border-bottom: solid 1px #CCCCCC;
+		// 「_」は IE6対応、 「*」はIE7対応
+		*border-bottom: @acms-admin-mini-table-border;
+		_border-bottom: @acms-admin-mini-table-border;
 	}
 
 	tbody tr:nth-of-type(odd) td{
-		background: #F7F7F8;
+		background: @acms-admin-mini-table-odd;
 	}
 
 	tbody tr:nth-of-type(even) td {
-		background: #FFFFFF;
+		background: @acms-admin-mini-table-even;
 	}
 	tbody {
-		border-bottom: 1px solid @acms-table-border-color;
+		border-bottom: @acms-admin-mini-table-border;
+	}
 
+	+ p{
+		margin-top: -15px;
+	}
+
+	.acms-admin-mini-table-action{
+		width: 80px;
+	}
+
+	.acms-admin-mini-table-import-action{
+		width: 120px;
+	}
+
+	ul{
+		margin-bottom: 0;
+		padding-left: 1em;
 	}
 
 }
-.acms-admin-mini-table + p{
-	margin-top: -15px;
-}
-.acms-admin-mini-table .acms-admin-mini-table-action{
-	width: 80px;
-}
-.acms-admin-mini-table .acms-admin-mini-table-import-action{
-	width: 120px;
-}
+
 .acms-table .acms-table-action{
 	width: 50px;
 }
-.acms-admin-mini-table ul{
-	margin-bottom: 0;
-	padding-left: 1em;
-}
 
-// --------------- 
+
+
+
+// ---------------
 // テーブル カラー
 // ---------------
 // info
-.acms-table-info th,
-.acms-table-info td,
-.acms-table-info,
-.acms-table-hover .acms-table-info:hover th,
-.acms-table-hover .acms-table-info:hover td,
-.acms-table-hover .acms-table-info:hover {
-	background: #BCCCE2;
+.acms-table-info {
+	& th,
+	& td,
+	&,
+	.acms-table-hover &:hover th,
+	.acms-table-hover &:hover td,
+	.acms-table-hover &:hover {
+		background: @acms-table-info-bg;
+	}
 }
 
 // success
-.acms-table-success th,
-.acms-table-success td,
-.acms-table-success,
-.acms-table-hover .acms-table-success:hover th,
-.acms-table-hover .acms-table-success:hover td,
-.acms-table-hover .acms-table-success:hover {
-	background: #AAD9CD;
+.acms-table-success {
+	& th,
+	& td,
+	&,
+	.acms-table-hover &:hover th,
+	.acms-table-hover &:hover td,
+	.acms-table-hover &:hover {
+		background: @acms-table-success-bg;
+	}
 }
 
 // warning
-.acms-table-warning th,
-.acms-table-warning td,
-.acms-table-warning,
-.acms-table-hover .acms-table-warning:hover th,
-.acms-table-hover .acms-table-warning:hover td,
-.acms-table-hover .acms-table-warning:hover {
-	background: #E1D7BB;
+.acms-table-warning {
+	& th,
+	& td,
+	&,
+	.acms-table-hover &:hover th,
+	.acms-table-hover &:hover td,
+	.acms-table-hover &:hover {
+		background: @acms-table-warning-bg;
+	}
 }
 
 // danger
-.acms-table-danger th,
-.acms-table-danger td,
-.acms-table-danger,
-.acms-table-hover .acms-table-danger:hover th,
-.acms-table-hover .acms-table-danger:hover td,
-.acms-table-hover .acms-table-danger:hover {
-	background: #E1BCC4;
+.acms-table-danger {
+	& th,
+	& td,
+	&,
+	.acms-table-hover &:hover th,
+	.acms-table-hover &:hover td,
+	.acms-table-hover &:hover {
+		background: @acms-table-danger-bg;
+	}
 }
 
-// --------------- 
+
+
+
+// ---------------
 // ユーティリティ
 // ---------------
 // 中央揃い

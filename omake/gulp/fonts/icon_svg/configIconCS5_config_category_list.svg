@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1792px"
+	 height="1792px" viewBox="0 0 1792 1792" enable-background="new 0 0 1792 1792" xml:space="preserve">
+<g id="Guide">
+</g>
+<g id="Font" display="none">
+</g>
+<g id="内容">
+	<g>
+		<path d="M928,0H0v1408h256V128h874.431C1094.478,52.325,1017.354,0,928,0z"/>
+		<path d="M1248,192H320v1408h256V320h874.431C1414.478,244.325,1337.354,192,1248,192z"/>
+		<path d="M1568,384H640v1408h1152v-768c-70.692,0-128-57.308-128-128s57.308-128,128-128V608.039c0-0.013,0-0.026,0-0.039
+			s0-0.025,0-0.039C1791.979,484.268,1691.699,384,1568,384z M832,1728h-64v-64h64V1728z M960,1728h-64v-64h64V1728z M1087.999,1728
+			h-64v-64h64V1728z M1215.999,1728h-64v-64h64V1728z M1343.999,1728h-64v-64h64V1728z M1471.999,1728h-64v-64h64V1728z M1600,1728
+			h-64v-64h64V1728z M1728,1664v64h-64v-64H1728z"/>
+	</g>
+</g>
+<g id="ラベル">
+</g>
+<g id="Unicode" display="none">
+	<text transform="matrix(1 0 0 1 422.8755 964.2812)" display="inline" fill="#ED1E79" font-family="'ArialMT'" font-size="256">U+F71A</text>
+</g>
+</svg>

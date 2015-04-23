@@ -1,0 +1,14 @@
+<!-- BEGIN_MODULE Tag_Filter -->
+<!-- BEGIN tagBox -->
+<div class="blogTagFilter">
+	<p class="blogTagFilterHeading">選択されているタグ : <!-- BEGIN selected:loop --><a href="{url}">{name}</a><!-- BEGIN glue --> , <!-- END glue --><!-- END selected:loop --></p>
+	<!-- BEGIN choice:veil -->
+	<div class="blogTagFilterBox">
+		<p class="blogTagFilterBoxHeading"><span class="acms-icon-config_tag_cloud"></span>タグの絞り込み</p>
+		<ul class="blogTagFilterBoxList"><!-- BEGIN choice:loop --><li><a href="{url}">{name}</a></li><!-- END choice:loop -->
+		</ul>
+	</div>
+	<!-- END choice:veil -->
+</div>
+<!-- END tagBox -->
+<!-- END_MODULE Tag_Filter -->

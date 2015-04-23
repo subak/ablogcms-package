@@ -1,0 +1,43 @@
+<h3 class="acms-admin-admin-title2">テキスト設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>ボタン</th>
+		<td>
+			<div class="acms-admin-form-group">テキスト：<input type="text" name="module_btn_text" value="{module_btn_text}" class="acms-admin-form-width-3quarters">
+				<input type="hidden" name="field[]" value="module_btn_text"></div>
+			<div class="acms-admin-form-group">リンク先：<input type="text" name="module_btn_link" value="{module_btn_link}" class="acms-admin-form-width-3quarters">
+				<input type="hidden" name="field[]" value="module_btn_link"></div>
+		</td>
+	</tr>
+	<tr>
+		<th>背景画像</th>
+		<td>
+			<!-- BEGIN module_image@path:veil -->
+			<img src="%{ARCHIVES_DIR}{module_image@path}" width="400"><br>
+			<input type="hidden" name="module_image@old" value="{module_image@path}">
+			<label>
+				<input type="checkbox" name="module_image@edit" value="delete">削除
+			</label>
+			<!-- END module_image@path:veil -->
+			<input type="file" name="module_image" size="20">
+			<input type="hidden" name="field[]" value="module_image">
+			<input type="hidden" name="module_image:extension" value="image">
+			<input type="hidden" name="module_image@size" value="1200">
+			<input type="hidden" name="module_image@filename" value="">
+		</td>
+	</tr>
+	<tr>
+		<th>背景色（IE8対応）</th>
+		<td>
+			<input type="text" name="module_bg_color" value="{module_bg_color}">
+			<input type="hidden" name="field[]" value="module_bg_color">
+		</td>
+	</tr>
+	<tr>
+		<th>文字の色</th>
+		<td>
+			<input type="text" name="module_text_color" value="{module_text_color}">
+			<input type="hidden" name="field[]" value="module_text_color">
+		</td>
+	</tr>
+</table>

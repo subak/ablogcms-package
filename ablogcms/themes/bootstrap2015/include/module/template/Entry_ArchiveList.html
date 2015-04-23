@@ -1,0 +1,23 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_ArchiveList id="" -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+<div class="list-group">
+	<!-- BEGIN archive:loop -->
+	<a href="{url}" class="list-group-item">{date#Y}年 {date#n}月 <span class="badge">{amount}</span></a>
+	<!-- END archive:loop -->
+</div>
+</div>
+<!-- END_MODULE Entry_ArchiveList -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div>
+	<div class="list-group">
+		<a href="#" class="list-group-item">2015年 01月<span class="badge">5</span></a>
+		<a href="#" class="list-group-item">2015年 02月<span class="badge">10</span></a>
+		<a href="#" class="list-group-item">2015年 03月<span class="badge">8</span></a>
+	</div>
+</div>
+<!-- END layout#dummy -->

@@ -1,0 +1,35 @@
+<!-- BEGIN_MODULE Category_EntrySummary id="categoryEntrySummary" -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
+<!-- END categoryUl#front --><!-- BEGIN category:loop --><section class="moduleSection">
+<div class="moduleHeader clearfix">
+	<h2 class="moduleHeading"><a href="{categoryUrl}">{categoryName}</a></h2>
+</div>
+<ul class="summaryDefault clearfix">
+<!-- BEGIN notFound --><!-- END notFound -->
+
+	<!-- BEGIN unit:loop -->
+	<!-- BEGIN entry:loop -->
+	<li class="summaryDefaultEntry js-autoheight-r js-biggerlink">
+		<div class="acms-summary">
+			<div class="summaryDefaultEntryImageWrap acms-summary-image">
+				<div style="width:{x}px; height:{y}px; overflow:hidden; position:relative;"><!-- BEGIN image:veil -->
+					<img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" style="left:{left}px; top:{top}px; position:relative;" alt="" /><!-- END image:veil --><!-- BEGIN noimage -->
+					noimage
+					<!-- END noimage -->
+				</div>
+			</div>
+			<div class="acms-summary-body">
+				<p class="summaryTitle acms-summary-heading"><a href="{url}">{title}</a></p>
+				<p class="summaryDetail">{summary}[trim(80, '...')]</p>
+			</div>
+		</div>
+	</li><!-- END entry:loop -->
+	<!-- END unit:loop -->
+
+	<!-- END category:loop --><!-- BEGIN categoryLi#rear -->
+</ul></section><!-- END categoryLi#rear --><!-- BEGIN categoryUl#rear --><!-- END categoryUl#rear -->
+<!-- END categoryEntryList:loop -->
+</div>
+<!-- END_MODULE Category_EntrySummary -->

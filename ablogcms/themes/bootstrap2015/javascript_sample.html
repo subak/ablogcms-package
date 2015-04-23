@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ja"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="ja"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"> <!--<![endif]-->
+<head>
+<!--#include file="/include/head/meta.html"-->
+<!--#include file="/include/head/link.html"-->
+<!--#include file="/include/head/js.html"-->
+<style>
+	body {
+		position: relative;
+	}
+</style>
+</head>
+<body class="body-nav-fixed-top" data-spy="scroll" data-target=".navbar-example"><!-- data-spyとdata-targetはscroll spyのためのdata属性です -->
+
+	<!-- ナビゲーション -->
+	<!-- #include file="/include/header/navigationFixedTop.html" -->
+
+	<!-- カルーセル -->
+	<!-- #include file="/include/parts/carousel.html" -->
+
+
+	<div class="container">
+		<div class="row">
+
+			<main class="col-md-9" role="main">
+
+				<!-- 管理画面　 -->
+				<!--#include file="/admin/action.html"-->
+
+				<!-- アコーディオン -->
+				<!-- #include file="/include/parts/accordion.html" -->
+
+				<!-- タブ -->
+				<!-- #include file="/include/parts/tab.html" -->
+
+				<div>
+					<!-- #include file="/include/module/template/Entry_Body/body_scrollSpy.html" -->
+				</div>
+
+			</main>
+
+			<div class="col-md-3">
+				<!-- ※ BootstrapのJavascriptであるAffixを使用。カスタマイズする際はCSSを要調整。 -->
+				<div data-spy="affix" class="js-affix hidden-xs hidden-sm" role="complementary">
+					<!-- #include file="/include/module/template/Entry_List/list_scrollSpy.html" -->
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- フッター -->
+	<!-- #include file="/include/footer/footer.html" -->
+
+</body>
+</html>

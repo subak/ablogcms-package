@@ -1,12 +1,12 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title">
-			<i class="acms-icon acms-icon-config"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title">
+			<i class="acms-admin-icon acms-admin-icon-config"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
 				<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 				<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->エクスポート
 		</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
@@ -14,7 +14,17 @@
 <!-- BEGIN_MODULE Admin_Config_Export -->
 <!--<p class="infoTxt">コンフィグを別ファイルに保存します。</p>-->
 <form action="%{SCRIPT_ROOT}bid/%{BID}/%{BLOG_NAME}.config.yaml" method="post">
-	<input type="submit" name="ACMS_POST_Config_Export" value="エクスポート" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+		<div class="acms_fix_bg_index">
+			<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
+	
+			<input type="submit" name="ACMS_POST_Config_Export" value="エクスポート" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
+
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+			<a href="{shortcutUrl}" class="acms-admin-btn-admin acms-admin-float-right"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+		</div>
+	</div>
+
 	<!-- BEGIN_MODULE Admin_Rule_Name -->
 	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->

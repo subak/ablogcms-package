@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ja"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="ja"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<!--#include file="/include/head/title.html" -->
+	<!--#include file="/include/head/meta.html" -->
+	<!--#include file="/include/head/link.html" -->
+	<!--#include file="/include/head/js.html" -->
+</head>
+
+<body>
+	<div id="outer-wrap">
+		<div id="inner-wrap">
+
+			<!-- ヘッダー -->
+			<!--#include file="/include/header.html" -->
+
+			<div>
+				<!-- ページタイトル -->
+				<!--#include file="/include/header/pageTitle.html" -->
+				<!-- トピックパス -->
+				<!--#include file="/include/header/topicpath.html" -->
+
+				<div class="acms-container sp-container">
+					<!-- ※管理用パーツ -->
+					<!--#include file="/admin/action.html"-->
+
+					<div class="acms-grid-r">
+
+						<!-- メイン -->
+						<main class="acms-col-md-9 main" role="main">
+
+							<!--#include file="/include/parts/realestate.html" -->
+
+							<!--#include file="/include/%{VIEW}_check.html" -->
+						</main>
+
+						<div class="acms-col-md-3 sub">
+							<!-- エントリーリスト -->
+							<!--#include file="/include/module/entry/list.html" -->
+
+							<!-- カテゴリーリスト -->
+							<!--#include file="/include/module/category/list.html" -->
+							<div id="nav" class="offcanvasBar">
+								<div class="acms-hide-pc">
+									<!-- グローバルナビ -->
+									<!--#include file="/include/header/spGlobalNavi.html" -->
+								</div>
+
+								<!-- 検索フォーム -->
+								<!--#include file="/include/parts/search.html" -->
+
+								<!-- ピックアップリスト -->
+								<!--#include file="/include/module/entry/pickupList.html" -->
+
+								<!-- バナー -->
+								<!--#include file="/include/module/siteparts/banner.html" -->
+
+								<!-- リンクリスト -->
+								<!--#include file="/include/module/siteparts/linkList.html" -->
+
+								<div class="acms-hide-pc">
+									<!-- SNSアカウントへのリンク -->
+									<!-- #include file="/include/footer/snsLink.html" -->
+								</div>
+
+								<a class="close-btn" id="nav-close-btn" href="#top">コンテンツに戻る</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- お問い合わせ -->
+			<!--#include file="/include/footer/suggest.html" -->
+			<!-- フッター -->
+			<!--#include file="/include/footer.html" -->
+
+		</div>
+	</div>
+
+</body>
+</html>

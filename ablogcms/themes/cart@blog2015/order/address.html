@@ -1,0 +1,193 @@
+<ul class="blogCartFlowList">
+	<li class="flowBack"><span class="blogCartFlowListNumber">1</span><a href="%{BASE_URL}order.html" class="js-viewing-indelible" title="ご注文商品一覧に戻る">ご注文商品一覧</a></li>
+	<li class="current"><span class="blogCartFlowListNumber">2</span>ご住所のご確認</li>
+	<li><span class="blogCartFlowListNumber">3</span>配送・お支払い方法</li>
+	<li><span class="blogCartFlowListNumber">4</span>ご注文内容の確認</li>
+	<li><span class="blogCartFlowListNumber">5</span>ご注文完了</li>
+</ul>
+
+<!-- 各決済ページコンテンツ▼ -->
+<h2>2. ご住所のご確認</h2>
+<div>
+<!-- BEGIN_MODULE Shop2_Form_Address -->
+<form action="?step=address" method="post" class="acms-form">
+
+<!-- BEGIN address#primary -->
+<h3>お客様のご住所</h3>
+<p>ご注文されるお客様のご住所を入力してください。</p>
+<p id="descRequired">&nbsp;<span class="acms-icon acms-icon-checklist"></span>は必須の項目です。</p>
+<div class="blogEntryContentTableWrapper">
+<table class="blogEntryContentTable">
+	<tr>
+		<th width="250"><label for="name" class="required">お名前&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<input type="text" name="name" value="{name}" id="name" class="acms-form-width-medium" />
+			<input type="hidden" name="primary[]" value="name" />
+			<!-- BEGIN name:validator#required --><p class="acms-text-error">お名前を入力してください</p><!-- END name:validator#required -->
+		</td>
+	</tr>
+	<tr>
+		<th><label for="ruby" class="required">ふりがな&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<input type="text" name="ruby" value="{ruby}" id="ruby" class="acms-form-width-medium" />
+			<input type="hidden" name="primary[]" value="ruby" />
+			<!-- BEGIN ruby:validator#required --><p class="acms-text-error">ふりがなを入力してください</p><!-- END ruby:validator#required -->
+		</td>
+	</tr>
+	<tr>
+		<th><label for="zip" class="required">郵便番号&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<input type="text" name="zip" value="{zip}" id="zip" />
+			<input type="hidden" name="primary[]" value="zip" />
+			<input type="hidden" name="zip:c" value="a" />
+			<!-- BEGIN zip:validator#required --><p class="acms-text-error">郵便番号を入力してください</p><!-- END zip:validator#required -->
+		</td>
+	</tr>
+	<tr>
+		<th><label for="prefecture" class="required">都道府県&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<select name="prefecture" id="prefecture">
+			<!--#include file="/include/pref.html" -->
+			</select>
+			<input type="hidden" name="primary[]" value="prefecture" />
+			<!-- BEGIN prefecture:validator#required --><p class="acms-text-error">県を選択してください</p><!-- END prefecture:validator#required -->
+		</td>
+	</tr>
+	<tr>
+		<th><label for="city" class="required">市町村&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<input type="text" name="city" value="{city}" id="city" class="acms-form-width-medium" />
+			<input type="hidden" name="primary[]" value="city" />
+			<!-- BEGIN city:validator#required --><p class="acms-text-error">市町村を入力してください</p><!-- END city:validator#required -->
+		</td>
+	</tr>
+	<tr>
+		<th><label for="field_1" class="required">丁・番地・字&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<input type="text" name="field_1" value="{field_1}" id="field_1" class="acms-form-width-medium" />
+			<input type="hidden" name="primary[]" value="field_1" />
+			<!-- BEGIN field_1:validator#required --><p class="acms-text-error">丁・番地・字を入力してください</p><!-- END field_1:validator#required -->
+		</td>
+	</tr>
+	<tr>
+		<th><label for="field_2">建物名・部屋名</label></th>
+		<td>
+			<input type="text" name="field_2" value="{field_2}" id="field_2" class="acms-form-width-medium" />
+			<input type="hidden" name="primary[]" value="field_2" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="telephone" class="required">お電話番号&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<input type="text" name="telephone" value="{telephone}" id="telephone" />
+			<input type="hidden" name="primary[]" value="telephone" />
+			<input type="hidden" name="telephone:c" value="a" />
+			<!-- BEGIN telephone:validator#required --><p class="acms-text-error">お電話番号を入力してください</p><!-- END telephone:validator#required -->
+		</td>
+	</tr>
+	<tr>
+		<th><label for="mail" class="required">メールアドレス&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td><!-- BEGIN mailTo:veil -->
+			<input type="text" name="mail" value="{mail}" id="mail" class="acms-form-width-medium" />
+			<input type="hidden" name="primary[]" value="mail" />
+			<input type="hidden" name="mail:c" value="a" />
+			<input type="hidden" name="mail:v#email" />
+			<input type="hidden" name="mail:v#required" /><!-- END mailTo:veil -->
+			<!-- BEGIN registTo:veil -->{mail}<!-- END registTo:veil -->
+			<!-- BEGIN mail:validator#required --><p class="acms-text-error">メールアドレスを入力してください</p><!-- END mail:validator#required -->
+			<!-- BEGIN mail:validator#email --><p class="acms-text-error">メールアドレスの書式をご確認ください</p><!-- END mail:validator#email -->
+		</td>
+	</tr>
+</table>
+</div>
+<!-- END address#primary -->
+
+<h3 class="required">お届け先のご住所</h3>
+<input type="hidden" name="order[]" value="sendto" />
+<ul class="acms-list-inline">
+	<li><label><input type="radio" name="sendto" value="primary"{sendto:checked#primary} />&nbsp;お客様のご住所と同じ</label></li>
+	<li><label><input type="radio" name="sendto" value="secondary"{sendto:checked#secondary} />&nbsp;別のお届け先を指定する</label></li><!-- BEGIN address#registed --><!-- BEGIN address:loop -->
+	<li><label><input type="radio" name="sendto" value="{id}" />&nbsp;{name} : 〒{zip} {prefecture} {city} {field_1} {field_2}</label><!-- [ <a href="address.html?aid={id}">変更</a> ] --></li><!-- END address:loop --><!-- END address#registed -->
+</ul>
+<!-- BEGIN sendto:validator#required --><p class="acms-text-error">お届け先のご住所を選択してください</p><!-- END sendto:validator#required -->
+<!-- BEGIN address#secondary -->
+<div class="blogEntryContentTableWrapper">
+<table class="blogEntryContentTable">
+	<tr>
+		<th width="250"><label for="name#2" class="required">お届け先のお名前&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<input type="text" name="name#2" value="{name#2}" id="name#2" class="acms-form-width-medium" />
+			<input type="hidden" name="secondary[]" value="name#2" />
+			<!-- BEGIN name#2:validator#required --><p class="acms-text-error">お名前を入力してください</p><!-- END name#2:validator#required -->
+		</td>
+	</tr>
+	<tr>
+		<th><label for="ruby#2" class="required">ふりがな&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<input type="text" name="ruby#2" value="{ruby#2}" id="ruby#2" class="acms-form-width-medium" />
+			<input type="hidden" name="secondary[]" value="ruby#2" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="zip#2" class="required">郵便番号&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<input type="text" name="zip#2" value="{zip#2}" id="zip#2" />
+			<input type="hidden" name="secondary[]" value="zip#2" />
+			<input type="hidden" name="zip#2:c" value="a" />
+			<!-- BEGIN zip#2:validator#required --><p class="acms-text-error">郵便番号を入力してください</p><!-- END zip#2:validator#required -->
+		</td>
+	</tr>
+	<tr>
+		<th><label for="prefecture#2" class="required">都道府県&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<select name="prefecture#2" id="prefecture#2">
+				<!--#include file="/include/pref.html" -->
+			</select>
+			<input type="hidden" name="secondary[]" value="prefecture#2" />
+			<!-- BEGIN prefecture#2:validator#required --><p class="acms-text-error">県を選択してください</p><!-- END prefecture#2:validator#required -->
+		</td>
+	</tr>
+	<tr>
+		<th><label for="city#2" class="required">市町村&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<input type="text" name="city#2" value="{city#2}" id="city#2" class="acms-form-width-medium" />
+			<input type="hidden" name="secondary[]" value="city#2" />
+			<!-- BEGIN city#2:validator#required --><p class="acms-text-error">市町村を入力してください</p><!-- END city#2:validator#required -->
+		</td>
+	</tr>
+	<tr>
+		<th><label for="field_1#2" class="required">丁・番地・字&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<input type="text" name="field_1#2" value="{field_1#2}" id="field_1#2" class="acms-form-width-medium" />
+			<input type="hidden" name="secondary[]" value="field_1#2" />
+			<!-- BEGIN field_1#2:validator#required --><p class="acms-text-error">丁・番地・字を入力してください</p><!-- END field_1#2:validator#required -->
+		</td>
+	</tr>
+	<tr>
+		<th><label for="field_2#2">建物名・部屋名</label></th>
+		<td>
+			<input type="text" name="field_2#2" value="{field_2#2}" id="field_2#2" class="acms-form-width-medium" />
+			<input type="hidden" name="secondary[]" value="field_2#2" />
+		</td>
+	</tr>
+	<tr>
+		<th><label for="telephone#2" class="required">お届け先のお電話番号&nbsp;<span class="acms-icon acms-icon-checklist"></span></label></th>
+		<td>
+			<input type="text" name="telephone#2" value="{telephone#2}" id="telephone#2" />
+			<input type="hidden" name="secondary[]" value="telephone#2" />
+			<input type="hidden" name="telephone#2:c" value="a" />
+			<!-- BEGIN telephone#2:validator#required --><p class="acms-text-error">お電話番号を入力してください</p><!-- END telephone#2:validator#required -->
+		</td>
+	</tr>
+</table>
+</div>
+<!-- END address#secondary -->
+
+<!-- END_MODULE Shop2_Form_Address -->
+<div class="blogCartBtnWrapper">
+	<input type="submit" name="ACMS_POST_Shop2_Form_Backstep" value="前のステップに戻る" class="blogCartBtn" />
+	<input type="submit" name="ACMS_POST_Shop2_Form_Address" value="次のステップへ進む" class="blogCartBtnPrimary" />
+	<input type="hidden" name="step" value="{step}" />
+</div>
+</form>
+</div>

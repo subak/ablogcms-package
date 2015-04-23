@@ -1,0 +1,36 @@
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>表示順<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="どのようなルールに従って表示されるかの設定です。"></i></th>
+		<td>
+			<select name="entry_archive_list_order">
+				<option value="asc"{entry_archive_list_order:selected#asc}>日付 ( 昇順 )</option>
+				<option value="desc"{entry_archive_list_order:selected#desc}>日付 ( 降順 )</option>
+				</select>
+			<input type="hidden" name="config[]" value="entry_archive_list_order" />
+		</td>
+	</tr>
+	<tr>
+		<th>アーカイブの単位<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="アーカイブを年・月・日のいずれでまとめるかの設定です。"></i></th>
+		<td>
+			<select name="entry_archive_list_chunk">
+				<option value="month"{entry_archive_list_chunk:selected#month}>月単位</option>
+				<option value="year"{entry_archive_list_chunk:selected#year}>年単位</option>
+				<option value="day"{entry_archive_list_chunk:selected#day}>日単位</option>
+				<!-- <option value="biz_year"{entry_archive_list_chunk:selected#biz_year}>年度単位</option> -->
+				</select>
+			<input type="hidden" name="config[]" value="entry_archive_list_chunk" />
+		</td>
+	</tr>
+	<tr>
+		<th>表示件数<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="一度に表示される件数です。"></i></th>
+		<td>
+			<input type="text" name="entry_archive_list_limit" value="{entry_archive_list_limit}" size="4" class="acms-admin-form-width-mini" />
+			<input type="hidden" name="config[]" value="entry_archive_list_limit" />
+			<input type="hidden" name="entry_archive_list_limit:convert" value="a" />
+			<input type="hidden" name="entry_archive_list_limit:validator#digits" id="validator-entry_archive_list_limit-digits" />
+			<label for="validator-entry_archive_list_limit-digits" class="validator-result-{entry_archive_list_limit:validator#digits}">数字を入力して下さい。</label>
+		</td>
+	</tr>
+</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->

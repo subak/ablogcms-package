@@ -1,12 +1,51 @@
-#navSub{
+#navSub {
 	position: fixed;
-	top: 40px;
+	top: 50px;
 	left: 180px;
+	width: 180px;
+}
+.navSubOpener {
+	display: none;
+	width: 100%;
+	padding: 10px;
+	background: #EEE;
+	color: #999;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.navSubOpener:hover {
+	color: #666;
+}
+.navSubOpener .acms-icon {
+	float: right;
+}
+.navSubGroup {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow-y: scroll;
+}
+.navSubList {
+	border-bottom: 1px solid #EEE;
+}
+.navSubList a {
+	display: block;
+	padding: 5px;
+	color: #666;
+}
+.navSubList a:hover {
+	background: #f3f3f3;
 }
 
 .acms-grid,
 .acms-grid-r{
 	margin-bottom: 30px;
+}
+
+.styleguideMain {
+	padding: 0 0 0 220px;
 }
 
 #grid .panel,
@@ -60,22 +99,74 @@
 	margin-bottom: 35px;
 }
 
+/* ソースコード */
+pre .linenums {
+	margin: 0;
+	padding-left: 30px;
+}
+pre .linenums li {
+	line-height: 1.5;
+}
+
 /* webフォント */
 #fonts .acms-dl dt{
 	margin-bottom: 20px;
 }
 
-#fonts li{
+/*#fonts li{
 	margin-bottom: 10px;
-}
+}*/
 
+.fontList {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.fontListItem {
+	margin-bottom: 10px;
+	-ms-flex: 0 1 33.3%;
+	-webkit-flex: 0 1 33.3%;
+	flex: 0 1 33.3%;
+}
 #fonts .acms-icon{
 	font-size: 26px;
 }
 
-/* iPadの縦のとき */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-	#navSub{
+
+@media screen and (max-width: 1024px){
+	.navSubOpener {
+		display: block;
+	}
+	.navSubGroup {
 		display: none;
+		height: auto!important;
+	}
+	.navSubGroup.acms-block {
+		display: block;
+	}
+	#navSub{
+		position: static;
+		width: 100%;
+	}
+	.styleguideMain {
+		padding: 0 10px;
+	}
+	.fontListItem {
+		-ms-flex: 0 1 50%;
+		-webkit-flex: 0 1 50%;
+		flex: 0 1 50%;
+	}
+
+}
+
+@media screen and (max-width: 768px){
+	.fontListItem {
+		-ms-flex: 0 1 100%;
+		-webkit-flex: 0 1 100%;
+		flex: 0 1 100%;
 	}
 }
+

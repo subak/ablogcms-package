@@ -1,0 +1,73 @@
+<h3 class="acms-admin-admin-title2">テキスト設定</h3>
+<table class="js-fieldgroup-sortable acms-admin-table">
+	<thead>
+	<tr>
+		<th></th>
+		<th>見出し</th>
+		<th>詳細</th>
+		<th class="acms-admin-table-nowrap">削除</th>
+	</tr>
+	</thead>
+	<!-- BEGIN customFieldGroup:loop -->
+	<tr class="sortable-item">
+		<td class="item-handle"><img width="17" height="17" class="arrowHandle" src="/images/admin_arrow_vertical.gif" /></td>
+		<td>
+			<input type="text" name="side_heading[{i}]" value="{side_heading}" class="acms-admin-form-width-full" placeholder="見出し" />
+		</td>
+		<td>
+			<textarea name="side_detail[{i}]" cols="30" rows="3" class="acms-admin-form-width-full" placeholder="詳細">{side_detail}</textarea>
+		</td>
+		<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
+	</tr>
+	<!-- END customFieldGroup:loop -->
+	<tr class="sortable-item item-template">
+		<td class="item-handle"><img width="17" height="17" class="arrowHandle" src="/images/admin_arrow_vertical.gif" /></td>
+		<td>
+			<input type="text" name="side_heading[]" value="" class="acms-admin-form-width-full" placeholder="見出し" />
+		</td>
+		<td>
+			<textarea name="side_detail[]" cols="40" rows="3" class="acms-admin-form-width-full" placeholder="詳細"></textarea>
+		</td>
+		<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
+	</tr>
+	<tfoot>
+		<tr>
+			<td colspan="4">
+				<input type="button" class="item-insert acms-admin-btn-admin acms-admin-btn-admin-primary" value="追加" style="width:100px" />
+				<input type="hidden" class="item-max" value="4" />
+			</td>
+		</tr>
+	</tfoot>
+</table>
+
+<input type="hidden" name="@customFieldGroup[]" value="side_heading" />
+<input type="hidden" name="field[]" value="side_heading" />
+
+<input type="hidden" name="@customFieldGroup[]" value="side_detail" />
+<input type="hidden" name="field[]" value="side_detail" />
+
+<input type="hidden" name="field[]" value="@customFieldGroup" />
+
+<h3 class="acms-admin-admin-title2">画像設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>サイド画像</th>
+		<td>
+			<!-- BEGIN side_image@path:veil -->
+			<img src="%{ARCHIVES_DIR}{side_image@path}" width="400"><br>
+			<input type="hidden" name="side_image@old" value="{side_image@path}">
+			<label>
+				<input type="checkbox" name="side_image@edit" value="delete">削除
+			</label>
+			<!-- END side_image@path:veil -->
+			<input type="file" name="side_image" size="20">
+			<input type="hidden" name="field[]" value="side_image">
+			<input type="hidden" name="side_image:extension" value="image">
+			<input type="hidden" name="side_image@size" value="640">
+			<input type="hidden" name="side_image@tinyWidth" value="280">
+			<input type="hidden" name="side_image@largeWidth" value="1280">
+			<input type="hidden" name="side_image@squareWidth" value="200">
+			<input type="hidden" name="side_image@filename" value="">
+		</td>
+	</tr>
+</table>

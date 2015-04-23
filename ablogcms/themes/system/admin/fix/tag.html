@@ -1,0 +1,89 @@
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-config_tag_cloud"></i>タグ追加</h1>
+	</div>
+	<div class="acms-admin-col-md-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Fix_Tag -->
+<form method="post" action="" class="acms-admin-form" enctype="multipart/form-data">
+	<!-- BEGIN message#success -->
+	<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>タグを付与しました。</p><!-- END message#success -->
+
+	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+		<div class="acms_fix_bg_index">
+			<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
+		</div>
+	</div>
+
+	<div class="acms-admin-panel acms-admin-panel-info">
+		<div class="acms-admin-panel-header">
+			概要
+		</div>
+		<div class="acms-admin-panel-body">
+			指定ワードを含むエントリーに対して、ワードをタグとして付与します。
+		</div>
+	</div>
+
+	<!-- BEGIN step -->
+	<!-- BEGIN preview -->
+	<p>指定された設定の場合、以下のエントリーに指定ワードのタグが追加されます。</p><!-- BEGIN word:loop -->
+	<h4>指定ワード: 「<strong class="highlight">{word}</strong>」がタグとして追加されるエントリー</h4>
+	<dl style="margin-left: 30px;"><!-- BEGIN entry:loop -->
+		<dt>
+			{title} ( <label><input type="checkbox" name="ignore[]" value="{eid}@{word}" />&nbsp;タグ追加から除外</label> )
+		</dt>
+		<dd style="margin-left: 20px;">{fulltext}[raw]</dd><!-- END entry:loop -->
+	</dl><!-- END word:loop --><!-- BEGIN notFound -->
+	<p>指定された設定で、タグの追加対象になるエントリーは見つかりませんでした。</p><!-- END notFound -->
+
+	<input type="hidden" name="fix[]" value="ignore" />
+	<!-- END preview -->
+
+	<table class="adminTable acms-admin-table-admin-edit">
+		<tr>
+			<th>ファイル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="指定ワードを改行区切りで記述したファイルを選択してください。"></i></th>
+			<td>
+				<input type="file" name="source" />
+				<input type="hidden" name="fix[]" value="source" />
+
+				<input type="hidden" name="tagSource" value="{tagSource}" />
+				<input type="hidden" name="fix[]" value="tagSource" />
+
+				<!-- BEGIN source:v#required -->
+				<label class="validator-result-0">ファイルを選択してください。</label>
+				<!-- END source:v#required -->
+			</td>
+		</tr>
+		<tr>
+			<th>オプション<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="オプションを設定してください。"></i></th>
+			<td>
+				<label class="acms-admin-form-checkbox">
+					<input type="checkbox" name="certainly" value="on"{certainly:checked#on} /><i class="acms-admin-ico-checkbox"></i>
+					タイトルに指定ワードが含まれていたら、必ずタグを追加する
+				</label>
+
+				<input type="hidden" name="fix[]" value="certainly" />
+			</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>
+				<input type="text" name="threshold" value="{threshold}" size="1" />
+				&nbsp;回以上、指定ワードが本文中に出現したときにタグを追加する
+				<input type="hidden" name="fix[]" value="threshold" />
+		</tr>
+		<tr>
+			<th></th>
+			<td>
+				<input type="submit" name="ACMS_POST_Fix_Tag_Preview" value="プレビュー" class="acms-admin-btn-admin">
+
+				<input type="submit" name="ACMS_POST_Fix_Tag_Add" value="タグ追加" onclick="return confirm('タグを付与します。よろしいですか？');" class="acms-admin-btn-admin acms-admin-btn-admin-primary">
+			</td>
+		</tr>
+	</table>
+	<!-- END step -->
+</form>
+<!-- END_MODULE Admin_Fix_Tag -->

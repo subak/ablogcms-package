@@ -1,0 +1,26 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Tag_Filter -->
+<!-- BEGIN tagBox -->
+<div>
+	<p>選択されているタグ : 
+	<!-- BEGIN selected:loop --><a href="{url}">{name}</a><a href="{ommitUrl}"><span class="glyphicon glyphicon-remove"></span></a><!-- BEGIN glue -->><!-- END glue --><!-- END selected:loop -->
+	</p>
+	<!-- BEGIN choice:veil -->
+	<p id="nextTagTitle">タグを絞り込む :<!-- BEGIN choice:loop --><a href="{url}">{name}</a><!-- END choice:loop -->
+	<!-- END choice:veil -->
+	</p>
+</div>
+<!-- END tagBox -->
+<!-- END_MODULE Tag_Filter -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div>
+	<p>選択されているタグ : 
+	<a href="#">タグA</a><a href="#"><span class="glyphicon glyphicon-remove"></span></a>><a href="#">タグB</a><a href="#"><span class="glyphicon glyphicon-remove"></span></a>
+	</p>
+	<!-- BEGIN choice:veil -->
+	<p id="nextTagTitle">タグを絞り込む :<a href="#">タグC</a><a href="#">タグD</a>
+	</p>
+</div>
+<!-- END layout#dummy -->

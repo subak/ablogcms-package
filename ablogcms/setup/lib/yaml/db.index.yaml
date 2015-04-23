@@ -53,12 +53,14 @@ ${PREFIX}approval_notification:
   - KEY field_cid (field_cid)
   - KEY field_uid (field_uid)
   - KEY field_bid (field_bid)
+  - KEY field_mid (field_mid)
   - KEY field_eid (field_eid,field_key,field_search)
   - KEY field_key (field_key)
 %{PREFIX}field_rev  :
   - KEY field_cid (field_cid)
   - KEY field_uid (field_uid)
   - KEY field_bid (field_bid)
+  - KEY field_mid (field_mid)
   - KEY field_eid (field_eid,field_key,field_search,field_rev_id)
   - KEY field_key (field_key)
 %{PREFIX}form       :
@@ -70,6 +72,9 @@ ${PREFIX}approval_notification:
   - UNIQUE KEY fulltext_eid (fulltext_eid)
   - FULLTEXT KEY fulltext_value (fulltext_value)
   - FULLTEXT KEY fulltext_ngram (fulltext_ngram)
+%{PREFIX}layout_grid   :
+  - KEY layout_grid_id (layout_grid_identifier)
+  - KEY layout_grid (layout_grid_parent,layout_grid_col,layout_grid_row)
 %{PREFIX}log_access :
 %{PREFIX}media_tag  :
   - PRIMARY KEY  (media_tag_media_id,media_tag_sort)

@@ -1,0 +1,86 @@
+<div id="js-module_management" class="acms-admin-modal out">
+    <div class="acms-admin-modal-dialog large">
+        <div class="acms-admin-modal-content">
+            <div class="acms-admin-modal-header">
+                <i class="acms-admin-modal-hide acms-admin-icon-delete"></i>
+                <h3>モジュール一覧</h3>
+            </div>
+            <div class="acms-admin-modal-body acms-admin-form">
+                <div class="acms-admin-padding-small">
+                    <!-- BEGIN_MODULE Admin_Module_Index -->
+
+                    <!-- BEGIN index#notFound -->
+                    <p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>モジュールIDがありません。</p><!-- END index#notFound -->
+
+                    <div class="acms-admin-filter">
+                        <label for="searchModuleId">クイック検索:</label>
+                        <input type="text" class="js-incremental_search_box" placeholder="例）banner">
+
+                    </div>
+
+                    <div class="acms-admin-form-group acms-admin-float-right">
+                        <button class="js-acms_layout_create_module acms-admin-btn-admin" data-mid="new">モジュールIDを作成</button>
+                    </div>
+
+                    <!-- BEGIN index:touch#result -->
+                    <table class="js-module_index_table adminTable acms-admin-table-admin acms-admin-table-heading js-incremental_search">
+                        <thead>
+                            <tr>
+                                <th class="acms-admin-show-sp">アクション</th>
+                                <th class="acms-admin-show-sp">テンプレート</th>
+                                <th class="acms-admin-hide-sp">id</th>
+                                <th class="acms-admin-show-sp">名前</th>
+                                <th class="acms-admin-show-sp">適用モジュール</th>
+                                <th class="acms-admin-hide-sp">グローバル</th>
+                                <th class="acms-admin-show-sp">設定</th>
+                            </tr>
+                        </thead>
+                        <tbody><!-- BEGIN module:loop -->
+                            <!-- BEGIN_IF [{mid}/eq/%{mid}] -->
+                            <tr class="search_element acms-admin-table-info"><!-- ELSE -->
+                            <tr class="search_element"><!-- END_IF -->
+                                <td class="except">
+                                    <button class="js-layout_select_module_id acms-admin-btn-admin" data-mid="{mid}">選択</button>
+                                </td>
+                                <td class="except">
+                                    <!-- BEGIN template:veil -->
+                                    <select name="template">
+                                        <option value="">標準</option><!-- BEGIN template:loop -->
+                                        <option value="{template}"{selected}>{tplLabel}</option><!-- END template:loop -->
+                                    </select>
+                                    <!-- END template:veil -->
+
+                                    <!-- BEGIN notEmptyTmpl -->
+                                    <input type="hidden" name="template" value=""/>
+                                    <!-- END notEmptyTmpl -->
+
+                                    <!-- BEGIN fixTmpl -->
+                                    固定テンプレート
+                                    <input type="hidden" name="template" value=""/>
+                                    <!-- END fixTmpl -->
+                                </td>
+                                <td>
+                                    <span class="acms-admin-icon acms-admin-icon-config_{name}[lowercase]" style="font-size: 20px;"></span>
+                                    <span class="acms-admin-label">{mid}</span>
+                                    <strong>{identifier}</strong>
+                                </td>
+                                <td class="acms-admin-title-sp acms-admin-show-sp acms-admin-width-sp">{label}</td>
+                                <td>{name}</td>
+                                <td>
+                                <!-- BEGIN scope:touch#global --><span class="acms-admin-label acms-admin-label-info admin-status-label">有効</span><!-- END scope:touch#global -->
+                                <!-- BEGIN scope:touch#local --> - <!-- END scope:touch#local -->
+                                <!-- BEGIN scope:touch#parental --> - <!-- END scope:touch#parental -->
+                                </td>
+                                <td class="acms-admin-show-sp acms-admin-width-sp acms-admin-border-bottom-sp">
+                                    <button class="js-acms_layout_edit_module acms-admin-btn-admin" data-mid="{mid}">設定</button>
+                                </td>
+                            </tr>
+                        </tbody><!-- END module:loop -->
+                    </table><!-- END index:touch#result -->
+                    <div class="js-acms_fix_target acms_fix_bg"><div class="acms_fix_bg_index"></div></div>
+                    <!-- END_MODULE Admin_Module_Index -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

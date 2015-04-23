@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!--#include file="/include/meta.html" -->
+<!--#include file="/include/link.html" -->
+<!--#include file="/include/js.html" -->
+</head>
+<body>
+<!--#include file="/include/social/sns_script.html" -->
+<div id="outer-wrap">
+<div id="inner-wrap">
+<a class="blogSpBg" href="#"></a>
+<!-- メインビジュアル -->
+<!--#include file="/include/mainVisual.html" -->
+<!--#include file="/include/globalNavigation.html" -->
+<!-- オフキャンバス開閉ボタン -->
+<span class="blogHeaderNaviBtn" id="nav-open-btn">
+	<span class="blogHeaderNaviBtnLine"></span>
+	<span class="blogHeaderNaviBtnLine"></span>
+	<span class="blogHeaderNaviBtnLine"></span>
+</span>
+
+<div class="acms-container blogContainer">
+	<div class="acms-grid-r">
+		<div class="acms-col-md-9">
+			<main role="main">
+			<!-- 管理画面 -->
+			<!--#include file="/admin/action.html"-->
+
+			<!-- 検索結果 -->
+			<!--#include file="/include/searchResult.html"-->
+
+			<!-- タグフィルター -->
+			<!--#include file="/include/tagFilter.html"-->
+
+			<!-- エントリーボディー -->
+			<!--#include file="/include/entryBody.html"-->
+
+			<!-- トップページのSEOチェック -->
+			<!--#include file="/include/top_check.html" -->
+
+			<!-- インデックスページのSEOチェック -->
+			<!--#include file="/include/index_check.html" -->
+
+			<!-- エントリーページのSEOチェック -->
+			<!--#include file="/include/entry_check.html" -->
+			</main>
+		</div>
+		<div class="acms-col-md-3">
+			<div class="blogSubCol" id="nav">
+
+				<!-- スマートフォン時のみに表示されるナビゲーション-->
+				<!--#include file="/include/spNavigation.html" -->
+
+				<!--#include file="/include/subAdmin.html" -->
+
+				<!-- プロフィール -->
+				<!--#include file="/include/profile.html" -->
+
+				<!-- エントリーリスト -->
+				<!--#include file="/include/entryList.html" -->
+
+
+				<!-- リンク集 -->
+				<!--#include file="/include/links.html" -->
+
+				<!-- カテゴリーリスト -->
+				<!--#include file="/include/categoryList.html" -->
+
+				<!-- タグクラウド -->
+				<!--#include file="/include/tagCloud.html" -->
+
+				<!-- 検索フォーム -->
+				<!--#include file="/include/searchForm.html" -->
+
+				<!-- バナー -->
+				<!--#include file="/include/banner.html" -->
+
+				<!-- ブログパーツ -->
+				<!--#include file="/include/blogParts.html" -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- フッター -->
+<!--#include file="/include/footer.html" -->
+</div>
+</div>
+<script src="/js/off-canvas/main.js"></script>
+</body>
+</html>

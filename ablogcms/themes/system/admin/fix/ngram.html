@@ -1,0 +1,53 @@
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-sort2"></i>n-gramインデックス</h1>
+	</div>
+	<div class="acms-admin-col-md-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Fix_Ngram -->
+<form method="post" action="" class="acms-admin-form">
+	<!-- BEGIN message#success -->
+	<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>n-gramインデックスを付与しました。</p><!-- END message#success -->
+
+	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+		<div class="acms_fix_bg_index">
+			<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
+		</div>
+	</div>
+
+	<div class="acms-admin-panel acms-admin-panel-info">
+		<div class="acms-admin-panel-header">
+			概要
+		</div>
+		<div class="acms-admin-panel-body">
+			既存コンテンツにN-gramインデックスを付与します。文字列を指定した文字数(gram)で切り分けることで検索用のキーを生成します。<br>この処理を実行した後に、config.system.yamlなどからngramを有効にすると、サイト内検索の内部処理が変更されます。
+		</div>
+	</div>
+
+	<!-- BEGIN step -->
+	<table class="adminTable acms-admin-table-admin-edit">
+		<tr>
+			<th>ngram<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="private/config.system.yamlのngramの値と同じ（標準は2）である必要があります。"></i></th>
+			<td>
+				<input type="text" name="ngram" value="{ngram}" size="1" />&nbsp;gram
+
+				<input type="hidden" name="fix[]" value="ngram" />
+				<input type="hidden" name="ngram:validator#required" />
+				<!-- BEGIN ngram:v#required -->
+				<label class="validator-result-0">N-gramを入力して下さい</label>
+				<!-- END ngram:v#required -->
+			</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>
+				<input type="submit" name="ACMS_POST_Fix_Ngram" value="N-gramインデックスを付与" onclick="return confirm('N-gramインデックスを付与します。よろしいですか？');" class="acms-admin-btn-admin acms-admin-btn-admin-primary">
+			</td>
+		</tr>
+	</table>
+	<!-- END step -->
+</form>
+<!-- END_MODULE Admin_Fix_Ngram -->

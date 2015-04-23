@@ -1,22 +1,31 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title">
-			<i class="acms-icon acms-icon-config_reset"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title">
+			<i class="acms-admin-icon acms-admin-icon-config_reset"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
 				<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 				<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->リセット
 		</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
-<!-- BEGIN_MODULE Admin_Config_Message -->
-<!-- BEGIN config:veil --><p class="noticeMsg acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>{config_name}のコンフィグをリセットしました。</p><!-- END message:veil -->
-<!-- END_MODULE Admin_Config_Message -->
+<!-- BEGIN_MODULE Admin_Config -->
+<form action="" method="post" class="acms-admin-form">
+	<!-- BEGIN_MODULE Admin_Config_Message --><!-- BEGIN config:veil -->
+	<p class="noticeMsg acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>{config_name}のコンフィグをリセットしました。</p><!-- END message:veil --><!-- END_MODULE Admin_Config_Message -->
 
-<form action="" method="post" class="acms-form">
-	
+	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+		<div class="acms_fix_bg_index">
+			<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
+			
+			<input class="acms-admin-btn-admin acms-admin-btn-admin-danger" type="submit" name="ACMS_POST_Config_Delete" value="リセット" onclick="return confirm('リセットを実行します。よろしいですか？');" />
+
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+			<a href="{shortcutUrl}" class="acms-admin-btn-admin acms-admin-float-right"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+		</div>
+	</div>
 
 	<!-- BEGIN_MODULE Admin_Rule_Name --><input type="hidden" name="rid" value="{rid}" />
 	<input type="hidden" name="rule_name" value="{name}" /><!-- END_MODULE Admin_Rule_Name -->
@@ -26,8 +35,5 @@
 		<li>リセット後は、システムデフォルトのコンフィグ（private/config.system.yamlの設定値）を適用されます。</li>
 		<li>ルール適用時のコンフィグがリセットされると、ブログの元々のコンフィグが適用されます。</li>
 	</ul>
-
-	<div class="acms-form-group">
-		<input class="acms-btn-admin acms-btn-admin-danger acms-margin-sp acms-float-right" type="submit" name="ACMS_POST_Config_Delete" value="リセット" onclick="return confirm('リセットを実行します。よろしいですか？');" />
-	</div>
 </form>
+<!-- END_MODULE Admin_Config -->

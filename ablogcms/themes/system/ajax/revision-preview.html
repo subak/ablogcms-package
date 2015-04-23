@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" class="acms-height-max">
+<html lang="ja" class="acms-admin-height-max">
 <head>
 <!--#include file="/include/head/admin-meta.html"-->
 <meta name="viewport" content="width=1024">
@@ -7,41 +7,41 @@
 <!--#include file="/include/head/admin-css.html"-->
 <!--#include file="/include/head/admin-js.html"-->
 </head>
-<body class="acms-revision-preview acms-height-max">
+<body class="acms-admin-revision-preview acms-admin-height-max">
 
 <!-- BEGIN_MODULE Admin_Entry_Revision_Info -->
-<div id="outer-wrap" class="acms-height-max">
-<div id="inner-wrap" class="acms-height-max">
+<div id="outer-wrap" class="acms-admin-height-max">
+<div id="inner-wrap" class="acms-admin-height-max">
 
-<header id="top" class="acms-revision-header acms-grid-r">
-	<h2 class="acms-revision-header-title acms-col-8"><!-- BEGIN status:veil -->【{status}】<!-- END status:veil -->{rvid} : {memo}</h2>
-	<div class="acms-col-4">
-		<div class="acms-float-right">
-			<form action="" method="post" class="acms-inline">
+<header id="top" class="acms-admin-revision-header acms-admin-grid-r">
+	<h2 class="acms-admin-revision-header-title acms-admin-col-8"><!-- BEGIN status:veil -->【{status}】<!-- END status:veil -->{rvid} : {memo}</h2>
+	<div class="acms-admin-col-4">
+		<div class="acms-admin-float-right">
+			<form action="" method="post" class="acms-admin-inline">
 				<input type="hidden" name="bid" value="%{BID}" />
 				<input type="hidden" name="eid" value="%{EID}" />
-				<input type="submit" name="ACMS_POST_2GET" value="エントリー詳細" class="acms-btn-admin"/>
+				<input type="submit" name="ACMS_POST_2GET" value="エントリー詳細" class="acms-admin-btn-admin"/>
 			</form><!-- BEGIN_MODULE Touch_Approval --><!-- BEGIN_MODULE Touch_sessionWithApprovalAdministrator -->
 			<!-- BEGIN_MODULE Touch_EntryExists -->
-			<form action="" method="post" class="acms-inline">
+			<form action="" method="post" class="acms-admin-inline">
 				<input type="hidden" name="admin" value="entry_approval-history" />
 				<input type="hidden" name="bid" value="%{BID}" />
 				<input type="hidden" name="eid" value="%{EID}" />
-				<input type="submit" name="ACMS_POST_2GET" value="承認履歴" class="acms-btn-admin"/>
+				<input type="submit" name="ACMS_POST_2GET" value="承認履歴" class="acms-admin-btn-admin"/>
 			</form><!-- END_MODULE Touch_EntryExists --><!-- END_MODULE Touch_sessionWithApprovalAdministrator --><!-- END_MODULE Touch_Approval -->
-			<form action="" method="post" class="acms-inline">
+			<form action="" method="post" class="acms-admin-inline">
 				<input type="hidden" name="admin" value="entry-edit" />
 				<input type="hidden" name="eid" value="%{EID}" />
 				<input type="hidden" name="rvid" value="{rvid}" />
 				<input type="hidden" name="query[]" value="rvid" />
-				<input type="submit" name="ACMS_POST_2GET" value="変更" class="acms-btn-admin"/>
+				<input type="submit" name="ACMS_POST_2GET" value="変更" class="acms-admin-btn-admin"/>
 			</form>
 			<!-- BEGIN_MODULE Touch_NotApproval -->
 			<!-- BEGIN revisionChange -->
-			<form action="" method="post" class="acms-inline">
+			<form action="" method="post" class="acms-admin-inline">
 				<input type="hidden" name="eid" value="%{EID}" />
 				<input type="hidden" name="revision" value="%{RVID}" />
-				<input type="submit" name="ACMS_POST_Revision_Change" value="このバージョンを公開" onclick="return confirm('このバージョンに変更します。よろしいですか？');" class="acms-btn-admin acms-btn-admin-primary" />
+				<input type="submit" name="ACMS_POST_Revision_Change" value="このバージョンを公開" onclick="return confirm('このバージョンに変更します。よろしいですか？');" class="acms-admin-btn-admin acms-admin-btn-admin-primary" />
 			</form>
 			<!-- END revisionChange -->
 			<!-- END_MODULE Touch_NotApproval -->
@@ -52,32 +52,32 @@
 <!-- BEGIN_MODULE Touch_Approval -->
 
 <!-- BEGIN_IF [%{RVID}/neq/1] -->
-<div class="acms-grid-r acms-height-max">
+<div class="acms-admin-grid-r acms-admin-height-max">
 
-<div id="nav" class="acms-revision-sidebar">
-	<div id="sidebar" class="acms-bg-gray js-perfectScrollbar">
+<div id="nav" class="acms-admin-revision-sidebar">
+	<div id="sidebar" class="acms-admin-bg-gray js-perfectScrollbar">
 		<div class="sidebar-container">
-			<nav class="acms-sidebar">
+			<nav class="acms-admin-sidebar">
 				<!-- BEGIN_MODULE Touch_NotApprovalPublic -->
 				<!-- BEGIN_MODULE Touch_ApprovalRequest -->
-				<div class="acms-padding-small">
-					<form action="" method="post" class="acms-form">
+				<div class="acms-admin-padding-small">
+					<form action="" method="post" class="acms-admin-form">
 						<!-- BEGIN_MODULE Approval -->
 						<!-- BEGIN approvalPoint:validator#overpoint -->
-						<p class="acms-alert acms-alert-danger">画面の情報が古かった可能性があります。もう一度確認後、承認をお願いします。</p><!-- END approvalPoint:validator#overpoint --><!-- END_MODULE Approval -->
+						<p class="acms-admin-alert acms-admin-alert-danger">画面の情報が古かった可能性があります。もう一度確認後、承認をお願いします。</p><!-- END approvalPoint:validator#overpoint --><!-- END_MODULE Approval -->
 						
-						<label class="acms-form-block acms-clear">承認期限</label>
-						<input type="text" name="deadline_date" value="%{NOW_DATE}" size="13" class="entryFormInputDate js-datepicker acms-revision-sidebar-input">
+						<label class="acms-admin-form-block acms-admin-clear">承認期限</label>
+						<input type="text" name="deadline_date" value="%{NOW_DATE}" size="13" class="entryFormInputDate js-datepicker acms-admin-revision-sidebar-input">
 						<!-- BEGIN_MODULE Approval_NextUsergroup -->
-						<label class="acms-form-block acms-clear">次の承認者</label>
-						<select name="receiver" class="acms-revision-sidebar-select">
+						<label class="acms-admin-form-block acms-admin-clear">次の承認者</label>
+						<select name="receiver" class="acms-admin-revision-sidebar-select">
 							<option value="{nextGroup}:0">全員（{nextGroupName}）</option><!-- BEGIN user:loop -->
 							<option value="{nextGroup}:{user_id}">{user_name} ( uid:{user_id} )</option><!-- END user:loop -->
 						</select>
 						<input type="hidden" name="current_group" value="{currentGroup}" />
 						<!-- END_MODULE Approval_NextUsergroup -->
-						<p><span class="acms-label">コメント</span></p>
- 						<textarea name="request_comment" rows="3" style="width:100%;" class="acms-revision-sidebar-input"></textarea>
+						<p><span class="acms-admin-label">コメント</span></p>
+ 						<textarea name="request_comment" rows="3" style="width:100%;" class="acms-admin-revision-sidebar-input"></textarea>
 
 
 						<input type="hidden" name="rvid" value="{rvid}" />
@@ -88,14 +88,14 @@
 						<input type="hidden" name="approval[]" value="request_comment" />
 						<input type="hidden" name="approval[]" value="receiver" />
 						<input type="hidden" name="approval[]" value="current_group" />
-						<input type="submit" name="ACMS_POST_Approval_Request" value="承認依頼" class="acms-btn-admin acms-btn-admin-primary" onClick="return confirm('承認依頼します。よろしいですか？');" />
+						<input type="submit" name="ACMS_POST_Approval_Request" value="承認依頼" class="acms-admin-btn-admin acms-admin-btn-admin-primary" onClick="return confirm('承認依頼します。よろしいですか？');" />
 
 						<!-- BEGIN_MODULE Touch_ApprovalRejectRequest -->
-						<input type="submit" name="ACMS_POST_Approval_RejectRequest" value="却下依頼" class="acms-btn-admin acms-btn-admin-danger" onClick="return confirm('承認を却下依頼します。よろしいですか？');" />
+						<input type="submit" name="ACMS_POST_Approval_RejectRequest" value="却下依頼" class="acms-admin-btn-admin acms-admin-btn-admin-danger" onClick="return confirm('承認を却下依頼します。よろしいですか？');" />
 						<!-- END_MODULE Touch_ApprovalRejectRequest -->
 
 						<!-- BEGIN_MODULE Touch_ApprovalReject -->
-						<input type="submit" name="ACMS_POST_Approval_Reject" value="承認却下" class="acms-btn-admin acms-btn-admin-danger" onClick="return confirm('承認を却下します。よろしいですか？');" />
+						<input type="submit" name="ACMS_POST_Approval_Reject" value="承認却下" class="acms-admin-btn-admin acms-admin-btn-admin-danger" onClick="return confirm('承認を却下します。よろしいですか？');" />
 						<!-- END_MODULE Touch_ApprovalReject -->
 					</form>
 				</div>
@@ -103,19 +103,19 @@
 				<!-- END_MODULE Touch_NotApprovalPublic -->
 
 				<!-- BEGIN_MODULE Touch_ApprovalPublic -->
-				<div class="acms-padding-small">
-					<form action="" method="post" class="acms-form">
+				<div class="acms-admin-padding-small">
+					<form action="" method="post" class="acms-admin-form">
 						<!-- BEGIN_MODULE Approval -->
 						<!-- BEGIN approvalPoint:validator#overpoint -->
-						<p class="acms-alert acms-alert-danger">画面の情報が古かった可能性があります。もう一度確認後、承認をお願いします。</p><!-- END approvalPoint:validator#overpoint --><!-- END_MODULE Approval -->
+						<p class="acms-admin-alert acms-admin-alert-danger">画面の情報が古かった可能性があります。もう一度確認後、承認をお願いします。</p><!-- END approvalPoint:validator#overpoint --><!-- END_MODULE Approval -->
 
-						<p><span class="acms-label">コメント</span></p>
-						<textarea name="request_comment" rows="3" style="width:100%;" class="acms-revision-sidebar-input"></textarea>
+						<p><span class="acms-admin-label">コメント</span></p>
+						<textarea name="request_comment" rows="3" style="width:100%;" class="acms-admin-revision-sidebar-input"></textarea>
 
 						<!-- BEGIN_MODULE Approval_RevisionInfo -->
-						<p><span class="acms-label">公開日時</span></p>
-						<input type="text" name="public_date" value="{start_date}" size="13" class="entryFormInputDate js-datepicker acms-revision-sidebar-input">
-						<input type="text" name="public_time" value="{start_time}" size="13" class="entryFormInputDate acms-revision-sidebar-input">
+						<p><span class="acms-admin-label">公開日時</span></p>
+						<input type="text" name="public_date" value="{start_date}" size="13" class="entryFormInputDate js-datepicker acms-admin-revision-sidebar-input">
+						<input type="text" name="public_time" value="{start_time}" size="13" class="entryFormInputDate acms-admin-revision-sidebar-input">
 						<!-- END_MODULE Approval_RevisionInfo -->
 
 						<input type="hidden" name="rvid" value="{rvid}" />
@@ -129,51 +129,51 @@
 						<input type="hidden" name="approval[]" value="public_time" />
 						<input type="hidden" name="approval[]" value="current_group" />
 
-						<input type="submit" name="ACMS_POST_Approval_Public" value="最終承認" class="acms-btn-admin acms-btn-admin-primary" onClick="return confirm('最終承認をします。記事が公開または削除されます。よろしいですか？');" />
+						<input type="submit" name="ACMS_POST_Approval_Public" value="最終承認" class="acms-admin-btn-admin acms-admin-btn-admin-primary" onClick="return confirm('最終承認をします。記事が公開または削除されます。よろしいですか？');" />
 
 						<!-- BEGIN_MODULE Touch_ApprovalRejectRequest -->
-						<input type="submit" name="ACMS_POST_Approval_RejectRequest" value="却下依頼" class="acms-btn-admin acms-btn-admin-danger" onClick="return confirm('承認を却下依頼します。よろしいですか？');" />
+						<input type="submit" name="ACMS_POST_Approval_RejectRequest" value="却下依頼" class="acms-admin-btn-admin acms-admin-btn-admin-danger" onClick="return confirm('承認を却下依頼します。よろしいですか？');" />
 						<!-- END_MODULE Touch_ApprovalRejectRequest -->
 
 						<!-- BEGIN_MODULE Touch_ApprovalReject -->
-						<input type="submit" name="ACMS_POST_Approval_Reject" value="承認却下" class="acms-btn-admin acms-btn-admin-danger" onClick="return confirm('承認を却下します。よろしいですか？');" />
+						<input type="submit" name="ACMS_POST_Approval_Reject" value="承認却下" class="acms-admin-btn-admin acms-admin-btn-admin-danger" onClick="return confirm('承認を却下します。よろしいですか？');" />
 						<!-- END_MODULE Touch_ApprovalReject -->
 					</form>
 				</div>
 				<!-- END_MODULE Touch_ApprovalPublic -->
 
 				<!-- BEGIN_MODULE Approval_Point -->
-				<ul class="acms-revision-comment">
+				<ul class="acms-admin-revision-comment">
 					<li>
-						<span class="acms-label acms-label">あなたのポイント&nbsp;{approval_user_point}</span>
+						<span class="acms-admin-label acms-admin-label">あなたのポイント&nbsp;{approval_user_point}</span>
 					</li>
 					<li>
-						<span class="acms-label acms-label-info">承認まで&nbsp;{approval_public_point} / {approval_public_pass_point}</span>
+						<span class="acms-admin-label acms-admin-label-info">承認まで&nbsp;{approval_public_point} / {approval_public_pass_point}</span>
 					</li>
 					<li>
-						<span class="acms-label acms-label-warning">却下まで&nbsp;{approval_reject_point} / {approval_reject_pass_point}</span>
+						<span class="acms-admin-label acms-admin-label-warning">却下まで&nbsp;{approval_reject_point} / {approval_reject_pass_point}</span>
 					</li>
 				</ul>
 				<!-- END_MODULE Approval_Point -->
 
 				<!-- BEGIN_MODULE Approval_History -->
-				<ul class="acms-revision-comment"><!-- BEGIN approval:loop -->
+				<ul class="acms-admin-revision-comment"><!-- BEGIN approval:loop -->
 					<li><!-- BEGIN type:touch#request -->
-						<span class="acms-label">承認依頼</span><!-- END type:touch#request --><!-- BEGIN type:touch#rejectRequest -->
-						<span class="acms-label acms-label-warning">承認却下依頼</span><!-- END type:touch#rejectRequest --><!-- BEGIN type:touch#reject -->
-						<span class="acms-label acms-label-danger">承認却下</span><!-- END type:touch#reject --><!-- BEGIN type:touch#public -->
-						<span class="acms-label acms-label-info">最終承認</span><!-- END type:touch#public --><!-- BEGIN type:touch#trash -->
-						<span class="acms-label acms-label-danger">削除依頼</span><!-- END type:touch#trash -->
+						<span class="acms-admin-label">承認依頼</span><!-- END type:touch#request --><!-- BEGIN type:touch#rejectRequest -->
+						<span class="acms-admin-label acms-admin-label-warning">承認却下依頼</span><!-- END type:touch#rejectRequest --><!-- BEGIN type:touch#reject -->
+						<span class="acms-admin-label acms-admin-label-danger">承認却下</span><!-- END type:touch#reject --><!-- BEGIN type:touch#public -->
+						<span class="acms-admin-label acms-admin-label-info">最終承認</span><!-- END type:touch#public --><!-- BEGIN type:touch#trash -->
+						<span class="acms-admin-label acms-admin-label-danger">削除依頼</span><!-- END type:touch#trash -->
 
-						<p class="acms-revision-comment-date">{datetime}[date('Y/m/d H:i')]</p>
+						<p class="acms-admin-revision-comment-date">{datetime}[date('Y/m/d H:i')]</p>
 						<!-- BEGIN requestUser -->
-						<p class="acms-revision-comment-photo"><img src="%{ARCHIVES_DIR}{icon}" width="28" height="28" alt="" />{name}</p>
+						<p class="acms-admin-revision-comment-photo"><img src="%{ARCHIVES_DIR}{icon}" width="28" height="28" alt="" />{name}</p>
 						<!-- END requestUser -->
 
-						<p class="acms-revision-comment-text">{comment}</p>
+						<p class="acms-admin-revision-comment-text">{comment}</p>
 
 						<!-- BEGIN receiveUser -->
-						<ul class="acms-revision-comment-user">
+						<ul class="acms-admin-revision-comment-user">
 							<li>承認期限 : {deadline}[date('Y/m/d')]</li><!-- BEGIN_IF [{userOrGroupp}/nem/] -->
 							<li>次の承認者 : {userOrGroupp}</li><!-- END_IF -->
 						</ul>
@@ -181,16 +181,16 @@
 					</li><!-- END approval:loop -->
 				</ul>
 				<!-- END_MODULE Approval_History -->
-				<p class="acms-revision-preview-btn acms-hide-pc acms-show-sp"><a href="{url}" class="acms-btn-admin" target="_brank">プレビューを見る</a></p>
+				<p class="acms-admin-revision-preview-btn acms-admin-hide-pc acms-admin-show-sp"><a href="{url}" class="acms-admin-btn-admin" target="_brank">プレビューを見る</a></p>
 			</nav>
 		</div>
 	</div>
 </div>
 <!-- END_IF -->
 <!-- BEGIN_IF [%{RVID}/neq/1] -->
-<div id="acms-main" class="acms-height-max" style="padding-top:50px;">
-	<div id="main" role="main" class="acms-height-max"><!-- END_IF -->
-		<iframe src="{url}" frameborder="0" class="acms-width-height-max"></iframe><!-- BEGIN_IF [%{RVID}/neq/1] -->
+<div id="acms-admin-main" class="acms-admin-height-max" style="padding-top:50px;">
+	<div id="main" role="main" class="acms-admin-height-max"><!-- END_IF -->
+		<iframe src="{url}" frameborder="0" class="acms-admin-width-height-max"></iframe><!-- BEGIN_IF [%{RVID}/neq/1] -->
 		}
 	</div>
 </div><!-- END_IF -->
@@ -198,7 +198,7 @@
 <!-- END_MODULE Touch_Approval -->
 
 <!-- BEGIN_MODULE Touch_NotApproval -->
-<iframe src="{url}" frameborder="0" class="acms-width-height-max" style="padding-top:50px;"></iframe>
+<iframe src="{url}" frameborder="0" class="acms-admin-width-height-max" style="padding-top:50px;"></iframe>
 <!-- END_MODULE Touch_NotApproval -->
 
 </div>

@@ -1,0 +1,12 @@
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>カスタムフィールド<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると、モジュール内でエントリーのカスタムフィールドを読み込みます。"></i></th>
+		<td>
+			<input type="hidden" name="entry_continue_field" value="off" />
+			<label for="input-checkbox-entry_continue_field" class="acms-admin-form-checkbox"><input type="checkbox" name="entry_continue_field" value="on"{entry_continue_field:checked#on} id="input-checkbox-entry_continue_field" /><i class="acms-admin-ico-checkbox"></i>エントリーのカスタムフィールドを出力する</label>
+			<input type="hidden" name="config[]" value="entry_continue_field" />
+		</td>
+	</tr>
+</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->

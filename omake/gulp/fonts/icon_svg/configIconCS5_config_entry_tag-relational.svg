@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1792px"
+	 height="1792px" viewBox="0 0 1792 1792" enable-background="new 0 0 1792 1792" xml:space="preserve">
+<g id="Guide">
+</g>
+<g id="Font" display="none">
+	<path display="inline" d="M0,1567.253c10.453-209.067,50.773-380.8,141.867-537.6C232.96,872.854,361.387,762.347,560,690.667
+		c98.56-34.347,210.56-55.253,336-62.72V223.253l896,676.48l-896,669.013v-449.493c-186.664,4.48-364.372,38.827-527.146,107.52
+		C206.08,1295.467,70.187,1413.44,0,1567.253z"/>
+</g>
+<g id="内容">
+	<g>
+		<polygon points="1152,0 0,0 0,1408 256,1408 256,128 1152,128 		"/>
+		<polygon points="1472,192 320,192 320,1600 576,1600 576,320 1472,320 		"/>
+		<path d="M640,384v1408h704.839L1792,1344.839V384H640z M1152,1280L768,896V576h320l512,512l-64,64h-384V1280z M1280,1728v-448h448
+			L1280,1728z"/>
+		<ellipse cx="959.674" cy="768.253" rx="63.674" ry="64.253"/>
+	</g>
+</g>
+<g id="ラベル">
+</g>
+<g id="Unicode" display="none">
+	<text transform="matrix(1 0 0 1 437.0635 964.2812)" display="inline" fill="#ED1E79" font-family="'ArialMT'" font-size="256">U+F716</text>
+</g>
+</svg>

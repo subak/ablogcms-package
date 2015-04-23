@@ -1,23 +1,23 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.7
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- ホスト: localhost
--- 生成日時: 2013 年 12 月 03 日 02:42
--- サーバのバージョン: 5.5.29
--- PHP のバージョン: 5.4.10
+-- Host: localhost:3306
+-- Generation Time: Apr 13, 2015 at 08:57 PM
+-- Server version: 5.5.34
+-- PHP Version: 5.5.10
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- データベース: `DBacms200`
+-- Database: `DBacms250`
 --
 
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_alias`
+-- Table structure for table `acms_alias`
 --
 
 CREATE TABLE `acms_alias` (
@@ -35,7 +35,7 @@ CREATE TABLE `acms_alias` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_app`
+-- Table structure for table `acms_app`
 --
 
 CREATE TABLE `acms_app` (
@@ -50,12 +50,13 @@ CREATE TABLE `acms_app` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_approval`
+-- Table structure for table `acms_approval`
 --
 
 CREATE TABLE `acms_approval` (
   `approval_id` int(11) NOT NULL,
   `approval_type` varchar(16) NOT NULL,
+  `approval_method` varchar(8) NOT NULL,
   `approval_datetime` datetime NOT NULL,
   `approval_deadline_datetime` datetime NOT NULL,
   `approval_comment` varchar(512) NOT NULL,
@@ -71,7 +72,7 @@ CREATE TABLE `acms_approval` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_approval_notification`
+-- Table structure for table `acms_approval_notification`
 --
 
 CREATE TABLE `acms_approval_notification` (
@@ -82,6 +83,7 @@ CREATE TABLE `acms_approval_notification` (
   `notification_request_user_id` int(11) DEFAULT NULL,
   `notification_receive_user_id` int(11) DEFAULT NULL,
   `notification_receive_usergroup_id` int(11) DEFAULT NULL,
+  `notification_except_user_ids` longtext NOT NULL,
   `notification_type` varchar(16) NOT NULL,
   `notification_datetime` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -89,7 +91,7 @@ CREATE TABLE `acms_approval_notification` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_blog`
+-- Table structure for table `acms_blog`
 --
 
 CREATE TABLE `acms_blog` (
@@ -114,7 +116,7 @@ CREATE TABLE `acms_blog` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_cache`
+-- Table structure for table `acms_cache`
 --
 
 CREATE TABLE `acms_cache` (
@@ -133,13 +135,14 @@ CREATE TABLE `acms_cache` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_cache_reserve`
+-- Table structure for table `acms_cache_reserve`
 --
 
 CREATE TABLE `acms_cache_reserve` (
   `cache_reserve_datetime` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
   `cache_reserve_entry_id` int(11) NOT NULL,
   `cache_reserve_blog_id` int(11) NOT NULL,
+  `cache_reserve_type` varchar(8) NOT NULL,
   PRIMARY KEY (`cache_reserve_datetime`,`cache_reserve_entry_id`,`cache_reserve_blog_id`),
   KEY `cache_reserve_datetime` (`cache_reserve_datetime`,`cache_reserve_blog_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -147,7 +150,7 @@ CREATE TABLE `acms_cache_reserve` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_category`
+-- Table structure for table `acms_category`
 --
 
 CREATE TABLE `acms_category` (
@@ -170,7 +173,7 @@ CREATE TABLE `acms_category` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_column`
+-- Table structure for table `acms_column`
 --
 
 CREATE TABLE `acms_column` (
@@ -186,9 +189,9 @@ CREATE TABLE `acms_column` (
   `column_field_3` varchar(255) NOT NULL,
   `column_field_4` varchar(255) NOT NULL,
   `column_field_5` varchar(255) NOT NULL,
-  `column_field_6` varchar(255) NOT NULL,
-  `column_field_7` varchar(255) NOT NULL,
-  `column_field_8` varchar(255) NOT NULL,
+  `column_field_6` longtext NOT NULL,
+  `column_field_7` longtext NOT NULL,
+  `column_field_8` longtext NOT NULL,
   `column_entry_id` int(11) NOT NULL,
   `column_blog_id` int(11) NOT NULL,
   PRIMARY KEY (`column_id`),
@@ -198,7 +201,7 @@ CREATE TABLE `acms_column` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_column_rev`
+-- Table structure for table `acms_column_rev`
 --
 
 CREATE TABLE `acms_column_rev` (
@@ -214,9 +217,9 @@ CREATE TABLE `acms_column_rev` (
   `column_field_3` varchar(255) NOT NULL,
   `column_field_4` varchar(255) NOT NULL,
   `column_field_5` varchar(255) NOT NULL,
-  `column_field_6` varchar(255) NOT NULL,
-  `column_field_7` varchar(255) NOT NULL,
-  `column_field_8` varchar(255) NOT NULL,
+  `column_field_6` longtext NOT NULL,
+  `column_field_7` longtext NOT NULL,
+  `column_field_8` longtext NOT NULL,
   `column_entry_id` int(11) NOT NULL,
   `column_blog_id` int(11) NOT NULL,
   `column_rev_id` int(11) NOT NULL,
@@ -228,7 +231,7 @@ CREATE TABLE `acms_column_rev` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_comment`
+-- Table structure for table `acms_comment`
 --
 
 CREATE TABLE `acms_comment` (
@@ -255,7 +258,7 @@ CREATE TABLE `acms_comment` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_config`
+-- Table structure for table `acms_config`
 --
 
 CREATE TABLE `acms_config` (
@@ -271,7 +274,7 @@ CREATE TABLE `acms_config` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_dashboard`
+-- Table structure for table `acms_dashboard`
 --
 
 CREATE TABLE `acms_dashboard` (
@@ -286,7 +289,7 @@ CREATE TABLE `acms_dashboard` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_entry`
+-- Table structure for table `acms_entry`
 --
 
 CREATE TABLE `acms_entry` (
@@ -326,7 +329,7 @@ CREATE TABLE `acms_entry` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_entry_rev`
+-- Table structure for table `acms_entry_rev`
 --
 
 CREATE TABLE `acms_entry_rev` (
@@ -339,6 +342,8 @@ CREATE TABLE `acms_entry_rev` (
   `entry_code` varchar(64) NOT NULL,
   `entry_status` varchar(16) NOT NULL DEFAULT 'open',
   `entry_approval` varchar(16) NOT NULL DEFAULT 'none',
+  `entry_approval_public_point` int(11) NOT NULL,
+  `entry_approval_reject_point` int(11) NOT NULL,
   `entry_form_status` varchar(16) NOT NULL DEFAULT 'open',
   `entry_sort` int(11) NOT NULL,
   `entry_user_sort` int(11) NOT NULL,
@@ -369,7 +374,7 @@ CREATE TABLE `acms_entry_rev` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_field`
+-- Table structure for table `acms_field`
 --
 
 CREATE TABLE `acms_field` (
@@ -381,10 +386,12 @@ CREATE TABLE `acms_field` (
   `field_cid` int(11) DEFAULT NULL,
   `field_uid` int(11) DEFAULT NULL,
   `field_bid` int(11) DEFAULT NULL,
+  `field_mid` int(11) DEFAULT NULL,
   `field_blog_id` int(11) NOT NULL,
   KEY `field_cid` (`field_cid`),
   KEY `field_uid` (`field_uid`),
   KEY `field_bid` (`field_bid`),
+  KEY `field_mid` (`field_mid`),
   KEY `field_eid` (`field_eid`,`field_key`,`field_search`),
   KEY `field_key` (`field_key`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -392,7 +399,7 @@ CREATE TABLE `acms_field` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_field_rev`
+-- Table structure for table `acms_field_rev`
 --
 
 CREATE TABLE `acms_field_rev` (
@@ -404,11 +411,13 @@ CREATE TABLE `acms_field_rev` (
   `field_cid` int(11) DEFAULT NULL,
   `field_uid` int(11) DEFAULT NULL,
   `field_bid` int(11) DEFAULT NULL,
+  `field_mid` int(11) DEFAULT NULL,
   `field_blog_id` int(11) NOT NULL,
   `field_rev_id` int(11) DEFAULT NULL,
   KEY `field_cid` (`field_cid`),
   KEY `field_uid` (`field_uid`),
   KEY `field_bid` (`field_bid`),
+  KEY `field_mid` (`field_mid`),
   KEY `field_eid` (`field_eid`,`field_key`,`field_search`,`field_rev_id`),
   KEY `field_key` (`field_key`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -416,7 +425,7 @@ CREATE TABLE `acms_field_rev` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_form`
+-- Table structure for table `acms_form`
 --
 
 CREATE TABLE `acms_form` (
@@ -432,7 +441,7 @@ CREATE TABLE `acms_form` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_fulltext`
+-- Table structure for table `acms_fulltext`
 --
 
 CREATE TABLE `acms_fulltext` (
@@ -454,7 +463,27 @@ CREATE TABLE `acms_fulltext` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_log_access`
+-- Table structure for table `acms_layout_grid`
+--
+
+CREATE TABLE `acms_layout_grid` (
+  `layout_grid_identifier` varchar(64) NOT NULL,
+  `layout_grid_serial` int(11) NOT NULL,
+  `layout_grid_class` varchar(64) NOT NULL,
+  `layout_grid_parent` int(11) NOT NULL,
+  `layout_grid_col` int(2) NOT NULL,
+  `layout_grid_row` int(2) NOT NULL,
+  `layout_grid_mid` int(11) DEFAULT NULL,
+  `layout_grid_preview` int(1) NOT NULL,
+  `layout_grid_tpl` varchar(256) DEFAULT NULL,
+  KEY `layout_grid_id` (`layout_grid_identifier`),
+  KEY `layout_grid` (`layout_grid_parent`,`layout_grid_col`,`layout_grid_row`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `acms_log_access`
 --
 
 CREATE TABLE `acms_log_access` (
@@ -482,7 +511,7 @@ CREATE TABLE `acms_log_access` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_log_form`
+-- Table structure for table `acms_log_form`
 --
 
 CREATE TABLE `acms_log_form` (
@@ -507,16 +536,22 @@ CREATE TABLE `acms_log_form` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_media`
+-- Table structure for table `acms_media`
 --
 
 CREATE TABLE `acms_media` (
   `media_id` int(11) NOT NULL,
   `media_type` varchar(16) NOT NULL,
+  `media_extension` varchar(64) NOT NULL,
   `media_path` varchar(512) NOT NULL,
+  `media_thumbnail` varchar(512) NOT NULL,
   `media_file_name` varchar(256) NOT NULL,
   `media_file_size` varchar(256) NOT NULL,
   `media_upload_date` datetime NOT NULL,
+  `media_field_1` varchar(256) NOT NULL,
+  `media_field_2` varchar(256) NOT NULL,
+  `media_field_3` varchar(256) NOT NULL,
+  `media_field_4` longtext NOT NULL,
   `media_blog_id` int(11) NOT NULL,
   PRIMARY KEY (`media_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -524,7 +559,7 @@ CREATE TABLE `acms_media` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_media_tag`
+-- Table structure for table `acms_media_tag`
 --
 
 CREATE TABLE `acms_media_tag` (
@@ -540,7 +575,7 @@ CREATE TABLE `acms_media_tag` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_moblog`
+-- Table structure for table `acms_moblog`
 --
 
 CREATE TABLE `acms_moblog` (
@@ -564,7 +599,7 @@ CREATE TABLE `acms_moblog` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_module`
+-- Table structure for table `acms_module`
 --
 
 CREATE TABLE `acms_module` (
@@ -598,6 +633,8 @@ CREATE TABLE `acms_module` (
   `module_page_scope` varchar(8) NOT NULL DEFAULT 'local',
   `module_order` varchar(255) DEFAULT NULL,
   `module_order_scope` varchar(8) NOT NULL DEFAULT 'local',
+  `module_custom_field` varchar(4) NOT NULL DEFAULT 'off',
+  `module_layout_use` int(1) NOT NULL,
   `module_blog_id` int(11) NOT NULL,
   PRIMARY KEY (`module_identifier`,`module_name`,`module_blog_id`,`module_scope`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -605,7 +642,7 @@ CREATE TABLE `acms_module` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_role`
+-- Table structure for table `acms_role`
 --
 
 CREATE TABLE `acms_role` (
@@ -618,6 +655,8 @@ CREATE TABLE `acms_role` (
   `role_entry_delete` varchar(8) NOT NULL,
   `role_category_create` varchar(8) NOT NULL,
   `role_category_edit` varchar(8) NOT NULL,
+  `role_form_view` varchar(8) NOT NULL,
+  `role_form_edit` varchar(8) NOT NULL,
   `role_tag_edit` varchar(8) NOT NULL,
   `role_media_upload` varchar(8) NOT NULL,
   `role_media_edit` varchar(8) NOT NULL,
@@ -635,7 +674,7 @@ CREATE TABLE `acms_role` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_role_blog`
+-- Table structure for table `acms_role_blog`
 --
 
 CREATE TABLE `acms_role_blog` (
@@ -647,7 +686,7 @@ CREATE TABLE `acms_role_blog` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_rule`
+-- Table structure for table `acms_rule`
 --
 
 CREATE TABLE `acms_rule` (
@@ -673,13 +712,20 @@ CREATE TABLE `acms_rule` (
   `rule_ecd_case` varchar(32) DEFAULT NULL,
   `rule_ua` varchar(32) DEFAULT NULL,
   `rule_ua_case` varchar(16) DEFAULT NULL,
+  `rule_cookie_key` varchar(255) DEFAULT NULL,
+  `rule_cookie_val` varchar(255) DEFAULT NULL,
+  `rule_cookie_case` varchar(16) DEFAULT NULL,
+  `rule_term_type` varchar(16) DEFAULT NULL,
+  `rule_term_start` datetime DEFAULT NULL,
+  `rule_term_end` datetime DEFAULT NULL,
+  `rule_term_case` varchar(16) DEFAULT NULL,
   `rule_blog_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_schedule`
+-- Table structure for table `acms_schedule`
 --
 
 CREATE TABLE `acms_schedule` (
@@ -697,7 +743,7 @@ CREATE TABLE `acms_schedule` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_sequence`
+-- Table structure for table `acms_sequence`
 --
 
 CREATE TABLE `acms_sequence` (
@@ -726,7 +772,7 @@ CREATE TABLE `acms_sequence` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_sequence_plugin`
+-- Table structure for table `acms_sequence_plugin`
 --
 
 CREATE TABLE `acms_sequence_plugin` (
@@ -738,7 +784,7 @@ CREATE TABLE `acms_sequence_plugin` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_session`
+-- Table structure for table `acms_session`
 --
 
 CREATE TABLE `acms_session` (
@@ -759,7 +805,7 @@ CREATE TABLE `acms_session` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_shop_address`
+-- Table structure for table `acms_shop_address`
 --
 
 CREATE TABLE `acms_shop_address` (
@@ -783,7 +829,7 @@ CREATE TABLE `acms_shop_address` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_shop_cart`
+-- Table structure for table `acms_shop_cart`
 --
 
 CREATE TABLE `acms_shop_cart` (
@@ -796,7 +842,7 @@ CREATE TABLE `acms_shop_cart` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_shop_receipt`
+-- Table structure for table `acms_shop_receipt`
 --
 
 CREATE TABLE `acms_shop_receipt` (
@@ -827,7 +873,7 @@ CREATE TABLE `acms_shop_receipt` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_shop_receipt_detail`
+-- Table structure for table `acms_shop_receipt_detail`
 --
 
 CREATE TABLE `acms_shop_receipt_detail` (
@@ -847,7 +893,7 @@ CREATE TABLE `acms_shop_receipt_detail` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_tag`
+-- Table structure for table `acms_tag`
 --
 
 CREATE TABLE `acms_tag` (
@@ -863,7 +909,7 @@ CREATE TABLE `acms_tag` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_tag_rev`
+-- Table structure for table `acms_tag_rev`
 --
 
 CREATE TABLE `acms_tag_rev` (
@@ -880,7 +926,7 @@ CREATE TABLE `acms_tag_rev` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_trackback`
+-- Table structure for table `acms_trackback`
 --
 
 CREATE TABLE `acms_trackback` (
@@ -902,7 +948,7 @@ CREATE TABLE `acms_trackback` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_user`
+-- Table structure for table `acms_user`
 --
 
 CREATE TABLE `acms_user` (
@@ -911,8 +957,10 @@ CREATE TABLE `acms_user` (
   `user_status` varchar(16) NOT NULL DEFAULT 'open',
   `user_sort` int(11) NOT NULL,
   `user_name` varchar(255) NOT NULL,
-  `user_pass` char(32) NOT NULL,
+  `user_pass` char(255) NOT NULL,
   `user_pass_reset` varchar(32) NOT NULL,
+  `user_twitter_id` varchar(64) NOT NULL,
+  `user_facebook_id` varchar(64) NOT NULL,
   `user_mail` varchar(255) NOT NULL,
   `user_mail_magazine` varchar(8) NOT NULL DEFAULT 'on',
   `user_mail_mobile` varchar(255) NOT NULL,
@@ -920,8 +968,10 @@ CREATE TABLE `acms_user` (
   `user_url` varchar(255) NOT NULL,
   `user_icon` varchar(256) NOT NULL,
   `user_auth` varchar(16) NOT NULL DEFAULT 'contributor',
+  `user_locale` varchar(16) NOT NULL,
   `user_indexing` varchar(8) NOT NULL DEFAULT 'on',
   `user_login_anywhere` varchar(8) NOT NULL DEFAULT 'off',
+  `user_login_terminal_restriction` varchar(8) NOT NULL DEFAULT 'off',
   `user_login_expire` date NOT NULL DEFAULT '9999-12-31',
   `user_login_datetime` datetime DEFAULT NULL,
   `user_updated_datetime` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
@@ -933,13 +983,14 @@ CREATE TABLE `acms_user` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_usergroup`
+-- Table structure for table `acms_usergroup`
 --
 
 CREATE TABLE `acms_usergroup` (
   `usergroup_id` int(11) NOT NULL,
   `usergroup_name` varchar(256) NOT NULL,
   `usergroup_description` varchar(512) NOT NULL,
+  `usergroup_approval_point` int(11) NOT NULL,
   `usergroup_role_id` int(11) NOT NULL,
   PRIMARY KEY (`usergroup_id`),
   KEY `usergroup_role_id` (`usergroup_role_id`),
@@ -949,7 +1000,7 @@ CREATE TABLE `acms_usergroup` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_usergroup_user`
+-- Table structure for table `acms_usergroup_user`
 --
 
 CREATE TABLE `acms_usergroup_user` (
@@ -961,7 +1012,7 @@ CREATE TABLE `acms_usergroup_user` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_workflow`
+-- Table structure for table `acms_workflow`
 --
 
 CREATE TABLE `acms_workflow` (
@@ -969,6 +1020,9 @@ CREATE TABLE `acms_workflow` (
   `workflow_status` varchar(8) NOT NULL DEFAULT 'close',
   `workflow_name` varchar(256) NOT NULL,
   `workflow_description` varchar(512) NOT NULL,
+  `workflow_type` varchar(8) NOT NULL DEFAULT 'series',
+  `workflow_public_point` int(11) NOT NULL,
+  `workflow_reject_point` int(11) NOT NULL,
   `workflow_start_group` int(11) NOT NULL,
   `workflow_last_group` int(11) NOT NULL,
   PRIMARY KEY (`workflow_blog_id`)
@@ -977,7 +1031,7 @@ CREATE TABLE `acms_workflow` (
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `acms_workflow_usergroup`
+-- Table structure for table `acms_workflow_usergroup`
 --
 
 CREATE TABLE `acms_workflow_usergroup` (

@@ -1,0 +1,72 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Category_EntrySummary -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN moduleField --><h2 class="moduleHeading">{module_heading}</h2><!-- END moduleField -->
+<!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
+<!-- END categoryUl#front --><!-- BEGIN category:loop -->
+	<!-- BEGIN notFound --><p>記事が見つかりませんでした。</p><!-- END notFound -->
+	<!-- BEGIN unit:loop -->
+		<!-- BEGIN entry:loop -->
+			<div class="media">
+				<a class="media-left" href="{url}">
+					<div style="width:{x}px; height:{y}px; overflow:hidden; position:relative;"><!-- BEGIN image:veil -->
+						<img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" style="left:{left}px; top:{top}px; position:relative;" /><!-- END image:veil --><!-- BEGIN noimage -->
+						noimage
+						<!-- END noimage -->
+					</div>
+				</a>
+				<div class="media-body">
+				<h4 class="media-heading"><a href="{url}">{title}</a></h4>
+					<p>{summary}[trim(351, '...')]</p>
+				</div>
+			</div>
+			<!-- END entry:loop -->
+		<!-- END unit:loop -->
+	<!-- END category:loop --><!-- BEGIN categoryLi#rear -->
+<!-- END categoryLi#rear --><!-- BEGIN categoryUl#rear -->
+<!-- END categoryUl#rear --><!-- END categoryEntryList:loop -->
+
+</div>
+<!-- END_MODULE Category_EntrySummary -->
+<!-- END layout#display -->
+
+
+<!-- BEGIN layout#dummy -->
+<div>
+<h2 class="moduleHeading">Image Sample</h2>
+	<div class="media">
+		<a class="media-left" href="#">
+			<div style="width:100px; height:100px; overflow:hidden; position:relative;"><!-- BEGIN image:veil -->
+				<img src="/images/noImage.png" style="left:0px; top:0px; position:relative;" />
+			</div>
+		</a>
+		<div class="media-body">
+		<h4 class="media-heading"><a href="#">エントリータイトル</a></h4>
+			<p>ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。</p>
+		</div>
+	</div>
+	<div class="media">
+		<a class="media-left" href="#">
+			<div style="width:100px; height:100px; overflow:hidden; position:relative;"><!-- BEGIN image:veil -->
+				<img src="/images/noImage.png" style="left:0px; top:0px; position:relative;" />
+			</div>
+		</a>
+		<div class="media-body">
+		<h4 class="media-heading"><a href="#">エントリータイトル</a></h4>
+			<p>ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。</p>
+		</div>
+	</div>
+	<div class="media">
+		<a class="media-left" href="#">
+			<div style="width:100px; height:100px; overflow:hidden; position:relative;"><!-- BEGIN image:veil -->
+				<img src="/images/noImage.png" style="left:0px; top:0px; position:relative;" />
+			</div>
+		</a>
+		<div class="media-body">
+		<h4 class="media-heading"><a href="#">エントリータイトル</a></h4>
+			<p>ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。</p>
+		</div>
+	</div>
+</div>
+<!-- END layout#dummy -->

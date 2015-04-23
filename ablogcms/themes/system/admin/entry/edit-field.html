@@ -8,7 +8,7 @@
 
 <!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]--><!-- BEGIN_MODULE Js -->
-<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<script type="text/javascript" src="/acms.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
 
 </head>
 <body>
@@ -16,15 +16,15 @@
 <!-- BEGIN_MODULE Admin_Entry_Edit -->
 <!-- BEGIN step#reapply -->
 <!-- BEGIN message -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>カスタムフィールドを保存しました</p><!-- END message -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>カスタムフィールドを保存しました</p><!-- END message -->
 
-<form action="" method="post" enctype="multipart/form-data" id="entryForm" class="acms-form acms-form-edit">
+<form action="" method="post" enctype="multipart/form-data" id="entryForm" class="acms-admin-form acms-admin-form-edit">
 	<div class="entryFormWrapper">
 		<!--#include file="/admin/entry/field.html" -->
 		<!--#include file="/admin/entry/field_foot.html" -->
 	</div>
 	<p class="comPost">
-		<input type="submit" name="ACMS_POST_Ios_EntryUpdateField" value="カスタムフィールドを保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+		<input type="submit" name="ACMS_POST_Ios_EntryUpdateField" value="カスタムフィールドを保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 		<input type="hidden" name="bid" value="%{BID}" />
 		<input type="hidden" name="cid" value="%{CID}" />
 		<input type="hidden" name="eid" value="%{EID}" />

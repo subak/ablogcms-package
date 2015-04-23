@@ -1,44 +1,82 @@
-/* ---------------
- label
---------------- */
+/* ------------------------------  
+ ラベル
+------------------------------- */
 // デフォルト
 .acms-label {
 	padding: 3px 7px;
 	border-radius: 3px;
-	background-color: lighten(@acms-label-black, 40%);
-	color: #ffffff;
+	background-color: @acms-label-default;
+	color: @acms-label-text-color;
 	.font-size(10);
 	vertical-align: middle;
 	& a{
-		color: #fff!important;
+		color: @acms-label-text-color!important;
 	}
-	& a:hover{
-		text-decoration: underline;
+	a&:hover{
+		color: @acms-label-text-color;
+		text-decoration: none;
+		background: darken(@acms-label-default, 17%);
+		cursor: pointer;
 	}
 }
+
+// 大きめ
+.acms-label-large {
+	.font-size(16);
+}
+
+.acms-label-group {
+	.acms-label:first-child {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.acms-label:last-child {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+	.acms-label-side:first-child {
+		border-right: 1px solid @acms-label-text-color;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.acms-label-side:last-child {
+		border-left: 1px solid @acms-label-text-color;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+
 
 // success
 .acms-label-success {
 	background-color: @acms-label-color;
+	a&:hover{
+		background: darken(@acms-label-color, 17%);
+	}
 }
 // info
 .acms-label-info {
-	background-color: spin(lighten(@acms-label-color, 10%), 50);
+	background-color: @acms-label-info-color;
+	a&:hover{
+		background: darken(@acms-label-info-color, 17%);
+	}
 }
 // warning
 .acms-label-warning {
-	background-color: spin(lighten(@acms-label-color, 10%), -120);
+	background-color: @acms-label-warning-color;
+	a&:hover{
+		background: darken(@acms-label-warning-color, 17%);
+	}
 }
 // danger
 .acms-label-danger {
-	background-color: spin(lighten(@acms-label-color, 10%), -180);
-}
-// box
-.acms-admin-labelbox {
-	min-width: 55px;
+	background-color: @acms-label-danger-color;
+	a&:hover{
+		background: darken(@acms-label-danger-color, 17%);
+	}
 }
 
-.acms-label-approval {
-	border-radius: 10px;
-	background-color: #E20020;
+// 管理画面内にてtdの幅が変わってしまってレイアウトが崩れてしまう場合
+.acms-admin-labelbox {
+	min-width: 55px;
 }

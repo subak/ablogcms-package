@@ -1,73 +1,73 @@
 <!-- BEGIN_MODULE Admin_ApprovalHistory -->
-<header class="acms-grid">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-entry"></i>承認履歴一覧</h1>
+<header class="acms-admin-grid">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-entry"></i>承認履歴一覧</h1>
 	</div>
 </header>
 
 <!-- BEGIN index#notFound -->
-<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>承認履歴がありません。</p><!-- END index#notFound -->
+<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>承認履歴がありません。</p><!-- END index#notFound -->
 
-<div class="acms-filter">
-	<form action="" method="post" class="acms-form">
-		<label for="filter-order" class="acms-show-sp">ソート:</label>
+<div class="acms-admin-filter">
+	<form action="" method="post" class="acms-admin-form">
+		<label for="filter-order" class="acms-admin-show-sp">ソート:</label>
 		<select class="input-sm" name="order" id="filter-order">
 			<option value="desc"{order:selected#desc}>日付 (降順)</option>
 			<option value="asc"{order:selected#asc}>日付 (昇順)</option>
 		</select>
 		&nbsp;
-		<label for="filter-limit" class="acms-show-sp">表示数:</label>
+		<label for="filter-limit" class="acms-admin-show-sp">表示数:</label>
 		<select name="limit" id="filter-limit"><!-- BEGIN limit:loop -->
 			<option value="{limit}"{selected}>{limit}</option><!-- END limit:loop -->
 		</select>
 		
 		<input type="hidden" name="bid" value="%{BID}" />
-		<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-btn-admin acms-btn-admin-info acms-width-sp" />
+		<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-admin-btn-admin acms-admin-btn-admin-info acms-admin-width-sp" />
 		<input type="hidden" name="admin" value="approval_index" />
 	</form>
 </div><!-- /.acms-filter -->
 
-<form method="post" action="" id="entry-list-form" class="acms-form">
+<form method="post" action="" id="entry-list-form" class="acms-admin-form">
 	<!-- BEGIN index -->
-	<table class="adminTable acms-table-admin acms-table-heading acms-table-hover">
-		<!-- <thead class="acms-table-admin-title js-acms_fix_target"> -->
+	<table class="adminTable acms-admin-table-admin acms-admin-table-heading acms-admin-table-hover">
+		<!-- <thead class="acms-admin-table-admin-title js-acms_fix_target"> -->
 		<thead>
 			<tr>
-				<th class="acms-show-sp">日時</th>
-				<th class="acms-hide-sp">タイプ</th>
-				<th class="acms-hide-sp">EID / タイトル / RVID / バージョン名</th>
-				<th class="acms-hide-sp">操作ユーザー</th>
-				<th class="acms-show-sp">コメント</th>
+				<th class="acms-admin-show-sp">日時</th>
+				<th class="acms-admin-hide-sp">タイプ</th>
+				<th class="acms-admin-hide-sp">EID / タイトル / RVID / バージョン名</th>
+				<th class="acms-admin-hide-sp">操作ユーザー</th>
+				<th class="acms-admin-show-sp">コメント</th>
 			</tr>
 		</thead>
 		<tbody>
 			<!-- BEGIN history:loop -->
 			<tr data-sort-level="parallel" data-sort-name="sort-{sort#eid}">
 				<td>
-					<ul class="acms-list-inline">
+					<ul class="acms-admin-list-inline">
 						<li>{datetime}[date('Y/m/d H:i')]</li>
 					</ul>
 				</td>
 				<td>
 					<small>
 						<!-- BEGIN type#reject -->
-						<span class="acms-label acms-label-warning admin-status-label">承認却下</span><!-- END type#reject --><!-- BEGIN type#public -->
-						<span class="acms-label acms-label-info admin-status-label">最終承認</span><!-- END type#public --><!-- BEGIN type#request -->
-						<span class="acms-label admin-status-label">承認依頼</span><!-- END type#request --><!-- BEGIN type#trash -->
-						<span class="acms-label acms-label-danger admin-status-label">削除依頼</span><!-- END type#trash -->
+						<span class="acms-admin-label acms-admin-label-warning admin-status-label">承認却下</span><!-- END type#reject --><!-- BEGIN type#public -->
+						<span class="acms-admin-label acms-admin-label-info admin-status-label">最終承認</span><!-- END type#public --><!-- BEGIN type#request -->
+						<span class="acms-admin-label admin-status-label">承認依頼</span><!-- END type#request --><!-- BEGIN type#trash -->
+						<span class="acms-admin-label acms-admin-label-danger admin-status-label">削除依頼</span><!-- END type#trash -->
 					</small>
 				</td>
 				<td><!-- BEGIN_IF [{entryTitle}/nem/] -->
-					<span class="acms-label label-default">{eid}</span>
+					<span class="acms-admin-label label-default">{eid}</span>
 					<a href="{entryUrl}">{entryTitle}</a><!-- END_IF -->
 
 					<!-- BEGIN_IF [{title}/nem/] -->
-					<span class="acms-label label-default">{rvid}</span>
+					<span class="acms-admin-label label-default">{rvid}</span>
 					<a href="{revisionUrl}">{title}</a><!-- ELSE -->
 					<p>バージョンが削除されています</p><!-- END_IF -->
 				</td>
 				<td>
-					<img src="%{ARCHIVES_DIR}{requestUserIcon}" width="24" height="24" class="acms-admin-icon" style="vertical-align:middle;">{requestUser}
+					<img src="%{ARCHIVES_DIR}{requestUserIcon}" width="24" height="24" class="acms-admin-admin-icon" style="vertical-align:middle;">{requestUser}
 				</td>
 				<td>
 					{comment}
@@ -79,11 +79,11 @@
 	<!-- END index -->
 
 	<!-- BEGIN index -->
-	<div class="acms-grid">
-		<div class="acms-col-6">
+	<div class="acms-admin-grid">
+		<div class="acms-admin-col-md-6">
 			<!-- BEGIN pager:veil -->
-			<div class="acms-pager-container">
-				<ul class="acms-pager"><!-- BEGIN backLink -->
+			<div class="acms-admin-pager-container">
+				<ul class="acms-admin-pager"><!-- BEGIN backLink -->
 					<li class="prev"><a href="{url}">&laquo;&nbsp;前へ</a></li><!-- END backLink --><!-- BEGIN page:loop -->
 					<li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop --><!-- BEGIN lastPage:veil -->
 					<li class="last"><a href="{lastPageUrl}">...{lastPage}</a></li><!-- END lastPage:veil --><!-- BEGIN forwardLink -->
@@ -92,8 +92,8 @@
 			</div>
 			<!-- END pager:veil -->
 		</div>
-		<div class="acms-col-6">
-			<div class="acms-itemsAmount-container">
+		<div class="acms-admin-col-md-6">
+			<div class="acms-admin-itemsAmount-container">
 				<p>{itemsFrom}件 - {itemsTo}件 / 全{itemsAmount}件</p>
 			</div>
 		</div>

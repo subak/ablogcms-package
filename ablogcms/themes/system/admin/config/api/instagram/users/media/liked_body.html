@@ -1,0 +1,25 @@
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>表示件数<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="一度に表示される件数です。"></i>
+</th>
+		<td>
+			<input type="text" name="instagram_users_media_liked_limit" value="{instagram_users_media_liked_limit}" size="4" class="acms-admin-form-width-mini" />
+			<input type="hidden" name="config[]" value="instagram_users_media_liked_limit" />
+			<input type="hidden" name="instagram_users_media_liked_limit:convert" value="a" />
+			<input type="hidden" name="instagram_users_media_liked_limit:validator#digits" id="validator-instagram_users_media_liked_limit-digits" />
+			<label for="validator-instagram_users_media_liked_limit-digits" class="validator-result-{instagram_users_media_liked_limit:validator#digits}">数字を入力して下さい。</label>
+		</td>
+	</tr>
+	<tr>
+		<th>APIリクエスト キャッシュ有効時間<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="APIリクエストの結果を、ここで設定した秒数の間だけキャッシュ利用します。ページのキャッシュとは異なることに注意してください。"></i>
+</th>
+		<td>
+			<input type="text" name="instagram_users_media_liked_cache_expre" value="{instagram_users_media_liked_cache_expre}" size="8" class="acms-admin-form-width-mini" /> 秒
+			<input type="hidden" name="config[]" value="instagram_users_media_liked_cache_expre" />
+			<input type="hidden" name="instagram_users_media_liked_cache_expre:validator#digits" id="validator-instagram_users_media_liked_cache_expre-digits" />
+			<label for="validator-instagram_users_media_liked_cache_expre-digits" class="validator-result-{instagram_users_media_liked_cache_expre:validator#digits}">数字を入力して下さい。</label>
+		</td>
+	</tr>
+</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->

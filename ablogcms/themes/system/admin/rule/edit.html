@@ -1,8 +1,8 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-rule"></i>ルール管理</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-rule"></i>ルール管理</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
@@ -10,37 +10,37 @@
 <!-- BEGIN_MODULE Admin_Rule_Edit -->
 
 <!-- BEGIN msg#insert -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>ルールを作成しました</p><!-- END msg#insert --><!-- BEGIN msg#update -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>ルールを保存しました</p><!-- END msg#update --><!-- BEGIN msg#delete -->
-<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>ルールを削除しました</p><!-- END msg#delete -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>ルールを作成しました</p><!-- END msg#insert --><!-- BEGIN msg#update -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>ルールを保存しました</p><!-- END msg#update --><!-- BEGIN msg#delete -->
+<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>ルールを削除しました</p><!-- END msg#delete -->
 
 <!-- BEGIN step#reapply -->
 
 <!-- BEGIN headline#insert --><!-- END headline#insert -->
 <!-- BEGIN headline#update --><!-- END headline#update -->
 
-<form method="post" action="" class="acms-form">
+<form method="post" action="" class="acms-admin-form">
 	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
 		<div class="acms_fix_bg_index">
-			<a href="%{SCRIPT_ROOT}bid/%{BID}/admin/rule_index/" class="acms-btn-admin">一覧</a>
+			<a href="%{SCRIPT_ROOT}bid/%{BID}/admin/rule_index/" class="acms-admin-btn-admin">一覧</a>
 
 			<!-- BEGIN submit#insert -->
-			<input type="submit" name="ACMS_POST_Rule_Insert" value="作成" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<input type="submit" name="ACMS_POST_Rule_Insert" value="作成" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 			<!-- END submit#insert -->
 
 			<!-- BEGIN submit#update -->
-			<input type="submit" name="ACMS_POST_Rule_Update" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<input type="submit" name="ACMS_POST_Rule_Update" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-			<input type="submit" name="ACMS_POST_Rule_Delete" value="削除" onclick="return confirm('ルールに関連づけられたコンフィグも一緒に削除されます。\nよろしいですか？');" class="acms-btn-admin acms-btn-admin-danger" />
+			<input type="submit" name="ACMS_POST_Rule_Delete" value="削除" onclick="return confirm('ルールに関連づけられたコンフィグも一緒に削除されます。\nよろしいですか？');" class="acms-admin-btn-admin acms-admin-btn-admin-danger" />
 			<input type="hidden" name="takeover" value="{takeover}" />
 			<!-- END submit#update -->
 		</div>
 	</div>
 
-	<h3 class="acms-admin-title2">基本情報</h3>
-	<table class="adminTable acms-table-admin-edit">
+	<h3 class="acms-admin-admin-title2">基本情報</h3>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>ルール名<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このルールを管理するための名前です。（日本語可）"></i></th>
+			<th>ルール名<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="このルールを管理するための名前です。（日本語可）"></i></th>
 			<td>
 				<input type="text" name="name" value="{name}" size="50" />
 				<input type="hidden" name="rule[]" value="name" />
@@ -49,7 +49,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>ステータス<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このルールが有効か無効かの設定です。"></i></th>
+			<th>ステータス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="このルールが有効か無効かの設定です。"></i></th>
 			<td>
 				<select name="status">
 					<option value="open"{status:selected#open}>有効</option>
@@ -61,19 +61,19 @@
 			</td>
 		</tr>
 		<tr>
-			<th>説明<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このルールがどのような動作をするかなどのメモです。"></i></th>
+			<th>説明<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="このルールがどのような動作をするかなどのメモです。"></i></th>
 			<td>
 				<textarea name="description" style="width:100%;" rows="3">{description}</textarea>
 				<input type="hidden" name="rule[]" value="description" />
 			</td>
 		</tr>
 		<tr>
-			<th>グローバル<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると、このルールが下の階層のブログでも使用できます。"></i></th>
+			<th>グローバル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると、このルールが下の階層のブログでも使用できます。"></i></th>
 			<td>
 				 <!-- BEGIN_MODULE Touch_BlogParent -->
 				<input type="hidden" name="scope" value="local" />
-				<label for="input-checkbox-scope" class="acms-form-checkbox">
-					<input type="checkbox" name="scope" value="global"{scope:checked#global} id="input-checkbox-scope" /><i class="acms-ico-checkbox"></i>下の階層のブログが利用することを許可する
+				<label for="input-checkbox-scope" class="acms-admin-form-checkbox">
+					<input type="checkbox" name="scope" value="global"{scope:checked#global} id="input-checkbox-scope" /><i class="acms-admin-ico-checkbox"></i>下の階層のブログが利用することを許可する
 				</label>
 				<input type="hidden" name="rule[]" value="scope" />
 				 <!-- END_MODULE Touch_BlogParent -->
@@ -84,10 +84,10 @@
 		</tr>
 	</table>
 
-	<h3 class="acms-admin-title2">詳細情報</h3>
-	<table class="adminTable acms-table-admin-edit" id="js-arg_reference">
+	<h3 class="acms-admin-admin-title2">詳細情報</h3>
+	<table class="adminTable acms-admin-table-admin-edit" id="js-arg_reference">
 		<tr>
-			<th>エイリアスID<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エイリアスの管理ID（番号）を指定します。"></i></th>
+			<th>エイリアスID<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="エイリアスの管理ID（番号）を指定します。"></i></th>
 			<td>aid</td>
 			<td>
 				<select name="aid_case">
@@ -111,7 +111,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>ユーザーID<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユーザーの管理ID（番号）を指定します。"></i></th>
+			<th>ユーザーID<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユーザーの管理ID（番号）を指定します。"></i></th>
 			<td>uid</td>
 			<td>
 				<select name="uid_case">
@@ -135,7 +135,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>カテゴリーID<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの管理ID（番号）を指定します。"></i></th>
+			<th>カテゴリーID<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの管理ID（番号）を指定します。"></i></th>
 			<td>cid</td>
 			<td>
 				<select name="cid_case">
@@ -159,7 +159,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>エントリーID<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーの管理ID（番号）を指定します。"></i></th>
+			<th>エントリーID<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーの管理ID（番号）を指定します。"></i></th>
 			<td>eid</td>
 			<td>
 				<select name="eid_case">
@@ -183,7 +183,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>ユーザーコード<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユーザーの管理名（英数）を指定します。"></i></th>
+			<th>ユーザーコード<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユーザーの管理名（英数）を指定します。"></i></th>
 			<td>ucd</td>
 			<td>
 				<select name="ucd_case">
@@ -205,7 +205,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>カテゴリーコード<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの管理名（英数）を指定します。"></i></th>
+			<th>カテゴリーコード<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの管理名（英数）を指定します。"></i></th>
 			<td>ccd</td>
 			<td>
 				<select name="ccd_case">
@@ -227,7 +227,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>エントリーコード<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーの管理名（英数）を指定します。"></i></th>
+			<th>エントリーコード<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーの管理名（英数）を指定します。"></i></th>
 			<td>ecd</td>
 			<td>
 				<select name="ecd_case">
@@ -249,7 +249,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>ユーザーエージェント<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="サイトを表示する機器、ブラウザーなどを指定します。"></i></th>
+			<th>ユーザーエージェント<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="サイトを表示する機器、ブラウザーなどを指定します。"></i></th>
 			<td>ua</td>
 			<td>
 				<select name="ua_case">
@@ -266,8 +266,8 @@
 				<input type="hidden" name="rule[]" value="ua" />
 			</td>
 		</tr>
-		<!-- <tr>
-			<th>Cookie<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="判定に使用するcookieのキーと値を設定します。"></i></th>
+		<tr>
+			<th>Cookie<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="判定に使用するcookieのキーと値を設定します。"></i></th>
 			<td>
 				<input type="text" name="cookie_key" value="{cookie_key}">
 				<input type="hidden" name="rule[]" value="cookie_key">
@@ -290,9 +290,9 @@
 				<input type="text" name="cookie_val" value="{cookie_val}">
 				<input type="hidden" name="rule[]" value="cookie_val">
 			</td>
-		</tr> -->
+		</tr>
 		<tr>
-			<th>期間<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="期間を指定します。"></i></th>
+			<th>期間<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="期間を指定します。"></i></th>
 			<td></td>
 			<td>
 				<select name="term_case">
@@ -361,11 +361,11 @@
 			<th></th>
 			<td colspan="2"></td>
 			<td>
-				<a href="#" class="updateDate">日付</a>
-				<input type="text" name="term_start_date" value="{term_start_date}" placeholder="1000-01-01" size="15" class="js-rule_term_start_date" />
-				<a href="#" class="updateTime">時刻</a>
+				<a href="#" class="updateDate" rel="entryStartDate">日付</a>
+				<input type="text" name="term_start_date" value="{term_start_date}" placeholder="1000-01-01" size="15" class="js-rule_term_start_date" id="entryStartDate" />
+				<a href="#" class="updateTime" rel="entryStartTime">時刻</a>
 
-				<input type="text" name="term_start_time" value="{term_start_time}" placeholder="00:00:00" size="12" />
+				<input type="text" name="term_start_time" value="{term_start_time}" placeholder="00:00:00" size="12" id="entryStartTime" />
 				<input type="hidden" name="rule[]" value="term_start_date" />
 				<input type="hidden" name="rule[]" value="term_start_time" />
 				〜
@@ -375,11 +375,11 @@
 			<th></th>
 			<td colspan="2"></td>
 			<td>
-				<a href="#" class="updateDate">日付</a>
-				<input type="text" name="term_end_date" value="{term_end_date}" placeholder="9999-12-31" size="15" class="js-rule_term_end_date" />
-				<a href="#" class="updateTime">時刻</a>
+				<a href="#" class="updateDate" rel="entryEndDate">日付</a>
+				<input type="text" name="term_end_date" value="{term_end_date}" placeholder="9999-12-31" size="15" class="js-rule_term_end_date" / id="entryEndDate">
+				<a href="#" class="updateTime" rel="entryEndTime">時刻</a>
 
-				<input type="text" name="term_end_time" value="{term_end_time}" placeholder="23:59:59" size="12" />
+				<input type="text" name="term_end_time" value="{term_end_time}" placeholder="23:59:59" size="12" id="entryEndTime" />
 				<input type="hidden" name="rule[]" value="term_end_date" />
 				<input type="hidden" name="rule[]" value="term_end_time" /></td>
 			</td>

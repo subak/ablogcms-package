@@ -1,15 +1,15 @@
-<header class="acms-grid-r">
-	<div class="acms-col-12">
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-12">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
-	<div class="acms-col-12 acms-cler">
-		<div class="acms-admin-title acms-module-title-wrapper">
-			<i class="acms-icon acms-icon-config_entry_headline"></i>
-			<div class="acms-module-title">
+	<div class="acms-admin-col-12 acms-admin-cler">
+		<div class="acms-admin-admin-title acms-admin-module-title-wrapper">
+			<i class="acms-admin-icon acms-admin-icon-config_entry_headline"></i>
+			<div class="acms-admin-module-title">
 				<!-- BEGIN_MODULE Admin_Rule_Name -->
 				<strong>ルール : {name} </strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 				<strong>モジュールID : {label} ( {identifier} ) </strong><!-- END_MODULE Admin_Module_Name -->
-				<h1>ヘッドライン<span class="acms-module-en">Entry_Headline</span></h1>
+				<h1>ヘッドライン<span class="acms-admin-module-en">Entry_Headline</span></h1>
 			</div>
 		</div>
 	</div>
@@ -17,114 +17,17 @@
 
 <!-- BEGIN_MODULE Admin_Config -->
 <!-- BEGIN_IF [{notice_mess}/nem/] -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>Entry_Headline 設定を保存しました</p>
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>Entry_Headline 設定を保存しました</p>
 <!-- END_IF -->
 
-<form action="" method="post" class="acms-form">
-	<div class="acms-form-group acms-margin-sp">
-		<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+<form action="" method="post" class="acms-admin-form">
+	<div class="acms-admin-form-group acms-admin-margin-sp">
+		<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
 
-		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-admin-btn-admin acms-admin-float-right acms-admin-float-none-sp"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
 	</div>
-
-	<table class="adminTable acms-table-admin-edit">
-		<tr>
-			<th>表示順<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="どのようなルールに従って表示されるかの設定です。フィールド、数値フィールドはカスタムフィールドでの検索結果の表示時に利用します。"></i></th>
-			<td>
-				<select name="entry_headline_order">
-					<option value="datetime-asc"{entry_headline_order:selected#datetime-asc}>日時 ( 昇順 )</option>
-					<option value="datetime-desc"{entry_headline_order:selected#datetime-desc}>日時 ( 降順 )</option>
-					<option value="code-asc"{entry_headline_order:selected#code-asc}>ファイル名 ( 昇順 )</option>
-					<option value="code-desc"{entry_headline_order:selected#code-desc}>ファイル名 ( 降順 )</option>
-					<option value="id-asc"{entry_headline_order:selected#id-asc}>ID ( 昇順 )</option>
-					<option value="id-desc"{entry_headline_order:selected#id-desc}>ID ( 降順 )</option>
-					<option value="sort-asc"{entry_headline_order:selected#sort-asc}>表示順 ( 昇順 )</option>
-					<option value="sort-desc"{entry_headline_order:selected#sort-desc}>表示順 ( 降順 )</option>
-					<option value="field-asc"{entry_headline_order:selected#field-asc}>フィールド ( 昇順 )</option>
-					<option value="field-desc"{entry_headline_order:selected#field-desc}>フィールド ( 降順 )</option>
-					<option value="intfield-asc"{entry_headline_order:selected#intfield-asc}>数値フィールド ( 昇順 )</option>
-					<option value="intfield-desc"{entry_headline_order:selected#intfield-desc}>数値フィールド ( 降順 )</option>
-					<option value="random"{entry_headline_order:selected#random}>ランダム</option>
-				</select>
-				<input type="hidden" name="config[]" value="entry_headline_order" />
-			</td>
-		</tr>
-		<tr>
-			<th>表示件数<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="一度に表示される件数です。"></i></th>
-			<td>
-				<input type="text" name="entry_headline_limit" value="{entry_headline_limit}" size="4" class="acms-form-width-mini" />
-				<input type="hidden" name="config[]" value="entry_headline_limit" />
-				<input type="hidden" name="entry_headline_limit:convert" value="a" />
-				<input type="hidden" name="entry_headline_limit:validator#digits" id="validator-entry_headline_limit-digits" />
-				<label for="validator-entry_headline_limit-digits" class="validator-result-{entry_headline_limit:validator#digits}">数字を入力して下さい。</label>
-			</td>
-		</tr>
-		<tr>
-			<th>オフセット<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="表示順で並び替えた後の先頭から数えて、設定した件数のエントリーを表示しなくします。"></i></th>
-			<td>
-				<input type="text" name="entry_headline_offset" value="{entry_headline_offset}" size="4" class="acms-form-width-mini" />
-				<input type="hidden" name="config[]" value="entry_headline_offset" />
-				<input type="hidden" name="entry_headline_offset:convert" value="a" />
-				<input type="hidden" name="entry_headline_offset:validator#digits" id="validator-entry_headline_offset-digits" />
-				<label for="validator-entry_headline_offset-digits" class="validator-result-{entry_headline_offset:validator#digits}">数字を入力して下さい。</label>
-			</td>
-		</tr>
-		<tr>
-			<th>新着期間<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーの公開日時を基点に、ここで設定した期間中はnewブロックが出力されます。"></i></th>
-			<td>
-				<input type="text" name="entry_headline_newtime" value="{entry_headline_newtime}" size="8" class="acms-form-width-mini" /> 秒
-				<input type="hidden" name="config[]" value="entry_headline_newtime" />
-				<input type="hidden" name="entry_headline_newtime:convert" value="a" />
-				<input type="hidden" name="entry_headline_newtime:validator#digits" id="validator-entry_headline_newtime-digits" />
-				<label for="validator-entry_headline_newtime-digits" class="validator-result-{entry_headline_newtime:validator#digits}">数字を入力してください。</label>
-			</td>
-		</tr>
-		<tr>
-			<th>前後に表示するページ数<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ページャーの設定です。表示中のページを基点として、ここで設定した値の数だけページ番号が表示されます。"></i></th>
-			<td>
-				<input type="text" name="entry_headline_pager_delta" value="{entry_headline_pager_delta}" size="4" class="acms-form-width-mini" />
-				<input type="hidden" name="config[]" value="entry_headline_pager_delta" />
-				<input type="hidden" name="entry_headline_pager_delta:validator#digits" id="validator-entry_headline_pager_delta-digits" />
-				<label for="validator-entry_headline_pager_delta-digits" class="validator-result-{entry_headline_pager_delta:validator#digits}">数字を入力してください。</label>
-			</td>
-		</tr>
-		<tr>
-			<th>現在のページの要素の属性<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ページャーの設定です。表示中のページ番号に割り当てられる属性です。（変数名 : pageCurAttr）"></i></th>
-			<td>
-				<input type="text" name="entry_headline_pager_cur_attr" value="{entry_headline_pager_cur_attr}" size="20" />
-				<input type="hidden" name="config[]" value="entry_headline_pager_cur_attr" />
-			</td>
-		</tr>
-		<tr>
-			<th>インデキシング<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックを外すと、インデキシングされていないエントリーも表示されます。"></i></th>
-			<td>
-				<input type="hidden" name="entry_headline_indexing" value="off" />
-				<label for="input-checkbox-entry_headline_indexing" class="acms-form-checkbox"><input type="checkbox" name="entry_headline_indexing" value="on"{entry_headline_indexing:checked#on} id="input-checkbox-entry_headline_indexing" /><i class="acms-ico-checkbox"></i>インデキシングされているエントリーのみ表示する</label>
-				<input type="hidden" name="config[]" value="entry_headline_indexing" />
-			</td>
-		</tr>
-		<tr>
-			<th>シークレットエントリー<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると、ログインしていなくてもシークレットブログのエントリーが表示されます。<br />ステータスがシークレットの子ブログのエントリーを表示するためには、モジュールIDの設定でブログIDは指定せず、ブログの階層は下階層のブログを含めるようにしてください。"></i></th>
-			<td>
-				<input type="hidden" name="entry_headline_secret" value="off" />
-				<label for="input-checkbox-entry_headline_secret" class="acms-form-checkbox"><input type="checkbox" name="entry_headline_secret" value="on"{entry_headline_secret:checked#on} id="input-checkbox-entry_headline_secret" /><i class="acms-ico-checkbox"></i>ログインしていなくてもシークレットブログのエントリーを表示する</label>
-				<input type="hidden" name="config[]" value="entry_headline_secret" />
-			</td>
-		</tr>
-		<tr>
-			<th>詳細のエントリー表示<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると詳細ページでそのページのエントリーを除いたものが出力されます。"></i></th>
-			<td>
-				<input type="hidden" name="entry_headline_hidden_current_entry" value="off" />
-				<label for="input-checkbox-entry_headline_hidden_current_entry" class="acms-form-checkbox"><input type="checkbox" name="entry_headline_hidden_current_entry" value="on"{entry_headline_hidden_current_entry:checked#on} id="input-checkbox-entry_headline_hidden_current_entry" /><i class="acms-ico-checkbox"></i>現在表示されているエントリーを表示しない</label>
-				<input type="hidden" name="config[]" value="entry_headline_hidden_current_entry" />
-			</td>
-		</tr>
-	</table>
-	
-	<!-- BEGIN_MODULE Admin_Rule_Name -->
-	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
-	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+	<!--#include file="/admin/config/entry/headline_body.html"-->
 </form>
 <!-- END_MODULE Admin_Config -->

@@ -1,37 +1,37 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title">
-			<i class="acms-icon acms-icon-config_output"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title">
+			<i class="acms-admin-icon acms-admin-icon-config_output"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
 				<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 				<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->出力設定
 		</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Config -->
 <!-- BEGIN_IF [{notice_mess}/nem/] -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>出力設定を保存しました</p><!-- END_IF -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>出力設定を保存しました</p><!-- END_IF -->
 
-<form action="" method="post" class="acms-form">
-	<p class="transaction-notice-{config:validator} acms-alert acms-alert-danger">コンフィグを保存出来ませんでした。</p>
+<form action="" method="post" class="acms-admin-form">
+	<p class="transaction-notice-{config:validator} acms-admin-alert acms-admin-alert-danger">コンフィグを保存出来ませんでした。</p>
 	
 	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
 		<div class="acms_fix_bg_index">
-			<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+			<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
 
-			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-admin-btn-admin acms-admin-float-right acms-admin-float-none-sp"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
 		</div>
 	</div>
 
-	<h3 class="acms-admin-title2 ">変換</h3>
-	<table class="adminTable acms-table-admin-edit">
+	<h3 class="acms-admin-admin-title2 ">変換</h3>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>文字コード<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ブログの文字コードを「Shift_JIS」「UTF-8」「EUC-JP」に変更します。"></i>
+			<th>文字コード<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ブログの文字コードを「Shift_JIS」「UTF-8」「EUC-JP」に変更します。"></i>
 			</th>
 			<td>
 				<select name="charset">
@@ -43,36 +43,36 @@
 			</td>
 		</tr>
 		<tr>
-			<th>HTTP圧縮<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="対応ブラウザからのアクセス時に、gzip圧縮でデータを送信します。"></i></th>
+			<th>HTTP圧縮<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="対応ブラウザからのアクセス時に、gzip圧縮でデータを送信します。"></i></th>
 			<td>
 				<input type="hidden" name="zip_http" value="off" />
-				<label for="input-checkbox-zip_http" class="acms-form-checkbox"><input type="checkbox" name="zip_http" value="on"{zip_http:checked#on} id="input-checkbox-zip_http" /><i class="acms-ico-checkbox"></i>使用する</label>
+				<label for="input-checkbox-zip_http" class="acms-admin-form-checkbox"><input type="checkbox" name="zip_http" value="on"{zip_http:checked#on} id="input-checkbox-zip_http" /><i class="acms-admin-ico-checkbox"></i>使用する</label>
 				<input type="hidden" name="config[]" value="zip_http" />
 				※圧縮ページの読み込みに対応しているブラウザのみ有効になります。
 			</td>
 		</tr>
 		<tr>
-			<th>HTMLコメントの削除<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="出力するHTMLソースからHTMLコメント（&lt;-- コメント -- &gt;）を取り除きます"></i></th>
+			<th>HTMLコメントの削除<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="出力するHTMLソースからHTMLコメント（&lt;-- コメント -- &gt;）を取り除きます"></i></th>
 			<td>
 				<input type="hidden" name="remove_comment" value="off" />
-				<label for="input-checkbox-remove_comment" class="acms-form-checkbox">
-					<input type="checkbox" name="remove_comment" value="on"{remove_comment:checked#on} id="input-checkbox-remove_comment" /><i class="acms-ico-checkbox"></i>HTMLコメントを取り除く
+				<label for="input-checkbox-remove_comment" class="acms-admin-form-checkbox">
+					<input type="checkbox" name="remove_comment" value="on"{remove_comment:checked#on} id="input-checkbox-remove_comment" /><i class="acms-admin-ico-checkbox"></i>HTMLコメントを取り除く
 				</label>
 				<input type="hidden" name="config[]" value="remove_comment" />
 			</td>
 		</tr>
 		<tr>
-			<th>余分な空白の削除<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="出力するHTMLソースから余分な空白を取り除きます。連続する空白文字（改行、スペース、タブ）の二つ目以降が取り除かれます。"></i></th>
+			<th>余分な空白の削除<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="出力するHTMLソースから余分な空白を取り除きます。連続する空白文字（改行、スペース、タブ）の二つ目以降が取り除かれます。"></i></th>
 			<td>
 				<input type="hidden" name="remove_blank" value="off" />
-				<label for="input-checkbox-remove_blank" class="acms-form-checkbox">
-					<input type="checkbox" name="remove_blank" value="on"{remove_blank:checked#on} id="input-checkbox-remove_blank" /><i class="acms-ico-checkbox"></i>余分な空白を取り除く
+				<label for="input-checkbox-remove_blank" class="acms-admin-form-checkbox">
+					<input type="checkbox" name="remove_blank" value="on"{remove_blank:checked#on} id="input-checkbox-remove_blank" /><i class="acms-admin-ico-checkbox"></i>余分な空白を取り除く
 				</label>
 				<input type="hidden" name="config[]" value="remove_blank" />
 			</td>
 		</tr>
 		<tr>
-			<th>定数定義ファイルの指定 ( 絵文字 )<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="絵文字用の定義ファイルの場所を指定します。"></i></th>
+			<th>定数定義ファイルの指定 ( 絵文字 )<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="絵文字用の定義ファイルの場所を指定します。"></i></th>
 			<td>
 				<input type="text" size="20" name="const_file_path" value="{const_file_path}" />
 				※ index.phpが基準となります。
@@ -80,7 +80,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>全角／半角の変換<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="全体のデータに、変換をかけます。設定値は、PHPのmb_convert_kana関数に準拠します。
+			<th>全角／半角の変換<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="全体のデータに、変換をかけます。設定値は、PHPのmb_convert_kana関数に準拠します。
 			<table>
 				<tbody>
 					<tr>
@@ -126,32 +126,32 @@
 		</tr>
 	</table>
 
-	<h3 class="acms-admin-title2 ">コンテントタイプと拡張子の関連付け</h3>
-	<table class="adminTable acms-table-admin-edit js-fieldgroup-sortable table">
-		<thead class="acms-hide-sp">
+	<h3 class="acms-admin-admin-title2 ">コンテントタイプと拡張子の関連付け</h3>
+	<table class="adminTable acms-admin-table-admin-edit js-fieldgroup-sortable table">
+		<thead class="acms-admin-hide-sp">
 			<tr>
 				<th></th>
-				<th class="acms-table-left">コンテントタイプ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="コンテントタイプ（MIMEタイプ）と拡張子の関連を個別に指定します。"></i></th>
-				<th class="acms-table-left">拡張子<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="コンテントタイプ（MIMEタイプ）と拡張子の関連を個別に指定します。"></i></th>
+				<th class="acms-admin-table-left">コンテントタイプ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="コンテントタイプ（MIMEタイプ）と拡張子の関連を個別に指定します。"></i></th>
+				<th class="acms-admin-table-left">拡張子<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="コンテントタイプ（MIMEタイプ）と拡張子の関連を個別に指定します。"></i></th>
 				<th></th>
 			</tr>
 		</thead>
 		<tbody><!-- BEGIN addtype_group:loop -->
 			<tr class="sortable-item">
-				<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
-				<td><span class="acms-hide-pc acms-show-sp">コンテントタイプ</span><input type="text" name="addtype_mimetype[{i}]" value="{addtype_mimetype}" /></td>
-				<td><span class="acms-hide-pc acms-show-sp">拡張子</span><input type="text" name="addtype_extension[{i}]" value="{addtype_extension}" /></td>
-				<td class="acms-show-sp acms-width-sp acms-border-bottom-sp"><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
+				<td><span class="acms-admin-hide-pc acms-admin-show-sp">コンテントタイプ</span><input type="text" name="addtype_mimetype[{i}]" value="{addtype_mimetype}" /></td>
+				<td><span class="acms-admin-hide-pc acms-admin-show-sp">拡張子</span><input type="text" name="addtype_extension[{i}]" value="{addtype_extension}" /></td>
+				<td class="acms-admin-show-sp acms-admin-width-sp acms-admin-border-bottom-sp"><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 			</tr><!-- END addtype_group:loop -->
 			<tr class="sortable-item item-template">
-				<td class="item-handle acms-hide-sp"><i class="acms-icon-sort"></i></td>
-				<td><span class="acms-hide-pc acms-show-sp">コンテントタイプ</span><input type="text" name="addtype_mimetype[]" value="" /></td>
-				<td><span class="acms-hide-pc acms-show-sp">拡張子</span><input type="text" name="addtype_extension[]" value="" /></td>
-				<td class="acms-show-sp acms-width-sp acms-border-bottom-sp"><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+				<td class="item-handle acms-admin-hide-sp"><i class="acms-admin-icon-sort"></i></td>
+				<td><span class="acms-admin-hide-pc acms-admin-show-sp">コンテントタイプ</span><input type="text" name="addtype_mimetype[]" value="" /></td>
+				<td><span class="acms-admin-hide-pc acms-admin-show-sp">拡張子</span><input type="text" name="addtype_extension[]" value="" /></td>
+				<td class="acms-admin-show-sp acms-admin-width-sp acms-admin-border-bottom-sp"><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 			</tr>
 		</tbody>
 		<tfoot>
-			<tr><td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td></tr>
+			<tr><td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td></tr>
 		</tfoot>
 	</table>
 	

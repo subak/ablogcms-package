@@ -1,24 +1,24 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-cart"></i>送料の設定</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-cart"></i>送料の設定</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Config -->
-<form action="/bid/%{BID}/admin/shop_menu/" method="post" class="acms-form">
+<form action="/bid/%{BID}/admin/shop_menu/" method="post" class="acms-admin-form">
 
-	<p class="transaction-notice-{config:validator} acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>コンフィグを保存出来ませんでした。</p>
+	<p class="transaction-notice-{config:validator} acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>コンフィグを保存出来ませんでした。</p>
 
 	<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
-	<a href="/bid/%{BID}/admin/shortcut_edit/?action=Shop_Shipping&admin=%{ADMIN}&edit=add&step=reapply" class="acms-btn-admin acms-btn-small acms-shortcut-btn"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+	<a href="/bid/%{BID}/admin/shortcut_edit/?action=Shop_Shipping&admin=%{ADMIN}&edit=add&step=reapply" class="acms-admin-btn-admin acms-admin-btn-small acms-admin-shortcut-btn"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
 
-	<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+	<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-<h2 class="acms-admin-title2">送料の設定（配送方法の手数料に何も入力しないと，この送料が適用されます）</h2>
-<table class="adminTable acms-table-admin-edit">
+<h2 class="acms-admin-admin-title2">送料の設定（配送方法の手数料に何も入力しないと，この送料が適用されます）</h2>
+<table class="adminTable acms-admin-table-admin-edit">
 	<tr>
 		<th>送料無料のしきい値<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-shipLimit" class="tooltipIcon" /></th>
 		<td>
@@ -38,7 +38,7 @@
 		</th>
 		<td>
 			<table>
-				<tr class="thX"><th class="acms-table-left">地域</th><th class="acms-table-left">送料</th></tr>
+				<tr class="thX"><th class="acms-admin-table-left">地域</th><th class="acms-admin-table-left">送料</th></tr>
 				<tr>
 					<td><input type="text" name="shop_order_shipping_label[]" value="{shop_order_shipping_label}" /></td>
 					<td><input type="text" name="shop_order_shipping_charge[]" value="{shop_order_shipping_charge}" /></td>

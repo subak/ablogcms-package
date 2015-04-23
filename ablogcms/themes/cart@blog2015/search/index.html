@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!--#include file="/include/meta.html" -->
+<!--#include file="/include/link.html" -->
+</head>
+<body>
+<!--#include file="/include/js.html" -->
+<!--#include file="/include/globalNavigation.html" -->
+<div id="outer-wrap">
+<div id="inner-wrap">
+<a class="blogSpBg" href="#"></a>
+<!-- メインビジュアル -->
+<!--#include file="/include/mainVisual.html" -->
+<!-- オフキャンバス開閉ボタン -->
+<span class="blogHeaderNaviBtn" id="nav-open-btn">
+	<span class="blogHeaderNaviBtnLine"></span>
+	<span class="blogHeaderNaviBtnLine"></span>
+	<span class="blogHeaderNaviBtnLine"></span>
+</span>
+
+<div class="blogContainer">
+	<div class="acms-grid-r">
+		<div class="acms-col-md-9">
+
+			<!-- 管理画面 -->
+			<!--#include file="/admin/action.html"-->
+
+			<!-- 検索結果 -->
+			<!--#include file="/include/searchResult.html"-->
+
+			<!-- タグフィルター -->
+			<!--#include file="/include/tagFilter.html"-->
+
+			<!-- エントリーボディー -->
+			<!--#include file="/include/entryBody.html"-->
+
+			<!-- トップページのSEOチェック -->
+			<!--#include file="/include/top_check.html" -->
+
+			<!-- インデックスページのSEOチェック -->
+			<!--#include file="/include/index_check.html" -->
+
+			<!-- エントリーページのSEOチェック -->
+			<!--#include file="/include/entry_check.html" -->
+
+		</div>
+		<div class="acms-col-md-3">
+			<div class="blogSubCol" id="nav">
+				<!--#include file="/search/form.html" -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- フッター -->
+<!--#include file="/include/footer.html" -->
+</div>
+</div>
+<script src="/js/off-canvas/main.js"></script>
+</body>
+</html>

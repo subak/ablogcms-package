@@ -1,0 +1,24 @@
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>表示順 ( リスト表示のみ )<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="表示順で決められたルールでの昇順、降順の設定です。[表示形式]が「リスト表示」のときのみ適用されます。"></i></th>
+		<td>
+			<select class="form-control" name="comment_list_order">
+				<option value="datetime-asc"{comment_list_order:selected#datetime-asc}>日時 ( 昇順 )</option>
+				<option value="datetime-desc"{comment_list_order:selected#datetime-desc}>日時 ( 降順 )</option>
+			</select>
+			<input type="hidden" name="config[]" value="comment_list_order" />
+		</td>
+	</tr>
+	<tr>
+		<th>表示件数<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="一度に表示されるコメントの件数です。"></i></th>
+		<td>
+			<input class="form-control" type="text" name="comment_list_limit" value="{comment_list_limit}" size="4" />
+			<input type="hidden" name="config[]" value="comment_list_limit" />
+			<input type="hidden" name="comment_list_limit:convert" value="a" />
+			<input type="hidden" name="comment_list_limit:validator#digits" id="validator-comment_list_limit-digits" />
+			<label for="validator-comment_list_limit-digits" class="validator-result-{comment_list_limit:validator#digits}">数字を入力して下さい。</label>
+		</td>
+	</tr>
+</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
