@@ -1,1 +1,0 @@
-管理者用の件名です。カスタムフィールドの項目が使えます。（例）%{Y}年%{n}月%{j}日 %{H}:%{i}:%{s} - {company} <!-- BEGIN location:loop --><!-- BEGIN glue --> <!-- END glue -->{location}<!-- END location:loop -->

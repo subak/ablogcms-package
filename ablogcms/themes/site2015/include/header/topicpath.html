@@ -1,0 +1,29 @@
+<!-- BEGIN_MODULE Topicpath id="topicPath" -->
+<nav class="topicpath">
+	<ol class="topicpathList acms-container sp-container clearfix">
+		<!-- BEGIN blog:loop -->
+		<li class="topicpathItem" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<!-- BEGIN glue -->
+			<!-- END glue -->
+			<a href="{url}" class="topicpathLink" itemprop="url"><span itemprop="title">{name}</span></a>
+		</li>
+		<!-- END blog:loop -->
+
+		<!-- BEGIN category:loop -->
+		<li class="topicpathItem" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<!-- BEGIN glue -->
+			<!-- END glue -->
+			<a href="{url}" class="topicpathLink" itemprop="url"><span itemprop="title">{name}</span></a>
+		</li>
+		<!-- END category:loop -->
+
+		<!-- BEGIN entry -->
+		<li class="topicpathItem" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<!-- BEGIN glue -->
+			<!-- END glue -->
+			<a href="{url}" class="topicpathLink" itemprop="url"><span itemprop="title">{title}</span></a>
+		</li>
+		<!-- END entry -->
+	</ol>
+</nav>
+<!-- END_MODULE Topicpath -->

@@ -1,0 +1,452 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Plugin_Schedule -->
+<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+<!-- BEGIN unit:loop -->
+<div class="unit"><!-- BEGIN month:loop -->
+	<!-- BEGIN monthly --><ul class="pager">
+	<li><a href="{prevUrl}">≪前月</a></li>
+	<li><a href="{nextUrl}">次月≫</a></li>
+</ul><!-- END monthly -->
+<div class="month panel panel-default">
+	<p class="panel-heading"><a href="{url}">{year}年 {month}月 {time}[date(F)]</a></p>
+	<table class="{mode} table"><!-- BEGIN week:loop -->
+		<tr class="week"><!-- BEGIN day:loop -->
+			<td class="day{weekNo}">
+				<!-- BEGIN day:veil -->
+				<span class="week">
+					{day} <small>({week})</small>
+				</span>
+				<!-- END day:veil -->
+			</td><!-- BEGIN plan:veil -->
+			<td class="plan"><!-- BEGIN plan -->
+				<p<!-- BEGIN class:veil --> class="{class}"<!-- END class:veil -->>
+				<!-- BEGIN item:veil -->{item}<!-- END item:veil -->
+				<!-- BEGIN item:null -->(なし)<!-- END item:null -->
+				<!-- BEGIN label:veil -->{label}<!-- END label:veil -->
+				<!-- BEGIN label:null -->(ラベルなし)<!-- END label:null -->
+			</p><!-- END plan -->
+		</td><!-- END plan:veil --><!-- END day:loop -->
+	</tr><!-- END week:loop -->
+</table>
+</div><!-- END month:loop -->
+</div><!-- END unit:loop -->
+<!-- END_MODULE Plugin_Schedule -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div class="unit">
+	<ul class="pager">
+		<li><a href="http://192.168.10.140/acms/bootstrap/2015/02/">≪前月</a></li>
+		<li><a href="http://192.168.10.140/acms/bootstrap/2015/04/">次月≫</a></li>
+	</ul>
+	<div class="month panel panel-default">
+		<p class="panel-heading"><a href="http://192.168.10.140/acms/bootstrap/2015/03/">2015年 3月 2015-03-01</a></p>
+		<table class="list table">
+			<tbody><tr class="week">
+				<td class="day w0">
+
+					<span class="week">
+						1 <small>(日)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w1">
+
+					<span class="week">
+						2 <small>(月)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w2">
+
+					<span class="week">
+						3 <small>(火)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w3">
+
+					<span class="week">
+						4 <small>(水)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w4">
+
+					<span class="week">
+						5 <small>(木)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w5">
+
+					<span class="week">
+						6 <small>(金)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+						ここにスケジュールが入ります
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w6">
+
+					<span class="week">
+						7 <small>(土)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+						ここにスケジュールが入ります
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w0">
+
+					<span class="week">
+						8 <small>(日)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w1">
+
+					<span class="week">
+						9 <small>(月)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w2">
+
+					<span class="week">
+						10 <small>(火)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w3">
+
+					<span class="week">
+						11 <small>(水)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w4">
+
+					<span class="week">
+						12 <small>(木)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>ここにスケジュールが入ります</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w5">
+
+					<span class="week">
+						13 <small>(金)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w6">
+
+					<span class="week">
+						14 <small>(土)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w0">
+
+					<span class="week">
+						15 <small>(日)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w1">
+
+					<span class="week">
+						16 <small>(月)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w2">
+
+					<span class="week">
+						17 <small>(火)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w3">
+
+					<span class="week">
+						18 <small>(水)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w4">
+
+					<span class="week">
+						19 <small>(木)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w5">
+
+					<span class="week">
+						20 <small>(金)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w6">
+
+					<span class="week">
+						21 <small>(土)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w0">
+
+					<span class="week">
+						22 <small>(日)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w1">
+
+					<span class="week">
+						23 <small>(月)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w2">
+
+					<span class="week">
+						24 <small>(火)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w3">
+
+					<span class="week">
+						25 <small>(水)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w4">
+
+					<span class="week">
+						26 <small>(木)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w5">
+
+					<span class="week">
+						27 <small>(金)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w6">
+
+					<span class="week">
+						28 <small>(土)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w0">
+
+					<span class="week">
+						29 <small>(日)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w1">
+
+					<span class="week">
+						30 <small>(月)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr class="week">
+				<td class="day w2">
+
+					<span class="week">
+						31 <small>(火)</small>
+					</span>
+
+				</td>
+				<td class="plan">
+					<p>
+					</p>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+</div>
+<!-- END layout#dummy -->

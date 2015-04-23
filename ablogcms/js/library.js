@@ -231,8 +231,12 @@ ACMS.Library.getParameterByName = function ( name, query )
 ACMS.Library.googleCodePrettifyPost = function ( )
 {
     $('pre').addClass(ACMS.Config.googleCodePrettifyClass);
-    if ( !$('pre').hasClass('prettyprinted') && !$('pre').hasClass('acms-customfield-maker') ) {
-        prettyPrint();
+    if ( !$('pre').hasClass('prettyprinted') && !$('pre').hasClass('acms-admin-customfield-maker') ) {
+        if ( typeof prettyPrint === 'function' ) {
+            prettyPrint();
+        } else {
+            ACMS.Library.googleCodePrettify();
+        }
     }
 };
 

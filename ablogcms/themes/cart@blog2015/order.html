@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!--#include file="/include/meta.html" -->
+<!--#include file="/include/link.html" -->
+<!--#include file="/include/js.html" -->
+</head>
+<body>
+<div id="outer-wrap">
+<div id="inner-wrap">
+<a class="blogSpBg" href="#"></a>
+<!--#include file="/include/globalNavigation.html" -->
+<!-- メインビジュアル -->
+<!--#include file="/include/mainVisual.html" -->
+<!-- オフキャンバス開閉ボタン -->
+<span class="blogHeaderNaviBtn" id="nav-open-btn">
+	<span class="blogHeaderNaviBtnLine"></span>
+	<span class="blogHeaderNaviBtnLine"></span>
+	<span class="blogHeaderNaviBtnLine"></span>
+</span>
+
+<div class="blogContainer">
+	<div class="acms-grid-r">
+		<div class="acms-col-md-9">
+
+			<!-- 管理画面 -->
+			<!--#include file="/admin/action.html"-->
+
+
+			<!-- 注文画面 -->
+
+			<!-- BEGIN_MODULE Shop2_Form_Order -->
+
+			<!-- BEGIN step -->
+			<!--#include file="/order/cart.html" -->
+			<!-- END step -->
+
+			<!-- BEGIN step#address -->
+			<!--#include file="/order/address.html" -->
+			<!-- END step#address -->
+
+			<!-- BEGIN step#deliver -->
+			<!--#include file="/order/deliver.html" -->
+			<!-- END step#deliver -->
+
+			<!-- BEGIN step#confirm -->
+			<!--#include file="/order/confirm.html" -->	
+			<!-- END step#confirm -->
+
+			<!-- BEGIN step#result -->
+			<!--#include file="/order/result.html" -->
+			<!-- END step#result -->
+
+			<!-- BEGIN step#error -->
+			<!--#include file="/order/error.html" -->
+			<!-- END step#error -->
+
+			<!-- END_MODULE Shop2_Form_Order -->
+
+		</div>
+		<div class="acms-col-md-3">
+			<div class="blogSubCol" id="nav">
+
+				<!--#include file="/include/subAdmin.html" -->
+
+				<!-- プロフィール -->
+				<!--#include file="/include/profile.html" -->
+
+				<!-- エントリーリスト -->
+				<!--#include file="/include/entryList.html" -->
+
+				<!-- カテゴリーリスト -->
+				<!--#include file="/include/categoryList.html" -->
+
+				<!-- タグクラウド -->
+				<!--#include file="/include/tagCloud.html" -->
+
+				<!-- 検索フォーム -->
+				<!--#include file="/include/searchForm.html" -->
+
+				<!-- バナー -->
+				<!--#include file="/include/banner.html" -->
+
+				<!-- ブログパーツ -->
+				<!--#include file="/include/blogParts.html" -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- フッター -->
+<!--#include file="/include/footer.html" -->
+</div>
+</div>
+<script src="/js/off-canvas/main.js"></script>
+</body>
+</html>

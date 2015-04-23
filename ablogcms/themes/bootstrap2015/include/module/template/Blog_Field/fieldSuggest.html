@@ -1,0 +1,26 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Blog_Field id="fieldSuggest" -->
+<div>
+	<!--#include file="/admin/module/setting.html"-->
+	<!-- BEGIN moduleField -->
+	<div class="backgroundCoverImage sectionSpaceLg" style="background-image:url(%{ARCHIVES_DIR}{module_image@path});background-color: {module_bg_color}; color: {module_text_color};">
+		<div class="container text-center">
+			<!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil -->
+			<!-- BEGIN module_detail:veil --><p class="moduleDetail">{module_detail}[nl2br]</p><!-- END module_detail:veil -->
+			<p><a href="{module_btn_link}" class="btn btn-lg btn-success">{module_btn_text}</a></p>
+		</div>
+	</div>
+	<!-- END moduleField -->
+</div>
+<!-- END_MODULE Blog_Field -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div class="backgroundCoverImage sectionSpaceLg">
+	<div class="container text-center">
+		<h2 class="moduleHeading">お問い合わせはこちらから</h2>
+		<p class="moduleDetail">受付時間：9時〜17時</p>
+		<p><a href="#" class="btn btn-lg btn-success">お問い合わせをする</a></p>
+	</div>
+</div>
+<!-- END layout#dummy -->

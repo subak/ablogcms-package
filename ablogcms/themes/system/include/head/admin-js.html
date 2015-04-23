@@ -1,6 +1,18 @@
 <!-- BEGIN_MODULE Js -->
-<script type="text/javascript" src="/index.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
-<script src="/js/off-canvas/modernizr.js"></script>
-<script src="/js/perfect-scrollbar/jquery.mousewheel.js"></script>
-<script src="/js/perfect-scrollbar/perfect-scrollbar.js"></script>
-<script src="/js/acms-admin.js"></script>
+<script type="text/javascript" src="/acms.js{arguments}" charset="UTF-8" id="acms-js"></script>
+<!-- END_MODULE Js -->
+<!--[if lt IE 7]><script src="/js/respond.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--><!--[if IE 7]><script src="/js/respond.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--><!--[if IE 8]><script src="/js/respond.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<script type="text/javascript">
+
+ACMS.Ready(function() {
+	new ACMS.SyncLoader()
+		.next('%{SYSTEM_THEMES_DIR}js/off-canvas/modernizr.js')
+		.next('%{SYSTEM_THEMES_DIR}js/perfect-scrollbar/jquery.mousewheel.js')
+		.next('%{SYSTEM_THEMES_DIR}js/perfect-scrollbar/perfect-scrollbar.js')
+		.next('%{SYSTEM_THEMES_DIR}js/acms-admin.js')
+		.next('%{SYSTEM_THEMES_DIR}js/off-canvas/main.js')
+		.load();
+});
+
+</script>

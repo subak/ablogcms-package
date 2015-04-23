@@ -1,0 +1,10 @@
+#acms-main {
+  padding-left: 170px;
+}
+#nav {
+  position: fixed;
+  width: 160px;
+}
+#outer-wrap {
+  overflow: visible;
+}

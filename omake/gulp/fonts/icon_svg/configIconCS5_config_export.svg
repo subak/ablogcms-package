@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1792px"
+	 height="1792px" viewBox="0 0 1792 1792" enable-background="new 0 0 1792 1792" xml:space="preserve">
+<g id="Guide">
+</g>
+<g id="Font" display="none">
+</g>
+<g id="内容">
+	<g>
+		<path d="M1536,1024v512H256v-512H0v640c0,70.692,57.306,128,128,128h1536c70.692,0,128-57.308,128-128v-640H1536z"/>
+		<polygon points="633,1408 1152,1408 1152,512 1408,512 896,0 384,512 633,512 		"/>
+	</g>
+</g>
+<g id="ラベル">
+</g>
+<g id="Unicode" display="none">
+	<text transform="matrix(1 0 0 1 422.8755 964.2812)" display="inline" fill="#ED1E79" font-family="'ArialMT'" font-size="256">U+F73A</text>
+</g>
+</svg>

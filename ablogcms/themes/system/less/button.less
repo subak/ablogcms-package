@@ -1,24 +1,27 @@
-/* ---------------
+/* ------------------------------  
  ボタン デフォルト
---------------- */
+------------------------------- */
 .acms-btn {
-	.btn;
-	.btn-color;
+	.btn();
+	.btn-color();
+
 	// hover
 	&:hover,
 	&.acms-btn-hover {
-		border: 1px solid #A5A5A5;
-		.btn-color-hover;
+		border: 1px solid #868688;
+		.btn-color;
 		text-decoration: none;
 	}
+
 	// 色
 	&.acms-btn-active,
 	&:link ,
 	&:hover,
 	&:active,
 	&:visited {
-		color: #333333;
+		color: @acms-btn-text-default-color;
 	}
+
 	// active
 	&.acms-btn-active,
 	&:active {
@@ -26,41 +29,48 @@
 		.btn-color-active;
 		text-decoration: none;
 	}
+
 	// focus
 	&:focus {
 		outline: none;
 		border-color: #137AF3;
 	}
+
 	// --------------- 
 	// primary
 	// --------------- 
 	&.acms-btn-primary {
-		border: 1px solid #004CC5;
-		.btn-color(@start-color:#005BED, @end-color:#004CC5, @color: #FFFFFF);
+		border: @acms-btn-primary-border;
+		.btn-color(@acms-btn-primary-start-color; @acms-btn-primary-end-color; @acms-btn-text-color;);
+		
 		// hover
 		&:hover,
 		&.hover{
-			border: 1px solid #002A6E;
-			.btn-color-hover(@start-color:#006CFF, @end-color:#0059D8, @color: #FFFFFF);
+			border: @acms-btn-primary-hover-border;
+			.btn-color(@acms-btn-primary-hover-start-color; @acms-btn-primary-hover-end-color; @acms-btn-text-color;);
 			text-decoration: none;
 		}
+		
 		// 色
 		&:link,
 		&:hover,
 		&:active,
 		&:visited {
-			color: #FFFFFF;
+			color: @acms-btn-text-color;
 		}
+		
 		// active
 		&.active,
 		&:active {
-			border: 1px solid #002A6E;
-			.btn-color-active(@background-color:#004CC5, @color: #FFFFFF,@inset-color:#002A6E);
+			border: @acms-btn-primary-active-border;
+			.btn-color-active(@acms-btn-primary-active-bg; @acms-btn-text-color; @acms-btn-primary-active-inset;);
 			text-decoration: none;
 		}
+		
+		// focus
 		&:focus {
 			outline: none;
-			border-color: #002A6E;
+			border-color: @acms-btn-primary-focus-border-color;
 		}	
 	}
 
@@ -68,31 +78,36 @@
 	// info
 	// --------------- 
 	&.acms-btn-info {
-		border: 1px solid #4B4B4B;
-		.btn-color(@start-color:#5E5E5E, @end-color:#4B4B4B, @color: #FFFFFF);
+		border: @acms-btn-info-border;
+		.btn-color(@acms-btn-info-start-color; @acms-btn-info-end-color; @acms-btn-text-color;);
+		
 		// hover
 		&:hover {
-			border: 1px solid #2A2A2A;
-			.btn-color-hover(@start-color:#727272, @end-color:#545454, @color: #FFFFFF);
+			border: @acms-btn-info-hover-border;
+			.btn-color(@acms-btn-info-hover-start-color; @acms-btn-info-hover-end-color; @acms-btn-text-color;);
 			text-decoration: none;
 		}
+		
 		// 色
 		&:link ,
 		&:hover,
 		&:active,
 		&:visited {
-			color: #FFFFFF;
+			color: @acms-btn-text-color;
 		}
+		
 		// active
 		&.active,
 		&:active {
-			border: 1px solid #2A2A2A;
-			.btn-color-active(@background-color:#4B4B4B, @color: #FFFFFF,@inset-color:#2A2A2A);
+			border: @acms-btn-info-active-border;
+			.btn-color-active(@acms-btn-info-active-bg; @acms-btn-text-color; @acms-btn-info-active-inset;);
 			text-decoration: none;
 		}
+		
+		// focus
 		&:focus {
 			outline: none;
-			border-color: #2A2A2A;
+			border-color: @acms-btn-info-focus-border-color;
 		}
 	}
 
@@ -100,31 +115,36 @@
 	// success
 	// --------------- 
 	&.acms-btn-success {
-		border: 1px solid #618E00;
-		.btn-color(@start-color:#7AB400, @end-color:#618E00, @color: #FFFFFF);
+		border: @acms-btn-success-border;
+		.btn-color(@acms-btn-success-start-color; @acms-btn-success-end-color; @acms-btn-text-color;);
+		
 		// hover
 		&:hover {
-			border: 1px solid #354F00;
-			.btn-color-hover(@start-color:#98DE00, @end-color:#6D9E00, @color: #FFFFFF);
+			border: @acms-btn-success-hover-border;
+			.btn-color(@acms-btn-success-hover-start-color; @acms-btn-success-hover-end-color; @acms-btn-text-color;);
 			text-decoration: none;
 		}
+		
 		// 色
 		&:link ,
 		&:hover,
 		&:active,
 		&:visited {
-			color: #FFFFFF;
+			color: @acms-btn-text-color;
 		}
+		
 		// active
 		&.active,
 		&:active {
-			border: 1px solid #354F00;
-			.btn-color-active(@background-color:#618E00, @color: #FFFFFF,@inset-color:#354F00);
+			border: @acms-btn-success-active-border;
+			.btn-color-active(@acms-btn-success-active-bg; @acms-btn-text-color; @acms-btn-success-active-inset;);
 			text-decoration: none;
 		}
+		
+		// focus
 		&:focus {
 			outline: none;
-			border-color: #354F00;
+			border-color: @acms-btn-success-focus-border-color;
 		}
 	}
 
@@ -132,31 +152,36 @@
 	// warning
 	// --------------- 
 	&.acms-btn-warning {
-		border: 1px solid #B56800;
-		.btn-color(@start-color:#DB7F00, @end-color:#B56800, @color: #FFFFFF);
+		border: @acms-btn-warning-border;
+		.btn-color(@acms-btn-warning-start-color; @acms-btn-warning-end-color; @acms-btn-text-color;);
+		
 		// hover
 		&:hover {
-			border: 1px solid #643A00;
-			.btn-color-hover(@start-color:#FF9500, @end-color:#C77400, @color: #FFFFFF);
+			border: @acms-btn-warning-hover-border;
+			.btn-color(@acms-btn-warning-hover-start-color; @acms-btn-warning-hover-end-color; @acms-btn-text-color;);
 			text-decoration: none;
 		}
+		
 		// 色
 		&:link ,
 		&:hover,
 		&:active,
 		&:visited {
-			color: #FFFFFF;
+			color: @acms-btn-text-color;
 		}
+		
 		// active
 		&.active,
 		&:active {
-			border: 1px solid #643A00;
-			.btn-color-active(@background-color:#B56800, @color: #FFFFFF,@inset-color:#643A00);
+			border: @acms-btn-warning-active-border;
+			.btn-color-active(@acms-btn-warning-active-bg; @acms-btn-text-color; @acms-btn-warning-active-inset;);
 			text-decoration: none;
 		}
+		
+		// focus
 		&:focus {
 			outline: none;
-			border-color: #643A00;
+			border-color: @acms-btn-warning-focus-border-color;
 		}
 	}
 
@@ -164,31 +189,36 @@
 	// danger
 	// --------------- 
 	&.acms-btn-danger {
-		border: 1px solid #B50000;
-		.btn-color(@start-color:#DC0000, @end-color:#B50000, @color: #FFFFFF);
+		border: @acms-btn-danger-border;
+		.btn-color(@acms-btn-danger-start-color; @acms-btn-danger-end-color; @acms-btn-text-color;);
+		
 		// hover
 		&:hover {
-			border: 1px solid #51000D;
-			.btn-color-hover(@start-color:#FF0000, @end-color:#C70012, @color: #FFFFFF);
+			border: @acms-btn-danger-hover-border;
+			.btn-color(@acms-btn-danger-hover-start-color; @acms-btn-danger-hover-end-color; @acms-btn-text-color;);
 			text-decoration: none;
 		}
+		
 		// 色
 		&:link ,
 		&:hover,
 		&:active,
 		&:visited {
-			color: #FFFFFF;
+			color: @acms-btn-text-color;
 		}
+		
 		// active
 		&.active,
 		&:active {
-			border: 1px solid #640002;
-			.btn-color-active(@background-color:#B50000, @color: #FFFFFF,@inset-color:#640002);
+			border: @acms-btn-danger-active-border;
+			.btn-color-active(@acms-btn-danger-active-bg; @acms-btn-text-color; @acms-btn-danger-active-inset;);
 			text-decoration: none;
 		}
+		
+		// focus
 		&:focus {
 			outline: none;
-			border-color: #640002;
+			border-color: @acms-btn-danger-focus-border-color;
 		}
 	}
 
@@ -200,130 +230,163 @@
 	.acms-btn-link:active,
 	.acms-btn-link:visited {
 		border: 0!important;
-		color: #428bca;
+		color: @acms-btn-link-color;
 		text-decoration: underline;
 		background: none;
 		border-radius: 0;
 	}
+	
 	// hover
 	&.acms-btn-link:hover {
-		color: #2e67a5;
+		color: @acms-btn-link-color-hover;
 	}
+	
 	// active
 	&.acms-btn-link:active {
 		box-shadow:none;
 	}
-	// --------------- 
-	// disabled
-	// --------------- 
-	&.acms-btn-disabled,
-	[disabled],
-	fieldset[disabled] & {
-		pointer-events: none;
-		cursor: not-allowed;
-		opacity: 0.65;
-		filter: alpha(opacity=65);
-		-webkit-box-shadow: none;
-		box-shadow: none;
-	}
-	// hover
-	&.acms-btn-disabled:hover,
-	&[disabled]:hover {
-		cursor: not-allowed;
-	}
+	
 }
 
 /* ---------------
  ボタン フラット
 --------------- */ 
 .acms-btn-flat {
-	.btn(@border-radius:6px, @background-color:#FFFFFF);
-	border-top: 1px solid rgba(0, 0, 0, 0.4)!important;
-	// hover
-	&:hover {
-		border-top: 1px solid rgba(0, 0, 0, 0.2)!important;
-		background: @acms-btn-hover-background;
-		text-decoration: none;
-	}
-	// 色
-	&.active,
-	&:link ,
+	.acms-btn-flat;
+	.btn-flat-color;
+	color: @acms-btn-flat-text-default-color;
+
 	&:hover,
-	&:active,
-	&:visited {
-		box-shadow: none;
-		color: #333333;
-	}
-	// active
-	&.active,
-	&:active {
-		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-		background: @acms-btn-active-background;
+	a&:hover,
+	&.acms-btn-hover {
+		box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+		color: @acms-btn-flat-text-default-color;
+		.btn-flat-color(@bg-color:#EEEEEE, @border: 1px solid #A7A7A7);
 		text-decoration: none;
+	}
+
+	&:active,
+	a&:active,
+	&.acms-btn-active,
+	&:focus,
+	a&:focus {
+		.btn-flat-color-active;
+		color: @acms-btn-flat-text-default-color;
 	}
 }
 
-/* ---------------
- ボタン アクア
---------------- */
-.acms-btn-aqua {
-	.btn(@background-color:#f6f8f9);
-	background: #f6f8f9; /* Old browsers */
-	background: -moz-linear-gradient(top,  #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f8f9), color-stop(50%,#e5ebee), color-stop(51%,#d7dee3), color-stop(100%,#f5f7f9)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
-	// hover
-	&:hover {
-		background: #DDDDDD;
-		text-decoration: none;
-	}
-	// 色
-	&.active,
-	&:link ,
+// primary
+.acms-btn-flat-primary {
+	.btn-flat-color(@acms-btn-flat-primary-color,@acms-btn-flat-primary-border);
+	color: @acms-btn-flat-text-color;
+
 	&:hover,
-	&:active,
-	&:visited {
-		box-shadow: none;
-		color: #333333;
-	}
-	// active
-	&.active,
-	&:active {
-		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-		background: @acms-btn-active-background;
+	a&:hover,
+	&.acms-btn-hover, {
+		box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+		color: @acms-btn-flat-text-color;
+		.btn-flat-color(@acms-btn-flat-primary-hover-color, @acms-btn-flat-primary-hover-border);
 		text-decoration: none;
 	}
-}
-
-
-.acms-btn-flat.active,
-.acms-btn.large:active {
-	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-// block
-.acms-btn-block,
-.block-level {
-	display: block;
-	width: 100%;
-	padding-right: 0;
-	padding-left: 0;
-	.box-sizing(border-box);
-	&:hover {
-		background: #DDD;
-		border-top: 1px solid rgba(0, 0, 0, 0.3)!important;
-		cursor: pointer;
+	&:active,
+	a&:active,
+	&.acms-btn-active,
+	&:focus,
+	a&:focus {
+		.btn-flat-color-active(@acms-btn-flat-primary-active-bg, @acms-btn-primary-border);
+		color: @acms-btn-flat-text-color;
 	}
+}
 
-	&:active {
-		background: #DDD;
-		border-top: 1px solid rgba(0, 0, 0, 0.3)!important;
-		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-		outline: -webklit-ring
+// info
+.acms-btn-flat-info {
+	.btn-flat-color(@acms-btn-flat-info-color,@acms-btn-flat-info-border);
+	color: @acms-btn-flat-text-color;
+
+	&:hover,
+	a&:hover,
+	&.acms-btn-hover {
+		box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+		color: @acms-btn-flat-text-color;
+		.btn-flat-color(@acms-btn-flat-info-hover-color, @acms-btn-flat-info-hover-border);
+		text-decoration: none;
+	}
+	&:active,
+	a&:active,
+	&.acms-btn-active,
+	&:focus,
+	a&:focus {
+		.btn-flat-color-active(@acms-btn-flat-info-active-bg, @acms-btn-info-border);
+		color: @acms-btn-flat-text-color;
+	}
+}
+
+// success
+.acms-btn-flat-success {
+	.btn-flat-color(@acms-btn-flat-success-color,@acms-btn-flat-success-border);
+	color: @acms-btn-flat-text-color;
+
+	&:hover,
+	a&:hover,
+	&.acms-btn-hover {
+		box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+		color: @acms-btn-flat-text-color;
+		.btn-flat-color(@acms-btn-flat-success-hover-color, @acms-btn-flat-success-hover-border);
+		text-decoration: none;
+	}
+	&:active,
+	a&:active,
+	&.acms-btn-active,
+	&:focus,
+	a&:focus {
+		.btn-flat-color-active(@acms-btn-flat-success-active-bg, @acms-btn-success-border);
+		color: @acms-btn-flat-text-color;
+	}
+}
+
+// warning
+.acms-btn-flat-warning {
+	.btn-flat-color(@acms-btn-flat-warning-color,@acms-btn-flat-warning-border);
+	color: @acms-btn-flat-text-color;
+
+	&:hover,
+	a&:hover,
+	&.acms-btn-hover {
+		box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+		color: @acms-btn-flat-text-color;
+		.btn-flat-color(@acms-btn-flat-warning-hover-color, @acms-btn-flat-warning-hover-border);
+		text-decoration: none;
+	}
+	&:active,
+	a&:active,
+	&.acms-btn-active,
+	&:focus,
+	a&:focus {
+		.btn-flat-color-active(@acms-btn-flat-warning-active-bg, @acms-btn-warning-border);
+		color: @acms-btn-flat-text-color;
+	}
+}
+
+// danger
+.acms-btn-flat-danger {
+	.btn-flat-color(@acms-btn-flat-danger-color,@acms-btn-flat-danger-border);
+	color: @acms-btn-flat-text-color;
+
+	&:hover,
+	a&:hover,
+	&.acms-btn-hover {
+		box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+		color: @acms-btn-flat-text-color;
+		.btn-flat-color(@acms-btn-flat-danger-hover-color, @acms-btn-flat-danger-hover-border);
+		text-decoration: none;
+	}
+	&:active,
+	a&:active,
+	&.acms-btn-active,
+	&:focus,
+	a&:focus {
+		.btn-flat-color-active(@acms-btn-flat-danger-active-bg, @acms-btn-danger-border);
+		color: @acms-btn-flat-text-color;
 	}
 }
 
@@ -333,13 +396,13 @@
 --------------- */
 .acms-btn-admin,
 .formEntryActionUnit .btn {
-	.btn;
-	.btn-color;
+	.btn();
+	.btn-color();
 	// hover
 	&:hover,
 	&.hover{
 		border: 1px solid #868688;
-		.btn-color-hover;
+		.btn-color();
 		text-decoration: none;
 	}
 	// 色
@@ -348,7 +411,7 @@
 	&:hover,
 	&:active,
 	&:visited {
-		color: #333333;
+		color: @acms-btn-text-default-color;
 	}
 	&.active,
 	&:active {
@@ -371,7 +434,7 @@
 
 .formEntryActionUnit .btn:hover  {
 	border: 1px solid #868688;
-	.btn-color-hover;
+	.btn-color();
 	text-decoration: none;
 }
 
@@ -379,32 +442,36 @@
 // 管理画面のボタン primary
 // --------------- 
 .acms-btn-admin-primary {
-	border: 1px solid #004CC5;
-	.btn-color(@start-color:#005BED, @end-color:#004CC5, @color: #FFFFFF);
+	border: @acms-btn-primary-border;
+	.btn-color(@acms-btn-primary-start-color; @acms-btn-primary-end-color; @acms-btn-text-color;);
+	
 	// hover
 	&:hover,
 	&.hover{
-		border: 1px solid #002A6E;
-		.btn-color-hover(@start-color:#006CFF, @end-color:#0059D8, @color: #FFFFFF);
+		border: @acms-btn-primary-hover-border;
+		.btn-color(@acms-btn-primary-hover-start-color; @acms-btn-primary-hover-end-color; @acms-btn-text-color;);
 		text-decoration: none;
 	}
-	// 色
+
+	// 文字カラー
 	&:link,
 	&:hover,
 	&:active,
 	&:visited {
-		color: #FFFFFF;
+		color: @acms-btn-text-color;
 	}
+
 	// active
 	&.active,
 	&:active {
-		border: 1px solid #002A6E;
-		.btn-color-active(@background-color:#004CC5, @color: #FFFFFF,@inset-color:#002A6E);
+		border: @acms-btn-primary-active-border;
+		.btn-color-active(@acms-btn-primary-active-bg; @acms-btn-text-color; @acms-btn-primary-active-inset;);
 		text-decoration: none;
 	}
+
 	&:focus {
 		outline: none;
-		border-color: #002A6E;
+		border-color: @acms-btn-primary-focus-border-color;
 	}
 }
 
@@ -412,31 +479,34 @@
 // 管理画面のボタン info
 // --------------- 
 .acms-btn-admin-info {
-	border: 1px solid #4B4B4B;
-	.btn-color(@start-color:#5E5E5E, @end-color:#4B4B4B, @color: #FFFFFF);
+	border: @acms-btn-info-border;
+	.btn-color(@acms-btn-info-start-color; @acms-btn-info-end-color; @acms-btn-text-color;);
 	// hover
 	&:hover {
-		border: 1px solid #2A2A2A;
-		.btn-color-hover(@start-color:#727272, @end-color:#545454, @color: #FFFFFF);
+		border: @acms-btn-info-hover-border;
+		.btn-color(@acms-btn-info-hover-start-color; @acms-btn-info-hover-end-color; @acms-btn-text-color;);
 		text-decoration: none;
 	}
-	// 色
-	&:link ,
+
+	// 文字カラー
+	&:link,
 	&:hover,
 	&:active,
 	&:visited {
-		color: #FFFFFF;
+		color: @acms-btn-text-color;
 	}
+
 	// active
 	&.active,
 	&:active {
-		border: 1px solid #2A2A2A;
-		.btn-color-active(@background-color:#4B4B4B, @color: #FFFFFF,@inset-color:#2A2A2A);
+		border: @acms-btn-info-active-border;
+		.btn-color-active(@acms-btn-info-active-bg; @acms-btn-text-color; @acms-btn-info-active-inset;);
 		text-decoration: none;
 	}
+
 	&:focus {
 		outline: none;
-		border-color: #2A2A2A;
+		border-color: @acms-btn-info-focus-border-color;
 	}
 }
 
@@ -444,31 +514,35 @@
 // 管理画面のボタン danger
 // --------------- 
 .acms-btn-admin-danger {
-	border: 1px solid #B50000;
-	.btn-color(@start-color:#DC0000, @end-color:#B50000, @color: #FFFFFF);
+	border: @acms-btn-danger-border;
+	.btn-color(@acms-btn-danger-start-color; @acms-btn-danger-end-color; @acms-btn-text-color;);
+	
 	// hover
 	&:hover {
-		border: 1px solid #51000D;
-		.btn-color-hover(@start-color:#FF0000, @end-color:#C70012, @color: #FFFFFF);
+		border: @acms-btn-danger-hover-border;
+		.btn-color(@acms-btn-danger-hover-start-color; @acms-btn-danger-hover-end-color; @acms-btn-text-color;);
 		text-decoration: none;
 	}
-	// 色
+	
+	// 文字カラー
 	&:link ,
 	&:hover,
 	&:active,
 	&:visited {
-		color: #FFFFFF;
+		color: @acms-btn-text-color;
 	}
+
 	// active
 	&.active,
 	&:active {
-		border: 1px solid #640002;
-		.btn-color-active(@background-color:#B50000, @color: #FFFFFF,@inset-color:#640002);
+		border: @acms-btn-danger-active-border;
+		.btn-color-active(@acms-btn-danger-active-bg; @acms-btn-text-color; @acms-btn-danger-active-inset;);
 		text-decoration: none;
 	}
+
 	&:focus {
 		outline: none;
-		border-color: #640002;
+		border-color: @acms-btn-danger-focus-border-color;
 	}
 }
 
@@ -494,6 +568,40 @@ a.acms-btn-admin{
 	padding-left: 60px!important;
 }
 
+
+// --------------- 
+// ユーティリティ
+// --------------- 
+
+// disabled
+.acms-btn-disabled,
+button[disabled],
+input[disabled],
+fieldset[disabled] .acms-btn {
+	pointer-events: none;
+	opacity: @acms-btn-disbled-opacity;
+	filter: alpha(opacity=@acms-btn-disbled-opacity-ie);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+
+@media (min-width : @breakpoint-md-min) {
+	[class*='acms-btn'],
+	.formEntryActionUnit .btn {
+		.desktop-btn();
+	}
+}
+
+// ブロックレベルのボタン
+.acms-btn-block {
+	display: block;
+	width: 100%;
+	padding-right: 0;
+	padding-left: 0;
+	.box-sizing(border-box);
+}
+
 // インライン
 .acms-inline-btn {
 	display: inline-block;
@@ -502,23 +610,23 @@ a.acms-btn-admin{
 	margin-bottom: 10px;
 }
 
-// small
+// サイズ小
 .acms-btn-small {
-	padding: 4px 6px;
-	.font-size(10);
+	padding: @acms-btn-small-padding;
+	.font-size(@acms-btn-small-font-size);
 }
-// large
+// サイズ大
 .acms-btn-large {
-	padding: 12px 15px;
-	.font-size(18);
-	border-radius: 6px;
+	padding: @acms-btn-large-padding;
+	.font-size(@acms-btn-large-font-size);
+	border-radius: @acms-btn-large-border-radius;
 }
 
-@media screen and (max-width: 768px) {
-	[class*='acms-btn'],
-	.formEntryActionUnit .btn {
-		.font-size(15);
-		padding-top: 14px;
-		padding-bottom: 14px;
+.acms-btn-unstyled {
+	padding: 0;
+	background: 0;
+	border: 0;
+	&:focus {
+		outline: 0;
 	}
 }

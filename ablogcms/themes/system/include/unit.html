@@ -1,6 +1,6 @@
 <!-- BEGIN unit:loop --><!-- BEGIN unitGroup#rear -->
 </div><!-- END unitGroup#rear --><!-- BEGIN unitGroup#front -->
-<div class="{class}"><!-- END unitGroup#front --><!-- BEGIN inplace#front -->
+<div class="js-unit_group-align acms-entry-unit-full {class}"><!-- END unitGroup#front --><!-- BEGIN inplace#front -->
 <div class="js-edit_inplace align_{unit:loop.align}" data-align="{unit:loop.align}[align2label]" id="{unit:loop.unit_eid}-{unit:loop.utid}"><!-- END inplace#front -->
 <!-- BEGIN clear -->
 <hr class="clearHidden" /><!-- END clear --><!-- BEGIN unit#text -->
@@ -8,10 +8,10 @@
 <!-- テキスト -->
 <!-- BEGIN p -->
 <p{class}>{text}[nl2br]</p><!-- END p --><!-- BEGIN h2 -->
-<h2{class} id="h{utid}">{text}[nl2br]</h2><!-- END h2 --><!-- BEGIN h3 -->
-<h3{class} id="h{utid}">{text}[nl2br]</h3><!-- END h3 --><!-- BEGIN h4 -->
-<h4{class} id="h{utid}">{text}[nl2br]</h4><!-- END h4 --><!-- BEGIN h5 -->
-<h5{class} id="h{utid}">{text}[nl2br]</h5><!-- END h5 --><!-- BEGIN ul -->
+<h2{class} <!-- BEGIN_IF [{extend_tag}/nem] -->id="{extend_tag}"<!-- END_IF -->>{text}[nl2br]</h2><!-- END h2 --><!-- BEGIN h3 -->
+<h3{class} <!-- BEGIN_IF [{extend_tag}/nem] -->id="{extend_tag}"<!-- END_IF -->>{text}[nl2br]</h3><!-- END h3 --><!-- BEGIN h4 -->
+<h4{class} <!-- BEGIN_IF [{extend_tag}/nem] -->id="{extend_tag}"<!-- END_IF -->>{text}[nl2br]</h4><!-- END h4 --><!-- BEGIN h5 -->
+<h5{class} <!-- BEGIN_IF [{extend_tag}/nem] -->id="{extend_tag}"<!-- END_IF -->>{text}[nl2br]</h5><!-- END h5 --><!-- BEGIN ul -->
 <ul{class}>{text}[list]</ul><!-- END ul --><!-- BEGIN ol -->
 <ol{class}>{text}[list]</ol><!-- END ol --><!-- BEGIN dl -->
 <dl{class}>{text}[definition_list]</dl><!-- END dl --><!-- BEGIN blockquote -->
@@ -53,7 +53,7 @@
 <!-- YouTube -->
 <div class="column-youtube-{align}{display_size_class}"{display_size}[raw]>
 	<div class="column-iframe">
-		<iframe width="{x}" height="{y}" src="http://www.youtube.com/embed/{youtubeId}?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+		<iframe width="{x}" height="{y}" src="https://www.youtube.com/embed/{youtubeId}?wmode=transparent" frameborder="0" allowfullscreen></iframe>
 	</div>
 </div>
 <!-- END unit#youtube --><!-- BEGIN unit#video -->
@@ -61,7 +61,7 @@
 <!-- Video -->
 <div class="column-video-{align}{display_size_class}"{display_size}[raw]>
 	<div class="column-iframe">
-		<iframe width="{x}" height="{y}" src="http://www.youtube.com/embed/{videoId}?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+		<iframe width="{x}" height="{y}" src="https://www.youtube.com/embed/{videoId}?wmode=transparent" frameborder="0" allowfullscreen></iframe>
 	</div>
 </div>
 <!-- END unit#video --><!-- BEGIN unit#eximage -->
@@ -111,7 +111,13 @@
 		<hr class="clearHidden" />
 	</blockquote><!-- END_IF -->
 </div>
-<!-- END unit#quote --><!-- BEGIN unit#break -->
+<!-- END unit#quote --><!-- BEGIN unit#module -->
+
+<!-- モジュール -->
+<div class="column-quote-{align}"{display_size}[raw]>
+	{view}[raw]
+</div>
+<!-- END unit#module --><!-- BEGIN unit#break -->
 
 <!-- 改ページ -->
 <!-- {label} -->

@@ -1,0 +1,25 @@
+<!-- BEGIN_MODULE Entry_Summary id="smallImageSummary" -->
+<div>
+<h2 class="section-title">Image Sample</h2><!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN notFound -->
+<p>エントリーが見つかりませんでした。</p>
+<!-- END notFound -->
+
+<!-- BEGIN unit:loop -->
+		<!-- BEGIN entry:loop -->
+		<div class="media">
+			<a class="media-left acms-delay-first acms-slide-right" href="{url}">
+				<div style="width:{x}px; height:{y}px; overflow:hidden; position:relative;">
+					<!-- BEGIN image:veil --><img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" alt="" style="left:{left}px; top:{top}px; position:relative;"><!-- END image:veil --><!-- BEGIN noimage -->
+				noimage
+				<!-- END noimage -->
+			</div>
+			</a>
+			<div class="media-body acms-delay-second acms-slide-right">
+				<h4 class="media-heading"><a href="{url}">{title}</a></h4>
+				<p>{entry_meta_description}</p>
+			</div>
+		</div><!-- END entry:loop -->
+	<!-- END unit:loop -->
+</div>
+<!-- END_MODULE Entry_Summary -->

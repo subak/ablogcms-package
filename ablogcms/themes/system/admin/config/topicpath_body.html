@@ -1,0 +1,117 @@
+<h2 class="acms-admin-admin-title2">ブログ</h2>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>階層の起点<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ブログが階層構造になっている場合、一番上の階層（ルート）から表示するか、一番下の階層（末端）から表示するかの設定です。"></i></th>
+		<td>
+			<select name="mo_topicpath_blog_base">
+				<option value="top"{mo_topicpath_blog_base:selected#top}>ルート</option>
+				<option value="bottom"{mo_topicpath_blog_base:selected#bottom}>末端</option>
+			</select>
+			<input type="hidden" name="config[]" value="mo_topicpath_blog_base" />
+		</td>
+	</tr>
+	<tr>
+		<th>階層の数<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="階層の表示数を設定します。0 を入力で表示せず、空欄で全て表示します。"></i></th>
+		<td>
+			<input type="text" name="mo_topicpath_blog_limit" value="{mo_topicpath_blog_limit}" size="4" class="acms-admin-form-width-mini" /> 個 (0で表示しない、空で全てを表示する)
+			<input type="hidden" name="config[]" value="mo_topicpath_blog_limit" />
+		</td>
+	</tr>
+	<tr>
+		<th>階層の表示順<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="階層の起点を先頭に、表示順の並び替えを設定します。"></i></th>
+		<td>
+			<select name="mo_topicpath_blog_order">
+				<option value="asc"{mo_topicpath_blog_order:selected#asc}>昇順</option>
+				<option value="desc"{mo_topicpath_blog_order:selected#desc}>降順</option>
+			</select>
+			<input type="hidden" name="config[]" value="mo_topicpath_blog_order" />
+		</td>
+	</tr>
+	<tr>
+		<th>起点の代替ラベル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="トピックパスの表示上の起点となるブログのラベルを置き換えます。（TopやHomeなど）"></i></th>
+		<td>
+			<input type="text" name="mo_topicpath_root_label" value="{mo_topicpath_root_label}" />
+			<input type="hidden" name="config[]" value="mo_topicpath_root_label" />
+		</td>
+	</tr>
+	<tr>
+		<th>フィールド<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをつけるとブログのカスタムフィールドを出力するようになります。"></i></th>
+		<td>
+			<input type="hidden" name="mo_topicpath_blog_field" value="off" />
+			<label for="input-checkbox-mo_topicpath_blog_field" class="acms-admin-form-checkbox">
+				<input type="checkbox" name="mo_topicpath_blog_field" value="on"{mo_topicpath_blog_field:checked#on} id="input-checkbox-mo_topicpath_blog_field" /><i class="acms-admin-ico-checkbox"></i>ブログのカスタムフィールドを使用する
+			</label>
+			<input type="hidden" name="config[]" value="mo_topicpath_blog_field" />
+		</td>
+	</tr>
+</table>
+
+<h2 class="acms-admin-admin-title2">カテゴリー</h2>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>階層の起点<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーが階層構造になっている場合、一番上の階層から表示するか、一番下の階層から表示するかの設定です。"></i></th>
+		<td>
+			<select name="mo_topicpath_category_base">
+				<option value="top"{mo_topicpath_category_base:selected#top}>ルート</option>
+				<option value="bottom"{mo_topicpath_category_base:selected#bottom}>末端</option>
+			</select>
+			<input type="hidden" name="config[]" value="mo_topicpath_category_base" />
+		</td>
+	</tr>
+	<tr>
+		<th>階層の表示数<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="階層の表示数を設定します。0 を入力で表示せず、空欄で全て表示します。"></i></th>
+		<td>
+			<input type="text" name="mo_topicpath_category_limit" value="{mo_topicpath_category_limit}" size="4" class="acms-admin-form-width-mini" /> 個 (0で表示しない、空で全てを表示する)
+			<input type="hidden" name="config[]" value="mo_topicpath_category_limit" />
+		</td>
+	</tr>
+	<tr>
+		<th>階層の表示順<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="階層の起点を先頭に、表示順の並び替えを設定します。"></i></th>
+		<td>
+			<select name="mo_topicpath_category_order">
+				<option value="asc"{mo_topicpath_category_order:selected#asc}>昇順</option>
+				<option value="desc"{mo_topicpath_category_order:selected#desc}>降順</option>
+			</select>
+			<input type="hidden" name="config[]" value="mo_topicpath_category_order" />
+		</td>
+	</tr>
+	<tr>
+		<th>フィールド<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをつけるとブログのカスタムフィールドを出力するようになります。"></i></th>
+		<td>
+			<input type="hidden" name="mo_topicpath_category_field" value="off" />
+			<label for="input-checkbox-mo_topicpath_category_field" class="acms-admin-form-checkbox">
+				<input type="checkbox" name="mo_topicpath_category_field" value="on"{mo_topicpath_category_field:checked#on} id="input-checkbox-mo_topicpath_category_field" /><i class="acms-admin-ico-checkbox"></i>カテゴリーのカスタムフィールドを使用する
+			</label>
+			<input type="hidden" name="config[]" value="mo_topicpath_category_field" />
+		</td>
+	</tr>
+</table>
+
+<h2 class="acms-admin-admin-title2">エントリー</h2>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>エントリータイトル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="トピックパスに、今表示しているエントリーを含めるかのチェックです。"></i></th>
+		<td>
+			<input type="hidden" name="mo_topicpath_entry" value="off" />
+			<label for="input-checkbox-mo_topicpath_entry" class="acms-admin-form-checkbox">
+				<input type="checkbox" name="mo_topicpath_entry" value="on"{mo_topicpath_entry:checked#on} id="input-checkbox-mo_topicpath_entry" /><i class="acms-admin-ico-checkbox"></i>エントリーのタイトルを階層に表示する
+			</label>
+			<input type="hidden" name="config[]" value="mo_topicpath_entry" />
+		</td>
+	</tr>
+	<tr>
+		<th>フィールド<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをつけるとブログのカスタムフィールドを出力するようになります。"></i></th>
+		<td>
+			<input type="hidden" name="mo_topicpath_entry_field" value="off" />
+			<label for="input-checkbox-mo_topicpath_entry_field" class="acms-admin-form-checkbox">
+				<input type="checkbox" name="mo_topicpath_entry_field" value="on"{mo_topicpath_entry_field:checked#on} id="input-checkbox-mo_topicpath_entry_field" /><i class="acms-admin-ico-checkbox"></i>エントリーのカスタムフィールドを使用する
+			</label>
+			<input type="hidden" name="config[]" value="mo_topicpath_entry_field" />
+		</td>
+	</tr>
+</table>
+
+<div id="adminToolBox"><!-- BEGIN_MODULE Admin_Rule_Name -->
+	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+</div>

@@ -1,0 +1,40 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Category_EntryList -->
+<div class="acms-admin-margin-bottom-medium">
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
+<!-- END categoryUl#front --><!-- BEGIN category:loop -->
+	<div>
+		<h3 class="acms-admin-heading acms-admin-list-group-heading"><a href="{categoryUrl}">{categoryName}</a></h3><!-- BEGIN entry:veil -->
+		<ul class="acms-admin-list-group">
+		<!-- BEGIN entry:loop -->
+			<li><a href="{entryUrl}" class="acms-admin-list-group-item">{entryTitle}</a></li>
+		<!-- END entry:loop -->
+		</ul>
+		<!-- END entry:veil -->
+	</div><!-- END category:loop --><!-- BEGIN categoryLi#rear -->
+	<!-- END categoryLi#rear --><!-- BEGIN categoryUl#rear -->
+<!-- END categoryUl#rear --><!-- END categoryEntryList:loop -->
+</div>
+<!-- END_MODULE Category_EntryList -->
+<!-- END layout#display -->
+
+
+<!-- BEGIN layout#dummy -->
+<div class="acms-admin-margin-bottom-medium">
+	<h3 class="acms-admin-list-group-heading"><a href="#">カテゴリーA</a></h3>
+	<ul class="acms-admin-list-group">
+		<li><a href="#" class="acms-admin-list-group-item">エントリーのタイトル</a></li>
+		<li><a href="#" class="acms-admin-list-group-item">エントリーのタイトル</a></li>
+		<li><a href="#" class="acms-admin-list-group-item">エントリーのタイトル</a></li>
+	</ul>
+</div>
+<div>
+	<h3 class="acms-admin-list-group-heading"><a href="#">カテゴリーB</a></h3>
+	<ul class="acms-admin-list-group">
+		<li><a href="#" class="acms-admin-list-group-item">エントリーのタイトル</a></li>
+		<li><a href="#" class="acms-admin-list-group-item">エントリーのタイトル</a></li>
+		<li><a href="#" class="acms-admin-list-group-item">エントリーのタイトル</a></li>
+	</ul>
+</div>
+<!-- END layout#dummy -->

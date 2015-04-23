@@ -1,0 +1,83 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_Summary -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+<div class="js-animation">
+	<!-- BEGIN notFound -->
+	<p>エントリーが見つかりませんでした。</p>
+	<!-- END notFound -->
+
+	<!-- BEGIN unit:loop -->
+		<div  class="list-group acms-slide-right">
+			<!-- BEGIN entry:loop -->
+			<a  class="media list-group-item" href="{url}">
+				<div class="media-left acms-slide-right acms-delay-first">
+					<div class="img-circle" style="width:{x}px; height:{y}px; overflow:hidden; position:relative;">
+						<!-- BEGIN image:veil --><img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" alt="" style="left:{left}px; top:{top}px; position:relative;"><!-- END image:veil --><!-- BEGIN noimage -->
+					noimage
+					<!-- END noimage -->
+				</div>
+				</div>
+				<div class="media-body text-left acms-slide-right acms-delay-second">
+				<p class="media-heading"><time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日</time></p>
+					<p>{title}</p>
+				</div>
+			</a><!-- END entry:loop -->
+		</div>
+		<!-- END unit:loop -->
+	</div>
+</div>
+<!-- END_MODULE Entry_Summary -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div>
+	<div  class="list-group">
+		<a class="media list-group-item" href="#">
+			<div class="media-left acms-delay-first">
+				<div class="img-circle" style="width:60px; height:60px; overflow:hidden; position:relative;">
+					<img src="/images/noImage.png" width="60" height="60" alt="" style="left:0px; top:0px; position:relative;">
+			</div>
+			</div>
+			<div class="media-body text-left acms-delay-second">
+			<p class="media-heading">2015年01月01日</p>
+				<p>テストのお知らせ</p>
+			</div>
+		</a>
+		<a class="media list-group-item" href="#">
+			<div class="media-left acms-delay-first">
+				<div class="img-circle" style="width:60px; height:60px; overflow:hidden; position:relative;">
+					<img src="/images/noImage.png" width="60" height="60" alt="" style="left:0px; top:0px; position:relative;">
+			</div>
+			</div>
+			<div class="media-body text-left acms-delay-second">
+			<p class="media-heading">2015年01月01日</p>
+				<p>テストのお知らせ</p>
+			</div>
+		</a>
+		<a class="media list-group-item" href="#">
+			<div class="media-left acms-delay-first">
+				<div class="img-circle" style="width:60px; height:60px; overflow:hidden; position:relative;">
+					<img src="/images/noImage.png" width="60" height="60" alt="" style="left:0px; top:0px; position:relative;">
+			</div>
+			</div>
+			<div class="media-body text-left acms-delay-second">
+			<p class="media-heading">2015年01月01日</p>
+				<p>テストのお知らせ</p>
+			</div>
+		</a>
+		<a class="media list-group-item" href="#">
+			<div class="media-left acms-delay-first">
+				<div class="img-circle" style="width:60px; height:60px; overflow:hidden; position:relative;">
+					<img src="/images/noImage.png" width="60" height="60" alt="" style="left:0px; top:0px; position:relative;">
+			</div>
+			</div>
+			<div class="media-body text-left acms-delay-second">
+			<p class="media-heading">2015年01月01日</p>
+				<p>テストのお知らせ</p>
+			</div>
+		</a>
+	</div>
+</div>
+<!-- END layout#dummy -->

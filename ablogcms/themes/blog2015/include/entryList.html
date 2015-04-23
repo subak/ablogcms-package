@@ -1,0 +1,20 @@
+<!-- BEGIN_MODULE Entry_Summary -->
+<section>
+	<!--#include file="/admin/config/setting.html"-->
+	<h2 class="blogSubColHeading">エントリーリスト</h2>
+	<ul class="blogEntryList clearfix">
+		<!-- BEGIN entry:loop -->
+		<li>
+			<div class="blogEntryListBg"<!-- BEGIN image:veil --> style="background-image:url(%{ROOT_DIR}{path});"<!-- END image:veil -->>
+				<a href="{url}" class="blogEntryListInner js-viewing-indelible">
+					<div class="blogEntryListShadow">
+						<p class="blogEntryListDate">{date#Y}年{date#m}月{date#d}日</p>
+						<p class="blogEntryListTitle">{title}</p>
+					</div>
+				</a>
+			</div>
+		</li>
+		<!-- END entry:loop -->
+	</ul>
+</section>
+<!-- END_MODULE Entry_Summary -->

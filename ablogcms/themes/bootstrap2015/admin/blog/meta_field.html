@@ -1,0 +1,37 @@
+<h3 class="acms-admin-admin-title2">メタ情報の設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>ブログ名</th>
+		<td>
+			<input type="text" name="meta_blogTitle" value="{meta_blogTitle}" class="acms-admin-form-width-3quarters">
+			<input type="hidden" name="field[]" value="meta_blogTitle">
+		</td>
+	</tr>
+	<tr>
+		<th>概要文</th>
+		<td>
+			<textarea name="meta_blogDesc" rows="4" class="acms-admin-form-width-3quarters">{meta_blogDesc}</textarea>
+			<input type="hidden" name="field[]" value="meta_blogDesc">
+		</td>
+	</tr>
+	<tr>
+		<th>画像</th>
+		<td>
+			<!-- BEGIN meta_blogImage@path:veil -->
+			<img src="%{ARCHIVES_DIR}{meta_blogImage@path}" width="400"><br>
+			<input type="hidden" name="meta_blogImage@old" value="{meta_blogImage@path}">
+			<label>
+				<input type="checkbox" name="meta_blogImage@edit" value="delete">削除
+			</label>
+			<!-- END meta_blogImage@path:veil -->
+			<input type="file" name="meta_blogImage" size="20">
+			<input type="hidden" name="field[]" value="meta_blogImage">
+			<input type="hidden" name="meta_blogImage:extension" value="image">
+			<input type="hidden" name="meta_blogImage@size" value="640">
+			<input type="hidden" name="meta_blogImage@tinyWidth" value="280">
+			<input type="hidden" name="meta_blogImage@largeWidth" value="1280">
+			<input type="hidden" name="meta_blogImage@squareWidth" value="200">
+			<input type="hidden" name="meta_blogImage@filename" value="">
+		</td>
+	</tr>
+</table>

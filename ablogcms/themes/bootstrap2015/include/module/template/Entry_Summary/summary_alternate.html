@@ -1,0 +1,59 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_Summary -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+	<!-- BEGIN moduleField -->
+	<h2 class="moduleHeading">{module_heading}</h2><!-- END moduleField -->
+	<!-- BEGIN notFound -->
+	<p>エントリーが見つかりませんでした。</p>
+	<!-- END notFound -->
+	<!-- BEGIN unit:loop -->
+	<!-- BEGIN entry:loop -->
+	<div class="alternate-{oddOrEven} js-animation">
+		<div class="col-md-7 acms-slide-right acms-delay-second">
+			<h2><a href="{url}">{title}</a></h2>
+			<p>{entry_meta_description}</p>
+		</div>
+		<a href="#" class="col-md-5 acms-slide-right acms-delay-first">
+			<!-- BEGIN image:veil --><img src="%{ROOT_DIR}{squarePath}" alt="" class="img-responsive" ><!-- END image:veil --><!-- BEGIN noimage -->
+		noimage
+		<!-- END noimage -->
+		</a>
+	</div><!-- END entry:loop -->
+<!-- END unit:loop -->
+</div>
+<!-- END_MODULE Entry_Summary -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div class="clearfix">
+	<h2 class="moduleHeading">Image Sample</h2>
+	<div class="alternate-odd">
+		<div class="col-md-7">
+			<h2><a href="#">サンプルA</a></h2>
+			<p>ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。</p>
+		</div>
+		<a href="#" class="col-md-5">
+			<img src="/images/noImage.png" alt="" class="img-responsive" >
+		</a>
+	</div>
+	<div class="alternate-even">
+		<div class="col-md-7">
+			<h2><a href="#">サンプルB</a></h2>
+			<p>ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。</p>
+		</div>
+		<a href="#" class="col-md-5">
+			<img src="/images/noImage.png" alt="" class="img-responsive" >
+		</a>
+	</div>
+	<div class="alternate-odd">
+		<div class="col-md-7">
+			<h2><a href="#">サンプルC</a></h2>
+			<p>ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。ここに本文が入ります。</p>
+		</div>
+		<a href="#" class="col-md-5">
+			<img src="/images/noImage.png" alt="" class="img-responsive" >
+		</a>
+	</div>
+</div>
+<!-- END layout#dummy -->

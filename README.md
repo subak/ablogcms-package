@@ -1,4 +1,4 @@
-#ablog cms ver 2.1.1.4
+#ablog cms ver 2.5.0
 
     対応PHP : php5.1.6 〜 php5.4.x
 

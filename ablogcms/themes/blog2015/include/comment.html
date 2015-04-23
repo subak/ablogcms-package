@@ -1,0 +1,58 @@
+<!-- コメントエリア　開始▼▼ -->
+
+		
+<!-- コメントフォームのインクルード -->
+<!--#include file="/admin/comment/edit.html"-->
+
+<!-- BEGIN_MODULE Comment_Body -->
+<!-- コメント表示　開始▼▼ -->
+
+<!-- BEGIN relation:veil -->
+<ul class="blogCommentList">
+	<!-- BEGIN comment:loop -->
+
+		<!-- BEGIN passBox:veil -->
+		<li>
+		
+			<!-- BEGIN body:veil -->
+			<!-- コメント本文　開始▼▼ -->
+			<h3 class="blogCommentListTitle"><a name="comment-{cmid}">{title}<!-- BEGIN awaiting#header -->承認待ち<!-- END awaiting#header --></a></h3>
+
+			<p class="blogCommentListText">{body}[nl2br]
+				<!-- BEGIN awaiting#body -->
+				このコメントは承認待ちです。
+				<!-- END awaiting#body -->
+			</p>
+
+			<!-- コメントの管理操作ボタンのインクルード -->
+			<!--#include file="/admin/comment/action.html"-->
+		
+			<p class="blogCommentListFooter">
+				<!-- BEGIN posterName:veil -->投稿者名 {posterName} <!-- END posterName:veil -->
+				<time pubdate="pubdate">{date#Y}年{date#m}月{date#d}日</time><!-- BEGIN posterLink#front --> 
+				<a href="{url}">WEB<!-- END posterLink#front --><!-- BEGIN posterLink#rear --></a><!-- END posterLink#rear -->
+			</p>
+			
+			<!-- コメント本文　終了▲▲ -->
+			<!-- END body:veil -->
+			
+		</li>
+		<!-- END passBox:veil -->
+	<!-- END comment:loop -->
+	</ul>
+	<ul class="blogCommentSerialNav clearfix">
+		<!-- BEGIN backLink -->
+		<li class="blogCommentSerialNavPrev">
+			<a href="{url}"><span class="acms-icon-arrow-small-left"></span> 前のコメント</a>
+		</li>
+		<!-- END backLink -->
+		<!-- BEGIN forwardLink -->
+		<li class="blogCommentSerialNavNext">
+			<a href="{url}">次のコメント <span class="acms-icon-arrow-small-right"></span></a>
+		</li>
+		<!-- END forwardLink -->
+	</ul>
+<!-- END relation:veil -->
+			
+<!-- コメント表示　終了▲▲ -->
+<!-- END_MODULE Comment_Body -->

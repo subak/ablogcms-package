@@ -1,0 +1,44 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_Summary -->
+<div>
+	<!--#include file="/admin/module/setting.html"-->
+	<div class="clearfix js-animation">
+		<!-- BEGIN moduleField -->
+		<h2 class="moduleHeading text-center">{module_heading}</h2>
+		<p class="text-center">{module_detail}[nl2br]</p><!-- END moduleField -->
+		<!--#include file="/admin/module/setting.html"-->
+		<!-- BEGIN notFound -->
+		<p>エントリーが見つかりませんでした。</p>
+		<!-- END notFound -->
+
+		<!-- BEGIN unit:loop -->
+		<div>
+			<!-- BEGIN entry:loop -->
+			<div class="col-md-4 acms-zoom-in-show">
+				<p class="summary-title"><a href="{url}">{title}</a></p>
+				<!-- BEGIN entry_meta_description:veil --><p>{entry_meta_description}</p><!-- END entry_meta_description:veil -->
+			</div><!-- END entry:loop -->
+		</div>
+		<!-- END unit:loop -->
+	</div>
+</div>
+<!-- END_MODULE Entry_Summary -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div class="clearfix">
+
+	<div class="col-md-4">
+		<p class="summary-title"><a href="#">お知らせのエントリー</a></p>
+		<p>この記事はお知らせのエントリーです。この記事はお知らせのエントリーです。この記事はお知らせのエントリーです。</p>
+	</div>
+	<div class="col-md-4">
+		<p class="summary-title"><a href="#">お知らせのエントリー</a></p>
+		<p>この記事はお知らせのエントリーです。この記事はお知らせのエントリーです。この記事はお知らせのエントリーです。</p>
+	</div>
+	<div class="col-md-4">
+		<p class="summary-title"><a href="#">お知らせのエントリー</a></p>
+		<p>この記事はお知らせのエントリーです。この記事はお知らせのエントリーです。この記事はお知らせのエントリーです。</p>
+	</div>
+</div>
+<!-- END layout#dummy -->

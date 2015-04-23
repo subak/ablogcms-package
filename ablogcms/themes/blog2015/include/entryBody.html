@@ -1,0 +1,137 @@
+<!-- BEGIN_MODULE Entry_Body -->
+<!-- BEGIN notFound -->
+<section class="blogEntry">
+	<h2 class="notFoundTitle">Not found</h2>
+	<p>お探しの記事は見つかりませんでした。</p>
+ </section>
+<!-- END notFound -->
+
+<!-- 1記事▼▼ -->
+<!-- BEGIN entry:loop -->
+<!-- BEGIN adminEntryEdit -->
+<!--#include file="/admin/entry/revision-info.html"-->
+<!-- END adminEntryEdit -->
+<article class="blogEntry<!-- BEGIN_MODULE Touch_NotEntry --> blogEntryWithBorder<!-- END_MODULE Touch_NotEntry -->">
+		<!--#include file="/admin/entry/title.html"-->
+
+		<!-- BEGIN title:veil -->
+		<!-- エントリーのタイトル　開始▼▼ -->
+		<header class="blogEntryHeader clearfix">
+			<p class="blogEntryDate">
+				<!-- BEGIN date:veil -->
+				<time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日</time>
+				<!-- END date:veil -->
+			</p>
+			<h1 class="blogEntryTitle"><a href="{titleUrl}">{title}[raw]</a></h1>
+			<div class="clearfix">
+				<!-- BEGIN category:veil -->
+				<div class="blogEntryCategoryListWrap clearfix">
+					<span class="acms-icon-category blogEntryCategoryListIcon"></span>
+					<ol class="blogEntryCategoryList">
+						<!-- BEGIN category:loop -->
+						<li><a href="{url}">{name}</a><!-- BEGIN glue --><span class="blogEntryCategoryListArrow">&gt;</span><!-- END glue --></li>
+						<!-- END category:loop -->
+					</ol>
+				</div>
+				<!-- END category:veil -->
+				<!-- BEGIN tag:veil -->
+				<div class="blogEntryTagListWrap clearfix">
+					<span class="acms-icon-tag blogEntryTagListIcon"></span>
+					<ul class="blogEntryTagList">
+						<!-- BEGIN tag:loop -->
+						<li><a href="{url}">{name}</a></li>
+						<!-- END tag:loop -->
+					</ul>
+				</div>
+				<!-- END tag:veil -->
+			</div>
+			<!-- #include file="/include/social/sns_top.html" -->
+		</header>
+		<!-- エントリーのタイトル　終了▲▲ -->
+		<!-- END title:veil -->
+
+		<div class="acms-grid-r acms-entry">
+			<!-- BEGIN unit:veil -->
+			<div class="blogEntryContent">
+				<!--#include file="/include/unit.html"-->
+			</div>
+			<hr class="clearHidden" />
+			<!-- END unit:veil -->
+			<!-- BEGIN continueLink:veil -->
+			<p class="clearfix blogEntryContinueLinkWrapper"><a href="{continueUrl}" class="blogEntryContinueLink">「{continueName}」の続きを読む</a></p>
+			<!-- END continueLink:veil -->
+
+			<!-- BEGIN formBody -->
+			<!--#include file="/include/form/unit.html"-->
+			<hr class="clearHidden" />
+			<!-- END formBody -->
+
+			<!-- BEGIN adminEntryEdit -->
+			<!--#include file="/admin/entry/edit.html"-->
+			<!--#include file="/admin/entry/add.html"-->
+			<!-- END adminEntryEdit -->
+
+			<!-- BEGIN adminFormEdit -->
+			<!--#include file="/admin/form2/edit.html"-->
+			<!-- END adminFormEdit -->
+
+			<!--#include file="/admin/entry/action.html"-->
+		</div>
+		<!-- BEGIN footer:veil -->
+		<footer>
+			<p class="blogEntryFooterText">投稿者名 {posterName} 投稿日時 {date#Y}年{date#m}月{date#d}日 <time>{date#H}:{date#i}</time> | <a href="{permalink}" class="js-viewing-indelible">Permalink</a>
+				<!-- BEGIN commentAmount --> | <a href="{commentUrl}#comment">コメント ( {commentAmount} )</a><!-- END commentAmount --></p>
+			<!--#include file="/include/social/sns_bottom.html"-->
+		</footer>
+		<!-- END footer:veil -->
+</article>
+
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+
+<!-- BEGIN pager:veil -->
+<!-- ページ送り　開始▼▼ -->
+<nav class="blogPager">
+	<div class="blogPagerContainer">
+	<!-- BEGIN backLink -->
+		<p class="blogPagerPrev"><a href="{url}" rel="prev"><span class="acms-icon-arrow-small-left blogPagerPrevIcon"></span>前のページへ</a></p>
+	<!-- END backLink -->
+	<!-- BEGIN forwardLink -->
+		<p class="blogPagerNext"><a href="{url}" rel="next">次のページへ<span class="acms-icon-arrow-small-right blogPagerNextIcon"></span></a></p>
+	<!-- END forwardLink -->
+	</div>
+	<ul class="clearfix">
+		<!-- BEGIN page:loop -->
+		<li class="blogPagerItem"><!-- BEGIN link#front --><a href="{url}"><!-- END link#front --><span class="blogPagerLinkInner">{page}</span><!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --></li><!-- END page:loop -->
+		<!-- BEGIN lastPage:veil --><li class="blogPagerItem">...</li><li class="blogPagerItem"><a href="{lastPageUrl}"><span>{lastPage}</span></a></li><!-- END lastPage:veil -->
+	</ul>
+</nav>
+<!-- ページ送り　終了▲▲ -->
+<!-- END pager:veil -->
+
+<!-- BEGIN serialNavi:veil -->
+<nav class="blogSerialNav clearfix">
+	<ul>
+		<!-- BEGIN prevLink -->
+		<li class="blogSerialNavPrev">
+			<a href="{url}">
+			<span class="acms-icon-arrow-small-left blogSerialNavPrevIcon"></span>
+			{name}[trim(27, '...')|escape]</a>
+		</li>
+		<!-- END prevLink -->
+		<!-- BEGIN nextLink -->
+		<li class="blogSerialNavNext">
+			<a href="{url}">{name}[trim(27, '...')|escape]<span class="acms-icon-arrow-small-right blogSerialNavNextIcon"></span>
+			</a>
+		</li>
+		<!-- END nextLink -->
+		<li class="blogSerialNavIndex"><a href="{upperUrl}">一覧</a></li>
+	</ul>
+</nav>
+<!-- END serialNavi:veil -->
+
+<!-- END_MODULE Entry_Body -->
+
+<!-- BEGIN_MODULE Touch_Entry -->
+<!--#include file="/include/comment.html" -->
+<!-- END_MODULE Touch_Entry -->

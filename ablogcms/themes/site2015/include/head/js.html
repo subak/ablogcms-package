@@ -1,0 +1,26 @@
+<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="/js/respond.min.js"></script><![endif]-->
+
+<!-- BEGIN_MODULE Js -->
+<script src="/acms.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<script src="/js/off-canvas/modernizr.js"></script>
+<script src="/js/off-canvas/main.js" defer></script>
+<script>
+	ACMS.Ready(function() {
+		new ACMS.SyncLoader()
+			.next('%{HTTP_THEMES_DIR}site2015/js/site.js')
+			.load();
+	});
+</script>
+<!--BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Blog_Field -->{googleAnalytics}[raw]<!-- END_MODULE Blog_Field --><!-- END_MODULE Touch_Unlogin -->
+
+<!-- BEGIN_MODULE Blog_Field -->
+<script type="application/ld+json">
+{
+"@context" : "http://schema.org",
+"@type": "WebSite",
+"url": "%{ROOT_BLOG_URL}",
+"name": "%{ROOT_BLOG_NAME}",
+"alternateName": "{siteName}"
+}
+</script>
+<!-- END_MODULE Blog_Field -->

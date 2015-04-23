@@ -1,0 +1,24 @@
+<!-- BEGIN_MODULE Banner id="topImage" -->
+<div class="moduleSection">
+<!--#include file="/admin/module/setting.html"-->
+<div class="js-main-slider">
+	<!-- BEGIN banner:loop --><div>
+	<!-- BEGIN banner#src -->
+	{src}[raw]
+	<!-- END banner#src -->
+	<!-- BEGIN banner#img -->
+	<div class="mainSliderImage" style="background-image: url(%{ARCHIVES_DIR}{img});"><a href="{url}" target="{target}">
+	<div class="acms-container sp-container mainSliderTextOuter">
+		<div class="mainSliderTextWrap">
+			<div class="mainSliderTextInner">
+				<p class="mainSliderMainCopy">{attr1}</p>
+				<p class="mainSliderSideCopy">{attr2}</p><!-- <img src="%{ARCHIVES_DIR}{img}" width="{x}" height="{y}" alt="{alt}" class="acms-img-responsive" /> -->
+			</div>
+		</div>
+	</div></a>
+	</div>
+	<!-- END banner#img -->
+</div><!-- END banner:loop -->
+</div>
+</div>
+<!-- END_MODULE Banner -->

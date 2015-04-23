@@ -1,51 +1,51 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title">
-			<i class="acms-icon acms-icon-config_access"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title">
+			<i class="acms-admin-icon acms-admin-icon-config_access"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
 				<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 				<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->アクセス設定
 		</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Config -->
 <!-- BEGIN_IF [{notice_mess}/nem/] -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>アクセス設定を保存しました</p><!-- END_IF -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>アクセス設定を保存しました</p><!-- END_IF -->
 
-<form action="" method="post" class="acms-form">
+<form action="" method="post" class="acms-admin-form">
 	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
 		<div class="acms_fix_bg_index">
-			<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+			<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
 
-			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-admin-btn-admin acms-admin-float-right acms-admin-float-none-sp"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
 		</div>
 	</div>
 
-	<h3 class="acms-admin-title2 ">ログイン</h3>
+	<h3 class="acms-admin-admin-title2 ">ログイン</h3>
 	<!-- ルールが使えない -->
-	<table class="adminTable acms-table-admin-edit">
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>許可リスト<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="IPアドレスを半角数字と「.」「/」を使い<a href='http://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing' target='_blank'>CIDR記法</a>で入力してください。(例：a.b.c.d/32)<br />指定されたIPアドレスからのアクセスに限りログインできるようになります。（この項目はブログごとの設定となり、ルールには反映されません。）"></i>
+			<th>許可リスト<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="IPアドレスを半角数字と「.」「/」を使い<a href='http://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing' target='_blank'>CIDR記法</a>で入力してください。(例：a.b.c.d/32)<br />指定されたIPアドレスからのアクセスに限りログインできるようになります。（この項目はブログごとの設定となり、ルールには反映されません。）"></i>
 </th>
 			<td>
-				<ul class="js-fieldgroup-sortable acms-list-nostyle"><!-- BEGIN login_white_hosts:loop -->
-					<li class="sortable-item acms-form-group">
-						<span class="item-handle acms-icon-sort acms-hide-sp"></span>
+				<ul class="js-fieldgroup-sortable acms-admin-list-nostyle"><!-- BEGIN login_white_hosts:loop -->
+					<li class="sortable-item acms-admin-form-group">
+						<span class="item-handle acms-admin-icon-sort acms-admin-hide-sp"></span>
 						<input type="text" name="login_white_hosts[]" value="{login_white_hosts}" size="20" />
-						<input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger acms-margin-top-bottom-sp" />
+						<input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp" />
 					</li><!-- END login_white_hosts:loop -->
-					<li class="item-template sortable-item acms-form-group">
-						<span class="item-handle acms-icon-sort acms-hide-sp"></span>
+					<li class="item-template sortable-item acms-admin-form-group">
+						<span class="item-handle acms-admin-icon-sort acms-admin-hide-sp"></span>
 						<input type="text" name="login_white_hosts[]" size="20" />
-						<input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger acms-margin-top-bottom-sp" />
+						<input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp" />
 					</li>
 					<li>
-						<input type="button" value="追加" class="item-insert acms-btn-admin" />
+						<input type="button" value="追加" class="item-insert acms-admin-btn-admin" />
 					</li>
 				</ul>
 				<input type="hidden" name="config[]" value="login_white_hosts" />
@@ -54,22 +54,22 @@
 			</td>
 		</tr>
 		<tr>
-			<th>拒否リスト<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="IPアドレスを半角数字と「.」「/」を使い<a href='http://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing' target='_blank'>CIDR記法</a>で入力してください。(例：a.b.c.d/32)<br />指定されたIPアドレスからのアクセスに限りログインが拒否されるようになります。（この項目はブログごとの設定となり、ルールには反映されません。）"></i>
+			<th>拒否リスト<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="IPアドレスを半角数字と「.」「/」を使い<a href='http://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing' target='_blank'>CIDR記法</a>で入力してください。(例：a.b.c.d/32)<br />指定されたIPアドレスからのアクセスに限りログインが拒否されるようになります。（この項目はブログごとの設定となり、ルールには反映されません。）"></i>
 </th>
 			<td>
-				<ul class="js-fieldgroup-sortable acms-list-nostyle"><!-- BEGIN login_black_hosts:loop -->
-					<li class="sortable-item acms-form-group">
-						<span class="item-handle acms-icon-sort acms-hide-sp"></span>
+				<ul class="js-fieldgroup-sortable acms-admin-list-nostyle"><!-- BEGIN login_black_hosts:loop -->
+					<li class="sortable-item acms-admin-form-group">
+						<span class="item-handle acms-admin-icon-sort acms-admin-hide-sp"></span>
 						<input type="text" name="login_black_hosts[]" value="{login_black_hosts}" size="20" />
-						<input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger acms-margin-top-bottom-sp" />
+						<input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp" />
 					</li><!-- END login_black_hosts:loop -->
-					<li class="item-template sortable-item acms-form-group">
-						<span class="item-handle acms-icon-sort acms-hide-sp"></span>
+					<li class="item-template sortable-item acms-admin-form-group">
+						<span class="item-handle acms-admin-icon-sort acms-admin-hide-sp"></span>
 						<input type="text" name="login_black_hosts[]" size="20" />
-						<input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger acms-margin-top-bottom-sp" />
+						<input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp" />
 					</li>
 					<li>
-						<input type="button" value="追加" class="item-insert acms-btn-admin" />
+						<input type="button" value="追加" class="item-insert acms-admin-btn-admin" />
 					</li>
 					</ul>
 					<input type="hidden" name="config[]" value="login_black_hosts" />
@@ -78,31 +78,31 @@
 			</td>
 		</tr>
 	</table>
-	<h3 class="acms-admin-title2 ">ベーシック認証</h3>
-	<table class="adminTable acms-table-admin-edit">
+	<h3 class="acms-admin-admin-title2 ">ベーシック認証</h3>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>アカウント<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="ベーシック認証に使用するユーザー名とパスワードを設定します。"></i>
+			<th>アカウント<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ベーシック認証に使用するユーザー名とパスワードを設定します。"></i>
 </th>
 			<td>
-				<ul class="js-fieldgroup-sortable acms-list-nostyle"><!-- BEGIN basic_auth_group:loop -->
-					<li class="sortable-item acms-form-group">
-						<span class="item-handle acms-icon-sort acms-hide-sp"></span>
+				<ul class="js-fieldgroup-sortable acms-admin-list-nostyle"><!-- BEGIN basic_auth_group:loop -->
+					<li class="sortable-item acms-admin-form-group">
+						<span class="item-handle acms-admin-icon-sort acms-admin-hide-sp"></span>
 						ユーザー : <input type="text" name="basic_auth_user[{i}]" value="{basic_auth_user}" size="20" />
 						パスワード : <input type="password" name="basic_auth_pass[{i}]" value="{basic_auth_pass}" size="20" />
-						<input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger acms-margin-top-bottom-sp" />
+						<input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp" />
 						<!-- BEGIN basic_auth_user:validator#regex -->
 						<p class="transaction-notice-error">ユーザーは半角英数字のみ入力できます。</p><!-- END basic_auth_user:validator#regex -->
 						<!-- BEGIN basic_auth_pass:validator#regex -->
 						<p class="transaction-notice-error">パスワードは半角英数字のみ入力できます。</p><!-- END basic_auth_pass:validator#regex -->
 					</li><!-- END basic_auth_group:loop -->
-					<li class="sortable-item item-template acms-form-group">
-						<span class="item-handle acms-icon-sort acms-hide-sp"></span>
+					<li class="sortable-item item-template acms-admin-form-group">
+						<span class="item-handle acms-admin-icon-sort acms-admin-hide-sp"></span>
 						ユーザー : <input type="text" name="basic_auth_user[]" size="20" />
 						パスワード : <input type="password" name="basic_auth_pass[]" size="20" />
-						<input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger acms-margin-top-bottom-sp" />
+						<input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp" />
 					</li>
 					<li>
-						<input type="button" value="追加" class="item-insert acms-btn-admin" />
+						<input type="button" value="追加" class="item-insert acms-admin-btn-admin" />
 					</li>
 				</ul>
 				<input type="hidden" name="basic_auth_user:validator#regex" value="@^[0-9a-zA-Z]+$@" />
@@ -115,22 +115,22 @@
 			</td>
 		</tr>
 		<tr>
-			<th>認証スキップ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="IPアドレスを半角数字と「.」「/」を使い<a href='http://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing' target='_blank'>CIDR記法</a>で入力してください。(例：a.b.c.d/32)<br />指定されたIPアドレスからのアクセスに限り、ベーシック認証をスキップできます。"></i>
+			<th>認証スキップ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="IPアドレスを半角数字と「.」「/」を使い<a href='http://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing' target='_blank'>CIDR記法</a>で入力してください。(例：a.b.c.d/32)<br />指定されたIPアドレスからのアクセスに限り、ベーシック認証をスキップできます。"></i>
 </th>
 			<td>
-				<ul class="js-fieldgroup-sortable acms-list-nostyle"><!-- BEGIN basic_auth_skip_hosts:loop -->
-					<li class="sortable-item acms-form-group">
-						<span class="item-handle acms-icon-sort acms-hide-sp"></span>
+				<ul class="js-fieldgroup-sortable acms-admin-list-nostyle"><!-- BEGIN basic_auth_skip_hosts:loop -->
+					<li class="sortable-item acms-admin-form-group">
+						<span class="item-handle acms-admin-icon-sort acms-admin-hide-sp"></span>
 						<input type="text" name="basic_auth_skip_hosts[]" value="{basic_auth_skip_hosts}" size="20" />
-						<input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger acms-margin-top-bottom-sp" />
+						<input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp" />
 					</li><!-- END basic_auth_skip_hosts:loop -->
-					<li class="sortable-item item-template acms-form-group">
-						<span class="item-handle acms-icon-sort acms-hide-sp"></span>
+					<li class="sortable-item item-template acms-admin-form-group">
+						<span class="item-handle acms-admin-icon-sort acms-admin-hide-sp"></span>
 						<input type="text" name="basic_auth_skip_hosts[]" size="20" />
-						<input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger acms-margin-top-bottom-sp" />
+						<input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp" />
 					</li>
 					<li>
-						<input type="button" value="追加" class="item-insert acms-btn-admin" />
+						<input type="button" value="追加" class="item-insert acms-admin-btn-admin" />
 					</li>
 				</ul>
 				<input type="hidden" name="config[]" value="basic_auth_skip_hosts" />

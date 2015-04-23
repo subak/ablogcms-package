@@ -1,0 +1,68 @@
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-config_unit"></i>ユニットグループ修正</h1>
+	</div>
+	<div class="acms-admin-col-md-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Fix_UnitGroup -->
+
+<form method="post" action="" class="acms-admin-form">
+	<!-- BEGIN message#success -->
+	<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>ユニットグループのデータを修正しました。</p><!-- END message#success -->
+
+	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+		<div class="acms_fix_bg_index">
+			<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
+		</div>
+	</div>
+
+	<div class="acms-admin-panel acms-admin-panel-info">
+		<div class="acms-admin-panel-header">
+			概要
+		</div>
+		<div class="acms-admin-panel-body">
+			ユニットグループに設定してあるクラスを一括で書き換えます。
+		</div>
+	</div>
+
+	<!-- BEGIN step -->
+	<table class="adminTable acms-admin-table-admin-edit">
+		<tr>
+			<th>ターゲット<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="変更したいユニットグループの値を選択します。"></i></th>
+			<td>
+				<select name="unit_group_target">
+					<option value="">選択して下さい</option><!-- BEGIN unit_group:loop -->
+					<option value="{name}"{selected}>{name}</option><!-- END unit_group:loop -->
+
+				<input type="hidden" name="fix[]" value="unit_group_target" />
+				<input type="hidden" name="unit_group_target:validator#required" />
+				<!-- BEGIN unit_group_target:v#required -->
+				<label class="validator-result-0">ターゲットの値を選択して下さい</label>
+				<!-- END unit_group_target:v#required -->
+			</td>
+		</tr>
+		<tr>
+			<th>変更後<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="選択したユニットグループの値をここで入力した値に変更します。"></i></th>
+			<td>
+				<input type="text" name="unit_group_fix" value="{unit_group_fix}" />
+
+				<input type="hidden" name="fix[]" value="unit_group_fix" />
+				<input type="hidden" name="unit_group_fix:validator#required" />
+				<!-- BEGIN unit_group_fix:v#required -->
+				<label class="validator-result-0">変更値を入力して下さい</label>
+				<!-- END unit_group_fix:v#required -->
+			</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>
+				<input type="submit" name="ACMS_POST_Fix_UnitGroup" value="修正" onclick="return confirm('ユニットグループのデータを修正します。よろしいですか？');" class="acms-admin-btn-admin acms-admin-btn-admin-primary">
+			</td>
+		</tr>
+	</table>
+	<!-- END step -->
+</form>
+<!-- END_MODULE Admin_Fix_UnitGroup -->

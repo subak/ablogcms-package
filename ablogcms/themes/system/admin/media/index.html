@@ -1,20 +1,20 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-media"></i>メディア管理</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-media"></i>メディア管理</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Media_Index -->
 <!-- BEGIN refresh -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>メディア一覧を更新しました。</p><!-- END refresh --><!-- BEGIN index#notFound -->
-<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>メディアがありません。アップロードして下さい。</p><!-- END index#notFound -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>メディア一覧を更新しました。</p><!-- END refresh --><!-- BEGIN index#notFound -->
+<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>メディアがありません。アップロードして下さい。</p><!-- END index#notFound -->
 
-<div class="acms-filter">
-	<form action="" method="post" class="filter form-inline acms-form">
-		<div class="acms-form-group">
+<div class="acms-admin-filter">
+	<form action="" method="post" class="filter form-inline acms-admin-form">
+		<div class="acms-admin-form-group">
 			<!-- BEGIN_MODULE Admin_Blog_Select -->
 			絞り込み:
 			<select class="input-sm" name="_bid">
@@ -24,9 +24,9 @@
 			<input type="hidden" name="query[]" value="_bid" />
 			<!-- END_MODULE Admin_Blog_Select -->
 			<input type="hidden" name="axis" value="self" />
-			<label for="input-checkbox-axis-descendant-or-self" class="acms-form-checkbox">
+			<label for="input-checkbox-axis-descendant-or-self" class="acms-admin-form-checkbox">
 				<input type="checkbox" name="axis" value="descendant-or-self"{axis:checked#descendant-or-self} id="input-checkbox-axis-descendant-or-self" />
-				<i class="acms-ico-checkbox"></i>下階層のブログも表示
+				<i class="acms-admin-ico-checkbox"></i>下階層のブログも表示
 			</label>
 			<input type="hidden" name="query[]" value="axis" />
 		</div>
@@ -53,43 +53,43 @@
 				<option value="{limit}"{selected}>{limit}</option><!-- END limit:loop -->
 			</select>
 			<input type="hidden" name="bid" value="%{BID}" />
-			<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-btn-admin acms-btn-admin-info acms-width-sp" />
+			<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-admin-btn-admin acms-admin-btn-admin-info acms-admin-width-sp" />
 			<input type="hidden" name="admin" value="media_index" />
 
 	</form>
 </div>
 
-<form method="post" action="" class="acms-float-right js-acms_fix_target acms-position-right">
+<form method="post" action="" class="acms-admin-float-right acms-admin-float-none-sp js-acms_fix_target acms-admin-position-right">
 	<input type="hidden" name="bid" value="%{BID}" />
 	<input type="hidden" name="admin" value="media_upload" />
-	<input type="submit" class="acms-btn-admin" name="ACMS_POST_2GET" value="メディアアップロード" />
+	<input type="submit" class="acms-admin-btn-admin" name="ACMS_POST_2GET" value="メディアアップロード" />
 </form>
 
 <form method="post" action="" id="media-list-form">
 	<!-- BEGIN_MODULE Touch_Role_MediaEdit -->
-	<div class="acms-form-group js-acms_fix_marker js-acms_fix_target">
-		<input type="submit" class="acms-btn-admin acms-btn-admin-danger" name="ACMS_POST_Media_Index_Delete" value="削除" onclick="return confirm('この操作は取り消せません。\nよろしいですか？');">
+	<div class="acms-admin-form-group js-acms_fix_marker js-acms_fix_target">
+		<input type="submit" class="acms-admin-btn-admin acms-admin-btn-admin-danger" name="ACMS_POST_Media_Index_Delete" value="削除" onclick="return confirm('この操作は取り消せません。\nよろしいですか？');">
 	</div><!-- END_MODULE Touch_Role_MediaEdit -->
 
 	<!-- BEGIN index:veil -->
 	<div class="table-responsive">
-		<table role="presentation" class="adminTable acms-table-admin acms-table-heading acms-table-hover">
-			<thead class="acms-table-heading">
-				<th class="acms-table-center acms-th-checkbox acms-show-sp"><label class="acms-form-checkbox"><input type="checkbox" id="checkAll" class="checkAll" /><i class="acms-ico-checkbox"></i></label></th>
-				<th class="acms-hide-sp">サムネイル</th>
-				<th class="acms-show-sp acms-width-sp">ID&nbsp;/&nbsp;ファイル名&nbsp;/&nbsp;パス</th>
-				<th class="acms-hide-sp">日時</th>
-				<th class="acms-hide-sp">ラベル</th>
-				<th class="acms-hide-sp">アクション</th>
+		<table role="presentation" class="adminTable acms-admin-table-admin acms-admin-table-heading acms-admin-table-hover">
+			<thead class="acms-admin-table-heading">
+				<th class="acms-admin-table-center acms-admin-th-checkbox acms-admin-show-sp"><label class="acms-admin-form-checkbox"><input type="checkbox" id="checkAll" class="checkAll" /><i class="acms-admin-ico-checkbox"></i></label></th>
+				<th class="acms-admin-hide-sp">サムネイル</th>
+				<th class="acms-admin-show-sp acms-admin-width-sp">ID&nbsp;/&nbsp;ファイル名&nbsp;/&nbsp;パス</th>
+				<th class="acms-admin-hide-sp">日時</th>
+				<th class="acms-admin-hide-sp">ラベル</th>
+				<th class="acms-admin-hide-sp">アクション</th>
 			</thead>
 			<tbody class="files"><!-- BEGIN media:loop -->
 			<tr>
-				<td class="acms-show-sp acms-width-sp acms-table-center acms-td-checkbox">
-					<label class="acms-form-checkbox">
-						<input type="checkbox" name="checks[]" value="{bid}:{mid}" /><i class="acms-ico-checkbox"></i>
+				<td class="acms-admin-show-sp acms-admin-width-sp acms-admin-table-center acms-admin-td-checkbox">
+					<label class="acms-admin-form-checkbox">
+						<input type="checkbox" name="checks[]" value="{bid}:{mid}" /><i class="acms-admin-ico-checkbox"></i>
 					</label>
 				</td>
-				<td class="acms-show-sp acms-width-sp">
+				<td class="acms-admin-show-sp acms-admin-width-sp">
 					<div class="preview">
 						<!-- BEGIN_IF [{type}/nem/] --><!-- BEGIN_IF [{type}/eq/image] -->
 						<img src="%{MEDIA_ARCHIVES_DIR}{path}" width="60" /><!-- ELSE_IF [{thumbnail}/nem/] -->
@@ -99,18 +99,18 @@
 						<img src="%{ROOT_DIR}{icon}" /><!-- END_IF -->
 					</div>
 				</td>
-				<td class="acms-form acms-show-sp acms-width-sp">
-					<p><span class="acms-label label-default admin-eid-label">{mid}</span>&nbsp;{name}</p>
-					<input class="acms-form-block acms-form-width-full" type="text" value="{permalink}" readonly="readonly" />
+				<td class="acms-admin-form acms-admin-show-sp acms-admin-width-sp">
+					<p><span class="acms-admin-label label-default admin-eid-label">{mid}</span>&nbsp;{name}</p>
+					<input class="acms-admin-form-block acms-admin-form-width-full" type="text" value="{permalink}" readonly="readonly" />
 				</td>
-				<td class="acms-show-sp acms-width-sp acms-border-bottom-sp">
+				<td class="acms-admin-show-sp acms-admin-width-sp acms-admin-border-bottom-sp">
 					<p>{datetime}[date('Y/m/d H:i')]</p>
 				</td>
-				<td class="acms-hide-sp"><!-- BEGIN tag:loop -->{name}<!-- BEGIN glue -->, <!-- END glue --><!-- END tag:loop --></td>
-				<td class="acms-td-edit">
-					<div class="acms-btn-group acms-btn-group-entry admin-entry-dropdown-toggle">
+				<td class="acms-admin-hide-sp"><!-- BEGIN tag:loop -->{name}<!-- BEGIN glue -->, <!-- END glue --><!-- END tag:loop --></td>
+				<td class="acms-admin-td-edit">
+					<div class="acms-admin-btn-group acms-admin-btn-group-entry admin-entry-dropdown-toggle">
 						<div class="js-acms-dropdown-toggle">
-							<button type="button" class="acms-btn-admin" onclick="location.href='{editUrl}'">編集</button>
+							<button type="button" class="acms-admin-btn-admin" onclick="location.href='{editUrl}'">編集</button>
 						</div>
 					</div>
 				</td>
@@ -121,7 +121,7 @@
 	<!-- END index:veil -->
 
 	<!-- BEGIN pager:veil -->
-	<ul class="acms-pager"><!-- BEGIN backLink -->
+	<ul class="acms-admin-pager"><!-- BEGIN backLink -->
 		<li class="prev"><a href="{url}">&laquo;&nbsp;前へ</a></li><!-- END backLink --><!-- BEGIN page:loop -->
 		<li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop --><!-- BEGIN lastPage:veil -->
 		<li class="last"><a href="{lastPageUrl}">...{lastPage}</a></li><!-- END lastPage:veil --><!-- BEGIN forwardLink -->

@@ -1,0 +1,84 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_Summary -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+<div class="row">
+	<!-- BEGIN unit:loop -->
+	<!-- BEGIN entry:loop -->
+	<div class="col-sm-6 col-md-4">
+		<div class="thumbnail">
+		<img src="%{ROOT_DIR}{path}" alt="{alt}">
+			<div class="caption">
+				<h3>{title}</h3>
+				<p>{summary}[trim(151, '...')]</p>
+				<p><a href="{url}" class="btn btn-primary" role="button">詳細をみる</a></p>
+			</div>
+		</div>
+	</div>
+	<!-- END entry:loop -->
+	<!-- END unit:loop -->
+</div>
+
+<!-- BEGIN pager:veil -->
+<div class="text-center">
+	<ul class="pagination">
+		<!-- BEGIN backLink --><li><a href="{url}">&laquo; 前の{backNum}件</a></li><!-- END backLink -->
+		<!-- BEGIN page:loop --><li><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></li><!-- END page:loop -->
+		<!-- BEGIN lastPage:veil --><li><span>...</span></li><li><a href="{lastPageUrl}">{lastPage}</a></li><!-- END lastPage:veil -->
+		<!-- BEGIN forwardLink --><li><a href="{url}">次の{forwardNum}件 &raquo;</a></li><!-- END forwardLink -->
+	</ul>
+</div>
+<!-- END pager:veil -->
+</div>
+<!-- END_MODULE Entry_Summary -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div>
+	<div class="row">
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+			<img src="/images/noImage.png" alt="">
+				<div class="caption">
+					<h3>エントリーのタイトル</h3>
+					<p>こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。</p>
+					<p><a href="#" class="btn btn-primary" role="button">詳細をみる</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+			<img src="/images/noImage.png" alt="">
+				<div class="caption">
+					<h3>エントリーのタイトル</h3>
+					<p>こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。</p>
+					<p><a href="#" class="btn btn-primary" role="button">詳細をみる</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+			<img src="/images/noImage.png" alt="">
+				<div class="caption">
+					<h3>エントリーのタイトル</h3>
+					<p>こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。</p>
+					<p><a href="#" class="btn btn-primary" role="button">詳細をみる</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="text-center">
+		<ul class="pagination">
+			<li><a href="#">&laquo; 前の5件</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><span>...</span></li>
+			<li><a href="#">25</a></li>
+			<li><a href="#">次の5件 &raquo;</a></li>
+		</ul>
+	</div>
+</div>
+<!-- END layout#dummy -->

@@ -1,0 +1,112 @@
+<h3>ご住所</h3>
+<div>
+	<div>
+		<h4>1. お客様のご住所</h4>
+		<dl>
+			<dt>{name#1}（{ruby#1}）様</dt>
+			<dd>〒{zip#1}</dd>
+			<dd>{prefecture#1} {city#1} {field_1#1} {field_2#1}</dd>
+			<dd>{telephone#1}</dd>
+		</dl>
+	</div>
+	<div>
+		<h4>2. お届け先のご住所</h4>
+		<dl>
+			<dt>{name#2}（{ruby#2}）様</dt>
+			<dd>〒{zip#2}</dd>
+			<dd>{prefecture#2} {city#2} {field_1#2} {field_2#2}</dd>
+			<dd>{telephone#2}</dd>
+		</dl>
+	</div>
+	<hr class="clearHidden" />
+</div>
+
+<h3>お買い物の内容</h3>
+<div class="blogEntryContentTableWrapper">
+	<table class="blogEntryContentTable">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>画像</th>
+				<th>商品名</th>
+				<th>単価</th>
+				<th>数量</th>
+				<th>小計</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- BEGIN_MODULE Shop2_Cart_Result -->
+			<!-- BEGIN contents --><!-- BEGIN item:loop -->
+			<tr>
+				<td>{item_id}</td>
+				<td>
+					<div style="width:{x}px; height:{y}px; overflow:hidden;" class="dotBorder">
+						<img<!-- BEGIN image:veil --> src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" style="margin-left:{left}px; margin-top:{top}px;" <!-- END image:veil -->
+						<!-- BEGIN noimage --> src="%{CURRENT_THEMES_DIR}/images/dummy60.gif" width="60" height="60" <!-- END noimage -->alt="{item_name}" longdesc="{url}" />
+					</div>
+				</td>
+				<td><a href="{url}" title="{entry_title}">{item_name}</a></td>
+				<td>&yen;{item_price}[number_format]</td>
+				<td>{item_quantity}</td>
+				<td>&yen;{item_price#sum}[number_format]</td>
+			</tr><!-- END item:loop --><!-- END contents -->
+			<!-- END_MODULE Shop2_Cart_Result -->
+		</tbody>
+	</table>
+</div>
+<div class="blogEntryContentTableWrapper">
+	<table class="blogEntryContentTable">
+		<tr>
+			<th>商品合計<!-- ( 税抜+税 )--></th>
+			<td>&yen;{subtotal}[number_format]<!-- ( &yen;{tax-omit}[number_format]+&yen;{tax-only}[number_format] )--></td>
+		</tr>
+		<tr>
+			<th>送料</th>
+			<td>&yen;{charge#deliver}[number_format]
+				<!-- BEGIN item_except:touch#on -->
+				( 概算の配送料です )
+				<!-- END item_except:touch#on --></td>
+		</tr>
+		<tr>
+			<th>支払い手数料</th>
+			<td>&yen;{charge#payment}[number_format]</td>
+		</tr><!-- BEGIN charge#others:veil -->
+		<tr>
+			<th>その他オプション</th>
+			<td>&yen;{charge#others}[number_format]</td>
+		</tr><!-- END charge#others:veil -->
+		<tr>
+			<th>総合計</th>
+			<td>&yen;{total}[number_format]</td>
+		</tr>
+	</table>
+</div>
+<!-- BEGIN item_except:touch#on -->
+<p>( 配送料は概算の配送料です。後ほど正確な配送料をお知らせします。それまでご入金はお控えください。 )</p>
+<!-- END item_except:touch#on -->
+
+<h3>お支払い・配送方法など</h3>
+<div class="blogEntryContentTableWrapper">
+<table class="blogEntryContentTable">
+	<tr>
+		<th>決済方法</th>
+		<td>{payment}</td>
+	</tr>
+	<tr>
+		<th>配送方法</th>
+		<td>{deliver}</td>
+	</tr><!-- BEGIN request_date:veil -->
+	<tr>
+		<th>配送希望日</th>
+		<td>{request_date}</td>
+	</tr><!-- END request_date:veil --><!-- BEGIN request_time:veil -->
+	<tr>
+		<th>配送希望時間</th>
+		<td>{request_time}</td>
+	</tr><!-- END request_time:veil --><!-- BEGIN request_others:veil -->
+	<tr>
+		<th>その他オプション</th>
+		<td>{request_others}</td>
+	</tr><!-- END request_others:veil -->
+</table>
+</div>

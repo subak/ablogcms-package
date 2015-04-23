@@ -1,0 +1,28 @@
+<footer class="footWrapper" role="contentinfo">
+<!-- BEGIN_MODULE Blog_Field -->
+	<div class="footer acms-container sp-container">
+		<div class="acms-grid-r">
+			<address class="acms-col-md-6">
+				<dl class="companyAbout">
+					<!-- BEGIN companyName --><dt class="companyName">{companyName}</dt><!-- END companyName -->
+					<!-- BEGIN zip:veil --><dd class="companyDetail">〒{zip}</dd><!-- END zip:veil -->
+					<!-- BEGIN address --><dd class="companyDetail">{address}</dd><!-- END address -->
+					<!-- BEGIN tel --><dd class="companyDetail">TEL : <a href="tel:{tel}">{tel}</a><!-- BEGIN_MODULE Touch_SessionWithCompilation --> <span class="editLink">[<a href="%{SCRIPT_ROOT}bid/%{BID}/admin/blog_edit/#acms_custom">編集</a>]</span><!-- END_MODULE Touch_SessionWithCompilation --></dd><!-- END tel -->
+				</dl>
+			</address>
+
+			<div class="acms-col-md-6">
+				<div class="acms-hide acms-block-lg acms-block-xl">
+					<!-- SNSアカウントへのリンク -->
+					<!-- #include file="/include/footer/snsLink.html" -->
+				</div>
+				<p class="pageTop"><a class="scrollTo" href="#"><span class="pageTopBtn">ページの先頭へ</span></a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="copyright">
+		<p class="copyrightText acms-container acms-text-center"><!-- BEGIN_MODULE Blog_Field -->{siteFooter}[raw]<!-- END_MODULE Blog_Field --> powered by <a href="http://www.a-blogcms.jp/"><img src="/images/acms.png" width="96" alt="a-blog cms" class="copryrightLogo" /></a></p>
+	</div>
+<!-- END_MODULE Blog_Field -->
+</footer>

@@ -1,10 +1,9 @@
-/* ---------------
- navbar 
---------------- */
+/* ------------------------------  
+ ナビゲーション
+------------------------------- */
 .acms-navbar {
 	clear: both;
 	width: 100%;
-	height: 60px;
 	margin: 0 0 20px 0;
 	background-color: #333333;
 	border-top: solid 1px #333333;
@@ -13,17 +12,16 @@
 	_text-align: center;
 	z-index: 20;
 
-	/* リスト全体 */
+	// リスト全体
 	ul {
 		list-style: none;
 		margin: 0 auto;
 		padding: 0;
 		display: block;
-		width: 940px;
 		list-style: none;
 	}
 
-	/* リンク */
+	// リンク
 	a:link,
 	a:visited,
 	a:hover,
@@ -31,10 +29,10 @@
 	#viewing {
 		display: block;
 		_display: inline-block;
-		height: 60px;
 		padding: 0 30px;
 		color: #FFFFFF;
 		font-size: 14px;
+		text-decoration: none;
 		letter-spacing: 0 !important;
 		line-height: 4.5;
 	}
@@ -54,7 +52,6 @@
 	li {
 		position: relative;
 			top: 0;
-		float: left;
 		white-space: nowrap;
 		font-weight: bold;
 		border-left: solid 1px #CCC;
@@ -122,6 +119,45 @@
 *+html .acms-navbar ul li ul a { /*IE用*/
 	width: 200px; /*（94-10-10-1-1）パディングとボーダーの分を引いた値*/
 	white-space: normal; /*幅に応じて改行*/
+}
+
+@media (min-width : @breakpoint-md-min) {
+	.acms-navbar {
+		height: 60px;
+		ul {
+			list-style: none;
+			margin: 0 auto;
+			padding: 0;
+			display: block;
+			width: 940px;
+		}
+		li {
+			float: left;
+		}
+		a:link,
+		a:visited,
+		a:hover,
+		a:active,
+		#viewing {
+			height: 60px;
+		}
+		/* 2段目以降 */
+		ul ul { 
+			position: absolute;
+				top: 60px;
+				left: 0;
+			li {
+				position: relative;
+				width: 100%;
+				height: 40px;
+			}
+			a{
+				*width: 240px;
+				height: 40px !important;
+				padding: 0 20px;
+			}
+		}
+	}
 }
 
 // --------------- 

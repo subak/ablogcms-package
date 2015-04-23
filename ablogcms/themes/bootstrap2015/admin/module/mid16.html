@@ -1,0 +1,61 @@
+<h3 class="acms-admin-admin-title2">テキスト設定</h3>
+<div class="acms-admin-table-responsive">
+<table class="js-fieldgroup-sortable acms-admin-table">
+	<thead>
+	<tr>
+		<th></th>
+		<th>ステップ</th>
+		<th>見出し</th>
+		<th>詳細</th>
+		<th class="acms-admin-table-nowrap">削除</th>
+	</tr>
+	</thead>
+	<!-- BEGIN customFieldGroup:loop -->
+	<tr class="sortable-item">
+		<td class="item-handle"><img width="17" height="17" class="arrowHandle" src="/images/admin_arrow_vertical.gif" /></td>
+		<td>
+			<input type="text" name="step_num[{i}]" value="{step_num}" class="acms-admin-form-width-full" placeholder="1" />
+		</td>
+		<td>
+			<input type="text" name="step_heading[{i}]" value="{step_heading}" class="acms-admin-form-width-full" placeholder="見出し" />
+		</td>
+		<td>
+			<textarea name="step_detail[{i}]" cols="30" rows="3" class="acms-admin-form-width-full" placeholder="詳細">{step_detail}</textarea>
+		</td>
+		<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
+	</tr>
+	<!-- END customFieldGroup:loop -->
+	<tr class="sortable-item item-template">
+		<td class="item-handle"><img width="17" height="17" class="arrowHandle" src="/images/admin_arrow_vertical.gif" /></td>
+		<td>
+			<input type="text" name="step_num[]" value="" class="acms-admin-form-width-full" placeholder="1" />
+		</td>
+		<td>
+			<input type="text" name="step_heading[]" value="" class="acms-admin-form-width-full" placeholder="見出し" />
+		</td>
+		<td>
+			<textarea name="step_detail[]" cols="40" rows="3" class="acms-admin-form-width-full" placeholder="詳細"></textarea>
+		</td>
+		<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
+	</tr>
+	<tfoot>
+		<tr>
+			<td colspan="4">
+				<input type="button" class="item-insert acms-admin-btn-admin acms-admin-btn-admin-primary" value="追加" style="width:100px" />
+				<input type="hidden" class="item-max" value="4" />
+			</td>
+		</tr>
+	</tfoot>
+</table>
+</div>
+
+<input type="hidden" name="@customFieldGroup[]" value="step_num" />
+<input type="hidden" name="field[]" value="step_num" />
+
+<input type="hidden" name="@customFieldGroup[]" value="step_heading" />
+<input type="hidden" name="field[]" value="step_heading" />
+
+<input type="hidden" name="@customFieldGroup[]" value="step_detail" />
+<input type="hidden" name="field[]" value="step_detail" />
+
+<input type="hidden" name="field[]" value="@customFieldGroup" />

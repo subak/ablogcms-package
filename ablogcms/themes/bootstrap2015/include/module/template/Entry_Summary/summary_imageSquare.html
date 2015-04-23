@@ -1,0 +1,58 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_Summary -->
+<div class="clearfix">
+	<!-- BEGIN moduleField -->
+	<h2 class="moduleHeading">{module_heading}</h2>
+	<p>{module_detail}[nl2br]</p><!-- END moduleField -->
+	<!--#include file="/admin/module/setting.html"-->
+	<!-- BEGIN notFound -->
+	<p>エントリーが見つかりませんでした。</p>
+	<!-- END notFound -->
+
+	<!-- BEGIN unit:loop -->
+		<div>
+			<!-- BEGIN entry:loop -->
+			<div class="col-md-4 text-center feature-border">
+				<div style="width:{x}px; height:{y}px; overflow:hidden; position:relative;" class="img-wrap-center"><!-- BEGIN image:veil -->
+				<img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" alt="" style="left:{left}px; top:{top}px; position:relative;" /><!-- END image:veil --><!-- BEGIN noimage -->
+				noimage
+				<!-- END noimage -->
+				</div>
+				<p class="summary-title"><a href="{url}">{title}</a></p>
+				<p>{entry_meta_description}</p>
+			</div><!-- END entry:loop -->
+		</div>
+		<!-- END unit:loop -->
+</div>
+<!-- END_MODULE Entry_Summary -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div class="clearfix js-animation">
+	<h2 class="moduleHeading">見出し</h2>
+	<p>ここにリード文が入ります。ここにリード文が入ります。ここにリード文が入ります。ここにリード文が入ります。ここにリード文が入ります。ここにリード文が入ります。</p>
+	<div>
+		<div class="col-md-4 text-center feature-border">
+			<div style="width:120px; height:120px; overflow:hidden; position:relative;" class="img-wrap-center"><!-- BEGIN image:veil -->
+			<img src="/images/noImage.png" width="120" height="120" alt="" style="left:0px; top:0px; position:relative;" /><!-- END image:veil -->
+			</div>
+			<p class="summary-title"><a href="{url}">サンプルA</a></p>
+			<p>ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。</p>
+		</div>
+		<div class="col-md-4 text-center feature-border">
+			<div style="width:120px; height:120px; overflow:hidden; position:relative;" class="img-wrap-center"><!-- BEGIN image:veil -->
+			<img src="/images/noImage.png" width="120" height="120" alt="" style="left:0px; top:0px; position:relative;" /><!-- END image:veil -->
+			</div>
+			<p class="summary-title"><a href="{url}">サンプルA</a></p>
+			<p>ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。</p>
+		</div>
+		<div class="col-md-4 text-center feature-border">
+			<div style="width:120px; height:120px; overflow:hidden; position:relative;" class="img-wrap-center"><!-- BEGIN image:veil -->
+			<img src="/images/noImage.png" width="120" height="120" alt="" style="left:0px; top:0px; position:relative;" /><!-- END image:veil -->
+			</div>
+			<p class="summary-title"><a href="{url}">サンプルA</a></p>
+			<p>ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。ここに詳細な概要文が入ります。</p>
+		</div>
+	</div>
+</div>
+<!-- END layout#dummy -->

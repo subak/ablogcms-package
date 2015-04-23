@@ -1,6 +1,6 @@
-/* ---------------
- sidebar
---------------- */
+/* ------------------------------  
+ サイドバー
+------------------------------- */
 .acms-sidebar{
 	padding-bottom: 40px;
 	ul{
@@ -18,41 +18,55 @@
 
 /* タイトル */
 .acms-sidebar-title{
-	padding: 5px 20px;
-	.font-size(11);
+	padding: 10px 20px;
+	.font-size(14);
 	font-weight: bold;
-	border-top: 1px solid #666;
-}
+	background-color: #15141c;
+	color: #999;
 
-/* リンク */
-.acms-sidebar-link a{
-	display: block;
-	padding: 11px 20px;
-	line-height: 1.2;
-	&:hover{
-		background-color: #4F4F4F;
-		color: #E0E0E0;
+	@media (min-width : @breakpoint-md-min){
+		padding: 5px 20px;
+		border-top: 1px solid #666;
+		.font-size(11);
+		background-color: inherit;
+		color: #fff;
 	}
 }
 
-// 現在いるとき
-.stay,
-.stay a:hover {
-	background-color: #FFF;
+/* リンク */
+.acms-sidebar-link {
+	a{
+		display: block;
+		padding: 11px 20px;
+		line-height: 1.2;
+		&:hover{
+			background-color: #4F4F4F;
+			color: #E0E0E0;
+		}
+	}
+	// 現在いるとき
+	.stay,
+	.stay a:hover {
+		background-color: #FFF;
+	}
+	.stay a {
+		color: #333;
+	}
 }
 
-.acms-sidebar-link .stay a {
-	color: #333;
+.acms-sidebar-childlink {
+	background: #353438;
 }
+
 
 // --------------- 
 // スマートフォンのとき
 // ---------------
 .acms-sidebar-sp{
-	display: none;
+	display: block;
 	// 表示
-	@media screen and (max-width: 768px) {
-		display: block;
+	@media (min-width : @breakpoint-md-min){
+		display: none;
 	}
 	p{
 		margin: 0;

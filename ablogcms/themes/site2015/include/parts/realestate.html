@@ -1,0 +1,175 @@
+<!-- BEGIN_MODULE Entry_Body id="" -->
+<!-- BEGIN notFound -->
+<section class="acms-entry">
+	<h1 class="notFoundTitle">Not found</h1>
+	<p>お探しの記事は見つかりませんでした。</p>
+</section>
+<!-- END notFound -->
+
+<!-- 1記事▼▼ -->
+<!-- BEGIN entry:loop -->
+<div class="acms-box-medium">
+<!--#include file="/admin/entry/revision-info.html"-->
+</div>
+<article class="entry clearfix">
+	<!--#include file="admin/entry/title.html"-->
+	<!-- BEGIN title:veil -->
+	<!-- エントリーのタイトル　開始▼▼ -->
+	<header class="acms-page-header page-header clearfix">
+		<h1 class="entryTitle"><a href="{titleUrl}">{title}[raw]</a></h1>
+	</header>
+
+	<div class="acms-entry entryColumn">
+		<div class="acms-grid-r">
+
+			<!-- BEGIN mainPhotoBox:veil -->
+			<div class="acms-col-12">
+				<!-- BEGIN mainPhoto:veil -->
+				<div class="column-image-auto">
+					<a href="%{HTTP_ROOT}archives/{mainPhoto@largePath}" rel="prettyPhoto[custom]"><img src="%{ARCHIVES_DIR}{mainPhoto@path}" rel="prettyPhoto[custom]"></a>
+				</div>
+				<!-- END mainPhoto:veil -->
+				<!-- BEGIN mainCaption:veil --><p class="caption">{mainCaption}</p><!-- END mainCaption:veil -->
+			</div>
+			<!-- END mainPhotoBox:veil -->
+
+			<!-- BEGIN mainPhotoBox:veil -->
+			<div class="acms-col-md-4">
+				<!-- BEGIN subPhoto1:veil -->
+				<div class="column-image-left">
+					<a href="%{HTTP_ROOT}archives/{subPhoto1@largePath}" rel="prettyPhoto[custom]">
+						<img class="columnImage" src="%{ARCHIVES_DIR}{subPhoto1@path}" alt="" width="{subPhoto1@x}" height="{subPhoto1@y}" />
+					</a>
+				<!-- BEGIN subCaption1:veil --><p class="caption">{subCaption1}</p><!-- END subCaption1:veil -->
+				</div>
+				<!-- END subPhoto1:veil -->
+			</div>
+			<!-- END mainPhotoBox:veil -->
+
+			<!-- BEGIN mainPhotoBox:veil -->
+			<div class="acms-col-md-4">
+				<!-- BEGIN subPhoto2:veil -->
+				<div class="column-image-left">
+					<a href="%{HTTP_ROOT}archives/{subPhoto2@largePath}" rel="prettyPhoto[custom]">
+						<img class="columnImage" src="%{ARCHIVES_DIR}{subPhoto2@path}" alt="" width="{subPhoto2@x}" height="{subPhoto2@y}" />
+					</a>
+				<!-- BEGIN subCaption2:veil --><p class="caption">{subCaption2}</p><!-- END subCaption2:veil -->
+				</div>
+				<!-- END subPhoto2:veil -->
+			</div>
+			<!-- END mainPhotoBox:veil -->
+
+			<!-- BEGIN mainPhotoBox:veil -->
+			<div class="acms-col-md-4">
+				<!-- BEGIN subPhoto3:veil -->
+				<div class="column-image-left">
+					<a href="%{HTTP_ROOT}archives/{subPhoto3@largePath}" rel="prettyPhoto[custom]">
+						<img class="columnImage" src="%{ARCHIVES_DIR}{subPhoto3@path}" alt="" width="{subPhoto3@x}" height="{subPhoto3@y}" />
+					</a>
+				<!-- BEGIN subCaption3:veil --><p class="caption">{subCaption3}</p><!-- END subCaption3:veil -->
+				</div>
+				<!-- END subPhoto3:veil -->
+			</div>
+			<!-- END mainPhotoBox:veil -->
+
+			<!-- BEGIN table:veil -->
+			<div class="acms-col-12">
+				<div class="entry-container">
+					<div class="acms-table-responsive">
+						<table class="acms-table">
+							<tr>
+								<th>所在地</th>
+								<th>最寄駅</th>
+								<th>徒歩</th>
+								<th>区分</th>
+								<th>階/階建</th>
+							</tr>
+							<tr>
+								<td>{address}</td>
+								<td>{station}</td>
+								<td><!-- BEGIN toho:veil -->{toho}分<!-- END toho:veil --></td>
+								<td>{kubun}</td>
+								<td><!-- BEGIN kai:veil -->{kai}階<!-- END kai:veil -->
+								<!-- BEGIN kaidate:veil --> / {kaidate}階建<!-- END kaidate:veil --></td>
+							</tr>
+						</table>
+					</div>
+					<div class="acms-table-responsive">
+						<table class="acms-table">
+							<tr>
+								<th>家賃</th>
+								<th>管理費等</th>
+								<th>敷金/礼金</th>
+								<th>間取</th>
+								<th>専有面積</th>
+								<th>築年数</th>
+							</tr>
+							<tr>
+								<td><!-- BEGIN price:veil -->{price}[number_format]円<!-- END price:veil --></td>
+								<td><!-- BEGIN kanri:veil -->{kanri}[number_format]円<!-- END kanri:veil --></td>
+								<td>{shiki} / {rei}</td>
+								<td>{madori}</td>
+								<td><!-- BEGIN menseki:veil -->{menseki}m<sup>2</sup><!-- END menseki:veil --></td>
+								<td><!-- BEGIN chikunen:veil -->{chikunen}年<!-- END chikunen:veil --></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- END table:veil -->
+
+			<!-- BEGIN lat:veil -->
+			<div class="realestateMap realestateMapEntry" style="margin-bottom:20px">
+				<img class="js-s2d-ready" src="http://maps.google.com/maps/api/staticmap?center={mapLat},{mapLng}&zoom={mapZoom}&size=844x300&maptype=roadmap&markers={mapLat},{mapLng}&sensor=false" width="844" height="300" style="display:block;" />
+			</div>
+			<!-- END lat:veil -->
+		</div>
+
+		<!-- BEGIN unit:veil -->
+		<!--#include file="/include/unit.html"-->
+		<hr class="clearHidden" />
+		<!-- END unit:veil -->
+		<!-- BEGIN continueLink:veil -->
+		<p><a href="{continueUrl}">「{continueName}」の続きを読む</a></p>
+		<!-- END continueLink:veil -->
+
+	</div>
+
+	<!-- BEGIN formBody -->
+	<!--#include file="/include/form/unit.html"-->
+	<hr class="clearHidden" >
+	<!-- END formBody -->
+
+	<!-- BEGIN adminEntryEdit -->
+	<!--#include file="/admin/entry/edit.html"-->
+	<!--#include file="/admin/entry/add.html"-->
+	<!-- END adminEntryEdit -->
+
+	<!-- BEGIN adminFormEdit -->
+	<!--#include file="/admin/form2/edit.html"-->
+	<!-- END adminFormEdit -->
+
+	<!-- BEGIN_MODULE Touch_Entry -->
+	<!-- BEGIN tag:veil -->
+	<footer class="entryFooter">
+		<div class="clearfix">
+			<dl class="entryTag">
+				<dt class="acms-inline-space entryTagIcon"><span class="acms-icon-tag"></span><span class="acms-hide-visually">タグ</span></dt>
+				<!-- BEGIN tag:loop -->
+				<dd class="entryTagItem acms-inline-space"><a href="/entry.html/tag/{name}">{name}</a></dd>
+				<!-- END tag:loop -->
+			</dl>
+		</div>
+	</footer><!-- END tag:veil -->
+	<!-- END_MODULE Touch_Entry -->
+
+	<!--#include file="/admin/entry/action.html"-->
+
+</article>
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+
+<!-- ページャー -->
+<!-- #include file="/include/module/entry/pager.html" -->
+
+<!-- END_MODULE Entry_Body -->

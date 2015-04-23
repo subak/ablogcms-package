@@ -1372,6 +1372,13 @@
     Key: MUL
     Default: 
     Extra: 
+  field_mid: 
+    Field: field_mid
+    Type: int(11)
+    Null: YES
+    Key: MUL
+    Default: 
+    Extra: 
   field_blog_id: 
     Field: field_blog_id
     Type: int(11)
@@ -1431,6 +1438,13 @@
     Extra: 
   field_bid: 
     Field: field_bid
+    Type: int(11)
+    Null: YES
+    Key: MUL
+    Default: 
+    Extra: 
+  field_mid: 
+    Field: field_mid
     Type: int(11)
     Null: YES
     Key: MUL
@@ -1540,6 +1554,70 @@
     Field: fulltext_blog_id
     Type: int(11)
     Null: NO
+    Key: 
+    Default: 
+    Extra: 
+%{PREFIX}layout_grid: 
+  layout_grid_identifier: 
+    Field: layout_grid_identifier
+    Type: varchar(64)
+    Null: NO
+    Key: MUL
+    Default: 
+    Extra: 
+  layout_grid_serial: 
+    Field: layout_grid_serial
+    Type: int(11)
+    Null: NO
+    Key: 
+    Default: 
+    Extra: 
+  layout_grid_class: 
+    Field: layout_grid_class
+    Type: varchar(64)
+    Null: NO
+    Key: 
+    Default: 
+    Extra: 
+  layout_grid_parent: 
+    Field: layout_grid_parent
+    Type: int(11)
+    Null: NO
+    Key: MUL
+    Default: 
+    Extra: 
+  layout_grid_col: 
+    Field: layout_grid_col
+    Type: int(2)
+    Null: NO
+    Key: MUL
+    Default: 
+    Extra: 
+  layout_grid_row: 
+    Field: layout_grid_row
+    Type: int(2)
+    Null: NO
+    Key: MUL
+    Default: 
+    Extra: 
+  layout_grid_mid: 
+    Field: layout_grid_mid
+    Type: int(11)
+    Null: YES
+    Key: 
+    Default: 
+    Extra: 
+  layout_grid_preview: 
+    Field: layout_grid_preview
+    Type: int(1)
+    Null: NO
+    Key: 
+    Default: 0
+    Extra: 
+  layout_grid_tpl: 
+    Field: layout_grid_tpl
+    Type: varchar(256)
+    Null: YES
     Key: 
     Default: 
     Extra: 
@@ -2241,6 +2319,20 @@
     Null: NO
     Key: 
     Default: local
+    Extra: 
+  module_custom_field: 
+    Field: module_custom_field
+    Type: varchar(4)
+    Null: NO
+    Key: 
+    Default: off
+    Extra: 
+  module_layout_use:
+    Field: module_layout_use
+    Type: int(1)
+    Null: NO
+    Key: 
+    Default: 0
     Extra: 
   module_blog_id: 
     Field: module_blog_id
@@ -3488,6 +3580,13 @@
     Null: NO
     Key: 
     Default: contributor
+    Extra: 
+  user_locale: 
+    Field: user_locale
+    Type: varchar(16)
+    Null: NO
+    Key: 
+    Default: 
     Extra: 
   user_indexing: 
     Field: user_indexing

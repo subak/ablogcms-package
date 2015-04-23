@@ -1,0 +1,8 @@
+%{PREFIX}mixpanel: 
+  distinct_id: 
+    Field: 'distinct_id'
+    Type: 'varchar(256)'
+    Null: 'NO'
+    Key: 'PRI'
+    Default: 
+    Extra: 

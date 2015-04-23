@@ -1,0 +1,44 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_Photo id="photoOne" -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<div class="clearfix js-animation">
+	<!-- BEGIN moduleField -->
+	<!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil -->
+	<!-- BEGIN module_detail:veil --><p>{module_detail}[nl2br]</p><!-- END module_detail:veil --><!-- END moduleField -->
+	<!-- BEGIN notFound -->
+	<p>エントリーが見つかりませんでした。</p>
+	<!-- END notFound -->
+	
+	<div><!-- BEGIN unit:loop -->
+		<!-- BEGIN entry:loop -->
+		<a href="{url}" class="photoParent"><!-- BEGIN image:veil -->
+			<img src="%{ROOT_DIR}{path}" alt="" class="img-responsive acms-slide-bottom acms-delay-first"/><!-- END image:veil -->
+			<div class="photoFilter acms-slide-bottom acms-delay-first"></div>
+			<div class="photoTitleBottom">
+				<p class="photoDate acms-slide-bottom acms-delay-second"><time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日</time></p>
+				<p class="photoTitle acms-slide-bottom acms-delay-second">{title}</p>
+			</div>
+		</a>
+		<!-- END entry:loop -->
+		<!-- END unit:loop -->
+	</div>
+</div>
+</div>
+<!-- END_MODULE Entry_Photo -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div class="clearfix js-animation active">
+	<div>
+		<a href="#" class="photoParent">
+			<img src="/images/img_sample_square.png" alt="" class="img-responsive acms-slide-bottom acms-delay-first">
+			<div class="photoFilter"></div>
+			<div class="photoTitleBottom">
+				<p class="photoDate acms-slide-bottom acms-delay-second"><time datetime="2015-04-14">2015年04月14日</time></p>
+				<p class="photoTitle acms-slide-bottom acms-delay-second">お知らせのエントリー</p>
+			</div>
+		</a>
+	</div>
+</div>
+<!-- END layout#dummy -->

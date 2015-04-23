@@ -1,0 +1,40 @@
+<div class="clearfix">
+	<!-- BEGIN product_image:veil -->
+	<div class="column-image- acms-admin-col-4">
+		<!-- BEGIN_IF [{product_image@path}/nem/] -->
+			<img src="%{ARCHIVES_DIR}{product_image@path}" alt="" width="200" class="productImage" />
+			<input type="hidden" name="product_image{id}@old" value="{product_image@path}" /><br />
+			<label class="acms-admin-form-checkbox">
+				<i class="acms-admin-ico-checkbox"></i><input type="checkbox" name="product_image{id}@edit" value="delete" /> 削除
+			</label>
+			<!-- END_IF -->
+			<input type="file" name="product_image{id}" size="20" />
+			<input type="hidden" name="unit{id}[]" value="product_image{id}" />
+			<input type="hidden" name="product_image{id}:extension" value="image" />
+			<input type="hidden" name="product_image{id}@size" value="300" />
+			<input type="hidden" name="product_image{id}@filename" value="" />
+	</div><!-- END product_image:veil -->
+	<!-- BEGIN custom_table:veil -->
+	<div class="acms-admin-col-8">
+		<table class="customTable entryFormColumnTable">
+			<!-- BEGIN product_price:veil -->
+			<tr>
+				<th>商品価格</th>
+				<td><input type="text" name="product_price{id}" value="{product_price}" class="acms-admin-form-width-3quarters" placeholder="1,000" /> 円
+					<input type="hidden" name="unit{id}[]" value="product_price{id}" /></td>
+			</tr><!-- END product_price:veil -->
+			<!-- BEGIN product_price:veil -->
+			<tr>
+				<th>サイズ</th>
+				<td><input type="text" name="product_size{id}" value="{product_size}" class="acms-admin-form-width-3quarters" placeholder="10cm x 10cm" />
+					<input type="hidden" name="unit{id}[]" value="product_size{id}" /></td>
+			</tr><!-- END product_price:veil -->
+			<!-- BEGIN product_price:veil -->
+			<tr>
+				<th>重量</th>
+				<td><input type="text" name="product_amount{id}" value="{product_amount}" class="acms-admin-form-width-3quarters" placeholder="100g" />
+					<input type="hidden" name="unit{id}[]" value="product_amount{id}" /></td>
+			</tr><!-- END product_price:veil -->
+		</table>
+	</div><!-- END custom_table:veil -->
+</div>

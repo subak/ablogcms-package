@@ -1,0 +1,45 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Blog_Field id="fieldStep" -->
+<div>
+	<!--#include file="/admin/module/setting.html"-->
+	<!-- BEGIN moduleField --><div class="text-center">
+		<!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil -->
+		<!-- BEGIN module_detail:veil --><p class="moduleDetail">{module_detail}[nl2br]</p><!-- END module_detail:veil -->
+	</div>
+	<div class="acms-grid-r">
+		<!-- BEGIN customFieldGroup:loop -->
+		<div class="stepItem col-sm-4">
+			<h4 class="stepHeading text-center"><span class="stepNum">{step_num}</span>{step_heading}</h4>
+			<p>{step_detail}</p>
+		</div>
+		<!-- END customFieldGroup:loop -->
+	</div>
+	<!-- END moduleField -->
+</div>
+<!-- END_MODULE Blog_Field -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div class="text-center">
+	<h2 class="moduleHeading">Bootstrap2015テーマの使い方</h2>
+	<p class="moduleDetail">Bootstrap2015テーマの使い方は簡単です。是非使ってみてください。</p>
+</div>
+<div class="acms-grid-r">
+
+	<div class="stepItem col-sm-4">
+		<h4 class="stepHeading text-center"><span class="stepNum">1</span>インストール</h4>
+		<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+	</div>
+
+	<div class="stepItem col-sm-4">
+		<h4 class="stepHeading text-center"><span class="stepNum">2</span>レイアウト</h4>
+		<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+	</div>
+
+	<div class="stepItem col-sm-4">
+		<h4 class="stepHeading text-center"><span class="stepNum">3</span>テンプレート編集</h4>
+		<p>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+	</div>
+
+</div>
+<!-- END layout#dummy -->

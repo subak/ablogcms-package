@@ -1,28 +1,28 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title">
-			<i class="acms-icon acms-icon-config_authorize"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title">
+			<i class="acms-admin-icon acms-admin-icon-config_authorize"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
 				<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 				<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->外部認証設定
 		</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Config -->
 
-<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
 
 <!-- BEGIN_MODULE Api_Twitter_AdminOAuth -->
-<h2 class="acms-admin-title2">Twitter OAuth</h2>
-<table class="adminTable acms-table-admin-edit">
+<h2 class="acms-admin-admin-title2">Twitter OAuth</h2>
+<table class="adminTable acms-admin-table-admin-edit">
 	<tr>
-		<th>認証<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="TwitterAPI系モジュールを利用するために、認証してブログとアカウント情報を関連付けます。この設定は、ブログ単位で行われます。ルールを利用した個別の設定はできません"></i></th>
+		<th>認証<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="TwitterAPI系モジュールを利用するために、認証してブログとアカウント情報を関連付けます。この設定は、ブログ単位で行われます。ルールを利用した個別の設定はできません"></i></th>
 		<!-- BEGIN notAuth -->
 		<td>
-			<form action="" method="post" class="acms-form">
+			<form action="" method="post" class="acms-admin-form">
 				<input type="submit" name="ACMS_POST_Api_Twitter_OAuth_Connect" value="OAuth認証を行う" class="overlook btn btn-success" />
 				<input type="hidden" name="oauth_url" value="{oauth_url}" />
 				<input type="hidden" name="twitter[]" value="oauth_url" />
@@ -72,10 +72,10 @@
 <!-- END_MODULE Api_Twitter_AdminOAuth -->
 
 <!-- BEGIN_MODULE Api_Instagram_AdminOAuth -->
-<h2 class="acms-admin-title2">Instagram OAuth</h2>
-<table class="adminTable acms-table-admin-edit">
+<h2 class="acms-admin-admin-title2">Instagram OAuth</h2>
+<table class="adminTable acms-admin-table-admin-edit">
 	<tr>
-		<th>認証<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="InstagramAPI系モジュールを利用するために、認証してブログとアカウント情報を関連付けます。この設定は、ブログ単位で行われます。ルールを利用した個別の設定はできません。"></i></th>
+		<th>認証<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="InstagramAPI系モジュールを利用するために、認証してブログとアカウント情報を関連付けます。この設定は、ブログ単位で行われます。ルールを利用した個別の設定はできません。"></i></th>
 		<!-- BEGIN notAuth -->
 		<td>
 			<form action="" method="post">

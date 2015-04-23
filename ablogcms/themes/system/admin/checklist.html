@@ -1,18 +1,18 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-checklist"></i>チェックリスト</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-checklist"></i>チェックリスト</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_CheckList -->
-<div class="acms-grid-r">
-	<div class="acms-col-6">
+<div class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
 		<!-- BEGIN license -->
-		<h2 class="acms-admin-title2">ライセンス・バージョン情報</h2>
-		<table class="acms-admin-mini-table">
+		<h2 class="acms-admin-admin-title2">ライセンス・バージョン情報</h2>
+		<table class="acms-admin-admin-mini-table">
 			<thead><th>項目</th><th>状態</th></thead>
 			<tbody>
 				<tr>
@@ -57,8 +57,8 @@
 		</table>
 		<!-- END license -->
 		<!-- BEGIN systemMode -->
-		<h2 class="acms-admin-title2">動作モード</h2>
-		<table class="acms-admin-mini-table">
+		<h2 class="acms-admin-admin-title2">動作モード</h2>
+		<table class="acms-admin-admin-mini-table">
 			<thead><th>項目</th><th>状態</th></thead>
 			<tbody>
 				<!-- BEGIN debugMode -->
@@ -75,10 +75,10 @@
 		</table>
 		<!-- END systemMode -->
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!-- BEGIN_MODULE Admin_Dashboard_PhpStatus -->
-		<h2 class="acms-admin-title2">サーバー環境情報</h2>
-		<table class="acms-admin-mini-table">
+		<h2 class="acms-admin-admin-title2">サーバー環境情報</h2>
+		<table class="acms-admin-admin-mini-table">
 			<thead>
 			<tr>
 				<th>項目</th>
@@ -127,8 +127,8 @@
 			</tbody>
 		</table>
 		<!-- BEGIN_MODULE Touch_Debug -->
-		<h2 class="acms-admin-title2">使用条件がある機能</h2>
-		<table class="acms-admin-mini-table">
+		<h2 class="acms-admin-admin-title2">使用条件がある機能</h2>
+		<table class="acms-admin-admin-mini-table">
 			<thead>
 				<tr>
 					<th>項目</th>
@@ -158,33 +158,33 @@
 	</div>	
 </div>
 
-<h2 class="acms-admin-title2">キャッシュ・アクセスログ</h2>
-<table class="acms-admin-mini-table">
+<h2 class="acms-admin-admin-title2">キャッシュ・アクセスログ</h2>
+<table class="acms-admin-admin-mini-table">
 	<thead>
 		<th>ブログID</th>
 		<th>ルールID</th>
 		<th>キャッシュ</th>
 		<th>キャッシュ感度</th>
 		<th>アクセスログ</th>
-		<th class="acms-admin-mini-table-action">編集</th>
+		<th class="acms-admin-admin-mini-table-action">編集</th>
 	</thead>
 	<tbody>
 		<!-- BEGIN blog:loop -->
 		<tr>
-			<td><span class="acms-label label-default">{bid}</span></td>
+			<td><span class="acms-admin-label label-default">{bid}</span></td>
 			<td>{rid}</td><!-- BEGIN cacheCaution -->
 			<td class="{caution}"><!-- END cacheCaution -->{cache}</td><!-- BEGIN cacheSensitivityCaution -->
 			<td class="{caution}"><!-- END cacheSensitivityCaution -->{cacheSensitivity}</td>
 			<td>{logAccess}</td>
-			<td class="acms-admin-mini-table-action">
-				<a href="{editUrl}" class="acms-btn-admin">編集</a>
+			<td class="acms-admin-admin-mini-table-action">
+				<a href="{editUrl}" class="acms-admin-btn-admin">編集</a>
 			</td>
 		</tr><!-- END blog:loop -->
 	</tbody>
 </table>
 
-<h2 class="acms-admin-title2">フォーム（一般宛メール設定）</h2>
-<table class="acms-admin-mini-table">
+<h2 class="acms-admin-admin-title2">フォーム（一般宛メール設定）</h2>
+<table class="acms-admin-admin-mini-table">
 	<thead>
 		<th>ブログID</th>
 		<th>フォームID</th>
@@ -194,12 +194,12 @@
 		<th>Bcc</th>
 		<th>Reply-To</th>
 		<th>文字コード</th>
-		<th class="acms-admin-mini-table-action">編集</th>
+		<th class="acms-admin-admin-mini-table-action">編集</th>
 	</thead>
 	<tbody>
 		<!-- BEGIN formGeneral:loop -->
 		<tr>
-			<td><span class="acms-label label-default">{bid}</span></td>
+			<td><span class="acms-admin-label label-default">{bid}</span></td>
 			<td>{fmid}</td>
 			<td>{To}</td>
 			<td>{From}</td>
@@ -207,15 +207,15 @@
 			<td>{Bcc}</td>
 			<td>{Reply-To}</td>
 			<td>{Charset}</td>
-			<td class="acms-admin-mini-table-action">
-				<a href="{editUrl}" class="acms-btn-admin">編集</a>
+			<td class="acms-admin-admin-mini-table-action">
+				<a href="{editUrl}" class="acms-admin-btn-admin">編集</a>
 			</td>
 	</tr><!-- END formGeneral:loop -->
 	</tbody>
 </table>
 
-<h2 class="acms-admin-title2">フォーム（管理者宛メール設定）</h2>
-<table class="acms-admin-mini-table">
+<h2 class="acms-admin-admin-title2">フォーム（管理者宛メール設定）</h2>
+<table class="acms-admin-admin-mini-table">
 	<thead>
 		<th>ブログID</th>
 		<th>フォームID</th>
@@ -224,37 +224,39 @@
 		<th>Cc</th>
 		<th>Bcc</th>
 		<th>Reply-To</th>
-		<th class="acms-admin-mini-table-action">編集</th>
+		<th class="acms-admin-admin-mini-table-action">編集</th>
 	</thead>
 	<tbody>
 		<!-- BEGIN formAdmin:loop -->
 		<tr>
-			<td><span class="acms-label label-default">{bid}</span></td>
+			<td><span class="acms-admin-label label-default">{bid}</span></td>
 			<td>{fmid}</td>
 			<td>{AdminTo}</td>
 			<td>{AdminFrom}</td>
 			<td>{AdminCc}</td>
 			<td>{AdminBcc}</td>
 			<td>{AdminReply-To}</td>
-			<td class="acms-admin-mini-table-action">
-				<a href="{editUrl}" class="acms-btn-admin">編集</a>
+			<td class="acms-admin-admin-mini-table-action">
+				<a href="{editUrl}" class="acms-admin-btn-admin">編集</a>
 			</td>
 		</tr><!-- END formAdmin:loop -->
 	</tbody>
 </table>
 
-<h2 class="acms-admin-title2">コンフィグ検索 ( DBのconfigテーブルを検索します )</h2>
-<div class="acms-admin-checklist-config-search">
-	<form action="#search" method="post" class="acms-form">
-		<input type="text" name="keyword" value="{keyword}" size="40"class="acms-form-width-mediu">
-		<input type="hidden" name="query" value="keyword">
-		<input type="hidden" name="bid" value="%{BID}" />
-		<input type="hidden" name="admin" value="checklist" />
-		<input type="text" name="iebug" value="" style="display:none;" class="iebug">
-		<input type="submit" name="ACMS_POST_2GET" value="検索" class="acms-btn-admin acms-btn-admin-info">
+<h2 class="acms-admin-admin-title2">コンフィグ検索 ( DBのconfigテーブルを検索します )</h2>
+<div class="acms-admin-admin-checklist-config-search">
+	<form action="#search" method="post" class="acms-admin-form">
+	<div class="acms-admin-form-action acms-admin-form-width-medium">
+			<input type="text" name="keyword" value="{keyword}">
+			<input type="hidden" name="query" value="keyword">
+			<input type="hidden" name="bid" value="%{BID}" />
+			<input type="hidden" name="admin" value="checklist" />
+			<input type="text" name="iebug" value="" style="display:none;" class="iebug">
+			<span class="acms-admin-form-side-btn"><input type="submit" name="ACMS_POST_2GET" value="検索" class="acms-admin-btn-admin acms-admin-btn-admin-info"></span>
+		</div>
 	</form>
 </div>
-<!-- BEGIN config --><table class="acms-admin-mini-table">
+<!-- BEGIN config --><table class="acms-admin-admin-mini-table">
 	<thead>
 		<th>ブログID</th>
 		<th>モジュールID</th>
@@ -265,7 +267,7 @@
 	<tbody>
 		<!-- BEGIN config:loop -->
 		<tr>
-			<td><a href="{blogUrl}"><span class="acms-label label-default">{bid}</span></a></td>
+			<td><a href="{blogUrl}"><span class="acms-admin-label label-default">{bid}</span></a></td>
 			<td><a href="{moduleUrl}">{mcode}</a></td>
 			<td><a href="{ruleUrl}">{rcode}</a></td>
 			<td>{key}</td>

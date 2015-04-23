@@ -1,0 +1,24 @@
+<!-- BEGIN_MODULE Entry_Headline id="topHeadline" -->
+<section class="moduleSection">
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN moduleField -->
+<!-- BEGIN_IF [{module_heading}/nem] -->
+<div class="moduleHeader clearfix">
+	<h2 class="moduleHeading">{module_heading}</h2>
+	<a href="{indexUrl}" class="moduleIndexLink"><span class="acms-icon acms-icon-arrow-right"></span>一覧</a>
+</div>
+<!-- ELSE -->
+<div class="moduleHeader clearfix">
+	<a href="{indexUrl}" class="moduleIndexLink"><span class="acms-icon acms-icon-arrow-right"></span>一覧</a>
+</div>
+<!-- END_IF -->
+<!-- END moduleField -->
+<ul class="headline acms-list-group clearfix"><!-- BEGIN entry:loop -->
+	<li class="acms-list-group-item headlineItem js-biggerlink">
+		<time class="headlineDat" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日( {date#week} )</time>
+		<!-- BEGIN category:veil --><span class="acms-label">{categoryName}</span><!-- END category:veil -->
+		<a href="{url}" class="acms-list-group-title-link headlineTitle">{title}</a><!-- BEGIN new --><span class="acms-label acms-label-warning">NEW</span><!-- END new -->
+	</li><!-- END entry:loop -->
+</ul>
+</section>
+<!-- END_MODULE Entry_Headline -->

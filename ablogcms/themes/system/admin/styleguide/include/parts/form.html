@@ -2,9 +2,12 @@
 	<h1 class="sectionTitle">フォーム</h1>
 	<h2 class="sectionTitle2">フォームの機能</h2>
 	<p>formタグに .acms-form をつけるとinputタグに装飾がつきます。</p>
-	<p>フォーカスすると青色に変わります。</p>
+	<p>フォーカスすると周りのボーダーが青色に変わります。</p>
 
 	<h3 class="sectionTitle3">基本のHTML</h3>
+	<form class="acms-form">
+	<input type="email" id="email" placeholder="ex) info@hoge.com">
+</form>
 <pre class="code HTML">
 &lt;form class=&quot;acms-form&quot;&gt;
 	&lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;ex) info@hoge.com&quot;&gt;
@@ -171,9 +174,9 @@
 </form>
 
 <pre class="code HTML">
-&lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;ex) info@example.com&quot; class=&quot;acms-form-large&quot;&gt;
+&lt;input type=&quot;email&quot; id=&quot;largeForm&quot; placeholder=&quot;ex) info@example.com&quot; class=&quot;acms-form-large&quot;&gt;
 
-&lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;ex) info@example.com&quot; class=&quot;acms-form-small&quot;&gt;
+&lt;input type=&quot;email&quot; id=&quot;smallForm&quot; placeholder=&quot;ex) info@example.com&quot; class=&quot;acms-form-small&quot;&gt;
 </pre>
 
 <h2 class="sectionTitle2">フォーム長さ</h2>
@@ -220,21 +223,21 @@
 </form>
 
 <pre class="code HTML">
-&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-large&quot;&gt;
+&lt;input type=&quot;email&quot; class=&quot;acms-form-width-large&quot;&gt;
 
-&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-medium&quot;&gt;
+&lt;input type=&quot;email&quot; class=&quot;acms-form-width-medium&quot;&gt;
 
-&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-small&quot;&gt;
+&lt;input type=&quot;email&quot; class=&quot;acms-form-width-small&quot;&gt;
 
-&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-mini&quot;&gt;
+&lt;input type=&quot;email&quot; class=&quot;acms-form-width-mini&quot;&gt;
 
-&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-full&quot;&gt;
+&lt;input type=&quot;email&quot; class=&quot;acms-form-width-full&quot;&gt;
 
-&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-3quarters&quot;&gt;
+&lt;input type=&quot;email&quot; class=&quot;acms-form-width-3quarters&quot;&gt;
 
-&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-half&quot;&gt;
+&lt;input type=&quot;email&quot; class=&quot;acms-form-width-half&quot;&gt;
 
-&lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;acms-form-width-quarter&quot;&gt;
+&lt;input type=&quot;email&quot; class=&quot;acms-form-width-quarter&quot;&gt;
 </pre>
 
 <h2 class="sectionTitle2">チェックボックスとラジオボタンのデザインを変える</h2>
@@ -334,6 +337,174 @@
 
 <pre class="code HTML">
 &lt;input type=&quot;radio&quot; id=&quot;radio-1-2&quot; name=&quot;radio-1-set&quot; class=&quot;acms-btn-radio&quot; /&gt;&lt;label for=&quot;radio-1-2&quot;&gt;そば&lt;/label&gt;
+</pre>
+
+
+<form class="acms-form">
+	<h2 class="sectionTitle2">入力欄と一緒に</h2>
+	<h3 class="sectionTitle3">ラジオボタン</h3>
+	<div class="acms-form-group acms-form-width-medium">
+		<div class="acms-form-action">
+			<label class="acms-form-radio acms-form-side acms-form-side-left"><input name="custom-radio" checked="checked" type="radio"><i class="acms-ico-radio"></i></label>
+			<input type="email" id="email" class="acms-form-width-small">
+		</div>
+	</div>
+	<div class="acms-form-group acms-form-width-medium">
+		<div class="acms-form-action">
+			<span class="acms-form-side"><input name="custom-radio" checked="checked" type="radio"></span>
+			<input type="email" id="email" class="acms-form-width-small">
+		</div>
+	</div>
+<pre class="code HTML">
+&lt;div class="acms-form-group acms-form-width-medium"&gt;
+	&lt;div class="acms-form-action"&gt;
+		&lt;label class="acms-form-radio acms-form-side acms-form-side-left"&gt;
+			&lt;input name="custom-radio" checked="checked" type="radio"&gt;&lt;i class="acms-ico-radio"&gt;&lt;/i&gt;
+		&lt;/label&gt;
+		&lt;input type="email" id="email" class="acms-form-width-small"&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="acms-form-group acms-form-width-medium"&gt;
+	&lt;div class="acms-form-action"&gt;
+		&lt;span class="acms-form-side"&gt;&lt;input name="custom-radio" checked="checked" type="radio"&gt;&lt;/span&gt;
+		&lt;input type="email" id="email" class="acms-form-width-small"&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+	<h3 class="sectionTitle3">チェックボックス</h3>
+	<div class="acms-form-group acms-form-width-medium">
+		<div class="acms-form-action">
+			<label class="acms-form-checkbox acms-form-side"><input name="custom-checkbox" checked="checked" type="checkbox"><i class="acms-ico-checkbox"></i></label>
+			<input type="email" id="email" class="acms-form-width-small">
+		</div>
+	</div>
+	<div class="acms-form-group acms-form-width-medium">
+		<div class="acms-form-action">
+			<span class="acms-form-side"><input name="custom-checkbox" checked="checked" type="checkbox"></span>
+			<input type="email" id="email" class="acms-form-width-small">
+		</div>
+	</div>
+<pre class="code HTML">
+&lt;div class="acms-form-group acms-form-width-medium"&gt;
+	&lt;div class="acms-form-action"&gt;
+		&lt;label class="acms-form-checkbox acms-form-side"&gt;
+			&lt;input name="custom-checkbox" checked="checked" type="checkbox"&gt;&lt;i class="acms-ico-checkbox"&gt;&lt;/i&gt;
+		&lt;/label&gt;
+		&lt;input type="email" id="email" class="acms-form-width-small"&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="acms-form-group acms-form-width-medium"&gt;
+	&lt;div class="acms-form-action"&gt;
+		&lt;span class="acms-form-side"&gt;&lt;input name="custom-checkbox" checked="checked" type="checkbox"&gt;&lt;/span&gt;
+		&lt;input type="email" id="email" class="acms-form-width-small"&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+	<h3 class="sectionTitle3">アイコン</h3>
+
+	<div class="acms-form-action acms-form-width-medium">
+		<span class="acms-form-side"><i class="acms-icon-time"></i></span>
+		<input type="email" id="email" class="acms-form-width-small">
+	</div>
+
+<pre class="code HTML">
+&lt;div class="acms-form-action acms-form-width-medium"&gt;
+	&lt;span class="acms-form-side"&gt;&lt;i class="acms-icon-time"&gt;&lt;/i&gt;&lt;/span&gt;
+	&lt;input type="email" id="email" class="acms-form-width-small"&gt;
+&lt;/div&gt;
+</pre>
+
+	<h3 class="sectionTitle3">ボタン</h3>
+	<div class="acms-grid-r">
+		<div class="acms-form-group acms-form-width-medium">
+			<div class="acms-form-action">
+				<input type="email" id="email" class="acms-form-width-full">
+				<span class="acms-form-side-btn"><button type="submit" class="acms-btn">送信</button></span>
+			</div>
+		</div>
+	</div>
+
+<pre class="code HTML">
+&lt;div class="acms-grid-r"&gt;
+	&lt;div class="acms-form-group acms-col-6"&gt;
+		&lt;div class="acms-form-action"&gt;
+			&lt;input type="email" id="email" class="acms-form-width-full"&gt;
+			&lt;span class="acms-form-side-btn"&gt;&lt;button type="submit" class="acms-btn"&gt;送信&lt;/button&gt;&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+	<h3 class="sectionTitle3">大きさ</h3>
+	
+	<div class="acms-grid-r acms-form">
+		<div class="acms-col-4 acms-form-action">
+			<span class="acms-form-side"><input name="custom-radio" checked="checked" type="radio"></span><input type="email" id="email" class="acms-form-width-small acms-form-small">
+		</div>
+		<div class="acms-col-4 acms-form-action">
+			<span class="acms-form-side"><input name="custom-radio" checked="checked" type="radio"></span><input type="email" id="email" class="acms-form-width-small">
+		</div>
+		<div class="acms-col-4 acms-form-action">
+			<span class="acms-form-side"><input name="custom-radio" checked="checked" type="radio"></span><input type="email" id="email" class="acms-form-width-small acms-form-large">
+		</div>
+	</div>
+
+</form>
+
+<pre class="code HTML">
+&lt;div class="acms-grid-r acms-form"&gt;
+	&lt;div class="acms-col-4 acms-form-action"&gt;
+		&lt;span class="acms-form-side"&gt;
+			&lt;input name="custom-radio" checked="checked" type="radio"&gt;
+		&lt;/span&gt;
+		&lt;input type="email" id="email" class="acms-form-width-small acms-form-small"&gt;
+	&lt;/div&gt;
+	&lt;div class="acms-col-4 acms-form-action"&gt;
+		&lt;span class="acms-form-side"&gt;
+			&lt;input name="custom-radio" checked="checked" type="radio"&gt;
+		&lt;/span&gt;
+		&lt;input type="email" id="email" class="acms-form-width-small"&gt;
+	&lt;/div&gt;
+	&lt;div class="acms-col-4 acms-form-action"&gt;
+		&lt;span class="acms-form-side"&gt;
+			&lt;input name="custom-radio" checked="checked" type="radio"&gt;
+		&lt;/span&gt;
+		&lt;input type="email" id="email" class="acms-form-width-small acms-form-large"&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+	<h3 class="sectionTitle3">左右</h3>
+	<div class="acms-grid-r acms-form">
+		<div class="acms-form-group acms-col-6">
+			<div class="acms-form-action"><span class="acms-form-side-btn"><button type="submit" class="acms-btn">送信</button></span><input type="email" id="email" class="acms-form-width-full">
+			</div>
+		</div>
+		<div class="acms-form-group acms-col-6">
+			<div class="acms-form-action">
+				<input type="email" id="email" class="acms-form-width-full">
+				<span class="acms-form-side-btn"><button type="submit" class="acms-btn">送信</button></span>
+			</div>
+		</div>
+	</div>
+
+<pre class="code HTML">
+&lt;div class="acms-grid-r"&gt;
+	&lt;div class="acms-form-group acms-col-6"&gt;
+		&lt;div class="acms-form-action"&gt;
+			&lt;span class="acms-form-side-btn"&gt;&lt;button type="submit" class="acms-btn"&gt;送信&lt;/button&gt;&lt;/span&gt;
+			&lt;input type="email" id="email" class="acms-form-width-small"&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="acms-form-group acms-col-6"&gt;
+		&lt;div class="acms-form-action"&gt;
+			&lt;input type="email" id="email" class="acms-form-width-small"&gt;
+			&lt;span class="acms-form-side-btn"&gt;&lt;button type="submit" class="acms-btn"&gt;送信&lt;/button&gt;&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
 </pre>
 
 </section>

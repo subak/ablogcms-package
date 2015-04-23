@@ -1,0 +1,107 @@
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-6">
+		<h1 class="acms-admin-admin-title">
+			<i class="acms-admin-icon acms-admin-icon-exit"></i>国際化
+		</h1>
+	</div>
+	<div class="acms-admin-col-6">
+		<!--#include file="/admin/topicpath.html"-->
+	</div>
+</header>
+
+<form action="" method="post" class="acms-admin-form">
+	<div class="acms-admin-form-group">
+		<input class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-margin-sp" type="submit" name="ACMS_POST_I18n_DownloadPot" value="POT ダウンロード" />
+	</div>
+</form>
+
+<h2>翻訳可能文字列</h2>
+
+<p>a-blog cms で文字列を翻訳可能にするには元の文字列を以下のコメントで囲みます。</p>
+
+<pre class="code HTML">
+&lt;!-- TRANS --&gt;翻訳文字&lt;!-- /TRANS --&gt;
+</pre>
+または
+<pre class="code HTML">
+&lt;!--T--&gt;翻訳文字&lt;!--/T--&gt;
+</pre>
+
+
+<h2>POTファイル</h2>
+
+<p>各テーマのadmin以下のテンプレートでマークした文字列を抽出します。
+<strong>pot ダウンロード</strong>からPOTファイルをダウンロードして下さい。</p>
+
+<h2>POファイル</h2>
+
+<p>ダウンロードしたPOTファイルから各言語に翻訳してPOファイルを生成します。</p>
+<p>例: 英語に翻訳</p>
+<pre class="code">
+#: themes/system/admin/top.html
+msgid "ダッシュボード"
+msgstr "Dashboard"
+</pre>
+
+<h2>MOファイル</h2>
+
+<p>POファイルからMOファイルを生成してください。
+出来上がったMOファイルを以下の場所（デフォルト）に設置してください。</p>
+
+<pre class="code">
+例 : /lang/en_US/LC_MESSAGES/message.mo
+
+/a-blogcms設置ディレクトリ/lang/[言語]_[地域]/LC_MESSAGES/message.mo
+</pre>
+
+<h2>config.server.php</h2>
+
+<p><strong>config.server.php</strong> で以下の設定ができます。</p>
+<pre class="code PHP">
+define('GETTEXT_TYPE', 'auto'); // fix|auto
+define('GETTEXT_APPLICATION_RANGE', 'admin'); // admin|login|all
+define('GETTEXT_DEFAULT_LOCALE', 'ja_JP');
+define('GETTEXT_DOMAIN', 'messages');
+define('GETTEXT_PATH', 'lang');
+</pre>
+
+<dl>
+	<dt>GETTEXT_TYPE</dt>
+	<dd>
+		<p>
+		fix: config.server.phpで指定した言語地域で固定します<br>
+		user: ユーザ毎に管理画面より言語地域を設定します。<br>
+		auto: ブラウザの言語地域の設定を反映します<br>
+		</p>
+	</dd>
+
+	<dt>GETTEXT_APPLICATION_RANGE</dt>
+	<dd>
+		<p>
+		admin: adminディレクトリ以下（管理ページ）のみ翻訳します<br>
+		login: ログインしている時のみ翻訳します<br>
+		all: すべてのページを翻訳対象にします
+		</p>
+	</dd>
+
+	<dt>GETTEXT_DEFAULT_LOCALE</dt>
+	<dd>
+		<p>
+			基本の言語地域を設定します。GETTEXT_TYPEが固定だった場合やブラウザの言語地域のmoファイルが見つからない場合にこの言語地域が使用されます。
+		</p>
+	</dd>
+
+	<dt>GETTEXT_DOMAIN</dt>
+	<dd>
+		<p>
+			gettextのグローバルドメインを設定します。（デフォルト: messages）
+		</p>
+	</dd>
+
+	<dt>GETTEXT_PATH</dt>
+	<dd>
+		<p>
+			ドメインへのパスを設定します。（デフォルト: lang）
+		</p>
+	</dd>
+</dl>

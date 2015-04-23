@@ -1,0 +1,10 @@
+accordion.html: アコーディオン（開閉式）
+carousel.html: スライダー
+module_field.html: カスタム情報のみ
+summary_alternate.html: 左右交互表示
+summary_imageCircle.html: 角丸画像表示
+summary_imageSquare.html: 四角画像表示
+summary_item.html: リスト表示（テキストのみ）
+summary_list.html: リスト表示（画像あり）
+summary_thumbnail.html: 横並び形式（メイン画像表示）
+summary_text.html: 横並び形式（テキストのみ）

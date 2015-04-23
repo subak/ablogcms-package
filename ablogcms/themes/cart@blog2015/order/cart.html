@@ -1,0 +1,100 @@
+
+<ul class="blogCartFlowList">
+	<li class="current"><span class="blogCartFlowListNumber">1</span>ご注文商品一覧</li>
+	<li><span class="blogCartFlowListNumber">2</span>ご住所のご確認</li>
+	<li><span class="blogCartFlowListNumber">3</span>配送・お支払い方法</li>
+	<li><span class="blogCartFlowListNumber">4</span>ご注文内容の確認</li>
+	<li><span class="blogCartFlowListNumber">5</span>ご注文完了</li>
+</ul>
+
+
+
+<h2>1. ご注文商品一覧</h2>
+
+	<p>カートの中の商品は以下のようになっています。<br />よろしければ、「ご注文手続きに進む」でお進み下さい。</p><!-- BEGIN_MODULE Shop2_Cart_Notify -->
+	<div id="addition"><!-- BEGIN added -->
+		<p class="acms-alert acms-alert-info">{item_id} 「{item_name}」 ×{item_quantity}　を追加しました。</p><!-- END added --><!-- BEGIN deleted -->
+		<p class="acms-alert acms-alert-danger">{item_name}を削除しました。</p><!-- END deleted -->
+	<!--addition--></div><!-- END_MODULE Shop2_Cart_Notify -->
+<!--entry-->
+
+
+<!-- BEGIN_MODULE Shop2_Cart_List -->
+<!-- BEGIN notFound -->
+<table summary="ご注文商品一覧">
+	<tr>
+		<td>カートの中に商品はありません。</td>
+	</tr>
+</table>
+<p><a href="%{BASE_URL}">TOPページに戻る</a></p>
+<!-- END notFound -->
+
+<!-- BEGIN contents -->
+<form action="" method="post">
+<div class="blogEntryContentTableWrapper">
+	<table class="blogEntryContentTable">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>画像</th>
+				<th>商品名</th>
+				<!--<th>色</th>-->
+				<!--<th>サイズ</th>-->
+				<th>単価</th>
+				<th>数量</th><!-- BEGIN_MODULE Touch_CartStock -->
+				<th>在庫数</th><!-- END_MODULE Touch_CartStock -->
+				<th>小計</th>
+				<th>削除</th>
+			</tr>
+		</thead>
+		<tbody><!-- BEGIN item:loop -->
+			<tr>
+				<td>{item_id}</td>
+				<td>
+					<div style="width:{x}px; height:{y}px; overflow:hidden;" class="dotBorder">
+						<img<!-- BEGIN image:veil --> src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" style="margin-left:{left}px; margin-top:{top}px;" <!-- END image:veil -->
+						<!-- BEGIN noimage --> src="%{CURRENT_THEMES_DIR}/images/dummy
+						.png" width="60" height="60" <!-- END noimage -->alt="{item_name}" longdesc="{url}" />
+					</div>
+				</td>
+				<td><a href="{url}" title="{entry_title}">{item_name}</a> {item_color} {item_size}</td>
+				<!--<td>{item_color}</td>-->
+				<!--<td>{item_size}</td>-->
+				<td>&yen;{item_price}[number_format]</td>
+				<td>
+					<input type="text" name="{hash}" value="{item_quantity}" size="2" />
+					<input type="hidden" name="cart[]" value="{hash}" />
+					<input type="hidden" name="{item_id}:v#digits" />
+					<input type="hidden" name="{item_id}:v#maxLength" value="10" />
+					
+					<input type="hidden" name="{hash}:validator#digits" />
+					<input type="hidden" name="{hash}:validator#max" value="{item_stock}" />
+					<!-- BEGIN item_quantity:validator --><p style="color:red;">ご注文の数だけの在庫数がありません</p><!-- END item_quantity:validator -->
+				</td><!-- BEGIN_MODULE Touch_CartStock -->
+				<td>
+					在庫{item_stock}
+					<!-- BEGIN item_stockafter:veil -->残り{item_stockafter}<!-- END item_stockafter:veil -->
+					<!-- BEGIN item_stockafter:empty -->在庫不足<!-- END item_stockafter:empty -->
+				</td><!-- END_MODULE Touch_CartStock -->
+				<td>&yen;{item_price#sum}[number_format]</td>
+				<td><a href="?delete={hash}">削除</a></td>
+			</tr>
+			<!-- END item:loop -->
+			<tr>
+				<th colspan="3">合計</th>
+				<td colspan="4">&yen;{subtotal}[number_format]</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="blogCartBtnWrapper">
+		<input type="submit" name="ACMS_POST_2GET" value="お買い物を続ける" class="blogCartBtn">
+		<input type="submit" name="ACMS_POST_Shop2_Cart_Calculate" value="再計算" class="blogCartBtn">
+		<input type="submit" name="ACMS_POST_Shop2_Form_Checkout" value="ご注文手続きに進む" class="blogCartBtnPrimary" />
+		<input type="hidden" name="step" value="{step}" />
+		<input type="hidden" name="bid" value="%{BID}" />
+</div>
+</form>
+<!-- END contents -->
+<!-- END_MODULE Shop2_Cart_List -->
+

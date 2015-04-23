@@ -1,8 +1,8 @@
 <!-- BEGIN_MODULE Admin_Form2_Edit -->
 <!-- BEGIN step#reapply -->
-<form action="" method="post" enctype="multipart/form-data" id="entryForm" class="js-observeFileSize acms-form">
+<form action="" method="post" enctype="multipart/form-data" id="entryForm" class="js-observeFileSize acms-admin-form">
 	<div class="entryFormWrapper">
-		<table class="entryFormTable acms-table-entry">
+		<table class="entryFormTable acms-admin-table-entry">
 			<tr>
 				<th>ステータス</th>
 				<td>
@@ -30,9 +30,9 @@
 	<!--#include file="/admin/form2/unit.html"-->
 	<p class="comPost">
 		<!-- BEGIN action#update -->
-		<input type="submit" name="ACMS_POST_Form2_Update" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+		<input type="submit" name="ACMS_POST_Form2_Update" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 		<!-- END action#update -->
-		<input type="submit" name="ACMS_POST_2GET" value="戻る" class="cancelBtn overlook acms-btn" onclick="return confirm('エントリーの編集を中止します。\n現在の変更内容が破棄されますが、よろしいですか？');" />
+		<input type="submit" name="ACMS_POST_2GET" value="戻る" class="cancelBtn overlook acms-admin-btn" onclick="return confirm('エントリーの編集を中止します。\n現在の変更内容が破棄されますが、よろしいですか？');" />
 		<input type="hidden" name="entry:takeover" value="{entry:takeover}" />
 		<input type="hidden" name="field:takeover" value="{field:takeover}" />
 		<input type="hidden" name="column_object" value="{column:takeover}" />

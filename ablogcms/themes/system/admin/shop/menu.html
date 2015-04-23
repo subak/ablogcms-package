@@ -1,36 +1,36 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-cart"></i>ショップ管理</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-cart"></i>ショップ管理</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Shop_Menu -->
 <!-- BEGIN disable -->
-<form action="/bid/%{BID}/admin/shop_menu/" method="post" class="acms-form">
+<form action="/bid/%{BID}/admin/shop_menu/" method="post" class="acms-admin-form">
 	<p>このブログで、注文フォームや受注・お客様の管理機能を利用する場合はショップ機能をONにしてください。</p>
 	
-	<div class="acms-form-group">
-		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+	<div class="acms-admin-form-group">
+		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 	</div>
 
-	<table class="acms-table-admin-edit">
+	<table class="acms-admin-table-admin-edit">
 		<tr>
 		<th>ショップ機能</th>
 		<td>
-		<label class="acms-form-radio"><input type="radio" name="shop" value="off" checked="checked" /><i class="acms-ico-radio"></i> OFF</label>
-		<label class="acms-form-radio"><input type="radio" name="shop" value="on" /><i class="acms-ico-radio"></i> ON</label>
+		<label class="acms-admin-form-radio"><input type="radio" name="shop" value="off" checked="checked" /><i class="acms-admin-ico-radio"></i> OFF</label>
+		<label class="acms-admin-form-radio"><input type="radio" name="shop" value="on" /><i class="acms-admin-ico-radio"></i> ON</label>
 		<input type="hidden" name="config[]" value="shop" />
 		</td>
 		</tr>
 	</table>
 </form>
 <!-- END disable --><!-- BEGIN enable -->
-<div class="acms-grid-r">
-	<div class="acms-col-6">
-		<table class="acms-admin-mini-table acms-admin-config-table">
+<div class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6 acms-admin-col-sm-12">
+		<table class="acms-admin-admin-mini-table acms-admin-admin-config-table">
 			<thead>
 				<th colspan="2">設定管理</th>
 			</thead>
@@ -50,8 +50,8 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="acms-col-6">
-		<table class="acms-admin-mini-table acms-admin-config-table">
+	<div class="acms-admin-col-md-6 acms-admin-col-sm-12">
+		<table class="acms-admin-admin-mini-table acms-admin-admin-config-table">
 			<thead>
 				<th colspan="2">受注・お客様管理</th>
 			</thead>
@@ -67,19 +67,19 @@
 	</div>
 </div>
 
-<form action="/bid/%{BID}/admin/shop_menu/" method="post" class="acms-form">
+<form action="/bid/%{BID}/admin/shop_menu/" method="post" class="acms-admin-form">
 	<p>このブログで、注文フォームや受注・お客様の管理機能を利用しない場合はショップ機能をOFFにしてください。</p>
 
-	<div class="acms-form-group">
-		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+	<div class="acms-admin-form-group">
+		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 	</div>
 
-	<table class="acms-table-admin-edit">
+	<table class="acms-admin-table-admin-edit">
 		<tr>
 		<th>ショップ機能</th>
 		<td>
-		<label class="acms-form-radio"><input type="radio" name="shop" value="off" /><i class="acms-ico-radio"></i> OFF</label>
-		<label class="acms-form-radio"><input type="radio" name="shop" value="on" checked="checked" /><i class="acms-ico-radio"></i> ON</label>
+		<label class="acms-admin-form-radio"><input type="radio" name="shop" value="off" /><i class="acms-admin-ico-radio"></i> OFF</label>
+		<label class="acms-admin-form-radio"><input type="radio" name="shop" value="on" checked="checked" /><i class="acms-admin-ico-radio"></i> ON</label>
 		<input type="hidden" name="config[]" value="shop" />
 		</td>
 		</tr>

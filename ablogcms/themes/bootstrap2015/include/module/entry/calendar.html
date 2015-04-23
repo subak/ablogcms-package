@@ -1,0 +1,40 @@
+<!-- BEGIN_MODULE Entry_Calendar -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2 class="section-title">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+<!-- BEGIN date -->
+<ul class="pager">
+	<li><a href="%{BASE_URL}calendar.html/{prevDate}" title="前月へ">«</a></li>
+	<li><a href="%{BASE_URL}calendar.html/{year}/{month}">{month}月</a></li>
+	<li><a href="%{BASE_URL}calendar.html/{nextDate}" title="次月へ">»</a></li>
+</ul><!-- END date -->
+<div class="table-responsive">
+<table class="table table-bordered">
+	<tr>
+		<!-- BEGIN weekLabel:loop -->
+		<td width="100">{label}</td>
+		<!-- END weekLabel:loop -->
+	</tr>
+	<!-- BEGIN week:loop -->
+	<tr>
+		<!-- BEGIN foreSpacer -->
+		<td width="100" height="100" class="active">{prevDay}:{week}
+		<!-- BEGIN foreEntry:loop --><div><!-- BEGIN url#front --><a href="{url}"><!-- END url#front -->{title} {status}<!-- BEGIN url#rear --></a><!-- END url#rear --></div><!-- END foreEntry:loop -->
+		</td>
+		<!-- END foreSpacer -->
+		<!-- BEGIN day:loop -->
+		<td width="100" height="100" class="{today}">{day}:{week}
+		<!-- BEGIN entry:loop --><div><!-- BEGIN url#front --><a href="{url}"><!-- END url#front -->{title} {status}<!-- BEGIN url#rear --></a><!-- END url#rear --></div><!-- END entry:loop -->
+		</td>
+		<!-- END day:loop -->
+		<!-- BEGIN rearSpacer -->
+		<td width="100" height="100" class="active">{nextDay}:{week}
+		<!-- BEGIN rearEntry:loop --><div><!-- BEGIN url#front --><a href="{url}"><!-- END url#front -->{title} {status}<!-- BEGIN url#rear --></a><!-- END url#rear --></div><!-- END rearEntry:loop -->
+		</td>
+		<!-- END rearSpacer -->
+	</tr>
+	<!-- END week:loop -->
+</table>
+</div>
+</div>
+<!-- END_MODULE Entry_Calendar -->

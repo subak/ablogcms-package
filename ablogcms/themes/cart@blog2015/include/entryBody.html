@@ -1,0 +1,149 @@
+<!-- BEGIN_MODULE Entry_Body -->
+<!-- BEGIN notFound -->
+<section class="blogEntry">
+	<h2 class="notFoundTitle">Not found</h2>
+	<p>お探しの記事は見つかりませんでした。</p>
+ </section>
+<!-- END notFound -->
+
+<!-- 1記事▼▼ -->
+<!-- BEGIN entry:loop -->
+<!-- BEGIN adminEntryEdit -->
+<!--#include file="/admin/entry/revision-info.html"-->
+<!-- END adminEntryEdit -->
+<article class="blogEntry<!-- BEGIN_MODULE Touch_NotEntry --> blogEntryWithBorder<!-- END_MODULE Touch_NotEntry -->">
+		<!--#include file="/admin/entry/title.html"-->
+
+		<!-- BEGIN title:veil -->
+		<!-- エントリーのタイトル　開始▼▼ -->
+		<header class="blogEntryHeader clearfix">
+			<p class="blogEntryDate">
+				<!-- BEGIN date:veil -->
+				<time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日</time>
+				<!-- END date:veil -->
+			</p>
+			<h1 class="blogEntryTitle"><a href="{titleUrl}">{title}[raw]</a></h1>
+				<div class="clearfix">
+					<!-- Facebook -->
+					<!-- <div class="blogEntrySocialBtn blogEntrySocialBtnFacebook">
+						<div class="fb-like" data-href="{titleUrl}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+					</div> -->
+					<!-- /Facebook -->
+
+					<!-- Twitter -->
+					<!-- <div class="blogEntrySocialBtn blogEntrySocialBtnTwitter">
+						<a href="https://twitter.com/share" data-url="{titleUrl}" class="twitter-share-button" data-lang="ja" data-count="horizontal">ツイート</a>
+					</div> -->
+					<!-- /Twitter -->
+
+					<!-- gplus -->
+					<!-- <div class="blogEntrySocialBtn blogEntrySocialBtnGplus">
+						<div class="g-plusone" data-size="medium"></div>
+					</div> -->
+					<!-- /gplus -->
+				</div>
+			</ul>
+			
+		</header>
+		<!-- エントリーのタイトル　終了▲▲ -->
+		<!-- END title:veil -->
+		<div class="acms-grid-r acms-entry blogEntryContent">
+
+			<!-- BEGIN unit:veil -->
+			<!--#include file="/include/unit.html"-->
+			<hr class="clearHidden" />
+			<!-- END unit:veil -->
+
+			<!--#include file="/include/item.html"-->
+
+			<!-- BEGIN continueLink:veil -->
+			<p class="clearfix blogEntryContinueLinkWrapper"><a href="{continueUrl}" class="blogEntryContinueLink">「{continueName}」の続きを読む</a></p>
+			<!-- END continueLink:veil -->
+
+			<!-- BEGIN formBody -->
+			<!--#include file="/include/form/unit.html"-->
+			<hr class="clearHidden" />
+			<!-- END formBody -->
+
+			<!-- BEGIN adminEntryEdit -->
+			<!--#include file="/admin/entry/edit.html"-->
+			<!--#include file="/admin/entry/add.html"-->
+			<!-- END adminEntryEdit -->
+
+			<!-- BEGIN adminFormEdit -->
+			<!--#include file="/admin/form2/edit.html"-->
+			<!-- END adminFormEdit -->
+
+			<!--#include file="/admin/entry/action.html"-->
+		</div>
+		<!-- BEGIN_MODULE Touch_Entry -->
+<!-- 		<div class="blogEntrySocialBox clearfix">
+			<ul class="blogEntrySocialBoxList">
+				<li>
+					<a href="https://twitter.com/share" class="twitter-share-button twitter-count-vertical" data-via="isloop" data-lang="ja" data-count="vertical">ツイート</a>
+				</li>
+				<li>
+					<div class="fb-like" data-href="%{PERMALINK}" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
+				</li>
+				<li>
+					<div class="g-plusone" data-size="tall"></div>
+				</li>
+			</ul>
+		</div> -->
+		<!-- END_MODULE Touch_Entry -->
+		<!-- BEGIN footer:veil -->
+		<footer>
+			<p class="blogEntryFooterText">Posted by {posterName} at {date#Y}年{date#m}月{date#d}日 <time>{date#H}:{date#i}</time> | <a href="{inheritUrl}">Permalink</a>
+				<!-- BEGIN commentAmount --> | <a href="{commentUrl}#comment">comment ( {commentAmount} )</a><!-- END commentAmount --></p>
+			<!--#include file="/include/snsButton.html"-->
+		</footer>
+		<!-- END footer:veil -->
+</article>
+
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+
+<!-- BEGIN pager:veil -->
+<!-- ページ送り　開始▼▼ -->
+<nav class="blogPager">
+	<!-- BEGIN backLink -->
+		<p class="blogPagerPrev"><a href="{url}" rel="prev"><span class="acms-icon-arrow-small-left blogPagerPrevIcon"></span>前のページへ</a></p>
+	<!-- END backLink -->
+	<ul class="clearfix">
+		<!-- BEGIN page:loop -->
+		<li class="blogPagerItem"><!-- BEGIN link#front --><a href="{url}"><!-- END link#front --><span class="blogPagerLinkInner">{page}</span><!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --></li><!-- END page:loop -->
+		<!-- BEGIN lastPage:veil --><li class="blogPagerItem">...</li><li class="blogPagerItem"><a href="{lastPageUrl}"><span>{lastPage}</span></a></li><!-- END lastPage:veil -->
+	</ul>
+	<!-- BEGIN forwardLink -->
+		<p class="blogPagerNext"><a href="{url}" rel="next">次のページへ<span class="acms-icon-arrow-small-right blogPagerNextIcon"></span></a></p>
+	<!-- END forwardLink -->
+</nav>
+<!-- ページ送り　終了▲▲ -->
+<!-- END pager:veil -->
+
+<!-- BEGIN serialNavi:veil -->
+<nav class="blogSerialNav clearfix">
+	<ul>
+		<!-- BEGIN prevLink -->
+		<li class="blogSerialNavPrev">
+			<a href="{url}" rel="blogSerialNavPrev">
+			<span class="acms-icon-arrow-small-left blogSerialNavPrevIcon"></span>
+			{name}[trim(27, '...')|escape]</a>
+		</li>
+		<!-- END prevLink -->
+		<!-- BEGIN nextLink -->
+		<li class="blogSerialNavNext">
+			<a href="{url}" rel="blogSerialNavNext">{name}[trim(27, '...')|escape]<span class="acms-icon-arrow-small-right blogSerialNavNextIcon"></span>
+			</a>
+		</li>
+		<!-- END nextLink -->
+		<li class="blogSerialNavIndex"><a href="{upperUrl}">一覧</a></li>
+	</ul>
+</nav>
+<!-- END serialNavi:veil -->
+
+<!-- END_MODULE Entry_Body -->
+
+<!-- BEGIN_MODULE Touch_Entry -->
+<!--#include file="/include/comment.html" -->
+<!-- END_MODULE Touch_Entry -->

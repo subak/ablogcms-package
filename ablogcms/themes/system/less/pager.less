@@ -1,9 +1,11 @@
-/* ---------------
- pager
---------------- */
+/* ------------------------------  
+ ページャー
+------------------------------- */
 .acms-pager {
 	display: inline-block;
 	list-style: none;
+	margin-left: 10px;
+	margin-right: 10px;
 	padding: 0;
 	.font-size(13);
 	color: #333;
@@ -28,17 +30,17 @@
 		> a {
 			.btn;
 			.btn-color;
+			padding: 14px;
 			color: #333;
 
 		}
 		// hover
 		a:hover {
-			.btn-color-hover;
+			.btn-color(@start-color:#FCFCFC, @end-color:#E1E1E1, @color: #333);
 			border: solid 1px #868688;
 			text-decoration: none;
 		}
 		&.cur span {
-			padding: 7px 10px;
 			border: 1px solid #AAA;
 			background: #CCCCCC;
 			filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(#CCCCCC),argb(#CCCCCC)));
@@ -53,19 +55,18 @@
 	}
 }
 
-// スマホ対応
-@media screen and (max-width: 768px) {
+// デスクトップ対応
+@media (min-width : @breakpoint-md-min) {
 	.acms-pager {
-		margin-left: 10px;
-		margin-right: 10px;
+		margin-left: 0;
+		margin-right: 0;
 		// ページ
 		li {
 			
 			span > a,
 			&.cur span,
 			> a {
-				.font-size(15);
-				padding: 14px;
+				.desktop-btn;
 			}
 		}
 	}

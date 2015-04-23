@@ -1,5 +1,5 @@
-<header class="acms-box-medium">
-	<h1 class="acms-admin-title"><i class="acms-icon acms-icon-config"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+<header class="acms-admin-box-medium">
+	<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-config"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
 		<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 		<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->コンフィグ管理
 	</h1>
@@ -7,18 +7,18 @@
 <!--#include file="/admin/topicpath.html"-->
 <!-- BEGIN_MODULE Admin_Config -->
 <!-- BEGIN_IF [{notice_mess}/nem/] -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>App_Timeline 設定を保存しました</p>
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>App_Timeline 設定を保存しました</p>
 <!-- END_IF -->
 
-<div class="acms-panel-title">
+<div class="acms-admin-panel-title">
 	<h2>タイムライン ( App_Timeline )</h2>
-		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-shortcut-btn">ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-admin-btn-admin acms-admin-shortcut-btn">ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
 </div>
-	<div class="acms-panel">
-		<form action="" method="post" class="acms-form">
-			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
-			<input type="button" name="Config_Index" value="一覧" onclick="location.href='%{SCRIPT_ROOT}bid/%{BID}/admin/config_index/';" class="acms-btn-admin" />
-			<table class="adminTable acms-table-admin-edit">
+	<div class="acms-admin-panel">
+		<form action="" method="post" class="acms-admin-form">
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
+			<input type="button" name="Config_Index" value="一覧" onclick="location.href='%{SCRIPT_ROOT}bid/%{BID}/admin/config_index/';" class="acms-admin-btn-admin" />
+			<table class="adminTable acms-admin-table-admin-edit">
 				<tr>
 					<th>表示順<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-timelineListOrder" class="tooltipIcon" /></th>
 					<td>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1792 1792" enable-background="new 0 0 1792 1792" xml:space="preserve">
+<g id="Guide">
+</g>
+<g id="オブジェクト">
+	<g>
+		<circle cx="447.493" cy="1536.507" r="191.493"/>
+		<rect x="768" y="65.014" width="1024" height="896"/>
+		<circle cx="1344.507" cy="1536.507" r="191.493"/>
+		<path d="M640,1089.014v-256v-512H256l-256,512h0v640.001h134.319c29.446-146.033,158.463-256.001,313.174-256.001
+			c154.71,0,283.727,109.967,313.174,256h270.667c29.447-146.033,158.464-256,313.174-256s283.727,109.968,313.174,256.001H1792
+			v-384L640,1089.014z M512,896H64l256-512h192V896z"/>
+	</g>
+</g>
+<g id="レイヤー_3">
+</g>
+<g id="Unicode" display="none">
+	<text transform="matrix(1 0 0 1 437.0625 964.2812)" display="inline" fill="#ED1E79" font-family="'ArialMT'" font-size="256">U+F720</text>
+</g>
+</svg>

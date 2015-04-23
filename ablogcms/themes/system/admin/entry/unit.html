@@ -1,16 +1,16 @@
 <div class="entryFormColumn">
 	<!-- BEGIN adminEntryColumn -->
 	<div id="more">
-		<div class="sorthandle"><i class="acms-icon-sort"></i> 以下のユニットが<span class="acms-sp-hide">一覧表示時に</span>「続きを読む」<span class="acms-sp-hide">になります</span></div>
+		<div class="sorthandle"><i class="acms-admin-icon-sort"></i> 以下のユニットが<span class="acms-admin-hide-sp">一覧表示時に</span>「続きを読む」<span class="acms-admin-hide-sp">になります</span></div>
 	</div>
 	<!-- BEGIN column:loop -->
 	<div class="entryFormColumnItem entryFormColumnItem-opened">
 		<!-- .entryFormColumnHead -->
 		<div class="entryFormColumnHead clearfix">
-			<div class="sorthandle"><i class="acms-icon-sort"></i></div>
+			<div class="sorthandle"><i class="acms-admin-icon-sort"></i></div>
 			<div class="label">{clname}</div>
-			<div class="togglebody acms-sp-hide"><i class="acms-icon acms-icon-close"></i></div>
-			<div class="removethis"><i class="acms-icon acms-icon-delete"></i></div>
+			<div class="togglebody acms-admin-hide-sp"><i class="acms-admin-icon acms-admin-icon-close"></i></div>
+			<div class="removethis"><i class="acms-admin-icon acms-admin-icon-delete"></i></div>
 
 			<input type="hidden" name="id[]" value="{uniqid}" />
 			<input type="hidden" name="type[]" value="{cltype}" />
@@ -54,11 +54,11 @@
 				<select name="text_tag_{id}"><!-- BEGIN textTag:loop -->
 					<option value="{value}" {selected} data-tag_extend="{extend}">{label}</option><!-- END textTag:loop -->
 				</select>
-				<span class="acms-extend-field acms-hide-pc"></span>
-				<input type="text" name="text_extend_tag_{id}" value="{extend_tag}" class="acms-hide-pc" />
+				<span class="acms-admin-extend-field"></span>
+				<input type="text" name="text_extend_tag_{id}" value="{extend_tag}" />
 			</div>
 			<div class="editTextInsert">
-				<span class="emoji-edit acms-hide-pc"></span><!-- BEGIN_IF [%{MEDIA_LIBRARY}/eq/on] -->
+				<span class="emoji-edit acms-admin-hide-sp"></span><!-- BEGIN_IF [%{MEDIA_LIBRARY}/eq/on] -->
 				<a href="#" class="js-media_insert">メディアを挿入</a><!-- END_IF -->
 			</div><!-- END text -->
 			<!-- BEGIN image -->
@@ -71,11 +71,11 @@
 					<!-- END preview:veil -->
 					<td class="entryFormFileControl"><input type="file" name="image_file_{id}[]" size="20" multiple="multiple" accept="image/*" />
 						<br />
-						<div class="acms-form-group">
-							<select name="image_size_{id}" class="acms-select-block"><!-- BEGIN size:loop -->
+						<div class="acms-admin-form-group">
+							<select name="image_size_{id}" class="acms-admin-select-block"><!-- BEGIN size:loop -->
 								<option value="{value}:{display}"{selected}>{label}</option><!-- END size:loop -->
 							</select>
-							<select name="image_edit_{id}" class="acms-select-block">
+							<select name="image_edit_{id}" class="acms-admin-select-block">
 								<option value="none"{edit:selected#none}>編集しない</option>
 								<option value="deleteLarge"{edit:selected#deleteLarge}>拡大表示させない</option><!-- BEGIN rotate -->
 								<option value="rotate270"{selectedEditRotate270}>時計回りで90度回転</option>
@@ -109,7 +109,7 @@
 							<tr class="textM detail-column-body detail-column-body--{id}">
 								<th></th>
 								<td><!-- BEGIN primaryImage:veil -->
-									<label for="input-radio-image_primary_image_{primaryImageId}" class="acms-form-radio"><input type="radio" name="primary_image" value="{primaryImageId}"{primaryImageChecked}[raw] id="input-radio-image_primary_image_{primaryImageId}" /><i class="acms-ico-radio"></i>メイン画像</label><!-- END primaryImage:veil -->
+									<label for="input-radio-image_primary_image_{primaryImageId}" class="acms-admin-form-radio"><input type="radio" name="primary_image" value="{primaryImageId}"{primaryImageChecked}[raw] id="input-radio-image_primary_image_{primaryImageId}" /><i class="acms-admin-ico-radio"></i>メイン画像</label><!-- END primaryImage:veil -->
 								</td>
 							</tr>
 						</table>
@@ -128,7 +128,7 @@
 						</p>
 						<div class="entryFormFileData">
 							<p class="entryFormFileName"><a href="%{HTTP_ARCHIVES_DIR}{old}">{basename}</a></p>
-							<label for="input-checkbox-file_edit_{deleteId}" class="acms-form-checkbox"><input type="checkbox" name="file_edit_{deleteId}" value="delete" id="input-checkbox-file_edit_{deleteId}" /><i class="acms-ico-checkbox"></i>削除</label><!-- END icon:veil -->
+							<label for="input-checkbox-file_edit_{deleteId}" class="acms-admin-form-checkbox"><input type="checkbox" name="file_edit_{deleteId}" value="delete" id="input-checkbox-file_edit_{deleteId}" /><i class="acms-admin-ico-checkbox"></i>削除</label><!-- END icon:veil -->
 							<input type="hidden" name="file_old_{id}" value="{old}" />
 						</div>
 					</td>
@@ -154,7 +154,7 @@
 						<p>
 							<input type="text" size="34" name="mapSearchTexts[]" value="検索機能は使用できません。" disabled="disabled" class="mapSearchText" />
 							&nbsp;
-							<input type="button" name="mapSearchButtons[]" value="検索" disabled="disabled" class="acms-btn-admin" />
+							<input type="button" name="mapSearchButtons[]" value="検索" disabled="disabled" class="acms-admin-btn-admin" />
 						</p>
 
 						<img class="column-map" src="http://maps.google.com/maps/api/staticmap?center={lat},{lng}&zoom={zoom}&size=400x400&maptype=roadmap&markers={lat},{lng}&sensor=false" width="400" height="400" />
@@ -165,7 +165,7 @@
 						<tr>
 							<th>地図の大きさ</th>
 							<td>
-								<div class="acms-form-group">
+								<div class="acms-admin-form-group">
 									<select name="map_size_{id}"><!-- BEGIN size:loop -->
 										<option value="{value}:{display}"{selected}>{label}</option><!-- END size:loop -->
 									</select>
@@ -184,11 +184,11 @@
 								<td>
 									<dl>
 										<dt>緯度</dt>
-										<dd><input type="text" name="map_lat_{id}" value="{lat}" size="9" class="acms-form-width-mini" /></dd>
+										<dd><input type="text" name="map_lat_{id}" value="{lat}" size="9" class="acms-admin-form-width-mini" /></dd>
 										<dt>経度</dt>
-										<dd><input type="text" name="map_lng_{id}" value="{lng}" size="10" class="acms-form-width-mini" /></dd>
+										<dd><input type="text" name="map_lng_{id}" value="{lng}" size="10" class="acms-admin-form-width-mini" /></dd>
 										<dt>ズーム</dt>
-										<dd><input type="text" name="map_zoom_{id}" value="{zoom}" size="2" class="acms-form-width-mini" /></dd>
+										<dd><input type="text" name="map_zoom_{id}" value="{zoom}" size="2" class="acms-admin-form-width-mini" /></dd>
 										<dt>吹き出し ( HTML可 )</dt>
 										<dd><textarea name="map_msg_{id}" rows="9" class="map_msg_id">{msg}</textarea></dd>
 									</dl>
@@ -225,19 +225,19 @@
 						<tr>
 							<th>緯度</th>
 							<td>
-								<input type="text" name="yolp_lat_{id}" value="{lat}" size="9" class="acms-form-width-mini" />
+								<input type="text" name="yolp_lat_{id}" value="{lat}" size="9" class="acms-admin-form-width-mini" />
 							</td>
 						</tr>
 						<tr>
 							<th>経度</th>
 							<td>
-								<input type="text" name="yolp_lng_{id}" value="{lng}" size="10" class="acms-form-width-mini" />
+								<input type="text" name="yolp_lng_{id}" value="{lng}" size="10" class="acms-admin-form-width-mini" />
 							</td>
 						</tr>
 						<tr>
 							<th>ズーム</th>
 							<td>
-								<input type="text" name="yolp_zoom_{id}" value="{zoom}" size="2" class="acms-form-width-mini" />
+								<input type="text" name="yolp_zoom_{id}" value="{zoom}" size="2" class="acms-admin-form-width-mini" />
 							</td>
 						</tr>
 						</table>
@@ -309,10 +309,10 @@
 				<td class="entryFormFileControl">
 					<dl>
 						<dt>標準画像</dt>
-						<dd><input type="text" name="eximage_normal_{id}" size="45" value="{normal}" class="entryFormInputText acms-form-width-full" /></dd>
+						<dd><input type="text" name="eximage_normal_{id}" size="45" value="{normal}" class="entryFormInputText acms-admin-form-width-full" /></dd>
 
 						<dt>拡大画像</dt>
-						<dd><input type="text" name="eximage_large_{id}" size="45" value="{large}" class="entryFormInputText acms-form-width-full" /></dd>
+						<dd><input type="text" name="eximage_large_{id}" size="45" value="{large}" class="entryFormInputText acms-admin-form-width-full" /></dd>
 						
 						<dt>画像の大きさ</dt>
 						<dd>
@@ -333,15 +333,15 @@
 						</tr>
 						<tr class="textM detail-column-body detail-column-body--{id}">
 							<th>キャプション</th>
-							<td><input type="text" name="eximage_caption_{id}" value="{caption}" class="entryFormInputText acms-form-width-full" /></td>
+							<td><input type="text" name="eximage_caption_{id}" value="{caption}" class="entryFormInputText acms-admin-form-width-full" /></td>
 						</tr>
 						<tr class="textM detail-column-body detail-column-body--{id}">
 							<th>リンク</th>
-							<td><input type="text" name="eximage_link_{id}" value="{link}" class="entryFormInputText acms-form-width-full" /></td>
+							<td><input type="text" name="eximage_link_{id}" value="{link}" class="entryFormInputText acms-admin-form-width-full" /></td>
 						</tr>
 						<tr class="textM detail-column-body detail-column-body--{id}">
 							<th>代替テキスト</th>
-							<td><input type="text" name="eximage_alt_{id}" value="{alt}" class="entryFormInputText acms-form-width-full" /></td>
+							<td><input type="text" name="eximage_alt_{id}" value="{alt}" class="entryFormInputText acms-admin-form-width-full" /></td>
 						</tr>
 					</table>
 				</td>
@@ -353,7 +353,7 @@
 			<tr class="entryFormFileControl">
 
 				<!-- BEGIN preview:veil -->
-				<td class="entryFormFileentryFormImages"><!-- BEGIN_IF [{type}/eq/image] -->
+				<td class="js-media_preview entryFormFileentryFormImages"><!-- BEGIN_IF [{type}/eq/image] -->
 					<img src="%{HTTP_MEDIA_ARCHIVES_DIR}{tiny}" /><!-- ELSE_IF [{thumbnail}/nem/] -->
 					<img src="%{ARCHIVES_DIR}{thumbnail}" /><!-- ELSE_IF [{icon}/nem/] -->
 					<img src="%{ROOT_DIR}{icon}" /><!-- END_IF -->
@@ -407,7 +407,7 @@
 			<tr class="entryFormFileControl">
 				<th>引用URL</th>
 				<td>
-					<input type="text" name="quote_url_{id}" size="45" value="{quote_url}" class="entryFormInputText acms-form-width-full"/>
+					<input type="text" name="quote_url_{id}" size="45" value="{quote_url}" class="entryFormInputText acms-admin-form-width-full"/>
 					<!-- BEGIN html:veil -->{tw_oembed}[raw]<!-- END html:veil -->
 				</td>
 			</tr>
@@ -416,6 +416,21 @@
 
 			<!-- BEGIN break -->
 			<input type="text" name="break_label_{id}" value="{label}" style="width:98%" /><!-- END break -->
+
+			<!-- BEGIN module -->
+			 <div class="acms_layout_unit acms_layout_module_unit">
+				<div class="js-acms_layout_edit_box">
+					<button class="js-acms_layout_select_module acms-admin-btn-admin acms-admin-btn-small"><span class="acms-admin-icon acms-admin-icon-module"></span>モジュール</button>
+				</div>
+				<div class="js-acms_layout_contents js-acms_layout_module_box" data-col="1">
+					{view}[raw]
+				</div>
+			</div>
+
+			<input type="hidden" name="module_mid_{id}" value="{mid}" />
+			<input type="hidden" name="module_tpl_{id}" value="{tpl}" />
+			<!-- END module -->
+
 			<!-- BEGIN custom -->
 			<!--#include file="/admin/entry/unit/custom.html" -->
 			<!-- END custom -->
@@ -428,7 +443,7 @@
 
 	<div class="formEntryActionUnit ablogcms--column-add-btn">
 		<div class="sorthandle">
-		  <span class="adminBtn"><i class="acms-icon-sort"></i>追加</span>
+		  <span class="adminBtn"><i class="acms-admin-icon-sort"></i>追加</span>
 		  <span class="buttonlist"></span>
 		</div>
 	</div>
