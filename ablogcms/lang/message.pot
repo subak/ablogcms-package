@@ -1,0 +1,16 @@
+# Copyright (C) 2015 a-blog cms
+# This file is distributed under the same license as the a-blog cms.
+# a-blog cms <info@a-blogcms.jp>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: a-blog cms ver2.2.x \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-07T11:48:54+09:00\n"
+"PO-Revision-Date: YEAR-MO-DATHO:MI+ZONE\n"
+"Last-Translator: admin <ito@appleple.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+

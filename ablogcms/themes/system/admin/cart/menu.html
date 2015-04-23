@@ -1,25 +1,25 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-cart"></i>カート</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-cart"></i>カート</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Config -->
 <!-- BEGIN_IF [{notice_mess}/nem/] -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>カート設定を保存しました</p><!-- END_IF -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>カート設定を保存しました</p><!-- END_IF -->
 
-<p class="transaction-notice-{config:validator} acms-alert acms-alert-danger">コンフィグを保存出来ませんでした。</p>
+<p class="transaction-notice-{config:validator} acms-admin-alert acms-admin-alert-danger">コンフィグを保存出来ませんでした。</p>
 
-<form action="" method="post" class="acms-form">
-	<div class="acms-form-group js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+<form action="" method="post" class="acms-admin-form">
+	<div class="acms-admin-form-group js-acms_fix_marker js-acms_fix_target acms_fix_bg">
 		<div class="acms_fix_bg_index">
-			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
 			<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
-			<a href="/bid/%{BID}/admin/shortcut_edit/?action=Shop2&admin=%{ADMIN}&edit=add&step=reapply" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+			<a href="/bid/%{BID}/admin/shortcut_edit/?action=Shop2&admin=%{ADMIN}&edit=add&step=reapply" class="acms-admin-btn-admin acms-admin-float-right"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
 		</div>
 	</div>
 

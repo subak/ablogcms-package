@@ -10,25 +10,89 @@
 		<dd>.acms-clear</dd>
 	</dl>
 	
-	<h2 class="sectionTitle2">ブロック</h2>
+	<h2 class="sectionTitle2">アクセシビリティ</h2>
 	<dl class="acms-dl">
-		<dt>ブロック</dt>
-		<dd>.acms-block</dd>
-		<dt>インライン</dt>
-		<dd>.acms-inline</dd>
-		<dt>非表示</dt>
-		<dd>.acms-hide</dd>
-		<dt>非表示（PCのとき）</dt>
-		<dd>.acms-hide-pc</dd>
-		<dt>アクセシビリティ（視覚的に表示はされませんが、音声で出力するようになります）</dt>
+		<dt>視覚的に表示はされないが、音声で出力する</dt>
 		<dd>.acms-hide-visually</dd>
 	</dl>
 
+
 	<h2 class="sectionTitle2">幅と高さ</h2>
 	<dl class="acms-dl">
+		<dt>幅 100%</dt>
+		<dd>.acms-width-max</dd>
 		<dt>高さ 100%</dt>
 		<dd>.acms-height-max</dd>
 		<dt>幅と高さ 100%</dt>
 		<dd>.acms-width-height-max</dd>
 	</dl>
+
+	<h2 class="sectionTitle2">幅（スマートフォン用）</h2>
+	<dl class="acms-dl">
+		<dt>幅 100%</dt>
+		<dd>.acms-width-sp</dd>
+		<dt>幅 オート</dt>
+		<dd>.acms-width-auto-sp</dd>
+	</dl>
+
+	<h2 class="sectionTitle2">テキスト</h2>
+	<p class="acms-text-left">こちらはテストの本文です。</p>
+	<p class="acms-text-right">こちらはテストの本文です。</p>
+	<p class="acms-text-center">こちらはテストの本文です。</p>
+	<p class="acms-text-nowrap">こちらはテストの本文です。</p>
+<pre class="code HTML">
+&lt;p class="acms-text-left"&gt;こちらはテストの本文です。&lt;/p&gt;
+&lt;p class="acms-text-right"&gt;こちらはテストの本文です。&lt;/p&gt;
+&lt;p class="acms-text-center"&gt;こちらはテストの本文です。&lt;/p&gt;
+&lt;p class="acms-text-nowrap"&gt;こちらはテストの本文です。&lt;/p&gt;
+</pre>
+
+	<p class="acms-text-primary">こちらはテストの本文です。</p>
+	<p class="acms-text-info">こちらはテストの本文です。</p>
+	<p class="acms-text-success">こちらはテストの本文です。</p>
+	<p class="acms-text-warning">こちらはテストの本文です。</p>
+	<p class="acms-text-danger">こちらはテストの本文です。</p>
+<pre class="code HTML">
+&lt;p class="acms-text-primary"&gt;こちらはテストの本文です。&lt;/p&gt;
+&lt;p class="acms-text-info"&gt;こちらはテストの本文です。&lt;/p&gt;
+&lt;p class="acms-text-success"&gt;こちらはテストの本文です。&lt;/p&gt;
+&lt;p class="acms-text-warning"&gt;こちらはテストの本文です。&lt;/p&gt;
+&lt;p class="acms-text-danger"&gt;こちらはテストの本文です。&lt;/p&gt;
+</pre>
+
+
+	<h2 class="sectionTitle2">アイコン用背景</h2>
+	<span class="acms-icon-bg"><i class="acms-icon-config_mail"></i></span>
+	<span class="acms-icon-bg acms-icon-bg-info"><i class="acms-icon-config_mail"></i></span>
+	<span class="acms-icon-bg acms-icon-bg-success"><i class="acms-icon-config_mail"></i></span>
+	<span class="acms-icon-bg acms-icon-bg-warning"><i class="acms-icon-config_mail"></i></span>
+	<span class="acms-icon-bg acms-icon-bg-danger"><i class="acms-icon-config_mail"></i></span>
+
+<pre class="code HTML">
+&lt;span class="acms-icon-bg"&gt;...&lt;/span&gt;
+&lt;span class="acms-icon-bg acms-icon-bg-info"&gt;...&lt;/span&gt;
+&lt;span class="acms-icon-bg acms-icon-bg-success"&gt;...&lt;/span&gt;
+&lt;span class="acms-icon-bg acms-icon-bg-warning"&gt;...&lt;/span&gt;
+&lt;span class="acms-icon-bg acms-icon-bg-danger"&gt;...&lt;/span&gt;
+</pre>
+
+	<h2 class="sectionTitle2">角丸</h2>
+	<dl class="acms-dl">
+		<dt>角丸</dt>
+		<dd>.acms-round</dd>
+		<dt>丸</dt>
+		<dd>.acms-circle</dd>
+	</dl>
+	<span class="acms-icon-bg acms-round"><i class="acms-icon-config_mail"></i></span>
+	<span class="acms-icon-bg acms-circle"><i class="acms-icon-config_mail"></i></span>
+<pre class="code HTML">
+&lt;span class="acms-icon-bg acms-round"&gt;...&lt;/span&gt;
+&lt;span class="acms-icon-bg acms-circle"&gt;...&lt;/span&gt;
+</pre>
+
+<h2 class="sectionTitle2">画像のレスポンシブ対応</h2>
+	<img src="/themes/system/admin/styleguide/images/sampleImage.jpg" alt="" class="acms-img-responsive">
+<pre class="code HTML">
+&lt;img src="/themes/system/admin/styleguide/images/sampleImage.jpg" alt="" class="acms-img-responsive"&gt;
+</pre>
 </section>

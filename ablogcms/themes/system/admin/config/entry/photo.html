@@ -1,166 +1,35 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<div class="acms-admin-title acms-module-title-wrapper">
-			<i class="acms-icon acms-icon-config_entry_photo"></i>
-			<div class="acms-module-title">
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<div class="acms-admin-admin-title acms-admin-module-title-wrapper">
+			<i class="acms-admin-icon acms-admin-icon-config_entry_photo"></i>
+			<div class="acms-admin-module-title">
 			<!-- BEGIN_MODULE Admin_Rule_Name -->
 				<strong>ルール : {name}</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 				<strong>モジュールID : {label} ( {identifier} )</strong><!-- END_MODULE Admin_Module_Name -->
-				<h1>フォト<span class="acms-module-en">Entry_Photo</span></h1>
+				<h1>フォト<span class="acms-admin-module-en">Entry_Photo</span></h1>
 			</div>
 		</div>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Config -->
 <!-- BEGIN_IF [{notice_mess}/nem/] -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>Entry_Photo 設定を保存しました</p>
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>Entry_Photo 設定を保存しました</p>
 <!-- END_IF -->
 
-<form action="" method="post" class="acms-form">
+<form action="" method="post" class="acms-admin-form">
 	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
-		<div class="acms-form-group acms_fix_bg_index">
-			<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+		<div class="acms-admin-form-group acms_fix_bg_index">
+			<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
 
-			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-admin-btn-admin acms-admin-float-right acms-admin-float-none-sp"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
 		</div>
 	</div>
-
-	<h3 class="acms-admin-title2">コンフィグ</h3>
-	<table class="adminTable acms-table-admin-edit">
-		<tr>
-			<th>表示順<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="どのようなルールに従って表示されるかの設定です。フィールド、数値フィールドはカスタムフィールドでの検索結果の表示時に利用します。"></i></th>
-			<td>
-				<select name="entry_photo_order">
-					<option value="datetime-asc"{entry_photo_order:selected#datetime-asc}>日時 ( 昇順 )</option>
-					<option value="datetime-desc"{entry_photo_order:selected#datetime-desc}>日時 ( 降順 )</option>
-					<option value="code-asc"{entry_photo_order:selected#code-asc}>ファイル名 ( 昇順 )</option>
-					<option value="code-desc"{entry_photo_order:selected#code-desc}>ファイル名 ( 降順 )</option>
-					<option value="id-asc"{entry_photo_order:selected#id-asc}>ID ( 昇順 )</option>
-					<option value="id-desc"{entry_photo_order:selected#id-desc}>ID ( 降順 )</option>
-					<option value="sort-asc"{entry_photo_order:selected#sort-asc}>表示順 ( 昇順 )</option>
-					<option value="sort-desc"{entry_photo_order:selected#sort-desc}>表示順 ( 降順 )</option>
-					<option value="field-asc"{entry_photo_order:selected#field-asc}>フィールド ( 昇順 )</option>
-					<option value="field-desc"{entry_photo_order:selected#field-desc}>フィールド ( 降順 )</option>
-					<option value="intfield-asc"{entry_photo_order:selected#intfield-asc}>数値フィールド ( 昇順 )</option>
-					<option value="intfield-desc"{entry_photo_order:selected#intfield-desc}>数値フィールド ( 降順 )</option>
-					<option value="random"{entry_photo_order:selected#random}>ランダム</option>
-				</select>
-				<input type="hidden" name="config[]" value="entry_photo_order" />
-			</td>
-		</tr>
-		<tr>
-			<th>表示件数<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="一度に表示される件数です。"></i></th>
-			<td>
-				<input type="text" name="entry_photo_limit" value="{entry_photo_limit}" size="4" class="acms-form-width-mini" />
-				<input type="hidden" name="config[]" value="entry_photo_limit" />
-				<input type="hidden" name="entry_photo_limit:convert" value="a" />
-				<input type="hidden" name="entry_photo_limit:validator#digits" id="validator-entry_photo_limit-digits" />
-				<label for="validator-entry_photo_limit-digits" class="validator-result-{entry_photo_limit:validator#digits}">数字を入力して下さい。</label>
-			</td>
-		</tr>
-		<tr>
-			<th>オフセット<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="表示順で並び替えた後の先頭から数えて、設定した件数のエントリーを表示しなくします。"></i></th>
-			<td>
-				<input type="text" name="entry_photo_offset" value="{entry_photo_offset}" size="4" class="acms-form-width-mini" />
-				<input type="hidden" name="config[]" value="entry_photo_offset" />
-				<input type="hidden" name="entry_photo_offset:convert" value="a" />
-				<input type="hidden" name="entry_photo_offset:validator#digits" id="validator-entry_photo_offset-digits" />
-				<label for="validator-entry_photo_offset-digits" class="validator-result-{entry_photo_offset:validator#digits}">数字を入力して下さい。</label>
-			</td>
-		</tr>
-		<tr>
-			<th>インデキシング<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックを外すと、インデキシングされていないエントリーも表示されます。"></i></th>
-			<td>
-				<input type="hidden" name="entry_photo_indexing" value="off" />
-				<label for="input-checkbox-entry_photo_indexing" class="acms-form-checkbox"><input type="checkbox" name="entry_photo_indexing" value="on"{entry_photo_indexing:checked#on} id="input-checkbox-entry_photo_indexing" /><i class="acms-ico-checkbox"></i>
-インデキシングされているエントリーのみ表示する</label>
-				<input type="hidden" name="config[]" value="entry_photo_indexing" />
-			</td>
-		</tr>
-		<tr>
-			<th>シークレットエントリー<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると、ログインしていなくてもシークレットブログのエントリーが表示されます。ステータスがシークレットの子ブログのエントリーを表示するためには、モジュールIDの設定でブログIDは指定せず、ブログの階層は下階層のブログを含めるようにしてください。"></i></th>
-			<td>
-				<input type="hidden" name="entry_photo_secret" value="off" />
-				<label for="input-checkbox-entry_photo_secret" class="acms-form-checkbox"><input type="checkbox" name="entry_photo_secret" value="on"{entry_photo_secret:checked#on} id="input-checkbox-entry_photo_secret" /><i class="acms-ico-checkbox"></i>ログインしていなくてもシークレットブログのエントリーを表示する</label>
-				<input type="hidden" name="config[]" value="entry_photo_secret" />
-			</td>
-		</tr>
-		<tr>
-			<th>ユニット<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="指定した件数のエントリーごとに、unitブロックが表示されます。何件ごとに折り返すなどの指定に応用できます。"></i></th>
-			<td>
-				<input type="text" name="entry_photo_unit" value="{entry_photo_unit}" size="4" class="acms-form-width-mini" />
-				<input type="hidden" name="config[]" value="entry_photo_unit" />
-				<input type="hidden" name="entry_photo_unit:validator#digits" id="validator-entry_photo_unit-digits" />
-				<label for="validator-entry_photo_unit-digits" class="validator-result-{entry_photo_unit:validator#digits}">数字を入力してください。</label>
-			</td>
-		</tr>
-		<tr>
-			<th>エントリーがない場合の表示<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックすると、指定条件でエントリーが見つからなかった場合にnotFoundブロックを出力します。"></i></th>
-			<td>
-				<input type="hidden" name="mo_entry_photo_notfound" value="off" />
-				<label for="input-checkbox-mo_entry_photo_notfound" class="acms-form-checkbox"><input type="checkbox" name="mo_entry_photo_notfound" value="on"{mo_entry_photo_notfound:checked#on} id="input-checkbox-mo_entry_photo_notfound" /><i class="acms-ico-checkbox"></i>指定された条件のエントリーが一つもない場合にnot foundを表示する</label>
-				<input type="hidden" name="config[]" value="mo_entry_photo_notfound" />
-				<br />( チェックなしで何も表示しない )
-			</td>
-		</tr>
-		<tr>
-			<th>詳細のエントリー表示<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると詳細ページでそのページのエントリーを除いたものが出力されます。"></i></th>
-			<td>
-				<input type="hidden" name="entry_photo_hidden_current_entry" value="off" />
-				<label for="input-checkbox-entry_photo_hidden_current_entry" class="acms-form-checkbox"><input type="checkbox" name="entry_photo_hidden_current_entry" value="on"{entry_photo_hidden_current_entry:checked#on} id="input-checkbox-entry_photo_hidden_current_entry" /><i class="acms-ico-checkbox"></i>現在表示されているエントリーを表示しない</label>
-				<input type="hidden" name="config[]" value="entry_photo_hidden_current_entry" />
-			</td>
-		</tr>
-	</table>
-
-	<h3 class="acms-admin-title2">イメージ</h3>
-	<table class="adminTable acms-table-admin-edit">
-		<tr>
-			<th>サイズ<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このモジュールで出力する画像のサイズを設定します。"></i></th>
-			<td>
-				横&nbsp;<input type="text" name="entry_photo_image_x" value="{entry_photo_image_x}" size="8" class="acms-form-width-mini" />ピクセル x 縦&nbsp;<input type="text" name="entry_photo_image_y" value="{entry_photo_image_y}" size="8" class="acms-form-width-mini" />ピクセル
-				<input type="hidden" name="config[]" value="entry_photo_image_x" />
-				<input type="hidden" name="config[]" value="entry_photo_image_y" />
-				<input type="hidden" name="entry_photo_image_x:convert" value="a" />
-				<input type="hidden" name="entry_photo_image_x:validator#digits" id="validator-entry_photo_image_x-digits" />
-				<label for="validator-entry_photo_image_x-digits" class="validator-result-{entry_photo_image_x:validator#digits}">数字を入力して下さい。</label>
-				<input type="hidden" name="entry_photo_image_y:convert" value="a" />
-				<input type="hidden" name="entry_photo_image_y:validator#digits" id="validator-entry_photo_image_y-digits" />
-				<label for="validator-entry_photo_image_y-digits" class="validator-result-{entry_photo_image_y:validator#digits}">数字を入力して下さい。</label>
-			</td>
-		</tr>
-		<tr>
-			<th>トリミング<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="サイズで指定された大きさに、画像をトリミングして表示します。"></i></th>
-			<td>
-				<input type="hidden" name="entry_photo_image_trim" value="off" />
-				<label for="input-checkbox-entry_photo_image_trim" class="acms-form-checkbox"><input type="checkbox" name="entry_photo_image_trim" value="on"{entry_photo_image_trim:checked#on} id="input-checkbox-entry_photo_image_trim" /><i class="acms-ico-checkbox"></i>画像を指定されたサイズにトリミングする</label>
-				<input type="hidden" name="config[]" value="entry_photo_image_trim" />
-			</td>
-		</tr>
-		<tr>
-			<th>拡大　( トリミングがoffの場合のみ )<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="画像が指定されたサイズよりも小さいときに、指定されたサイズまで拡大します。"></i></th>
-			<td>
-				<input type="hidden" name="entry_photo_image_zoom" value="off" />
-				<label for="input-checkbox-entry_photo_image_zomm" class="acms-form-checkbox"><input type="checkbox" name="entry_photo_image_zoom" value="on"{entry_photo_image_zoom:checked#on} id="input-checkbox-entry_photo_image_zomm" /><i class="acms-ico-checkbox"></i>画像が指定されたサイズに満たない場合に拡大する</label>
-				<input type="hidden" name="config[]" value="entry_photo_image_zoom" />
-			</td>
-		</tr>
-		<tr>
-			<th>表示位置 ( トリミングがoffの場合のみ )<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="画像を指定されたサイズの中心に表示します。"></i></th>
-			<td>
-				<input type="hidden" name="entry_photo_image_center" value="off" />
-				<label for="input-checkbox-entry_photo_image_center" class="acms-form-checkbox"><input type="checkbox" name="entry_photo_image_center" value="on"{entry_photo_image_center:checked#on} id="input-checkbox-entry_photo_image_center" /><i class="acms-ico-checkbox"></i>画像を指定されたサイズの中心に表示する</label>
-				<input type="hidden" name="config[]" value="entry_photo_image_center" />
-			</td>
-		</tr>
-	</table><!-- BEGIN_MODULE Admin_Rule_Name -->
-	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
-	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+	<!--#include file="/admin/%{ADMIN_PATH}_body.html"-->
 </form>
 <!-- END_MODULE Admin_Config -->

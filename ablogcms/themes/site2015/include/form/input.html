@@ -1,0 +1,103 @@
+<!-- BEGIN_MODULE Form2_Unit -->
+<div>
+<table class="contactForm">
+	<tr>
+		<th><label for="email">メールアドレス</label><span class="labelRequired">必須</span></th>
+		<td>
+			<input id="email" name="email" type="email" value="\{email\}" class="acms-admin-form-width-medium" />
+			<input type="hidden" name="field[]" value="email" />
+			<input type="hidden" name="email:v#required" />
+			<input type="hidden" name="email:c" value="a" />
+			<input type="hidden" name="email:v#email" />
+			<!-- BEGIN\ email:validator -->
+			<p class="errorText"><span class="acms-admin-icon acms-admin-icon-attention"></span>正しいメールアドレスを入力してください。</p>
+			<!-- END\ email:validator -->
+		</td>
+	</tr>
+
+	<!-- BEGIN column:loop -->
+	<!-- BEGIN text -->
+	<tr>
+		<th><label>{label}</label><!-- BEGIN required --><span class="labelRequired">必須</span><!-- END required --></th>
+		<td>
+			<input type="text" name="form-unit-{utid}" value="\{form-unit-{utid}\}" size="20" class="acms-admin-form-width-medium" />
+			<input type="hidden" name="field[]" value="form-unit-{utid}" />
+			<!-- BEGIN validator:loop -->
+			<input type="hidden" name="form-unit-{vutid}:v#{valid}" value="{val}" /><!-- END validator:loop --><!-- BEGIN converter:loop -->
+			<input type="hidden" name="form-unit-{vutid}:c" value="{val}" /><!-- END converter:loop -->
+			<!-- BEGIN validatorMessage:loop --><!-- BEGIN\ form-unit-{vutid}:validator#{valid} -->
+			<p class="errorText"><span class="acms-admin-icon acms-admin-icon-attention"></span>{message}</p><!-- END\ form-unit-{vutid}:validator#{valid} --><!-- END validatorMessage:loop -->
+		</td>
+	</tr><!-- END text -->
+
+	<!-- BEGIN textarea -->
+	<tr>
+		<th><label>{label}</label><!-- BEGIN required --><span class="labelRequired">必須</span><!-- END required --></th>
+		<td>
+			<textarea name="form-unit-{utid}" cols="40" rows="5">\{form-unit-{utid}\}</textarea>
+			<input type="hidden" name="field[]" value="form-unit-{utid}" />
+			<!-- BEGIN validator:loop -->
+			<input type="hidden" name="form-unit-{vutid}:v#{valid}" value="{val}" /><!-- END validator:loop --><!-- BEGIN converter:loop -->
+			<input type="hidden" name="form-unit-{vutid}:c" value="{val}" /><!-- END converter:loop -->
+			<!-- BEGIN validatorMessage:loop --><!-- BEGIN\ form-unit-{vutid}:validator#{valid} -->
+			<p class="errorText"><span class="acms-admin-icon acms-admin-icon-attention"></span>{message}</p><!-- END\ form-unit-{vutid}:validator#{valid} --><!-- END validatorMessage:loop -->
+		</td>
+	</tr><!-- END textarea -->
+
+	<!-- BEGIN radio -->
+	<tr>
+		<th><label>{label}</label><!-- BEGIN required --><span class="labelRequired">必須</span><!-- END required --></th>
+		<td class="acms-admin-radio">
+			<!-- BEGIN radio#val:loop -->
+			<label class="acms-admin-form-radio"><input type="radio" name="form-unit-{utid}" value="{value}"\{form-unit-{utid}:checked#{value}\}>
+			<i class="acms-admin-ico-radio"></i>
+			{value}
+			</label><!-- END radio#val:loop -->
+			<input type="hidden" name="field[]" value="form-unit-{utid}" />
+			<!-- BEGIN validator:loop -->
+			<input type="hidden" name="form-unit-{vutid}:v#{valid}" value="{val}" /><!-- END validator:loop --><!-- BEGIN converter:loop -->
+			<input type="hidden" name="form-unit-{vutid}:c" value="{val}" /><!-- END converter:loop -->
+			<!-- BEGIN validatorMessage:loop --><!-- BEGIN\ form-unit-{vutid}:validator#{valid} -->
+			<p class="errorText"><span class="acms-admin-icon acms-admin-icon-attention"></span>{message}</p><!-- END\ form-unit-{vutid}:validator#{valid} --><!-- END validatorMessage:loop -->
+		</td>
+	</tr><!-- END radio -->
+
+	<!-- BEGIN select -->
+	<tr>
+		<th><label>{label}</label><!-- BEGIN required --><span class="labelRequired">必須</span><!-- END required --></th>
+		<td>
+			<select name="form-unit-{utid}">
+				<!-- BEGIN select#val:loop -->
+				<option value="{value}"\{form-unit-{utid}:selected#{value}\}>{value}</option><!-- END select#val:loop -->
+			</select>
+			<input type="hidden" name="field[]" value="form-unit-{utid}" />
+			<!-- BEGIN validator:loop -->
+			<input type="hidden" name="form-unit-{vutid}:v#{valid}" value="{val}" /><!-- END validator:loop --><!-- BEGIN converter:loop -->
+			<input type="hidden" name="form-unit-{vutid}:c" value="{val}" /><!-- END converter:loop -->
+			<!-- BEGIN validatorMessage:loop --><!-- BEGIN\ form-unit-{vutid}:validator#{valid} -->
+			<p class="errorText"><span class="acms-admin-icon acms-admin-icon-attention"></span>{message}</p><!-- END\ form-unit-{vutid}:validator#{valid} --><!-- END validatorMessage:loop -->
+		</td>
+	</tr><!-- END select -->
+
+	<!-- BEGIN checkbox -->
+	<tr>
+		<th><label>{label}</label><!-- BEGIN required --><span class="labelRequired">必須</span><!-- END required --></th>
+		<td class="acms-admin-checkbox">
+			<!-- BEGIN checkbox#val:loop -->
+			<label class="acms-admin-form-checkbox"><input type="checkbox" name="form-unit-{utid}[]" value="{value}"\{form-unit-{utid}:checked#{value}\}>
+			<i class="acms-admin-ico-checkbox"></i>
+			{value}
+			</label><!-- END checkbox#val:loop -->
+			<input type="hidden" name="field[]" value="form-unit-{utid}" />
+			<!-- BEGIN validator:loop -->
+			<input type="hidden" name="form-unit-{vutid}:v#{valid}" value="{val}" /><!-- END validator:loop --><!-- BEGIN converter:loop -->
+			<input type="hidden" name="form-unit-{vutid}:c" value="{val}" /><!-- END converter:loop -->
+			<!-- BEGIN validatorMessage:loop --><!-- BEGIN\ form-unit-{vutid}:validator#{valid} -->
+			<p class="errorText"><span class="acms-admin-icon acms-admin-icon-attention"></span>{message}</p><!-- END\ form-unit-{vutid}:validator#{valid} --><!-- END validatorMessage:loop -->
+		</td>
+	</tr><!-- END checkbox -->
+
+	<!-- END column:loop -->
+</table>
+</div>
+<!-- END_MODULE Form2_Unit -->

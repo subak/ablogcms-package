@@ -1,0 +1,124 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Calendar_Month -->
+<div>
+	<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+	<div>
+		<h3 class="text-center"><a href="{monthUrl}">{month}月</a></h3>
+		<ul class="pager">
+			<li><a href="{prevUrl}" title="前月へ">«</a></li>
+			<li><a href="{yearUrl}" title="年間カレンダーへ">{year}</a></li>
+			<li><a href="{nextUrl}" title="次月へ">»</a></li>
+		</ul>
+	</div>
+	<table class="table table-bordered">
+	<thead>
+		<tr class="text-center">
+			<!-- BEGIN weekLabel:loop -->
+			<td >{label}</td>
+			<!-- END weekLabel:loop -->
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN week:loop -->
+		<tr class="text-center">
+			<!-- BEGIN day:loop -->
+			<!-- BEGIN spacer -->
+			<td> </td>
+			<!-- END spacer -->
+			<!-- BEGIN none -->
+			<td>{day}</td>
+			<!-- END none -->
+			<!-- BEGIN link -->
+			<td class="success"><a href="{url}">{day}</a></td>
+			<!-- END link -->
+			<!-- END day:loop -->
+		</tr>
+		<!-- END week:loop -->
+	</tbody>
+	</table>
+</div>
+<!-- END_MODULE Calendar_Month -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div>
+	<div>
+		<h3 class="text-center"><a href="#">1月</a></h3>
+		<ul class="pager">
+			<li><a href="#" title="前月へ">«</a></li>
+			<li><a href="#" title="年間カレンダーへ">2015</a></li>
+			<li><a href="#" title="次月へ">»</a></li>
+		</ul>
+	</div>
+	<table class="table table-bordered">
+	<thead>
+		<tr class="text-center">
+			<td>月</td>
+			<td>火</td>
+			<td>水</td>
+			<td>木</td>
+			<td>金</td>
+			<td>土</td>
+			<td>日</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="text-center">
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>1</td>
+		</tr>
+		<tr class="text-center">
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+		</tr>
+		<tr class="text-center">
+			<td>9</td>
+			<td>10</td>
+			<td>11</td>
+			<td class="success"><a href="#">12</a></td>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+		</tr>
+		<tr class="text-center">
+			<td>16</td>
+			<td>17</td>
+			<td>18</td>
+			<td>19</td>
+			<td>20</td>
+			<td>21</td>
+			<td>22</td>
+		</tr>
+		<tr class="text-center">
+			<td>23</td>
+			<td>24</td>
+			<td>25</td>
+			<td>26</td>
+			<td>27</td>
+			<td>28</td>
+			<td>29</td>
+		</tr>
+		<tr class="text-center">
+			<td>30</td>
+			<td>31</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		
+	</tbody>
+	</table>
+</div>
+<!-- END layout#dummy -->

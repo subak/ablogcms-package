@@ -1,0 +1,227 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_Calendar -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+<!-- BEGIN date -->
+<ul class="pager">
+	<li><a href="%{BASE_URL}calendar.html/{prevDate}" title="前月へ">«</a></li>
+	<li><a href="%{BASE_URL}calendar.html/{year}/{month}">{month}月</a></li>
+	<li><a href="%{BASE_URL}calendar.html/{nextDate}" title="次月へ">»</a></li>
+</ul><!-- END date -->
+<div class="table-responsive">
+<table class="table table-bordered calendarTable">
+	<!-- BEGIN week:loop -->
+		<!-- BEGIN foreSpacer -->
+		<tr class="active">
+			<th>{prevDay}<span class="text-muted">（{week}）</span></th>
+			<td><!-- BEGIN foreEntry:loop --><div><!-- BEGIN url#front --><a href="{url}"><!-- END url#front -->{title}<!-- BEGIN url#rear --></a><!-- END url#rear --></div><!-- END foreEntry:loop --></td>
+		</tr><!-- END foreSpacer -->
+		<!-- BEGIN day:loop -->
+		<tr>
+			<th class="{today}">{day}<span class="text-muted">（{week}）</span></th>
+			<td><!-- BEGIN entry:loop --><div><!-- BEGIN url#front --><a href="{url}"><!-- END url#front -->{title}<!-- BEGIN url#rear --></a><!-- END url#rear --></div><!-- END entry:loop --></td>
+		</tr><!-- END day:loop -->
+		<!-- BEGIN rearSpacer -->
+		<tr class="active">
+			<th>{nextDay}<span class="text-muted">（{week}）</span></th>
+			<td><!-- BEGIN rearEntry:loop --><div><!-- BEGIN url#front --><a href="{url}"><!-- END url#front -->{title}<!-- BEGIN url#rear --></a><!-- END url#rear --></div><!-- END rearEntry:loop --></td>
+		</tr>
+		<!-- END rearSpacer -->
+	<!-- END week:loop -->
+</table>
+</div>
+</div>
+<!-- END_MODULE Entry_Calendar -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div>
+<ul class="pager">
+	<li><a href="#" title="前月へ">«</a></li>
+	<li><a href="#">01月</a></li>
+	<li><a href="#" title="次月へ">»</a></li>
+</ul>
+<table class="table table-bordered calendarTable">
+	<tr class="active">
+		<th>23<span class="text-muted">（月）</span></th>
+		<td></td>
+	</tr>
+	<tr class="active">
+		<th>24<span class="text-muted">（火）</span></th>
+		<td></td>
+	</tr>
+	<tr class="active">
+		<th>25<span class="text-muted">（水）</span></th>
+		<td></td>
+	</tr>
+	<tr class="active">
+		<th>26<span class="text-muted">（木）</span></th>
+		<td></td>
+	</tr>
+	<tr class="active">
+		<th>27<span class="text-muted">（金）</span></th>
+		<td></td>
+	</tr>
+	<tr class="active">
+		<th>28<span class="text-muted">（土）</span></th>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th class="">1<span class="text-muted">（日）</span></th>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th class="">2<span class="text-muted">（月）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">3<span class="text-muted">（火）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">4<span class="text-muted">（水）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">5<span class="text-muted">（木）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">6<span class="text-muted">（金）</span></th>
+		<td><div><a href="#">エントリーのタイトルが入ります</a></div></td>
+	</tr>
+	<tr>
+		<th class="">7<span class="text-muted">（土）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">8<span class="text-muted">（日）</span></th>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th class="">9<span class="text-muted">（月）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">10<span class="text-muted">（火）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">11<span class="text-muted">（水）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">12<span class="text-muted">（木）</span></th>
+		<td><div><a href="#">エントリーのタイトルが入ります</a></div></td>
+	</tr>
+	<tr>
+		<th class="">13<span class="text-muted">（金）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">14<span class="text-muted">（土）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">15<span class="text-muted">（日）</span></th>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th class="">16<span class="text-muted">（月）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">17<span class="text-muted">（火）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">18<span class="text-muted">（水）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">19<span class="text-muted">（木）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">20<span class="text-muted">（金）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">21<span class="text-muted">（土）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">22<span class="text-muted">（日）</span></th>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th class="">23<span class="text-muted">（月）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">24<span class="text-muted">（火）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">25<span class="text-muted">（水）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">26<span class="text-muted">（木）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">27<span class="text-muted">（金）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">28<span class="text-muted">（土）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">29<span class="text-muted">（日）</span></th>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th class="">30<span class="text-muted">（月）</span></th>
+		<td></td>
+	</tr>
+	<tr>
+		<th class="">31<span class="text-muted">（火）</span></th>
+		<td></td>
+	</tr>
+	
+	<tr class="active">
+		<th>1<span class="text-muted">（水）</span></th>
+		<td></td>
+	</tr>
+	
+	<tr class="active">
+		<th>2<span class="text-muted">（木）</span></th>
+		<td></td>
+	</tr>
+	
+	<tr class="active">
+		<th>3<span class="text-muted">（金）</span></th>
+		<td></td>
+	</tr>
+	
+	<tr class="active">
+		<th>4<span class="text-muted">（土）</span></th>
+		<td></td>
+	</tr>
+	
+	<tr class="active">
+		<th>5<span class="text-muted">（日）</span></th>
+		<td></td>
+	</tr>
+</table>
+</div>
+<!-- END layout#dummy -->

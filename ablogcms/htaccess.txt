@@ -4,10 +4,10 @@
 #    ExpiresDefault "access plus 3 hours"
 #    SetOutputFilter DEFLATE
 #</Files>
-#<Files ~ "\.(gif|jpe?g|png|flv|mp4|ico)$">
+#<Files ~ "\.(gif|jpeg|jpg|png|flv|mp4|ico)$">
 #    FileETag None
 #    ExpiresActive On
-#    ExpiresDefault "access plus 3 days"
+#    ExpiresDefault "access plus 14 days"
 #</Files>
 
 RewriteEngine on
@@ -18,6 +18,9 @@ RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
 #RewriteCond %{HTTP_HOST} ^(example\.com)(:80)?
 #RewriteRule ^(.*)$ http://www.example.com/$1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^(.*)index.html$
+RewriteRule ^(.*)index.html$ http://%{HTTP_HOST}/$1 [R=301,L]
 
 #RewriteCond %{REQUEST_URI} !/?other/?
 #RewriteCond %{REQUEST_FILENAME} -d [OR]

@@ -12,6 +12,14 @@ define('DB_PORT', null);
 define('DB_CHARSET', 'UTF-8');
 define('DB_PREFIX', '');
 
+// GETTEXT_TYPE: fix|auto|user
+define('GETTEXT_TYPE', 'auto');
+// GETTEXT_APPLICATION_RANGE: admin|login|all
+define('GETTEXT_APPLICATION_RANGE', 'admin');
+define('GETTEXT_DEFAULT_LOCALE', 'ja_JP');
+define('GETTEXT_DOMAIN', 'messages');
+define('GETTEXT_PATH', 'lang');
+
 define('SSL_ENABLE', 0);
 define('HOOK_ENABLE', 0);
 define('RESOLVE_PATH', 1);

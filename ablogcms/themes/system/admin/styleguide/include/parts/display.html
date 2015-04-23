@@ -1,0 +1,161 @@
+<section id="utility_sp" class="sectionBox">
+<h1 class="sectionTitle">表示非表示</h1>
+
+<h2 class="sectionTitle2">デバイス別</h2>
+<h3 class="sectionTitle3">表示種類</h3>
+<table class="acms-table acms-table-bordered">
+	<thead class="acms-table-heading">
+		<tr>
+			<th>表示方法</th>
+			<th>クラス名</th>
+		</tr>
+	</thead>
+	<tr>
+		<th>表示する</th>
+		<td>acms-show-*</td>
+	</tr>
+	<tr>
+		<th>表示しない</th>
+		<td>acms-hide-*</td>
+	</tr>
+</table>
+<h3 class="sectionTitle3">各デバイス別</h3>
+<table class="acms-table acms-table-bordered">
+	<thead class="acms-table-heading">
+		<tr>
+			<th>デバイス</th>
+			<th>クラス名</th>
+		</tr>
+	</thead>
+	<tr>
+		<th>スマートフォン</th>
+		<td>acms-*-sp</td>
+	</tr>
+	<tr>
+		<th>タブレット</th>
+		<td>acms-*-tablet</td>
+	</tr>
+	<tr>
+		<th>PC</th>
+		<td>acms-*-pc</td>
+	</tr>
+</table>
+<pre class="code HTML">
+&lt;div class=&quot;acms-show-sp&quot;&gt;表示します&lt;div&gt;
+&lt;div class=&quot;acms-show-tablet&quot;&gt;表示します&lt;div&gt;
+&lt;div class=&quot;acms-show-pc&quot;&gt;表示します&lt;div&gt;
+</pre>
+
+<h2 class="sectionTitle2">画面幅別</h2>
+<h3 class="sectionTitle3">表示種類</h3>
+<table class="acms-table acms-table-bordered">
+	<thead class="acms-table-heading">
+		<tr>
+			<th>表示方法</th>
+			<th>クラス名</th>
+		</tr>
+	</thead>
+	<tr>
+		<th>block表示</th>
+		<td>.acms-block</td>
+	</tr>
+	<tr>
+		<th>inline表示</th>
+		<td>.acms-inline</td>
+	</tr>
+	<tr>
+		<th>inline-block表示</th>
+		<td>.acms-inline-block</td>
+	</tr>
+	<tr>
+		<th>table-cell表示</th>
+		<td>.acms-table-cell</td>
+	</tr>
+	<tr>
+		<th>非表示</th>
+		<td>.acms-hide</td>
+	</tr>
+</table>
+<pre class="code HTML">
+&lt;div class=&quot;acms-block&quot;&gt;表示します&lt;div&gt;
+&lt;div class=&quot;acms-inline&quot;&gt;表示します&lt;div&gt;
+&lt;div class=&quot;acms-inline-block&quot;&gt;表示します&lt;div&gt;
+&lt;div class=&quot;acms-table-cell&quot;&gt;表示します&lt;div&gt;
+&lt;div class=&quot;acms-hide&quot;&gt;非表示にします&lt;div&gt;
+</pre>
+
+<h3 class="sectionTitle3">各画面幅別</h3>
+<table class="acms-table acms-table-bordered">
+	<thead class="acms-table-heading">
+		<tr>
+			<th>画面幅</th>
+			<th>クラス名</th>
+		</tr>
+	</thead>
+	<tr>
+		<th>デフォルト</th>
+		<td>そのまま</td>
+	</tr>
+	<tr>
+		<th>479px以下</th>
+		<td>acms-*-xs</td>
+	</tr>
+	<tr>
+		<th>480px以上、767px以下</th>
+		<td>acms-*-sm</td>
+	</tr>
+	<tr>
+		<th>768px以上、1023px以下</th>
+		<td>acms-*-md</td>
+	</tr>
+	<tr>
+		<th>1024px以上、1439px以下</th>
+		<td>acms-*-lg</td>
+	</tr>
+	<tr>
+		<th>1440px以上</th>
+		<td>acms-*-xl</td>
+	</tr>
+</table>
+<pre class="code HTML">
+&lt;div class=&quot;acms-block&quot;&gt;常に表示します&lt;div&gt;
+&lt;div class=&quot;acms-block-xs&quot;&gt;479以下で表示します&lt;div&gt;
+&lt;div class=&quot;acms-block-sm&quot;&gt;480px以上、767px以下で表示します&lt;div&gt;
+&lt;div class=&quot;acms-block-md&quot;&gt;768px以上、1023px以下で表示します&lt;div&gt;
+&lt;div class=&quot;acms-block-lg&quot;&gt;1024px以上、1439px以下で表示します&lt;div&gt;
+&lt;div class=&quot;acms-block-xl&quot;&gt;1440px以上で表示します&lt;div&gt;
+</pre>
+
+<h2 class="sectionTitle2">プリント用</h2>
+<table class="acms-table acms-table-bordered">
+	<thead class="acms-table-heading">
+		<tr>
+			<th>表示方法</th>
+			<th>クラス名</th>
+		</tr>
+	</thead>
+	<tr>
+		<th>block表示</th>
+		<td>acms-print-block</td>
+	</tr>
+	<tr>
+		<th>inline表示</th>
+		<td>acms-print-inline</td>
+	</tr>
+	<tr>
+		<th>inline-block表示</th>
+		<td>acms-print-inline-block</td>
+	</tr>
+	<tr>
+		<th>表示しない</th>
+		<td>acms-print-hide</td>
+	</tr>
+</table>
+<pre class="code HTML">
+&lt;div class=&quot;acms-print-block&quot;&gt;表示します&lt;div&gt;
+&lt;div class=&quot;acms-print-inline&quot;&gt;表示します&lt;div&gt;
+&lt;div class=&quot;acms-print-inline-block&quot;&gt;表示します&lt;div&gt;
+&lt;div class=&quot;acms-print-hide&quot;&gt;非表示にします&lt;div&gt;
+</pre>
+
+</section>

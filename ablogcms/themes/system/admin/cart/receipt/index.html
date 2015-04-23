@@ -1,15 +1,15 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-cart"></i>受注一覧</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-cart"></i>受注一覧</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 	<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Shop_Receipt_Index -->
-<div class="acms-filter">
-<form action="" method="post" class="acms-form">
+<div class="acms-admin-filter">
+<form action="" method="post" class="acms-admin-form">
 	絞り込み: 
 	<select name="status"> 
 		<option value="">全てのステータス</option> <!-- BEGIN status:loop#filter -->
@@ -36,15 +36,15 @@
 	</select>
 	伝票番号検索: 
 	<input type="text" name="keyword" value="%{KEYWORD}" size="20" />
-	<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-btn-admin acms-btn-admin-info acms-width-sp" />
+	<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-admin-btn-admin acms-admin-btn-admin-info acms-admin-width-sp" />
 	<input type="hidden" name="pid" value="{pid}" />
 	<input type="hidden" name="admin" value="shop_receipt_index" />
 </form>
 </div>
 
-<form method="post" action="" class="acms-form"><!-- BEGIN refresh -->
-	<p class="acms-alert acms-alert-info">><button class="js-acms-alert-close">×</button>受注一覧を更新しました。</p><!-- END refresh --><!-- BEGIN notFound -->
-	<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>受注情報は見つかりませんでした。</p><!-- END notFound -->
+<form method="post" action="" class="acms-admin-form"><!-- BEGIN refresh -->
+	<p class="acms-admin-alert acms-admin-alert-info">><button class="js-acms-alert-close">×</button>受注一覧を更新しました。</p><!-- END refresh --><!-- BEGIN notFound -->
+	<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>受注情報は見つかりませんでした。</p><!-- END notFound -->
 
 	<!-- BEGIN index -->
 
@@ -56,9 +56,9 @@
 		<option value="{status}">{status}</option><!-- END status:loop#button -->
 	</select>
 	に 
-	<input type="submit" name="ACMS_POST_Shop_Receipt_Status" value="変更" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+	<input type="submit" name="ACMS_POST_Shop_Receipt_Status" value="変更" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-	<table class="adminTable acms-table-admin acms-table-heading js-admin_table-sortable acms-table-hover">
+	<table class="adminTable acms-admin-table-admin acms-admin-table-heading js-admin_table-sortable acms-admin-table-hover">
 		<thead>
 			<tr>
 				<th><input type="checkbox" id="checkAll" /></th>
@@ -87,11 +87,11 @@
 		</tbody>
 	</table>
 
-	<div class="acms-grid">
-		<div class="acms-col-6">
+	<div class="acms-admin-grid">
+		<div class="acms-admin-col-md-6">
 			<!-- BEGIN pager:veil -->
-			<div class="acms-pager-container">
-				<ul class="acms-pager"><!-- BEGIN backLink -->
+			<div class="acms-admin-pager-container">
+				<ul class="acms-admin-pager"><!-- BEGIN backLink -->
 					<li class="prev"><a href="{url}">&laquo;&nbsp;前へ</a></li><!-- END backLink --><!-- BEGIN page:loop -->
 					<li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop --><!-- BEGIN lastPage:veil -->
 					<li class="last"><a href="{lastPageUrl}">...{lastPage}</a></li><!-- END lastPage:veil --><!-- BEGIN forwardLink -->
@@ -100,8 +100,8 @@
 			</div>
 			<!-- END pager:veil -->
 		</div>
-		<div class="acms-col-6">
-			<div class="acms-itemsAmount-container">
+		<div class="acms-admin-col-md-6">
+			<div class="acms-admin-itemsAmount-container">
 				<p>{itemsFrom}件 - {itemsTo}件 / 全{itemsAmount}件</p>
 			</div>
 		</div>

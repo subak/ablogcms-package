@@ -1,0 +1,26 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="%{ROOT_BLOG_URL}"><!-- BEGIN_MODULE Blog_Field --><!-- BEGIN siteLogo_image:veil --><img src="%{ARCHIVES_DIR}{siteLogo_image@squarePath}" width="20" class="navbar-brand-point"><!-- END siteLogo_image:veil --><!-- END_MODULE Blog_Field -->%{ROOT_BLOG_NAME}</a>
+		</div>
+		<div class="collapse navbar-collapse pull-right">
+			<!-- BEGIN_MODULE Navigation id="globalNavi" -->
+				<!-- BEGIN navigation:loop -->
+				<!-- BEGIN ul#front --><ul class="nav navbar-nav"><!-- END ul#front -->
+					<!-- BEGIN li#front --><li {attr} class="js-link_match_location" ><!-- END li#front -->
+						<!-- BEGIN link#front --><a href="{url}" target="{target}"><!-- END link#front -->
+							{label}[raw]
+							<!-- BEGIN link#rear --> </a><!-- END link#rear -->
+						<!-- BEGIN li#rear --> </li><!-- END li#rear -->
+					<!-- BEGIN ul#rear --> </ul><!-- END ul#rear -->
+					<!-- END navigation:loop -->
+			<!-- END_MODULE Navigation -->
+		</div><!-- /.nav-collapse -->
+	</div><!-- /.container -->
+</div><!-- /.navbar -->

@@ -1,0 +1,13 @@
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>APIリクエスト キャッシュ有効時間</th>
+		<td>
+			<input type="text" name="twitter_users_show_cache_expire" value="{twitter_users_show_cache_expire}" size="8" /> 秒
+			<input type="hidden" name="config[]" value="twitter_users_show_cache_expire" />
+			<input type="hidden" name="twitter_users_show_cache_expire:validator#digits" id="validator-twitter_users_show_cache_expire-digits" />
+			<label for="validator-twitter_users_show_cache_expire-digits" class="validator-result-{twitter_users_show_cache_expire:validator#digits}">数字を入力して下さい。</label>
+		</td>
+	</tr>
+</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->

@@ -25,7 +25,8 @@ mailmagazine			: off
 cache_expire_client		: 0
 generator : off
 generator_end_tag : on
-jquery_version            : 1.11.1 # (2.1.1|2.0.3|1.11.1|1.10.1|1.9.1|1.8.3|1.7.2|1.6.4) 2.xはIE9〜
+jquery_version: 1.11.1 # (2.1.1|2.0.3|1.11.1|1.10.1|1.9.1|1.8.3|1.7.2|1.6.4) 2.xはIE9〜
+jquery_migrate: off
 session_contributor_only_own_entry  : off
 tpl_find_from_ascendants_ccd    : on
 query_keyword : on
@@ -45,6 +46,7 @@ basic_auth_skip_hosts :
 same_login_enable   : off
 archives_cache_offset_except : off
 feed_output_disable : off
+x_frame_options     : SAMEORIGIN # DENY | SAMEORIGIN | off
 
 ## アドバンス
 subscriber_cache  : off
@@ -61,7 +63,11 @@ snslogin : off
 snslogin_auth : subscriber
 image_magick : on
 login_top_anywhere : off
-
+gettext_lang_region: [ja_JP, en_US]
+gettext_lang_convert_source: [ja, en]
+gettext_lang_convert_dest: [ja_JP, en_US]
+form_csrf_enable : on # on | off
+admin_category_layered: off
 
 ## 校正オプション
 corrector_regex :
@@ -74,7 +80,7 @@ meta_keywords:
 meta_description:
 
 ## テーマ
-theme : blog2014
+theme : blog2015
 load_yaml_tpl : on
 
 ## テンプレート
@@ -95,6 +101,7 @@ tpl_rss2  : rss2.xml
 
 ## 定数
 const_file_path : private/const/pc.php
+const_mail_convert_dir : private/const/mail/
 
 # バージョン管理
 revision_temp_memo    : '作業領域'
@@ -132,6 +139,9 @@ feed_rss2_limit:  10
 feed_rss2_outsidelink_description   : on 
 feed_atom_order:  datetime-desc
 feed_atom_limit:  10
+feed_rss2_blog_field: blog_meta_rss/em
+feed_rss2_category_field: category_meta_rss/em
+feed_rss2_entry_field: entry_meta_rss/em
 
 ## 読者登録
 mail_subscribe_from : info@example.com
@@ -204,7 +214,7 @@ mail_rfc_2047_encoding  :
 mail_header_divider : LF # CRLF | LF
 
 ## 検索
-#ngram  : 2
+#ngram  : 2 #「my.cnf」ft_min_word_lenの値と合わせる
 
 ## モブログ
 moblog_pop3_mail_receive_limit  : 5
@@ -229,6 +239,7 @@ entry_body_summary_on     : on
 entry_body_show_all_index : off
 entry_body_comment_on     : on
 entry_body_trackback_on     : on
+entry_body_date_on   : on
 entry_body_detail_date_on   : on
 entry_body_pager_on       : on
 entry_body_pager_delta      : 3
@@ -378,6 +389,7 @@ category_list_amount    : on
 category_list_amount_zero : on
 category_list_level : 
 category_list_field_search : entry
+category_list_field : on
 
 ## カテゴリーエントリーリスト
 category_entry_list_category_order  : sort-asc
@@ -490,11 +502,14 @@ mo_topicpath_blog_base  : bottom
 mo_topicpath_blog_limit : 1
 mo_topicpath_blog_order : asc
 mo_topicpath_blog_self  : on
+mo_topicpath_blog_field : off
 mo_topicpath_category_base  : top
 mo_topicpath_category_limit : 
 mo_topicpath_category_order : asc
 mo_topicpath_category_self  : on
+mo_topicpath_category_field : off
 mo_topicpath_entry      : on
+mo_topicpath_entry_field : off
 mo_topicpath_ignore_ecdempty  : on
 mo_topicpath_root_label :
 
@@ -545,6 +560,9 @@ user_search_auth    :
 user_search_pager_delta     : 3
 user_search_pager_cur_attr  : ' class="cur"'
 user_search_indexing  : on
+user_search_entry_list_enable   : off
+user_search_entry_list_order    : datetime-desc
+user_search_entry_list_limit    : 5
 
 ## 子ブログリスト
 blog_child_list_limit   : 5
@@ -575,6 +593,9 @@ sitemap_category_indexing : on
 sitemap_entry_order     : id-asc
 sitemap_entry_limit     : 
 sitemap_entry_indexing    : on
+sitemap_blog_field: blog_meta_sitemap/em
+sitemap_category_field: category_meta_sitemap/em
+sitemap_entry_field: entry_meta_sitemap/em
 
 ## Googleカレンダー
 api_gcalendar_id            : 
@@ -744,8 +765,8 @@ unit_group_clear    : 'acms-column-clear'
 unit_group_class  :
   -
   - acms-column-clear
-  - acms-col-6
-  - acms-col-4
+  - acms-col-md-6
+  - acms-col-md-4
 
 unit_group_label  :
   - ---
@@ -756,21 +777,21 @@ unit_group_label  :
 ## イメージ
 column_image_size:
   - 
-  - w200
-  - w310
-  - w640
+  - w680
+  - w330
+  - w214
 
 column_image_display_size:
   - 
-  - 33.3
-  - 50
-  - 100
+  - acms-col-md-12
+  - acms-col-md-6
+  - acms-col-md-4
 
 column_image_size_label:
   - そのまま
-  - 小 ( 横200px )
-  - 中 ( 横310px )
-  - 大 ( 横640px )
+  - 大 ( 横680px )
+  - 中 ( 横330px )
+  - 小 ( 横214px )
 
 column_image_size_criterion:
   -
@@ -791,19 +812,19 @@ column_file_attr_label  :
 
 # 地図
 column_map_size: 
-  - 200x200
-  - 310x310
-  - 640x360
+  - 680x340
+  - 330x330
+  - 214x214
 
 column_map_display_size:
-  - 33.3
-  - 50
-  - 100
+  - acms-col-md-12
+  - acms-col-md-6
+  - acms-col-md-4
 
 column_map_size_label:
-  - 小 (200x200)
-  - 中 (310x310)
-  - 大 (640x360)
+  - 大 (680x340)
+  - 中 (330x330)
+  - 小 (214x214)
 
 @column_map_size_group : [column_map_size, column_map_size_label, column_map_display_size]
 
@@ -812,19 +833,19 @@ column_map_attr_label :
 
 ## youtube
 column_youtube_size:
-  - 310x174
-  - 480x270
-  - 640x360
+  - 680x382
+  - 550x287
+  - 204x115
 
 column_youtube_display_size:
-  - 50
-  - 75
-  - 100
+  - acms-col-md-12
+  - acms-col-md-6
+  - acms-col-md-4
 
 column_youtube_size_label:
-  - 小 (310x174)
+  - 大 (680x382)
   - 中 (480x270)
-  - 大 (640x360)
+  - 小 (204x115)
 
 @column_youtube_size_group : [column_youtube_size, column_youtube_size_label, column_youtube_display_size]
 
@@ -833,19 +854,19 @@ column_youtube_attr_label :
 
 ## video
 column_video_size:
-  - 310x174
-  - 480x270
-  - 640x360
+  - 680x382
+  - 550x287
+  - 204x115
 
 column_video_display_size:
-  - 50
-  - 75
-  - 100
+  - acms-col-md-12
+  - acms-col-md-6
+  - acms-col-md-4
 
 column_video_size_label:
-  - 小 (310x174)
-  - 中 (480x270)
-  - 大 (640x360)
+  - 大 (680x382)
+  - 中 (550x287)
+  - 小 (204x115)
 
 @column_video_size_group : [column_video_size, column_video_size_label, column_video_display_size]
 
@@ -854,19 +875,19 @@ column_video_attr_label :
 
 ## media
 column_media_size:
-  - 200
-  - 310
-  - 640
+  - 680
+  - 330
+  - 214
 
 column_media_display_size:
-  - 33.3
-  - 50
-  - 100
+  - acms-col-md-12
+  - acms-col-md-6
+  - acms-col-md-4
 
 column_media_size_label:
-  - 小 (200px)
-  - 中 (310px)
-  - 大 (640px)
+  - 大：幅1/1 ( 680px )
+  - 中：幅1/2 ( 330px )
+  - 小：幅1/3 ( 214px )
 
 @column_media_size_group : [column_media_size, column_media_size_label, column_media_display_size]
 
@@ -875,19 +896,19 @@ column_media_attr_label :
 
 ## 画像URL
 column_eximage_size:
-  - 200
-  - 310
-  - 640
+  - 680
+  - 330
+  - 214
 
 column_eximage_display_size:
-  - 33.3
-  - 50
-  - 100
+  - acms-col-md-12
+  - acms-col-md-6
+  - acms-col-md-4
 
 column_eximage_size_label:
-  - 小 ( 長辺200px )
-  - 中 ( 長辺310px )
-  - 大 ( 長辺640px )
+  - 大 ( 長辺680px )
+  - 中 ( 長辺330px )
+  - 小 ( 長辺214px )
 
 @column_eximage_size_group : [column_eximage_size, column_eximage_size_label, column_eximage_display_size]
 
@@ -899,7 +920,7 @@ column_def_insert_type    : [image, text]
 column_def_insert_align   : [center, auto]
 column_def_insert_class   : [, ]
 column_def_insert_size_criterion  : [width, ]
-column_def_insert_size    : [w640, ]
+column_def_insert_size    : [w680, ]
 column_def_insert_edit    : [none, ]
 column_def_insert_field_1 : [, ]
 column_def_insert_field_2 : [, p]
@@ -910,6 +931,15 @@ column_def_insert_field_5 : [, ]
 column_add_type : [text, image, file, map]
 column_add_type_label : [テキスト, 画像, ファイル, 地図]
 @column_add_type_group : [column_add_type, column_add_type_label]
+
+layout_add_type : [col12, col6-6, col3-9, col4-8, col9-3, col8-4, col4-4-4]
+layout_add_type_set : [layout-column-1, layout-column-2, layout-column-2, layout-column-2, layout-column-2, layout-column-2, layout-column-3]
+layout_add_type_label : [col12, col6-6, col3-9, col4-8, col9-3, col8-4, col4-4-4]
+@layout_add_type_group : [layout_add_type, layout_add_type_set, layout_add_type_label]
+
+layout_group_class  : [layout-column-1, layout-column-2, layout-column-3, layout-column-4]
+layout_group_label  : [1カラム, 2カラム, 3カラム, 4カラム]
+@layout_group       : [layout_group_class, layout_group_label]
 
 column_form_add_type : [text, textarea, radio, select, checkbox]
 column_form_add_type_label : [テキスト, テキストエリア, ラジオ, セレクト, チェックボックス]
@@ -933,7 +963,7 @@ column_def_add_image_type   : [image, ]
 column_def_add_image_align    : [left, ]
 column_def_add_image_class    : [, ]
 column_def_insert_size_criterion  : [width, ]
-column_def_add_image_size   : [w310, ]
+column_def_add_image_size   : [w330, ]
 column_def_add_image_edit   : [, ]
 column_def_add_image_field_1  : [, ]
 column_def_add_image_field_2  : [, ]
@@ -955,7 +985,7 @@ column_def_add_file_field_5 : [, ]
 column_def_add_map_type   : [map, ]
 column_def_add_map_align  : [auto, ]
 column_def_add_map_class  : [, ]
-column_def_add_map_size   : [640x360, ]
+column_def_add_map_size   : [680x340, ]
 column_def_add_map_edit   : [, ]
 column_def_add_map_field_1  : [, ]
 column_def_add_map_field_2  : [35.185574, ]
@@ -966,7 +996,7 @@ column_def_add_map_field_5  : [1, ]
 column_def_add_yolp_type   : [yolp, ]
 column_def_add_yolp_align  : [auto, ]
 column_def_add_yolp_class  : [, ]
-column_def_add_yolp_size   : [640x360, ]
+column_def_add_yolp_size   : [680x340, ]
 column_def_add_yolp_edit   : [, ]
 column_def_add_yolp_field_1  : [, ]
 column_def_add_yolp_field_2  : [35.185574, ]
@@ -977,7 +1007,7 @@ column_def_add_yolp_field_5  : [normal, ]
 column_def_add_youtube_type   : [youtube, ]
 column_def_add_youtube_align  : [auto, ]
 column_def_add_youtube_class  : [, ]
-column_def_add_youtube_size   : [640x360, ]
+column_def_add_youtube_size   : [680x382, ]
 column_def_add_youtube_edit   : [, ]
 column_def_add_youtube_field_1  : [, ]
 column_def_add_youtube_field_2  : [, ]
@@ -988,7 +1018,7 @@ column_def_add_youtube_field_5  : [, ]
 column_def_add_video_type   : [video, ]
 column_def_add_video_align  : [auto, ]
 column_def_add_video_class  : [, ]
-column_def_add_video_size   : [640x360, ]
+column_def_add_video_size   : [680x382, ]
 column_def_add_video_edit   : [, ]
 column_def_add_video_field_1  : [, ]
 column_def_add_video_field_2  : [, ]
@@ -999,7 +1029,7 @@ column_def_add_video_field_5  : [, ]
 column_def_add_eximage_type   : [eximage, ]
 column_def_add_eximage_align  : [auto, ]
 column_def_add_eximage_class  : [, ]
-column_def_add_eximage_size   : [640, ]
+column_def_add_eximage_size   : [680, ]
 column_def_add_eximage_edit   : [, ]
 column_def_add_eximage_field_1  : [, ]
 column_def_add_eximage_field_2  : [, ]
@@ -1039,6 +1069,17 @@ column_def_add_media_field_2  : [, ]
 column_def_add_media_field_3  : [, ]
 column_def_add_media_field_4  : [, ]
 column_def_add_media_field_5  : [, ]
+
+column_def_add_module_type   : [module, ]
+column_def_add_module_align  : [auto, ]
+column_def_add_module_class  : [, ]
+column_def_add_module_size   : [, ]
+column_def_add_module_edit   : [, ]
+column_def_add_module_field_1  : [, ]
+column_def_add_module_field_2  : [, ]
+column_def_add_module_field_3  : [, ]
+column_def_add_module_field_4  : [, ]
+column_def_add_module_field_5  : [, ]
 
 column_def_add_custom_type  : [custom, ]
 column_def_add_custom_align : [auto, ]
@@ -1124,7 +1165,7 @@ attr_checked: ' checked="checked"'
 attr_disabled:  ' disabled="disabled"'
 attr_multiple:  ' multiple="multiple"'
 
-ua_default  : 12
+ua_default  : 13
 
 ua_label  :
   - 携帯電話
@@ -1136,6 +1177,7 @@ ua_label  :
   - スマートフォン
   - "&nbsp;&nbsp;&nbsp;&nbsp;iPhone"
   - "&nbsp;&nbsp;&nbsp;&nbsp;Androidフォン"
+  - "&nbsp;&nbsp;&nbsp;&nbsp;Windowsフォン"
   - タブレット
   - "&nbsp;&nbsp;&nbsp;&nbsp;iPad"
   - "&nbsp;&nbsp;&nbsp;&nbsp;Androidタブレット"
@@ -1156,6 +1198,7 @@ ua_value  :
   - SmartPhone
   - iPhone
   - AndroidPhone
+  - WindowsPhone
   - Tablet
   - iPad
   - AndroidTablet
@@ -1176,6 +1219,7 @@ ua_regex  :
   - 
   - "@^.+iPhone.+AppleWebKit.+Mobile.+$@"
   - "@^.+Android.+AppleWebKit.+Mobile.+$@"
+  - "@^.+MSIE.+Windows Phone.+$@"
   - 
   - "@^.+iPad;.+AppleWebKit.+Mobile.+$@"
   - "@^.+Android.+AppleWebKit.+$@"
@@ -1196,14 +1240,15 @@ ua_parent :
   - 
   - 6
   - 6
+  - 6
   - 
-  - 9
-  - 9
+  - 10
+  - 10
   -
-  - 12
   - 13
-  - 12
-  - 12
+  - 14
+  - 13
+  - 13
   -
 
 session_host_group  :
@@ -1405,13 +1450,9 @@ shop_order_payment_paypal_business  :
 ## 配送方法と手数料
 shop_order_deliver_label    :
   - 通常配送
-  - EXPACK500
-  - メール便
 
 shop_order_deliver_charge   :
   - 
-  - 500
-  - 216
 
 ## 配送の希望日時
 shop_order_request_date_min     : 3

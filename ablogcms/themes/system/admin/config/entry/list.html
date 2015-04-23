@@ -1,86 +1,33 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<div class="acms-admin-title acms-module-title-wrapper">
-			<i class="acms-icon acms-icon-config_entry_list"></i>
-			<div class="acms-module-title">
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<div class="acms-admin-admin-title acms-admin-module-title-wrapper">
+			<i class="acms-admin-icon acms-admin-icon-config_entry_list"></i>
+			<div class="acms-admin-module-title">
 				<!-- BEGIN_MODULE Admin_Rule_Name -->
 				<strong>ルール : {name}</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 				<strong>モジュールID : {label} ( {identifier} )</strong><!-- END_MODULE Admin_Module_Name -->
-				<h1>エントリーリスト<span class="acms-module-en">Entry_List</span></h1>
+				<h1>エントリーリスト<span class="acms-admin-module-en">Entry_List</span></h1>
 			</div>
 		</div>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Config -->
 <!-- BEGIN_IF [{notice_mess}/nem/] -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>Entry_List 設定を保存しました</p>
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>Entry_List 設定を保存しました</p>
 <!-- END_IF -->
 	
-<form action="" method="post" class="acms-form">
-	<div class="acms-form-group acms-margin-sp">
-		<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+<form action="" method="post" class="acms-admin-form">
+	<div class="acms-admin-form-group acms-admin-margin-sp">
+		<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
 
-		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+		<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+		<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-admin-btn-admin acms-admin-float-right acms-admin-float-none-sp"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
 	</div>
-	
-	<table class="adminTable acms-table-admin-edit">
-		<tr>
-			<th>表示順<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="どのようなルールに従って表示されるかの設定です。フィールド、数値フィールドはカスタムフィールドでの検索結果の表示時に利用します。"></i></th>
-			<td>
-				<select name="entry_list_order">
-					<option value="datetime-asc"{entry_list_order:selected#datetime-asc}>日時 ( 昇順 )</option>
-					<option value="datetime-desc"{entry_list_order:selected#datetime-desc}>日時 ( 降順 )</option>
-					<option value="code-asc"{entry_list_order:selected#code-asc}>ファイル名 ( 昇順 )</option>
-					<option value="code-desc"{entry_list_order:selected#code-desc}>ファイル名 ( 降順 )</option>
-					<option value="id-asc"{entry_list_order:selected#id-asc}>ID ( 昇順 )</option>
-					<option value="id-desc"{entry_list_order:selected#id-desc}>ID ( 降順 )</option>
-					<option value="sort-asc"{entry_list_order:selected#sort-asc}>表示順 ( 昇順 )</option>
-					<option value="sort-desc"{entry_list_order:selected#sort-desc}>表示順 ( 降順 )</option>
-					<option value="field-asc"{entry_list_order:selected#field-asc}>フィールド ( 昇順 )</option>
-					<option value="field-desc"{entry_list_order:selected#field-desc}>フィールド ( 降順 )</option>
-					<option value="intfield-asc"{entry_list_order:selected#intfield-asc}>数値フィールド ( 昇順 )</option>
-					<option value="intfield-desc"{entry_list_order:selected#intfield-desc}>数値フィールド ( 降順 )</option>
-					<option value="random"{entry_list_order:selected#random}>ランダム</option>
-				</select>
-				<input type="hidden" name="config[]" value="entry_list_order" />
-			</td>
-		</tr>
-		<tr>
-			<th>表示件数<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="一度に表示される件数です。"></i></th>
-			<td>
-				<input type="text" name="entry_list_limit" value="{entry_list_limit}" size="4" class="acms-form-width-mini"  />
-				<input type="hidden" name="config[]" value="entry_list_limit" />
-				<input type="hidden" name="entry_list_limit:convert" value="a" />
-				<input type="hidden" name="entry_list_limit:validator#digits" id="validator-entry_list_limit-digits" />
-				<label for="validator-entry_list_limit-digits" class="validator-result-{entry_list_limit:validator#digits}">数字を入力して下さい。</label>
-			</td>
-		</tr>
-		<tr>
-			<th>オフセット<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="表示順で並び替えた後の先頭から数えて、設定した件数のエントリーを表示しなくします。"></i></th>
-			<td>
-				<input type="text" name="entry_list_offset" value="{entry_list_offset}" size="4" class="acms-form-width-mini" />
-				<input type="hidden" name="config[]" value="entry_list_offset" />
-				<input type="hidden" name="entry_list_offset:convert" value="a" />
-				<input type="hidden" name="entry_list_offset:validator#digits" id="validator-entry_list_offset-digits" />
-				<label for="validator-entry_list_offset-digits" class="validator-result-{entry_list_offset:validator#digits}">数字を入力して下さい。</label>
-			</td>
-		</tr>
-		<tr>
-			<th>詳細のエントリー表示<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると詳細ページでそのページのエントリーを除いたものが出力されます。"></i></th>
-			<td>
-				<input type="hidden" name="entry_list_hidden_current_entry" value="off" />
-				<label for="input-checkbox-entry_list_hidden_current_entry" class="acms-form-checkbox"><input type="checkbox" name="entry_list_hidden_current_entry" value="on"{entry_list_hidden_current_entry:checked#on} id="input-checkbox-entry_list_hidden_current_entry" /><i class="acms-ico-checkbox"></i>現在表示されているエントリーを表示しない</label>
-				<input type="hidden" name="config[]" value="entry_list_hidden_current_entry" />
-			</td>
-		</tr>
-	</table><!-- BEGIN_MODULE Admin_Rule_Name -->
-	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
-	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+	<!--#include file="/admin/%{ADMIN_PATH}_body.html"-->
 </form>
 <!-- END_MODULE Admin_Config -->

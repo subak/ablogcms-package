@@ -1,8 +1,8 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-rule"></i>ルール管理</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-rule"></i>ルール管理</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
@@ -10,53 +10,53 @@
 <!-- BEGIN_MODULE Admin_Rule_Index -->
 
 <!-- BEGIN refresh -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>ルールの一覧を更新しました。</p><!-- END refresh --><!-- BEGIN index#notFound -->
-<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>ルールがありません。</p><!-- END index#notFound -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>ルールの一覧を更新しました。</p><!-- END refresh --><!-- BEGIN index#notFound -->
+<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>ルールがありません。</p><!-- END index#notFound -->
 
-<form action="" method="post" class="acms-float-right js-acms_fix_target acms-position-right">
+<form action="" method="post" class="acms-admin-float-right acms-admin-float-none-sp js-acms_fix_target acms-admin-position-right">
 	<input type="hidden" name="bid" value="%{BID}" />
 	<input type="hidden" name="admin" value="rule_edit" />
 	<input type="hidden" name="edit" value="insert" />
 	<input type="hidden" name="query[]" value="edit" />
-	<input type="submit" name="ACMS_POST_2GET" value="ルールを作成" class="acms-btn-admin" />
+	<input type="submit" name="ACMS_POST_2GET" value="ルールを作成" class="acms-admin-btn-admin" />
 </form>
 
 <!-- BEGIN index:veil -->
-<form method="post" action="" class="acms-form">
+<form method="post" action="" class="acms-admin-form">
 	<div class="js-acms-tab-select clearfix js-acms_fix_marker js-acms_fix_target">
-		<select name="action-rule" class="js-acms-tab-select-value acms-float-left acms-select-large">
+		<select name="action-rule" class="js-acms-tab-select-value acms-admin-float-left acms-admin-select-large">
 			<option value="action-sort"{action-rule:selected#action-sort}>優先順位</option>
 			<option value="action-status"{action-rule:selected#action-status}>ステータス</option>
 		</select>
 		
-		<div id="action-sort" class="js-acms-tab-select-panel js-acms-tab-select-active acms-float-left">
-			<input type="submit" name="ACMS_POST_Rule_Index_Sort" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+		<div id="action-sort" class="js-acms-tab-select-panel js-acms-tab-select-active acms-admin-float-left">
+			<input type="submit" name="ACMS_POST_Rule_Index_Sort" value="変更" class="acms-admin-btn-admin acms-admin-btn-admin-primary" />
 		</div>
 
-		<div id="action-status" class="js-acms-tab-select-panel acms-float-left">
+		<div id="action-status" class="js-acms-tab-select-panel acms-admin-float-left">
 			<select name="status">
 				<option value="open">有効</option>
 				<option value="close">無効</option>
 			</select>
 		
-			<input type="submit" name="ACMS_POST_Rule_Index_Status" value="変更" class="acms-btn-admin acms-btn-admin-primary" />
+			<input type="submit" name="ACMS_POST_Rule_Index_Status" value="変更" class="acms-admin-btn-admin acms-admin-btn-admin-primary" />
 		</div>
 	</div>
 
-	<table class="adminTable acms-table-admin acms-table-heading acms-table-hover">
+	<table class="adminTable acms-admin-table-admin acms-admin-table-heading acms-admin-table-hover">
 		<thead>
 			<tr>
-				<th class="acms-table-center acms-th-checkbox acms-show-sp"><label class="acms-form-checkbox"><input type="checkbox" id="checkAll" /><i class="acms-ico-checkbox"></i></label></th>
-				<th class="acms-hide-sp">優先順位</th>
-				<th class="acms-show-sp">ルール名</th>
-				<th class="acms-hide-sp">ステータス</th>
-				<th class="acms-hide-sp">グローバル</th>
-				<th class="acms-hide-sp">アクション</th>
+				<th class="acms-admin-table-center acms-admin-th-checkbox acms-admin-show-sp"><label class="acms-admin-form-checkbox"><input type="checkbox" id="checkAll" /><i class="acms-admin-ico-checkbox"></i></label></th>
+				<th class="acms-admin-hide-sp">優先順位</th>
+				<th class="acms-admin-show-sp">ルール名</th>
+				<th class="acms-admin-hide-sp">ステータス</th>
+				<th class="acms-admin-hide-sp">グローバル</th>
+				<th class="acms-admin-hide-sp">アクション</th>
 			</tr>
 		</thead>
 		<tbody><!-- BEGIN rule:loop -->
 			<tr>
-				<td class="acms-table-center"><label class="acms-form-checkbox"><input type="checkbox" name="checks[]" value="{rid}"{disabled} /><i class="acms-ico-checkbox"></i></label></td>
+				<td class="acms-admin-table-center"><label class="acms-admin-form-checkbox"><input type="checkbox" name="checks[]" value="{rid}"{disabled} /><i class="acms-admin-ico-checkbox"></i></label></td>
 				<td>
 					<input type="hidden" name="_rid[]" value="{rid}" />
 					<input type="hidden" name="_sort[]" value="{sort}" />
@@ -64,22 +64,27 @@
 						<option value="{value}"{selected}>{label}</option><!-- END sort:loop -->
 					</select>
 				</td>
-				<td class="acms-show-sp acms-width-sp acms-title-sp">{name}</td>
-				<td class="acms-show-sp acms-width-sp">
-					<span class="acms-hide-pc acms-show-inline-sp">ステータス</span><!-- BEGIN status#open -->
-					<span class="acms-label acms-label-info admin-status-label">有効</span><!-- END status#open --><!-- BEGIN status#close -->
-					<span class="acms-label label-default">無効</span><!-- END status#close -->
+				<td class="acms-admin-show-sp acms-admin-width-sp acms-admin-title-sp">{name}</td>
+				<td class="acms-admin-show-sp acms-admin-width-sp">
+					<span class="acms-admin-hide-pc acms-admin-show-inline-sp">ステータス</span><!-- BEGIN status#open -->
+					<span class="acms-admin-label acms-admin-label-info admin-status-label">有効</span><!-- END status#open --><!-- BEGIN status#close -->
+					<span class="acms-admin-label label-default">無効</span><!-- END status#close -->
 				</td>
-				<td class="acms-show-sp acms-width-sp">
-				<span class="acms-hide-pc acms-show-inline-sp">グローバル</span><!-- BEGIN scope:touch#global --><span class="acms-label acms-label-info admin-status-label">有効</span><!-- END scope:touch#global -->
+				<td class="acms-admin-show-sp acms-admin-width-sp">
+				<span class="acms-admin-hide-pc acms-admin-show-inline-sp">グローバル</span><!-- BEGIN scope:touch#global --><span class="acms-admin-label acms-admin-label-info admin-status-label">有効</span><!-- END scope:touch#global -->
 				<!-- BEGIN scope:touch#local --> - <!-- END scope:touch#local -->
 				<!-- BEGIN scope:touch#parental --> - <!-- END scope:touch#parental -->
 				</td>
-				<td class="acms-show-sp acms-width-sp acms-border-bottom-sp">
-					<!-- BEGIN link -->
-					<a href="{itemUrl}&edit=update" class="acms-btn-admin">変更</a>
-					<a href="{configUrl}" class="acms-btn-admin">コンフィグ</a>
-					&nbsp;<!-- END link --><!-- BEGIN notMine -->
+				<td class="acms-admin-show-sp acms-admin-width-sp acms-admin-border-bottom-sp">
+					<!-- BEGIN mine -->
+					<a href="{itemUrl}&edit=update" class="acms-admin-btn-admin">変更</a>
+					<a href="{configUrl}" class="acms-admin-btn-admin">コンフィグ</a>
+					<a href="{moduleUrl}" class="acms-admin-btn-admin">モジュールID</a>
+					&nbsp;<!-- END mine --><!-- BEGIN notMinePermit -->
+					<a href="{itemUrl}&edit=update" class="acms-admin-btn-admin">変更</a>
+					<a href="{configUrl}" class="acms-admin-btn-admin">コンフィグ</a>
+					<a href="{moduleUrl}" class="acms-admin-btn-admin">モジュールID</a>
+					<!-- END notMinePermit --><!-- BEGIN notMine -->
 					親ブログに所属<!-- END notMine -->
 				</td>
 			</tr>

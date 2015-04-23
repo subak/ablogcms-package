@@ -1,0 +1,25 @@
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>表示順<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="どのようなルールに従って表示されるかの設定です。"></i></th>
+		<td>
+			<select name="field_value-list_order">
+				<option value="asc"{field_value-list_order:selected#asc}>フィールドの値 ( 昇順 )</option>
+				<option value="desc"{field_value-list_order:selected#desc}>フィールドの値 ( 降順 )</option>
+				</select>
+			<input type="hidden" name="config[]" value="field_value-list_order" />
+		</td>
+	</tr>
+	<tr>
+		<th>表示件数<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="一度に表示される件数です。"></i></th>
+		<td>
+			<input type="text" name="field_value-list_limit" value="{field_value-list_limit}" size="4" class="acms-admin-form-width-mini" />
+			<input type="hidden" name="config[]" value="field_value-list_limit" />
+			<input type="hidden" name="field_value-list_limit:convert" value="a" />
+			<input type="hidden" name="field_value-list_limit:validator#digits" id="validator-field_value-list_limit-digits" />
+			<label for="validator-field_value-list_limit-digits" class="validator-result-{field_value-list_limit:validator#digits}">数字を入力して下さい。</label>
+		</td>
+	</tr>
+</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
+<input type="hidden" name="%{SNAME}" value="%{SID}" />

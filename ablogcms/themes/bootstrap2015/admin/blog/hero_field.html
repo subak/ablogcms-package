@@ -1,0 +1,61 @@
+<h3 class="acms-admin-admin-title2">ヒーローの設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>見出し</th>
+		<td>
+			<input type="text" name="hero_title" value="{hero_title}" class="acms-admin-form-width-3quarters">
+			<input type="hidden" name="field[]" value="hero_title">
+		</td>
+	</tr>
+	<tr>
+		<th>概要文</th>
+		<td>
+			<textarea name="hero_lead" rows="4" class="acms-admin-form-width-3quarters">{hero_lead}</textarea>
+			<input type="hidden" name="field[]" value="hero_lead">
+			<p>* 改行できます</p>
+		</td>
+	</tr>
+	<tr>
+		<th>ボタン</th>
+		<td>
+			<div class="acms-admin-form-group">テキスト：<input type="text" name="btn_text" value="{btn_text}" class="acms-admin-form-width-3quarters">
+				<input type="hidden" name="field[]" value="btn_text"></div>
+			<div class="acms-admin-form-group">リンク先：<input type="text" name="btn_link" value="{btn_link}" class="acms-admin-form-width-3quarters">
+				<input type="hidden" name="field[]" value="btn_link"></div>
+		</td>
+	</tr>
+	<tr>
+		<th>背景画像</th>
+		<td>
+			<!-- BEGIN hero_image@path:veil -->
+			<img src="%{ARCHIVES_DIR}{hero_image@path}" width="400"><br>
+			<input type="hidden" name="hero_image@old" value="{hero_image@path}">
+			<label>
+				<input type="checkbox" name="hero_image@edit" value="delete">削除
+			</label>
+			<!-- END hero_image@path:veil -->
+			<input type="file" name="hero_image" size="20">
+			<input type="hidden" name="field[]" value="hero_image">
+			<input type="hidden" name="hero_image:extension" value="image">
+			<input type="hidden" name="hero_image@size" value="640">
+			<input type="hidden" name="hero_image@tinyWidth" value="280">
+			<input type="hidden" name="hero_image@largeWidth" value="1280">
+			<input type="hidden" name="hero_image@squareWidth" value="200">
+			<input type="hidden" name="hero_image@filename" value="">
+		</td>
+	</tr>
+	<tr>
+		<th>背景色</th>
+		<td>
+			<input type="text" name="hero_bg_color" value="{hero_bg_color}">
+			<input type="hidden" name="field[]" value="hero_bg_color">
+		</td>
+	</tr>
+	<tr>
+		<th>文字の色</th>
+		<td>
+			<input type="text" name="hero_text_color" value="{hero_text_color}">
+			<input type="hidden" name="field[]" value="hero_text_color">
+		</td>
+	</tr>
+</table>

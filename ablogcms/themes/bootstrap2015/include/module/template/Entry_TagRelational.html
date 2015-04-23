@@ -1,0 +1,63 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_TagRelational -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+	<div class="row">
+		<!-- BEGIN entry:loop -->
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+			<img src="%{ROOT_DIR}{path}" alt="{alt}">
+				<div class="caption">
+					<h3>{title}</h3>
+					<p>{summary}[trim(151, '...')]</p>
+					<p class="text-muted">関連度: {grade}</p>
+					<p><a href="{url}" class="btn btn-primary" role="button">詳細をみる</a></p>
+				</div>
+			</div>
+		</div>
+		<!-- END entry:loop -->
+	</div>
+</div>
+<!-- END_MODULE Entry_TagRelational -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div>
+	<div class="row">
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+			<img src="/images/noImage.png" alt="">
+				<div class="caption">
+					<h3>エントリーのタイトル</h3>
+					<p>こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。</p>
+					<p class="text-muted">関連度: 2</p>
+					<p><a href="#" class="btn btn-primary" role="button">詳細をみる</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+			<img src="/images/noImage.png" alt="">
+				<div class="caption">
+					<h3>エントリーのタイトル</h3>
+					<p>こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。</p>
+					<p>関連度: 2</p>
+					<p><a href="#" class="btn btn-primary" role="button">詳細をみる</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+			<img src="/images/noImage.png" alt="">
+				<div class="caption">
+					<h3>エントリーのタイトル</h3>
+					<p>こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。こちらに概要文が入ります。</p>
+					<p>関連度: 2</p>
+					<p><a href="#" class="btn btn-primary" role="button">詳細をみる</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END layout#dummy -->

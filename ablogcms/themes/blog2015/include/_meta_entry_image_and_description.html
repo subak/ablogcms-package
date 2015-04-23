@@ -1,0 +1,9 @@
+<!-- id="ogpSummary"でEntry_Summaryを作成し引数のeidにチェックをつけて下さい -->
+<!-- BEGIN_MODULE Touch_Entry -->
+<meta property="og:type" content="article" /><!-- BEGIN_MODULE Entry_Summary id="ogpSummary" --><!-- BEGIN unit:loop --><!-- BEGIN entry:loop --><!-- BEGIN image:veil -->
+<meta property="og:image" content="%{BLOG_URL}{path}" /><!-- END image:veil --><!-- BEGIN_IF [{entry_meta_description}/nem/] -->
+<meta property="og:description" content="{entry_meta_description}" />
+<meta name="description" content="{entry_meta_description}" /><!-- ELSE -->
+<meta property="og:description" content="{summary}[trim(200, '...')]" />
+<meta name="description" content="{summary}[trim(200, '...')]" /><!-- END_IF --><!-- BEGIN entry_meta_keywords:veil -->
+<meta name="keywords" content="{entry_meta_keywords}" /><!-- END entry_meta_keywords:veil --><!-- END entry:loop --><!-- END unit:loop --><!-- END_MODULE Entry_Summary --><!-- END_MODULE Touch_Entry -->

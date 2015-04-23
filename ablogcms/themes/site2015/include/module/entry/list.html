@@ -1,0 +1,13 @@
+<!-- BEGIN_MODULE Entry_List id="entryList" -->
+<section class="moduleSection">
+<!--#include file="/admin/module/setting.html"-->
+<div class="moduleHeader clearfix">
+	<h2 class="moduleHeading"><!-- BEGIN_IF [%{CID}/nem] -->%{CATEGORY_NAME}<!-- ELSE -->%{BLOG_NAME}の記事一覧<!-- END_IF --></h2>
+</div>
+<ul class="acms-list-group">
+	<!-- BEGIN entry:loop -->
+	<li><a href="{url}" class="acms-list-group-item">{title}</a></li>
+	<!-- END entry:loop -->
+</ul>
+</section>
+<!-- END_MODULE Entry_List -->

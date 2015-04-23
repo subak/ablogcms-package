@@ -1,0 +1,42 @@
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>サムネイル画像のサイズ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="サムネイル画像のサイズを指定します。"></i></th>
+		<td>
+			横&nbsp;<input type="text" name="shop_cart_list_image_x" value="{shop_cart_list_image_x}" size="8" class="acms-admin-form-width-mini" />ピクセル x 縦&nbsp;<input type="text" name="shop_cart_list_image_y" value="{shop_cart_list_image_y}" size="8" class="acms-admin-form-width-mini" />ピクセル
+			<input type="hidden" name="config[]" value="shop_cart_list_image_x" />
+			<input type="hidden" name="config[]" value="shop_cart_list_image_y" />
+			<input type="hidden" name="shop_cart_list_image_x:convert" value="a" />
+			<input type="hidden" name="shop_cart_list_image_x:validator#digits" id="validator-shop_cart_list_image_x-digits" />
+			<label for="validator-shop_cart_list_image_x-digits" class="validator-result-{shop_cart_list_image_x:validator#digits}">数字を入力して下さい。</label>
+			<input type="hidden" name="shop_cart_list_image_y:convert" value="a" />
+			<input type="hidden" name="shop_cart_list_image_y:validator#digits" id="validator-shop_cart_list_image_y-digits" />
+			<label for="validator-shop_cart_list_image_y-digits" class="validator-result-{shop_cart_list_image_y:validator#digits}">数字を入力して下さい。</label>
+		</td>
+	</tr>
+	<tr>
+		<th>トリミング<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="サイズで指定された大きさに、画像をトリミングして表示します。"></i></th>
+		<td>
+			<input type="hidden" name="shop_cart_list_image_trim" value="off" />
+			<label for="input-checkbox-shop_cart_list_image_trim" class="acms-admin-form-checkbox"><input type="checkbox" name="shop_cart_list_image_trim" value="on"{shop_cart_list_image_trim:checked#on} id="input-checkbox-shop_cart_list_image_trim" /><i class="acms-admin-ico-checkbox"></i>画像を指定されたサイズにトリミングする</label>
+			<input type="hidden" name="config[]" value="shop_cart_list_image_trim" />
+		</td>
+	</tr>
+	<tr>
+		<th>拡大　( トリミングがoffの場合のみ )<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="画像が指定されたサイズよりも小さいときに、指定されたサイズまで拡大します。"></i></th>
+		<td>
+			<input type="hidden" name="shop_cart_list_image_zoom" value="off" />
+			<label for="input-checkbox-shop_cart_list_image_zomm" class="acms-admin-form-checkbox"><input type="checkbox" name="shop_cart_list_image_zoom" value="on"{shop_cart_list_image_zoom:checked#on} id="input-checkbox-shop_cart_list_image_zomm" /><i class="acms-admin-ico-checkbox"></i>画像が指定されたサイズに満たない場合に拡大する</label>
+			<input type="hidden" name="config[]" value="shop_cart_list_image_zoom" />
+		</td>
+	</tr>
+	<tr>
+		<th>表示位置 ( トリミングがoffの場合のみ )<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="画像を指定されたサイズの中心に表示します。"></i></th>
+		<td>
+			<input type="hidden" name="shop_cart_list_image_center" value="off" />
+			<label for="input-checkbox-shop_cart_list_image_center" class="acms-admin-form-checkbox"><input type="checkbox" name="shop_cart_list_image_center" value="on"{shop_cart_list_image_center:checked#on} id="input-checkbox-shop_cart_list_image_center" /><i class="acms-admin-ico-checkbox"></i>画像を指定されたサイズの中心に表示する</label>
+			<input type="hidden" name="config[]" value="shop_cart_list_image_center" />
+		</td>
+	</tr>
+</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->

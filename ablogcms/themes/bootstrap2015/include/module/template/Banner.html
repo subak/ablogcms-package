@@ -1,0 +1,26 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Banner -->
+<div>
+<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+<!--#include file="/admin/module/setting.html"-->
+<ul class="list-inline-banner row">
+	<!-- BEGIN banner:loop -->
+	<!-- BEGIN banner#src -->
+	<li class="col-md-4">{src}[raw]</li>
+	<!-- END banner#src -->
+	<!-- BEGIN banner#img -->
+	<li class="col-md-4"><a href="{url}" target="{target}"><img src="%{ARCHIVES_DIR}{img}" width="{x}" height="{y}" class="img-responsive" alt="{alt}" /></a></li>
+	<!-- END banner#img -->
+	<!-- END banner:loop -->
+</ul>
+</div>
+<!-- END_MODULE Banner -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<ul class="list-inline-banner row">
+	<li class="col-md-4"><a href="#"><img src="/images/noImage.png" class="img-responsive" alt="" /></a></li>
+	<li class="col-md-4"><a href="#"><img src="/images/noImage.png" class="img-responsive" alt="" /></a></li>
+	<li class="col-md-4"><a href="#"><img src="/images/noImage.png" class="img-responsive" alt="" /></a></li>
+</ul>
+<!-- END layout#dummy -->

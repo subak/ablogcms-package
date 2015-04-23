@@ -1,0 +1,74 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Category_EntrySummary -->
+<div>
+<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+<!--#include file="/admin/module/setting.html"-->
+
+<!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
+<!-- END categoryUl#front --><!-- BEGIN category:loop -->
+<div class="panel panel-default">
+	<div class="panel-heading"><a href="{categoryUrl}">{categoryName}</a></div>
+	<!-- BEGIN notFound --><div class="panel-body"><p>記事が見つかりませんでした。</p></div><!-- END notFound -->
+	<!-- BEGIN unit:loop -->
+		<!-- BEGIN entry:loop -->
+			<div class="panel-body">
+				<div class="media">
+					<a class="media-left" href="#">
+						<div style="width:{x}px; height:{y}px; overflow:hidden; position:relative;">
+							<!-- BEGIN_IF [{path}/nem] --><img src="%{ROOT_DIR}{path}" alt="" width="{imgX}" height="{imgY}" style="left:{left}px; top:{top}px; position:relative;" /><!-- ELSE --><img src="/images/noImage100x100.png" alt="" /><!-- END_IF -->
+						</div>
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading"><a href="{url}">{title}</a></h4>
+						<p>{summary}[trim(150, '...')]</p>
+					</div>
+				</div>
+			</div><!-- END entry:loop -->
+		<!-- END unit:loop -->
+	</div><!-- END category:loop --><!-- BEGIN categoryLi#rear -->
+	<!-- END categoryLi#rear --><!-- BEGIN categoryUl#rear -->
+<!-- END categoryUl#rear --><!-- END categoryEntryList:loop -->
+
+</div>
+<!-- END_MODULE Category_EntrySummary -->
+<!-- END layout#display -->
+
+
+<!-- BEGIN layout#dummy -->
+<div class="panel panel-default">
+	<div class="panel-heading">カテゴリー名</div>
+	<div class="panel-body">
+		<div class="media">
+			<a class="media-left" href="#">
+				<img src="/images/noImage100x100.png" alt="" />
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading"><a href="#">エントリータイトル</a></h4>
+				<p>ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。</p>
+			</div>
+		</div>
+	</div>
+	<div class="panel-body">
+		<div class="media">
+			<a class="media-left" href="#">
+				<img src="/images/noImage100x100.png" alt="" />
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading"><a href="#">エントリータイトル</a></h4>
+				<p>ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。</p>
+			</div>
+		</div>
+	</div>
+	<div class="panel-body">
+		<div class="media">
+			<a class="media-left" href="#">
+				<img src="/images/noImage100x100.png" alt="" />
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading"><a href="#">エントリータイトル</a></h4>
+				<p>ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END layout#dummy -->

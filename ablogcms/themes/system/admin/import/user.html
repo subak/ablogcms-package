@@ -1,8 +1,8 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-import"></i>ユーザーインポート</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-import"></i>ユーザーインポート</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
@@ -10,8 +10,8 @@
 <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
 <!-- BEGIN_MODULE Admin_Import_Message -->
 <!-- BEGIN message:veil -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>{importMessage}</p><!-- END message:veil --><!-- BEGIN import:data -->
-<p class="acma-alert acms-alert-info"><button class="js-acms-alert-close">×</button>{blog} ブログ に {entry_count}件、インポートしました。</p><!-- END import:data -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>{importMessage}</p><!-- END message:veil --><!-- BEGIN import:data -->
+<p class="acma-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>{blog} ブログ に {entry_count}件、インポートしました。</p><!-- END import:data -->
 <!-- END_MODULE Admin_Import_Message -->
 
 <p>CSVデータのユーザーを現在のブログにインポートまたは上書きします。</p>
@@ -24,9 +24,9 @@
 
 <form action="" method="post" enctype="multipart/form-data">
 
-	<input class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" type="submit" name="ACMS_POST_Import_User" value="インポートを実行する"/ onclick="return confirm('インポートを実行します。よろしいですか？');">
-	<h3 class="acms-admin-title2">CSVデータ</h3>
-	<table class="adminTable acms-table-admin-edit">
+	<input class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" type="submit" name="ACMS_POST_Import_User" value="インポートを実行する"/ onclick="return confirm('インポートを実行します。よろしいですか？');">
+	<h3 class="acms-admin-admin-title2">CSVデータ</h3>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
 			<th>インポート先ブログ</th>
 			<td>%{BLOG_NAME}（現在のブログ）</td>

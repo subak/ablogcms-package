@@ -1,0 +1,37 @@
+<h3 class="acms-admin-admin-title2">メタ情報の設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>カテゴリー名</th>
+		<td>
+			<input type="text" name="meta_categoryTitle" value="{meta_categoryTitle}" class="acms-admin-form-width-3quarters">
+			<input type="hidden" name="field[]" value="meta_categoryTitle">
+		</td>
+	</tr>
+	<tr>
+		<th>概要文</th>
+		<td>
+			<textarea name="meta_categoryDesc" rows="4" class="acms-admin-form-width-3quarters">{meta_categoryDesc}</textarea>
+			<input type="hidden" name="field[]" value="meta_categoryDesc">
+		</td>
+	</tr>
+	<tr>
+		<th>画像</th>
+		<td>
+			<!-- BEGIN meta_categoryImage@path:veil -->
+			<img src="%{ARCHIVES_DIR}{meta_categoryImage@path}" width="400"><br>
+			<input type="hidden" name="meta_categoryImage@old" value="{meta_categoryImage@path}">
+			<label>
+				<input type="checkbox" name="meta_categoryImage@edit" value="delete">削除
+			</label>
+			<!-- END meta_categoryImage@path:veil -->
+			<input type="file" name="meta_categoryImage" size="20">
+			<input type="hidden" name="field[]" value="meta_categoryImage">
+			<input type="hidden" name="meta_categoryImage:extension" value="image">
+			<input type="hidden" name="meta_categoryImage@size" value="640">
+			<input type="hidden" name="meta_categoryImage@tinyWidth" value="280">
+			<input type="hidden" name="meta_categoryImage@largeWidth" value="1280">
+			<input type="hidden" name="meta_categoryImage@squareWidth" value="200">
+			<input type="hidden" name="meta_categoryImage@filename" value="">
+		</td>
+	</tr>
+</table>

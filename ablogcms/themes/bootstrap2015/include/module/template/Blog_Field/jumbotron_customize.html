@@ -1,0 +1,27 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Blog_Field -->
+<div>
+	<!--#include file="/admin/module/setting.html"-->
+	<div class="jumbotron backgroundCoverImage jumbotronCustomize" style="background-image: url(%{ARCHIVES_DIR}{hero_image@largePath});background-color: {hero_bg_color}; background-size: cover; color: {hero_text_color};" >
+			<div class="container">
+			<!-- BEGIN hero_title:veil --><h1 class="hero-title">{hero_title}</h1><!-- END hero_title:veil -->
+			<!-- BEGIN hero_lead:veil --><p>{hero_lead}[nl2br]</p><!-- END hero_lead:veil -->
+			<!-- BEGIN hero_btn:veil --><p><a class="btn btn-success btn-lg" href="{btn_link}" role="button">{btn_text}</a></p><!-- END hero_btn:veil -->
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+				<a href="%{SCRIPT_ROOT}bid/%{BID}/admin/blog_edit/#acms_custom" class="acms-admin-btn-admin">編集</a>
+				<!-- END_MODULE Touch_SessionWithAdministration -->
+		</div>
+	</div>
+</div>
+<!-- END_MODULE Blog_Field -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div class="jumbotron jumbotronCustomize">
+		<div class="container">
+		<h1 class="hero-title">Bootstrap theme</h1>
+		<p>現在Bootstrapテーマは準備中です。正式版リリースまでいましばらくお待ちください。</p>
+		<p><a class="btn btn-success btn-lg" href="#" role="button">もっと見る</a></p>
+	</div>
+</div>
+<!-- END layout#dummy -->

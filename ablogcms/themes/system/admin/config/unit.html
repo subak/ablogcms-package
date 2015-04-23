@@ -1,42 +1,42 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title">
-			<i class="acms-icon acms-icon-config_unit"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title">
+			<i class="acms-admin-icon acms-admin-icon-config_unit"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
 				<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 				<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->ユニット設定
 		</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Config -->
 <!-- BEGIN_IF [{notice_mess}/nem/] -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>ユニット設定を保存しました</p><!-- END_IF -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>ユニット設定を保存しました</p><!-- END_IF -->
 
-<form action="" method="post" class="acms-form">
+<form action="" method="post" class="acms-admin-form">
 	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
-		<div class="acms_fix_bg_index acms-form-group">
-			<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+		<div class="acms_fix_bg_index acms-admin-form-group">
+			<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
 
-			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-admin-btn-admin acms-admin-float-right acms-admin-float-none-sp"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
 		</div>
 	</div>
 	
 	<!-- BEGIN Config_Column -->
 	<!-- BEGIN mode:loop -->
-	<div class="acms-unitbox">
+	<div class="acms-admin-unitbox">
 		<div class="panel-heading clearfix ">
-			<h2 class="acms-unitbox-title"><span class="acms-label">{mode}</span></h2>
+			<h2 class="acms-admin-unitbox-title"><span class="acms-admin-label">{mode}</span></h2>
 		</div>
 		<div class="panel-body column-definition-wrapper ui-sortable">
 
 			<p class="columnVeil">
 				<!-- BEGIN add_type:loop -->
-				<a class="{modePrefix.type}-{type}" href="#"><button class="acms-btn-admin">{label}</button></a>
+				<a class="{modePrefix.type}-{type}" href="#"><button class="acms-admin-btn-admin">{label}</button></a>
 				<!-- END add_type:loop -->
 			</p>
 			<hr class="clearHidden" />

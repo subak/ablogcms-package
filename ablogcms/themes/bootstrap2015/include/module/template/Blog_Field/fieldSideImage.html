@@ -1,0 +1,43 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Blog_Field id="fieldSideImage" -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+	<!-- BEGIN moduleField --><div class="acms-grid-r">
+		<div class="acms-col-md-6 js-animation">
+			<!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil -->
+			<!-- BEGIN module_detail:veil --><p class="moduleDetail">{module_detail}[nl2br]</p><!-- END module_detail:veil -->
+			<!-- BEGIN customFieldGroup:loop -->
+			<h3 class="sideHeading">{side_heading}</h3>
+			<!-- BEGIN side_detail:veil --><p class="sideText acms-slide-right acms-delay-second">{side_detail}</p><!-- END side_detail:veil -->
+			<!-- END customFieldGroup:loop -->
+		</div>
+		<div class="acms-col-md-6 text-center js-animation">
+			<!-- BEGIN side_image:veil --><img src="%{ARCHIVES_DIR}{side_image@path}" alt="" class="img-responsive acms-slide-right"><!-- END side_image:veil -->
+		</div>
+	</div>
+	<!-- END moduleField -->
+</div>
+<!-- END_MODULE Blog_Field -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div class="acms-grid-r">
+	<div class="acms-col-md-6">
+		<h2 class="moduleHeading">テーマのカスマイズファイル</h2>
+		<p class="moduleDetail">Bootstrap2015テーマでカスマイズするファイルは以下になります。</p>
+
+		<h3 class="sideHeading">index.html</h3>
+		<p class="sideText">サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+
+		<h3 class="sideHeading">css/hoge.css</h3>
+		<p class="sideText">サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+
+		<h3 class="sideHeading">include/module/template/*.html</h3>
+		<p class="sideText">サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+
+	</div>
+	<div class="acms-col-md-6 text-center">
+		<img src="/images/img_sample_square.png" alt="" class="img-responsive">
+	</div>
+</div>
+<!-- END layout#dummy -->

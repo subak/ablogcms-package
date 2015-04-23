@@ -1,0 +1,31 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_List -->
+<div>
+	<!--#include file="/admin/module/setting.html"-->
+	<div class="panel panel-default hidden-print">
+		<!-- BEGIN moduleField --><div class="panel-heading">
+			<h2 class="panel-title">{module_heading}</h2>
+		</div><!-- END moduleField -->
+		<div class="list-group">
+			<!-- BEGIN entry:loop -->
+			<a href="{url}" class="list-group-item">{title}</a>
+			<!-- END entry:loop -->
+		</div>
+	</div>
+</div>
+<!-- END_MODULE Entry_List -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div class="panel panel-default hidden-print">
+	<div class="panel-heading">
+		<h2 class="panel-title">記事一覧</h2>
+	</div>
+	<div class="list-group">
+		<a href="#" class="list-group-item">エントリーのタイトル</a>
+		<a href="#" class="list-group-item">エントリーのタイトル</a>
+		<a href="#" class="list-group-item">エントリーのタイトル</a>
+		<a href="#" class="list-group-item">エントリーのタイトル</a>
+	</div>
+</div>
+<!-- END layout#dummy -->

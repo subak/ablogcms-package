@@ -1,0 +1,23 @@
+<div role="tabpanel">
+
+	<!-- BEGIN_MODULE Category_List id="serviceList" -->
+	<div>
+	<!--#include file="/admin/module/setting.html"-->
+	<ul class="nav nav-tabs" role="tablist"><!-- BEGIN category:loop --><!-- BEGIN ul#front -->
+	<!-- END ul#front --><!-- BEGIN li#front -->
+		<li role="presentation"><!-- END li#front --><!-- BEGIN category:veil -->
+			<a href="#tab{cid}" aria-controls="tab{cid}" role="tab" data-toggle="tab">{name}</a><!-- END category:veil --><!-- BEGIN li#rear -->
+		</li><!-- END li#rear --><!-- BEGIN ul#rear -->
+	<!-- END ul#rear --><!-- END category:loop --></ul>
+	</div>
+	<!-- END_MODULE Category_List -->
+
+	<!-- Tab panes -->
+	<!-- BEGIN_MODULE Category_List id="serviceList" -->
+	<div class="tab-content">
+	<!-- BEGIN category:loop --><!-- BEGIN ul#front --><!-- END ul#front --><!-- BEGIN li#front -->
+		<div role="tabpanel" class="tab-pane" id="tab{cid}"><!-- END li#front --><!-- BEGIN category:veil -->{meta_categoryDesc}[trim(300, '...')]<!-- END category:veil --><!-- BEGIN li#rear --></div><!-- END li#rear --><!-- BEGIN ul#rear --><!-- END ul#rear --><!-- END category:loop -->
+	</div>
+	<!-- END_MODULE Category_List-->
+
+</div>

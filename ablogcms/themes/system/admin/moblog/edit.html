@@ -1,165 +1,163 @@
-<header class="acms-box-medium">
-	<div class="acms-grid">
-		<div class="acms-col-12">
-			<h1 class="acms-admin-title"><i class="acms-ico-symbol-large acms-ico-moblog"></i>モブログ管理</h1>
-			<!--#include file="/admin/topicpath.html"-->
-		</div>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-config_mail"></i>モブログ</h1>
+	</div>
+	<div class="acms-admin-col-md-6">
+		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
+
 <!-- BEGIN_MODULE Admin_Moblog_Edit -->
 
 <!-- BEGIN msg#insert -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>モブログを作成しました</p><!-- END msg#insert --><!-- BEGIN msg#update -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>モブログを保存しました</p><!-- END msg#update --><!-- BEGIN msg#delete -->
-<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>モブログを削除しました</p><!-- END msg#delete -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>モブログを作成しました</p><!-- END msg#insert --><!-- BEGIN msg#update -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>モブログを保存しました</p><!-- END msg#update --><!-- BEGIN msg#delete -->
+<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>モブログを削除しました</p><!-- END msg#delete -->
 
-<div class="acms-panel-title">
-	<h2>モブログ詳細</h2>
-	<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="/bid/%{BID}/admin/shortcut_edit/?mbid=%{mbid}&action=Moblog_Update&admin=moblog_edit&edit=add&step=reapply" class="acms-btn-admin acms-shortcut-btn">ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
-</div>
-<div class="acms-panel">
-	<form action="" method="post" class="acms-inline-btn">
-		<input type="hidden" name="bid" value="%{BID}" />
-		<input type="hidden" name="admin" value="moblog_index" />
-		<input type="submit" name="ACMS_POST_2GET" value="一覧" class="acms-btn-admin" />
-	</form>
+<form action="" method="post" class="acms-admin-form">
+	<div class="acms-admin-form-group js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+		<div class="acms_fix_bg_index">
+			<input type="hidden" name="bid" value="%{BID}" />
+			<input type="hidden" name="admin" value="moblog_index" />
+			<input type="submit" name="ACMS_POST_2GET" value="一覧" class="acms-admin-btn-admin" />
 
-	<form action="" method="post" class="acms-form">
-	
-		<!-- BEGIN submit#insert -->
-		<input type="submit" name="ACMS_POST_Moblog_Insert" value="作成" class="overlook acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<!-- BEGIN submit#insert -->
+			<input type="submit" name="ACMS_POST_Moblog_Insert" value="作成" class="overlook acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-		<input type="hidden" name="takeover" value="{takeover}" />
-		<!-- END submit#insert -->
+			<input type="hidden" name="takeover" value="{takeover}" />
+			<!-- END submit#insert -->
 
-		<!-- BEGIN submit#update -->
-		<input type="submit" name="ACMS_POST_Moblog_Update" value="保存" class="overlook acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<!-- BEGIN submit#update -->
+			<input type="submit" name="ACMS_POST_Moblog_Update" value="保存" class="overlook acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-		<input type="submit" name="ACMS_POST_Moblog_Delete" value="削除" onclick="return confirm('モブログを削除します。\nよろしいですか？');" class="acms-btn-admin" />
-		<!-- END submit#update -->
+			<input type="submit" name="ACMS_POST_Moblog_Delete" value="削除" onclick="return confirm('モブログを削除します。\nよろしいですか？');" class="acms-admin-btn-admin acms-admin-btn-admin-danger" />
+			<!-- END submit#update -->
 
-		<table class="adminTable acms-table-admin-edit">
-			<tr>
-				<th>ステータス<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-moblogStatus" class="tooltipIcon" /></th>
-				<td>
-					<select name="status">
-						<option value="open"{status:selected#open}>有効</option>
-						<option value="close"{status:selected#close}>無効</option>
-					</select>
-					<input type="hidden" name="moblog[]" value="status" />
-				</td>
-			</tr>
-			<tr>
-				<th>メールアドレス<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-moblogMail" class="tooltipIcon" /></th>
-				<td>
-					<input type="text" name="mail" value="{mail}" size="36" />
-					<input type="hidden" name="moblog[]" value="mail" />
-					<input type="hidden" name="mail:v#required" />
-					<input type="hidden" name="mail:v#email" /><!-- BEGIN mail:validator -->
-					<p style="color:red;">メールアドレスが入力されていないか、又は不正なメールアドレスです</p><!-- END mail:validator -->
-				</td>
-			</tr>
-			<tr>
-				<th>POPサーバー<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-moblogServer" class="tooltipIcon" /></th>
-				<td>
-					<input type="text" name="server" value="{server}" />
-					<input type="hidden" name="moblog[]" value="server" />
-					<input type="hidden" name="server:v#required" /><!-- BEGIN server:validator -->
-					<p style="color:red;">サーバーが入力されていません</p><!-- END server:validator -->
-				</td>
-			</tr>
-			<tr>
-				<th>POPユーザー<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-moblogUser" class="tooltipIcon" /></th>
-				<td>
-					<input type="text" name="user" value="" style="display:none;" />
-					<input type="text" name="user" value="{user}" autocomplete="off" />
-					<input type="hidden" name="moblog[]" value="user" />
-					<input type="hidden" name="user:v#required" /><!-- BEGIN user:validator -->
-					<p style="color:red;">ユーザーが入力されていません</p><!-- END user:validator -->
-				</td>
-			</tr>
-			<tr>
-				<th>POPパスワード<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-moblogPass" class="tooltipIcon" /></th>
-				<td>
-					<input type="password" name="pass" value="" style="display:none;" />
-					<input type="password" name="pass" value="{pass}" autocomplete="off" />
-					<input type="hidden" name="moblog[]" value="pass" />
-					<input type="hidden" name="pass:v#required" /><!-- BEGIN pass:validator -->
-					<p style="color:red;">パスワードが入力されていません</p><!-- END pass:validator -->
-				</td>
-			</tr>
-			<tr>
-				<th>メール投稿許可アドレス<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-moblogAllowedMail" class="tooltipIcon" /></th>
-				<td>
-					<textarea name="allowed_mail" rows="5" style="width:100%;">{allowed_mail}</textarea>
-					<input type="hidden" name="moblog[]" value="allowed_mail" />
-				</td>
-			</tr>
-			<tr>
-				<th>エントリーのステータス<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-moblogEntryStatus" class="tooltipIcon" /></th>
-				<td>
-					<select name="entry_status">
-						<option value="draft"{entry_status:selected#draft}>下書き</option>
-						<option value="open"{entry_status:selected#open}>公開</option>
-						<option value="close"{entry_status:selected#close}>非公開</option>
-					</select>
-					<input type="hidden" name="moblog[]" value="entry_status" />
-				</td>
-			</tr>
-			<tr>
-				<th>画像サイズ<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-moblogImageSize" class="tooltipIcon" /></th>
-				<td>
-					<input type="text" name="image_size" value="{image_size}" size="4" /> px
-					<input type="hidden" name="image_size:v#digits" /><!-- BEGIN image_size:validator -->
-					<p style="color:red;">画像サイズが入力されていないか、数値以外の文字が入力されています</p><!-- END image_size:validator -->
-					<input type="hidden" name="moblog[]" value="image_size" />
-				</td>
-			</tr>
-			<tr>
-				<th>画像の配置<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-moblogImageAlign" class="tooltipIcon" /></th>
-				<td>
-					<select name="image_align">
-						<option value="auto"{image_align:selected#auto}>おまかせ</option>
-						<option value="left"{image_align:selected#left}>左</option>
-						<option value="right"{image_align:selected#right}>右</option>
-						<option value="center"{image_align:selected#center}>中央</option>
-					</select>
-					<input type="hidden" name="moblog[]" value="image_align" />
-				</td>
-			</tr>
-			<tr>
-				<th>テキストユニット<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-moblogTextUnit" class="tooltipIcon" /></th>
-				<td>
-					<select name="text_unit">
-						<option value="p"{text_unit:selected#p}>p</option>
-						<option value="markdown"{text_unit:selected#markdown}>markdown</option>
-					</select>
-				</td>
-				<input type="hidden" name="moblog[]" value="text_unit" />
-			</tr>
-			<tr>
-				<th>ユーザー<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-moblogUser" class="tooltipIcon" /></th>
-				<td><!-- BEGIN user -->
-					<select name="user_id"><!-- BEGIN user:loop -->
-						<option value="{value}"{selected}>{value} : {label}</option><!-- END user:loop -->
-					</select><!-- END user -->
-					<input type="hidden" name="moblog[]" value="user_id" />
-					<input type="hidden" name="user_id:v#required" /><!-- BEGIN user_id:validator -->
-					<p style="color:red">ユーザーが選択されていません</p><!-- END user_id:validator -->
-				</td>
-			</tr>
-			<tr>
-				<th>カテゴリー<img src="/images/tooltip.gif" alt="ヘルプ" width="12" height="12" id="tooltip-moblogCategory" class="tooltipIcon" /></th>
-				<td><!-- BEGIN category -->
-					<select name="category_id">
-						<option value="">なし</option><!-- BEGIN category:loop -->
-						<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option><!-- END category:loop -->
-					</select><!-- END category -->
-					<input type="hidden" name="moblog[]" value="category_id" />
-				</td>
-			</tr>
-		</table>
-	</form>
-</div>
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+			<a href="/bid/%{BID}/admin/shortcut_edit/?action=Moblog_Update&admin=%{ADMIN}&edit=add&step=reapply" class="acms-admin-btn-admin acms-admin-float-right"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+		</div>
+	</div>
+
+	<table class="adminTable acms-admin-table-admin-edit">
+		<tr>
+			<th>ステータス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="表示中のモブログ設定の有効・無効を選択します。"></i></th>
+			<td>
+				<select name="status">
+					<option value="open"{status:selected#open}>有効</option>
+					<option value="close"{status:selected#close}>無効</option>
+				</select>
+				<input type="hidden" name="moblog[]" value="status" />
+			</td>
+		</tr>
+		<tr>
+			<th>メールアドレス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="モブログに使用するメールアドレスを指定します。"></i></th>
+			<td>
+				<input type="text" name="mail" value="{mail}" size="36" />
+				<input type="hidden" name="moblog[]" value="mail" />
+				<input type="hidden" name="mail:v#required" />
+				<input type="hidden" name="mail:v#email" /><!-- BEGIN mail:validator -->
+				<p style="color:red;">メールアドレスが入力されていないか、又は不正なメールアドレスです</p><!-- END mail:validator -->
+			</td>
+		</tr>
+		<tr>
+			<th>POPサーバー<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="モブログに使用するPOPサーバーを指定します。"></i></th>
+			<td>
+				<input type="text" name="server" value="{server}" />
+				<input type="hidden" name="moblog[]" value="server" />
+				<input type="hidden" name="server:v#required" /><!-- BEGIN server:validator -->
+				<p style="color:red;">サーバーが入力されていません</p><!-- END server:validator -->
+			</td>
+		</tr>
+		<tr>
+			<th>POPユーザー<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="モブログに使用するPOPサーバーのユーザー名を指定します。"></i></th>
+			<td>
+				<input type="text" name="user" value="" style="display:none;" />
+				<input type="text" name="user" value="{user}" autocomplete="off" />
+				<input type="hidden" name="moblog[]" value="user" />
+				<input type="hidden" name="user:v#required" /><!-- BEGIN user:validator -->
+				<p style="color:red;">ユーザーが入力されていません</p><!-- END user:validator -->
+			</td>
+		</tr>
+		<tr>
+			<th>POPパスワード<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="モブログに使用するPOPサーバーのパスワードを指定します。"></i></th>
+			<td>
+				<input type="password" name="pass" value="" style="display:none;" />
+				<input type="password" name="pass" value="{pass}" autocomplete="off" />
+				<input type="hidden" name="moblog[]" value="pass" />
+				<input type="hidden" name="pass:v#required" /><!-- BEGIN pass:validator -->
+				<p style="color:red;">パスワードが入力されていません</p><!-- END pass:validator -->
+			</td>
+		</tr>
+		<tr>
+			<th>メール投稿許可アドレス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ここで指定したメールアドレスからの投稿のみ受け付けます。"></i></th>
+			<td>
+				<textarea name="allowed_mail" rows="5" style="width:100%;">{allowed_mail}</textarea>
+				<input type="hidden" name="moblog[]" value="allowed_mail" />
+			</td>
+		</tr>
+		<tr>
+			<th>エントリーのステータス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="モブログで投稿したエントリーの初期ステータスを指定します。"></i></th>
+			<td>
+				<select name="entry_status">
+					<option value="draft"{entry_status:selected#draft}>下書き</option>
+					<option value="open"{entry_status:selected#open}>公開</option>
+					<option value="close"{entry_status:selected#close}>非公開</option>
+				</select>
+				<input type="hidden" name="moblog[]" value="entry_status" />
+			</td>
+		</tr>
+		<tr>
+			<th>画像サイズ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="添付画像の長辺サイズを指定します。"></i></th>
+			<td>
+				<input type="text" name="image_size" value="{image_size}" size="4" /> px
+				<input type="hidden" name="image_size:v#digits" /><!-- BEGIN image_size:validator -->
+				<p style="color:red;">画像サイズが入力されていないか、数値以外の文字が入力されています</p><!-- END image_size:validator -->
+				<input type="hidden" name="moblog[]" value="image_size" />
+			</td>
+		</tr>
+		<tr>
+			<th>画像の配置<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="添付画像の配置を指定します。"></i></th>
+			<td>
+				<select name="image_align">
+					<option value="auto"{image_align:selected#auto}>おまかせ</option>
+					<option value="left"{image_align:selected#left}>左</option>
+					<option value="right"{image_align:selected#right}>右</option>
+					<option value="center"{image_align:selected#center}>中央</option>
+				</select>
+				<input type="hidden" name="moblog[]" value="image_align" />
+			</td>
+		</tr>
+		<tr>
+			<th>テキストユニット<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="メールのテキストのタグを指定します。"></i></th>
+			<td>
+				<select name="text_unit">
+					<option value="p"{text_unit:selected#p}>p</option>
+					<option value="markdown"{text_unit:selected#markdown}>markdown</option>
+				</select>
+			</td>
+			<input type="hidden" name="moblog[]" value="text_unit" />
+		</tr>
+		<tr>
+			<th>ユーザー<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="モブログで投稿したエントリーを書いたユーザーを誰にするか指定します。"></i></th>
+			<td><!-- BEGIN user -->
+				<select name="user_id"><!-- BEGIN user:loop -->
+					<option value="{value}"{selected}>{value} : {label}</option><!-- END user:loop -->
+				</select><!-- END user -->
+				<input type="hidden" name="moblog[]" value="user_id" />
+				<input type="hidden" name="user_id:v#required" /><!-- BEGIN user_id:validator -->
+				<p style="color:red">ユーザーが選択されていません</p><!-- END user_id:validator -->
+			</td>
+		</tr>
+		<tr>
+			<th>カテゴリー<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="モブログで投稿したエントリーをどのカテゴリーにするか指定します。"></i></th>
+			<td><!-- BEGIN category -->
+				<select name="category_id">
+					<option value="">なし</option><!-- BEGIN category:loop -->
+					<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option><!-- END category:loop -->
+				</select><!-- END category -->
+				<input type="hidden" name="moblog[]" value="category_id" />
+			</td>
+		</tr>
+	</table>
+</form>
 <!-- END_MODULE Admin_Moblog_Edit -->
-<!--#include file="/admin/tooltip/moblog.html"-->

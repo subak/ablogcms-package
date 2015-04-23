@@ -1,0 +1,25 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_List id="newsSecond" -->
+<div>
+	<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2>{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+	<!--#include file="/admin/module/setting.html"-->
+	<ul class="listBorder">
+		<!-- BEGIN entry:loop -->
+		<li class="listBorderItem"><a href="{url}" class="listBorderLink"><time datetime="{date#Y}-{date#m}-{date#d}" class="listBorderTime">{date#Y}年{date#m}月{date#d}日</time>{title}</a></li>
+		<!-- END entry:loop -->
+	</ul>
+</div>
+<!-- END_MODULE Entry_List -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div>
+<ul class="listBorder">
+	<li class="listBorderItem"><a href="#" class="listBorderLink"><time datetime="2015-04-14" class="listBorderTime">2015年04月14日</time>お知らせのエントリー</a></li>
+	
+	<li class="listBorderItem"><a href="#" class="listBorderLink"><time datetime="2015-03-13" class="listBorderTime">2015年03月13日</time>お知らせのエントリー</a></li>
+	
+	<li class="listBorderItem"><a href="#" class="listBorderLink"><time datetime="2015-03-13" class="listBorderTime">2015年03月13日</time>お知らせのエントリー</a></li>
+</ul>
+</div>
+<!-- END layout#dummy -->

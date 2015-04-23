@@ -1,0 +1,155 @@
+<h3 class="acms-admin-admin-title2">ユーザー</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>表示順<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="どのようなルールに従って表示されるかの設定です。フィールド、数値フィールドはカスタムフィールドでの検索結果の表示時に利用します。"></i></th>
+		<td>
+			<select name="user_search_order">
+				<option value="code-asc"{user_search_order:selected#code-asc}>コード名 ( 昇順 )</option>
+				<option value="code-desc"{user_search_order:selected#code-desc}>コード名 ( 降順 )</option>
+				<option value="id-asc"{user_search_order:selected#id-asc}>ID ( 昇順 )</option>
+				<option value="id-desc"{user_search_order:selected#id-desc}>ID ( 降順 )</option>
+				<option value="updated_datetime-asc"{user_search_order:selected#updated_datetime-asc}>更新日時 ( 昇順 )</option>
+				<option value="updated_datetime-desc"{user_search_order:selected#updated_datetime-desc}>更新日時 ( 降順 )</option>
+				<option value="login_datetime-asc"{user_search_order:selected#login_datetime-asc}>最終ログイン日時 ( 昇順 )</option>
+				<option value="login_datetime-desc"{user_search_order:selected#login_datetime-desc}>最終ログイン日時 ( 降順 )</option>
+				<option value="sort-asc"{user_search_order:selected#sort-asc}>任意</option>
+				<option value="field-asc"{user_search_order:selected#field-asc}>フィールド ( 昇順 )</option>
+				<option value="field-desc"{user_search_order:selected#field-desc}>フィールド ( 降順 )</option>
+				<option value="intfield-asc"{user_search_order:selected#intfield-asc}>数値フィールド ( 昇順 )</option>
+				<option value="intfield-desc"{user_search_order:selected#intfield-desc}>数値フィールド ( 降順 )</option>
+				<option value="random"{user_search_order:selected#random}>ランダム</option>
+			</select>
+			<input type="hidden" name="config[]" value="user_search_order" />
+		</td>
+	</tr>
+	<tr>
+		<th>表示件数<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="一度に表示される件数です。"></i></th>
+		<td>
+			<input type="text" name="user_search_limit" value="{user_search_limit}" size="4" class="acms-admin-form-width-mini" />
+			<input type="hidden" name="config[]" value="user_search_limit" />
+			<input type="hidden" name="user_search_limit:convert" value="a" />
+			<input type="hidden" name="user_search_limit:validator#digits" id="validator-user_search_limit-digits" />
+			<label for="validator-user_search_limit-digits" class="validator-result-{user_search_limit:validator#digits}">数字を入力して下さい。</label>
+		</td>
+	</tr>
+	<tr>
+		<th>権限<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="選択した権限のユーザーが一覧の表示対象になります。"></i></th>
+		<td>
+			<label class="acms-admin-form-checkbox">
+			<input type="checkbox" name="user_search_auth[]" value="administrator"{user_search_auth:checked#administrator} /><i class="acms-admin-ico-checkbox"></i>
+			管理者
+			</label>
+			&nbsp;
+			<label class="acms-admin-form-checkbox">
+			<input type="checkbox" name="user_search_auth[]" value="editor"{user_search_auth:checked#editor} /><i class="acms-admin-ico-checkbox"></i>
+			編集者
+			</label>
+			&nbsp;
+			<label class="acms-admin-form-checkbox">
+			<input type="checkbox" name="user_search_auth[]" value="contributor"{user_search_auth:checked#contributor} /><i class="acms-admin-ico-checkbox"></i>
+			投稿者
+			</label>
+			&nbsp;
+			<label class="acms-admin-form-checkbox">
+			<input type="checkbox" name="user_search_auth[]" value="subscriber"{user_search_auth:checked#subscriber} /><i class="acms-admin-ico-checkbox"></i>
+			読者
+			</label>
+			<input type="hidden" name="config[]" value="user_search_auth" />
+		</td>
+	</tr>
+
+	<tr>
+		<th>ステータス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="選択したステータスのユーザーが一覧の表示対象になります。"></i></th>
+		<td>
+			<label class="acms-admin-form-checkbox">
+			<input type="checkbox" name="user_search_status[]" value="open"{user_search_status:checked#open} /><i class="acms-admin-ico-checkbox"></i>
+			有効
+			</label>
+			&nbsp;
+			<label class="acms-admin-form-checkbox">
+			<input type="checkbox" name="user_search_status[]" value="close"{user_search_status:checked#close} /><i class="acms-admin-ico-checkbox"></i>
+			無効
+			</label>
+			<input type="hidden" name="config[]" value="user_search_status" />
+		</td>
+	</tr>
+	<tr>
+		<th>メールマガジン<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="選択したメールマガジン受信希望のユーザーが一覧の表示対象になります。"></i></th>
+		<td>
+			<label class="acms-admin-form-checkbox">
+			<input type="checkbox" name="user_search_mail_magazine[]" value="pc"{user_search_mail_magazine:checked#pc} /><i class="acms-admin-ico-checkbox"></i>
+			PCメール
+			</label>
+			&nbsp;
+			<label class="acms-admin-form-checkbox">
+			<input type="checkbox" name="user_search_mail_magazine[]" value="mobile"{user_search_mail_magazine:checked#mobile} /><i class="acms-admin-ico-checkbox"></i>
+			携帯メール
+			</label>
+			<input type="hidden" name="config[]" value="user_search_mail_magazine" />
+		</td>
+	</tr>
+	<tr>
+		<th>前後に表示するページ数<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ページャーの設定です。表示中のページを基点として、ここで設定した値の数だけページ番号が表示されます。"></i></th>
+		<td>
+			<input type="text" name="user_search_pager_delta" value="{user_search_pager_delta}" size="4" class="acms-admin-form-width-mini" />
+			<input type="hidden" name="config[]" value="user_search_pager_delta" />
+			<input type="hidden" name="user_search_pager_delta:validator#digits" id="validator-user_search_pager_delta-digits" />
+			<label for="validator-user_search_pager_delta-digits" class="validator-result-{user_search_pager_delta:validator#digits}">数字を入力してください。</label>
+		</td>
+	</tr>
+	<tr>
+		<th>現在のページの要素の属性<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ページャーの設定です。表示中のページ番号に割り当てられる属性です。（変数名 : pageCurAttr）"></i></th>
+		<td>
+			<input type="text" name="user_search_pager_cur_attr" value="{user_search_pager_cur_attr}" size="20" />
+			<input type="hidden" name="config[]" value="user_search_pager_cur_attr" />
+		</td>
+	</tr>
+	<tr>
+		<th>インデキシング<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックを外すと、インデキシングされていないユーザーも表示されます。"></i></th>
+		<td>
+			<input type="hidden" name="user_search_indexing" value="off" />
+			<label for="input-checkbox-user_search_indexing" class="acms-admin-form-checkbox"><input type="checkbox" name="user_search_indexing" value="on"{user_search_indexing:checked#on} id="input-checkbox-user_search_indexing" /><i class="acms-admin-ico-checkbox"></i>インデキシングされているユーザーのみ表示する</label>
+			<input type="hidden" name="config[]" value="user_search_indexing" />
+		</td>
+	</tr>
+</table>
+
+<h3 class="acms-admin-admin-title2">エントリー</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>エントリー<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをするとユーザー毎のエントリーリストを表示できるようになります。"></i></th>
+		<td>
+			<input type="hidden" name="user_search_entry_list_enable" value="off" />
+			<label for="input-checkbox-user_search_entry_list_enable" class="acms-admin-form-checkbox"><input type="checkbox" name="user_search_entry_list_enable" value="on"{user_search_entry_list_enable:checked#on} class="switching-function-btn" id="input-checkbox-user_search_entry_list_enable" /><i class="acms-admin-ico-checkbox"></i>エントリーリストを表示できるようにする。</label>
+			<input type="hidden" name="config[]" value="user_search_entry_list_enable" />
+		</td>
+	</tr>
+	<tr>
+		<th>表示順<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="どのようなルールに従って表示されるかの設定です。"></i></th>
+		<td>
+			<select name="user_search_entry_list_order">
+				<option value="datetime-asc"{user_search_entry_list_order:selected#datetime-asc}>日時 ( 昇順 )</option>
+				<option value="datetime-desc"{user_search_entry_list_order:selected#datetime-desc}>日時 ( 降順 )</option>
+				<option value="code-asc"{user_search_entry_list_order:selected#code-asc}>ファイル名 ( 昇順 )</option>
+				<option value="code-desc"{user_search_entry_list_order:selected#code-desc}>ファイル名 ( 降順 )</option>
+				<option value="id-asc"{user_search_entry_list_order:selected#id-asc}>ID ( 昇順 )</option>
+				<option value="id-desc"{user_search_entry_list_order:selected#id-desc}>ID ( 降順 )</option>
+				<option value="sort-asc"{user_search_entry_list_order:selected#sort-asc}>表示順 ( 昇順 )</option>
+				<option value="sort-desc"{user_search_entry_list_order:selected#sort-desc}>表示順 ( 降順 )</option>
+			</select>
+			<input type="hidden" name="config[]" value="user_search_entry_list_order" />
+		</td>
+	</tr>
+	<tr>
+		<th>表示件数<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユーザ毎に表示される件数です。"></i></th>
+		<td>
+			<input type="text" name="user_search_entry_list_limit" value="{user_search_entry_list_limit}" size="4" class="acms-admin-form-width-mini" />
+			<input type="hidden" name="config[]" value="user_search_entry_list_limit" />
+			<input type="hidden" name="user_search_entry_list_limit:convert" value="a" />
+			<input type="hidden" name="user_search_entry_list_limit:validator#digits" id="validator-user_search_entry_list_limit-digits" />
+			<label for="validator-user_search_entry_list_limit-digits" class="validator-result-{user_search_entry_list_limit:validator#digits}">数字を入力して下さい。</label>
+		</td>
+	</tr>
+</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->

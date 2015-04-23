@@ -1,0 +1,41 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Category_EntryList -->
+<div>
+<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
+<!-- END categoryUl#front --><!-- BEGIN category:loop -->
+	<div class="panel panel-default">
+		<div class="panel-heading"><a href="{categoryUrl}">{categoryName}</a></div><!-- BEGIN entry:veil -->
+		<div class="list-group">
+		<!-- BEGIN entry:loop -->
+			<a href="{entryUrl}" class="list-group-item">{entryTitle}</a>
+		<!-- END entry:loop -->
+		</div>
+		<!-- END entry:veil -->
+	</div><!-- END category:loop --><!-- BEGIN categoryLi#rear -->
+	<!-- END categoryLi#rear --><!-- BEGIN categoryUl#rear -->
+<!-- END categoryUl#rear --><!-- END categoryEntryList:loop -->
+</div>
+<!-- END_MODULE Category_EntryList -->
+<!-- END layout#display -->
+
+
+<!-- BEGIN layout#dummy -->
+<div class="panel panel-default">
+	<div class="panel-heading"><a href="#">カテゴリーA</a></div>
+	<div class="list-group">
+		<a href="#" class="list-group-item">エントリーのタイトル</a>
+		<a href="#" class="list-group-item">エントリーのタイトル</a>
+		<a href="#" class="list-group-item">エントリーのタイトル</a>
+	</div>
+</div>
+<div class="panel panel-default">
+	<div class="panel-heading"><a href="#">カテゴリーB</a></div>
+	<div class="list-group">
+		<a href="#" class="list-group-item">エントリーのタイトル</a>
+		<a href="#" class="list-group-item">エントリーのタイトル</a>
+		<a href="#" class="list-group-item">エントリーのタイトル</a>
+	</div>
+</div>
+<!-- END layout#dummy -->

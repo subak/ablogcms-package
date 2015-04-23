@@ -1,0 +1,26 @@
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="%{BASE_URL}rss2.xml" />
+<link href="/css/normalize.css" rel="stylesheet" type="text/css" media="all">
+<link href="/css/acms-admin.min.css" rel="stylesheet">
+<link href="/css/acms.min.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="/css/offcanvas.css">
+<link href="/css/blog2015.min.css" rel="stylesheet" type="text/css" media="all">
+<style>
+<!-- BEGIN_MODULE Blog_Field -->
+.blogMainVisual{<!-- BEGIN backgroundColor:veil -->
+	background-color:{backgroundColor};<!-- END backgroundColor:veil --><!-- BEGIN mainImg:veil -->
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='%{ARCHIVES_DIR}{mainImg@path}', sizingMethod='scale')";
+	background-image:url(%{ARCHIVES_DIR}{mainImg@path});<!-- END mainImg:veil -->
+}
+<!-- END_MODULE Blog_Field -->
+</style>
+<!--[if IE 8]>
+<style>
+#nav{
+	position: static !important;
+	overflow-y: auto !important;
+}
+.blogHeaderNaviBtn{
+	display: none !important;
+}
+</style>
+<![endif]-->

@@ -10,7 +10,7 @@ ACMS.Config({
 
     //----------------------
     // google code prettify
-    googleCodePrettifyClass : 'prettyprint linenums', // prettyprint linenums, acms-pre
+    googleCodePrettifyClass : 'prettyprint linenums', // prettyprint linenums, acms-admin-pre
     googleCodePrettifyTheme : 'prettify', // prettify, desert, doxy, sons-of-obsidian, sunburst
 
     //--------
@@ -54,27 +54,34 @@ ACMS.Config({
 
     //----------------------------------
     // イメージビューア ( prettyPhoto )
-    ppMark  : 'a[rel^="prettyPhoto"]',
+    ppMark: 'a[rel^="prettyPhoto"]',
+    ppMinWindowSize: 800,
+    ppDisableMobile: true,
+    ppDisableTablet: true,
+    ppWindowTarget: '',
     ppConfig    : // http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
     {
         animation_speed: 'fast', /* fast/slow/normal */
-        slideshow: false, /* false OR interval time in ms */
+        slideshow: 3000, /* false OR interval time in ms */
         autoplay_slideshow: false, /* true/false */
         opacity: 0.80, /* Value between 0 and 1 */
-        show_title: false, /* true/false */
+        show_title: true, /* true/false */
         allow_resize: true, /* Resize the photos bigger than viewport. true/false */
         default_width: 500,
         default_height: 344,
         counter_separator_label: '/', /* The separator for the gallery counter 1 "of" 2 */
-        theme: 'light_square', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
+        theme: 'pp_default', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
+        horizontal_padding: 20, /* The padding on each side of the picture */
         hideflash: false, /* Hides all the flash object on a page, set to TRUE if flash appears over prettyPhoto */
         wmode: 'opaque', /* Set the flash wmode attribute */
         autoplay: true, /* Automatically start videos: True/False */
         modal: false, /* If set to true, only the close button will close the window */
+        deeplinking: true, /* Allow prettyPhoto to update the url to enable deeplinking. */
         overlay_gallery: true, /* If set to true, a gallery will overlay the fullscreen image on mouse over */
         keyboard_shortcuts: true, /* Set to false if you open forms inside prettyPhoto */
         changepicturecallback: function(){}, /* Called everytime an item is shown/changed */
         callback: function(){}, /* Called when prettyPhoto is closed */
+        ie6_fallback: true,
         markup: '<div class="pp_pic_holder"> \
                     <div class="ppt">&nbsp;</div> \
                     <div class="pp_top"> \
@@ -94,14 +101,15 @@ ACMS.Config({
                                         <a class="pp_previous" href="#">previous</a> \
                                     </div> \
                                     <div id="pp_full_res"></div> \
-                                    <div class="pp_details clearfix"> \
-                                        <p class="pp_description"></p> \
-                                        <a class="pp_close" href="#">Close</a> \
+                                    <div class="pp_details"> \
                                         <div class="pp_nav"> \
                                             <a href="#" class="pp_arrow_previous">Previous</a> \
                                             <p class="currentTextHolder">0/0</p> \
                                             <a href="#" class="pp_arrow_next">Next</a> \
                                         </div> \
+                                        <p class="pp_description"></p> \
+                                        {pp_social} \
+                                        <a class="pp_close" href="#">Close</a> \
                                     </div> \
                                 </div> \
                             </div> \
@@ -118,18 +126,19 @@ ACMS.Config({
         gallery_markup: '<div class="pp_gallery"> \
                             <a href="#" class="pp_arrow_previous">Previous</a> \
                             <div> \
-							<ul> \
-                                {gallery} \
-                            </ul> \
+                                <ul> \
+                                    {gallery} \
+                                </ul> \
                             </div> \
-							<a href="#" class="pp_arrow_next">Next</a> \
+                            <a href="#" class="pp_arrow_next">Next</a> \
                         </div>',
         image_markup: '<img id="fullResImage" src="{path}" />',
         flash_markup: '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="{width}" height="{height}"><param name="wmode" value="{wmode}" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="{path}" /><embed src="{path}" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="{width}" height="{height}" wmode="{wmode}"></embed></object>',
         quicktime_markup: '<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="{height}" width="{width}"><param name="src" value="{path}"><param name="autoplay" value="{autoplay}"><param name="type" value="video/quicktime"><embed src="{path}" height="{height}" width="{width}" autoplay="{autoplay}" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>',
         iframe_markup: '<iframe src ="{path}" width="{width}" height="{height}" frameborder="no"></iframe>',
-        inline_markup: '<div class="pp_inline clearfix">{content}</div>',
-        custom_markup: ''
+        inline_markup: '<div class="pp_inline">{content}</div>',
+        custom_markup: '',
+        social_tools: false
     },
     ppCaption2Title : true,
 
@@ -209,6 +218,10 @@ ACMS.Config({
         autoreload  : true
     },
 
+    moduleManagementMark        : '.js-module_management',
+    moduleManagementReloadMsg   : 'リロードして画面を更新しますか？',
+    moduleUnitDirectAddMsg      : 'モジュールユニットはダイレクトに追加できません。編集画面より追加してください。',
+
     //----------
     // autoHeight
     autoHeightMark   : '.js-autoheight',
@@ -218,6 +231,14 @@ ACMS.Config({
             '.column2'  : '2'
         }
     ],
+
+    //-------------
+    // autoHeightR
+    autoHeightRMark : '.js-autoheight-r',
+    autoHeightRConf : {
+        style   : 'min-height',
+        offset  : 0
+    },
 
     //--------------------
     // 日付選択カレンダー
@@ -302,7 +323,7 @@ ACMS.Config({
     acmsAlertCloseMark  : '.js-acms-alert-close',
     acmsAlertCloseConfig  :
     {
-        target  : '.acms-alert'
+        target  : '.acms-admin-alert'
     },
     acmsAlertCloseArray : [
     //    {
@@ -381,7 +402,6 @@ ACMS.Config({
 
     //-------------------
     // yahoo map (YOLP)
-    yahoo_api_url   : 'http://js.api.olp.yahooapis.jp/OpenLocalPlatform/V1/jsapi?appid=' + ACMS.Config.yahooApiKey,
     yolpLayerSet    : 'on',
 
     //---------------------------
@@ -429,11 +449,19 @@ ACMS.Config({
 
     //----------------
     // ユニットの幅修正
-    unitFixAlign    : 'on', // on/off
+    unitFixAlign    : 'on', // on, off
+
+    //--------------------
+    // ユニットグループの整列
+    unitGroupAlign          : true,
+    unitGroupAlignMark      : '.js-unit_group-align',
+    unitGroupAlignClass     : 'acms-admin-clear', // clear: both;
+    unitGroupAlignInterval  : 400,
 
     //------------------------
     // 検索ワードのハイライト
     searchKeywordHighlightMark  : '.entry, .entryColumn, .entryTitle', // セレクタ要素内に検索ワードが含まれる時、該当箇所がハイライトされます。
+    searchKeywordMatchTag       : 'mark',
     searchKeywordMatchClass     : 'highlight',
     // 例)
     // 検索対象:<div.entry><p>いろはにほへと</p></div> 
@@ -475,8 +503,7 @@ ACMS.Config({
 
     //-------------------
     // observe file size
-	// CMS-1736：IE10、エントリー編集時にカスタムフィールド画像が未変更の場合に消える
-    //observeFileSizeMark : '.js-observeFileSize',
+    observeFileSizeMark : '.js-observeFileSize',
 
     //--------------
     // post include
@@ -522,7 +549,7 @@ ACMS.Config({
     viewingMark         : 'a.js-viewing-receptor', // 1.3.0 未満のバージョンからアップデートする場合には 'a' と指定してください。
     viewingId           : 'viewing',
     viewingClass        : 'viewing',
-    viewingEraseMark    : 'a:not(.js-viewing-indelible)', // dispaly:blockの要素は取り除かれません
+    viewingEraseMark    : 'a:not(.js-viewing-indelible)', // display:blockの要素は取り除かれません
 
     //--------------------
     // link outside blank
@@ -564,8 +591,8 @@ ACMS.Config({
     //--------------
     // web storage
     webStorage          : 'on',
-    webStorageType      : 'local', // local or session
-    webStorageCapacity  : 'one', // one or limitless
+    webStorageType      : 'local',      // local or session
+    webStorageCapacity  : 'limitless',  // one or limitless
     webStorageInterval  : 2000,
     
     //-----------------
@@ -607,8 +634,7 @@ ACMS.Config({
     //-----------
     // input count up
     countupMark   : '.js-countup',
-    countupMarkNum   : 'countnum',
-    countupMarkOver   : 'countover',
+    countupMarkOver   : 'acms-admin-text-danger',
 
     //----------------------
     // external form button
@@ -626,33 +652,33 @@ ACMS.Config.Admin   = {
     // arg guidance
     argGuidance       :
     {
-        'Entry_Body'        : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field', 'start', 'end', 'page', 'order'],
-        'Entry_List'        : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field', 'start', 'end', 'page', 'order'],
-        'Entry_Photo'       : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field', 'start', 'end', 'page', 'order'],
-        'Entry_Headline'    : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field', 'start', 'end', 'page', 'order'],
-        'Entry_Summary'     : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field', 'start', 'end', 'page', 'order'],
-        'Entry_ArchiveList' : ['bid', 'cid', 'keyword', 'tag', 'field'],
+        'Entry_Body'        : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field_', 'start', 'end', 'page', 'order'],
+        'Entry_List'        : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field_', 'start', 'end', 'page', 'order'],
+        'Entry_Photo'       : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field_', 'start', 'end', 'page', 'order'],
+        'Entry_Headline'    : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field_', 'start', 'end', 'page', 'order'],
+        'Entry_Summary'     : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field_', 'start', 'end', 'page', 'order'],
+        'Entry_ArchiveList' : ['bid', 'cid', 'keyword', 'tag', 'field_'],
         'Entry_TagRelational':['bid', 'cid', 'eid', 'keyword', 'start', 'end'],
         'Entry_Continue'    : ['eid'],
         'Entry_Field'       : ['eid'],
         'Entry_Calendar'    : ['bid','cid','start'],
 
-        'Unit_List'         : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field', 'start', 'end', 'page', 'order'],
+        'Unit_List'         : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field_', 'start', 'end', 'page', 'order'],
 
-        'Category_List'     : ['bid', 'cid', 'keyword', 'field', 'start', 'end'],
-        'Category_EntryList': ['bid', 'uid', 'cid', 'keyword', 'tag', 'field', 'start', 'end'],
-        'Category_EntrySummary': ['bid', 'uid', 'cid', 'keyword', 'tag', 'field', 'start', 'end'],
+        'Category_List'     : ['bid', 'cid', 'keyword', 'field_', 'start', 'end'],
+        'Category_EntryList': ['bid', 'uid', 'cid', 'keyword', 'tag', 'field_', 'start', 'end'],
+        'Category_EntrySummary': ['bid', 'uid', 'cid', 'keyword', 'tag', 'field_', 'start', 'end'],
         'Category_Field'    : ['cid'],
 
         'User_Profile'      : ['bid', 'uid'],
         'User_Field'        : ['uid'],
-        'User_Search'       : ['bid', 'uid', 'keyword', 'field', 'page'],
+        'User_Search'       : ['bid', 'uid', 'keyword', 'field_', 'page'],
 
         'Blog_Field'        : ['bid'],
-        'Blog_ChildList'    : ['bid', 'keyword', 'field'],
+        'Blog_ChildList'    : ['bid', 'keyword', 'field_'],
 
-        'Tag_Cloud'         : ['bid', 'eid', 'field', 'start', 'end'],
-        'Tag_Filter'        : ['bid', 'field', 'tag'],
+        'Tag_Cloud'         : ['bid', 'eid', 'field_', 'start', 'end'],
+        'Tag_Filter'        : ['bid', 'field_', 'tag'],
 
         'Calendar_Month'    : ['bid', 'cid', 'start', 'end'],
         'Calendar_Year'     : ['bid', 'cid'],
@@ -668,25 +694,25 @@ ACMS.Config.Admin   = {
         'Trackback_Body'    : ['eid'],
         'Trackback_List'    : ['bid'],
 
-        'Feed_Rss2'         : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'field', 'start', 'end'],
+        'Feed_Rss2'         : ['bid', 'uid', 'cid', 'eid', 'keyword', 'tag', 'start', 'end'],
         'Feed_ExList'       : [],
-        'Sitemap'           : ['field'],
+        'Sitemap'           : [''],
 
         'Shop_Cart_List'    : [],
         'Case_Time'         : [],
 
         'Alias_List'        : ['bid'],
 
-        'Field_ValueList'   : ['bid', 'field'],
+        'Field_ValueList'   : ['bid', 'field_'],
 
-        'Api_Twitter_Statuses_HomeTimeline' : ['bid', 'field', 'page'],
-        'Api_Twitter_Statuses_UserTimeline' : ['bid', 'field', 'page'],
-        'Api_Twitter_Search'                : ['bid', 'field', 'keyword', 'page'],
-        'Api_Twitter_List_Statuses'         : ['bid', 'field', 'page'],
-        'Api_Twitter_List_Members'          : ['bid', 'field', 'page'],
+        'Api_Twitter_Statuses_HomeTimeline' : ['bid', 'field_', 'page'],
+        'Api_Twitter_Statuses_UserTimeline' : ['bid', 'field_', 'page'],
+        'Api_Twitter_Search'                : ['bid', 'field_', 'keyword', 'page'],
+        'Api_Twitter_List_Statuses'         : ['bid', 'field_', 'page'],
+        'Api_Twitter_List_Members'          : ['bid', 'field_', 'page'],
 
-        'Api_Instagram_Users_Media_Recent'  : ['bid', 'field'],
-        'Api_Instagram_Users_Media_Liked'   : ['bid', 'field'],
+        'Api_Instagram_Users_Media_Recent'  : ['bid', 'field_'],
+        'Api_Instagram_Users_Media_Liked'   : ['bid', 'field_'],
 
         'Api_Bing_WebSearch'    : ['bid', 'keyword', 'page'],
         'Api_Bing_ImageSearch'  : ['bid', 'keyword', 'page'],
@@ -750,6 +776,78 @@ ACMS.Config.Admin   = {
         'Alias_List'        : [],
 
         'Field_ValueList'   : ['bid_axis'],
+
+        'Api_Twitter_Statuses_HomeTimeline' : [],
+        'Api_Twitter_Statuses_UserTimeline' : [],
+        'Api_Twitter_Search'                : [],
+        'Api_Twitter_List_Statuses'         : [],
+        'Api_Twitter_List_Members'          : [],
+
+        'Api_Instagram_Users_Media_Recent'  : [],
+        'Api_Instagram_Users_Media_Liked'   : [],
+
+        'Api_Bing_WebSearch'    : [],
+        'Api_Bing_ImageSearch'  : [],
+
+        'Plugin_Schedule'       : []
+    },
+
+    //--------------------
+    // multi arg guidance
+    multiArgGuidance       :
+    {
+        'Entry_Body'        : ['bid', 'uid', 'cid', 'eid'],
+        'Entry_List'        : ['bid', 'uid', 'cid', 'eid'],
+        'Entry_Photo'       : ['bid', 'uid', 'cid', 'eid'],
+        'Entry_Headline'    : ['bid', 'uid', 'cid', 'eid'],
+        'Entry_Summary'     : ['bid', 'uid', 'cid', 'eid'],
+        'Entry_ArchiveList' : ['bid', 'uid', 'cid', 'eid'],
+        'Entry_TagRelational':['bid', 'uid', 'cid', 'eid'],
+        'Entry_Continue'    : ['bid', 'uid', 'cid', 'eid'],
+        'Entry_Field'       : ['bid', 'uid', 'cid', 'eid'],
+        'Entry_Calendar'    : ['bid', 'uid', 'cid', 'eid'],
+
+        'Unit_List'         : [],
+
+        'Category_List'     : [],
+        'Category_EntryList': [],
+        'Category_EntrySummary': [],
+        'Category_Field'    : [],
+
+        'User_Profile'      : [],
+        'User_Field'        : [],
+        'User_Search'       : [],
+
+        'Blog_Field'        : [],
+        'Blog_ChildList'    : [],
+
+        'Tag_Cloud'         : [],
+        'Tag_Filter'        : [],
+
+        'Calendar_Month'    : [],
+        'Calendar_Year'     : [],
+
+        'Links'             : [],
+        'Banner'            : [],
+        'Navigation'        : [],
+        'Topicpath'         : [],
+
+        'Comment_Body'      : [],
+        'Comment_List'      : [],
+
+        'Trackback_Body'    : [],
+        'Trackback_List'    : [],
+
+        'Feed_Rss2'         : [],
+        'Feed_ExList'       : [],
+        'Sitemap'           : [],
+
+        'Shop_Cart_List'    : [],
+        'Case_Time'         : [],
+
+        'Alias_List'        : [],
+
+        'Field_ValueList'   : [],
 
         'Api_Twitter_Statuses_HomeTimeline' : [],
         'Api_Twitter_Statuses_UserTimeline' : [],

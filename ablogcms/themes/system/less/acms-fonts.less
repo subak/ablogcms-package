@@ -4,17 +4,17 @@
 
 @font-face {
     font-family:"acms-fonts";
-    src:url("../fonts/acms-fonts-a75316e7951549c82bfbdbd6a700a19c.eot");
+    src:url("@{acms-font}acms-fonts-a75316e7951549c82bfbdbd6a700a19c.eot");
     font-weight:normal;
     font-style:normal;
 }
 @font-face {
 	font-family:"acms-fonts";
-	src:url("../fonts/acms-fonts-a75316e7951549c82bfbdbd6a700a19c.eot");
-	src:url("../fonts/acms-fonts-a75316e7951549c82bfbdbd6a700a19c.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/acms-fonts-a75316e7951549c82bfbdbd6a700a19c.woff") format("woff"),
-		url("../fonts/acms-fonts-a75316e7951549c82bfbdbd6a700a19c.ttf") format("truetype"),
-		url("../fonts/acms-fonts-a75316e7951549c82bfbdbd6a700a19c.svg?#acms-fonts") format("svg");
+	src:url("@{acms-font}acms-fonts-a75316e7951549c82bfbdbd6a700a19c.eot");
+	src:url("@{acms-font}acms-fonts-a75316e7951549c82bfbdbd6a700a19c.eot?#iefix") format("embedded-opentype"),
+		url("@{acms-font}acms-fonts-a75316e7951549c82bfbdbd6a700a19c.woff") format("woff"),
+		url("@{acms-font}acms-fonts-a75316e7951549c82bfbdbd6a700a19c.ttf") format("truetype"),
+		url("@{acms-font}acms-fonts-a75316e7951549c82bfbdbd6a700a19c.svg?#acms-fonts") format("svg");
 	font-weight:normal;
 	font-style:normal;
 }
@@ -22,7 +22,8 @@
 .acms-icon {
 	font-family:"acms-fonts";
 	display:inline-block;
-	vertical-align:middle;
+	position: relative;
+		top: 1px;
 	line-height:1;
 	font-weight:normal;
 	font-style:normal;

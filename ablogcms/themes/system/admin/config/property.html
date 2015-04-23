@@ -1,44 +1,44 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title">
-			<i class="acms-icon acms-icon-config_property"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title">
+			<i class="acms-admin-icon acms-admin-icon-config_property"></i><!-- BEGIN_MODULE Admin_Rule_Name -->
 				<strong>ルール : {name} の</strong><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 				<strong>モジュールID : {label} ( {identifier} ) の</strong><!-- END_MODULE Admin_Module_Name -->プロパティ設定
 		</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Config -->
 <!-- BEGIN_IF [{notice_mess}/nem/] -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>プロパティ情報を保存しました</p><!-- END_IF -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>プロパティ情報を保存しました</p><!-- END_IF -->
 
-<form action="" method="post" class="acms-form">
+<form action="" method="post" class="acms-admin-form">
 	<div class="js-acms_fix_marker js-acms_fix_target acms_fix_bg">
 		<div class="acms_fix_bg_index">
-			<a href="{indexUrl}" class="acms-btn-admin">一覧</a>
+			<a href="{indexUrl}" class="acms-admin-btn-admin">一覧</a>
 
-			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save" />
+			<input type="submit" name="ACMS_POST_Config" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save" />
 
-			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-btn-admin acms-float-right"><i class="acms-icon acms-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
+			<!-- BEGIN_MODULE Touch_SessionWithAdministration --><a href="{shortcutUrl}" class="acms-admin-btn-admin acms-admin-float-right acms-admin-float-none-sp"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Touch_SessionWithAdministration -->
 		</div>
 	</div>
 
-	<p class="transaction-notice-{config:validator} acms-alert acms-alert-danger">コンフィグを保存出来ませんでした。</p>
+	<p class="transaction-notice-{config:validator} acms-admin-alert acms-admin-alert-danger">コンフィグを保存出来ませんでした。</p>
 	
-	<h2 class="acms-admin-title2">メタ情報</h2>
-	<table class="adminTable acms-table-admin-edit">
+	<h2 class="acms-admin-admin-title2">メタ情報</h2>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>キーワード<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このサイトの&lt;meta name=&quot;keywords&quot;&gt;の内容として使用できます。「,（コンマ）」で区切ることで複数登録することができます。この入力内容は、グローバル変数の&#37;&#123;META_KEYWORDS}で表示できます。"></i></th>
+			<th>キーワード<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="このサイトの&lt;meta name=&quot;keywords&quot;&gt;の内容として使用できます。「,（コンマ）」で区切ることで複数登録することができます。この入力内容は、グローバル変数の&#37;&#123;META_KEYWORDS}で表示できます。"></i></th>
 			<td>
 				<textarea name="meta_keywords" cols="50" rows="5">{meta_keywords}</textarea>
 				<input type="hidden" name="config[]" value="meta_keywords" />
 			</td>
 		</tr>
 		<tr>
-			<th>説明 ( ディスクリプション ) <i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このサイトの&lt;meta name=&quot;description&quot;&gt;の内容として使用できます。この入力内容は、グローバル変数の&#37;&#123;META_DESCRIPTION}で表示できます。"></i></th>
+			<th>説明 ( ディスクリプション ) <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="このサイトの&lt;meta name=&quot;description&quot;&gt;の内容として使用できます。この入力内容は、グローバル変数の&#37;&#123;META_DESCRIPTION}で表示できます。"></i></th>
 			<td>
 				<textarea name="meta_description" cols="50" rows="5">{meta_description}</textarea>
 				<input type="hidden" name="config[]" value="meta_description" />
@@ -46,10 +46,10 @@
 		</tr>
 	</table>
 
-	<h2 class="acms-admin-title2">ウェブサービス</h2>
-	<table class="adminTable acms-table-admin-edit">
+	<h2 class="acms-admin-admin-title2">ウェブサービス</h2>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>YahooアプリケーションID<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="取得した<a href='https://e.developer.yahoo.co.jp/webservices/register_application' target='_blank'>YahooアプリケーションID</a>をセットします。<a href='http://srd.yahoo.jp/olp/about' target='_blank'>Yahoo地図（YOLP）</a>"></i></th>
+			<th>YahooアプリケーションID<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="取得した<a href='https://e.developer.yahoo.co.jp/webservices/register_application' target='_blank'>YahooアプリケーションID</a>をセットします。<a href='http://srd.yahoo.jp/olp/about' target='_blank'>Yahoo地図（YOLP）</a>"></i></th>
 			<td>
 				<p>
 					Application ID<br />
@@ -59,7 +59,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th><a href="http://datamarket.azure.com/dataset/bing/search">Bing Search API</a><i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="取得した<a href='https://datamarket.azure.com/account/keys' target='_blank'>Application Key</a>をセットします。"></i></th>
+			<th><a href="http://datamarket.azure.com/dataset/bing/search">Bing Search API</a><i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="取得した<a href='https://datamarket.azure.com/account/keys' target='_blank'>Application Key</a>をセットします。"></i></th>
 			<td>
 				<p>
 					Account Key<br />
@@ -69,33 +69,35 @@
 			</td>
 		</tr>
 		<tr>
-			<th><a href="https://dev.twitter.com/apps">Twitter アプリケーション</a><i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="取得した<a href='https://twitter.com/apps' target='_blank'>Twitterアプリケーション</a>の情報をセットします。<br>コールバックURL&nbsp;:&nbsp;%{BLOG_URL}callback/twitter.html"></i></th>
+			<th><a href="https://apps.twitter.com/">Twitter アプリケーション</a><i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="取得した<a href='https://apps.twitter.com/' target='_blank'>Twitterアプリケーション</a>の情報をセットします。"></i></th>
 			<td>
 				<p>
-					API Key<br /><input type="text" name="twitter_consumer_key" value="{twitter_consumer_key}" size="60" />
+					Consumer Key<br /><input type="text" name="twitter_consumer_key" value="{twitter_consumer_key}" size="60" />
 					<input type="hidden" name="config[]" value="twitter_consumer_key" />
 				</p>
 				<p>
-					API Secret<br /><input type="text" name="twitter_consumer_secret" value="{twitter_consumer_secret}" size="60" />
+					Consumer Secret<br /><input type="text" name="twitter_consumer_secret" value="{twitter_consumer_secret}" size="60" />
 					<input type="hidden" name="config[]" value="twitter_consumer_secret" />
 				</p>
+				<p>Callback URL : %{BLOG_URL}callback/twitter.html</p>
 			</td>
 		</tr>
 		<tr>
-			<th><a href="https://dev.twitter.com/apps">Twitter（SNSログイン用）</a><i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="取得した<a href='https://twitter.com/apps' target='_blank'>Twitterアプリケーション</a>の情報をセットします。(SNSログインで使用)<br>コールバックURL&nbsp;:&nbsp;<br>%{BLOG_URL}callback/signin/twitter.html"></i></th>
+			<th><a href="https://apps.twitter.com/">Twitter（SNSログイン用）</a><i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="取得した<a href='https://apps.twitter.com/' target='_blank'>Twitterアプリケーション</a>の情報をセットします。(SNSログインで使用)<br>コールバックURL&nbsp;:&nbsp;<br>%{BLOG_URL}callback/signin/twitter.html"></i></th>
 			<td>
 				<p>
-					API Key<br /><input type="text" name="twitter_sns_login_consumer_key" value="{twitter_sns_login_consumer_key}" size="60" />
+					Consumer Key<br /><input type="text" name="twitter_sns_login_consumer_key" value="{twitter_sns_login_consumer_key}" size="60" />
 					<input type="hidden" name="config[]" value="twitter_sns_login_consumer_key" />
 				</p>
 				<p>
-					API Secret<br /><input type="text" name="twitter_sns_login_consumer_secret" value="{twitter_sns_login_consumer_secret}" size="60" />
+					Consumer Secret<br /><input type="text" name="twitter_sns_login_consumer_secret" value="{twitter_sns_login_consumer_secret}" size="60" />
 					<input type="hidden" name="config[]" value="twitter_sns_login_consumer_secret" />
 				</p>
+				<p>Callback URL : %{BLOG_URL}callback/twitter.html</p>
 			</td>
 		</tr>
 		<tr>
-			<th><a href="http://developers.facebook.com/">Facebook アプリケーション</a><i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="取得した<a href='http://developers.facebook.com/' target='_blank'>Facebookアプリケーション</a>の情報をセットします。"></i></th>
+			<th><a href="http://developers.facebook.com/">Facebook アプリケーション</a><i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="取得した<a href='http://developers.facebook.com/' target='_blank'>Facebookアプリケーション</a>の情報をセットします。"></i></th>
 			<td>
 				<p>
 					Application ID<br /><input type="text" name="facebook_app_id" value="{facebook_app_id}" size="60" />
@@ -108,7 +110,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th><a href="http://instagram.com/developer/">Instagram アプリケーション</a><i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="取得した<a href='http://instagram.com/developer/' target='_blank'>Instagramアプリケーション</a>の情報をセットします。"></i></th>
+			<th><a href="http://instagram.com/developer/">Instagram アプリケーション</a><i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="取得した<a href='http://instagram.com/developer/' target='_blank'>Instagramアプリケーション</a>の情報をセットします。"></i></th>
 			<td>
 				<p>
 					Client Id<br /><input type="text" name="instagram_client_id" value="{instagram_client_id}" size="60" />
@@ -125,7 +127,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>Google Analytics Mobile<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="Google Analyticsの携帯電話用コードを参考に、アカウントIDを入力します。a-blog cmsインストール先ディレクトリから、ダウンロードしてきたga.phpへのパスを設定します。"></i></th>
+			<th>Google Analytics Mobile<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="Google Analyticsの携帯電話用コードを参考に、アカウントIDを入力します。a-blog cmsインストール先ディレクトリから、ダウンロードしてきたga.phpへのパスを設定します。"></i></th>
 			<td>
 				<p>
 					Account<br /><input type="text" name="google_analytics_mobile_account" value="{google_analytics_mobile_account}" size="20" />
@@ -139,38 +141,38 @@
 		</tr>
 	</table>
 
-	<h2 class="acms-admin-title2">Pingショット</h2>
-	<table class="adminTable acms-table-admin-edit">
+	<h2 class="acms-admin-admin-title2">Pingショット</h2>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>エンドポイント<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="Ping送信先のRPCエンドポイントを指定します。"></i></th>
+			<th>エンドポイント<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="Ping送信先のRPCエンドポイントを指定します。"></i></th>
 			<td>
-				<ul class="js-fieldgroup-sortable acms-list-nostyle"><!-- BEGIN ping_weblog_updates_endpoint:loop -->
-					<li class="sortable-item acms-margin-bottom-mini">
+				<ul class="js-fieldgroup-sortable acms-admin-list-nostyle"><!-- BEGIN ping_weblog_updates_endpoint:loop -->
+					<li class="sortable-item acms-admin-margin-bottom-mini">
 						<input type="text" name="ping_weblog_updates_endpoint[]" value="{ping_weblog_updates_endpoint}" size="60" />
-						<input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger acms-margin-top-bottom-sp" />
+						<input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp" />
 					</li><!-- END ping_weblog_updates_endpoint:loop -->
-					<li class="sortable-item item-template acms-margin-bottom-mini">
+					<li class="sortable-item item-template acms-admin-margin-bottom-mini">
 						<input type="text" name="ping_weblog_updates_endpoint[]" size="60" />
-						<input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger acms-margin-top-bottom-sp" />
+						<input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp" />
 					</li>
-					<li><input type="button" value="追加" class="item-insert acms-btn-admin" /></li>
+					<li><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></li>
 				</ul>
 				<input type="hidden" name="config[]" value="ping_weblog_updates_endpoint" />
 			</td>
 		</tr>
 		<tr>
-			<th>拡張エンドポイント<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="拡張規格に対応した、Ping送信先のエンドポイントを指定します。"></i></th>
+			<th>拡張エンドポイント<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="拡張規格に対応した、Ping送信先のエンドポイントを指定します。"></i></th>
 			<td>
-				<ul class="js-fieldgroup-sortable acms-list-nostyle"><!-- BEGIN ping_weblog_updates_extended_endpoint:loop -->
-					<li class="sortable-item acms-margin-bottom-mini">
+				<ul class="js-fieldgroup-sortable acms-admin-list-nostyle"><!-- BEGIN ping_weblog_updates_extended_endpoint:loop -->
+					<li class="sortable-item acms-admin-margin-bottom-mini">
 						<input type="text" name="ping_weblog_updates_extended_endpoint[]" value="{ping_weblog_updates_extended_endpoint}" size="60" />
-						<input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger acms-margin-top-bottom-sp" />
+						<input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp" />
 					</li><!-- END ping_weblog_updates_extended_endpoint:loop -->
-					<li class="sortable-item item-template acms-margin-bottom-mini">
+					<li class="sortable-item item-template acms-admin-margin-bottom-mini">
 						<input type="text" name="ping_weblog_updates_extended_endpoint[]" size="60" />
-						<input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger acms-margin-top-bottom-sp" />
+						<input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp" />
 					</li>
-					<li><input type="button" value="追加" class="item-insert acms-btn-admin" /></li>
+					<li><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></li>
 				</ul>
 				<input type="hidden" name="config[]" value="ping_weblog_updates_extended_endpoint" />
 			</td>

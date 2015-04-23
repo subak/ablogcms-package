@@ -1,0 +1,85 @@
+<ul class="blogCartFlowList">
+	<li class="flowBack"><span class="blogCartFlowListNumber">1</span>ご注文商品一覧</li>
+	<li class="flowBack"><span class="blogCartFlowListNumber">2</span>ご住所のご確認</li>
+	<li class="flowBack"><span class="blogCartFlowListNumber">3</span>配送・お支払い方法</li>
+	<li class="flowBack"><span class="blogCartFlowListNumber">4</span>ご注文内容の確認</li>
+	<li class="current"><span class="blogCartFlowListNumber">5</span>ご注文完了</li>
+</ul>
+
+<!-- 各決済ページコンテンツ▼ -->
+<h2>5. ご注文ありがとうございます</h2>
+<div id="container">
+<!-- BEGIN default -->
+<div>
+	<p>ご登録のメールアドレスに、今回のご注文についての確認メールを送信いたしました。</p>
+	<p>今回のご注文の伝票番号は <strong>{code}</strong> です。<br />
+	   お問い合わせの際には、この番号をおしらせください。</p>
+</div>
+<!--#include file="/include/result.html" -->
+<!-- END default -->
+
+<!-- BEGIN card -->
+
+<p>クロネコ、PayPay のブロックを参考に実装下さい。</p>
+
+<!-- END card -->
+
+<!-- BEGIN kuroneko -->
+
+<div>
+	<p>ご登録のメールアドレスに、今回のご注文についての確認メールを送信いたしました。</p>
+	<p>今回のご注文の伝票番号は <strong>{code}</strong> です。<br />
+	   お問い合わせの際には、この番号をおしらせください。</p>
+</div>
+
+<div>
+<p>【クレジットカード、コンビニ(オンライン)、電子マネー、ネットバンキング】でお支払いされるお客様は下記ボタンを押して手続きを行ってください。</p>
+
+<p>※ 以下のフォームは参考であり、そのままでは動作しません。</p>
+
+	<form name="UserForm" action="******" method="post" target="_blank" accept-charset="shift_jis" id="creditBtn">
+		<input type="submit" name="kuronekoPayment" value="クロネコWebコレクト決済へ" class="acms-btn acms-btn-primary">
+		<input type="hidden" name="TRS_MAP" value="******" />
+		<input type="hidden" name="trader_code" id="trader_code" value="******" />
+		<input type="hidden" name="order_no" id="order_no" value="******" />
+		<input type="hidden" name="goods_name" id="goods_name" value="******" />
+		<input type="hidden" name="settle_price" id="settle_price" value="******" />
+		<input type="hidden" name="buyer_name_kanji" id="buyer_name_kanji" value="******" />
+		<input type="hidden" name="buyer_tel" id="buyer_tel" value="******" />
+		<input type="hidden" name="buyer_email" id="buyer_email" value="******" />
+	</form>
+
+</div>
+
+<!--#include file="/include/result.html" -->
+<!-- END kuroneko -->
+
+<!-- BEGIN paypal -->
+<div>
+	<p>ご登録のメールアドレスに、今回のご注文についての確認メールを送信いたしました。</p>
+	<p>今回のご注文の伝票番号は <strong>{code}</strong> です。<br />
+	   お問い合わせの際には、この番号をおしらせください。</p>
+</div>
+
+<div>
+<p>【PayPal】でお支払いされるお客様は下記ボタンを押して手続きを行ってください。</p>
+
+<p>※ 以下のフォームは参考であり、そのままでは動作しません。</p>
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="creditBtn">
+		<input type="submit" value="PayPal決済" class="acms-btn acms-btn-primary" />
+		<input type="hidden" name="cmd" value="_cart" />
+		<input type="hidden" name="upload" value="1" />
+		<input type="hidden" name="currency_code" value="JPY" />
+		<input type="hidden" name="business" value="******" />
+		<input type="hidden" name="amount_1" value="******" />
+		<input type="hidden" name="item_name_1" value="ショップ決済（Paypal)" />
+	</form>
+</div>
+
+<!--#include file="/include/result.html" -->
+<!-- END paypal -->
+
+<!-- BEGIN_MODULE Shop2_Form_Tracking -->
+<!-- END_MODULE Shop2_Form_Tracking -->
+<p id="topBack"><a href="/">TOPページに戻る</a></p>
+</div>

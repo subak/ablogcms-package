@@ -1,3 +1,6 @@
+/* ------------------------------  
+ タイポグラフィ
+------------------------------- */
 /* ---------------
  見出し
 --------------- */
@@ -108,7 +111,7 @@
 	clear: left;
 	float: left;
 	width: 160px;
-	text-align: right;
+	text-align: left;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
@@ -116,7 +119,7 @@
 
 .acms-dl-horizontal dd,
 .acms-dl-line dd{
-	padding-left: 180px;
+	padding-left: 0;
 	.clearfix() 
 }
 
@@ -125,15 +128,15 @@
 	border-bottom: solid 1px #CCC;
 }
 
-@media (max-width: 768px) {
+@media (min-width : @breakpoint-md-min) {
 	.acms-dl-horizontal dt,
 	.acms-dl-line dt{
-		float: none;
-		text-align: left;
+		float: left;
+		text-align: right;
 	}
 	.acms-dl-horizontal dd,
 	.acms-dl-line dd{
-		padding-left: 0;
+		padding-left: 180px;
 	}
 }
 
@@ -162,7 +165,9 @@
 [class*="acms-icon-"] {
 	font-family:"acms-fonts";
 	display:inline-block;
-	vertical-align:middle;
+	position: relative;
+		top: 1px;
+	// vertical-align:middle;
 	line-height:1;
 	font-weight:normal;
 	font-style:normal;

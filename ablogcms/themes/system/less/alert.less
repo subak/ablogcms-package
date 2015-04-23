@@ -1,16 +1,14 @@
-/* ---------------
- alert
---------------- */
+/* ------------------------------  
+ アラート
+------------------------------- */
 .acms-alert {
 	margin-bottom: 20px;
-	padding: 20px;
-	border: 1px solid lighten(@acms-alert-black, 25%);
-	background: lighten(@acms-alert-black, 55%);
-	border-radius: 5px;
-	color: lighten(@acms-alert-black, 10%);
-	-moz-animation: anime1 2s ease 1 alternate;
-	-webkit-animation: anime1 2s ease  1 alternate;
-	animation: anime1 2s ease  1 alternate;
+	padding: @acms-alert-padding;
+	border: @acms-alert-black-border;
+	background: @acms-alert-black-bg;
+	border-radius: @acms-alert-border-radius;
+	color: @acms-alert-black-text-color;
+	.animation(anime1 2s ease 1 alternate;);
 }
 
 // アニメーション
@@ -31,21 +29,23 @@
 
 // info
 .acms-alert-info {
-	border: 1px solid spin(lighten(@acms-alert-color, 10%), 50);
-	background: spin(lighten(@acms-alert-color, 35%), 50);
-	color: spin(lighten(@acms-alert-color, 10%), 50);
+	border: @acms-alert-info-border;
+	background: @acms-alert-info-bg;
+	color: @acms-alert-info-text-color;
+	//閉じるボタン　文字カラー
 	.js-acms-alert-close {
-		color: spin(lighten(@acms-alert-color, 10%), 50);
+		color: @acms-alert-info-close-color;
 	}
 }
 
 // danger
 .acms-alert-danger {
-	border: 1px solid spin(lighten(@acms-alert-color, 10%), -180);
-	background: spin(lighten(@acms-alert-color, 35%), -180);
-	color: spin(lighten(@acms-alert-color, 10%), -180);
-	 .js-acms-alert-close {
-		color: spin(lighten(@acms-alert-color, 10%), -180);
+	border: @acms-alert-danger-border;
+	background: @acms-alert-danger-bg;
+	color: @acms-alert-danger-text-color;
+	//閉じるボタン　文字カラー
+	.js-acms-alert-close {
+		color: @acms-alert-danger-close-color;
 	}
 }
 

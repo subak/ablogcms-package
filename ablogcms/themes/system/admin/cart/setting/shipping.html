@@ -1,25 +1,25 @@
-<h2 class="acms-admin-title2">送料の設定（配送方法の手数料に何も入力しないと，この送料が適用されます）</h2>
-<table class="adminTable acms-table-admin-edit">
+<h2 class="acms-admin-admin-title2">送料の設定（配送方法の手数料に何も入力しないと，この送料が適用されます）</h2>
+<table class="adminTable acms-admin-table-admin-edit">
 	<tr>
-		<th>送料無料のしきい値<i class="acms-icon acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="送料無料のしきい値を設定します。"></i></th>
+		<th>送料無料のしきい値<i class="acms-admin-icon acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="送料無料のしきい値を設定します。"></i></th>
 		<td>
 		<input type="text" name="shop_order_shipping_limit" value="{shop_order_shipping_limit}" size="6" />
 		<input type="hidden" name="config[]" value="shop_order_shipping_limit" />円 （各種手数料を除いた合計金額がこの値を超えると無料になります）
 		</td>
 	</tr>
 	<tr>
-		<th>送料の全国一括設定<i class="acms-icon acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="送料の全国一括設定します。"></i></th>
+		<th>送料の全国一括設定<i class="acms-admin-icon acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="送料の全国一括設定します。"></i></th>
 		<td>
 		<input type="text" name="shop_order_shipping_common" value="{shop_order_shipping_common}" size="6" />
 		<input type="hidden" name="config[]" value="shop_order_shipping_common" />円 （入力すると送料が地域を問わず共通になります）
 		</td>
 	</tr>
 	<tr>
-		<th>配送地域と送料の設定<i class="acms-icon acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="各地の配送地域と送料の設定します。"></i>
+		<th>配送地域と送料の設定<i class="acms-admin-icon acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="各地の配送地域と送料の設定します。"></i>
 		</th>
 		<td>
 			<table>
-				<tr class="thX"><th class="acms-table-left">地域</th><th class="acms-table-left">送料</th></tr>
+				<tr class="thX"><th class="acms-admin-table-left">地域</th><th class="acms-admin-table-left">送料</th></tr>
 				<tr>
 					<td><input type="text" name="shop_order_shipping_label[]" value="{shop_order_shipping_label}" /></td>
 					<td><input type="text" name="shop_order_shipping_charge[]" value="{shop_order_shipping_charge}" /></td>

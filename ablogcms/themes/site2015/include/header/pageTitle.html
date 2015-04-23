@@ -1,0 +1,25 @@
+		<!-- BEGIN_MODULE Touch_Category --><!-- BEGIN_MODULE Category_Field --><div class="pageTitleWrapper" style="background-image: url(%{ARCHIVES_DIR}{pageImage@path});">
+			<div class="pageTitleFilter"></div>
+			<div class="pageTitleInner">
+				<div class="acms-container">
+				<!-- BEGIN_MODULE Touch_Entry -->
+					<p class="pageTitle">%{CATEGORY_NAME}<!-- BEGIN_MODULE Touch_SessionWithCompilation --> <span class="editLink">[<a href="%{BLOG_URL}bid/%{BID}/cid/%{CID}/admin/category_edit/#acms_custom">編集</a>]</span><!-- END_MODULE Touch_SessionWithCompilation --></p><!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_NotEntry -->
+					<h1 class="pageTitle">%{CATEGORY_NAME}<!-- BEGIN_MODULE Touch_SessionWithCompilation --> <span class="editLink">[<a href="%{BLOG_URL}bid/%{BID}/cid/%{CID}/admin/category_edit/#acms_custom">編集</a>]</span><!-- END_MODULE Touch_SessionWithCompilation --></h1><!-- END_MODULE Touch_NotEntry -->
+					<!-- BEGIN pageDescription:veil --><p class="pageDescription">{pageDescription}</p><!-- END pageDescription:veil -->
+				</div>
+			</div>
+		</div><!-- END_MODULE Category_Field --><!-- END_MODULE Touch_Category -->
+		<!-- BEGIN_MODULE Touch_NotCategory --><!-- BEGIN_MODULE Touch_Keyword --><div class="pageTitleWrapper">
+			<div class="pageTitleFilter"></div>
+			<div class="pageTitleInner">
+				<div class="acms-container"><h1 class="pageTitle">フリーワード検索：%{KEYWORD}</h1>
+				</div>
+			</div>
+		</div><!-- END_MODULE Touch_Keyword --><!-- END_MODULE Touch_NotCategory -->
+		<!-- BEGIN_MODULE Touch_Tag -->
+		<!-- BEGIN_MODULE Tag_Filter --><!-- BEGIN tagBox --><div class="pageTitleWrapper">
+			<div class="pageTitleFilter"></div>
+			<div class="pageTitleInner">
+				<div class="acms-container"><h1 class="pageTitle">タグ検索：<!-- BEGIN selected:loop --><a href="{url}">{name}</a><!-- BEGIN glue --> , <!-- END glue --><!-- END selected:loop --></h1></div>
+			</div>
+			</div><!-- END tagBox --><!-- END_MODULE Tag_Filter --><!-- END_MODULE Touch_Tag -->

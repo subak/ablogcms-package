@@ -1,0 +1,29 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Category_List -->
+<div class="panel panel-default">
+<!--#include file="/admin/module/setting.html"-->
+	<!-- BEGIN moduleField --><div class="panel-heading">
+		<h2 class="panel-title">{module_heading}</h2>
+	</div><!-- END moduleField -->
+	<!-- BEGIN category:loop --><!-- BEGIN ul#front --><div class="list-group"><!-- END ul#front --><!-- BEGIN li#front -->
+	<!-- END li#front --><!-- BEGIN category:veil -->
+	<a href="{url}" class="list-group-item">{name}<!-- BEGIN amount:veil --><span class="badge">{amount}</span><!-- END amount:veil --></a><!-- END category:veil -->
+	<!-- BEGIN li#rear --><!-- END li#rear -->
+	<!-- BEGIN ul#rear --></div><!-- END ul#rear --><!-- END category:loop -->
+</div>
+<!-- END_MODULE Category_List -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h2 class="panel-title">カテゴリー一覧</h2>
+	</div>
+	<div class="list-group">
+		<a href="#" class="list-group-item">カテゴリーのタイトル</a>
+		<a href="#" class="list-group-item">カテゴリーのタイトル</a>
+		<a href="#" class="list-group-item">カテゴリーのタイトル</a>
+		<a href="#" class="list-group-item">カテゴリーのタイトル</a>
+	</div>
+</div>
+<!-- END layout#dummy -->

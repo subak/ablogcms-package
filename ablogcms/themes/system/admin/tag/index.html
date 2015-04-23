@@ -1,15 +1,15 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-tag"></i>タグ管理</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-tag"></i>タグ管理</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Admin_Tag_Index -->
-<div class="acms-filter acms-form">
-	<form action="" method="post" class="acms-form-group">
+<div class="acms-admin-filter acms-admin-form">
+	<form action="" method="post" class="acms-admin-form-group">
 		ソート: 
 		<select name="order">
 			<option value="name-asc"{order:selected#name-asc}>名前順（昇順）</option>
@@ -23,7 +23,7 @@
 			<option value="{value}"{selected}>{label}</option><!-- END limit:loop -->
 		</select>
 
-		<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-btn-admin acms-btn-admin-info acms-width-sp" />
+		<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-admin-btn-admin acms-admin-btn-admin-info acms-admin-width-sp" />
 		<input type="hidden" name="admin" value="tag_index" />
 	</form>
 	<label for="searchModuleId">クイック検索:</label>
@@ -31,16 +31,16 @@
 </div>
 
 <!-- BEGIN index#notFound -->
-<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>タグがありません。</p><!-- END index#notFound -->
+<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>タグがありません。</p><!-- END index#notFound -->
 <!-- BEGIN index -->
-<ul id="tagList" class="acms-list-inline js-incremental_search"><!-- BEGIN tag:loop -->
-	<li class="search_element"><a href="{url}?edit=update">{name}</a> <span class="acms-label">{amount}</span></li><!-- END tag:loop -->
+<ul id="tagList" class="acms-admin-list-inline js-incremental_search"><!-- BEGIN tag:loop -->
+	<li class="search_element"><a href="{url}?edit=update">{name}</a> <span class="acms-admin-label">{amount}</span></li><!-- END tag:loop -->
 </ul>
-<div class="acms-grid">
-	<div class="acms-col-6">
+<div class="acms-admin-grid">
+	<div class="acms-admin-col-md-6 acms-admin-col-sm-12">
 		<!-- BEGIN pager:veil -->
-		<div class="acms-pager-container">
-			<ul class="acms-pager"><!-- BEGIN backLink -->
+		<div class="acms-admin-pager-container">
+			<ul class="acms-admin-pager"><!-- BEGIN backLink -->
 				<li class="prev"><a href="{url}">&laquo;&nbsp;前へ</a></li><!-- END backLink --><!-- BEGIN page:loop -->
 				<li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop --><!-- BEGIN lastPage:veil -->
 				<li class="last"><a href="{lastPageUrl}">...{lastPage}</a></li><!-- END lastPage:veil --><!-- BEGIN forwardLink -->
@@ -49,8 +49,8 @@
 		</div>
 		<!-- END pager:veil -->
 	</div>
-	<div class="acms-col-6">
-		<div class="acms-itemsAmount-container">
+	<div class="acms-admin-col-md-6 acms-admin-col-sm-12">
+		<div class="acms-admin-itemsAmount-container">
 			<p>{itemsFrom}件 - {itemsTo}件 / 全{itemsAmount}件</p>
 		</div>
 	</div>

@@ -1,0 +1,311 @@
+<!-- BEGIN_MODULE Field_Search -->
+<div class="blogCartSearch">
+	<dt>簡単な検索</dt>
+	<dd>
+		<form action="" method="post" class="acms-form">
+			<!-- 宣言 -->
+			<input type="hidden" name="field[]" value="item_price" />
+
+			<p class="blogCartSearchText">価格</p>
+			<label for="input-radio-item_price-100" class="acms-form-radio">
+				<input type="radio" name="item_price" value="100"{item_price:checked#100} id="input-radio-item_price-100" />
+				<i class="acms-ico-radio"></i>
+				100
+			</label>
+			<label for="input-radio-item_price-200" class="acms-form-radio">
+				<input type="radio" name="item_price" value="200"{item_price:checked#200} id="input-radio-item_price-200" />
+				<i class="acms-ico-radio"></i>
+				200
+			</label>
+			<label for="input-radio-item_price-300" class="acms-form-radio">
+				<input type="radio" name="item_price" value="300"{item_price:checked#300} id="input-radio-item_price-300" />
+				<i class="acms-ico-radio"></i>
+				300
+			</label>
+			<input type="hidden" name="tpl" value="search" />
+			<input type="hidden" name="cid" value="%{CID}" />
+			<input type="hidden" name="bid" value="%{BID}" />
+			<input type="submit" name="ACMS_POST_2GET" value="検索" class="blogCartSearchBtn" />
+		</form>
+	</dd><!-- END_MODULE Field_Search -->
+
+	<!-- BEGIN_MODULE Field_Search -->
+	<dt>簡単な検索（複数）</dt>
+	<dd>
+		<form action="" method="post" class="acms-form">
+			<!-- 宣言 -->
+			<input type="hidden" name="field[]" value="item_price" />
+
+			<p class="blogCartSearchText">価格</p>
+			<label for="input-checkbox-item_price-100" class="acms-form-checkbox">
+				<input type="checkbox" name="item_price[]" value="100"{item_price:checked#100} id="input-checkbox-item_price-100" />
+				<i class="acms-ico-checkbox"></i>
+				100
+			</label>
+			<label for="input-checkbox-item_price-200" class="acms-form-checkbox">
+				<input type="checkbox" name="item_price[]" value="200"{item_price:checked#200} id="input-checkbox-item_price-200" />
+				<i class="acms-ico-checkbox"></i>
+				200
+			</label>
+			<label for="input-checkbox-item_price-300" class="acms-form-checkbox">
+				<input type="checkbox" name="item_price[]" value="300"{item_price:checked#300} id="input-checkbox-item_price-300" />
+				<i class="acms-ico-checkbox"></i>
+				300
+			</label>
+			<input type="hidden" name="tpl" value="search" />
+			<input type="hidden" name="cid" value="%{CID}" />
+			<input type="hidden" name="bid" value="%{BID}" />
+			<input type="submit" name="ACMS_POST_2GET" value="検索" class="blogCartSearchBtn" />
+		</form>
+	</dd><!-- END_MODULE Field_Search -->
+
+	<!-- BEGIN_MODULE Field_Search -->
+	<dt>演算子検索</dt>
+	<dd>
+		<form action="" method="post" class="acms-form">
+			<!-- 宣言 -->
+			<input type="hidden" name="field[]" value="item_price" />
+
+			<!-- 演算子 -->
+			<input type="hidden" name="item_price@operator" value="lte" />
+
+			<p class="blogCartSearchText">
+				<span class="blogCartSearchSelectText">価格</span>
+				<select name="item_price">
+					<option value="">上限なし</option>
+					<option value="300"{item_price:selected#300}>300円以下</option>
+					<option value="200"{item_price:selected#200}>200円以下</option>
+					<option value="100"{item_price:selected#100}>100円以下</option>
+				</select>
+			</p>
+			<p>
+				<input type="hidden" name="order" value="intfield-desc" />
+				<input type="hidden" name="tpl" value="search" />
+				<input type="hidden" name="cid" value="%{CID}" />
+				<input type="hidden" name="bid" value="%{BID}" />
+				<input type="submit" name="ACMS_POST_2GET" value="検索" class="blogCartSearchBtn" />
+			</p>
+		</form>
+	</dd><!-- END_MODULE Field_Search -->
+
+	<!-- BEGIN_MODULE Field_Search -->
+	<dt>演算子検索 ( 複数 )</dt>
+	<dd>
+		<form action="" method="post" class="acms-form">
+			<!-- 宣言 -->
+			<input type="hidden" name="field[]" value="item_price" />
+
+			<!-- 演算子 -->
+			<input type="hidden" name="item_price@operator[0]" value="gte" />
+			<input type="hidden" name="item_price@operator[1]" value="lte" />
+
+			<p class="blogCartSearchText">
+				<span class="blogCartSearchSelectText">価格</span>
+				<select name="item_price[]">
+					<option value="">下限なし</option>
+					<option value="100"{item_price[0]:selected#100}>100円以上</option>
+					<option value="200"{item_price[0]:selected#200}>200円以上</option>
+					<option value="300"{item_price[0]:selected#300}>300円以上</option>
+				</select>
+			</p>
+			<p class="blogCartSearchText">
+				<span class="blogCartSearchSelectText">価格</span>
+				<select name="item_price[]">
+					<option value="">上限なし</option>
+					<option value="300"{item_price[1]:selected#300}>300円以下</option>
+					<option value="200"{item_price[1]:selected#200}>200円以下</option>
+					<option value="100"{item_price[1]:selected#100}>100円以下</option>
+				</select>
+			</p>
+			<p class="blogCartSearchText">
+				<input type="hidden" name="tpl" value="search" />
+				<input type="hidden" name="cid" value="%{CID}" />
+				<input type="hidden" name="bid" value="%{BID}" />
+				<input type="submit" name="ACMS_POST_2GET" value="検索" class="blogCartSearchBtn" />
+			</p>
+		</form>
+	</dd><!-- END_MODULE Field_Search -->
+
+	<!-- BEGIN_MODULE Field_Search -->
+	<dt>演算子選択単数</dt>
+	<dd>
+		<form action="" method="post" class="acms-form">
+			<!-- 宣言 -->
+			<input type="hidden" name="field[]" value="item_price" />
+			<p class="blogCartSearchText">価格</p>
+			<select name="item_price@operator">
+				<option value="">選択してください</option>
+				<option value="eq"{item_price@operator:selected#eq}>=</option>
+				<option value="neq"{item_price@operator:selected#neq}>!=</option>
+				<option value="lt"{item_price@operator:selected#lt}>&lt;</option>
+				<option value="lte"{item_price@operator:selected#lte}>&lt;=</option>
+				<option value="gt"{item_price@operator:selected#gt}>&gt;</option>
+				<option value="gte"{item_price@operator:selected#gte}>&gt;=</option>
+				<option value="lk"{item_price@operator:selected#lk}>LIKE</option>
+				<option value="nlk"{item_price@operator:selected#nlk}>NOT LIKE</option>
+				<option value="re"{item_price@operator:selected#re}>REGEXP</option>
+				<option value="nre"{item_price@operator:selected#nre}>NOT REGEXP</option>
+				<option value="em"{item_price@operator:selected#em}>EMPTY</option>
+				<option value="nem"{item_price@operator:selected#nem}>NOT EMPTY</option>
+			</select>
+			<input type="text" name="item_price" value="{item_price}" size="10" />
+			円
+			<input type="hidden" name="tpl" value="search" />
+			<input type="hidden" name="cid" value="%{CID}" />
+			<input type="hidden" name="bid" value="%{BID}" />
+			<input type="submit" name="ACMS_POST_2GET" value="検索" class="blogCartSearchBtn" />
+		</form>
+	</dd><!-- END_MODULE Field_Search -->
+
+	<!-- BEGIN_MODULE Field_Search -->
+	<dt>演算子、結合子選択 ( 複数 )</dt>
+	<dd>
+		<form action="" method="post" class="acms-form">
+			<!-- 宣言 -->
+			<input type="hidden" name="field[]" value="item_price" />
+			<input type="hidden" name="item_price[0]" />
+			<input type="hidden" name="item_price[1]" />
+			<input type="hidden" name="item_price@connector[0]" />
+			<input type="hidden" name="item_price@connector[1]" />
+			<input type="hidden" name="item_price@operator[0]" />
+			<input type="hidden" name="item_price@operator[0]" />
+			<p class="blogCartSearchText">価格</p>
+				<select name="item_price@operator[0]">
+					<option value="">選択しない</option>
+					<option value="eq"{item_price@operator[0]:selected#eq}>=</option>
+					<option value="neq"{item_price@operator[0]:selected#neq}>!=</option>
+					<option value="lt"{item_price@operator[0]:selected#lt}>&lt;</option>
+					<option value="lte"{item_price@operator[0]:selected#lte}>&lt;=</option>
+					<option value="gt"{item_price@operator[0]:selected#gt}>&gt;</option>
+					<option value="gte"{item_price@operator[0]:selected#gte}>&gt;=</option>
+					<option value="lk"{item_price@operator[0]:selected#lk}>LIKE</option>
+					<option value="nlk"{item_price@operator[0]:selected#nlk}>NOT LIKE</option>
+					<option value="re"{item_price@operator[0]:selected#re}>REGEXP</option>
+					<option value="nre"{item_price@operator[0]:selected#nre}>NOT REGEXP</option>
+					<option value="em"{item_price@operator[0]:selected#em}>EMPTY</option>
+					<option value="nem"{item_price@operator[0]:selected#nem}>NOT EMPTY</option>
+				</select>
+				<input type="text" name="item_price[0]" value="{item_price[0]}" size="10" />
+				円
+			<p>
+				<label for="input-radio-item_price-connector-and-1" class="acms-form-radio">
+					<input type="radio" name="item_price@connector[1]" value="and"{item_price@connector[1]:checked#and} id="input-radio-item_price-connector-and-1" />
+					<i class="acms-ico-radio"></i>
+					and
+				</label>
+				<label for="input-radio-item_price-connector-or-1" class="acms-form-radio">
+					<input type="radio" name="item_price@connector[1]" value="or"{item_price@connector[1]:checked#or} id="input-radio-item_price-connector-or-1" />
+					<i class="acms-ico-radio"></i>
+					or
+				</label>
+				<select name="item_price@operator[1]">
+					<option value="">選択しない</option>
+					<option value="eq"{item_price@operator[1]:selected#eq}>=</option>
+					<option value="neq"{item_price@operator[1]:selected#neq}>!=</option>
+					<option value="lt"{item_price@operator[1]:selected#lt}>&lt;</option>
+					<option value="lte"{item_price@operator[1]:selected#lte}>&lt;=</option>
+					<option value="gt"{item_price@operator[1]:selected#gt}>&gt;</option>
+					<option value="gte"{item_price@operator[1]:selected#gte}>&gt;=</option>
+					<option value="lk"{item_price@operator[1]:selected#lk}>LIKE</option>
+					<option value="nlk"{item_price@operator[1]:selected#nlk}>NOT LIKE</option>
+					<option value="re"{item_price@operator[1]:selected#re}>REGEXP</option>
+					<option value="nre"{item_price@operator[1]:selected#nre}>NOT REGEXP</option>
+					<option value="em"{item_price@operator[1]:selected#em}>EMPTY</option>
+					<option value="nem"{item_price@operator[1]:selected#nem}>NOT EMPTY</option>
+				</select>
+				<input type="text" name="item_price[1]" value="{item_price[1]}" size="10" />
+				円
+			</p>
+
+			<p>
+				<input type="hidden" name="tpl" value="search" />
+				<input type="hidden" name="cid" value="%{CID}" />
+				<input type="hidden" name="bid" value="%{BID}" />
+				<input type="submit" name="ACMS_POST_2GET" value="検索" class="blogCartSearchBtn" />
+			</p>
+		</form>
+	</dd><!-- END_MODULE Field_Search -->
+
+	<!-- BEGIN_MODULE Field_Search -->
+	<dt>チェックボックスを使用しての複数条件指定</dt>
+	<dd>
+		<form action="" method="post" class="acms-form">
+			<p>
+				<!-- 宣言 -->
+				<input type="hidden" name="field[]" value="item_price" />
+
+				<input type="hidden" name="item_price[0]" />
+				<input type="hidden" name="item_price[1]" />
+				<input type="hidden" name="item_price[2]" />
+				<input type="hidden" name="item_price[3]" />
+				<input type="hidden" name="item_price[4]" />
+
+				<input type="hidden" name="item_price@operator[0]" />
+				<input type="hidden" name="item_price@operator[1]" />
+				<input type="hidden" name="item_price@operator[2]" />
+				<input type="hidden" name="item_price@operator[3]" />
+				<input type="hidden" name="item_price@operator[4]" />
+
+				<input type="hidden" name="item_price@connector[0]" />
+				<input type="hidden" name="item_price@connector[1]" />
+				<input type="hidden" name="item_price@connector[2]" />
+				<input type="hidden" name="item_price@connector[3]" />
+				<input type="hidden" name="item_price@connector[4]" />
+
+				<!-- 演算子 -->
+				<input type="hidden" name="item_price@operator[0]" value="lt" />
+				<input type="hidden" name="item_price@operator[1]" value="eq" />
+				<input type="hidden" name="item_price@operator[3]" value="eq" />
+				<input type="hidden" name="item_price@operator[4]" value="gt" />
+
+				<!-- 結合子 -->
+				<input type="hidden" name="item_price@connector" value="and" />
+
+				<!-- 値 -->
+				<label for="input-radio-item_price-connector-and" class="acms-form-radio">
+					<input type="radio" name="item_price@connector" value="and"{item_price@connector:checked#and} id="input-radio-item_price-connector-and" />
+					<i class="acms-ico-radio"></i>
+					and
+				</label>
+				<label for="input-radio-item_price-connector-or" class="acms-form-radio">
+					<input type="radio" name="item_price@connector" value="or"{item_price@connector:checked#or} id="input-radio-item_price-connector-or" />
+					<i class="acms-ico-radio"></i>
+					or
+				</label>
+				<br />
+				<label for="input-checkbox-item_price-0" class="acms-form-checkbox">
+					<input type="checkbox" name="item_price[0]" value="100"{item_price[0]:checked#100} id="input-checkbox-item_price-0" />
+					<i class="acms-ico-checkbox"></i>
+					100未満
+				</label>
+				<label for="input-checkbox-item_price-1" class="acms-form-checkbox">
+					<input type="checkbox" name="item_price[1]" value="100"{item_price[1]:checked#100} id="input-checkbox-item_price-1" />
+					<i class="acms-ico-checkbox"></i>
+					100
+				</label>
+				<label for="input-checkbox-item_price-2" class="acms-form-checkbox">
+					<input type="checkbox" name="item_price@operator[2]" value="nem" id="input-checkbox-item_price-2"{item_price@operator[2]:checked#nem} />
+					<i class="acms-ico-checkbox"></i>
+					空ではない
+				</label>
+				<label for="input-checkbox-item_price-3" class="acms-form-checkbox">
+					<input type="checkbox" name="item_price[3]" value="300"{item_price[3]:checked#300} id="input-checkbox-item_price-3" />
+					<i class="acms-ico-checkbox"></i>
+					300
+				</label>
+				<label for="input-checkbox-item_price-4" class="acms-form-checkbox">
+					<input type="checkbox" name="item_price[4]" value="300"{item_price[4]:checked#300} id="input-checkbox-item_price-4" />
+					<i class="acms-ico-checkbox"></i>
+					300超
+				</label>
+			</p>
+
+			<p>
+				<input type="hidden" name="tpl" value="search" />
+				<input type="hidden" name="cid" value="%{CID}" />
+				<input type="hidden" name="bid" value="%{BID}" />
+				<input type="submit" name="ACMS_POST_2GET" value="検索" class="blogCartSearchBtn" />
+			</p>
+		</form>
+	</dd><!-- END_MODULE Field_Search -->
+</div>

@@ -1,0 +1,13 @@
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>APIリクエスト キャッシュ有効時間<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="APIリクエストの結果を、ここで設定した秒数の間だけキャッシュ利用します。ページのキャッシュとは異なることに注意してください。"></i></th>
+		<td>
+			<input type="text" name="twitter_list_members_cache_expire" value="{twitter_list_members_cache_expire}" size="8" class="acms-admin-form-width-mini" /> 秒
+			<input type="hidden" name="config[]" value="twitter_list_members_cache_expire" />
+			<input type="hidden" name="twitter_list_members_cache_expire:validator#digits" id="validator-twitter_list_members_cache_expire-digits" />
+			<label for="validator-twitter_list_members_cache_expire-digits" class="validator-result-{twitter_list_members_cache_expire:validator#digits}">数字を入力して下さい。</label>
+		</td>
+	</tr>
+</table><!-- BEGIN_MODULE Admin_Rule_Name -->
+<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->

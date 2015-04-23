@@ -1,0 +1,23 @@
+<!-- BEGIN_MODULE Entry_Summary id="" -->
+<!--#include file="/admin/module/setting.html"-->
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<!-- BEGIN unit:loop -->
+<!-- BEGIN entry:loop -->
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="heading{eid}">
+			<h4 class="panel-title">
+			<a data-toggle="collapse" data-parent="#accordion" href="#collapse{eid}" aria-expanded="true" aria-controls="collapse{eid}">
+				{title}[raw]
+			</a>
+			</h4>
+		</div>
+		<div id="collapse{eid}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{eid}">
+			<div class="panel-body">
+				<p>{summary}[trim(300, '...')]</p>
+			</div>
+		</div>
+	</div>
+	<!-- END entry:loop -->
+	<!-- END unit:loop -->
+</div>
+<!-- END_MODULE Entry_Summary-->

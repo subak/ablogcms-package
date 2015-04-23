@@ -1,0 +1,100 @@
+<!-- BEGIN_MODULE Entry_Body -->
+<div class="entryWrapper">
+<!-- BEGIN notFound -->
+<p>お探しのエントリーは見つかりませんでした。</p>
+<!-- END notFound -->
+
+<!-- BEGIN entry:loop -->
+<div class="acms-form-group">
+<!--#include file="/admin/entry/revision-info.html"-->
+</div>
+<div class="acms-grid-r">
+	<div class="acms-entry entry">
+		<!-- BEGIN title:veil -->
+		<div class="pageHeader">
+			
+			<h2 class="entryTitle"><a href="{titleUrl}">{title}[raw]</a></h2>
+			<!-- BEGIN categoryField -->
+			<!-- BEGIN_IF [{dateAppearCategory}/eq/true] -->
+			<!-- END categoryField -->
+			<p class="entryDate"><time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日</time></p>
+			<!-- BEGIN blogField -->
+			<!-- ELSE_IF [{dateAppearBlog}/eq/true] -->
+			<!-- END blogField -->
+			<p class="entryDate"><time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日</time></p>
+			<!-- END_IF -->
+
+			<!-- BEGIN category:veil -->
+			<p class="entryCategory">カテゴリー：
+				<!-- BEGIN category:loop -->
+				<span><a href="{url}">{name}</a></span>
+				<!-- BEGIN glue -->
+				<
+				<!-- END glue -->
+				<!-- END category:loop -->
+				</p>
+			<!-- END category:veil -->
+		</div>
+		<!-- END title:veil -->
+		<!-- BEGIN unit:veil -->
+		<div class="entryColumn clearfix">
+			<!--#include file="/include/unit.html"-->
+		</div>
+		<hr class="clearHidden">
+		<!-- END unit:veil -->
+		<!-- BEGIN continueLink:veil -->
+		<p><a href="{continueUrl}" class="btn btn-default">「{continueName}」の続きを読む<span class="glyphicon glyphicon-chevron-right"></span></a></p>
+		<!-- END continueLink:veil -->
+
+		<!-- BEGIN formBody -->
+		<!--#include file="/include/form/unit.html"-->
+		<hr class="clearHidden">
+		<!-- END formBody -->
+
+		<!-- BEGIN adminEntryEdit -->
+		<!--#include file="/admin/entry/edit.html"-->
+		<!--#include file="/admin/entry/add.html"-->
+		<!-- END adminEntryEdit -->
+
+		<!-- BEGIN adminFormEdit -->
+		<!--#include file="/admin/form2/edit.html"-->
+		<!-- END adminFormEdit -->
+		
+		<!-- BEGIN tag:veil -->
+		<p>関連タグ：<!-- BEGIN tag:loop --><a href="{url}" class="badge">{name}</a> <!-- END tag:loop --></p>
+		<!-- END tag:veil -->
+		<!--#include file="/admin/entry/action.html"-->
+	</div>
+</div>
+<!-- END entry:loop -->
+<!-- BEGIN serialNavi:veil -->
+<ul class="pagerCustomize clearfix">
+	<!-- BEGIN prevLink --><li class="pagerCustomizeItem pagerCustomizeItemLeft">
+		<a href="{url}" class="pagerCustomizeLink"><span class="glyphicon glyphicon-menu-left"></span>
+			<div class="pagerCustomizeArrow">
+				<p class="pagerCustomizeText">前の記事へ<span class="pagerCustomizeTitle">{name}[trim(27, '...')|escape]</span></p>
+			</div>
+		</a>
+	</li><!-- END prevLink -->
+	<!-- BEGIN nextLink --><li class="pagerCustomizeItem pagerCustomizeItemRight">
+		<a href="{url}" class="pagerCustomizeLink">
+		<div class="pagerCustomizeArrow">
+			<p class="pagerCustomizeText text-right">次の記事へ<span class="pagerCustomizeTitle">{name}[trim(27, '...')|escape]</span></p>
+			</div><span class="glyphicon glyphicon-menu-right"></span>
+		</a>
+	</li><!-- END nextLink -->
+</ul>
+<!-- END serialNavi:veil -->
+
+<!-- BEGIN pager:veil -->
+<ul class="pagination">
+	<!-- BEGIN backLink --><li><a href="{url}"><span aria-hidden="true">&laquo;</span><span class="sr-only">前へ</span></a></li><!-- END backLink -->
+	<!-- BEGIN firstPage:veil --><li{pageCurAttr}[raw]><span><a href="{firstPageUrl}">{firstPage}</a></span></li><!-- END firstPage:veil -->
+	<!-- BEGIN page:loop --><li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop -->
+	<!-- BEGIN lastPage:veil --> <li><span>...</span></li><li{pageCurAttr}[raw]><span><a href="{lastPageUrl}">{lastPage}</a></span></li><!-- END lastPage:veil -->
+
+	<!-- BEGIN forwardLink --><li><a href="{url}"><span aria-hidden="true">&raquo;</span><span class="sr-only">次へ</span></a></li><!-- END forwardLink -->
+</ul>
+<!-- END pager:veil -->
+</div>
+<!-- END_MODULE Entry_Body -->

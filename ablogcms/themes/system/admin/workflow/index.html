@@ -1,8 +1,8 @@
-<header class="acms-grid">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-checklist"></i>ワークフロー管理</h1>
+<header class="acms-admin-grid">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-checklist"></i>ワークフロー管理</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
@@ -10,24 +10,24 @@
 <!-- BEGIN_MODULE Admin_Workflow_Index -->
 
 <!-- BEGIN msg#update -->
-<p class="acms-alert acms-alert-info"><button class="js-acms-alert-close">×</button>ワークフローを保存しました</p><!-- END msg#update --><!-- BEGIN workflow:validator#operable -->
-<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>この操作は許可されていません。</p><!-- END workflow:validator#operable -->
+<p class="acms-admin-alert acms-admin-alert-info"><button class="js-acms-alert-close">×</button>ワークフローを保存しました</p><!-- END msg#update --><!-- BEGIN workflow:validator#operable -->
+<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>この操作は許可されていません。</p><!-- END workflow:validator#operable -->
 
-<form action="" method="post" enctype="multipart/form-data" class="acms-form">
+<form action="" method="post" enctype="multipart/form-data" class="acms-admin-form">
 	<!-- BEGIN workflow:validator#operable -->
-	<p class="transaction-notice-error acms-alert acms-alert-danger">この操作は許可されていません。</p><!-- END workflow:validator#operable --><!-- BEGIN workflow:validator#unique -->
-	<p class="transaction-notice-error acms-alert acms-alert-danger">グループが重複しています。</p><!-- END workflow:validator#unique -->
+	<p class="transaction-notice-error acms-admin-alert acms-admin-alert-danger">この操作は許可されていません。</p><!-- END workflow:validator#operable --><!-- BEGIN workflow:validator#unique -->
+	<p class="transaction-notice-error acms-admin-alert acms-admin-alert-danger">グループが重複しています。</p><!-- END workflow:validator#unique -->
 	
-	<div class="acms-form-group js-acms_fix_marker js-acms_fix_target acms_fix_bg">
+	<div class="acms-admin-form-group js-acms_fix_marker js-acms_fix_target acms_fix_bg">
 		<div class="acms_fix_bg_index">
-		<input type="submit" name="ACMS_POST_Workflow_Update" value="保存" class="acms-btn-admin acms-btn-admin-primary acms-btn-admin-save acms-margin-sp" />
+		<input type="submit" name="ACMS_POST_Workflow_Update" value="保存" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save acms-admin-margin-sp" />
 		</div>
 	</div>
 	
-	<h2 class="acms-admin-title2">基本</h2>
-	<table class="adminTable acms-table-admin-edit">
+	<h2 class="acms-admin-admin-title2">基本</h2>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>ワークフロー名<i data-acms-tooltip="ワークフロー名を設定します（日本語化）" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<th>ワークフロー名<i data-acms-tooltip="ワークフロー名を設定します（日本語化）" class="acms-admin-icon-tooltip js-acms-tooltip"></i></th>
 			<td>
 				<input type="text" name="name" value="{name}" />
 				<input type="hidden" name="workflow[]" value="name" />
@@ -36,18 +36,18 @@
 			</td>
 		</tr>
 		<tr>
-			<th>説明<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="このワークフローがどのような動作をするかなどのメモです。"></i></th>
+			<th>説明<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="このワークフローがどのような動作をするかなどのメモです。"></i></th>
 			<td>
 				<textarea name="description" style="width:100%;" rows="3">{description}</textarea>
 				<input type="hidden" name="workflow[]" value="description" />
 			</td>
 		</tr>
 		<tr>
-			<th>ステータス<i data-acms-tooltip="ステータスを設定します。チェックをつけると、このブログで承認機能が有効になります。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<th>ステータス<i data-acms-tooltip="ステータスを設定します。チェックをつけると、このブログで承認機能が有効になります。" class="acms-admin-icon-tooltip js-acms-tooltip"></i></th>
 			<td>
 				<input type="hidden" name="status" value="close" />
-				<label for="input-checkbox-status" class="acms-form-checkbox">
-					<input type="checkbox" name="status" value="open"{status:checked#open} id="input-checkbox-status" /><i class="acms-ico-checkbox"></i>有効（このブログで承認機能が有効になります）
+				<label for="input-checkbox-status" class="acms-admin-form-checkbox">
+					<input type="checkbox" name="status" value="open"{status:checked#open} id="input-checkbox-status" /><i class="acms-admin-ico-checkbox"></i>有効（このブログで承認機能が有効になります）
 				</label>
 				<input type="hidden" name="workflow[]" value="status" />
 				<input type="hidden" name="status:validator#required" id="validator-status-required" />
@@ -55,14 +55,14 @@
 			</td>
 		</tr>
 		<tr>
-			<th>承認タイプ<i data-acms-tooltip="直列、並列承認どちらを使用するか選択します" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<th>承認タイプ<i data-acms-tooltip="直列、並列承認どちらを使用するか選択します" class="acms-admin-icon-tooltip js-acms-tooltip"></i></th>
 			<td>
-				<label for="input-radio-type-series" class="acms-form-radio">
-					<input type="radio" name="type" value="series"{type:checked#series} id="input-radio-type-series" /><i class="acms-ico-radio"></i>
+				<label for="input-radio-type-series" class="acms-admin-form-radio">
+					<input type="radio" name="type" value="series"{type:checked#series} id="input-radio-type-series" /><i class="acms-admin-ico-radio"></i>
 					直列承認
 				</label>
-				<label for="input-radio-type-parallel" class="acms-form-radio">
-					<input type="radio" name="type" value="parallel"{type:checked#parallel} id="input-radio-type-parallel" /><i class="acms-ico-radio"></i>
+				<label for="input-radio-type-parallel" class="acms-admin-form-radio">
+					<input type="radio" name="type" value="parallel"{type:checked#parallel} id="input-radio-type-parallel" /><i class="acms-admin-ico-radio"></i>
 					並列承認
 				</label>
 				<input type="hidden" name="workflow[]" value="type" />
@@ -71,32 +71,32 @@
 			</td>
 		</tr>
 		<tr>
-			<th>承認グループ<i data-acms-tooltip="承認・承認依頼をするグループを設定します。上から下に承認フローが流れます。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<th>承認グループ<i data-acms-tooltip="承認・承認依頼をするグループを設定します。上から下に承認フローが流れます。" class="acms-admin-icon-tooltip js-acms-tooltip"></i></th>
 			<td>
 				<table class="js-fieldgroup-sortable adminTable">
 					<!-- BEGIN workflowGroup:loop -->
 					<tr class="sortable-item">
-						<td class="item-handle"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle"><i class="acms-admin-icon-sort"></i></td>
 						<td><!-- BEGIN_MODULE Admin_Usergroup_Index -->
 							<select name="route_group[{i}]">
 								<option value="">ユーザーグループを選択</option><!-- BEGIN usergroup:loop -->
 								<option value="{ugid}"\{route_group:selected#{ugid}\}>{name}（{point}）</option><!-- END usergroup:loop -->
 							</select><!-- END_MODULE Admin_Usergroup_Index -->
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr><!-- END workflowGroup:loop -->
 					<tr class="sortable-item item-template">
-						<td class="item-handle"><i class="acms-icon-sort"></i></td>
+						<td class="item-handle"><i class="acms-admin-icon-sort"></i></td>
 						<td><!-- BEGIN_MODULE Admin_Usergroup_Index -->
 							<select type="text" name="route_group[]">
 								<option value="">ユーザーグループを選択</option><!-- BEGIN usergroup:loop -->
 								<option value="{ugid}">{name}（{point}）</option><!-- END usergroup:loop -->
 							</select><!-- END_MODULE Admin_Usergroup_Index -->
 						</td>
-						<td><input type="button" value="削除" class="item-delete acms-btn-admin acms-btn-admin-danger" /></td>
+						<td><input type="button" value="削除" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" /></td>
 					</tr>
 					<tr>
-						<td colspan="4"><input type="button" value="追加" class="item-insert acms-btn-admin" /></td>
+						<td colspan="4"><input type="button" value="追加" class="item-insert acms-admin-btn-admin" /></td>
 					</tr>
 				</table>
 				<input type="hidden" name="workflow[]" value="route_group" />
@@ -108,10 +108,10 @@
 		</tr>
 	</table>
 
-	<h2 class="acms-admin-title2">直列承認</h2>
-	<table class="adminTable acms-table-admin-edit">
+	<h2 class="acms-admin-admin-title2">直列承認</h2>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>承認依頼（記事作成）<i data-acms-tooltip="承認依頼グループを設定します。一番最初に承認依頼をするグループになります。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<th>承認依頼（記事作成）<i data-acms-tooltip="承認依頼グループを設定します。一番最初に承認依頼をするグループになります。" class="acms-admin-icon-tooltip js-acms-tooltip"></i></th>
 			<td><!-- BEGIN_MODULE Admin_Usergroup_Index -->
 				<select type="text" name="start_group">
 					<option value="">ユーザーグループを選択</option><!-- BEGIN usergroup:loop -->
@@ -124,7 +124,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>最終承認（記事公開）<i data-acms-tooltip="最終承認ユーザーグループを設定します。ここで設定されたグループのユーザが最終承認をすることにより記事が公開されるようになります。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<th>最終承認（記事公開）<i data-acms-tooltip="最終承認ユーザーグループを設定します。ここで設定されたグループのユーザが最終承認をすることにより記事が公開されるようになります。" class="acms-admin-icon-tooltip js-acms-tooltip"></i></th>
 			<td><!-- BEGIN_MODULE Admin_Usergroup_Index -->
 				<select type="text" name="last_group">
 					<option value="">ユーザーグループを選択</option><!-- BEGIN usergroup:loop -->
@@ -138,10 +138,10 @@
 		</tr>
 	</table>
 
-	<h2 class="acms-admin-title2">並列承認</h2>
-	<table class="adminTable acms-table-admin-edit">
+	<h2 class="acms-admin-admin-title2">並列承認</h2>
+	<table class="adminTable acms-admin-table-admin-edit">
 		<tr>
-			<th>公開ポイント<i data-acms-tooltip="公開ポイントを設定します。この値を合計承認ポイントが超えると記事が公開されます。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<th>公開ポイント<i data-acms-tooltip="公開ポイントを設定します。この値を合計承認ポイントが超えると記事が公開されます。" class="acms-admin-icon-tooltip js-acms-tooltip"></i></th>
 			<td>
 				<input type="text" name="public_point" value="{public_point}" />&nbsp;ポイント
 				<input type="hidden" name="workflow[]" value="public_point" />
@@ -150,7 +150,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>却下ポイント<i data-acms-tooltip="却下ポイントを設定します。この値を合計却下ポイントが超えると記事が却下されます。" class="acms-icon-tooltip js-acms-tooltip"></i></th>
+			<th>却下ポイント<i data-acms-tooltip="却下ポイントを設定します。この値を合計却下ポイントが超えると記事が却下されます。" class="acms-admin-icon-tooltip js-acms-tooltip"></i></th>
 			<td>
 				<input type="text" name="reject_point" value="{reject_point}" />&nbsp;ポイント
 				<input type="hidden" name="workflow[]" value="reject_point" />

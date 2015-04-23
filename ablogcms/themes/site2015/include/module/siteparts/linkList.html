@@ -1,0 +1,15 @@
+<!-- BEGIN_MODULE Links id="linkList" -->
+<section class="moduleSection">
+	<!--#include file="/admin/module/setting.html"-->
+	<!-- BEGIN moduleField -->
+	<!-- BEGIN_IF [{module_heading}/nem] -->
+	<div class="moduleHeader clearfix">
+		<h2 class="moduleHeading">{module_heading}</h2>
+	</div><!-- END_IF --><!-- END moduleField -->
+	<ul class="acms-list-group">
+		<!-- BEGIN loop -->
+		<li><a href="{url}" class="acms-list-group-item sideListLink">{name}</a></li>
+		<!-- END loop -->
+	</ul>
+</section>
+<!-- END_MODULE Links -->

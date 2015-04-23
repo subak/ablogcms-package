@@ -1,44 +1,44 @@
-<header class="acms-grid-r">
-	<div class="acms-col-6">
-		<h1 class="acms-admin-title"><i class="acms-icon acms-icon-checklist"></i>承認通知</h1>
+<header class="acms-admin-grid-r">
+	<div class="acms-admin-col-md-6">
+		<h1 class="acms-admin-admin-title"><i class="acms-admin-icon acms-admin-icon-checklist"></i>承認通知</h1>
 	</div>
-	<div class="acms-col-6">
+	<div class="acms-admin-col-md-6">
 		<!--#include file="/admin/topicpath.html"-->
 	</div>
 </header>
 
 <!-- BEGIN_MODULE Approval_Notification -->
 <!-- BEGIN approval#notFound -->
-<p class="acms-alert acms-alert-danger"><button class="js-acms-alert-close">×</button>承認通知はありません。</p><!-- END approval#notFound -->
+<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close">×</button>承認通知はありません。</p><!-- END approval#notFound -->
 
 <!-- BEGIN approval:veil -->
 <h3>承認タスク</h3>
-<table class="adminTable acms-table-admin acms-table-heading">
+<table class="adminTable acms-admin-table-admin acms-admin-table-heading">
 	<thead>
 		<tr>
-			<th class="acms-hide-sp">ステータス</th>
-			<th class="acms-hide-sp">依頼ユーザー</th>
-			<th class="acms-hide-sp">期限</th>
-			<th class="acms-hide-sp">担当</th>
-			<th class="acms-hide-sp">コメント</th>
-			<th class="acms-hide-sp">確認</th>
-			<th class="acms-hide-sp">削除</th>
+			<th class="acms-admin-hide-sp">ステータス</th>
+			<th class="acms-admin-hide-sp">依頼ユーザー</th>
+			<th class="acms-admin-hide-sp">期限</th>
+			<th class="acms-admin-hide-sp">担当</th>
+			<th class="acms-admin-hide-sp">コメント</th>
+			<th class="acms-admin-hide-sp">確認</th>
+			<th class="acms-admin-hide-sp">削除</th>
 		</tr>
 	</thead><!-- BEGIN approval:loop -->
 		<tr{expired}[raw]>
 		 	<td><!-- BEGIN type:touch#request -->
-		 	<span class="acms-label">承認依頼</span><!-- END type:touch#request --><!-- BEGIN type:touch#reject -->
-		 	<span class="acms-label acms-label-warning">承認却下</span><!-- END type:touch#reject --><!-- BEGIN type:touch#trash -->
-		 	<span class="acms-label acms-label-danger">削除依頼</span><!-- END type:touch#trash -->
+		 	<span class="acms-admin-label">承認依頼</span><!-- END type:touch#request --><!-- BEGIN type:touch#reject -->
+		 	<span class="acms-admin-label acms-admin-label-warning">承認却下</span><!-- END type:touch#reject --><!-- BEGIN type:touch#trash -->
+		 	<span class="acms-admin-label acms-admin-label-danger">削除依頼</span><!-- END type:touch#trash -->
 		 	</td>
 			<td><!-- BEGIN requestUser -->
 				<img src="%{ARCHIVES_DIR}{icon}" width="28" height="28" style="vertical-align:middle; margin-right:10px;" />{name}<!-- END requestUser -->
 			</td>
-			<td class="acms-hide-sp">{deadline}[date('Y/m/d')]</td>
-			<td class="acms-hide-sp">{userOrGroup}</td>
-			<td class="acms-hide-sp">{comment}</td>
+			<td class="acms-admin-hide-sp">{deadline}[date('Y/m/d')]</td>
+			<td class="acms-admin-hide-sp">{userOrGroup}</td>
+			<td class="acms-admin-hide-sp">{comment}</td>
 			<td>
-				<a href="{url}" target="_blank" class="acms-btn-admin">確認</a></td>
+				<a href="{url}" target="_blank" class="acms-admin-btn-admin">確認</a></td>
 			<td>
 				<form action="" method="post">
 					<input type="hidden" name="eid" value="{entry_id}" />
@@ -49,7 +49,7 @@
 					<input type="hidden" name="approval[]" value="bid" />
 					<input type="hidden" name="approval[]" value="rvid" />
 					<input type="hidden" name="approval[]" value="apid" />
-					<input type="submit" name="ACMS_POST_Approval_NotificationDelete" value="削除" class="acms-btn-admin acms-btn-admin-danger" onclick="return confirm('通知を削除します。\nこの操作は取り消せません。\nよろしいですか？');" />
+					<input type="submit" name="ACMS_POST_Approval_NotificationDelete" value="削除" class="acms-admin-btn-admin acms-admin-btn-admin-danger" onclick="return confirm('通知を削除します。\nこの操作は取り消せません。\nよろしいですか？');" />
 				</form>
 			</td>
 		</tr><!-- END approval:loop -->
@@ -60,45 +60,45 @@
 <!-- BEGIN_MODULE Approval_RequestList -->
 <!-- BEGIN approval:veil -->
 <h3>承認依頼リスト</h3>
-<table class="adminTable acms-table-admin acms-table-heading">
+<table class="adminTable acms-admin-table-admin acms-admin-table-heading">
 	<thead>
 		<tr>
-			<th class="acms-hide-sp">ステータス</th>
-			<th class="acms-hide-sp">タイトル / バージョン / フロー</th>
-			<th class="acms-hide-sp">確認</th>
+			<th class="acms-admin-hide-sp">ステータス</th>
+			<th class="acms-admin-hide-sp">タイトル / バージョン / フロー</th>
+			<th class="acms-admin-hide-sp">確認</th>
 		</tr>
 	</thead>
 	<tbody><!-- BEGIN approval:loop -->
 		<tr{expired}[raw]>
 			<td nowrap><!-- BEGIN type:touch#public -->
-				<span class="acms-label acms-label-info">最終承認</span><!-- END type:touch#public --><!-- BEGIN type:touch#request -->
-				<span class="acms-label">承認依頼</span><!-- END type:touch#request --><!-- BEGIN type:touch#rejectRequest -->
-				<span class="acms-label acms-label-warning">却下依頼</span><!-- END type:touch#rejectRequest --><!-- BEGIN type:touch#reject -->
-				<span class="acms-label acms-label-danger">承認却下</span><!-- END type:touch#reject --><!-- BEGIN type:touch#trash -->
-				<span class="acms-label acms-label-danger">削除依頼</span><!-- END type:touch#trash -->
+				<span class="acms-admin-label acms-admin-label-info">最終承認</span><!-- END type:touch#public --><!-- BEGIN type:touch#request -->
+				<span class="acms-admin-label">承認依頼</span><!-- END type:touch#request --><!-- BEGIN type:touch#rejectRequest -->
+				<span class="acms-admin-label acms-admin-label-warning">却下依頼</span><!-- END type:touch#rejectRequest --><!-- BEGIN type:touch#reject -->
+				<span class="acms-admin-label acms-admin-label-danger">承認却下</span><!-- END type:touch#reject --><!-- BEGIN type:touch#trash -->
+				<span class="acms-admin-label acms-admin-label-danger">削除依頼</span><!-- END type:touch#trash -->
 			</td>
 			<td>
-				<p class="acms-title-sp">{title}【{version}】
-					<a href="#" class="{eid}_{rvid}-fade-head acms-btn-admin">フローを表示</a>
+				<p class="acms-admin-title-sp">{title}【{version}】
+					<a href="#" class="{eid}_{rvid}-fade-head acms-admin-btn-admin">フローを表示</a>
 				</p>
-				<div class="{eid}_{rvid}-fade-body acms-sidebar" style="border-top:1px solid silver; margin: 10px 0;">
-					<ul class="acms-revision-comment"><!-- BEGIN history:loop -->
+				<div class="{eid}_{rvid}-fade-body acms-admin-sidebar" style="border-top:1px solid silver; margin: 10px 0;">
+					<ul class="acms-admin-revision-comment"><!-- BEGIN history:loop -->
 						<li><!-- BEGIN type:touch#request -->
-						<span class="acms-label">承認依頼</span><!-- END type:touch#request --><!-- BEGIN type:touch#rejectRequest -->
-						<span class="acms-label acms-label-warning">却下依頼</span><!-- END type:touch#rejectRequest --><!-- BEGIN type:touch#reject -->
-						<span class="acms-label acms-label-danger">承認却下</span><!-- END type:touch#reject --><!-- BEGIN type:touch#public -->
-						<span class="acms-label acms-label-info">最終承認</span><!-- END type:touch#public --><!-- BEGIN type:touch#trash -->
-						<span class="acms-label acms-label-danger">削除依頼</span><!-- END type:touch#trash -->
+						<span class="acms-admin-label">承認依頼</span><!-- END type:touch#request --><!-- BEGIN type:touch#rejectRequest -->
+						<span class="acms-admin-label acms-admin-label-warning">却下依頼</span><!-- END type:touch#rejectRequest --><!-- BEGIN type:touch#reject -->
+						<span class="acms-admin-label acms-admin-label-danger">承認却下</span><!-- END type:touch#reject --><!-- BEGIN type:touch#public -->
+						<span class="acms-admin-label acms-admin-label-info">最終承認</span><!-- END type:touch#public --><!-- BEGIN type:touch#trash -->
+						<span class="acms-admin-label acms-admin-label-danger">削除依頼</span><!-- END type:touch#trash -->
 
-							<p class="acms-revision-comment-date">{datetime}[date('Y/m/d H:i')]</p>
+							<p class="acms-admin-revision-comment-date">{datetime}[date('Y/m/d H:i')]</p>
 							<!-- BEGIN requestUser -->
-							<p class="acms-revision-comment-photo"><img src="%{ARCHIVES_DIR}{icon}" width="28" height="28" alt="" />{name}</p>
+							<p class="acms-admin-revision-comment-photo"><img src="%{ARCHIVES_DIR}{icon}" width="28" height="28" alt="" />{name}</p>
 							<!-- END requestUser -->
 
-							<p class="acms-revision-comment-text">{comment}</p>
+							<p class="acms-admin-revision-comment-text">{comment}</p>
 
 							<!-- BEGIN receiveUser -->
-							<ul class="acms-revision-comment-user">
+							<ul class="acms-admin-revision-comment-user">
 								<li>承認期限 : {deadline}[date('Y/m/d')]</li><!-- BEGIN_IF [{userOrGroupp}/nem/] -->
 								<li>次の承認者 : {userOrGroupp}</li><!-- END_IF -->
 							</ul>
@@ -107,16 +107,16 @@
 					</ul>
 				</div>
 			</td>
-			<td nowrap><a href="{url}" target="_blank" class="acms-btn-admin">確認</a></td>
+			<td nowrap><a href="{url}" target="_blank" class="acms-admin-btn-admin">確認</a></td>
 		</tr><!-- END approval:loop -->
 	</tbody>
 </table>
 
-<div class="acms-grid">
-	<div class="acms-col-6">
+<div class="acms-admin-grid">
+	<div class="acms-admin-col-md-6">
 		<!-- BEGIN pager:veil -->
-		<div class="acms-pager-container">
-			<ul class="acms-pager"><!-- BEGIN backLink -->
+		<div class="acms-admin-pager-container">
+			<ul class="acms-admin-pager"><!-- BEGIN backLink -->
 				<li class="prev"><a href="{url}">&laquo;&nbsp;前へ</a></li><!-- END backLink --><!-- BEGIN page:loop -->
 				<li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --></span></li><!-- END page:loop --><!-- BEGIN lastPage:veil -->
 				<li class="last"><a href="{lastPageUrl}">...{lastPage}</a></li><!-- END lastPage:veil --><!-- BEGIN forwardLink -->
@@ -125,8 +125,8 @@
 		</div>
 		<!-- END pager:veil -->
 	</div>
-	<div class="acms-col-6">
-		<div class="acms-itemsAmount-container">
+	<div class="acms-admin-col-md-6">
+		<div class="acms-admin-itemsAmount-container">
 			<p>{itemsFrom}件 - {itemsTo}件 / 全{itemsAmount}件</p>
 		</div>
 	</div>

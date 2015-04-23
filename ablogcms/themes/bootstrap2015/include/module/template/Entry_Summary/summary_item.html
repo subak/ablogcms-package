@@ -1,0 +1,40 @@
+<!-- BEGIN layout#display -->
+<!-- BEGIN_MODULE Entry_Summary id="" -->
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<!-- BEGIN moduleField --><!-- BEGIN module_heading:veil --><h2 class="moduleHeading">{module_heading}</h2><!-- END module_heading:veil --><!-- END moduleField -->
+<!-- BEGIN notFound -->
+<p>エントリーが見つかりませんでした。</p>
+<!-- END notFound -->
+<div class="list-group">
+	<!-- BEGIN unit:loop -->
+	<!-- BEGIN entry:loop -->
+	<a href="{url}" class="list-group-item">
+		<h4 class="list-group-item-heading">{title}</h4>
+		<p class="list-group-item-text">{entry_meta_description}[trim(101, '...')]</p>
+	</a>
+	<!-- END entry:loop -->
+	<!-- END unit:loop -->
+	</div>
+</div>
+<!-- END_MODULE Entry_Summary -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div>
+	<div class="list-group">
+		<a href="#" class="list-group-item">
+			<h4 class="list-group-item-heading">エントリータイトル</h4>
+			<p class="list-group-item-text">ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。</p>
+		</a>
+		<a href="#" class="list-group-item">
+			<h4 class="list-group-item-heading">エントリータイトル</h4>
+			<p class="list-group-item-text">ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。</p>
+		</a>
+		<a href="#" class="list-group-item">
+			<h4 class="list-group-item-heading">エントリータイトル</h4>
+			<p class="list-group-item-text">ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。ここに概要文が入ります。</p>
+		</a>
+	</div>
+</div>
+<!-- END layout#dummy -->

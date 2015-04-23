@@ -1,6 +1,6 @@
-/* ---------------
- thumbnail
---------------- */
+/* ------------------------------  
+ サムネイル
+------------------------------- */
 // 角丸
 .acms-img-rounded,
 .acms-img-rounded img {
@@ -45,11 +45,17 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	margin: 0 0 6px 0;
+	margin: 0;
 	padding: 20px 20px 12px;
 	background: #333333;
 	background: rgba(0,0,0,0.5);
 	color: #FFFFFF;
+}
+
+.acms-img-captionBox img {
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
 
 // --------------- 
@@ -58,6 +64,7 @@
 .acms-img-hover {
 	opacity: 0;
 	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 // --------------- 
@@ -71,6 +78,8 @@
 	border: 1px solid #DDDDDD;
 	border-radius: 6px;
 	background-color: #FFFFFF;
+	color: #333;
+	text-decoration: none;
 	// img
 	img {
 		max-width: 100%;
@@ -80,5 +89,8 @@
 		border: 1px solid #CCC;
 		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 		cursor: pointer;
+	}
+	a&:hover {
+		color: #666;
 	}
 }

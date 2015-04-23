@@ -1,0 +1,107 @@
+<ul class="blogCartFlowList">
+	<li class="flowBack"><span class="blogCartFlowListNumber">1</span><a href="%{BASE_URL}order.html" class="js-viewing-indelible" title="ご注文商品一覧に戻る">ご注文商品一覧</a></li>
+	<li class="flowBack"><span class="blogCartFlowListNumber">2</span><a href="%{BASE_URL}order.html?step=address" class="js-viewing-indelible" title="ご住所のご確認に戻る">ご住所のご確認</a></li>
+	<li class="current"><span class="blogCartFlowListNumber">3</span>配送・お支払い方法</li>
+	<li><span class="blogCartFlowListNumber">4</span>ご注文内容の確認</li>
+	<li><span class="blogCartFlowListNumber">5</span>ご注文完了</li>
+</ul>
+
+<!-- 各決済ページコンテンツ▼ -->
+<h2>3. 配送・お支払い方法</h2>
+<div id="container">
+<p id="descRequired">&nbsp;<span class="acms-icon acms-icon-checklist"></span>は必須の項目です。</p>
+<form action="?step=deliver" method="post" class="acms-form">
+
+	<h3 class="required">配送方法&nbsp;<span class="acms-icon acms-icon-checklist"></span></h3>
+	<p>配送方法を選択してください。通常配送は、お届けの地域によって送料が異なります。</p>
+	<!-- BEGIN deliver:validator#required --><p class="acms-text-error">お届け方法を選択してください</p><!-- END deliver:validator#required -->
+	<!-- BEGIN_MODULE Shop2_Form_DeliverList -->
+	<div class="blogEntryContentTableWrapper">
+	<table class="blogEntryContentTable">
+		<tr>
+			<th width="250">配送方法</th>
+			<th>送料</th>
+		</tr><!-- BEGIN deliver:loop -->
+		<tr>
+			<td>
+				<label><input type="radio" name="deliver" id="deliver" value="{deliver}"{checked} />&nbsp;{deliver}</label>
+			</td>
+			<td>&yen;{charge}[number_format]<!-- BEGIN prefecture:veil -->&nbsp;(&nbsp;{prefecture}&nbsp;)<!-- END prefecture:veil --></td>
+		</tr><!-- END deliver:loop -->
+	</table>
+	</div>
+	<!-- END_MODULE Shop2_Form_DeliverList -->
+	<input type="hidden" name="order[]" value="deliver" />
+	<input type="hidden" name="deliver:v#required" />
+
+	<h3 class="required">お支払い方法&nbsp;<span class="acms-icon acms-icon-checklist"></span></h3>
+	<p>お支払い方法を選択してください。お支払い方法によっては手数料が加算されます。</p>
+	<!-- BEGIN payment:validator#required --><p class="acms-text-error">お支払い方法を選択してください</p><!-- END payment:validator#required -->
+	<!-- BEGIN_MODULE Shop2_Form_PaymentList -->
+	<div class="blogEntryContentTableWrapper">
+	<table class="blogEntryContentTable">
+		<tr>
+			<th width="250">お支払い方法</th>
+			<th>手数料</th>
+		</tr><!-- BEGIN payment:loop -->
+		<tr>
+			<td>
+				<label><input type="radio" name="payment" id="payment" value="{payment}"{checked} />&nbsp;{payment}</label>
+			</td>
+			<td>&yen;{charge}[number_format]</td>
+		</tr><!-- END payment:loop -->
+	</table>
+	</div>
+	<!-- END_MODULE Shop2_Form_PaymentList -->
+	<input type="hidden" name="order[]" value="payment" />
+	<input type="hidden" name="payment:v#required" />
+
+	<!-- BEGIN_MODULE Shop2_Form_RequestList -->
+	<h3>配送オプションのご希望</h3>
+	<p>その他、配送時の希望日、時間帯等のご希望があれば選択してください。</p>
+	<div class="blogEntryContentTableWrapper">
+	<table class="blogEntryContentTable">
+		<tr>
+			<th width="250"><label for="request_date">配送希望日</label></th>
+			<td><select name="request_date" id="request_date">
+					<option value="">指定なし</option>
+					<!-- BEGIN date:loop -->
+					<option value="{date}"{selected}>{date}[datetime(m月d日)]</option>
+					<!-- END date:loop -->
+				</select>
+				<input type="hidden" name="order[]" value="request_date" />
+			</td>
+		</tr>
+		<tr>
+			<th><label for="request_time">配送希望時間帯</label></th>
+			<td><select name="request_time" id="request_time">
+					<option value="">指定なし</option>
+					<!-- BEGIN time:loop -->
+					<option value="{time}"{selected}>{time}</option>
+					<!-- END time:loop -->
+				</select>
+				<input type="hidden" name="order[]" value="request_time" />
+			</td>
+		</tr>
+		<tr>
+			<th><label for="request_others">その他のオプション</label></th>
+			<td><select name="request_others" id="request_others">
+					<option value="">指定なし</option>
+					<!-- BEGIN request:loop -->
+					<option value="{request}"{selected}>{request} ( +&yen;{charge} )</option>
+					<!-- END request:loop -->
+				</select>
+				<input type="hidden" name="order[]" value="request_others" />
+			</td>
+		</tr>
+	</table>
+	</div>
+	<!-- END_MODULE Shop2_Form_RequestList -->
+<div class="blogCartBtnWrapper">
+	<input type="submit" name="ACMS_POST_Shop2_Form_Backstep" value="前のステップに戻る" class="blogCartBtn" />
+	<input type="submit" name="ACMS_POST_Shop2_Form_Confirm" value="次のステップへ進む" class="blogCartBtnPrimary" />
+	<input type="hidden" name="step" value="{step}" />
+</div>
+</form>
+
+</div>
