@@ -25,7 +25,8 @@ mailmagazine			: off
 cache_expire_client		: 0
 generator : off
 generator_end_tag : on
-jquery_version            : 1.11.1 # (2.1.1|2.0.3|1.11.1|1.10.1|1.9.1|1.8.3|1.7.2|1.6.4) 2.xはIE9〜
+jquery_version: 1.11.1 # (2.1.1|2.0.3|1.11.1|1.10.1|1.9.1|1.8.3|1.7.2|1.6.4) 2.xはIE9〜
+jquery_migrate: off
 session_contributor_only_own_entry  : off
 tpl_find_from_ascendants_ccd    : on
 query_keyword : on
@@ -95,6 +96,7 @@ tpl_rss2  : rss2.xml
 
 ## 定数
 const_file_path : private/const/pc.php
+const_mail_convert_dir : private/const/mail/
 
 # バージョン管理
 revision_temp_memo    : '作業領域'
@@ -204,7 +206,7 @@ mail_rfc_2047_encoding  :
 mail_header_divider : LF # CRLF | LF
 
 ## 検索
-#ngram  : 2
+#ngram  : 2 #「my.cnf」ft_min_word_lenの値と合わせる
 
 ## モブログ
 moblog_pop3_mail_receive_limit  : 5

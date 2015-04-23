@@ -2574,6 +2574,34 @@
     Key: 
     Default: 
     Extra: 
+  rule_cookie_key: 
+    Field: rule_cookie_key
+    Type: varchar(255)
+    Null: YES
+    Key: 
+    Default: 
+    Extra: 
+  rule_cookie_val: 
+    Field: rule_cookie_val
+    Type: varchar(255)
+    Null: YES
+    Key: 
+    Default: 
+    Extra: 
+  rule_cookie_case: 
+    Field: rule_cookie_case
+    Type: varchar(16)
+    Null: YES
+    Key: 
+    Default: 
+    Extra: 
+  rule_term_type: 
+    Field: rule_term_type
+    Type: varchar(16)
+    Null: YES
+    Key: 
+    Default: 
+    Extra: 
   rule_term_start: 
     Field: rule_term_start
     Type: datetime
