@@ -69,6 +69,16 @@
 				<input type="hidden" name="config[]" value="category_list_level" />
 			</td>
 		</tr>
+		<tr>
+			<th>フィールド検索<i class="acms-icon-tooltip js-acms-tooltip" data-acms-tooltip="絞り込むフィールドを選択します。"></i></th>
+			<td>
+				<select name="category_list_field_search">
+					<option value="entry"{category_list_field_search:selected#entry}>エントリー</option>
+					<option value="category"{category_list_field_search:selected#category}>カテゴリー</option>
+				</select>
+				<input type="hidden" name="config[]" value="category_list_field_search" />
+			</td>
+		</tr>
 	</table><!-- BEGIN_MODULE Admin_Rule_Name -->
 	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
 	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
