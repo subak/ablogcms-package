@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# sudo ./docker/lsyncd.sh ./ rsync://dev.docker.host:`docker-compose port rsync 873 | sed -e 's/0.0.0.0://'`/var/www/html
+# sudo ./docker/lsyncd.sh ./ rsync://dev.docker.host:`docker-compose port rsync 873 | sed -e 's/0.0.0.0://'`/var_www_html
 
 SYNC_EX=${SYNC_EX:-'".git/", "docker/", "archives/*", "archives_rev/*", "media/*"'}
 
