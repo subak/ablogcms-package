@@ -1,0 +1,34 @@
+web:
+  build: .
+  volumes_from:
+    - storage
+  ports:
+    - 80
+    - 9000
+
+mysql:
+  image: mysql:latest
+  environment:
+    MYSQL_ROOT_PASSWORD: mysql
+  volumes_from:
+    - storage
+  ports:
+    - 3306
+
+rsync:
+  image: subak/rsync
+  volumes_from:
+    - storage
+  environment:
+    VOLUME_NAME: var_www_html
+    VOLUME: /var/www/html
+  ports:
+    - 873
+
+storage:
+  image: busybox
+  volumes:
+    - /var/www/html
+    - /var/lib/mysql
+#    - /path/to/var/lib/mysql:/var/lib/mysql
+#    - /path/to/var/www/html:/var/www/html
