@@ -1,7 +1,0 @@
-<snippet>
-	<content><![CDATA[<!-- BEGIN_MODULE Touch_BlogGlobal -->
-
-<!-- END_MODULE Touch_BlogGlobal -->]]></content>
-	<tabTrigger>!acms:touch</tabTrigger>
-    <description>Touch_BlogGlobal</description>
-</snippet>

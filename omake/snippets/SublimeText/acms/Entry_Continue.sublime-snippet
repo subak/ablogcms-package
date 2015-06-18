@@ -1,9 +1,0 @@
-<snippet>
-	<content><![CDATA[
-<!-- BEGIN_MODULE Entry_Continue id="${1:module_id}" -->
-<!--#include file="/include/unit.html"-->
-<!-- END_MODULE Entry_Continue -->
-
-]]></content>
-	<tabTrigger>!Entry_Continue</tabTrigger>
-</snippet>

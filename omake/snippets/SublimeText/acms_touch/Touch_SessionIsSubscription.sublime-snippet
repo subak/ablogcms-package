@@ -1,7 +1,0 @@
-<snippet>
-	<content><![CDATA[<!-- BEGIN_MODULE Touch_SessionIsSubscription -->
-
-<!-- END_MODULE Touch_SessionIsSubscription -->]]></content>
-	<tabTrigger>!acms:touch</tabTrigger>
-    <description>Touch_SessionIsSubscription</description>
-</snippet>

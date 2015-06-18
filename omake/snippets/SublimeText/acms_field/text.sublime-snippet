@@ -1,9 +1,0 @@
-<snippet>
-	<content><![CDATA[
-<input type="text" name="${1:name}" value="\{${1:name}\}">
-<input type="hidden" name="field[]" value="${1:name}">
-]]></content>
-	<tabTrigger>!acms:field</tabTrigger>
-	<description>Text</description>
-</snippet>
-	

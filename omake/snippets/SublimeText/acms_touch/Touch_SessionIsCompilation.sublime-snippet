@@ -1,7 +1,0 @@
-<snippet>
-	<content><![CDATA[<!-- BEGIN_MODULE Touch_SessionIsCompilation -->
-
-<!-- END_MODULE Touch_SessionIsCompilation -->]]></content>
-	<tabTrigger>!acms:touch</tabTrigger>
-    <description>Touch_SessionIsCompilation</description>
-</snippet>

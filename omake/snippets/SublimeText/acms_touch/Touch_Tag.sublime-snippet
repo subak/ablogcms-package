@@ -1,7 +1,0 @@
-<snippet>
-	<content><![CDATA[<!-- BEGIN_MODULE Touch_Tag -->
-
-<!-- END_MODULE Touch_Tag -->]]></content>
-	<tabTrigger>!acms:touch</tabTrigger>
-    <description>Touch_Tag</description>
-</snippet>
