@@ -1,2 +1,4 @@
+git clone -b php54/latest https://github.com/subak/ablogcms-package.git
+
 skeltonです
-ここにそのプロジェクトの説明を書いて上書きしてください。
+ここにそのプロジェクトの説明を書いて上書きしてください。
