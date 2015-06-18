@@ -4,7 +4,7 @@ define('DOMAIN', '');
 define('DOMAIN_BASE', '');
 
 define('DB_TYPE', 'mysql');
-define('DB_HOST', '');
+define('DB_HOST', getenv('MYSQL_PORT_3306_TCP_ADDR'));
 define('DB_NAME', '');
 define('DB_USER', '');
 define('DB_PASS', '');
