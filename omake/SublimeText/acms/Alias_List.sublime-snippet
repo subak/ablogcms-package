@@ -1,7 +1,0 @@
-<snippet>
-	<content><![CDATA[<!-- BEGIN_MODULE Alias_List id="${1:module_id}" -->
-<ul><!-- BEGIN alias:loop -->
-	<li><a href="{url}">{name}</a></li><!-- END alias:loop -->
-</ul><!-- END_MODULE Alias_List -->]]></content>
-	<tabTrigger>!Alias_List</tabTrigger>
-</snippet>

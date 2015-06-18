@@ -1,7 +1,0 @@
-<snippet>
-	<content><![CDATA[<!-- BEGIN_MODULE Blog_ChildList id="${1:module_id}" -->
-<ul><!-- BEGIN blog:loop -->
-	<li><a href="{url}">{name}</a></li><!-- END blog:loop -->
-</ul><!-- END_MODULE Blog_ChildList -->]]></content>
-	<tabTrigger>!Blog_ChildList</tabTrigger>
-</snippet>

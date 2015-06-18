@@ -1,7 +1,0 @@
-<snippet>
-	<content><![CDATA[<!-- BEGIN_MODULE Api_Facebook_Touch_Signed -->
-
-<!-- END_MODULE Api_Facebook_Touch_Signed -->]]></content>
-	<tabTrigger>!acms:touch</tabTrigger>
-    <description>Facebook_Touch_Signed</description>
-</snippet>
