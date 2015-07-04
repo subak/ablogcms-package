@@ -30,5 +30,3 @@ storage:
   volumes:
     - /var/www/html
     - /var/lib/mysql
-#    - /path/to/var/lib/mysql:/var/lib/mysql
-#    - /path/to/var/www/html:/var/www/html
