@@ -5,6 +5,8 @@ web:
   ports:
     - 80
     - 9000
+  links:
+    - mysql
 
 mysql:
   image: mysql:latest
