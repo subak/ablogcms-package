@@ -75,3 +75,6 @@ define('IOS_APP_UA', 'acms_iOS_app');
 // 本番運用時にDEBUG_MODEを 0 に設定して下さい
 define('DEBUG_MODE', 1);
 define('BENCHMARK_MODE', 0);
+
+date_default_timezone_set(DEFAULT_TIMEZONE);
+
