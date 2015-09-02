@@ -1,3 +1,0 @@
-<Files ~ "\.(html|htm)$">
-	Deny from all
-</Files>
