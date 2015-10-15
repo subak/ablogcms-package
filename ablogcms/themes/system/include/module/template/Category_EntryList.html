@@ -4,11 +4,11 @@
 <!--#include file="/admin/module/setting.html"-->
 <!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
 <!-- END categoryUl#front --><!-- BEGIN category:loop -->
-	<div>
+	<div class="{category:loop.class}">
 		<h3 class="acms-admin-heading acms-admin-list-group-heading"><a href="{categoryUrl}">{categoryName}</a></h3><!-- BEGIN entry:veil -->
 		<ul class="acms-admin-list-group">
 		<!-- BEGIN entry:loop -->
-			<li><a href="{entryUrl}" class="acms-admin-list-group-item">{entryTitle}</a></li>
+			<li class="{entry:loop.class}"><a href="{entryUrl}" class="acms-admin-list-group-item">{entryTitle}</a></li>
 		<!-- END entry:loop -->
 		</ul>
 		<!-- END entry:veil -->

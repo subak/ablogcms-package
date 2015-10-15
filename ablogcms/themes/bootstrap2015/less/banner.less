@@ -1,0 +1,33 @@
+/* ------------------------------
+ バナー
+------------------------------ */
+ /* 横並び */
+.listInlineBanner {
+	padding-left: 0;
+
+	li {
+		float: left;
+		list-style-type: none;
+		margin-bottom: 20px;
+	}
+	a {
+		display: block;
+		.transition(opacity .2s linear);
+		&:hover {
+			.opacity(.6);
+		}
+	}
+}
+/* 縦並び */
+.listVerticalBanner {
+	li {
+		margin: 0 0 10px 0;
+	}
+	a {
+		display: block;
+		.transition(opacity .2s linear);
+		&:hover {
+			.opacity(.6);
+		}
+	}
+}

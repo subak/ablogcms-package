@@ -5,11 +5,11 @@
 <!--#include file="/admin/module/setting.html"-->
 <!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
 <!-- END categoryUl#front --><!-- BEGIN category:loop -->
-	<div class="panel panel-default">
+	<div class="panel panel-default {category:loop.class}">
 		<div class="panel-heading"><a href="{categoryUrl}">{categoryName}</a></div><!-- BEGIN entry:veil -->
 		<div class="list-group">
 		<!-- BEGIN entry:loop -->
-			<a href="{entryUrl}" class="list-group-item">{entryTitle}</a>
+			<a href="{entryUrl}" class="list-group-item {entry:loop.class}">{entryTitle}</a>
 		<!-- END entry:loop -->
 		</div>
 		<!-- END entry:veil -->

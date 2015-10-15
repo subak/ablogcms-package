@@ -96,7 +96,7 @@
 		<th>ブログID（bid）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="このモジュールIDの表示内容を、ブログの管理ID（番号）で指定します。"></i></th>
 		<td>&nbsp;</td>
 		<td>
-			<button name="bid" class="js-arg_reference_trigger acms-admin-btn acms-admin-btn-info acms-admin-inline-space">ID参照</button>
+			<button type="button" name="bid" class="js-arg_reference_trigger acms-admin-btn acms-admin-btn-info acms-admin-inline-space">ID参照</button>
 
 			<a href="#" class="js-arg_reference_toggle acms-admin-inline-space"><span class="acms-admin-icon-control-edit"></span></a>
 
@@ -124,7 +124,7 @@
 			<input type="hidden" name="module[]" value="uid_scope" />
 		</td>
 		<td>
-			<button name="uid" class="js-arg_reference_trigger acms-admin-btn acms-admin-btn-info acms-admin-inline-space">ID参照</button>
+			<button type="button" name="uid" class="js-arg_reference_trigger acms-admin-btn acms-admin-btn-info acms-admin-inline-space">ID参照</button>
 
 			<a href="#" class="js-arg_reference_toggle acms-admin-inline-space"><span class="acms-admin-icon-control-edit"></span></a>
 
@@ -152,7 +152,7 @@
 			<input type="hidden" name="module[]" value="cid_scope" />
 		</td>
 		<td>
-			<button name="cid" class="js-arg_reference_trigger acms-admin-btn acms-admin-btn-info acms-admin-inline-space">ID参照</button>
+			<button type="button" name="cid" class="js-arg_reference_trigger acms-admin-btn acms-admin-btn-info acms-admin-inline-space">ID参照</button>
 
 			<a href="#" class="js-arg_reference_toggle acms-admin-inline-space"><span class="acms-admin-icon-control-edit"></span></a>
 
@@ -179,12 +179,11 @@
 			<input type="hidden" name="module[]" value="eid_scope" />
 		</td>
 		<td>
-			<button name="eid" class="js-arg_reference_trigger acms-admin-btn acms-admin-btn-info acms-admin-inline-space">ID参照</button>
+			<button type="button" name="eid" class="js-arg_reference_trigger acms-admin-btn acms-admin-btn-info acms-admin-inline-space">ID参照</button>
 
 			<a href="#" class="js-arg_reference_toggle acms-admin-inline-space"><span class="acms-admin-icon-control-edit"></span></a>
 
 			<input class="js-arg_guidance_edit argEdit" type="text" name="eid" value="{eid}" />
-			<input type="hidden" name="module[]" value="eid" />
 			<input type="hidden" name="module[]" value="eid" />
 			<input type="hidden" name="eid:convert" value="a" />
 			<label for="validator-eid-intOrGlobalVars" class="validator-result-{eid:validator#intOrGlobalVars}">数字またはグローバル変数を入力してください。</label>

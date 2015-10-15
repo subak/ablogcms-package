@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/vars.css" />
-<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lte IE 9]><script src="/js/html5shiv.min.js"></script><![endif]-->
 <title>Category_EntrySummary</title>
 </head>
 <body>
@@ -19,6 +19,8 @@
 				<var>categoryCode (v1.2.0 later)<span>カテゴリーコード</span></var>
 				<var>categoryId (v1.3.0 later)<span>カテゴリーID</span></var>
 				<var>categoryPid (v1.3.0 later)<span>親カテゴリーID</span></var>
+				<var>category:loop.class (v2.5.1 later)<span>コンフィグで設定したクラス名</span></var>
+
 				<fieldset><legend>notFound<span>エントリーがない場合</span></legend></fieldset>
 				<fieldset class="loop"><legend class="loop">unit:loop<span>エントリーユニットのループ</span></legend>
 					<fieldset class="loop">
@@ -68,6 +70,7 @@
 					<var>cid<span>カテゴリーID</span></var>
 					<var>uid<span>ユーザーID</span></var>
 					<var>bid<span>ブログID</span></var>
+					<var>entry:loop.class (v2.5.1 later)<span>コンフィグで設定したクラス名</span></var>
 					<var>x<span>画像の表示サイズ（幅）</span></var>
 					<var>y<span>画像の表示サイズ（高さ）</span></var>
 					<fieldset class="veil"><legend class="veil">image:veil</legend>
@@ -77,7 +80,11 @@
 						<var>left<span>相対位置X（中央寄せ）</span></var>
 						<var>top<span>相対位置Y（中央寄せ）</span></var>
 					</fieldset>
-					<fieldset><legend>noimage<span>画像がない場合</span></legend></fieldset>
+					<fieldset>
+						<legend>noimage<span>画像なし</span></legend>
+						<var>noImgX<span>横サイズ</span></var>
+						<var>noImgY<span>縦サイズ</span></var>
+					</fieldset>
 					<var>permalink<span>パーマリンク</span></var>
 					<var>tinyPath<span>小さい画像のパス</span></var>
 					<var>tinyX<span>小さい画像の横幅</span></var>

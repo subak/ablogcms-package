@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ja"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="ja"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"> <!--<![endif]-->
+<head>
+<!--#include file="/include/head/meta.html"-->
+<!--#include file="/include/head/link.html"-->
+<!--#include file="/include/head/js.html"-->
+</head>
+<body>
+	<!-- ナビゲーション -->
+	<!--#include file="/include/header/navigation-inverse.html"-->
+
+	<div class="container">
+		<div class="row">
+
+			<main class="col-sm-8 center-block" role="main">
+				<!-- 管理画面　 -->
+				<!--#include file="/admin/action.html"-->
+
+				<div class="entryWrapper">
+					<article class="acms-entry entry">
+						<header class="pageHeader">
+							<h1 class="entryTitle">404</h1>
+						</header>
+						<div class="entryColumn">
+							<div class="acms-grid-r">
+								<p>お探しのページは見つかりませんでした。</p>
+								<p>お探しのページは一時的にアクセスができない状況にあるか、移動もしくは削除された可能性があります。</p>
+								<p><a href="%{BASE_URL}">→ トップページへ戻る</a></p>
+							</div>
+						</div>
+					</article>
+				</div>
+
+			</main>
+		</div>
+	</div>
+	<div>
+		<!--#include file="/admin/layout/action.html"-->
+		<div class="layout">
+			<!-- BEGIN_MODULE Layout id="sidebar" -->
+				<!-- BEGIN display -->
+					<!--#include file="/include/layout.html" -->
+				<!-- END display -->
+
+				<!-- BEGIN edit -->
+				<div>
+					<!--#include file="/admin/layout/edit.html"-->
+				</div>
+				<!-- END edit -->
+			<!-- END_MODULE Layout -->
+		</div>
+	</div>
+	<!-- フッター -->
+	<!-- #include file="/include/footer/footer.html" -->
+
+</body>
+</html>

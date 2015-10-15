@@ -5,7 +5,7 @@
 	<!--#include file="/admin/module/setting.html"-->
 	<ul class="listBorder">
 		<!-- BEGIN entry:loop -->
-		<li class="listBorderItem"><a href="{url}" class="listBorderLink"><time datetime="{date#Y}-{date#m}-{date#d}" class="listBorderTime">{date#Y}年{date#m}月{date#d}日</time>{title}</a></li>
+		<li class="listBorderItem {entry:loop.class}"><a href="{url}" class="listBorderLink"><time datetime="{date#Y}-{date#m}-{date#d}" class="listBorderTime">{date#Y}年{date#m}月{date#d}日</time>{title}</a></li>
 		<!-- END entry:loop -->
 	</ul>
 </div>
@@ -16,9 +16,9 @@
 <div>
 <ul class="listBorder">
 	<li class="listBorderItem"><a href="#" class="listBorderLink"><time datetime="2015-04-14" class="listBorderTime">2015年04月14日</time>お知らせのエントリー</a></li>
-	
+
 	<li class="listBorderItem"><a href="#" class="listBorderLink"><time datetime="2015-03-13" class="listBorderTime">2015年03月13日</time>お知らせのエントリー</a></li>
-	
+
 	<li class="listBorderItem"><a href="#" class="listBorderLink"><time datetime="2015-03-13" class="listBorderTime">2015年03月13日</time>お知らせのエントリー</a></li>
 </ul>
 </div>

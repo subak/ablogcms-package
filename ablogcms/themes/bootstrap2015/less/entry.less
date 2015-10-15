@@ -1,0 +1,271 @@
+/* ------------------------------
+ エントリー
+------------------------------ */
+.entryWrapper {
+	margin: 20px 0 40px 0;
+}
+.entry {
+	margin: 0 0 30px 0;
+}
+/* ヘッダー */
+.pageHeader {
+	margin: 0 0 35px 0;
+}
+/* 見出し */
+.entryTitle {
+	margin: 20px 0 10px 0;
+	.font-size(@entry-title);
+	font-weight: bold;
+}
+/* 日付 */
+.entryDate {
+	display: inline;
+	.font-size(16);
+}
+/* カテゴリー */
+.entryCategory {
+	display: inline;
+	.font-size(16);
+}
+
+@media (min-width : @breakpoint-md-min) {
+	.entryWrapper {
+		margin: 50px 0 40px 0;
+	}
+	.pageHeader {
+		margin: 0 0 35px 0;
+	}
+	.entryTitle {
+		margin: 20px 0;
+		.font-size(@entry-title-pc);
+	}
+}
+
+
+
+/* 見出し */
+.entryColumn {
+	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+		font-weight: bold;
+	}
+	h2 {
+		margin-top: 40px;
+		margin-bottom: @entry-btmSpace;
+		.font-size(@entry-headingLevel2);
+		line-height: @entry-lineHeightHeading;
+	}
+	h3 {
+		margin-top: 25px;
+		margin-bottom: @entry-btmSpace;
+		.font-size(@entry-headingLevel3);
+		line-height: @entry-lineHeightHeading;
+	}
+	h4 {
+		margin-bottom: @entry-btmSpace;
+		font-size: 18px;
+		line-height: @entry-lineHeightHeading;
+	}
+	h5 {
+		margin-bottom: @entry-btmSpace;
+		font-size: 15px;
+		line-height: @entry-lineHeightHeading;
+	}
+}
+/* 本文 */
+.entryColumn {
+	p {
+		margin-bottom: @entry-btmSpace;
+		line-height: @entry-lineHeight;
+		.font-size(@entry-fontSize);
+	}
+}
+/* リスト */
+.entryColumn {
+	ul {
+		margin-bottom: @entry-btmSpace;
+		line-height: @entry-lineHeightNarrow;
+		.font-size(@entry-fontSize);
+	}
+	ol {
+		margin-bottom: @entry-btmSpace;
+		line-height: @entry-lineHeightNarrow;
+		.font-size(@entry-fontSize);
+	}
+}
+/* テーブル */
+.entryColumn {
+	table {
+		margin-bottom: @entry-btmSpace;
+		.font-size(@entry-fontSize);
+		border: 1px solid #ddd;
+		border-spacing: 0;
+		border-collapse: collapse;
+
+		&>thead, &>tbody, &>tfoot {
+			&>tr>th,
+			&>tr>td{
+				border: 1px solid #ddd;
+				padding: 8px;
+				line-height: 1.42857143;
+				vertical-align: top;
+				border-top: 1px solid #ddd;
+			}
+		}
+	}
+}
+
+/*  定義リスト */
+.entryColumn {
+	dl {
+		.font-size(@entry-fontSize);
+	}
+}
+
+/* 引用 */
+.entryColumn {
+	blockquote {
+		margin-bottom: @entry-btmSpace;
+		font-size: @entry-fontSize;
+		line-height: 1.5;
+	}
+}
+/* ソース */
+.entryColumn {
+	pre {
+		margin-bottom: @entry-btmSpace;
+
+		ol.linenums {
+			margin-bottom: 0;
+		}
+		ol.linenums li {
+			line-height: 1.5;
+		}
+	}
+}
+/* ユニット */
+.entryColumn {
+	.caption {
+		margin: 10px 0;
+		font-size: @entry-fontSizeSmall;
+		color: #999;
+	}
+}
+
+.entryColumn {
+	[class*='column-image-'].nocaption,
+	[class*='column-media-'].nocaption,
+	[class*='column-yolp-'],
+	[class*='column-youtube-'],
+	[class*='column-video-'],
+	[class*='column-eximage-'].nocaption {
+		margin-bottom: @entry-btmSpace;
+	}
+}
+
+/* 管理画面 */
+.entryColumn {
+	.acms-admin-title2 {
+		font-size: 14px;
+	}
+}
+
+@media (min-width : @breakpoint-md-min) {
+	.entryColumn {
+		p,
+		ul,
+		ol,
+		table,
+		dl,
+		blockquote,
+		pre {
+			.font-size(@entry-fontSize-pc);
+		}
+	}
+}
+
+/* ページャー 本テーマオリジナル */
+.pagerCustomize {
+	margin: 0 0 60px 0;
+	padding: 0;
+	list-style: none;
+	border-top: 1px solid #333;
+}
+.pagerCustomizeItem {
+	width: 100%;
+	border-bottom: 1px solid #333;
+}
+.pagerCustomizeLink {
+	position: relative;
+	display: table;
+	width: 100%;
+	padding: 10px 0;
+	.font-size(16);
+	color: #333;
+	vertical-align: top;
+
+	.glyphicon {
+		display: table-cell;
+		width: 1%;
+		white-space: nowrap;
+		vertical-align: middle;
+	}
+	&:hover,
+	&:visited,
+	&:active,
+	&:focus {
+		color: inherit;
+	}
+}
+.pagerCustomizeArrow {
+	display: table-cell;
+	width: 100%;
+	padding: 0 20px;
+}
+.pagerCustomizeText {
+	margin: 0;
+}
+.pagerCustomizeTitle {
+	display: block;
+	font-weight: bold;
+}
+@media (min-width : @breakpoint-md-min) {
+	.pagerCustomize {
+		border: 0;
+	}
+	.pagerCustomizeItem {
+		width: 50%;
+		border: 0;
+	}
+	.pagerCustomizeItemLeft {
+		float: left;
+	}
+	.pagerCustomizeItemRight {
+		float: right;
+	}
+	.pagerCustomizeLink {
+		padding: 0;
+		.font-size(18);
+	}
+}
+
+/* ページネーション */
+.pagination > .cur span {
+	z-index: 2;
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #FFF;
+	text-decoration: none;
+	cursor: default;
+	background-color: #337ab7;
+	border: 1px solid #337ab7;
+	&:hover {
+		z-index: 2;
+		color: #fff;
+		cursor: default;
+		background-color: #337ab7;
+		border-color: #337ab7
+	}
+}

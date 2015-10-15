@@ -1,0 +1,491 @@
+/* ------------------------------
+　　ヘッダー
+------------------------------ */
+/* サイト名 */
+.siteName {
+	.font-size(24);
+	font-weight: bold;
+	color: @primary-color;
+	a {
+		color: @primary-color;
+		&:hover,
+		&:focus,
+		&:active,
+		&:visited {
+			color: @primary-color;
+		}
+	}
+}
+.siteLogo {
+	display: inline-block;
+	width: 22px;
+	height: auto;
+	margin: 0 10px 0 0;
+	vertical-align: middle;
+}
+.siteNameText {
+	display: inline;
+	vertical-align: middle;
+}
+.editLink {
+	display: inline-block;
+	vertical-align: middle;
+	.font-size(14);
+}
+
+@media (min-width : @breakpoint-md-min) {
+	.siteName {
+		.font-size(24);
+	}
+	.siteLogo {
+		width: 40px;
+	}
+	.header {
+		display: table;
+		width: 100%;
+	}
+	.headerLogo {
+		display: table-cell;
+		width: 100%;
+		vertical-align: middle;
+	}
+	.headerNav {
+		display: table-cell;
+		width: 50%;
+		vertical-align: middle;
+	}
+}
+@media (min-width : @breakpoint-lg-min) {
+	.headerLogo {
+		display: table-cell;
+		width: 40%;
+	}
+	.headerNav {
+		display: table-cell;
+		width: 60%;
+	}
+}
+
+
+
+/* ------------------------------
+　　ナビゲーション
+------------------------------ */
+.headerLogo {
+	/* 固定したときの高さを保つ */
+	padding: 48px 0 0 0;
+}
+.siteHeader {
+	position: fixed;
+		top: 0;
+		right: 0;
+	width: 100%;
+	padding: 0 5px;
+	border-top: 4px solid @secondary-color;
+	border-bottom: 1px solid #CCC;
+	background: #FFF;
+	z-index: 100000;
+	.box-sizing(border-box);
+}
+/* モバイル時ナビゲーションボタン */
+.navMenuBtn {
+	display: inline-block;
+	height: 44px;
+	padding: 7px 5px;
+	.font-size(20);
+	color: #333;
+	.box-sizing(border-box);
+	a& {
+		color: #333;
+	}
+	&:hover {
+		text-decoration: none;
+	}
+	.acms-icon-sort {
+		display: inline-block;
+	}
+}
+.navMenuBtnText {
+	margin: 0 0 0 5px;
+	.font-size(11);
+	font-weight: bold;
+	color: #333;
+	vertical-align: middle;
+	  display: inline-block;
+}
+/* モバイル時ヘッダー アイコン */
+.navMenuAction {
+	display: table;
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+.navMenuActionItem {
+	display: table-cell;
+	width: 44px;
+	height: 44px;
+	vertical-align: middle;
+	text-align: center;
+	.font-size(20);
+	color: @secondary-color;
+}
+.navMenuActionLink {
+	color: @secondary-color;
+	&:hover,
+	&:active,
+	&:visited,
+	&:focus {
+		color: @secondary-color;
+		text-decoration: none;
+	}
+}
+.navbar {
+	display: none;
+	width: 100%;
+
+	&.acms-admin-module-edit-wrapper {
+		// ログインしているとき、下階層ナビゲーションを非表示にさせない対応
+		z-index: 1;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		a {
+			display: block;
+			padding: 10px;
+			color: #333;
+			font-weight: bold;
+			.font-size(16);
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: none;
+				color: #FFF;
+				background: @primary-color;
+			}
+		}
+	}
+}
+@media (min-width : @breakpoint-lg-min) {
+	.header {
+		height: 100px;
+	}
+	.navbar {
+		display: inline-block;
+		vertical-align: middle;
+		& > ul {
+			float: right;
+			list-style: none;
+			padding: 0;
+		}
+
+		li {
+			float: left;
+			position: relative;
+			margin: 0 10px;
+			vertical-align: middle;
+			text-align: center;
+			ul { /* 二階層目 */
+				display: none;
+				position: absolute;
+					left: 0;
+				min-width: 200px;
+			}
+			li {
+				margin: 0;
+			}
+			a { /* 一階層目のリンクのみ */
+				padding: 0;
+				border-top: 4px solid transparent;
+				border-bottom: 4px solid transparent;
+				.transition(border .25s ease-out);
+				&:hover,
+				&:focus,
+				&:active {
+					color: #333;
+					background: transparent;
+				}
+			}
+			&.stay {
+				a { /* 一階層目のリンクのみ */
+					border-bottom: 4px solid @primary-color;
+					&.btnAttention {
+						border: 0;
+					}
+				}
+			}
+			&:hover {
+				ul { /* 二階層目 */
+					display: block;
+					z-index: 10000;
+					.animation(0.8s fade-in);
+				}
+				a { /* 一階層目のリンクのみ */
+					border-bottom: 4px solid @primary-color;
+					&.btnAttention {
+						border: 0;
+					}
+				}
+				li {
+					a {
+						border: 0;
+					}
+				}
+			}
+			li { /* 二階層目以降 */
+				display: block;
+				float: none;
+				text-align: left;
+				background: @primary-color;
+				border-top: 1px solid @primary-color-hover;
+				&:first-child {
+					border: 0;
+				}
+				a {
+					margin: 0;
+					padding: 10px 15px;
+					color: #FFF;
+					border: 0;
+					&:hover {
+						color: #FFF;
+						border: 0;
+						background: @primary-color-hover;
+					}
+				}
+			}
+
+		}
+		a {
+			&.btnAttention { /* ボタン（色付き） */
+				background: @attentionBtn-end-color;
+				.btn-base();
+				.btn-small();
+				border: 0;
+				&:hover {
+					.btn-color(@attentionBtn-start-color, @attentionBtn-end-color, #FFF);
+					border: 0;
+				}
+				&:active,
+				&:focus {
+					background: @attentionBtn-active-color;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width : @breakpoint-lg-min) {
+	.headerLogo {
+		padding: 0;
+	}
+	.navbar {
+		ul {
+			li {
+				a {
+					.font-size(14);
+				}
+			}
+		}
+	}
+}
+@media (min-width : @breakpoint-xl-min) {
+	.navbar {
+		ul {
+			li {
+				a {
+					.font-size(16);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width : @breakpoint-lg-max) {
+	/* オフキャンバス */
+	#nav {
+		padding: 10px 15px 100px 15px;
+		.box-sizing(border-box);
+	}
+	.js-nav {
+		body {
+			width: 100%;
+			overflow: hidden;
+		}
+		#nav {
+			overflow-y: scroll;
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+
+	.offcanvasNav { /* グローバルナビゲーション */
+		margin: 0 0 20px 0;
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			display: block;
+			padding: 10px;
+			.font-size(16);
+			border-top: 1px solid #CCC;
+			&.navbarBtn {
+				border: 0;
+			}
+			&.stay {
+				background: #555;
+				.lt-ie9 &,
+				.no-js & {
+					background: @base-color;
+				}
+			}
+			&:first-child {
+				border: 0;
+			}
+			ul {
+				display: none;
+			}
+		}
+		a {
+			display: block;
+			margin: -10px;
+			padding: 10px;
+			color: #E8EDE3;
+			&:hover {
+				text-decoration: none;
+			}
+			&.btnAttention {
+				border-top: 0;
+				border-radius: 0;
+				font-weight: normal;
+				&:hover {
+					background: @attentionBtn-end-color;
+				}
+			}
+			.lt-ie9 &,
+			.no-js & {
+				color: #333;
+			}
+		}
+	}
+
+	/* オフキャンバス内のパーツ */
+	.offcanvasBar {
+		.moduleHeader {
+			color: #FFF;
+			border-bottom: 2px solid #FFF;
+			.lt-ie9 &,
+			.no-js & { /* IE8対応 */
+				color: #333;
+				border-bottom: 2px solid #333;
+			}
+		}
+		.sideListLink {
+			color: #FFF;
+			.lt-ie9 &,
+			.no-js &, { /* IE8対応 */
+				color: #333;
+			}
+			&:hover,
+			&:visited,
+			&:focus,
+			&:active {
+				color: #FFF;
+				background: 0;
+				.lt-ie9 &,
+				.no-js & { /* IE8対応 */
+					color: #333;
+				}
+			}
+		}
+		.pickupTitle {
+			margin: 0;
+			color: #FFF;
+			.font-size(16);
+			a {
+				color: inherit;
+				.lt-ie9 & {
+					color: #333;
+				}
+			}
+		}
+		.btnSearch {
+			background: #999;
+			border: 1px solid #666;
+		}
+		.snsList {
+			margin: 0 -5px;
+		}
+
+	}
+	.js-nav {
+		.offCanvasShadow {/* オフキャンバス時シャドウ */
+			display: block;
+			position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			background: rgba(0,0,0,0.5);
+			z-index: 100000;
+			.transition(background .25s linear);
+		}
+	}
+
+	/* オフキャンバスが閉じているとき */
+	.js-ready {
+		#nav {
+			position: fixed;
+			transition: left 500ms ease;
+		}
+		#outer-wrap {
+			left: 0;
+			transition: left 500ms ease;
+		}
+		#inner-wrap {
+			transition: left 500ms ease;
+		}
+		.siteHeader {
+			right: 0;
+			transition: right 500ms ease;
+		}
+	}
+
+	/* オフキャンバスが開いているとき */
+	.js-nav {
+		#nav {
+			left: 0;
+			z-index: 10000;
+		}
+		.siteHeader {
+			right: -70%;
+		}
+	}
+
+	/* JSが無効に設定されている環境だったとき */
+	.no-js {
+		#nav {
+			position: static;
+			padding: 10px 20px;
+		}
+	}
+	/* IE8対応 */
+	.lt-ie9 & {
+		#nav {
+			position: static;
+			padding: 10px 0;
+		}
+		.header {
+			width: 100%;
+		}
+		.headerLogo,
+		.headerNav {
+			display: block;
+			width: 100%;
+		}
+	}
+}

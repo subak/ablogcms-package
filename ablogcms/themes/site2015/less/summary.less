@@ -1,0 +1,41 @@
+/* ------------------------------
+　　サマリー
+------------------------------ */
+.summaryDefault {
+	margin: 0 0 20px 0;
+	padding: 0;
+	list-style: none;
+	border-left: 1px solid @base-color;
+	border-top: 1px solid @base-color;
+}
+.summaryDefaultEntry {
+	float: left;
+	width: 100%;
+	padding: 10px;
+	color: #333;
+	border-right: 1px solid @base-color;
+	border-bottom: 1px solid @base-color;
+	.box-sizing(border-box);
+	.transition(background-color .25s ease-out);
+	&.bl-hover {
+		background: #F1F1F1;
+	}
+}
+.summaryTitle {
+	margin: 0 0 10px 0;
+	.font-size(16);
+}
+.summaryDetail {
+	margin: 0;
+	line-height: 1.5;
+	.font-size(14);
+}
+
+@media screen and (min-width: @breakpoint-sm-min){
+	.summaryDefault {
+		margin: 0 0 20px 0;
+	}
+	.summaryDefaultEntry {
+		width: 50%;
+	}
+}

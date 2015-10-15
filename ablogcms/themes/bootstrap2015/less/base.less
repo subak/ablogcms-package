@@ -1,0 +1,19 @@
+/* ------------------------------
+　　　ベース
+------------------------------ */
+body {
+	font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3',Meiryo,'メイリオ','ＭＳ Ｐゴシック','MS PGothic',Verdana,sans-serif;
+}
+
+.js-animation {
+	/* 横スライドのはみ出し防止 */
+	overflow: hidden;
+}
+
+/* .center-blockで中央寄せにするためグリッドシステムのfloatを打ち消す */
+[class*='col-xs'].center-block,
+[class*='col-sm'].center-block,
+[class*='col-md'].center-block,
+[class*='col-lg'].center-block {
+	float: none;
+}

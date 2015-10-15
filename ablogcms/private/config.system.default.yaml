@@ -68,6 +68,7 @@ gettext_lang_convert_source: [ja, en]
 gettext_lang_convert_dest: [ja_JP, en_US]
 form_csrf_enable : on # on | off
 admin_category_layered: off
+post_cache_delete: on
 
 ## 校正オプション
 corrector_regex :
@@ -236,6 +237,8 @@ entry_body_image_viewer     : ' rel="prettyPhoto[{unit_eid}]"'
 entry_body_newtime        : 259200
 entry_body_tag_on       : on
 entry_body_summary_on     : on
+entry_body_fulltext_width : 300
+entry_body_fulltext_marker : ...
 entry_body_show_all_index : off
 entry_body_comment_on     : on
 entry_body_trackback_on     : on
@@ -348,6 +351,8 @@ entry_summary_notfound_status_404 : off
 entry_summary_entry_field     : on
 entry_summary_date        : on
 entry_summary_fulltext      : on
+entry_summary_fulltext_width : 200
+entry_summary_fulltext_marker : ...
 entry_summary_tag           : on
 entry_summary_image_on      : on
 entry_summary_pager_on      : on
@@ -673,7 +678,7 @@ image_jpeg_quality  : 95
 permission_file : 438 # ( 0666 = 438 | 0644 = 420 | 0604 = 388)
 permission_dir  : 511 # ( 0777 = 511 | 0755 = 493 | 0705 = 453)
 
-file_extension_document : [txt, doc, pdf, ppt, xls, csv]
+file_extension_document : [txt, doc, pdf, ppt, xls, csv, docx, pptx, xlsx]
 file_extension_archive  : [lzh, zip, rar, gca, sit]
 file_extension_movie  : [3gp, 3g2, asf, avi, dat, fli, flc, flv, mkv, mpg, mov, mp4, ogg, qt, rm, ram, rmvb, str, swf, ts, viv, vob, wmv, amc]
 file_extension_audio  : [aac, ac3, amr, mmf, mp2, mp3, mp4, mpc, ogg, ra, wav, wma]
@@ -1184,7 +1189,7 @@ ua_label  :
   - PC
   - "&nbsp;&nbsp;&nbsp;&nbsp;Internet Explorer"
   - "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.x"
-  - "&nbsp;&nbsp;&nbsp;&nbsp;Safari"
+  - "&nbsp;&nbsp;&nbsp;&nbsp;Safari / Chrome / Edge"
   - "&nbsp;&nbsp;&nbsp;&nbsp;Firefox"
   - "Web Signage"
 

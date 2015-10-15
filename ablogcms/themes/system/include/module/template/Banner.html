@@ -5,10 +5,10 @@
 <ul class="acms-admin-list-nostyle acms-admin-grid-r">
 	<!-- BEGIN banner:loop -->
 	<!-- BEGIN banner#src -->
-	<li class="acms-admin-col-md-4">{src}[raw]</li>
+	<li class="{banner:loop.class}">{src}[raw]</li>
 	<!-- END banner#src -->
 	<!-- BEGIN banner#img -->
-	<li class="acms-admin-col-md-4"><a href="{url}" target="{target}"><img src="%{ARCHIVES_DIR}{img}" width="{x}" height="{y}" class="acms-admin-img-responsive" alt="{alt}" /></a></li>
+	<li class="{banner:loop.class}"><a href="{url}" target="{target}"><img src="%{ARCHIVES_DIR}{img}" width="{x}" height="{y}" class="acms-admin-img-responsive" alt="{alt}" /></a></li>
 	<!-- END banner#img -->
 	<!-- END banner:loop -->
 </ul>

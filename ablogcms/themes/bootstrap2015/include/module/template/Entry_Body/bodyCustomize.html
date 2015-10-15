@@ -8,12 +8,15 @@
 <div class="acms-form-group">
 <!--#include file="/admin/entry/revision-info.html"-->
 </div>
-<div class="acms-grid-r">
+<div class="acms-grid-r {entry:loop.class}">
 	<div class="acms-entry entry">
 		<!-- BEGIN title:veil -->
-		<div class="pageHeader">
-			
-			<h2 class="entryTitle"><a href="{titleUrl}">{title}[raw]</a></h2>
+		<header class="pageHeader">
+			<!-- BEGIN_IF [%{VIEW}/eq/entry] -->
+				<h1 class="entryTitle"><a href="{titleUrl}">{title}[raw]</a></h1>
+			<!-- ELSE -->
+				<h2 class="entryTitle"><a href="{titleUrl}">{title}[raw]</a></h2>
+			<!-- END_IF -->
 			<!-- BEGIN categoryField -->
 			<!-- BEGIN_IF [{dateAppearCategory}/eq/true] -->
 			<!-- END categoryField -->
@@ -34,7 +37,7 @@
 				<!-- END category:loop -->
 				</p>
 			<!-- END category:veil -->
-		</div>
+		</header>
 		<!-- END title:veil -->
 		<!-- BEGIN unit:veil -->
 		<div class="entryColumn clearfix">
@@ -59,7 +62,7 @@
 		<!-- BEGIN adminFormEdit -->
 		<!--#include file="/admin/form2/edit.html"-->
 		<!-- END adminFormEdit -->
-		
+
 		<!-- BEGIN tag:veil -->
 		<p>関連タグ：<!-- BEGIN tag:loop --><a href="{url}" class="badge">{name}</a> <!-- END tag:loop --></p>
 		<!-- END tag:veil -->

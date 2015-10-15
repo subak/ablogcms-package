@@ -32,14 +32,14 @@
 	<tr>
 		<th>サイトの説明文</th>
 		<td>
-			<textarea name="mainDescription" cols="60" rows="2">{mainDescription}</textarea>
+			<input type="text" name="mainDescription" value="{mainDescription}" class="acms-admin-form-width-half"/>
 			<input type="hidden" name="field[]" value="mainDescription" />
 		</td>
 	</tr>
 	<tr>
 		<th>Google Analytics<i data-acms-tooltip="Google Analytics の解析用のタグを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip"></i></th>
 		<td>
-			<textarea name="googleAnalytics" cols="60" rows="5">{googleAnalytics}</textarea>
+			<textarea name="googleAnalytics" rows="5" class="acms-admin-form-width-half">{googleAnalytics}</textarea>
 			<input type="hidden" name="field[]" value="googleAnalytics" />
 		</td>
 	</tr>

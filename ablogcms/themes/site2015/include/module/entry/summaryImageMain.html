@@ -1,0 +1,47 @@
+<!-- BEGIN_MODULE Entry_Summary id="summaryIndex" -->
+<section class="moduleSection">
+<div>
+<!--#include file="/admin/module/setting.html"-->
+<div class="moduleHeader clearfix">
+	<h2 class="moduleHeading">%{CATEGORY_NAME}</h2>
+</div>
+
+	<!-- BEGIN notFound -->
+	<div>
+	<p>ただいまページを準備しております。もうしばらくお待ちください。</p>
+	</div>
+	<!-- END notFound -->
+
+<ul class="summaryCustom">
+	<!-- BEGIN unit:loop -->
+	<!-- BEGIN entry:loop -->
+		<li class="summaryCustomEntry {entry:loop.class} js-autoheight-r js-biggerlink">
+			<div class="photo"><!-- BEGIN image:veil -->
+				<img src="%{ROOT_DIR}{squarePath}" alt="" class="acms-img-responsive" /><!-- END image:veil --><!-- BEGIN noimage -->
+				<img src="/images/noImage.png" width="260" height="260" class="acms-img-responsive">
+				<!-- END noimage -->
+			</div>
+			<p class="photoTitle"><a href="{url}">{title}</a></p>
+			<p>{summary}[trim(500, '...')]</p>
+		</li>
+	<!-- END entry:loop -->
+	<!-- END unit:loop -->
+	<hr class="clearHidden" />
+</ul>
+
+<!-- BEGIN pager:veil -->
+<!-- ページ送り　開始▼▼ -->
+<nav class="acms-pager-container">
+<ul class="pager">
+	<!-- BEGIN backLink --><li><a href="{url}" aria-label="前へ" class="pagerLink"><span aria-hidden="true">&laquo;</span></a></li><!-- END backLink -->
+	<!-- BEGIN firstPage:veil --><li {pageCurAttr}[raw]><span><a href="{firstPageUrl}" class="pagerLink">{firstPage}</a></span></li><li>…</li><!-- END firstPage:veil -->
+	<!-- BEGIN page:loop --><li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}" class="pagerLink"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --></span></li><!-- END page:loop -->
+	<!-- BEGIN lastPage:veil --><li>…</li><li{pageCurAttr}[raw]><span><a href="{lastPageUrl}" class="pagerLink">{lastPage}</a></span></li><!-- END lastPage:veil -->
+	<!-- BEGIN forwardLink --><li><a href="{url}" aria-label="次へ" class="pagerLink"><span aria-hidden="true">&raquo;</span></a></li><!-- END forwardLink -->
+</ul>
+</nav>
+<!-- ページ送り　終了▲▲ -->
+<!-- END pager:veil -->
+</div>
+</section>
+<!-- END_MODULE Entry_Summary -->

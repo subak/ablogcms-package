@@ -1,0 +1,86 @@
+/* ------------------------------
+ レイアウトモジュール
+------------------------------ */
+/* 共通 */
+.layout {
+
+	.container {
+		.container {
+			width: auto; /*  Bootstrapのcontainerはwidthが固定されているため、入れ子になったときはデフォルトに戻す */
+			padding: 0;
+		}
+	}
+}
+
+/* レイアウト */
+.sectionSpace {
+	padding: 50px 0 50px - @module-btm 0;
+	&.section-title {
+		margin: 0 0 20px 0;
+	}
+}
+.sectionSpaceLg {
+	padding: 70px 0 70px - @module-btm 0;
+}
+.sectionGray {
+	color: #FFF;
+	background: #A5A19C;
+}
+@media (min-width : @breakpoint-lg-min) {
+	.jumbotronCustomize {
+		padding: 200px 0;
+	}
+	.sectionSpace {
+		padding: 80px 0 80px - @module-btm 0;
+	}
+	.sectionSpaceLg {
+		padding: 100px 0 100px - @module-btm 0;
+	}
+}
+
+/* パーツ
+---------------------------*/
+/* 見出し */
+.moduleHeading {
+	margin: 0 0 10px 0;
+	.font-size(30);
+	font-weight: bold;
+	line-height: 1.2;
+}
+/* 詳細 */
+.moduleDetail {
+	margin: 0 0 30px 0;
+	.font-size(16);
+}
+/* 背景画像 */
+.backgroundCoverImage {
+	background: no-repeat center #EFEFEF;
+	background-size: cover;
+}
+
+/* ステップ */
+.stepItem {
+	margin: 0 0 @module-btm 0;
+}
+.stepHeading {
+	margin: 0 0 15px 0;
+	font-weight: bold;
+}
+.stepNum {
+	display: block;
+	margin: 0 0 10px 0;
+	color: #C65821;
+	.font-size(50);
+	font-weight: normal;
+}
+
+/* サイド画像あり */
+.sideHeading {
+	margin: 0 0 10px 0;
+	.font-size(20);
+	font-weight: bold;
+}
+.sideText {
+	margin: 0 0 20px 0;
+	line-height: 1.7;
+}

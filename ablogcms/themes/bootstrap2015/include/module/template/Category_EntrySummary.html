@@ -6,12 +6,12 @@
 
 <!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
 <!-- END categoryUl#front --><!-- BEGIN category:loop -->
-<div class="panel panel-default">
+<div class="panel panel-default {category:loop.class}">
 	<div class="panel-heading"><a href="{categoryUrl}">{categoryName}</a></div>
 	<!-- BEGIN notFound --><div class="panel-body"><p>記事が見つかりませんでした。</p></div><!-- END notFound -->
 	<!-- BEGIN unit:loop -->
 		<!-- BEGIN entry:loop -->
-			<div class="panel-body">
+			<div class="panel-body {entry:loop.class}">
 				<div class="media">
 					<a class="media-left" href="#">
 						<div style="width:{x}px; height:{y}px; overflow:hidden; position:relative;">

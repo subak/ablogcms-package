@@ -77,6 +77,13 @@
 		</td>
 	</tr>
 	<tr>
+		<th>ループ内クラス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="指定したクラスをエントリーに設定できます。例えばグリッドシステムのカラム数など設定してください。"></i></th>
+		<td>
+			<input type="text" name="entry_summary_loop_class" value="{entry_summary_loop_class}" size="4" class="acms-admin-form-width-medium" />
+			<input type="hidden" name="config[]" value="entry_summary_loop_class" />
+		</td>
+	</tr>
+	<tr>
 		<th>エントリーがない場合の表示<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックすると、指定条件でエントリーが見つからなかった場合にnotFoundブロックを出力します。"></i></th>
 		<td>
 			<input type="hidden" name="mo_entry_summary_notfound" value="off" />
@@ -107,6 +114,14 @@
 			<input type="hidden" name="entry_summary_fulltext" value="off" />
 			<label for="input-checkbox-entry_summary_fulltext" class="acms-admin-form-checkbox"><input type="checkbox" name="entry_summary_fulltext" value="on"{entry_summary_fulltext:checked#on} id="input-checkbox-entry_summary_fulltext" /><i class="acms-admin-ico-checkbox"></i>サマリーを表示できるようにする。</label>
 			<input type="hidden" name="config[]" value="entry_summary_fulltext" />
+
+			文字数:
+			<input type="text" name="entry_summary_fulltext_width" value="{entry_summary_fulltext_width}" />
+			<input type="hidden" name="config[]" value="entry_summary_fulltext_width" />
+
+			追加文字:
+			<input type="text" name="entry_summary_fulltext_marker" value="{entry_summary_fulltext_marker}" />
+			<input type="hidden" name="config[]" value="entry_summary_fulltext_marker" />
 		</td>
 	</tr>
 	<tr>

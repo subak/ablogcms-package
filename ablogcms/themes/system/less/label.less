@@ -1,4 +1,4 @@
-/* ------------------------------  
+/* ------------------------------
  ラベル
 ------------------------------- */
 // デフォルト
@@ -17,6 +17,11 @@
 		text-decoration: none;
 		background: darken(@acms-label-default, 17%);
 		cursor: pointer;
+	}
+	a&:visited,
+	&:active,
+	&:focus{
+		color: @acms-label-text-color;
 	}
 }
 
@@ -53,12 +58,22 @@
 	a&:hover{
 		background: darken(@acms-label-color, 17%);
 	}
+	a&:visited,
+	&:active,
+	&:focus{
+		color: @acms-label-text-color;
+	}
 }
 // info
 .acms-label-info {
 	background-color: @acms-label-info-color;
 	a&:hover{
 		background: darken(@acms-label-info-color, 17%);
+	}
+	a&:visited,
+	&:active,
+	&:focus{
+		color: @acms-label-text-color;
 	}
 }
 // warning
@@ -67,12 +82,22 @@
 	a&:hover{
 		background: darken(@acms-label-warning-color, 17%);
 	}
+	a&:visited,
+	&:active,
+	&:focus{
+		color: @acms-label-text-color;
+	}
 }
 // danger
 .acms-label-danger {
 	background-color: @acms-label-danger-color;
 	a&:hover{
 		background: darken(@acms-label-danger-color, 17%);
+	}
+	a&:visited,
+	&:active,
+	&:focus{
+		color: @acms-label-text-color;
 	}
 }
 

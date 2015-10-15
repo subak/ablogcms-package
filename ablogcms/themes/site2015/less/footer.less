@@ -1,0 +1,184 @@
+/* ------------------------------
+　　フッター
+------------------------------ */
+/* お問い合わせ誘導エリア */
+.suggestBox {
+	background: #DDD;
+}
+.suggestInner {
+	display: table;
+	width: 100%;
+	padding: 15px 0;
+}
+.suggestItem {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+}
+.suggestText {
+	margin: 0 0 10px 0;
+	line-height: 1.5;
+	.font-size(14);
+}
+.suggestTel {
+	margin: 0 0 10px 0;
+	.font-size(24);
+	font-weight: bold;
+	color: #666;
+	a {
+		color: inherit;
+	}
+}
+.suggestBtn {
+	margin: 0;
+}
+@media screen and (min-width: @breakpoint-md-min){
+	.suggestInner {
+		padding: 0;
+	}
+	.suggestItem {
+		padding: 30px 10px;
+	}
+	.suggestTel {
+		margin: 0;
+	}
+	.suggestHalf {
+		display: table-cell;
+		width: 50%;
+		vertical-align: middle;
+	}
+}
+
+
+/* フッター内会社情報 */
+.footWrapper {
+	padding: 30px 0;
+	background: #333;
+}
+.companyAbout {
+	margin: 0 0 30px 0;
+	color: #FFF;
+}
+.companyName {
+	margin: 0 0 15px 0;
+	color: #FFF;
+	.font-size(20);
+	font-style: normal;
+}
+.companyDetail {
+	margin: 0 0 5px 0;
+	padding: 0;
+	color: #FFF;
+	.font-size(14);
+	font-style: normal;
+	a {
+		color: #FFF;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+/* ページの上に戻るボタン */
+.pageTopBtn {
+	display: block;
+	position: fixed;
+		right: 20px;
+		bottom: 20px;
+	width: 44px;
+	height: 44px;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	background: url(../images/marker/btn_pageTop.png) no-repeat center;
+	transform: translateZ(0);
+	z-index: 1000;
+	.opacity(0);
+	.transition(opacity .2s ease-out);
+	.no-js & {
+		/* jsが無効の環境のとき */
+		.opacity(.6);
+	}
+}
+.pageTopBtnAppear {
+	.opacity(1);
+}
+@media screen and (max-width: @breakpoint-md-max){
+	.pageTopBtn {
+		display: none;
+	}
+}
+@media screen and (min-width: @breakpoint-md-min){
+	.pageTopBtn {
+		&:hover {
+			.opacity(.8);
+			.transition(opacity .25s linear);
+		}
+	}
+}
+
+/* フッター内各SNSアカウントのリンク集 */
+.snsList {
+	list-style: none;
+	margin: 0 -5px 30px 15px;
+	padding: 0;
+}
+.snsListItem {
+	float: left;
+	margin: 0 5px;
+	a {
+		&:hover,
+		&:visited,
+		&:active,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+}
+/* 各種SNSボタン */
+.snsListItem {
+	.snsListFacebook {
+		/* Facebook */
+		.footerSnsList(@facebook-color);
+	}
+	.snsListTwitter {
+		/* Twitter */
+		.footerSnsList(@twitter-color);
+	}
+	.snsListGplus {
+		/* Google + */
+		.footerSnsList(@gplus-color);
+	}
+	.snsListYoutube {
+		/* YouTube */
+		.footerSnsList(@youtube-color);
+	}
+}
+
+@media screen and (min-width: @breakpoint-md-min){
+	.snsList {
+		float: right;
+		margin: 0 -10px;
+	}
+	.snsListItem {
+		margin: 10px;
+		a {
+			&:hover {
+				.opacity(.8);
+				.transition(opacity .25s linear);
+			}
+		}
+	}
+}
+
+/* 著作権表示 */
+.copyright {
+	margin: 0;
+	color: #FFF;
+}
+.copyrightText {
+	margin: 0 auto;
+}
+.copryrightLogo {
+	vertical-align: middle;
+}

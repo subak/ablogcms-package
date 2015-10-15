@@ -1,0 +1,183 @@
+/* ----------------
+ヘッダー部分
+------------------ */
+.blogHeader{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	height: 44px;
+	background: #333333;
+	background: rgba(0,0,0,.5);
+	&Navi{
+		&Btn{
+			position: absolute;
+			cursor: pointer;
+			right :10px;
+			top: 10px;
+			display: none;
+			background: #555555;
+			box-shadow: 0px 2px 0px 0px #000000;
+			border-radius: 3px;
+			border: none;
+			width: 50px;
+			height: 40px;
+			padding: 12px 0;
+			@media screen and (max-width:767px){
+				display: block;
+			}
+			&Line{
+				background: #FFFFFF;
+				display: block;
+				width: 24px;
+				height: 3px;
+				margin: 0 auto 4px auto;
+				-webkit-box-shadow: 0px -2px 0px #000000;
+						box-shadow: 0px -2px 0px #000000;
+			}
+		}
+	}
+	@media screen and (max-width:767px){
+		display: none;
+	}
+	&ListWrapper{
+		@media screen and (max-width:767px){
+			position: absolute;
+			top: 70px;
+			right: 10px;
+			-webkit-transition: height .2s;
+					transition: height .2s;
+			height: 0;
+			overflow-y: hidden;
+		}
+		@media screen and (min-width:768px){
+			height: auto !important;
+		}
+	}
+	&List{
+		max-width:@blogContainerWidth;
+		margin: 0 auto;
+		padding: 0;
+		li{
+			list-style-type: none;
+			line-height: 44px;
+			display: block;
+			padding: 0 15px;
+			position: relative;
+			font-weight: normal;
+			border: none;
+			float: left;
+			&:first-child{
+				padding-left: 10px;
+			}
+			&:last-child{
+				border-right: none;
+			}
+		}
+		a{
+			display: block;
+			margin: 0 -15px;
+			padding: 0 15px;
+			font-size: 16px;
+			text-shadow: 0px 2px 0px #000000;
+		}
+		.textDecorationNone();
+		.linkColor(#FFFFFF);
+		a:hover{
+			background: #000000;
+		}
+		.hover{
+			.blogHeaderList{
+				display: block;
+			}
+		}
+		li:hover{
+			.blogHeaderList{
+				display: block;
+			}
+		}
+		.blogHeaderList{
+			width: auto;
+			margin: 0 -15px;
+			display: none;
+			position: absolute;
+			top: 44px;
+			li{
+				background: #333333;
+				background: rgba(0,0,0,.5);
+				height: 44px;
+				float: none;
+				&:first-child{
+					padding-left: 15px;
+				}
+			}
+		}
+		@media screen and (max-width: 767px){
+			background: #555555;
+			border-radius: 5px;
+			li{
+				.listRollover(#555555,20%);
+				float: none;
+				&:first-child{
+					padding-left: 15px;
+				}
+				.blogHeaderList{
+					display: block;
+					background: transparent;
+					li{
+						&:first-child{
+							padding-left: 15px;
+						}
+						background: transparent;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ----------------
+メインビジュアルの部分
+------------------ */
+.blogMainVisual{
+	background:no-repeat #424242;
+	-webkit-background-size: cover;
+		-o-background-size: cover;
+			background-size: cover;
+	&Inner{
+		padding: 90px 10px 35px 10px;
+		max-width:@blogContainerWidth;
+		margin: 0 auto;
+	}
+	&Title{
+		font-size: 32px;
+		color: #FFFFFF;
+		text-shadow: 0px 2px 7px rgba(0,0,0,0.50);
+		margin: 0 0 10px 0;
+		line-height: 1.7em;
+		.linkColor(#FFFFFF);
+		.textDecoration();
+		@media screen and (max-width:767px){
+			text-align: center;
+		}
+	}
+	&Description{
+		font-size: 18px;
+		color: #FFFFFF;
+		text-shadow: 0px 1px 3px rgba(0,0,0,0.50);
+		margin: 0;
+		@media screen and (max-width:767px){
+			text-align: center;
+			padding: 0 10px;
+		}
+	}
+	@media screen and (max-width:767px){
+		&Inner{
+			padding: 55px 10px 10px 10px;
+		}
+		&Description{
+			margin-top: 0;
+		}
+	}
+}

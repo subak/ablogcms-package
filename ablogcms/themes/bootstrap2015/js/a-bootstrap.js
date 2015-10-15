@@ -1,8 +1,11 @@
-ACMS.Config.linkMatchLocationClass = 'active';
-ACMS.Config.linkMatchLocationFullClass = 'active';
-ACMS.Config.linkMatchLocationBlogClass = 'active';
-ACMS.Config.linkMatchLocationCategoryClass = 'active';
-ACMS.Config.linkMatchLocationEntryClass = 'active';
+ACMS.Ready(function() {
+	// 現在いるページのとき、ナビゲーションにBootstrapのactiveのクラスが適用されるように設定を変更
+	ACMS.Config.linkMatchLocationClass = 'active';
+	ACMS.Config.linkMatchLocationFullClass = 'active';
+	ACMS.Config.linkMatchLocationBlogClass = 'active';
+	ACMS.Config.linkMatchLocationCategoryClass = 'active';
+	ACMS.Config.linkMatchLocationEntryClass = 'active';
+});
 
 $(function() {
 	//トップのアニメーション実行
@@ -34,6 +37,6 @@ $(function() {
 
 	//Scroll Spy
 	$('body').scrollspy({ target: '.navbar-example' });
-	
+
 
 });

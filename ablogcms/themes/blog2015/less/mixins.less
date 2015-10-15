@@ -1,0 +1,62 @@
+.btn(@background,@hover){
+	border-radius: 5px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #FFFFFF;
+	border: none;
+	padding: 10px;
+	background: @background;
+	-webkit-transition: background .2s;
+			transition: background .2s;
+	&:hover{
+		background: @hover;
+	}
+}
+.textDecoration(){
+	a{
+		text-decoration: none;
+		&:link,
+		&:visited{
+			text-decoration: none;
+		}
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+.textDecorationNone(){
+	a{
+		text-decoration: none;
+		&:link,
+		&:visited,
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}
+.linkColor(@color){
+	a{
+		color:@color;
+		&:link,
+		&:visited,
+		&:hover{
+			color:@color;
+		}
+	}
+}
+.btnRollover(){
+	background: #949494;
+	-webkit-transition: background .2s;
+			transition: background .2s;
+	&:hover{
+		background: #333333;
+	}
+}
+.listRollover(@background,@ratio){
+	background: @background;
+	-webkit-transition: background .2s;
+			transition: background .2s;
+	&:hover{
+		background: darken(@background,@ratio);
+	}
+}

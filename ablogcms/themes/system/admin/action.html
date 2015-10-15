@@ -9,7 +9,10 @@
 		<img src="%{ARCHIVES_DIR}{icon}" width="20" height="20" class="acms-admin-user-icon" />{name}
 		<span class="acms-admin-label"><a href="/bid/%{SBID}/uid/%{SUID}/admin/user_edit/">プロフィール</a></span><!-- BEGIN approval -->
 		<div class="acms-admin-label-approval-group"><a href="{url}">承認通知</a>&nbsp;<span class="acms-admin-badge acms-admin-badge-approval">{badge}</span></div><!-- END approval --><!-- BEGIN_MODULE Touch_Debug -->
-		&nbsp;<span class="acms-admin-label acms-admin-label-danger"><a href="/bid/%{SBID}/admin/checklist/">デバッグモード</a></span>&nbsp;現在表示中のテンプレート：%{ROOT_TPL}<!-- END_MODULE Touch_Debug --><!-- BEGIN status#trial -->
+		&nbsp;<span class="acms-admin-label acms-admin-label-danger"><a href="/bid/%{SBID}/admin/checklist/">デバッグモード</a></span>
+		&nbsp;現在表示中のテンプレート：%{ROOT_TPL}<!-- BEGIN_IF [%{RID}/nem] -->&nbsp;
+		&nbsp;現在のルール：%{RULE_NAME}（RID:%{RID}）<!-- END_IF -->
+		<!-- END_MODULE Touch_Debug --><!-- BEGIN status#trial -->
 		/ <strong>トライアル版 有効期限</strong> : {expire}<!-- END status#trial --><!-- BEGIN status#limited -->
 		/ <strong>期間限定ライセンス</strong> : {expire}<!-- END status#limited --><!-- BEGIN status#usersover -->
 		/ <strong>登録されているユーザー数が上限を超えているため、ラインセンスが無効になっています。</strong><!-- END status#usersover --><!-- BEGIN status#illegal -->
@@ -74,7 +77,17 @@
 		<input type="submit" name="ACMS_POST_Moblog_POP3" value="モブログ受信" class="acms-admin-btn-admin" />
 	</form><!-- END moblog -->
 
-	<form action="" method="post" class="acms-admin-inline-btnn">
+	<!-- BEGIN_MODULE Touch_EditionIsProfessional -->
+	<!-- BEGIN_MODULE Touch_SessionWithCompilation -->
+	<!-- BEGIN_MODULE Touch_NotTimemachineMode -->
+	<form action="" method="post" class="acms-admin-inline-btn">
+		<input type="submit" name="ACMS_POST_Timemachine_Enable" value="プレビューモード" class="acms-btn">
+	</form>
+	<!-- END_MODULE Touch_NotTimemachineMode -->
+	<!-- END_MODULE Touch_SessionWithCompilation -->
+	<!-- END_MODULE Touch_EditionIsProfessional -->
+
+	<form action="" method="post" class="acms-admin-inline-btn">
 		<input type="submit" name="ACMS_POST_Logout" value="ログアウト" class="acms-admin-btn-admin" />
 	</form>
 
@@ -114,3 +127,5 @@
 	<!-- END_MODULE Touch_NotEdit --><!-- END_MODULE Touch_Admin -->
 </div>
 <!-- END_MODULE Admin_ActionMenu -->
+
+<!--#include file="/include/timemachine.html" -->

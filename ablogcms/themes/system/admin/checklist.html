@@ -43,16 +43,6 @@
 						<!-- BEGIN licenseType:glue -->, <!-- END licenseType:glue -->{type}<!-- END licenseType:loop -->
 					</td>
 				</tr>
-				<!-- <tr>
-					<td>プラグイン</td>
-					<td>
-						<ul>
-						!-- BEGIN option:loop --
-							<li>{option}</li>
-						!-- END option:loop --
-						</ul>
-					</td>
-				</tr> -->
 			</tbody>
 		</table>
 		<!-- END license -->
@@ -69,9 +59,12 @@
 				<tr>
 					<td>ベンチマークモード</td>
 					<td class="{caution}">{mode}</td>
-				</tr><!-- END benchmarkMode -->
-				</tbody>
-
+				</tr><!-- END benchmarkMode --><!-- BEGIN imgLibrary -->
+				<tr>
+					<td>画像エンジン</td>
+					<td>{mode}</td>
+				</tr><!-- END imgLibrary -->
+			</tbody>
 		</table>
 		<!-- END systemMode -->
 	</div>
@@ -123,6 +116,14 @@
 				<tr>
 					<td>サーバー内時間</td>
 					<td>{php_datetime}</td>
+				</tr>
+				<tr>
+					<td>gettext</td>
+					<td><!-- BEGIN_IF [{php_gettext}/eq/enable] -->利用化<!-- ELSE -->利用不可<!-- END_IF --></td>
+				</tr>
+				<tr>
+					<td>ImageMagick</td>
+					<td><!-- BEGIN_IF [{php_imagick}/eq/enable] -->利用化<!-- ELSE -->利用不可<!-- END_IF --></td>
 				</tr>
 			</tbody>
 		</table>

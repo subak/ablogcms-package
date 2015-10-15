@@ -25,7 +25,6 @@
 </form>
 <!-- END_MODULE Touch_SessionWithAdministration -->
 
-{debug}
 <form method="post" action="" id="sortableForm" class="acms-admin-form">
 <!-- BEGIN index:veil -->
 
@@ -63,23 +62,24 @@
 				<th class="acms-admin-hide-sp">プライマリ / ID</th>
 				<th class="acms-admin-show-sp">名前 / URL</th>
 				<th class="acms-admin-hide-sp">ステータス</th>
+				<th class="acms-admin-hide-sp">グローバル</th>
 				<th class="acms-admin-hide-sp">アクション</th>
 			</tr>
 		</thead>
 		<tbody><!-- BEGIN alias:loop -->
 			<tr data-sort-level="parallel" data-sort-name="sort-{aid}">
 				<td class="item-handle acms-admin-hide-sp" style="cursor: move;"><i class="acms-admin-icon-sort"></i></td>
-				<td class="acms-admin-table-center"><label class="acms-admin-form-checkbox"><input type="checkbox" name="checks[]" value="{aid}" /><i class="acms-admin-ico-checkbox"></i></label></td>
+				<td class="acms-admin-table-center"><label class="acms-admin-form-checkbox"><input type="checkbox" name="checks[]" value="{aid}"{disabled} /><i class="acms-admin-ico-checkbox"></i></label></td>
 				<td>
 					<!--<input type="hidden" name="_rid[]" value="{aid}" />
 					<input type="hidden" name="_sort[]" value="{sort}" />-->
-					<select name="sort-{aid}"><!-- BEGIN sort:loop -->
+					<select name="sort-{aid}"{disabled}><!-- BEGIN sort:loop -->
 						<option value="{value}"{selected}>{label}</option><!-- END sort:loop -->
 					</select>
 				</td>
 				<td>
 					<label class="acms-admin-form-radio">
-						<input type="radio" name="primary" value="{aid}"{aid:checked} /><i class="acms-admin-ico-radio"></i>
+						<input type="radio" name="primary" value="{aid}"{aid:checked}{disabled} /><i class="acms-admin-ico-radio"></i>
 						{aidLabel}<!-- BEGIN aid#null -->NULL<!-- END aid#null -->
 					</label>
 				</td>
@@ -91,9 +91,13 @@
 				<td><!-- BEGIN status:touch#open -->
 					<span class="acms-admin-label acms-admin-label-info admin-status-label">公開</span><!-- END status:touch#open --><!-- BEGIN status:touch#close --><span class="acms-admin-label acms-admin-label-danger">非公開</span><!-- END status:touch#close -->
 				</td>
+				<td class="acms-admin-td-global">
+					<!-- BEGIN scope:touch#global -->有効<!-- END scope:touch#global -->
+					<!-- BEGIN scope:touch#local --> - <!-- END scope:touch#local -->
+				</td>
 				<td class="acms-admin-show-sp acms-admin-width-sp acms-admin-border-bottom-sp"><!-- BEGIN itemUrl:veil -->
 					<a href="{itemUrl}&edit=update" class="acms-admin-btn-admin">変更</a><!-- END itemUrl:veil --><!-- BEGIN action#default -->
-					オリジナル<!-- END action#default -->
+					オリジナル<!-- END action#default --><!-- BEGIN action#root -->先祖ブログ<!--END action#root -->
 				</td>
 			</tr>
 		<!-- END alias:loop --></tbody>

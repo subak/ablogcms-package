@@ -5,10 +5,11 @@
 <!-- BEGIN moduleField --><h2 class="moduleHeading">{module_heading}</h2><!-- END moduleField -->
 <!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
 <!-- END categoryUl#front --><!-- BEGIN category:loop -->
+<div class="{category:loop.class}">
 	<!-- BEGIN notFound --><p>記事が見つかりませんでした。</p><!-- END notFound -->
 	<!-- BEGIN unit:loop -->
 		<!-- BEGIN entry:loop -->
-			<div class="media">
+			<div class="media {entry:loop.class}">
 				<a class="media-left" href="{url}">
 					<div style="width:{x}px; height:{y}px; overflow:hidden; position:relative;"><!-- BEGIN image:veil -->
 						<img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" style="left:{left}px; top:{top}px; position:relative;" /><!-- END image:veil --><!-- BEGIN noimage -->
@@ -23,6 +24,7 @@
 			</div>
 			<!-- END entry:loop -->
 		<!-- END unit:loop -->
+	</div>
 	<!-- END category:loop --><!-- BEGIN categoryLi#rear -->
 <!-- END categoryLi#rear --><!-- BEGIN categoryUl#rear -->
 <!-- END categoryUl#rear --><!-- END categoryEntryList:loop -->

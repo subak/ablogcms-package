@@ -1,0 +1,79 @@
+/* ----------------
+サブカラム
+------------------ */
+.blogSubCol{
+	padding-left: 20px;
+	&Heading{
+		margin-top: 0;
+		margin-bottom: 10px;
+		font-size: 20px;
+		color: #333333;
+	}
+	@media screen and (max-width:767px){
+		margin-top: 0;
+		padding-left: 0;
+	}
+}
+/* ----------------
+アドミンボックス
+------------------ */
+.blogAdminBox{
+	background: #E9E9E9;
+	border: 1px solid #CCCCCC;
+	padding: 10px 20px 10px 10px;
+	margin-bottom: 30px;
+	font-size: 14px;
+	&List{
+		padding: 0 0 0 20px;
+		margin: 10px 0;
+		a:hover{
+			text-decoration: underline;
+		}
+		li{
+			margin-bottom: 3px;
+		}
+	}
+	&Heading{
+		margin-bottom: 10px;
+		padding-bottom: 2px;
+		border-bottom: solid 2px #383532;
+		color: #383532;
+		font-size: 16px;
+	}
+}
+/* ----------------
+ブログパーツ
+------------------ */
+.blogPartsList{
+	margin: 0;
+	padding: 0;
+	li{
+		list-style-type: none;
+		display: inline-block;
+		padding: 0 5px 0 0;
+		margin: 0 0 5px 0;
+	}
+	a:hover{
+		opacity:.7;
+		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+		filter: alpha(opacity=70);
+	}
+}
+/* ----------------
+リンク集
+------------------ */
+.blogLinks{
+	margin-bottom: 30px;
+	padding: 0 25px;
+	li{
+		margin-bottom: 10px;
+		color: #CACACA;
+	}
+	a:link,
+	a:visited{
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
+}

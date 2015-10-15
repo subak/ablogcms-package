@@ -1,0 +1,20 @@
+/* ------------------------------
+　　ヘッドライン
+------------------------------ */
+.headlineItem {
+	line-height: 1.5;
+	.transition(background-color .25s ease-out);
+	&.bl-hover {
+		background: #F1F1F1;
+	}
+}
+@media screen and (max-width: @breakpoint-sm-max){ /* 画面幅が小さいとき */
+	/* ヘッドライン */
+	.headlineItem {
+		padding: 10px 0;
+	}
+	.headlineTitle {
+		display: block;
+		margin: 0;
+	}
+}

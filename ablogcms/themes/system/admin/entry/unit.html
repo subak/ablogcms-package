@@ -62,14 +62,18 @@
 				<a href="#" class="js-media_insert">メディアを挿入</a><!-- END_IF -->
 			</div><!-- END text -->
 			<!-- BEGIN image -->
-			<table class="entryFormColumnTable {diff}">
+			<table class="js-img_resize entryFormColumnTable {diff}">
 				<tr>
-					<!-- BEGIN preview:veil -->
+					<!-- BEGIN_IF [{tiny}/nem/] -->
 					<td class="entryFormFileentryFormImages">
-						<a href="%{HTTP_ARCHIVES_DIR}{popup}" rel="prettyPhoto[]"><img src="%{ARCHIVES_DIR}{tiny}" width="{tinyX}" height="{tinyY}" alt="プレビュー" class="entryFormFileImage" /></a>
+						<a href="%{HTTP_ARCHIVES_DIR}{popup}" rel="prettyPhoto[]"><img src="%{ARCHIVES_DIR}{tiny}" width="{tinyX}" height="{tinyY}" alt="プレビュー" class="js-img_resize_preview entryFormFileImage" /></a>
 					</td>
-					<!-- END preview:veil -->
-					<td class="entryFormFileControl"><input type="file" name="image_file_{id}[]" size="20" multiple="multiple" accept="image/*" />
+					<!-- ELSE -->
+					<td class="entryFormFileentryFormImages">
+						<img src="" width="280" alt="プレビュー" class="js-img_resize_preview entryFormFileImage" style="display:none;" />
+					</td>
+					<!-- END_IF -->
+					<td class="entryFormFileControl"><input type="file" name="image_file_{id}[]" size="20" multiple="multiple" accept="image/*" class="js-img_resize_input" />
 						<br />
 						<div class="acms-admin-form-group">
 							<select name="image_size_{id}" class="acms-admin-select-block"><!-- BEGIN size:loop -->
@@ -158,7 +162,7 @@
 						</p>
 
 						<img class="column-map" src="http://maps.google.com/maps/api/staticmap?center={lat},{lng}&zoom={zoom}&size=400x400&maptype=roadmap&markers={lat},{lng}&sensor=false" width="400" height="400" />
-						
+
 					</td>
 					<td class="entryFormFileControl">
 						<table>
@@ -313,7 +317,7 @@
 
 						<dt>拡大画像</dt>
 						<dd><input type="text" name="eximage_large_{id}" size="45" value="{large}" class="entryFormInputText acms-admin-form-width-full" /></dd>
-						
+
 						<dt>画像の大きさ</dt>
 						<dd>
 							<select name="eximage_size_{id}"><!-- BEGIN size:loop -->
@@ -420,7 +424,7 @@
 			<!-- BEGIN module -->
 			 <div class="acms_layout_unit acms_layout_module_unit">
 				<div class="js-acms_layout_edit_box">
-					<button class="js-acms_layout_select_module acms-admin-btn-admin acms-admin-btn-small"><span class="acms-admin-icon acms-admin-icon-module"></span>モジュール</button>
+					<button type="button" class="js-acms_layout_select_module acms-admin-btn-admin acms-admin-btn-small"><span class="acms-admin-icon acms-admin-icon-module"></span>モジュール</button>
 				</div>
 				<div class="js-acms_layout_contents js-acms_layout_module_box" data-col="1">
 					{view}[raw]

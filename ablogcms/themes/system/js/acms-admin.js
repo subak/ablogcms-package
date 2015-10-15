@@ -1,4 +1,5 @@
-$(function() { 
+ACMS.Ready(function(){
+	$(function() {
 	var browser = ACMS.Dispatch.Utility.browser();
 	if ( !browser.mobile ) {
 		$('.js-perfectScrollbar').perfectScrollbar({
@@ -29,4 +30,5 @@ $(function() {
 	$('.js-sample-start').click(function(){
 		$(this).parent().parent().toggleClass('active');
 	});
+});
 });

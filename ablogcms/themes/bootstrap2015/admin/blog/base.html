@@ -1,0 +1,30 @@
+<h3 class="acms-admin-admin-title2">サイトの設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>ロゴ画像</th>
+		<td>
+			<!-- BEGIN siteLogo_image@path:veil -->
+			<img src="%{ARCHIVES_DIR}{siteLogo_image@squarePath}" width="20"><br>
+			<input type="hidden" name="siteLogo_image@old" value="{siteLogo_image@path}">
+			<label>
+				<input type="checkbox" name="siteLogo_image@edit" value="delete">削除
+			</label>
+			<!-- END siteLogo_image@path:veil -->
+			<input type="file" name="siteLogo_image" size="20">
+			<input type="hidden" name="field[]" value="siteLogo_image">
+			<input type="hidden" name="siteLogo_image:extension" value="image">
+			<input type="hidden" name="siteLogo_image@size" value="640">
+			<input type="hidden" name="siteLogo_image@tinyWidth" value="280">
+			<input type="hidden" name="siteLogo_image@largeWidth" value="1280">
+			<input type="hidden" name="siteLogo_image@squareWidth" value="150">
+			<input type="hidden" name="siteLogo_image@filename" value="">
+		</td>
+	</tr>
+	<tr>
+		<th>フッターテキスト<i data-acms-tooltip="フッターのテキストを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip"></i></th>
+		<td>
+			<input type="text" name="siteFooter" value="{siteFooter}" class="acms-admin-form-width-large" />
+			<input type="hidden" name="field[]" value="siteFooter" />
+		</td>
+	</tr>
+</table>

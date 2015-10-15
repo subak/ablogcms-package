@@ -1,0 +1,41 @@
+/* ------------------------------
+ サマリー
+------------------------------ */
+.text-center .img-responsive {
+	display: inline;
+}
+.feature-border {
+	border-left: 1px solid #CCC;
+	&:first-child {
+		border: 0;
+	}
+}
+.img-wrap-center {
+	display: inline-block;
+}
+.summary-title {
+	margin: 20px 0 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.center-img {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+.center-img > img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	max-width: none;
+	height: inherit;
+	transform: translate(-50%, -50%);
+}
+/* 偶数のとき */
+.alternate-even .col-md-7 {
+	float: right;
+}
+/* 奇数のとき */
+.alternate-odd {
+	clear: both;
+}

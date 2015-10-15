@@ -210,6 +210,10 @@
 #entryForm .entryFormColumnBody .js-formUnitGroup .formUnitGroupValue{
 	width: 80% !important;
 }
+
+#entryForm .entryFormColumnBody .formUnitGroupAddTable {
+	width: 100%;
+}
 @media (max-width : @breakpoint-md-max) {
 	.entryFormColumnBody .formUnitLabel th,
 	.entryFormColumnBody .formUnitLabel td{
@@ -224,6 +228,9 @@
 	#entryForm .entryFormColumnBody .formUnitGroupOption .formUnitGroupOptionValue {
 		width: 70px !important;
 		padding: 5px 5px !important;
+	}
+	#entryForm .entryFormColumnBody .formUnitGroupOption .formUnitGroupOptionCell {
+		width: 1%;
 	}
 }
 
@@ -1047,6 +1054,16 @@
 .v-result-0 {
 	display: block;
 	color: #FF0000;
+	// a-blog cms 管理画面内のアラート
+	&.acms-alert {
+		color: @acms-alert-black-text-color;
+	}
+	&.acms-alert-info {
+		color: @acms-alert-info-text-color;
+	}
+	&.acms-alert-danger {
+		color: @acms-alert-danger-text-color;
+	}
 }
 
 /* 変更時メッセージ */
@@ -1355,7 +1372,7 @@
 		color: #111;
 
 		&:before {
-			content: "保存しています...";
+			content: "\4FDD\5B58\3057\3066\3044\307E\3059..."; // 変換：保存しています...
 		}
 	}
 }
@@ -1608,7 +1625,7 @@
 	.box-sizing(border-box);
 
 	&:after {
-		content: "ここにユニットを移動";
+		content: "\3053\3053\306B\30E6\30CB\30C3\30C8\3092\79FB\52D5"; // 変換：ここにユニットを移動
 		position: absolute;
 			top: 40%;
 			left: 50%;
@@ -1633,7 +1650,7 @@
 	text-align: center;
 	color: #FFFFFF;
 	background-color: #333333;
-	content: "非表示";
+	content: "\975E\8868\793A";// 非表示
 	opacity: 0.7;
 	filter: alpha(opacity=70);
 	z-index: 800;
@@ -1648,7 +1665,7 @@
 	text-align: center;
 	color: #FFFFFF;
 	background-color: #333333;
-	content: "非表示";
+	content: "\975E\8868\793A"; // 変換：非表示
 	opacity: 0.7;
 	filter: alpha(opacity=70);
 	z-index: 800;
@@ -1663,7 +1680,7 @@
 	text-align: center;
 	color: #FFFFFF;
 	background-color: #333333;
-	content: "非表示";
+	content: "\975E\8868\793A"; // 変換: 非表示
 }
 
 /* 画面下部コントロール */
@@ -1732,7 +1749,7 @@
 }
 .acms-module-edit-wrapper{
 	position: relative;
-
+	z-index: 0;
 	.acms-module-edit{
 		position: absolute;
 		top: -2px;
@@ -2251,8 +2268,9 @@ body .ui-dialog{
 }
 .acms-edit-info-heading{
 	padding: 5px 10px;
-	background-color: #666;
 	color: #FFF;
+	.font-size(16);
+	background-color: #666;
 	a,
 	a:visited,
 	a:active,
@@ -2266,6 +2284,11 @@ body .ui-dialog{
 		width: 1%;
 		white-space: nowrap;
 	}
+}
+.acms-edit-info-ogpimage {
+	width: 100%;
+	max-width: 100px;
+	height: auto;
 }
 @media (max-width : @breakpoint-md-max) {
 	.acms-edit-info-table {
@@ -2522,7 +2545,7 @@ body .ui-dialog{
 	.box-sizing(border-box);
 
 	&:after {
-		content: "レイアウトをここにドラッグ";
+		content: "\30EC\30A4\30A2\30A6\30C8\3092\3053\3053\306B\30C9\30E9\30C3\30B0"; // 変換： レイアウトをここにドラッグ
 		position: absolute;
 			top: 40%;
 			left: 50%;
@@ -2540,7 +2563,7 @@ body .ui-dialog{
 	.box-sizing(border-box);
 
 	&:after {
-		content: "モジュールをここにドラッグ";
+		content: "\30E2\30B8\30E5\30FC\30EB\3092\3053\3053\306B\30C9\30E9\30C3\30B0"; // 変換： モジュールをここにドラッグ
 		position: absolute;
 			top: 40%;
 			left: 50%;

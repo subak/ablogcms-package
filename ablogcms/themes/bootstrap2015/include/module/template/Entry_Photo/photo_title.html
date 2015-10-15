@@ -9,10 +9,10 @@
 	<!-- BEGIN notFound -->
 	<p>エントリーが見つかりませんでした。</p>
 	<!-- END notFound -->
-	
+
 	<div><!-- BEGIN unit:loop -->
 		<!-- BEGIN entry:loop -->
-		<a href="{url}" class="photoParent"><!-- BEGIN image:veil -->
+		<a href="{url}" class="photoParent {entry:loop.class}"><!-- BEGIN image:veil -->
 			<img src="%{ROOT_DIR}{path}" alt="" class="img-responsive acms-slide-bottom acms-delay-first"/><!-- END image:veil -->
 			<div class="photoFilter acms-slide-bottom acms-delay-first"></div>
 			<div class="photoTitleBottom">

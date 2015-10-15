@@ -31,6 +31,13 @@
 			<input type="hidden" name="config[]" value="category_entry_list_level" />
 		</td>
 	</tr>
+	<tr>
+		<th>ループ内クラス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="指定したクラスをカテゴリーに設定できます。例えばグリッドシステムのカラム数設定などにご利用ください。"></i></th>
+		<td>
+			<input type="text" name="category_entry_list_category_loop_class" value="{category_entry_list_category_loop_class}" size="4" class="acms-admin-form-width-medium" />
+			<input type="hidden" name="config[]" value="category_entry_list_category_loop_class" />
+		</td>
+	</tr>
 </table>
 
 <h3 class="acms-admin-admin-title2">エントリー</h3>
@@ -64,6 +71,13 @@
 			<input type="hidden" name="category_entry_list_entry_limit:convert" value="a" />
 			<input type="hidden" name="category_entry_list_entry_limit:validator#digits" id="validator-feed_rss2_limit-digits" />
 			<label for="validator-category_entry_list_entry_limit" class="validator-result-{category_entry_list_entry_limit:validator#digits}">数字を入力して下さい。</label>
+		</td>
+	</tr>
+	<tr>
+		<th>ループ内クラス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="指定したクラスをエントリーに設定できます。例えばグリッドシステムのカラム数設定などにご利用ください。"></i></th>
+		<td>
+			<input type="text" name="category_entry_list_entry_loop_class" value="{category_entry_list_entry_loop_class}" size="4" class="acms-admin-form-width-medium" />
+			<input type="hidden" name="config[]" value="category_entry_list_entry_loop_class" />
 		</td>
 	</tr>
 	<tr>

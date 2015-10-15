@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import "variable.less";
+@import "system-variable.less";
 @import "mixins.less";
 /* ---------------
  管理画面の専用
@@ -41,7 +42,7 @@ a:active {
 
 /* IE8以下 */
 .lt-ie9 {
-	#acms-main {
+	#acms-admin-main {
 		padding-left: 170px;
 	}
 	#nav {
@@ -57,16 +58,16 @@ a:active {
 // color
 // ---------------
 .acms-bg-black{
-	background-color: #101013;
+	background-color: @base-bg-black;
 
 }
 .acms-bg-gray{
-	background-color: #25242C;
+	background-color: @base-bg-gray;
 }
 
 .acms-bg-black a,
 .acms-bg-gray a{
-	color: #CCCCCC;
+	color: @base-bg-link-color;
 }
 
 
@@ -243,7 +244,7 @@ a:active {
 .csstransforms3d.csstransitions.js-nav #outer-wrap #nav{
 	position: static;
 }
-.js-nav #acms-main{
+.js-nav #acms-admin-main{
 	position: absolute;
 		top: 0;
 		width: 100%;
@@ -274,7 +275,7 @@ a:active {
 	padding: 0;
 	background: 0;
 	border: none;
-	color: #FFF;
+	color: @header-nav-color;
 	.font-size(30);
 	@media screen and (min-width: @breakpoint-md-min) {
 		display: none;
@@ -295,6 +296,7 @@ a:active {
 }
 
 .acms-header-btn {
+	color: @header-nav-color;
 	.font-size(30);
 }
 
@@ -555,18 +557,23 @@ a:active {
 	a{
 		display: block;
 		position: relative;
-		padding-left: 40px;
+		// padding-left: 40px;
 	}
 	// アイコン
 	.acms-icon{
-		position: absolute;
-			top: -4px;
-			left: 0;
+		// position: absolute;
+		//	top: -4px;
+		//	left: 0;
+		display: inline-block;
 		color: #333333;
 		vertical-align: middle;
 	}
-	// モジュール
-	.acms-config-module{
+	// モジュール名
+	.acms-config-module-name {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.acms-config-module-name-en{
 		display: block;
 		color: #777777;
 		.font-size(11);
@@ -593,11 +600,6 @@ a:active {
 	.acms-config-code{
 		display: table-cell;
 	}
-}
-
-// モジュールのアイコン
-.acms-module-list .acms-config-name .acms-icon{
-	top: 3px;
 }
 
 // モジュールのタイトル

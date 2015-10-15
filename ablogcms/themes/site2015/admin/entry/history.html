@@ -14,23 +14,27 @@
 	<tr class="sortable-item">
 		<td class="item-handle"><img width="17" height="17" class="arrowHandle" src="/images/admin_arrow_vertical.gif" /></td>
 		<td>
-			<input type="text" name="historyDate[{i}]" value="{historyDate}" class="js-datepicker"  placeholder="%{NOW_DATE}" /><br />
-			<input type="text" name="historyTitle[{i}]" value="{historyTitle}" class="acms-admin-form-width-full" placeholder="タイトル" />
+			<div class="acms-admin-form-group">
+				<input type="text" name="historyDate[{i}]" value="{historyDate}" class="js-datepicker"  placeholder="%{NOW_DATE}" />
+			</div>
+			<div class="acms-admin-form-group">
+				<input type="text" name="historyTitle[{i}]" value="{historyTitle}" class="acms-admin-form-width-full" placeholder="タイトル" />
+			</div>
 			<textarea name="historyText[{i}]" cols="30" rows="3" class="acms-admin-form-width-full" placeholder="紹介文">{historyText}</textarea>
 		</td>
 		<td>
-		
+
 			<!-- BEGIN photo:veil -->
 			<img src="%{ARCHIVES_DIR}{photo@path}" width="170" /><br />
 			<!-- END photo:veil -->
 			<label><input type="checkbox" name="photo@edit[{i}]" value="delete" /> 削除</label>
-			<input type="hidden" name="photo@old[{i}]" value="{photo@path}" /> 
+			<input type="hidden" name="photo@old[{i}]" value="{photo@path}" />
 
-			
+
 			<input type="file" name="photo[{i}]" style="width:170px" />
 			<input type="hidden" name="photo@width[{i}]" value="310" />
 			<input type="hidden" name="photo@largeWidth[{i}]" value="1280" />
-			
+
 		</td>
 		<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
 	</tr>
@@ -38,8 +42,12 @@
 	<tr class="sortable-item item-template">
 		<td class="item-handle"><img width="17" height="17" class="arrowHandle" src="/images/admin_arrow_vertical.gif" /></td>
 		<td>
-			<input type="text" name="historyDate[]" value="" class="js-datepicker" placeholder="%{NOW_DATE}" /><br />
-			<input type="text" name="historyTitle[]" value="" class="acms-admin-form-width-full" placeholder="タイトル" />
+			<div class="acms-admin-form-group">
+				<input type="text" name="historyDate[]" value="" class="js-datepicker" placeholder="%{NOW_DATE}" />
+			</div>
+			<div class="acms-admin-form-group">
+				<input type="text" name="historyTitle[]" value="" class="acms-admin-form-width-full" placeholder="タイトル" />
+			</div>
 			<textarea name="historyText[]" cols="40" rows="3" class="acms-admin-form-width-full" placeholder="紹介文"></textarea>
 		</td>
 		<td>

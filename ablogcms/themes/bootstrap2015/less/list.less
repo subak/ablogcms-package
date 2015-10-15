@@ -1,0 +1,59 @@
+/* ------------------------------
+ リスト
+------------------------------ */
+.listBorder {
+	margin: 0 0 @module-btm 0;
+	padding: 0;
+	list-style: none;
+	border-bottom: 1px solid #333;
+}
+.listBorderLink {
+	display: block;
+	padding: 15px;
+	.font-size(18);
+	font-weight: bold;
+	border-top: 1px solid #333;
+	color: #333;
+	&:hover {
+		text-decoration: none;
+		color: #333;
+		background: #CCC;
+	}
+}
+/* 時間 */
+.listBorderTime {
+	display: block;
+	.font-size(14);
+	font-weight: normal;
+}
+/* 背景がグレーのとき */
+.sectionGray {
+	.listBorder {
+		border-bottom: 1px solid #FFF;
+	}
+	.listBorderLink {
+		border-top: 1px solid #FFF;
+		color: #FFF;
+		&:hover {
+			color: #A5A19C;
+			background: #FFF;
+		}
+	}
+}
+@media (min-width : @breakpoint-lg-min) {
+	.listBorder {
+		margin: 0;
+		border: 0;
+	}
+	.listBorderLink {
+		.font-size(20);
+	}
+	.listBorderTime {
+		.font-size(16);
+	}
+}
+
+/* media併用 */
+.media.list-group-item {
+	margin-top: 0;
+}

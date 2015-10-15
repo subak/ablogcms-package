@@ -10,7 +10,7 @@
 	</p>
 </div>
 <div class="list-group list-unstyled"><!-- BEGIN entry:loop -->
-	<!-- BEGIN url#front --><a href="{url}" class="list-group-item"><!-- END url#front --><p><time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日</time><!-- BEGIN category:veil --> <span class="label label-default">{categoryName}</span><!-- END category:veil --></p><p class="list-group-item-heading">{title}<!-- BEGIN new --><span class="label label-warning">New!</span><!-- END new --></p><!-- BEGIN url#rear --></a><!-- END url#rear --><!-- END entry:loop -->
+	<!-- BEGIN url#front --><a href="{url}" class="list-group-item {entry:loop.class}"><!-- END url#front --><p><time datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日</time><!-- BEGIN category:veil --> <span class="label label-default">{categoryName}</span><!-- END category:veil --></p><p class="list-group-item-heading">{title}<!-- BEGIN new --><span class="label label-warning">New!</span><!-- END new --></p><!-- BEGIN url#rear --></a><!-- END url#rear --><!-- END entry:loop -->
 </div>
 </div>
 <!-- END_MODULE Entry_Headline -->
@@ -37,7 +37,7 @@
 			<p><time datetime="2015-01-01">2015年1月01日</time><span class="label label-default">カテゴリー</span></p>
 			<p class="list-group-item-heading">エントリーのタイトル<span class="label label-warning">New!</span></p>
 		</a>
-		
+
 	</div>
 </div>
 <!-- END layout#dummy -->

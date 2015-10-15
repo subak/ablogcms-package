@@ -1,0 +1,142 @@
+/* ------------------------------
+　　スライダー
+------------------------------ */
+.slick-slider {
+	padding: 0 0 12px 0;
+	img {
+		margin: 0 auto;
+	}
+}
+.js-main-slider {
+	height: 200px; /* はじめのちらつき防止 */
+	overflow: hidden; /* はじめのちらつき防止 */
+}
+.slick-slide:hover {
+	cursor: pointer;
+}
+.mainSliderImage {
+	height: 200px;
+	background: no-repeat center #333;
+	background-size: cover;
+	a {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+.mainSliderTextOuter {
+	height: 100%;
+}
+.mainSliderTextWrap {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.mainSliderTextInner {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mainSliderMainCopy {
+	margin: 0;
+	color: #FFF;
+	font-weight: bold;
+	.font-size(16);
+}
+.mainSliderSideCopy {
+	margin: 0;
+	color: #FFF;
+	.font-size(14);
+}
+
+/* 矢印ナビゲーション */
+.slick-prev,
+.slick-next {
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	top: 50%;
+	display: block;
+	width: 19px;
+	height: 60px;
+	margin-top: -29px;
+	padding: 0;
+	cursor: pointer;
+	color: transparent;
+	border: none;
+	outline: none;
+	background: transparent;
+}
+.slick-prev {
+	left: 10px;
+	background: url(../images/marker/icon_white_arrow_left.png) no-repeat;
+}
+.slick-next {
+	right: 10px;
+	background: url(../images/marker/icon_white_arrow_right.png) no-repeat;
+}
+
+/* ドットのナビゲーション */
+.slick-dots {
+	position: relative;
+	margin: -35px 0 0 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+.slick-dots li {
+	display: inline-block;
+}
+.slick-dots li button {
+	content: "";
+	position: relative;
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin: 0 8px;
+	font-size: 0;
+	background: #FFF;
+	border-radius: 7px;
+	border: 0;
+}
+.slick-dots li button:focus {
+	outline: 0;
+}
+.slick-dots li:hover button {
+	cursor: pointer;
+}
+.slick-dots li.slick-active button {
+	background: @primary-color;
+}
+.slick-dots button {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+}
+
+@media screen and (min-width: @breakpoint-md-min){
+	.slick-prev {
+		left: 50px;
+	}
+	.slick-next {
+		right: 50px;
+	}
+	.js-main-slider {
+		height: 400px; /* はじめのちらつき防止 */
+	}
+	.mainSliderImage {
+		height: 400px;
+	}
+	.mainSliderMainCopy {
+		.font-size(40);
+	}
+	.mainSliderSideCopy {
+		.font-size(24);
+	}
+}

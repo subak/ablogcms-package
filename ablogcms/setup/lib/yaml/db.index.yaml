@@ -11,6 +11,7 @@ ${PREFIX}approval_notification:
 %{PREFIX}blog: 
   - PRIMARY KEY  (blog_id,blog_left,blog_right,blog_status,blog_indexing)
   - KEY blog_domain (blog_domain)
+  - KEY blog_id (blog_id,blog_status)
 %{PREFIX}cache:
   - PRIMARY KEY  (cache_id)
   - KEY cache_status (cache_blog_id,cache_expire,cache_status)
@@ -21,6 +22,7 @@ ${PREFIX}approval_notification:
   - PRIMARY KEY  (category_id,category_left,category_right,category_status,category_indexing)
   - KEY category_code (category_code,category_left,category_right)
   - KEY category_id (category_id,category_status)
+  - KEY category_status (category_status,category_left,category_right,category_blog_id)
 %{PREFIX}column     : 
   - PRIMARY KEY  (column_id)
   - KEY entry_sort (column_entry_id,column_sort)
@@ -37,18 +39,24 @@ ${PREFIX}approval_notification:
   - KEY dashboard_sort (dashboard_sort,dashboard_blog_id)
 %{PREFIX}entry      :
   - PRIMARY KEY  (entry_id,entry_start_datetime,entry_end_datetime,entry_status)
-  - UNIQUE KEY entry_datetime (entry_datetime,entry_id)
   - UNIQUE KEY entry_posted_datetime (entry_posted_datetime,entry_id)
-  - UNIQUE KEY entry_category_id (entry_category_id,entry_id)
+  - KEY entry_code (entry_code,entry_category_id,entry_blog_id,entry_status)
+  - KEY entry_status (entry_datetime,entry_start_datetime,entry_end_datetime,entry_status,entry_indexing,entry_id)
   - KEY entry_user_id (entry_user_id)
-  - KEY entry_count (entry_blog_id,entry_datetime,entry_start_datetime,entry_end_datetime,entry_status,entry_indexing)
+  - KEY entry_category_id (entry_category_id)
+  - KEY entry_user_sort (entry_user_sort,entry_id)
+  - KEY entry_category_sort(entry_category_sort,entry_id)
+  - KEY entry_datetime_sort(entry_datetime,entry_id)
 %{PREFIX}entry_rev  :
   - PRIMARY KEY  (entry_id,entry_start_datetime,entry_end_datetime,entry_status,entry_rev_id)
-  - UNIQUE KEY entry_datetime (entry_datetime,entry_id,entry_rev_id)
   - UNIQUE KEY entry_posted_datetime (entry_posted_datetime,entry_id,entry_rev_id)
-  - UNIQUE KEY entry_category_id (entry_category_id,entry_id,entry_rev_id)
+  - KEY entry_code (entry_code,entry_category_id,entry_blog_id,entry_status)
+  - KEY entry_status (entry_datetime,entry_start_datetime,entry_end_datetime,entry_status,entry_indexing,entry_id)
   - KEY entry_user_id (entry_user_id)
-  - KEY entry_count (entry_blog_id,entry_datetime,entry_start_datetime,entry_end_datetime,entry_status,entry_indexing,entry_rev_id)
+  - KEY entry_category_id (entry_category_id)
+  - KEY entry_user_sort (entry_user_sort,entry_id)
+  - KEY entry_category_sort(entry_category_sort,entry_id)
+  - KEY entry_datetime_sort(entry_datetime,entry_id)
 %{PREFIX}field      :
   - KEY field_cid (field_cid)
   - KEY field_uid (field_uid)
@@ -94,6 +102,8 @@ ${PREFIX}approval_notification:
 %{PREFIX}role_blog    :
   - PRIMARY KEY  (role_id,blog_id)
 %{PREFIX}rule       :
+  - KEY rule_sort (rule_sort,rule_blog_id)
+  - KEY rule_blog_id (rule_blog_id,rule_status)
 %{PREFIX}sequence_plugin :
   - PRIMARY KEY  (sequence_plugin_key)
 %{PREFIX}sequence   :

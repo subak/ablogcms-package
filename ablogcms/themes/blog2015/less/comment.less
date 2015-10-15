@@ -1,0 +1,142 @@
+/* ----------------
+コメント
+------------------ */
+.blogComment{
+	margin-bottom: 50px;
+	&Required{
+		display: block;
+		float: right;
+		background: #E30314;
+		border-radius: 3px;
+		font-size: 11.33px;
+		color: #FFFFFF;
+		padding: 0 8px;
+		@media screen and (max-width:767px){
+			display: inline-block;
+			float: none;
+			margin-left: 25px;
+		}
+	}
+	&Table{
+		width: 100%;
+		margin-bottom: 15px;
+		border-top: none;
+		th{
+			vertical-align: top;
+			font-size: 16px;
+			color: #000000;
+			line-height: 24px;
+			text-align: left;
+			font-weight: normal;
+			white-space: nowrap;
+			padding: 5px 20px 5px 0;
+			border-bottom: none;
+		}
+		td{
+			padding: 5px 0;
+			border-bottom: none;
+		}
+		input[type="text"],
+		input[type="password"]{
+			border-radius: 3px;
+			width: 100%;
+			height: 40px;
+			padding: 0 10px;
+			line-height: 40px;
+			font-size: 16px;
+			border: 1px solid #B2B2B4;
+		}
+		textarea{
+			border-radius:3px;
+			width: 100%;
+			border: 1px solid #B2B2B4;
+			font-size: 16px;
+			padding: 0 10px;
+			line-height: 40px;
+		}
+		@media screen and (max-width:767px){
+			display: block;
+			& tbody,
+			& td,
+			& th,
+			& tr{
+				display: block;
+			}
+		}
+	}
+	&Btn,
+	&BtnInline{
+		font-size: 14px;
+		width: 152px;
+		padding: 10px 0;
+		margin-bottom: 10px;
+		color: #FFFFFF;
+		text-align: center;
+		.btnRollover();
+		border-radius: 5px;
+		border: none;
+	}
+	&Btn{
+		display: block;
+		margin: 0 auto;
+	}
+	&BtnInline{
+		display: inline-block;
+	}
+	&List{
+		border-top: 1px solid #979797;
+		padding: 0;
+		margin: 0 0 20px 0;
+		li{
+			list-style-type: none;
+			border-bottom: 1px solid #979797;
+			display: block;
+			padding: 15px 0;
+		}
+		&Title{
+			margin: 0 0 15px 0;
+			font-size: 18px;
+			font-weight: bold;
+			color: #333333;
+		}
+		&Text{
+			margin: 0 0 15px 0;
+			font-size: 16px;
+			color: #333333;
+			line-height: 2em;
+		}
+		&Footer{
+			text-align: right;
+			margin: 0;
+			font-size: 14px;
+			color: #636363;
+		}
+	}
+	&SerialNav{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		li{
+			list-style-type: none;
+			display: block;
+			.btnRollover();
+			border-radius: 5px;
+		}
+		a,
+		a:link,
+		a:hover,
+		a:visited{
+			display: block;
+			font-size: 14px;
+			padding: 5px 10px;
+			color: #FFFFFF;
+			text-decoration: none;
+		}
+		&Next{
+			float: right;
+		}
+		&Prev{
+			float: left;
+		}
+	}
+}

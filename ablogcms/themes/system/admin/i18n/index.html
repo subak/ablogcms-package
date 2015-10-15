@@ -49,9 +49,9 @@ msgstr "Dashboard"
 出来上がったMOファイルを以下の場所（デフォルト）に設置してください。</p>
 
 <pre class="code">
-例 : /lang/en_US/LC_MESSAGES/message.mo
+例 : /lang/en_US/LC_MESSAGES/messages.mo
 
-/a-blogcms設置ディレクトリ/lang/[言語]_[地域]/LC_MESSAGES/message.mo
+/a-blogcms設置ディレクトリ/lang/[言語]_[地域]/LC_MESSAGES/messages.mo
 </pre>
 
 <h2>config.server.php</h2>
@@ -60,7 +60,7 @@ msgstr "Dashboard"
 <pre class="code PHP">
 define('GETTEXT_TYPE', 'auto'); // fix|auto
 define('GETTEXT_APPLICATION_RANGE', 'admin'); // admin|login|all
-define('GETTEXT_DEFAULT_LOCALE', 'ja_JP');
+define('GETTEXT_DEFAULT_LOCALE', 'ja_JP.UTF-8');
 define('GETTEXT_DOMAIN', 'messages');
 define('GETTEXT_PATH', 'lang');
 </pre>
@@ -73,6 +73,22 @@ define('GETTEXT_PATH', 'lang');
 		user: ユーザ毎に管理画面より言語地域を設定します。<br>
 		auto: ブラウザの言語地域の設定を反映します<br>
 		</p>
+
+		<p>TYPEが"user"だった場合、ユーザ詳細ページのカスタマイズが必要になります。</p>
+
+<pre class="code PHP">
+&lt;!-- /独自テーマ/admin/user/field.html に用意 --&gt;
+&lt;tr&gt;
+	&lt;th&gt;ロケール&lt;i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユーザー毎のロケールを設定します。"&gt;&lt;/i&gt;&lt;/th&gt;
+	&lt;td&gt;
+		&lt;select name="locale"&gt;
+			&lt;option value="ja_JP.UTF-8"{locale:selected#ja_JP.UTF-8}&gt;日本語&lt;/option&gt;
+			&lt;option value="en_US.UTF-8"{locale:selected#en_US.UTF-8}&gt;English&lt;/option&gt;
+		&lt;/select&gt;
+		&lt;input type="hidden" name="user[]" value="locale" /&gt;
+	&lt;/td&gt;
+&lt;/tr&gt;
+</pre>
 	</dd>
 
 	<dt>GETTEXT_APPLICATION_RANGE</dt>

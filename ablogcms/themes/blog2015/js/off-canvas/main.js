@@ -92,7 +92,7 @@
 
             app.closeNav =function()
             {
-
+            	var inner = document.getElementById('inner-wrap');
                 if (nav_open) {
                     // close navigation after transition or immediately
                     var duration = (transition_end && transition_prop) ? parseFloat(window.getComputedStyle(inner, '')[transition_prop + 'Duration']) : 0;

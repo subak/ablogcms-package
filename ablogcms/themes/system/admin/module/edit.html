@@ -42,6 +42,10 @@
 		<input type="submit" name="ACMS_POST_2GET" value="エクスポート" class="acms-admin-btn-admin" />
 	</form>
 	<!-- END submit2#update -->
+
+	<!-- BEGIN_IF [%{edit}/neq/insert]-->
+	<!-- BEGIN_MODULE Touch_SessionWithAdministration --><!-- BEGIN_MODULE Admin_Config -->
+	<a href="{shortcutUrl}" class="acms-admin-btn-admin acms-admin-float-right acms-admin-float-none-sp"><i class="acms-admin-icon acms-admin-icon-shortcut"></i>ショートカットに追加</a><!-- END_MODULE Admin_Config --><!-- END_MODULE Touch_SessionWithAdministration --><!-- END_IF -->
 </div>
 
 <form class="acms-admin-form" action="" method="post" enctype="multipart/form-data">
@@ -102,5 +106,8 @@
 			<!-- END_IF -->
 		</div><!-- END_IF -->
 	</div>
+	<!-- BEGIN_MODULE Admin_Rule_Name -->
+	<input type="hidden" name="rid" value="{rid}" /><!-- END_MODULE Admin_Rule_Name --><!-- BEGIN_MODULE Admin_Module_Name -->
+	<input type="hidden" name="mid" value="{mid}" /><!-- END_MODULE Admin_Module_Name -->
 </form>
 <div class="js-acms_fix_target acms_fix_bg"><div class="acms_fix_bg_index"></div></div>

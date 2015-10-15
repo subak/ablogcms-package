@@ -1,11 +1,11 @@
+@charset "utf-8";
 /*
- * acms-admin.css Ver.1.1.0 (http://www.a-blogcms.jp)
+ * acms-admin.css Ver.1.1.3 (http://www.a-blogcms.jp)
  * Copyright a-blog cms | MIT License
  *
  * 使用するテーマに関係なく必要なa-blog cmsのシステムに関わるスタイルの設定です。
  * このCSSファイルを適用しない場合、表示に問題が発生しますのでご注意ください。
  */
-@charset "utf-8";
 /* ---------------
  管理画面の専用
 --------------- */
@@ -25,7 +25,7 @@ a:active {
   color: #8EBEF7;
 }
 /* IE8以下 */
-.lt-ie9 #acms-main {
+.lt-ie9 #acms-admin-main {
   padding-left: 170px;
 }
 .lt-ie9 #nav {
@@ -39,11 +39,11 @@ a:active {
   background-color: #101013;
 }
 .acms-admin-bg-gray {
-  background-color: #25242C;
+  background-color: #25242c;
 }
 .acms-admin-bg-black a,
 .acms-admin-bg-gray a {
-  color: #CCCCCC;
+  color: #cccccc;
 }
 #acms-admin-main {
   padding-right: 20px;
@@ -169,7 +169,7 @@ a:active {
 .csstransforms3d.csstransitions.js-nav #outer-wrap #nav {
   position: static;
 }
-.js-nav #acms-main {
+.js-nav #acms-admin-main {
   position: absolute;
   top: 0;
   width: 100%;
@@ -191,7 +191,7 @@ a:active {
   padding: 0;
   background: 0;
   border: none;
-  color: #FFF;
+  color: #ffffff;
   font-size: 30px;
 }
 @media screen and (min-width: 768px) {
@@ -211,6 +211,7 @@ a:active {
   outline: 0;
 }
 .acms-admin-header-btn {
+  color: #ffffff;
   font-size: 30px;
 }
 @media screen and (min-width: 768px) {
@@ -419,16 +420,17 @@ a:active {
 .acms-admin-config-name a {
   display: block;
   position: relative;
-  padding-left: 40px;
 }
 .acms-admin-config-name .acms-admin-icon {
-  position: absolute;
-  top: -4px;
-  left: 0;
+  display: inline-block;
   color: #333333;
   vertical-align: middle;
 }
-.acms-admin-config-name .acms-admin-config-module {
+.acms-admin-config-name .acms-admin-config-module-name {
+  display: inline-block;
+  vertical-align: middle;
+}
+.acms-admin-config-name .acms-admin-config-module-name-en {
   display: block;
   color: #777777;
   font-size: 11px;
@@ -451,9 +453,6 @@ a:active {
   .acms-admin-config-code {
     display: table-cell;
   }
-}
-.acms-admin-module-list .acms-admin-config-name .acms-admin-icon {
-  top: 3px;
 }
 .acms-admin-module-title-wrapper {
   position: relative;

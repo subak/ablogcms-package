@@ -67,7 +67,7 @@
 			</select>
 			<input type="submit" name="ACMS_POST_Module_Index_Status" value="変更" class="acms-admin-btn-admin acms-admin-btn-admin-primary" />
 		</div>
-		
+
 		<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
 		<!-- BEGIN_MODULE Admin_Blog_SelectGlobal -->
 		<div id="action-blog" class="js-acms-tab-select-panel acms-admin-float-left">
@@ -91,8 +91,9 @@
 		<thead>
 			<tr>
 				<th class="acms-admin-table-center acms-admin-th-checkbox acms-admin-show-sp"><label class="acms-admin-form-checkbox"><input type="checkbox" id="checkAll" /><i class="acms-admin-ico-checkbox"></i></label></th>
+				<th class="acms-admin-hide-sp">mid</th>
 				<th class="acms-admin-hide-sp">id</th>
-				<th class="acms-admin-show-sp">名前</th>
+				<th class="acms-admin-show-sp">ステータス/名前</th>
 				<th class="acms-admin-hide-sp">適用モジュール</th>
 				<th class="acms-admin-hide-sp">グローバル</th>
 				<th class="acms-admin-hide-sp">アクション</th>
@@ -103,8 +104,8 @@
 				<td class="acms-admin-table-center acms-admin-td-checkbox">
 					<label class="acms-admin-form-checkbox"><input type="checkbox" name="checks[]" value="{bid}:{mid}" /><i class="acms-admin-ico-checkbox"></i></label>
 				</td>
+				<td><span class="acms-admin-label">{mid}</span></td>
 				<td>
-					<span class="acms-admin-label">{mid}</span>
 					<strong>{identifier}</strong>
 				</td>
 				<td class="acms-admin-title-sp acms-admin-show-sp acms-admin-width-sp">

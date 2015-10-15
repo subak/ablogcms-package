@@ -1,35 +1,31 @@
 <!-- BEGIN_MODULE Entry_Summary id="topSummary" -->
 <section class="moduleSection">
-<!--#include file="/admin/module/setting.html"-->
-<div class="moduleHeader clearfix">
-<!-- BEGIN moduleField -->
-<!-- BEGIN_IF [{module_heading}/nem] -->
-	<h2 class="moduleHeading">{module_heading}</h2><!-- END_IF --><!-- END moduleField --><a href="{indexUrl}" class="moduleIndexLink"><span class="acms-icon acms-icon-arrow-right"></span>一覧</a>
-</div>
+	<!--#include file="/admin/module/setting.html"-->
+	<div class="moduleHeader clearfix"><!-- BEGIN moduleField --><!-- BEGIN_IF [{module_heading}/nem] -->
+		<h2 class="moduleHeading">{module_heading}</h2><!-- END_IF --><!-- END moduleField --><a href="{indexUrl}" class="moduleIndexLink"><span class="acms-icon acms-icon-arrow-right"></span>一覧</a>
+	</div>
 
-	<!-- BEGIN notFound -->
-	<p>記事が見つかりませんでした。</p>
-	<!-- END notFound -->
-<ul class="summaryDefault clearfix">
-	<!-- BEGIN unit:loop -->
-	<!-- BEGIN entry:loop -->
-	<li class="summaryDefaultEntry js-autoheight-r js-biggerlink">
-		<div class="acms-summary">
-			<div class="summaryDefaultEntryImageWrap acms-summary-image">
-				<div style="width:{x}px; height:{y}px; overflow:hidden; position:relative;"><!-- BEGIN image:veil -->
-					<img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" style="left:{left}px; top:{top}px; position:relative;" alt="{alt}" /><!-- END image:veil --><!-- BEGIN noimage -->
-					noimage
-					<!-- END noimage -->
+		<!-- BEGIN notFound -->
+		<p>記事が見つかりませんでした。</p>
+		<!-- END notFound -->
+	<ul class="summaryDefault clearfix">
+		<!-- BEGIN unit:loop -->
+		<!-- BEGIN entry:loop -->
+		<li class="summaryDefaultEntry js-autoheight-r js-biggerlink {entry:loop.class}">
+			<div class="acms-summary">
+				<div class="summaryDefaultEntryImageWrap acms-summary-image">
+					<div style="width:{x}px; height:{y}px; overflow:hidden; position:relative;"><!-- BEGIN image:veil -->
+						<img src="%{ROOT_DIR}{path}"width="{imgX}" height="{imgY}" style="left:{left}px; top:{top}px; position:relative;" alt="{alt}" /><!-- END image:veil --><!-- BEGIN noimage -->
+						<img src="/images/noImage.png" width="{noImgX}" />
+						<!-- END noimage -->
+					</div>
+				</div>
+				<div class="acms-summary-body">
+					<p class="summaryTitle"><a href="{url}">{title}</a></p>
+					<p class="summaryDetail">{summary}[trim(500, '...')]</p>
 				</div>
 			</div>
-			<div class="acms-summary-body">
-				<p class="summaryTitle"><a href="{url}">{title}</a></p>
-				<p class="summaryDetail">{summary}[trim(100, '...')]</p>
-			</div>
-		</div>
-	</li><!-- END entry:loop -->
-	<!-- END unit:loop -->
-
-</ul>
+		</li><!-- END entry:loop --><!-- END unit:loop -->
+	</ul>
 </section>
 <!-- END_MODULE Entry_Summary -->

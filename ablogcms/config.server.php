@@ -16,11 +16,12 @@ define('DB_PREFIX', '');
 define('GETTEXT_TYPE', 'auto');
 // GETTEXT_APPLICATION_RANGE: admin|login|all
 define('GETTEXT_APPLICATION_RANGE', 'admin');
-define('GETTEXT_DEFAULT_LOCALE', 'ja_JP');
+define('GETTEXT_DEFAULT_LOCALE', 'ja_JP.UTF-8');
 define('GETTEXT_DOMAIN', 'messages');
 define('GETTEXT_PATH', 'lang');
 
 define('SSL_ENABLE', 0);
+define('COOKIE_SECURE', 0);
 define('HOOK_ENABLE', 0);
 define('RESOLVE_PATH', 1);
 define('URL_SUFFIX_SLASH', 1);
@@ -69,7 +70,6 @@ define('LOGIN_SEGMENT', 'login');
 define('SIGNUP_SEGMENT', 'signup');
 define('LIMIT_SEGMENT', 'limit');
 define('DOMAIN_SEGMENT', 'domain');
-define('COOKIE_SECURE', FALSE);
 define('IOS_APP_UA', 'acms_iOS_app');
 
 // 本番運用時にDEBUG_MODEを 0 に設定して下さい

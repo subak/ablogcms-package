@@ -12,7 +12,7 @@
 <ul class="summaryCustom clearfix">
 	<!-- BEGIN unit:loop -->
 	<!-- BEGIN entry:loop -->
-	<li class="summaryCustomEntry js-biggerlink js-autoheight-r acms-col-sm-4">
+	<li class="summaryCustomEntry js-biggerlink js-autoheight-r {entry:loop.class}">
 		<div class="photo"><!-- BEGIN mainPhoto@squarePath:veil -->
 			<img src="%{ARCHIVES_DIR}{mainPhoto@squarePath}" alt="" class="acms-img-responsive">
 			<!-- END mainPhoto@squarePath:veil -->
@@ -28,12 +28,12 @@
 <!-- BEGIN pager:veil -->
 <!-- ページ送り　開始▼▼ -->
 <div class="acms-pager-container">
-<ul class="acms-pager">
-	<!-- BEGIN backLink --><li><a href="{url}">&lt;&lt;&nbsp;前へ</a></li><!-- END backLink -->
-	<!-- BEGIN firstPage:veil --><li{pageCurAttr}[raw]><span><a href="{firstPageUrl}">{firstPage}</a></span></li><!-- END firstPage:veil -->
-	<!-- BEGIN page:loop --><li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --></span></li><!-- END page:loop -->
-	<!-- BEGIN lastPage:veil --><li{pageCurAttr}[raw]><span><a href="{lastPageUrl}">{lastPage}</a></span></li><!-- END lastPage:veil -->
-	<!-- BEGIN forwardLink --><li><a href="{url}">次へ&nbsp;&gt;&gt;</a></li><!-- END forwardLink -->
+<ul class="pager">
+	<!-- BEGIN backLink --><li><a href="{url}" aria-label="前へ" class="pagerLink"><span aria-hidden="true">&laquo;</span></a></li><!-- END backLink -->
+	<!-- BEGIN firstPage:veil --><li {pageCurAttr}[raw]><span><a href="{firstPageUrl}" class="pagerLink">{firstPage}</a></span></li><li>…</li><!-- END firstPage:veil -->
+	<!-- BEGIN page:loop --><li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}" class="pagerLink"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --></span></li><!-- END page:loop -->
+	<!-- BEGIN lastPage:veil --><li>…</li><li{pageCurAttr}[raw]><span><a href="{lastPageUrl}" class="pagerLink">{lastPage}</a></span></li><!-- END lastPage:veil -->
+	<!-- BEGIN forwardLink --><li><a href="{url}" aria-label="次へ" class="pagerLink"><span aria-hidden="true">&raquo;</span></a></li><!-- END forwardLink -->
 </ul>
 </div>
 <!-- ページ送り　終了▲▲ -->

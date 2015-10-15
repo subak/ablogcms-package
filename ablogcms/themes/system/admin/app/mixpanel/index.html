@@ -42,15 +42,17 @@
 &lt;script type="text/javascript"&gt;
 &lt;!-- BEGIN unregistered  --&gt;
 mixpanel.people.set(\\{
-    "$first_name": "%\{SESSION_USER_NAME\}",
-    "$email": "%\{SESSION_USER_MAIL\}"
+    "$name": "%\{SESSION_USER_NAME\}",
+    "$email": "%\{SESSION_USER_MAIL\}",
+    "$created": new Date()
 \\});
 mixpanel.alias("\{distinct_id\}");
 &lt;!-- END unregistered --&gt;
 
-&lt;!-- BEGIN registered --&gt;
-mixpanel.identify("\{distinct_id\}");
-&lt;!-- END registered --&gt;
+ACMS.Ready(function() {
+    var id = $.cookie('mixpanel_distinct_id');
+    if ( id ) \{ mixpanel.identify(id); \}
+});
 &lt;/script&gt;
 &lt;!-- END_MODULE Mixpanel --&gt;
 
@@ -77,13 +79,21 @@ mixpanel.people.increment({
 \{code\}[raw]
 &lt;!-- END_MODULE MixpanelLib --&gt;
 
+&lt;script type="text/javascript"&gt;
+ACMS.Ready(function() {
+    var id = $.cookie('mixpanel_distinct_id');
+    if ( id ) \{ mixpanel.identify(id); \}
+});
+&lt;/script&gt;
+
+&lt;!-- フォーム内 --&gt;
 &lt;!-- form step#confirm内 --&gt;
 &lt;!-- BEGIN step#confirm --&gt;
 &lt;form&gt;
 ...
 &lt;input type="submit" name="ACMS_POST_Form_Submit" value="送信する" /&gt;
 &lt;input type="hidden" name="mixpanel_mode" value="form" /&gt;
-&lt;input type="hidden" name="mixpanel_id" value="\{email\}" /&gt;
+&lt;input type="hidden" name="mixpanel_id" value="\{email\}[md5]" /&gt;
 &lt;/form&gt;
 &lt;!-- END step#confirm --&gt;
 
@@ -94,8 +104,9 @@ mixpanel.people.increment({
 &lt;script type="text/javascript"&gt;
 &lt;!-- BEGIN unregistered  --&gt;
 mixpanel.people.set(\\{
-    "$first_name": "\\{name\\}",
-    "$email": "\\{email\\}"
+    "$name": "\\{name\\}",
+    "$email": "\\{email\\}",
+    "$created": new Date()
 \\});
 mixpanel.alias("\{distinct_id\}");
 &lt;!-- END unregistered --&gt;

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="ja"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="ja"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<!--#include file="/include/head/meta.html" -->
+	<!--#include file="/include/head/link.html" -->
+	<link href="/js/slick/slick.css" rel="stylesheet">
+
+	<!--#include file="/include/head/js.html" -->
+	<!--#include file="/include/head/slider-js.html" -->
+</head>
+<body>
+	<div id="outer-wrap">
+		<div id="inner-wrap">
+
+			<!-- ヘッダー -->
+			<!--#include file="/include/header.html" -->
+
+			<main role="main">
+
+				<div class="acms-container">
+					<!-- ※管理用パーツ -->
+					<!--#include file="/admin/action.html"-->
+
+					<!--#include file="/admin/layout/action.html"-->
+				</div>
+				<div class="acms-container">
+					<!-- BEGIN_MODULE Alias_List -->
+					<ul><!-- BEGIN alias:loop -->
+					    <li><a href="{url}">{name}</a></li><!-- END alias:loop -->
+					</ul><!-- END_MODULE Alias_List -->
+
+					<!-- BEGIN_MODULE Api_Instagram_Users_Media_Liked -->
+<ul><!-- BEGIN photo:loop -->
+	<li>
+		<img src="{thumbImg}" width="{thumbWidth}" height="{thumbHeight}" />
+		<img src="{smallImg}" width="{smallWidth}" height="{smallHeight}" />
+		<img src="{largeImg}" width="{largeWidth}" height="{largeHeight}" />
+		<p>{caption}</p>
+		<p>{userName} ( {profileImg} )</p>
+		<p>Type: {type} / Link: {link} / Filter: {filter} / Datetime: {createdTime}</p>
+		<p>Comments: {countComments} / Likes: {countLikes}</p>
+	</li><!-- END photo:loop -->
+</ul>
+<!-- BEGIN pager -->
+<p>
+	<!-- 出力される変数を利用して、適切なURLが組立つように記述してください -->
+	<!-- BEGIN next_max_id:veil -->
+	<a href="/field/next_max_id/{next_max_id}/">つぎ</a>
+	<!-- END next_max_id:veil -->
+</p>
+<!-- END pager -->
+<!-- END_MODULE Api_Instagram_Users_Media_Liked -->
+
+
+
+				</div>
+
+				<!--#include file="/include/%{VIEW}_check.html" -->
+			</main>
+
+			<div id="nav" class="offcanvasBar acms-hide-pc">
+				<div class="offcanvasBarInner">
+					<!-- グローバルナビ -->
+					<!--#include file="/include/header/spGlobalNavi.html" -->
+
+					<!-- 検索フォーム -->
+					<!--#include file="/include/parts/search.html" -->
+
+					<!-- ピックアップリスト -->
+					<!--#include file="/include/module/entry/pickupList.html" -->
+
+					<!-- バナー -->
+					<!--#include file="/include/module/siteparts/banner.html" -->
+
+					<!-- リンクリスト -->
+					<!--#include file="/include/module/siteparts/linkList.html" -->
+
+					<!-- SNSアカウントへのリンク -->
+					<!-- #include file="/include/footer/snsLink.html" -->
+
+					<a class="close-btn" id="nav-close-btn" href="#top">コンテンツに戻る</a>
+				</div>
+			</div>
+
+			<!-- お問い合わせ -->
+			<!--#include file="/include/footer/suggest.html" -->
+			<!-- フッター -->
+			<!--#include file="/include/footer.html" -->
+
+		</div>
+	</div>
+
+</body>
+</html>

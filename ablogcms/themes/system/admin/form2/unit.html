@@ -60,23 +60,23 @@
 				</tr>
 			</table>
 
-			<table class="entryFormImageTable js-formUnitGroup">
-				<tr>
-					<td colspan="2"><input type="button" class="item-insert acms-admin-btn" value="追加" /></td>
-				</tr>
+			<table class="entryDynamicFormTable formUnitGroupAddTable js-formUnitGroup">
 				<tr>
 					<th class="formUnitGroupValue">値</th>
 					<th>削除</th>
 				</tr>
 				<!-- BEGIN radio_value:loop -->
 				<tr class="sortable-item">
-					<td><input type="text" name="radio_value_{id}[]" value="{value}" class="acms-admin-form-width-3quarters" /></td>
+					<td><input type="text" name="radio_value_{id}[]" value="{value}" class="acms-admin-form-width-full" /></td>
 					<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
 				</tr>
 				<!-- END radio_value:loop -->
 				<tr class="sortable-item item-template">
-					<td><input type="text" name="radio_value_{id}[]" value="" class="acms-admin-form-width-3quarters" /></td>
+					<td><input type="text" name="radio_value_{id}[]" value="" class="acms-admin-form-width-full" /></td>
 					<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" class="item-insert acms-admin-btn-admin acms-admin-btn-admin-primary" value="追加" /></td>
 				</tr>
 			</table>
 			<!-- END radio -->
@@ -93,29 +93,29 @@
 				</tr>
 			</table>
 
-			<table class="entryFormImageTable js-formUnitGroup">
-				<tr>
-					<td colspan="2"><input type="button" class="item-insert acms-admin-btn" value="追加" /></td>
-				</tr>
+			<table class="entryDynamicFormTable formUnitGroupAddTable js-formUnitGroup">
 				<tr>
 					<th class="formUnitGroupValue">値</th>
 					<th>削除</th>
 				</tr>
 				<!-- BEGIN select_value:loop -->
 				<tr class="sortable-item">
-					<td><input type="text" name="select_value_{id}[]" value="{value}" class="acms-admin-form-width-3quarters" /></td>
+					<td><input type="text" name="select_value_{id}[]" value="{value}" class="acms-admin-form-width-full" /></td>
 					<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
 				</tr>
 				<!-- END select_value:loop -->
 				<tr class="sortable-item item-template">
-					<td><input type="text" name="select_value_{id}[]" value="" class="acms-admin-form-width-3quarters" /></td>
+					<td><input type="text" name="select_value_{id}[]" value="" class="acms-admin-form-width-full" /></td>
 					<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" class="item-insert acms-admin-btn-admin acms-admin-btn-admin-primary" value="追加" /></td>
 				</tr>
 			</table>
 			<!-- END select -->
 
 			<!-- BEGIN checkbox -->
-			<table class="entryFormColumnSettingTable formUnitLabel">
+			<table class="entryFormColumnSettingTable formUnitGroupAddTable formUnitLabel">
 				<tr>
 					<th>ラベル</th>
 					<td><input type="text" name="checkbox_label_{id}" value="{label}" class="acms-admin-form-width-3quarters" /></td>
@@ -126,44 +126,44 @@
 				</tr>
 			</table>
 
-			<table class="entryFormImageTable js-formUnitGroup">
-				<tr>
-					<td colspan="2"><input type="button" class="item-insert acms-admin-btn" value="追加" /></td>
-				</tr>
+			<table class="entryDynamicFormTable formUnitGroupAddTable js-formUnitGroup">
 				<tr>
 					<th class="formUnitGroupValue">値</th>
 					<th>削除</th>
 				</tr>
 				<!-- BEGIN checkbox_value:loop -->
 				<tr class="sortable-item">
-					<td><input type="text" name="checkbox_value_{id}[]" value="{value}" class="acms-admin-form-width-3quarters" /></td>
+					<td><input type="text" name="checkbox_value_{id}[]" value="{value}" class="acms-admin-form-width-full" /></td>
 					<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
 				</tr>
 				<!-- END checkbox_value:loop -->
 				<tr class="sortable-item item-template">
-					<td><input type="text" name="checkbox_value_{id}[]" value="" class="acms-admin-form-width-3quarters" /></td>
+					<td><input type="text" name="checkbox_value_{id}[]" value="" class="acms-admin-form-width-full" /></td>
 					<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" class="item-insert acms-admin-btn-admin acms-admin-btn-admin-primary" value="追加" /></td>
 				</tr>
 			</table>
 			<!-- END checkbox -->
 
 			<!-- .entryFormColumnOption -->
-			<table class="entryFormImageTable formUnitGroupOption">
+			<table class="entryDynamicFormTable formUnitGroupOption">
 				<tr class="detail-column-head">
 					<td colspan="3">
 						<a href="#" class="toggle">- 入力チェック</a>
 					</td>
 				</tr>
 				<tr>
-					<th class="acms-admin-hide-sp">オプション</th>
+					<th class="acms-admin-hide-sp formUnitGroupOptionCell">オプション</th>
 					<th class="acms-admin-hide-sp formUnitGroupOptionValue">値</th>
 					<th class="acms-admin-hide-sp">メッセージ</th>
 				</tr><!-- BEGIN option:loop -->
 				<tr>
 					<td class="acms-admin-show-sp">
-						<span class="acms-admin-hide-pc acms-admin-show-sp">オプション</span>
+						<span class="acms-admin-hide acms-admin-show-sp">オプション</span>
 						<select name="column_validator_{id}[]" class="entryFormOption">
-							<option value="">▼ オプションを選択</option>
+							<option value="">オプションを選択</option>
 							<optgroup label="入力値の制限">
 								<option value="required"{validator:selected#required}>必須 ( required )</option>
 								<option value="minLength"{validator:selected#minLength}>最小文字数 ( minLength )</option>
@@ -186,12 +186,12 @@
 						</select>
 					</td>
 					<td class="acms-admin-show-sp formUnitGroupOptionValue">
-						<span class="acms-admin-hide-pc acms-admin-show-sp">値</span>
+						<span class="acms-admin-hide acms-admin-show-sp">値</span>
 						<input type="text" name="column_validator-value_{id}[]" value="{validator-value}" class="acms-admin-form-width-3quarters" />
 					</td>
 					<td class="acms-admin-show-sp acms-admin-border-bottom-sp">
-						<span class="acms-admin-hide-pc acms-admin-show-sp">メッセージ</span>
-						<input type="text" name="column_validator-message_{id}[]" value="{validator-message}" />
+						<span class="acms-admin-hide acms-admin-show-sp">メッセージ</span>
+						<input type="text" name="column_validator-message_{id}[]" value="{validator-message}" class="acms-form-width-full" />
 					</td>
 				</tr><!-- END option:loop -->
 			</table>

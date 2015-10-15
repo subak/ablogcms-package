@@ -22,21 +22,26 @@
 			<main role="main">
 
 				<div class="acms-container">
+
 					<!-- ※管理用パーツ -->
 					<!--#include file="/admin/action.html"-->
 
+					<!-- ※レイアウトモジュール用　管理用パーツ -->
 					<!--#include file="/admin/layout/action.html"-->
-				</div>
-				<!-- BEGIN_MODULE Layout id="topLayout" -->
-				<!-- BEGIN display -->
-				<!--#include file="/include/layout.html" -->
-				<!-- END display -->
 
-				<!-- BEGIN edit -->
-				<div class="acms-container">
-					<!--#include file="/admin/layout/edit.html"-->
 				</div>
-				<!-- END edit -->
+
+				<!-- レイアウトモジュール -->
+				<!-- BEGIN_MODULE Layout id="topLayout" -->
+					<!-- BEGIN display -->
+					<!--#include file="/include/layout.html" -->
+					<!-- END display -->
+
+					<!-- BEGIN edit -->
+					<div class="acms-container">
+						<!--#include file="/admin/layout/edit.html"-->
+					</div>
+					<!-- END edit -->
 				<!-- END_MODULE Layout -->
 
 				<!--#include file="/include/%{VIEW}_check.html" -->

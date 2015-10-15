@@ -11,46 +11,7 @@ var rename = require('gulp-rename'),
 	livereload = require('gulp-livereload'),
 	plumber = require('gulp-plumber'),
 	lessToScss = require('gulp-less-to-scss'),
-	timestamp   = Date.now(),
-	iconfont    = require('gulp-iconfont'),
-	consolidate = require('gulp-consolidate'),
-	fontFamily  = 'acms-fonts',
-	fontName    = 'acms-fonts'
-	replace = require('gulp-replace');;
-
-// シンボルフォントを作成する
-gulp.task('iconfont', function(){
-	gulp.src(['fonts/icon_svg/*.svg'])
-		.pipe(iconfont({
-			fontName: fontName
-		}))
-	.on('codepoints', function(codepoints) {
-		var options = {
-			glyphs: codepoints,
-			fontName: fontName,
-			fontPath: '../fonts/',      // フォントパスをlessからの相対パスで指定
-			fontFamily: fontFamily,
-			className: 'acms-icon',     // フォントのクラス名を指定
-			mixinPrefix: 'icon-',
-			timestamp: timestamp
-		};
-		// シンボルフォント用のlessを作成
-		gulp.src('fonts/src/templates/myfont.less')
-			.pipe(consolidate('lodash', options))
-			.pipe(rename({ basename:fontFamily }))
-			.pipe(gulp.dest('fonts/dest/less/'));   // lessの吐き出し先を指定
-		gulp.src('fonts/src/templates/sample.less')
-			.pipe(consolidate('lodash', options))
-			.pipe(gulp.dest('fonts/dest/less/'));
-
-		// シンボルフォント一覧のサンプルHTMLを作成
-		gulp.src('fonts/src/templates/myfont.html')
-			.pipe(consolidate('lodash', options))
-			.pipe(rename({ basename:'sample' }))
-			.pipe(gulp.dest('fonts/dest/'));        // サンプルHTMLの吐き出し先を指定
-	})
-	.pipe(gulp.dest('fonts/dest/fonts/'));
-});
+	replace = require('gulp-replace');
 
 //lessをscssに変換して設置する
 gulp.task('scsscopy',function() {
@@ -64,7 +25,7 @@ gulp.task('scsscopy',function() {
 
 //システム用のScssをCSSにコンパイルする
 gulp.task('systemsass',function(){
-	gulp.src(['themes/system/scss/acms.scss' , 'themes/system/scss/acms-lite.scss'])
+	gulp.src(['themes/system/scss/acms.scss'])
 		.pipe(sass())
 		.pipe(gulp.dest('themes/system/css'))
 		.pipe(gulp.dest('themes/system/css'))

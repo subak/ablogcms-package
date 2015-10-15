@@ -93,6 +93,18 @@
 			</td>
 		</tr>
 		<tr>
+			<th>グローバル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックされたエイリアスは子ブログにも受け継がれて使用されます。"></i></th>
+			<td>
+				<input type="hidden" name="scope" value="local" />
+				<label for="input-checkbox-scope" class="acms-admin-form-checkbox">
+					<input type="checkbox" name="scope" value="global" id="input-checkbox-scope"{scope:checked#global} /><i class="acms-admin-ico-checkbox"></i>下の階層のブログと共有する
+					<input type="hidden" name="alias[]" value="scope" />
+				</label>
+				<!-- BEGIN scope:validator#deny -->
+				<label for="validator-scope-blogcode" class="validator-result-0">ブログコードが設定されていないブログがあります。またはブログコードが重複しています。</label><!-- END scope:validator#deny -->
+			</td>
+		</tr>
+		<tr>
 			<th>インデキシング<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックが外されたエイリアスは、エイリアスの一覧を出力するモジュールに表示されなくなります。"></i></th>
 			<td>
 				<input type="hidden" name="indexing" value="off" />

@@ -85,6 +85,11 @@
 	</table>
 
 	<h3 class="acms-admin-admin-title2">詳細情報</h3>
+
+	<div class="js-arg_reference_remove js-arg_reference_dummy acms-admin-label-group acms-admin-inline-space" data-arg="" style="display:none;">
+		<span class="acms-admin-label acms-admin-label-large"></span><a class="acms-admin-label acms-admin-label-large acms-admin-label-side">x</a>
+	</div>
+
 	<table class="adminTable acms-admin-table-admin-edit" id="js-arg_reference">
 		<tr>
 			<th>エイリアスID<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="エイリアスの管理ID（番号）を指定します。"></i></th>
@@ -110,7 +115,7 @@
 				<label for="input-text-aid" class="validator-result-{aid:validator#digits}">数値を入力して下さい。</label>
 			</td>
 		</tr>
-		<tr>
+		<tr id="js-arg_guidance_uid" class="js-arg_guidance">
 			<th>ユーザーID<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユーザーの管理ID（番号）を指定します。"></i></th>
 			<td>uid</td>
 			<td>
@@ -128,13 +133,22 @@
 				<input type="hidden" name="rule[]" value="uid_case" />
 			</td>
 			<td>
-				<input type="text" name="uid" value="{uid}" id="input-text-uid" size="6" />　( <a href="#" name="uid" class="js-arg_reference_trigger">ID参照</a> )
+				<button name="uid" class="js-arg_reference_trigger acms-admin-btn acms-admin-btn-info acms-admin-inline-space">ID参照</button>
+				<a href="#" class="js-arg_reference_toggle acms-admin-inline-space"><span class="acms-admin-icon-control-edit"></span></a>
+				<input class="js-arg_guidance_edit argEdit" type="text" name="uid" value="{uid}" />
+
 				<input type="hidden" name="rule[]" value="uid" />
 				<input type="hidden" name="uid:validator#digits" />
 				<label for="input-text-uid" class="validator-result-{uid:validator#digits}">数値を入力してください。</label>
+
+				<div class="acms-admin-inline js-arg_guidance_label"><!-- BEGIN uid_arg:loop -->
+				<div class="js-arg_reference_remove acms-admin-label-group acms-admin-inline-space" data-arg="{uid_arg_value}">
+					<span class="acms-admin-label acms-admin-label-large">{uid_arg_label}</span><a class="acms-admin-label acms-admin-label-large acms-admin-label-side">x</a>
+				</div><!-- END uid_arg:loop -->
+			</div>
 			</td>
 		</tr>
-		<tr>
+		<tr id="js-arg_guidance_cid" class="js-arg_guidance">
 			<th>カテゴリーID<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの管理ID（番号）を指定します。"></i></th>
 			<td>cid</td>
 			<td>
@@ -152,13 +166,22 @@
 				<input type="hidden" name="rule[]" value="cid_case" />
 			</td>
 			<td>
-				<input type="text" name="cid" value="{cid}" id="input-text-cid" size="6" />　( <a href="#" name="cid" class="js-arg_reference_trigger">ID参照</a> )
+				<button name="cid" class="js-arg_reference_trigger acms-admin-btn acms-admin-btn-info acms-admin-inline-space">ID参照</button>
+				<a href="#" class="js-arg_reference_toggle acms-admin-inline-space"><span class="acms-admin-icon-control-edit"></span></a>
+				<input class="js-arg_guidance_edit argEdit" type="text" name="cid" value="{cid}" />
+
 				<input type="hidden" name="rule[]" value="cid" />
 				<input type="hidden" name="cid:validator#digits" />
 				<label for="input-text-cid" class="validator-result-{cid:validator#digits}">数値を入力してください。</label>
+
+				<div class="acms-admin-inline js-arg_guidance_label"><!-- BEGIN cid_arg:loop -->
+					<div class="js-arg_reference_remove acms-admin-label-group acms-admin-inline-space" data-arg="{cid_arg_value}">
+						<span class="acms-admin-label acms-admin-label-large">{cid_arg_label}</span><a class="acms-admin-label acms-admin-label-large acms-admin-label-side">x</a>
+					</div><!-- END cid_arg:loop -->
+				</div>
 			</td>
 		</tr>
-		<tr>
+		<tr id="js-arg_guidance_eid" class="js-arg_guidance">
 			<th>エントリーID<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="エントリーの管理ID（番号）を指定します。"></i></th>
 			<td>eid</td>
 			<td>
@@ -176,10 +199,18 @@
 				<input type="hidden" name="rule[]" value="eid_case" />
 			</td>
 			<td>
-				<input type="text" name="eid" value="{eid}" id="input-text-eid" size="6" />
+				<button name="eid" class="js-arg_reference_trigger acms-admin-btn acms-admin-btn-info acms-admin-inline-space">ID参照</button>
+				<a href="#" class="js-arg_reference_toggle acms-admin-inline-space"><span class="acms-admin-icon-control-edit"></span></a>
+				<input class="js-arg_guidance_edit argEdit" type="text" name="eid" value="{eid}" />
+
 				<input type="hidden" name="rule[]" value="eid" />
 				<input type="hidden" name="eid:validator#digits" />
 				<label for="input-text-eid" class="validator-result-{eid:validator#digits}">数値を入力してください。</label>
+
+				<div class="acms-admin-inline js-arg_guidance_label"><!-- BEGIN eid_arg:loop -->
+					<div class="js-arg_reference_remove acms-admin-label-group acms-admin-inline-space" data-arg="{eid_arg_value}">
+						<span class="acms-admin-label acms-admin-label-large">{eid_arg_label}</span><a class="acms-admin-label acms-admin-label-large acms-admin-label-side">x</a></div><!-- END eid_arg:loop -->
+				</div>
 			</td>
 		</tr>
 		<tr>
@@ -200,7 +231,7 @@
 				<input type="hidden" name="rule[]" value="ucd_case" />
 			</td>
 			<td>
-				<input type="text" name="ucd" value="{ucd}" />　( <a href="#" name="ucd" class="js-arg_reference_trigger">CODE参照</a> )
+				<input type="text" name="ucd" value="{ucd}" />
 				<input type="hidden" name="rule[]" value="ucd" />
 			</td>
 		</tr>
@@ -222,7 +253,7 @@
 				<input type="hidden" name="rule[]" value="ccd_case" />
 			</td>
 			<td>
-				<input type="text" name="ccd" value="{ccd}" />　( <a href="#" name="ccd" class="js-arg_reference_trigger">CODE参照</a> )
+				<input type="text" name="ccd" value="{ccd}" />
 				<input type="hidden" name="rule[]" value="ccd" />
 			</td>
 		</tr>
@@ -302,7 +333,7 @@
 				<input type="hidden" name="rule[]" value="term_case" />
 			</td>
 			<td>
-				<select class="js-radio_type" name="term_type[]">
+				<select class="js-rule_term_type" name="term_type[]">
 					<option value="">定期</option>
 					<option value="fix"{term_type:selected#fix}>固定</option>
 				</select>

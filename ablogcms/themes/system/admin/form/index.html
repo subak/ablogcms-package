@@ -54,6 +54,7 @@
 			<th class="acms-admin-show-sp">フォーム名</th>
 			<th class="acms-admin-hide-sp">最新の投稿</th>
 			<th class="acms-admin-hide-sp">投稿数</th>
+			<th class="acms-admin-hide-sp">スコープ</th>
 			<th class="acms-admin-hide-sp">アクション</th>
 		</tr>
 	</thead>
@@ -63,6 +64,9 @@
 			<td class="acms-admin-show-sp acms-admin-width-sp"><p class="acms-admin-title-sp">{name}</p></td>
 			<td>{datetime}</td>
 			<td>{amount}</td>
+			<td><!-- BEGIN_IF [{scope}/eq/global] -->
+				グローバル<!-- ELSE -->ローカル<!-- END_IF -->
+			</td>
 			<td class="acms-admin-border-bottom-sp acms-admin-show-sp acms-admin-width-sp"><!-- BEGIN editAction -->
 				<a href="{itemUrl}&edit=update" class="acms-admin-btn-admin">変更</a><!-- END editAction --><!-- BEGIN logAction -->
 				<a href="{logUrl}" class="acms-admin-btn-admin">投稿データ</a><!-- END logAction -->

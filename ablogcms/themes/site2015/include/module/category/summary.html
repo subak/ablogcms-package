@@ -2,7 +2,7 @@
 <div>
 <!--#include file="/admin/module/setting.html"-->
 <!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
-<!-- END categoryUl#front --><!-- BEGIN category:loop --><section class="moduleSection">
+<!-- END categoryUl#front --><!-- BEGIN category:loop --><section class="moduleSection {category:loop.class}">
 <div class="moduleHeader clearfix">
 	<h2 class="moduleHeading"><a href="{categoryUrl}">{categoryName}</a></h2>
 </div>
@@ -11,18 +11,18 @@
 
 	<!-- BEGIN unit:loop -->
 	<!-- BEGIN entry:loop -->
-	<li class="summaryDefaultEntry js-autoheight-r js-biggerlink">
+	<li class="summaryDefaultEntry js-autoheight-r js-biggerlink {entry:loop.class}">
 		<div class="acms-summary">
 			<div class="summaryDefaultEntryImageWrap acms-summary-image">
 				<div style="width:{x}px; height:{y}px; overflow:hidden; position:relative;"><!-- BEGIN image:veil -->
 					<img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" style="left:{left}px; top:{top}px; position:relative;" alt="" /><!-- END image:veil --><!-- BEGIN noimage -->
-					noimage
+					<img src="/images/noImage.png" width="{noImgX}" />
 					<!-- END noimage -->
 				</div>
 			</div>
 			<div class="acms-summary-body">
 				<p class="summaryTitle acms-summary-heading"><a href="{url}">{title}</a></p>
-				<p class="summaryDetail">{summary}[trim(80, '...')]</p>
+				<p class="summaryDetail">{summary}[trim(500, '...')]</p>
 			</div>
 		</div>
 	</li><!-- END entry:loop -->

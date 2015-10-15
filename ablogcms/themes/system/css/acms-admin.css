@@ -1,11 +1,11 @@
+@charset "utf-8";
 /*
- * acms-admin.css Ver.1.1.0 (http://www.a-blogcms.jp)
+ * acms-admin.css Ver.1.1.3 (http://www.a-blogcms.jp)
  * Copyright a-blog cms | MIT License
  *
  * 使用するテーマに関係なく必要なa-blog cmsのシステムに関わるスタイルの設定です。
  * このCSSファイルを適用しない場合、表示に問題が発生しますのでご注意ください。
  */
-@charset "utf-8";
 /* ------------------------------
  グリッドシステム
 ------------------------------- */
@@ -673,7 +673,7 @@
 .acms-admin-entry .acms-admin-col-12 {
   clear: both;
 }
-/* ------------------------------  
+/* ------------------------------
  ボタン デフォルト
 ------------------------------- */
 .acms-admin-btn {
@@ -987,6 +987,10 @@ a.acms-admin-btn-flat:hover,
   border: 1px solid #a7a7a7;
   text-decoration: none;
 }
+.acms-admin-btn-flat:visited,
+a.acms-admin-btn-flat:visited {
+  color: #666666;
+}
 .acms-admin-btn-flat:active,
 a.acms-admin-btn-flat:active,
 .acms-admin-btn-flat.acms-admin-btn-active,
@@ -1010,6 +1014,10 @@ a.acms-admin-btn-flat-primary:hover,
   background-color: #0364ff;
   border: 1px solid #002b6e;
   text-decoration: none;
+}
+.acms-admin-btn-flat-primary:visited,
+a.acms-admin-btn-flat-primary:visited {
+  color: #ffffff;
 }
 .acms-admin-btn-flat-primary:active,
 a.acms-admin-btn-flat-primary:active,
@@ -1035,6 +1043,10 @@ a.acms-admin-btn-flat-info:hover,
   border: 1px solid #202020;
   text-decoration: none;
 }
+.acms-admin-btn-flat-info:visited,
+a.acms-admin-btn-flat-info:visited {
+  color: #ffffff;
+}
 .acms-admin-btn-flat-info:active,
 a.acms-admin-btn-flat-info:active,
 .acms-admin-btn-flat-info.acms-admin-btn-active,
@@ -1058,6 +1070,10 @@ a.acms-admin-btn-flat-success:hover,
   background-color: #8bcb00;
   border: 1px solid #263700;
   text-decoration: none;
+}
+.acms-admin-btn-flat-success:visited,
+a.acms-admin-btn-flat-success:visited {
+  color: #ffffff;
 }
 .acms-admin-btn-flat-success:active,
 a.acms-admin-btn-flat-success:active,
@@ -1083,6 +1099,10 @@ a.acms-admin-btn-flat-warning:hover,
   border: 1px solid #6e4000;
   text-decoration: none;
 }
+.acms-admin-btn-flat-warning:visited,
+a.acms-admin-btn-flat-warning:visited {
+  color: #ffffff;
+}
 .acms-admin-btn-flat-warning:active,
 a.acms-admin-btn-flat-warning:active,
 .acms-admin-btn-flat-warning.acms-admin-btn-active,
@@ -1106,6 +1126,10 @@ a.acms-admin-btn-flat-danger:hover,
   background-color: #ff0328;
   border: 1px solid #6e0010;
   text-decoration: none;
+}
+.acms-admin-btn-flat-danger:visited,
+a.acms-admin-btn-flat-danger:visited {
+  color: #ffffff;
 }
 .acms-admin-btn-flat-danger:active,
 a.acms-admin-btn-flat-danger:active,
@@ -1399,7 +1423,7 @@ fieldset[disabled] .acms-admin-btn {
 .acms-admin-btn-unstyled:focus {
   outline: 0;
 }
-/* ------------------------------  
+/* ------------------------------
  タイポグラフィ
 ------------------------------- */
 /* ---------------
@@ -1543,8 +1567,7 @@ fieldset[disabled] .acms-admin-btn {
 [class*="acms-admin-icon-"] {
   font-family: "acms-admin-fonts";
   display: inline-block;
-  position: relative;
-  top: 1px;
+  vertical-align: middle;
   line-height: 1;
   font-weight: normal;
   font-style: normal;
@@ -1586,7 +1609,7 @@ fieldset[disabled] .acms-admin-btn {
 .acms-admin-code {
   font-family: Consolas,monospace,serif;
 }
-/* ------------------------------  
+/* ------------------------------
  フォーム
 ------------------------------- */
 /* ---------------
@@ -1706,7 +1729,21 @@ label {
 .acms-admin-form input[type="url"]:-moz-input-placeholder,
 .acms-admin-form input[type="search"]:-moz-input-placeholder,
 .acms-admin-form input[type="tel"]:-moz-input-placeholder,
-.acms-admin-form input[type="color"]:-moz-input-placeholder {
+.acms-admin-form input[type="color"]:-moz-input-placeholder,
+.acms-admin-form input[type="text"]:-ms-input-placeholder,
+.acms-admin-form input[type="password"]:-ms-input-placeholder,
+.acms-admin-form input[type="datetime"]:-ms-input-placeholder,
+.acms-admin-form input[type="datetime-local"]:-ms-input-placeholder,
+.acms-admin-form input[type="date"]:-ms-input-placeholder,
+.acms-admin-form input[type="month"]:-ms-input-placeholder,
+.acms-admin-form input[type="time"]:-ms-input-placeholder,
+.acms-admin-form input[type="week"]:-ms-input-placeholder,
+.acms-admin-form input[type="number"]:-ms-input-placeholder,
+.acms-admin-form input[type="email"]:-ms-input-placeholder,
+.acms-admin-form input[type="url"]:-ms-input-placeholder,
+.acms-admin-form input[type="search"]:-ms-input-placeholder,
+.acms-admin-form input[type="tel"]:-ms-input-placeholder,
+.acms-admin-form input[type="color"]:-ms-input-placeholder {
   font-size: 11px;
   padding-top: 2px;
 }
@@ -1754,7 +1791,21 @@ label {
 .acms-admin-form input[type="url"].acms-admin-form-large:-moz-input-placeholder,
 .acms-admin-form input[type="search"].acms-admin-form-large:-moz-input-placeholder,
 .acms-admin-form input[type="tel"].acms-admin-form-large:-moz-input-placeholder,
-.acms-admin-form input[type="color"].acms-admin-form-large:-moz-input-placeholder {
+.acms-admin-form input[type="color"].acms-admin-form-large:-moz-input-placeholder,
+.acms-admin-form input[type="text"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="password"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="datetime"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="datetime-local"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="date"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="month"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="time"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="week"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="number"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="email"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="url"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="search"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="tel"].acms-admin-form-large:-ms-input-placeholder,
+.acms-admin-form input[type="color"].acms-admin-form-large:-ms-input-placeholder {
   font-size: 20px;
 }
 .acms-admin-form input[type="text"].acms-admin-form-small,
@@ -1807,7 +1858,8 @@ label {
   font-size: 10px;
 }
 .acms-admin-form textarea::-webkit-input-placeholder,
-.acms-admin-form textarea:-moz-input-placeholder {
+.acms-admin-form textarea:-moz-input-placeholder,
+.acms-admin-form textarea:-ms-input-placeholder {
   font-size: 11px;
   padding-top: 2px;
 }
@@ -2353,6 +2405,7 @@ label {
     overflow-x: scroll;
     overflow-y: hidden;
     border: 1px solid #dddddd;
+    -webkit-overflow-scrolling: touch;
   }
   .acms-admin-table-responsive th,
   .acms-admin-table-responsive td {
@@ -2748,7 +2801,7 @@ a.acms-admin-list-group-item:focus {
 .acms-admin-list-group-title-link:focus {
   text-decoration: underline;
 }
-/* ------------------------------  
+/* ------------------------------
  ラベル
 ------------------------------- */
 .acms-admin-label {
@@ -2767,6 +2820,11 @@ a.acms-admin-label:hover {
   text-decoration: none;
   background: #6e6e6e;
   cursor: pointer;
+}
+a.acms-admin-label:visited,
+.acms-admin-label:active,
+.acms-admin-label:focus {
+  color: #ffffff;
 }
 .acms-admin-label-large {
   font-size: 16px;
@@ -2795,11 +2853,21 @@ a.acms-admin-label:hover {
 a.acms-admin-label-success:hover {
   background: #2e8570;
 }
+a.acms-admin-label-success:visited,
+.acms-admin-label-success:active,
+.acms-admin-label-success:focus {
+  color: #ffffff;
+}
 .acms-admin-label-info {
   background-color: #7096cd;
 }
 a.acms-admin-label-info:hover {
   background: #3b68ab;
+}
+a.acms-admin-label-info:visited,
+.acms-admin-label-info:active,
+.acms-admin-label-info:focus {
+  color: #ffffff;
 }
 .acms-admin-label-warning {
   background-color: #cdb770;
@@ -2807,11 +2875,21 @@ a.acms-admin-label-info:hover {
 a.acms-admin-label-warning:hover {
   background: #ab903b;
 }
+a.acms-admin-label-warning:visited,
+.acms-admin-label-warning:active,
+.acms-admin-label-warning:focus {
+  color: #ffffff;
+}
 .acms-admin-label-danger {
   background-color: #cd7086;
 }
 a.acms-admin-label-danger:hover {
   background: #ab3b56;
+}
+a.acms-admin-label-danger:visited,
+.acms-admin-label-danger:active,
+.acms-admin-label-danger:focus {
+  color: #ffffff;
 }
 .acms-admin-admin-labelbox {
   min-width: 55px;
@@ -3282,7 +3360,7 @@ a.acms-admin-label-danger:hover {
 .acms-admin-entry-unit-full [class*='column-eximage-'],
 .acms-admin-entry-unit-full [class*='column-youtube-'],
 .acms-admin-entry-unit-full [class*='column-video-'] {
-  width: 100%!important;
+  width: auto!important;
   max-width: 100%;
 }
 /* YouTube動画をレスポンシブ対応させるための記述 */
@@ -3430,7 +3508,7 @@ a.acms-admin-label-danger:hover {
 a.acms-admin-thumbnail:hover {
   color: #666;
 }
-/* ------------------------------  
+/* ------------------------------
  リスト
 ------------------------------- */
 .acms-admin-summary {
@@ -3447,10 +3525,10 @@ a.acms-admin-thumbnail:hover {
   vertical-align: top;
 }
 .acms-admin-summary-image + .acms-admin-summary-body {
-  padding: 0 0 0 10px;
+  padding-left: 10px;
 }
 .acms-admin-summary-image .acms-admin-summary-body {
-  padding: 0 10px 0 0;
+  padding-right: 10px;
 }
 .acms-admin-summary-body {
   display: table-cell;
@@ -3861,7 +3939,7 @@ a.acms-admin-thumbnail:hover {
     font-size: 11px;
   }
 }
-/* ------------------------------  
+/* ------------------------------
  アラート
 ------------------------------- */
 .acms-admin-alert {
@@ -4356,22 +4434,20 @@ a.acms-admin-thumbnail:hover {
 }
 @font-face {
   font-family: "acms-admin-fonts";
-  src: url("../fonts/acms-fonts-a75316e7951549c82bfbdbd6a700a19c.eot");
+  src: url("../fonts/acms-fonts-20150901.eot");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "acms-admin-fonts";
-  src: url("../fonts/acms-fonts-a75316e7951549c82bfbdbd6a700a19c.eot");
-  src: url("../fonts/acms-fonts-a75316e7951549c82bfbdbd6a700a19c.eot?#iefix") format("embedded-opentype"), url("../fonts/acms-fonts-a75316e7951549c82bfbdbd6a700a19c.woff") format("woff"), url("../fonts/acms-fonts-a75316e7951549c82bfbdbd6a700a19c.ttf") format("truetype"), url("../fonts/acms-fonts-a75316e7951549c82bfbdbd6a700a19c.svg?#acms-fonts") format("svg");
+  src: url("../fonts/acms-fonts-20150901.eot");
+  src: url("../fonts/acms-fonts-20150901.eot?#iefix") format("embedded-opentype"), url("../fonts/acms-fonts-20150901.woff") format("woff"), url("../fonts/acms-fonts-20150901.ttf") format("truetype"), url("../fonts/acms-fonts-20150901.svg?#acms-fonts") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 .acms-admin-icon {
   font-family: "acms-admin-fonts";
   display: inline-block;
-  position: relative;
-  top: 1px;
   line-height: 1;
   font-weight: normal;
   font-style: normal;
@@ -5391,6 +5467,9 @@ a.acms-admin-thumbnail:hover {
 #entryForm .entryFormColumnBody .js-formUnitGroup .formUnitGroupValue {
   width: 80% !important;
 }
+#entryForm .entryFormColumnBody .formUnitGroupAddTable {
+  width: 100%;
+}
 @media (max-width: 767px) {
   .entryFormColumnBody .formUnitLabel th,
   .entryFormColumnBody .formUnitLabel td {
@@ -5404,6 +5483,9 @@ a.acms-admin-thumbnail:hover {
   #entryForm .entryFormColumnBody .formUnitGroupOption .formUnitGroupOptionValue {
     width: 70px !important;
     padding: 5px 5px !important;
+  }
+  #entryForm .entryFormColumnBody .formUnitGroupOption .formUnitGroupOptionCell {
+    width: 1%;
   }
 }
 /* 投稿フォーム用基本テーブル（詳細部分） */
@@ -6157,6 +6239,27 @@ a.acms-admin-thumbnail:hover {
   display: block;
   color: #FF0000;
 }
+.transaction-notice-error.acms-admin-alert,
+.validator-result-error.acms-admin-alert,
+.validator-result-0.acms-admin-alert,
+.v-result-error.acms-admin-alert,
+.v-result-0.acms-admin-alert {
+  color: #4d4d4d;
+}
+.transaction-notice-error.acms-admin-alert-info,
+.validator-result-error.acms-admin-alert-info,
+.validator-result-0.acms-admin-alert-info,
+.v-result-error.acms-admin-alert-info,
+.v-result-0.acms-admin-alert-info {
+  color: #7096cd;
+}
+.transaction-notice-error.acms-admin-alert-danger,
+.validator-result-error.acms-admin-alert-danger,
+.validator-result-0.acms-admin-alert-danger,
+.v-result-error.acms-admin-alert-danger,
+.v-result-0.acms-admin-alert-danger {
+  color: #cd7086;
+}
 /* 変更時メッセージ */
 .noticeMsg {
   margin-bottom: 20px;
@@ -6459,7 +6562,7 @@ a.acms-admin-thumbnail:hover {
   color: #111;
 }
 #js-entry_saving_progress span:before {
-  content: "保存しています...";
+  content: "\4FDD\5B58\3057\3066\3044\307E\3059...";
 }
 /* カテゴリーセレクトボックスのwidthの制限*/
 .categoryWidth {
@@ -6698,7 +6801,7 @@ a.acms-admin-thumbnail:hover {
   box-sizing: border-box;
 }
 .js-edit_inplace-sort_placeholder:after {
-  content: "ここにユニットを移動";
+  content: "\3053\3053\306B\30E6\30CB\30C3\30C8\3092\79FB\52D5";
   position: absolute;
   top: 40%;
   left: 50%;
@@ -6722,7 +6825,7 @@ a.acms-admin-thumbnail:hover {
   text-align: center;
   color: #FFFFFF;
   background-color: #333333;
-  content: "非表示";
+  content: "\975E\8868\793A";
   opacity: 0.7;
   filter: alpha(opacity=70);
   z-index: 800;
@@ -6737,7 +6840,7 @@ a.acms-admin-thumbnail:hover {
   text-align: center;
   color: #FFFFFF;
   background-color: #333333;
-  content: "非表示";
+  content: "\975E\8868\793A";
   opacity: 0.7;
   filter: alpha(opacity=70);
   z-index: 800;
@@ -6752,7 +6855,7 @@ a.acms-admin-thumbnail:hover {
   text-align: center;
   color: #FFFFFF;
   background-color: #333333;
-  content: "非表示";
+  content: "\975E\8868\793A";
 }
 /* 画面下部コントロール */
 #js-edit_inplace-below_control {
@@ -6813,6 +6916,7 @@ a.acms-admin-thumbnail:hover {
 }
 .acms-admin-module-edit-wrapper {
   position: relative;
+  z-index: 0;
 }
 .acms-admin-module-edit-wrapper .acms-admin-module-edit {
   position: absolute;
@@ -7215,8 +7319,9 @@ body .ui-dialog {
 }
 .acms-admin-edit-info-heading {
   padding: 5px 10px;
-  background-color: #666;
   color: #FFF;
+  font-size: 16px;
+  background-color: #666;
 }
 .acms-admin-edit-info-heading a,
 .acms-admin-edit-info-heading a:visited,
@@ -7230,6 +7335,11 @@ body .ui-dialog {
 .acms-admin-edit-info-table th {
   width: 1%;
   white-space: nowrap;
+}
+.acms-admin-edit-info-ogpimage {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
 }
 @media (max-width: 767px) {
   .acms-admin-edit-info-table th,
@@ -7460,7 +7570,7 @@ body .ui-dialog {
   box-sizing: border-box;
 }
 .acms-admin-layout-placeholder:after {
-  content: "レイアウトをここにドラッグ";
+  content: "\30EC\30A4\30A2\30A6\30C8\3092\3053\3053\306B\30C9\30E9\30C3\30B0";
   position: absolute;
   top: 40%;
   left: 50%;
@@ -7479,7 +7589,7 @@ body .ui-dialog {
   box-sizing: border-box;
 }
 .acms-admin-module-placeholder:after {
-  content: "モジュールをここにドラッグ";
+  content: "\30E2\30B8\30E5\30FC\30EB\3092\3053\3053\306B\30C9\30E9\30C3\30B0";
   position: absolute;
   top: 40%;
   left: 50%;

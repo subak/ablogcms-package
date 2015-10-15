@@ -1,0 +1,45 @@
+/* ------------------------------
+　　ページタイトル
+------------------------------ */
+.pageTitleWrapper {
+	display: table;
+	position: relative;
+	width: 100%;
+	height: 100px;
+	color: #FFF;
+	background: url(../images/bg_other.jpg) #333 no-repeat center;
+	background-size: cover;
+}
+.pageTitleFilter {
+	position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	background: rgba(0,0,0,0.5);
+}
+.pageTitleInner {
+	display: table-cell;
+	position: relative;
+	padding: 15px 10px;
+	vertical-align: middle
+}
+.pageTitle {
+	margin: 0 0 10px 0;
+	.font-size(30);
+	font-weight: bold;
+	line-height: 1.2;
+	a {
+		color: #FFF;
+	}
+}
+.pageDescription{
+	margin: 10px 0;
+	.font-size(16);
+	line-height: 1.5;
+}
+@media (min-width : @breakpoint-md-min) {
+	.pageTitleWrapper {
+		height: 270px;
+	}
+}

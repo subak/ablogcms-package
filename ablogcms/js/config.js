@@ -237,8 +237,17 @@ ACMS.Config({
     autoHeightRMark : '.js-autoheight-r',
     autoHeightRConf : {
         style   : 'min-height',
-        offset  : 0
+        element : '',       // 高さのスタイルを適応するクラス（空の場合はautoHeightRMarkクラスの要素に適応）
+        offset  : 0,
+        parent  : 'parent', // parent : autoHeightRMarkクラスの一個上の要素 or 指定した要素
+        list    : ''        // 実際に並んでいる要素のクラスを指定（指定してない場合、autoHeightRMarkの一個上の要素）
     },
+    autoHeightRArray  : [
+    //    {
+    //        'mark'    : '',
+    //        'config'  : {}
+    //    }
+    ],
 
     //--------------------
     // 日付選択カレンダー
@@ -506,6 +515,10 @@ ACMS.Config({
     observeFileSizeMark : '.js-observeFileSize',
 
     //--------------
+    // resize image
+    resizeImage : 'on',
+
+    //--------------
     // post include
     postIncludeOnsubmitMark     : '.js-post_include',
     postIncludeOnreadyMark      : '.js-post_include-ready',
@@ -550,6 +563,7 @@ ACMS.Config({
     viewingId           : 'viewing',
     viewingClass        : 'viewing',
     viewingEraseMark    : 'a:not(.js-viewing-indelible)', // display:blockの要素は取り除かれません
+    viewingNonTarget    : ['block', 'inline-block'],
 
     //--------------------
     // link outside blank

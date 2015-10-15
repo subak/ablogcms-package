@@ -1,18 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.4.1.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Apr 13, 2015 at 08:57 PM
--- Server version: 5.5.34
--- PHP Version: 5.5.10
+-- Generation Time: Aug 05, 2015 at 05:52 PM
+-- Server version: 5.5.42
+-- PHP Version: 5.6.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
---
--- Database: `DBacms250`
---
 
 -- --------------------------------------------------------
 
@@ -27,10 +23,11 @@ CREATE TABLE `acms_alias` (
   `alias_domain` varchar(128) NOT NULL,
   `alias_code` varchar(255) NOT NULL,
   `alias_name` varchar(255) NOT NULL,
+  `alias_scope` varchar(8) NOT NULL DEFAULT 'local',
   `alias_description` varchar(255) NOT NULL,
   `alias_indexing` varchar(8) NOT NULL DEFAULT 'on',
   `alias_blog_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -45,7 +42,7 @@ CREATE TABLE `acms_app` (
   `app_activate_datetime` datetime DEFAULT NULL,
   `app_install_datetime` datetime NOT NULL,
   `app_blog_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -67,7 +64,7 @@ CREATE TABLE `acms_approval` (
   `approval_revision_id` int(11) NOT NULL,
   `approval_entry_id` int(11) NOT NULL,
   `approval_blog_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -86,7 +83,7 @@ CREATE TABLE `acms_approval_notification` (
   `notification_except_user_ids` longtext NOT NULL,
   `notification_type` varchar(16) NOT NULL,
   `notification_datetime` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -108,10 +105,8 @@ CREATE TABLE `acms_blog` (
   `blog_generated_datetime` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
   `blog_alias_status` varchar(8) NOT NULL DEFAULT 'open',
   `blog_alias_sort` int(11) NOT NULL DEFAULT '1',
-  `blog_alias_primary` int(11) DEFAULT NULL,
-  PRIMARY KEY (`blog_id`,`blog_left`,`blog_right`,`blog_status`,`blog_indexing`),
-  KEY `blog_domain` (`blog_domain`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `blog_alias_primary` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -127,10 +122,8 @@ CREATE TABLE `acms_cache` (
   `cache_data` longblob NOT NULL,
   `cache_expire` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
   `cache_status` varchar(16) NOT NULL,
-  `cache_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`cache_id`),
-  KEY `cache_status` (`cache_blog_id`,`cache_expire`,`cache_status`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `cache_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -142,10 +135,8 @@ CREATE TABLE `acms_cache_reserve` (
   `cache_reserve_datetime` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
   `cache_reserve_entry_id` int(11) NOT NULL,
   `cache_reserve_blog_id` int(11) NOT NULL,
-  `cache_reserve_type` varchar(8) NOT NULL,
-  PRIMARY KEY (`cache_reserve_datetime`,`cache_reserve_entry_id`,`cache_reserve_blog_id`),
-  KEY `cache_reserve_datetime` (`cache_reserve_datetime`,`cache_reserve_blog_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `cache_reserve_type` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -164,11 +155,8 @@ CREATE TABLE `acms_category` (
   `category_name` varchar(255) NOT NULL,
   `category_scope` varchar(8) NOT NULL DEFAULT 'local',
   `category_indexing` varchar(8) NOT NULL DEFAULT 'on',
-  `category_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`category_id`,`category_left`,`category_right`,`category_status`,`category_indexing`),
-  KEY `category_code` (`category_code`,`category_left`,`category_right`),
-  KEY `category_id` (`category_id`,`category_status`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `category_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -193,10 +181,8 @@ CREATE TABLE `acms_column` (
   `column_field_7` longtext NOT NULL,
   `column_field_8` longtext NOT NULL,
   `column_entry_id` int(11) NOT NULL,
-  `column_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`column_id`),
-  KEY `entry_sort` (`column_entry_id`,`column_sort`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `column_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -222,11 +208,8 @@ CREATE TABLE `acms_column_rev` (
   `column_field_8` longtext NOT NULL,
   `column_entry_id` int(11) NOT NULL,
   `column_blog_id` int(11) NOT NULL,
-  `column_rev_id` int(11) NOT NULL,
-  PRIMARY KEY (`column_id`,`column_rev_id`),
-  KEY `entry_sort` (`column_entry_id`,`column_sort`,`column_rev_id`),
-  KEY `entry_revision` (`column_entry_id`,`column_rev_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `column_rev_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -251,9 +234,8 @@ CREATE TABLE `acms_comment` (
   `comment_rank` int(11) NOT NULL,
   `comment_entry_id` int(11) NOT NULL,
   `comment_user_id` int(11) NOT NULL,
-  `comment_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`comment_entry_id`,`comment_id`,`comment_status`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `comment_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -267,9 +249,8 @@ CREATE TABLE `acms_config` (
   `config_sort` int(11) NOT NULL,
   `config_rule_id` int(11) DEFAULT NULL,
   `config_module_id` int(11) DEFAULT NULL,
-  `config_blog_id` int(11) NOT NULL,
-  KEY `config_blog_id` (`config_blog_id`,`config_sort`,`config_rule_id`,`config_module_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `config_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -281,10 +262,8 @@ CREATE TABLE `acms_dashboard` (
   `dashboard_key` varchar(255) NOT NULL,
   `dashboard_value` longtext NOT NULL,
   `dashboard_sort` int(11) NOT NULL,
-  `dashboard_blog_id` int(11) NOT NULL,
-  KEY `dashboard_key` (`dashboard_key`,`dashboard_blog_id`),
-  KEY `dashboard_sort` (`dashboard_sort`,`dashboard_blog_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `dashboard_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -317,14 +296,8 @@ CREATE TABLE `acms_entry` (
   `entry_category_id` int(11) DEFAULT NULL,
   `entry_user_id` int(11) NOT NULL,
   `entry_form_id` int(11) NOT NULL,
-  `entry_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`entry_id`,`entry_start_datetime`,`entry_end_datetime`,`entry_status`),
-  UNIQUE KEY `entry_datetime` (`entry_datetime`,`entry_id`),
-  UNIQUE KEY `entry_posted_datetime` (`entry_posted_datetime`,`entry_id`),
-  UNIQUE KEY `entry_category_id` (`entry_category_id`,`entry_id`),
-  KEY `entry_user_id` (`entry_user_id`),
-  KEY `entry_count` (`entry_blog_id`,`entry_datetime`,`entry_start_datetime`,`entry_end_datetime`,`entry_status`,`entry_indexing`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `entry_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -362,14 +335,8 @@ CREATE TABLE `acms_entry_rev` (
   `entry_category_id` int(11) DEFAULT NULL,
   `entry_user_id` int(11) NOT NULL,
   `entry_form_id` int(11) NOT NULL,
-  `entry_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`entry_id`,`entry_start_datetime`,`entry_end_datetime`,`entry_status`,`entry_rev_id`),
-  UNIQUE KEY `entry_datetime` (`entry_datetime`,`entry_id`,`entry_rev_id`),
-  UNIQUE KEY `entry_posted_datetime` (`entry_posted_datetime`,`entry_id`,`entry_rev_id`),
-  UNIQUE KEY `entry_category_id` (`entry_category_id`,`entry_id`,`entry_rev_id`),
-  KEY `entry_user_id` (`entry_user_id`),
-  KEY `entry_count` (`entry_blog_id`,`entry_datetime`,`entry_start_datetime`,`entry_end_datetime`,`entry_status`,`entry_indexing`,`entry_rev_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `entry_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -387,14 +354,8 @@ CREATE TABLE `acms_field` (
   `field_uid` int(11) DEFAULT NULL,
   `field_bid` int(11) DEFAULT NULL,
   `field_mid` int(11) DEFAULT NULL,
-  `field_blog_id` int(11) NOT NULL,
-  KEY `field_cid` (`field_cid`),
-  KEY `field_uid` (`field_uid`),
-  KEY `field_bid` (`field_bid`),
-  KEY `field_mid` (`field_mid`),
-  KEY `field_eid` (`field_eid`,`field_key`,`field_search`),
-  KEY `field_key` (`field_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `field_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -413,14 +374,8 @@ CREATE TABLE `acms_field_rev` (
   `field_bid` int(11) DEFAULT NULL,
   `field_mid` int(11) DEFAULT NULL,
   `field_blog_id` int(11) NOT NULL,
-  `field_rev_id` int(11) DEFAULT NULL,
-  KEY `field_cid` (`field_cid`),
-  KEY `field_uid` (`field_uid`),
-  KEY `field_bid` (`field_bid`),
-  KEY `field_mid` (`field_mid`),
-  KEY `field_eid` (`field_eid`,`field_key`,`field_search`,`field_rev_id`),
-  KEY `field_key` (`field_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `field_rev_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -432,11 +387,11 @@ CREATE TABLE `acms_form` (
   `form_id` int(11) NOT NULL,
   `form_code` varchar(64) NOT NULL,
   `form_name` varchar(255) NOT NULL,
+  `form_scope` varchar(8) NOT NULL DEFAULT 'local',
   `form_data` longtext NOT NULL,
   `form_current_serial` int(11) NOT NULL,
-  `form_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`form_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `form_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -451,13 +406,7 @@ CREATE TABLE `acms_fulltext` (
   `fulltext_cid` int(11) DEFAULT NULL,
   `fulltext_uid` int(11) DEFAULT NULL,
   `fulltext_bid` int(11) DEFAULT NULL,
-  `fulltext_blog_id` int(11) NOT NULL,
-  UNIQUE KEY `fulltext_cid` (`fulltext_cid`),
-  UNIQUE KEY `fulltext_uid` (`fulltext_uid`),
-  UNIQUE KEY `fulltext_bid` (`fulltext_bid`),
-  UNIQUE KEY `fulltext_eid` (`fulltext_eid`),
-  FULLTEXT KEY `fulltext_value` (`fulltext_value`),
-  FULLTEXT KEY `fulltext_ngram` (`fulltext_ngram`)
+  `fulltext_blog_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -475,10 +424,8 @@ CREATE TABLE `acms_layout_grid` (
   `layout_grid_row` int(2) NOT NULL,
   `layout_grid_mid` int(11) DEFAULT NULL,
   `layout_grid_preview` int(1) NOT NULL,
-  `layout_grid_tpl` varchar(256) DEFAULT NULL,
-  KEY `layout_grid_id` (`layout_grid_identifier`),
-  KEY `layout_grid` (`layout_grid_parent`,`layout_grid_col`,`layout_grid_row`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `layout_grid_tpl` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -506,7 +453,7 @@ CREATE TABLE `acms_log_access` (
   `log_access_user_id` int(11) DEFAULT NULL,
   `log_access_rule_id` int(11) DEFAULT NULL,
   `log_access_blog_id` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -528,10 +475,8 @@ CREATE TABLE `acms_log_form` (
   `log_form_serial` int(11) NOT NULL,
   `log_form_form_id` int(11) NOT NULL,
   `log_form_entry_id` int(11) NOT NULL,
-  `log_form_blog_id` int(11) NOT NULL,
-  KEY `log_form_datetime` (`log_form_datetime`),
-  KEY `log_form_serial` (`log_form_serial`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `log_form_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -545,16 +490,15 @@ CREATE TABLE `acms_media` (
   `media_extension` varchar(64) NOT NULL,
   `media_path` varchar(512) NOT NULL,
   `media_thumbnail` varchar(512) NOT NULL,
-  `media_file_name` varchar(256) NOT NULL,
-  `media_file_size` varchar(256) NOT NULL,
+  `media_file_name` varchar(255) NOT NULL,
+  `media_file_size` varchar(255) NOT NULL,
   `media_upload_date` datetime NOT NULL,
-  `media_field_1` varchar(256) NOT NULL,
-  `media_field_2` varchar(256) NOT NULL,
-  `media_field_3` varchar(256) NOT NULL,
+  `media_field_1` varchar(255) NOT NULL,
+  `media_field_2` varchar(255) NOT NULL,
+  `media_field_3` varchar(255) NOT NULL,
   `media_field_4` longtext NOT NULL,
-  `media_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`media_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `media_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -563,14 +507,11 @@ CREATE TABLE `acms_media` (
 --
 
 CREATE TABLE `acms_media_tag` (
-  `media_tag_name` varchar(256) NOT NULL,
+  `media_tag_name` varchar(255) NOT NULL,
   `media_tag_sort` int(11) NOT NULL,
   `media_tag_media_id` int(11) NOT NULL,
-  `media_tag_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`media_tag_media_id`,`media_tag_sort`),
-  KEY `media_tag_name_media` (`media_tag_name`,`media_tag_media_id`),
-  KEY `media_tag_blog_id` (`media_tag_blog_id`,`media_tag_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `media_tag_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -592,9 +533,8 @@ CREATE TABLE `acms_moblog` (
   `moblog_text_unit` varchar(16) NOT NULL,
   `moblog_category_id` int(11) DEFAULT NULL,
   `moblog_user_id` int(11) NOT NULL,
-  `moblog_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`moblog_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `moblog_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -635,9 +575,8 @@ CREATE TABLE `acms_module` (
   `module_order_scope` varchar(8) NOT NULL DEFAULT 'local',
   `module_custom_field` varchar(4) NOT NULL DEFAULT 'off',
   `module_layout_use` int(1) NOT NULL,
-  `module_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`module_identifier`,`module_name`,`module_blog_id`,`module_scope`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `module_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -667,9 +606,8 @@ CREATE TABLE `acms_role` (
   `role_module_edit` varchar(8) NOT NULL,
   `role_backup_export` varchar(8) NOT NULL,
   `role_backup_import` varchar(8) NOT NULL,
-  `role_admin_etc` varchar(8) NOT NULL,
-  PRIMARY KEY (`role_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `role_admin_etc` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -679,9 +617,8 @@ CREATE TABLE `acms_role` (
 
 CREATE TABLE `acms_role_blog` (
   `role_id` int(11) NOT NULL,
-  `blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`role_id`,`blog_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -720,7 +657,7 @@ CREATE TABLE `acms_rule` (
   `rule_term_end` datetime DEFAULT NULL,
   `rule_term_case` varchar(16) DEFAULT NULL,
   `rule_blog_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -736,9 +673,8 @@ CREATE TABLE `acms_schedule` (
   `schedule_month` char(2) NOT NULL,
   `schedule_data` longtext NOT NULL,
   `schedule_field` longtext NOT NULL,
-  `schedule_blog_id` int(11) NOT NULL,
-  KEY `schedule_id` (`schedule_id`,`schedule_year`,`schedule_month`,`schedule_blog_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `schedule_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -767,7 +703,7 @@ CREATE TABLE `acms_sequence` (
   `sequence_shop_address_id` int(11) NOT NULL,
   `sequence_shop_receipt_detail_id` int(11) NOT NULL,
   `sequence_system_version` varchar(32) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -776,10 +712,9 @@ CREATE TABLE `acms_sequence` (
 --
 
 CREATE TABLE `acms_sequence_plugin` (
-  `sequence_plugin_key` varchar(256) NOT NULL,
-  `sequence_plugin_value` int(11) NOT NULL,
-  PRIMARY KEY (`sequence_plugin_key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `sequence_plugin_key` varchar(255) NOT NULL,
+  `sequence_plugin_value` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -797,10 +732,8 @@ CREATE TABLE `acms_session` (
   `session_left` int(11) NOT NULL,
   `session_right` int(11) NOT NULL,
   `session_user_id` int(11) NOT NULL,
-  `session_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`session_id`),
-  UNIQUE KEY `session_next_id` (`session_next_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `session_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -821,10 +754,8 @@ CREATE TABLE `acms_shop_address` (
   `address_field_2` varchar(64) DEFAULT NULL,
   `address_telephone` varchar(64) NOT NULL,
   `address_user_id` int(11) NOT NULL,
-  `address_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`address_id`),
-  KEY `address_user_id` (`address_primary`,`address_user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `address_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -835,9 +766,8 @@ CREATE TABLE `acms_shop_address` (
 CREATE TABLE `acms_shop_cart` (
   `cart_session_id` char(32) NOT NULL,
   `cart_data` longtext NOT NULL,
-  `cart_blog_id` int(11) NOT NULL,
-  UNIQUE KEY `cart_session_id` (`cart_session_id`,`cart_blog_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `cart_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -864,11 +794,8 @@ CREATE TABLE `acms_shop_receipt` (
   `receipt_datetime` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
   `receipt_updated_datetime` datetime NOT NULL DEFAULT '9999-12-31 23:59:59',
   `receipt_user_id` int(11) NOT NULL,
-  `receipt_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`receipt_code`),
-  KEY `receipt_user_id` (`receipt_user_id`),
-  KEY `receipt_blog_id` (`receipt_blog_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `receipt_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -885,10 +812,8 @@ CREATE TABLE `acms_shop_receipt_detail` (
   `receipt_detail_datetime` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
   `receipt_detail_item_id` int(11) NOT NULL,
   `receipt_detail_parent_code` char(14) NOT NULL,
-  `receipt_detail_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`receipt_detail_id`),
-  KEY `receipt_detail_parent_code` (`receipt_detail_parent_code`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `receipt_detail_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -900,11 +825,8 @@ CREATE TABLE `acms_tag` (
   `tag_name` varchar(255) NOT NULL,
   `tag_sort` int(11) NOT NULL,
   `tag_entry_id` int(11) NOT NULL,
-  `tag_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`tag_entry_id`,`tag_sort`),
-  KEY `tag_name_entry` (`tag_name`,`tag_entry_id`),
-  KEY `tag_blog_id` (`tag_blog_id`,`tag_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `tag_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -917,11 +839,8 @@ CREATE TABLE `acms_tag_rev` (
   `tag_sort` int(11) NOT NULL,
   `tag_entry_id` int(11) NOT NULL,
   `tag_blog_id` int(11) NOT NULL,
-  `tag_rev_id` int(11) NOT NULL,
-  PRIMARY KEY (`tag_entry_id`,`tag_sort`,`tag_rev_id`),
-  KEY `tag_name_entry` (`tag_name`,`tag_entry_id`,`tag_rev_id`),
-  KEY `tag_blog_id` (`tag_blog_id`,`tag_name`,`tag_rev_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `tag_rev_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -941,9 +860,8 @@ CREATE TABLE `acms_trackback` (
   `trackback_datetime` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
   `trackback_flow` varchar(16) NOT NULL DEFAULT 'receive',
   `trackback_entry_id` int(11) NOT NULL,
-  `trackback_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`trackback_entry_id`,`trackback_id`,`trackback_status`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `trackback_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -966,7 +884,7 @@ CREATE TABLE `acms_user` (
   `user_mail_mobile` varchar(255) NOT NULL,
   `user_mail_mobile_magazine` varchar(8) NOT NULL DEFAULT 'on',
   `user_url` varchar(255) NOT NULL,
-  `user_icon` varchar(256) NOT NULL,
+  `user_icon` varchar(255) NOT NULL,
   `user_auth` varchar(16) NOT NULL DEFAULT 'contributor',
   `user_locale` varchar(16) NOT NULL,
   `user_indexing` varchar(8) NOT NULL DEFAULT 'on',
@@ -976,9 +894,8 @@ CREATE TABLE `acms_user` (
   `user_login_datetime` datetime DEFAULT NULL,
   `user_updated_datetime` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
   `user_generated_datetime` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
-  `user_blog_id` int(11) NOT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `user_blog_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -988,14 +905,11 @@ CREATE TABLE `acms_user` (
 
 CREATE TABLE `acms_usergroup` (
   `usergroup_id` int(11) NOT NULL,
-  `usergroup_name` varchar(256) NOT NULL,
+  `usergroup_name` varchar(255) NOT NULL,
   `usergroup_description` varchar(512) NOT NULL,
   `usergroup_approval_point` int(11) NOT NULL,
-  `usergroup_role_id` int(11) NOT NULL,
-  PRIMARY KEY (`usergroup_id`),
-  KEY `usergroup_role_id` (`usergroup_role_id`),
-  KEY `usergroup_role` (`usergroup_id`,`usergroup_role_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `usergroup_role_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1005,9 +919,8 @@ CREATE TABLE `acms_usergroup` (
 
 CREATE TABLE `acms_usergroup_user` (
   `usergroup_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  PRIMARY KEY (`usergroup_id`,`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1018,15 +931,14 @@ CREATE TABLE `acms_usergroup_user` (
 CREATE TABLE `acms_workflow` (
   `workflow_blog_id` int(11) NOT NULL,
   `workflow_status` varchar(8) NOT NULL DEFAULT 'close',
-  `workflow_name` varchar(256) NOT NULL,
+  `workflow_name` varchar(255) NOT NULL,
   `workflow_description` varchar(512) NOT NULL,
   `workflow_type` varchar(8) NOT NULL DEFAULT 'series',
   `workflow_public_point` int(11) NOT NULL,
   `workflow_reject_point` int(11) NOT NULL,
   `workflow_start_group` int(11) NOT NULL,
-  `workflow_last_group` int(11) NOT NULL,
-  PRIMARY KEY (`workflow_blog_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `workflow_last_group` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1037,6 +949,302 @@ CREATE TABLE `acms_workflow` (
 CREATE TABLE `acms_workflow_usergroup` (
   `workflow_blog_id` int(11) NOT NULL,
   `usergroup_id` int(11) NOT NULL,
-  `workflow_sort` int(11) NOT NULL,
-  PRIMARY KEY (`workflow_blog_id`,`workflow_sort`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `workflow_sort` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `acms_blog`
+--
+ALTER TABLE `acms_blog`
+  ADD PRIMARY KEY (`blog_id`,`blog_left`,`blog_right`,`blog_status`,`blog_indexing`),
+  ADD KEY `blog_domain` (`blog_domain`),
+  ADD KEY `blog_id` (`blog_id`,`blog_status`);
+
+--
+-- Indexes for table `acms_cache`
+--
+ALTER TABLE `acms_cache`
+  ADD PRIMARY KEY (`cache_id`),
+  ADD KEY `cache_status` (`cache_blog_id`,`cache_expire`,`cache_status`);
+
+--
+-- Indexes for table `acms_cache_reserve`
+--
+ALTER TABLE `acms_cache_reserve`
+  ADD PRIMARY KEY (`cache_reserve_datetime`,`cache_reserve_entry_id`,`cache_reserve_blog_id`),
+  ADD KEY `cache_reserve_datetime` (`cache_reserve_datetime`,`cache_reserve_blog_id`);
+
+--
+-- Indexes for table `acms_category`
+--
+ALTER TABLE `acms_category`
+  ADD PRIMARY KEY (`category_id`,`category_left`,`category_right`,`category_status`,`category_indexing`),
+  ADD KEY `category_code` (`category_code`,`category_left`,`category_right`),
+  ADD KEY `category_id` (`category_id`,`category_status`),
+  ADD KEY `category_status` (`category_status`,`category_left`,`category_right`,`category_blog_id`);
+
+--
+-- Indexes for table `acms_column`
+--
+ALTER TABLE `acms_column`
+  ADD PRIMARY KEY (`column_id`),
+  ADD KEY `entry_sort` (`column_entry_id`,`column_sort`);
+
+--
+-- Indexes for table `acms_column_rev`
+--
+ALTER TABLE `acms_column_rev`
+  ADD PRIMARY KEY (`column_id`,`column_rev_id`),
+  ADD KEY `entry_sort` (`column_entry_id`,`column_sort`,`column_rev_id`),
+  ADD KEY `entry_revision` (`column_entry_id`,`column_rev_id`);
+
+--
+-- Indexes for table `acms_comment`
+--
+ALTER TABLE `acms_comment`
+  ADD PRIMARY KEY (`comment_entry_id`,`comment_id`,`comment_status`);
+
+--
+-- Indexes for table `acms_config`
+--
+ALTER TABLE `acms_config`
+  ADD KEY `config_blog_id` (`config_blog_id`,`config_sort`,`config_rule_id`,`config_module_id`);
+
+--
+-- Indexes for table `acms_dashboard`
+--
+ALTER TABLE `acms_dashboard`
+  ADD KEY `dashboard_key` (`dashboard_key`,`dashboard_blog_id`),
+  ADD KEY `dashboard_sort` (`dashboard_sort`,`dashboard_blog_id`);
+
+--
+-- Indexes for table `acms_entry`
+--
+ALTER TABLE `acms_entry`
+  ADD PRIMARY KEY (`entry_id`,`entry_start_datetime`,`entry_end_datetime`,`entry_status`),
+  ADD UNIQUE KEY `entry_posted_datetime` (`entry_posted_datetime`,`entry_id`),
+  ADD KEY `entry_code` (`entry_code`,`entry_category_id`,`entry_blog_id`,`entry_status`),
+  ADD KEY `entry_status` (`entry_datetime`,`entry_start_datetime`,`entry_end_datetime`,`entry_status`,`entry_indexing`,`entry_id`),
+  ADD KEY `entry_user_id` (`entry_user_id`),
+  ADD KEY `entry_category_id` (`entry_category_id`),
+  ADD KEY `entry_user_sort` (`entry_user_sort`,`entry_id`),
+  ADD KEY `entry_category_sort` (`entry_category_sort`,`entry_id`),
+  ADD KEY `entry_datetime_sort` (`entry_datetime`,`entry_id`);
+
+--
+-- Indexes for table `acms_entry_rev`
+--
+ALTER TABLE `acms_entry_rev`
+  ADD PRIMARY KEY (`entry_id`,`entry_start_datetime`,`entry_end_datetime`,`entry_status`,`entry_rev_id`),
+  ADD UNIQUE KEY `entry_posted_datetime` (`entry_posted_datetime`,`entry_id`,`entry_rev_id`),
+  ADD KEY `entry_code` (`entry_code`,`entry_category_id`,`entry_blog_id`,`entry_status`),
+  ADD KEY `entry_status` (`entry_datetime`,`entry_start_datetime`,`entry_end_datetime`,`entry_status`,`entry_indexing`,`entry_id`),
+  ADD KEY `entry_user_id` (`entry_user_id`),
+  ADD KEY `entry_category_id` (`entry_category_id`),
+  ADD KEY `entry_user_sort` (`entry_user_sort`,`entry_id`),
+  ADD KEY `entry_category_sort` (`entry_category_sort`,`entry_id`),
+  ADD KEY `entry_datetime_sort` (`entry_datetime`,`entry_id`);
+
+--
+-- Indexes for table `acms_field`
+--
+ALTER TABLE `acms_field`
+  ADD KEY `field_cid` (`field_cid`),
+  ADD KEY `field_uid` (`field_uid`),
+  ADD KEY `field_bid` (`field_bid`),
+  ADD KEY `field_mid` (`field_mid`),
+  ADD KEY `field_eid` (`field_eid`,`field_key`,`field_search`),
+  ADD KEY `field_key` (`field_key`);
+
+--
+-- Indexes for table `acms_field_rev`
+--
+ALTER TABLE `acms_field_rev`
+  ADD KEY `field_cid` (`field_cid`),
+  ADD KEY `field_uid` (`field_uid`),
+  ADD KEY `field_bid` (`field_bid`),
+  ADD KEY `field_mid` (`field_mid`),
+  ADD KEY `field_eid` (`field_eid`,`field_key`,`field_search`,`field_rev_id`),
+  ADD KEY `field_key` (`field_key`);
+
+--
+-- Indexes for table `acms_form`
+--
+ALTER TABLE `acms_form`
+  ADD PRIMARY KEY (`form_id`);
+
+--
+-- Indexes for table `acms_fulltext`
+--
+ALTER TABLE `acms_fulltext`
+  ADD UNIQUE KEY `fulltext_cid` (`fulltext_cid`),
+  ADD UNIQUE KEY `fulltext_uid` (`fulltext_uid`),
+  ADD UNIQUE KEY `fulltext_bid` (`fulltext_bid`),
+  ADD UNIQUE KEY `fulltext_eid` (`fulltext_eid`),
+  ADD FULLTEXT KEY `fulltext_value` (`fulltext_value`);
+ALTER TABLE `acms_fulltext`
+  ADD FULLTEXT KEY `fulltext_ngram` (`fulltext_ngram`);
+
+--
+-- Indexes for table `acms_layout_grid`
+--
+ALTER TABLE `acms_layout_grid`
+  ADD KEY `layout_grid_id` (`layout_grid_identifier`),
+  ADD KEY `layout_grid` (`layout_grid_parent`,`layout_grid_col`,`layout_grid_row`);
+
+--
+-- Indexes for table `acms_log_form`
+--
+ALTER TABLE `acms_log_form`
+  ADD KEY `log_form_datetime` (`log_form_datetime`),
+  ADD KEY `log_form_serial` (`log_form_serial`);
+
+--
+-- Indexes for table `acms_media`
+--
+ALTER TABLE `acms_media`
+  ADD PRIMARY KEY (`media_id`);
+
+--
+-- Indexes for table `acms_media_tag`
+--
+ALTER TABLE `acms_media_tag`
+  ADD PRIMARY KEY (`media_tag_media_id`,`media_tag_sort`),
+  ADD KEY `media_tag_name_media` (`media_tag_name`,`media_tag_media_id`),
+  ADD KEY `media_tag_blog_id` (`media_tag_blog_id`,`media_tag_name`);
+
+--
+-- Indexes for table `acms_moblog`
+--
+ALTER TABLE `acms_moblog`
+  ADD PRIMARY KEY (`moblog_id`);
+
+--
+-- Indexes for table `acms_module`
+--
+ALTER TABLE `acms_module`
+  ADD PRIMARY KEY (`module_identifier`,`module_name`,`module_blog_id`,`module_scope`);
+
+--
+-- Indexes for table `acms_role`
+--
+ALTER TABLE `acms_role`
+  ADD PRIMARY KEY (`role_id`);
+
+--
+-- Indexes for table `acms_role_blog`
+--
+ALTER TABLE `acms_role_blog`
+  ADD PRIMARY KEY (`role_id`,`blog_id`);
+
+--
+-- Indexes for table `acms_rule`
+--
+ALTER TABLE `acms_rule`
+  ADD KEY `rule_sort` (`rule_sort`,`rule_blog_id`),
+  ADD KEY `rule_blog_id` (`rule_blog_id`,`rule_status`);
+
+--
+-- Indexes for table `acms_schedule`
+--
+ALTER TABLE `acms_schedule`
+  ADD KEY `schedule_id` (`schedule_id`,`schedule_year`,`schedule_month`,`schedule_blog_id`);
+
+--
+-- Indexes for table `acms_sequence_plugin`
+--
+ALTER TABLE `acms_sequence_plugin`
+  ADD PRIMARY KEY (`sequence_plugin_key`);
+
+--
+-- Indexes for table `acms_session`
+--
+ALTER TABLE `acms_session`
+  ADD PRIMARY KEY (`session_id`),
+  ADD UNIQUE KEY `session_next_id` (`session_next_id`);
+
+--
+-- Indexes for table `acms_shop_address`
+--
+ALTER TABLE `acms_shop_address`
+  ADD PRIMARY KEY (`address_id`),
+  ADD KEY `address_user_id` (`address_primary`,`address_user_id`);
+
+--
+-- Indexes for table `acms_shop_cart`
+--
+ALTER TABLE `acms_shop_cart`
+  ADD UNIQUE KEY `cart_session_id` (`cart_session_id`,`cart_blog_id`);
+
+--
+-- Indexes for table `acms_shop_receipt`
+--
+ALTER TABLE `acms_shop_receipt`
+  ADD PRIMARY KEY (`receipt_code`),
+  ADD KEY `receipt_user_id` (`receipt_user_id`),
+  ADD KEY `receipt_blog_id` (`receipt_blog_id`);
+
+--
+-- Indexes for table `acms_shop_receipt_detail`
+--
+ALTER TABLE `acms_shop_receipt_detail`
+  ADD PRIMARY KEY (`receipt_detail_id`),
+  ADD KEY `receipt_detail_parent_code` (`receipt_detail_parent_code`);
+
+--
+-- Indexes for table `acms_tag`
+--
+ALTER TABLE `acms_tag`
+  ADD PRIMARY KEY (`tag_entry_id`,`tag_sort`),
+  ADD KEY `tag_name_entry` (`tag_name`,`tag_entry_id`),
+  ADD KEY `tag_blog_id` (`tag_blog_id`,`tag_name`);
+
+--
+-- Indexes for table `acms_tag_rev`
+--
+ALTER TABLE `acms_tag_rev`
+  ADD PRIMARY KEY (`tag_entry_id`,`tag_sort`,`tag_rev_id`),
+  ADD KEY `tag_name_entry` (`tag_name`,`tag_entry_id`,`tag_rev_id`),
+  ADD KEY `tag_blog_id` (`tag_blog_id`,`tag_name`,`tag_rev_id`);
+
+--
+-- Indexes for table `acms_trackback`
+--
+ALTER TABLE `acms_trackback`
+  ADD PRIMARY KEY (`trackback_entry_id`,`trackback_id`,`trackback_status`);
+
+--
+-- Indexes for table `acms_user`
+--
+ALTER TABLE `acms_user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `acms_usergroup`
+--
+ALTER TABLE `acms_usergroup`
+  ADD PRIMARY KEY (`usergroup_id`),
+  ADD KEY `usergroup_role_id` (`usergroup_role_id`),
+  ADD KEY `usergroup_role` (`usergroup_id`,`usergroup_role_id`);
+
+--
+-- Indexes for table `acms_usergroup_user`
+--
+ALTER TABLE `acms_usergroup_user`
+  ADD PRIMARY KEY (`usergroup_id`,`user_id`);
+
+--
+-- Indexes for table `acms_workflow`
+--
+ALTER TABLE `acms_workflow`
+  ADD PRIMARY KEY (`workflow_blog_id`);
+
+--
+-- Indexes for table `acms_workflow_usergroup`
+--
+ALTER TABLE `acms_workflow_usergroup`
+  ADD PRIMARY KEY (`workflow_blog_id`,`workflow_sort`);

@@ -1,7 +1,7 @@
 <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
 <!-- BEGIN_MODULE Touch_Entry -->
 <!-- BEGIN_MODULE Entry_Field -->
-<section>
+<section class="acms-admin-edit-info">
 	<p>
 		※以下の内容は管理者のみに表示されています。
 		<a href="https://www.google.co.jp/search?q=site:%{INHERLINK}" target="_brank">googleで確認</a> |
@@ -27,6 +27,11 @@
 			<th>出力設定</th>
 			<td><!-- BEGIN_IF [{entry_meta_sitemap}/eq/disabled] --><span class="acms-admin-label acms-label-danger acms-inline-space">検索エンジンに表示しない</span><!-- END_IF --><!-- BEGIN_IF [{entry_meta_sitemap}/eq/disabled] --><span class="acms-admin-label acms-label-danger acms-inline-space">サイトマップに表示しない</span><!-- END_IF --><!-- BEGIN_IF [{entry_meta_rss}/eq/disabled] --><span class="acms-admin-label acms-label-danger acms-inline-space">RSSに出力しない</span><!-- END_IF --></td>
 		</tr><!-- END entry_meta_info:veil -->
+		<!-- BEGIN_MODULE Entry_Summary id="ogpSummary" --><!-- BEGIN ogpimageRow:veil --><tr>
+			<th>OGP画像 - <small>og:image</small></th>
+			<td>
+			<!-- BEGIN unit:loop --><!-- BEGIN entry:loop --><!-- BEGIN_IF [{sNum}/eq/2] --><p class="acms-alert acms-alert-danger">OGPに画像が複数表示されています。モジュールIDを作成してください。詳しくはreadme.txtをご覧ください。</p><!-- END_IF --><!-- BEGIN ogpimage:veil --><img src="%{ROOT_DIR}{path}" alt="OGP画像" class="acms-admin-edit-info-ogpimage" /><!-- END ogpimage:veil --><!-- END entry:loop --><!-- END unit:loop --></td>
+		</tr><!-- END ogpimageRow:veil --><!-- END_MODULE Entry_Summary -->
 	</table>
 </section>
 <!-- END_MODULE Entry_Field -->

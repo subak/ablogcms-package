@@ -5,13 +5,13 @@
 
 <!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
 <!-- END categoryUl#front --><!-- BEGIN category:loop -->
-<div>
+<div class="{category:loop.class}">
 	<h3 class="acms-admin-heading"><a href="{categoryUrl}">{categoryName}</a></h3>
 	<!-- BEGIN notFound --><p>ただいまページを準備しております。もうしばらくお待ちください。</p><!-- END notFound -->
 		<div class="acms-admin-grid-r">
 		<!-- BEGIN unit:loop -->
 			<!-- BEGIN entry:loop -->
-				<div class="acms-admin-col-md-4">
+				<div class="{entry:loop.class}">
 					<a class="acms-admin-thumbnail js-autoheight-r" href="{url}">
 							<!-- BEGIN_IF [{path}/nem] --><img src="%{ROOT_DIR}{path}" alt="" width="{imgX}" height="{imgY}"><!-- ELSE --><img src="/images/default/noimage.gif" alt="" class="acms-admin-img-responsive"><!-- END_IF -->
 						<h4>{title}</h4>

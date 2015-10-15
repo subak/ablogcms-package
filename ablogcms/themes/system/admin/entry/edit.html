@@ -22,14 +22,14 @@
 			</tr>
 			<tr>
 				<th>カテゴリー</th>
-				<td>
+				<td><!-- BEGIN_MODULE Touch_Admin -->
 					<select name="category_id" class="categoryWidth">
 						<option value="">なし</option><!-- BEGIN_MODULE Admin_Category_SelectGlobal --><!-- BEGIN loop -->
 						<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )<!-- BEGIN status:touch#close -->【非公開】<!-- END status:touch#close --></option><!-- END loop --><!-- END_MODULE Admin_Category_SelectGlobal -->
 					</select>
 					<!-- BEGIN action#categoryInsert -->
 					<input name="categoryAdd" type="button" value="追加" style="display:none;" class="acms-admin-btn-admin" /><!-- END action#categoryInsert -->
-					<input type="hidden" name="entry[]" value="category_id" />
+					<input type="hidden" name="entry[]" value="category_id" /><!-- END_MODULE Touch_Admin -->
 				</td>
 			</tr>
 			<tr>
@@ -167,14 +167,14 @@
 				</tr>
 				<tr>
 					<th>カテゴリー</th>
-					<td>
+					<td><!-- BEGIN_MODULE Touch_Admin -->
 						<select name="category_id">
 							<option value="">なし</option><!-- BEGIN_MODULE Admin_Category_SelectGlobal --><!-- BEGIN loop -->
 							<option value="{value}"{selected}>{indent}[raw]{label} ( {amount} )</option><!-- END loop --><!-- END_MODULE Admin_Category_SelectGlobal -->
 						</select>
 						<!-- BEGIN_MODULE Touch_SessionWithCompilation -->
 						<input name="categoryAdd" type="button" value="追加" style="display:none;" class="acms-admin-btn-admin" /><!-- END_MODULE Touch_SessionWithCompilation -->
-						<input type="hidden" name="entry[]" value="category_id" />
+						<input type="hidden" name="entry[]" value="category_id" /><!-- END_MODULE Touch_Admin -->
 					</td>
 				</tr>
 				<tr>
@@ -196,6 +196,11 @@
 			</table>
 		</div>
 
+		<p class="acms-text-center">
+			<label for="validator-code-reserved" class="validator-result-{code:validator#reserved}">システムで予約されているキーワードです。(詳細設定を開いてファイル名を変更してください)</label>
+			<label for="validator-code-double" class="validator-result-{code:validator#double}">同ブログ内に同じファイル名が存在します。(詳細設定を開いてファイル名を変更してください)</label>
+		</p>
+
 		<table class="entryFormTable acms-admin-table-entry">
 			<tr class="detail-fade">
 				<td colspan="2"><a href="#" id="dateExpander" class="detail-fade-head">詳細設定<span class="acms-admin-icon-arrow-small-down acms-admin-margin-left-mini"></span></a></td>
@@ -205,8 +210,6 @@
 				<td>
 					<input type="text" name="code" value="{code}" class="entryFormInputText" /><!-- BEGIN next_eid:veil -->&nbsp;(&nbsp;next_eid:{next_eid}&nbsp;)<!-- END next_eid:veil -->
 					<input type="hidden" name="entry[]" value="code" />
-					<label for="validator-code-reserved" class="validator-result-{code:validator#reserved}">システムで予約されているキーワードです。</label>
-					<label for="validator-code-double" class="validator-result-{code:validator#double}">同ブログ内に同じファイル名が存在します。</label>
 				</td>
 			</tr>
 			<tr class="textM detail-fade-body">

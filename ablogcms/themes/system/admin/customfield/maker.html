@@ -7,24 +7,14 @@
 	</div>
 </header>
 <div class="acms-admin-tabs">
-	<ul class="js-acms_tabs">
-		<li><a href="#idA" class="js-acms_tab js-acms_tab-active">カスタムフィールドメーカー</a></li>
-		<li><a href="#idB" class="js-acms_tab">カスタムユニットメーカー</a></li>
-	</ul>
- 
-	<div class="acms-admin-tabs-panel" id="idA">
 		<!--#include file="/admin/customfield/customField.html" -->
-	</div>
-	<div class="acms-admin-tabs-panel" id="idB">
-		<!--#include file="/admin/customfield/customUnit.html" -->
-	</div>
 </div>
+<link rel="stylesheet" type="text/css" href="/admin/customfield/css/template.css">
 <script type="text/javascript">
 ACMS.Ready(function(){
 	new ACMS.SyncLoader()
 		.next("%{SYSTEM_THEMES_DIR}admin/customfield/js/template.js")
 		.next("%{SYSTEM_THEMES_DIR}admin/customfield/js/customFieldMaker.js")
-		.next("%{SYSTEM_THEMES_DIR}admin/customfield/js/customUnitMaker.js")
 		.load();
 });
 </script>

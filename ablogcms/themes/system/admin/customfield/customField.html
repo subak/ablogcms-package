@@ -1,15 +1,132 @@
+<script type="text/cfm-template" id="converterList">
+<div class="acms-admin-modal" id="converter" data-action="hiddenConverter">
+	<div class="acms-admin-modal-dialog">
+		<div class="acms-admin-modal-content">
+			<div class="acms-admin-modal-header">
+				<h3>コンバーター参照</h3>
+			</div>
+			<div class="acms-admin-modal-body">
+				<div class="acms-admin-padding-small clearfix">
+					<table class="acms-admin-table acms-admin-table-heading acms-admin-table-hover">
+						<tr>
+							<th>オプション</th>
+							<th>意味</th>
+							<th>追加</th>
+						</tr>
+						<tr>
+							<td>r</td>
+							<td>「全角」英字を「半角」に変換します</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(r)">追加</button></td>
+						</tr>
+						<tr>
+							<td>R</td>
+							<td>「半角」英字を「全角」に変換します</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(R)">追加</button></td>
+						</tr>
+						<tr>
+							<td>n</td>
+							<td>「全角」数字を「半角」に変換します</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(n)">追加</button></td>
+						</tr>
+						<tr>
+							<td>N</td>
+							<td>「半角」数字を「全角」に変換します。</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(N)">追加</button>
+							</td>
+						</tr>
+						<tr>
+							<td>a</td>
+							<td>「全角」英数字を「半角」に変換します。</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(a)">追加</button>
+							</td>
+						</tr>
+						<tr>
+							<td>A</td>
+							<td>「半角」英数字を「全角」に変換します。</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(A)">追加</button>
+							</td>
+						</tr>
+						<tr>
+							<td>s</td>
+							<td>「全角」スペースを「半角」に変換します（U+3000 -> U+0020）。
+							</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(s)">追加</button>
+							</td>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>「半角」スペースを「全角」に変換します（U+0020 -> U+3000）。</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(S)">追加</button>
+							</td>
+						</tr>
+						<tr>
+							<td>k</td>
+							<td>「全角カタカナ」を「半角カタカナ」に変換します。</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(k)">追加</button>
+							</td>
+						</tr>
+						<tr>
+							<td>K</td>
+							<td>「半角カタカナ」を「全角カタカナ」に変換します。</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(K)">追加</button>
+							</td>
+						</tr>
+						<tr>
+							<td>h</td>
+							<td>「全角ひらがな」を「半角カタカナ」に変換します。</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(h)">追加</button>
+							</td>
+						</tr>
+						<tr>
+							<td>H</td>
+							<td>「半角カタカナ」を「全角ひらがな」に変換します。</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(H)">追加</button>
+							</td>
+						</tr>
+						<tr>
+							<td>c</td>
+							<td>「全角カタカナ」を「全角ひらがな」に変換します。</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(c)">追加</button>
+							</td>
+						</tr>
+						<tr>
+							<td>C</td>
+							<td>「全角ひらがな」を「全角カタカナ」に変換します。</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(C)">追加</button>
+							</td>
+						</tr>
+						<tr>
+							<td>V</td>
+							<td>濁点付きの文字を一文字に変換します。"K", "H" と共に使用します。</td>
+							<td><button class="acms-admin-btn" data-action="addConverter(V)">追加</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</script>
 <script type="text/cfm-template" id="type_select">
-<select id="type" data-bind="type" data-action="refresh">
-	<option value=""></option>
+<select id="type" data-bind="type" data-action="update" class="acms-admin-form-width-full">
 	<option value="text">テキスト</option>
-	<option value="select">セレクト</option>
-	<option value="radio">ラジオ</option>
+	<option value="select">セレクトボックス</option>
+	<option value="radio">ラジオボタン</option>
 	<option value="checkbox">チェックボックス</option>
 	<option value="textarea">テキストエリア</option>
+	<option value="file">ファイル</option>
 	<option value="image">画像</option>
-	<!-- BEGIN kind:touch#generator -->
-	<option value="group">グループ</option>
-	<!-- END kind:touch#generator -->
+</select>
+</script>
+<script type="text/cfm-template" id="type_select_group">
+<select id="type" data-bind="type" data-action="update" class="acms-admin-form-width-full">
+	<option value="text">テキスト</option>
+	<option value="select">セレクトボックス</option>
+	<option value="radio">ラジオボタン</option>
+	<option value="textarea">テキストエリア</option>
+	<option value="file">ファイル</option>
+	<option value="image">画像</option>
 </select>
 </script>
 <script type="text/cfm-template" id="title_name">
@@ -19,52 +136,70 @@
 	<p><input type="text" value="" data-bind="name"></p>
 </script>
 <script type="text/cfm-template" id="option">
+<table class="acms-admin-table customFieldOptionTable">
 <!-- BEGIN option:loop -->
-	<p>
-		label<input type="text" value="" data-bind="option.{i}.label">
-		value<input type="text" value="" data-bind="option.{i}.value">
-		<input type="button" class="acms-admin-btn-admin acms-admin-btn-admin-danger" data-action="removeOption(option.{i})"value="削除" />
-	</p>
+<tr>
+	<td>
+		<div class="customFieldOptionTableInput">
+		<span class="customFieldOptionTableAppend">label</span><input type="text" value="" data-bind="option.{i}.label" class="acms-admin-form-width-full">
+		</div>
+	</td>
+	<td>
+		<div class="customFieldOptionTableInput">
+		<span class="customFieldOptionTableAppend">value</span><input type="text" value="" data-bind="option.{i}.value" class="acms-admin-form-width-full">
+		</div>
+	</td>
+	<td>
+		<input type="button" class="acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-float-right" data-action="removeOption(option.{i})"value="削除" />
+	</td>
+</tr>
 <!-- END option:loop -->
-<p><button data-action="addOption" class="acms-admin-btn-admin">追加</button></p>
+</table>
+<p><button data-action="addOption" class="acms-admin-btn-admin">追加</button>
+</p>
 </script>
 <script type="text/cfm-template" id="validatorTmp">
-	<!-- BEGIN openValidator:veil -->
-	<!-- \BEGIN item.{i}.validator:loop -->
-		<!-- BEGIN\ option:touchnot#converter -->
-		<input type="hidden" name="{name}:v#\{option\}"<!-- BEGIN\ value:veil --> value="\{value\}"<!-- END\ value:veil -->/>
-		<!-- BEGIN\ message:veil -->
-		<!-- \\BEGIN {name}:validator#\{option\} -->
-		<p class="acms-text-error">\{message\}</p>
-		<!-- \\END {name}:validator#\{option\} -->
-		<!-- END\ message:veil -->
-		<!-- END\ option:touchnot#converter -->
-		<!-- BEGIN\ option:touch#converter -->
-		<input type="hidden" name="{name}:c#\{value\}"/>
-		<!-- END\ option:touch#converter -->
-	<!-- \END item.{i}.validator:loop -->
-	<!-- END openValidator:veil -->
+		<!-- BEGIN openValidator:veil -->
+		<!-- \BEGIN item.{i}.validator:loop -->
+			<!-- BEGIN\ option:veil -->
+			<input type="hidden" name="{name}:v#\{option\}"<!-- BEGIN\ value:veil --> value="\{value\}[escapeBackslash]"<!-- END\ value:veil -->/>
+			<!-- BEGIN\ message:veil -->
+			<!-- \\BEGIN {name}:validator#\{option\} -->
+			<p<!-- \\BEGIN acmscss:veil --> class="acms-admin-text-error"<!-- \\END acmscss:veil -->>\{message\}</p>
+			<!-- \\END {name}:validator#\{option\} -->
+			<!-- END\ message:veil -->
+			<!-- END\ option:veil -->
+		<!-- \END item.{i}.validator:loop -->
+		<!-- END openValidator:veil -->
+		<!-- BEGIN converter:veil -->
+			<input type="hidden" name="{name}:c" value="{converter}"/>
+		<!-- END converter:veil -->
 </script>
 <script type="text/cfm-template" id="validator">
-	<p>入力チェック
-		<select data-bind="openValidator" data-action="toggleValidator">
-			<option value="">しない</option>
-			<option value="true">する</option>
-		</select>
+	<p>
+		<label class="acms-admin-form-checkbox"><input type="checkbox" data-bind="openValidator" data-action="update" value="true">
+		<i class="acms-admin-ico-checkbox"></i>
+		変換・バリデータを利用する</label>
 	</p>
 	<!-- BEGIN openValidator:veil -->
-	<table class="acms-admin-table" style="width:auto">
+<div class="customFieldValidatorArea">
+	<p class="customFieldBold">変換<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="テキストフィールドに入力された値を別の値に変換します。詳しくは参照ボタンを押すと表示されるモーダルウィンドウに情報が記載されています。"></i></p>
+	<p>
+		<input type="text" data-bind="converter" class="acms-admin-form-width-quarter">
+		<button class="acms-admin-btn" data-action="showConverter">参照</button>
+	</p>
+	<table class="acms-admin-table customFieldOptionTable">
 		<tr>
-			<th>オプション</th>
-			<th>値</th>
-			<th>メッセージ</th>
+			<th>バリデータ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="フィールドに入力された値が条件に合っているかをチェックします。"></i></th>
+			<th>値<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="最小文字数や、正規表現チェックをバリデータに設定した際に設定する値となります。"></i></th>
+			<th>メッセージ<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="フィールドに入力されている値が条件に合わなかった場合に表示されるメッセージになります。"></i></th>
 			<th>削除</th>
 		</tr>
 		<!-- BEGIN validator:loop -->
 		<tr>
 			<td>
-				<select data-bind="validator.{i}.option">
-					<option value="">▼ オプションを選択</option>
+				<select data-bind="validator.{i}.option" class="acms-admin-form-width-full">
+					<option value="">▼ バリデータを選択</option>
 					<optgroup label="入力値の制限">
 						<option value="required">必須 ( required )</option>
 						<option value="minLength">最小文字数 ( minLength )</option>
@@ -81,504 +216,863 @@
 						<option value="regex">正規表現マッチ ( regex )</option>
 					</optgroup>
 					<optgroup label="その他">
-						<option value="converter">入力の変換 ( converter )</option>
 						<option value="duplication">アドレスの重複禁止 ( duplication )</option>
 					</optgroup>
 				</select>
 			</td>
 			<td>
-				<input type="text" data-bind="validator.{i}.value">
+				<input type="text" data-bind="validator.{i}.value" class="acms-admin-form-width-full">
 			</td>
 			<td>
-				<input type="text" data-bind="validator.{i}.message">
+				<input type="text" data-bind="validator.{i}.message" class="acms-admin-form-width-full">
 			</td>
 			<td>
 				<button data-action="removeValidator(validator.{i});" class="acms-admin-btn-admin acms-admin-btn-admin-danger">削除</button>
 			</td>
 		</tr>
 		<!-- END validator:loop -->
-		<tr>
-			<td colspan="4"><button data-action="addValidator" class="acms-admin-btn-admin acms-admin-float-right">バリデータを追加</button>
-			</td>
-		</tr>
 	</table>
-	<!-- END openValidator:veil -->
+	<p><button data-action="addValidator" class="acms-admin-btn-admin">追加</button></p>
 </div>
+	<!-- END openValidator:veil -->
 </script>
 <script type="text/cfm-template" id="make">
 	<p>
-		<button data-action="submit" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save">生成</button>
 		<button data-action="refresh" class="acms-admin-btn-admin">クリア</button>
-		<button data-action="historyClear" class="acms-admin-btn-admin acms-admin-btn-admin-danger">履歴クリア</button>
+		<button data-action="submit" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save">生成</button>
 	</p>
 </script>
 <script type="text/cfm-template" id="image">
-表示する画像
-<select data-bind="path">
-	<option value="path">通常画像</option>
-	<option value="tinyPath">tiny画像</option>
-	<option value="largePath">large画像</option>
-	<option value="squarePath">square画像</option>
-</select>
-<div class="acms-form-group">
-	<label class="control-label">サイズ指定</label>
-	<div class="controls">
-		<select name="normal" data-bind="normal">
-			<option value="size">size</option>
-			<option value="width">width</option>
-			<option value="height">height</option>
-		</select>
-		<span class="input-append">
-			<input type="text" autocomplete="off" name="normalSize" data-bind="normalSize" /><span class="add-on"> px</span>
-		</span>
-	</div>
-</div>
-<div class="acms-form-group">
-	<label class="control-label acms-form-checkbox">
-		<span class="controls">
-			<input type="checkbox" value="check" data-check-bind="alt"/>
-			<i class="acms-ico-checkbox"></i> alt表示する
-		</span>
-	</label>
-</div>
-<div class="acms-form-group">
-	<label class="control-label">tiny生成</label>
-	<div class="controls">
-		<select name="tiny" data-bind="tiny">
-			<option value="">つくらない</option>
-			<option value="tinyWidth">width</option>
-			<option value="tinyHeight">height</option>
-		</select>
-		<span class="input-append">
-			<input type="text" autocomplete="off" name="tinySize" data-bind="tinySize" /><span class="add-on"> px</span>
-		</span>
-	</div>
-</div>
-<div class="acms-form-group">
-	<label class="control-label">large生成</label>
-	<div class="controls">
-		<select name="large" data-bind="large">
-			<option value="">つくらない</option>
-			<option value="largeWidth">width</option>
-			<option value="largeHeight">height</option>
-		</select>
-		<span class="input-append">
-			<input type="text" autocomplete="off" name="largeSize" data-bind="largeSize" class="span1" /><span class="add-on"> px</span>
-		</span>
-	</div>
-</div>
-<div class="acms-form-group">
-	<label class="control-label">square生成</label>
-	<div class="controls">
-		<select name="square" data-bind="square">
-			<option value="">つくらない</option>
-			<option value="squareWidth">width</option>
-			<option value="squareHeight">height</option>
-		</select>
-		<span class="input-append">
-			<input type="text" autocomplete="off" name="squareSize" data-bind="squareSize" /><span class="add-on"> px</span>
-		</span>
-	</div>
-</div>
-</script>
-
-<script type="text/cfm-template" id="group">
-	<p>type</p>
-	<p><!-- #include id="type_select" --></p>
-	<!-- テキストのとき -->
-	<!-- BEGIN type:touch#text -->
-	<!-- #include id="title_name" -->
-	<!-- END type:touch#text -->
-
-	<!-- セレクトのとき -->
-	<!-- BEGIN type:touch#select -->
-	<!-- #include id="title_name" -->
-	<p>option要素</p>
-	<!-- #include id="option" -->
-	<!-- END type:touch#select -->
-
-	<!-- ラジオボタンのとき -->
-	<!-- BEGIN type:touch#radio -->
-	<!-- #include id="title_name" -->
-	<p>input要素</p>
-	<!-- #include id="option" -->
-	<!-- END type:touch#radio -->
-
-	<!-- テキストエリアのとき --->
-	<!-- BEGIN type:touch#textarea -->
-	<!-- #include id="title_name" -->
-	<!-- END type:touch#textarea -->
-
-	<!-- チェックボックスのとき -->
-	<!-- BEGIN type:touch#checkbox -->
-	<!-- #include id="title_name" -->
-	<p>input要素</p>
-	<!-- #include id="option" -->
-	<!-- END type:touch#checkbox -->
-
-	<!-- 画像のとき -->
-	<!-- BEGIN type:touch#image -->
-	<!-- #include id="title_name" -->
-	<!-- #include id="image" -->
-	<!-- END type:touch#image -->
-</script>
-
-<script type="text/cfm-template" id="generator">
-	<p>type</p>
-	<!-- #include id="type_select" -->
-
-	<!-- テキストのとき -->
-	<!-- BEGIN type:touch#text -->
-	<!-- #include id="title_name" -->
-	<!-- #include id="validator" -->
-	<!-- #include id="make" -->
-	<!-- END type:touch#text -->
-
-	<!-- セレクトのとき -->
-	<!-- BEGIN type:touch#select -->
-	<!-- #include id="title_name" -->
-	<p>option要素</p>
-	<!-- #include id="option" -->
-	<!-- #include id="validator" -->
-	<!-- #include id="make" -->
-	<!-- END type:touch#select -->
-
-	<!-- ラジオボタンのとき -->
-	<!-- BEGIN type:touch#radio -->
-	<!-- #include id="title_name" -->
-	<p>input要素</p>
-	<!-- #include id="option" -->
-	<!-- #include id="validator" -->
-	<!-- #include id="make" -->
-	<!-- END type:touch#radio -->
-
-	<!-- テキストエリアのとき --->
-	<!-- BEGIN type:touch#textarea -->
-	<!-- #include id="title_name" -->
-	<!-- #include id="validator" -->
-	<!-- #include id="make" -->
-	<!-- END type:touch#textarea -->
-
-	<!-- チェックボックスのとき -->
-	<!-- BEGIN type:touch#checkbox -->
-	<!-- #include id="title_name" -->
-	<p>input要素</p>
-	<!-- #include id="option" -->
-	<!-- #include id="validator" -->
-	<!-- #include id="make" -->
-	<!-- END type:touch#checkbox -->
-
-	<!-- 画像のとき -->
-	<!-- BEGIN type:touch#image -->
-	<!-- #include id="title_name" -->
-	<!-- #include id="image" -->
-	<!-- #include id="validator" -->
-	<!-- #include id="make" -->
-	<!-- END type:touch#image -->
-
-	<!-- グループのとき -->
-	<!-- BEGIN type:touch#group -->
-	<p>groupタイトル</p>
-	<p><input type="text" value="" data-bind="title"></p>
-	<p>group名</p>
-	<p><input type="text" value="" data-bind="name"></p>
-	<div data-id="group"></div>
-	<button data-action="submit" class="acms-admin-btn acms-admin-btn-admin-primary acms-admin-btn-admin-save">グループ生成</button>
-	<button data-action="addItem" class="acms-admin-btn-admin">追加</button>
-	<button data-action="clearItems" class="acms-admin-btn-admin acms-admin-btn-admin-danger">グループ履歴クリア</button>
-	</p>
-	<!-- END type:touch#group -->
-</script>
-<div data-id="generator" class="acms-admin-form"></div>
-<pre class="prettyprint lang-html linenums" data-id="prettyPrint"></pre>
-<script type="text/cfm-template" id="prettyPrint">
-<!-- BEGIN item:loop -->
-<!-- BEGIN type:touch#text -->
-<tr>
-	<th>{title}</th>
-	<td>
-		<input type="text" name="{name}" value="{{name}}" />
-		<input type="hidden" name="field[]" value="{name}" />
-		<!-- #include id="validatorTmp" -->
-	</td>
-</tr>
-<!-- END type:touch#text -->
-<!-- BEGIN type:touch#textarea -->
-<tr>
-	<th>{title}</th>
-	<td>
-		<textarea name="{name}">{{name}}</textarea>
-		<input type="hidden" name="field[]" value="{name}" />
-		<!-- #include id="validatorTmp" -->
-	</td>
-</tr>			
-<!-- END type:touch#textarea -->
-<!-- BEGIN type:touch#select -->
-<tr>
-	<th>{title}</th>
-	<td>
-		<select name="{name}">
-			<option value=""></option>
-			<!-- \BEGIN item.{i}.option:loop -->
-			<!-- \BEGIN value:veil -->
-			<option value="\{value\}"{{name}:selected#\{value\}}>\{label\}</option>
-			<!-- \END value:veil -->
-			<!-- \END item.{i}.option:loop -->
-		</select>
-		<input type="hidden" name="field[]" value="{name}" />
-		<!-- #include id="validatorTmp" -->
-	</td>
-</tr>
-<!-- END type:touch#select -->
-<!-- BEGIN type:touch#radio -->
-<tr>
-	<th>{title}</th>
-	<td>
-		<!-- \BEGIN item.{i}.option:loop -->
-		<!-- \BEGIN value:veil -->
-		<label class="acms-admin-form-radio"><input type="radio" name="{name}" value="\{value\}"{{name}:checked#\{value\}} /><i class="acms-admin-ico-radio"></i>\{label\}</label>
-		<!-- \END value:veil -->
-		<!-- \END item.{i}.option:loop -->
-		<input type="hidden" name="field[]" value="{name}" />
-		<!-- #include id="validatorTmp" -->
-	</td>
-</tr>
-<!-- END type:touch#radio -->
-<!-- BEGIN type:touch#checkbox -->
-<tr>
-	<th>{title}</th>
-	<td>
-		<!-- \BEGIN item.{i}.option:loop -->
-		<!-- \BEGIN value:veil -->
-		<label class="acms-admin-form-checkbox" for="input-{name}-\{value\}">
-			<input type="checkbox" name="{name}[]" value="\{value\}" id="input-{name}-\{value\}"{{name}:checked#\{value\}} />
-			<i class="acms-admin-ico-checkbox"></i>\{label\}
-		</label>
-		<!-- \END value:veil -->
-		<!-- \END item.{i}.option:loop -->
-		<input type="hidden" name="field[]" value="{name}" />
-		<!-- #include id="validatorTmp" -->
-	</td>
-</tr>
-<!-- END type:touch#checkbox -->
-<!-- BEGIN type:touch#image -->
-<tr>
-	<th>{title}</th>
-	<td>
-		<!-- BEGIN\ {name}@path:veil -->
-		<img src="%\{ARCHIVES_DIR\}{{name}@{path}}" />
-		<input type="hidden" name="{name}@old" value="{{name}@path}" /><br />
-		<label class="acms-admin-form-checkbox">
-			<input type="checkbox" name="{name}@edit" value="delete" />
-			<i class="acms-admin-ico-checkbox"></i> 削除
-		</label>
-		<!-- END\ {name}@path:veil -->
-		<input type="file" name="{name}" size="20" /><br />
-		<!-- BEGIN alt:veil -->
-		代替テキスト:<input type="text" name="{name}@alt" value="{{name}@alt}" size="40" />
-		<!-- END alt:veil -->
-		<input type="hidden" name="field[]" value="{name}" />
-		<input type="hidden" name="{name}:extension" value="{name}" />
-		<!-- BEGIN width:veil -->
-		<input type="hidden" name="{name}@{normal}" value="{normalSize}" />
-		<!-- END width:veil -->
-		<!-- BEGIN tiny:veil -->
-		<input type="hidden" name="{name}@{tiny}" value="{tinySize}" />
-		<!-- END tiny:veil -->
-
-		<!-- BEGIN large:veil -->
-		<input type="hidden" name="{name}@{large}" value="{largeSize}" />
-		<!-- END large:veil -->
-
-		<!-- BEGIN square:veil -->
-		<input type="hidden" name="{name}@{square}" value="{squareSize}" />
-		<!-- END square:veil -->
-
-		<input type="hidden" name="{name}@filename" value="" />
-		<!-- #include id="validatorTmp" -->
-	</td>
-</tr>
-<!-- END type:touch#image -->
-<!-- BEGIN type:touch#group -->
-<h2>{title}</h2>
-<table class="js-fieldgroup-sortable">
+<table class="adminTable acms-admin-table-admin-edit customFieldBasicTable">
 	<tr>
-		<td><input type="button" class="item-insert acms-admin-btn-admin" value="追加" /></td>
-		<!-- BEGIN\ item.{i}.group:loop -->
-		<th>\{title\}</th>
-		<!-- END\ item.{i}.group:loop -->
-		<td>削除</td>
+		<th class="acms-admin-table-left">プレビュー表示する画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="編集画面のカスタムフィールドにプレビューとして表示される画像の形式をお選びください。"></i></th>
+		<th class="acms-admin-table-left">サイズ指定<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="画像の横幅や縦幅などのサイズを指定できます。"></i></th>
+		<th class="acms-admin-table-left">alt表示<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="画像のalt属性の値を設定できます。"></i></th>
 	</tr>
-	<!-- BEGIN\\ {name}:loop -->
-	<tr class="sortable-item">
-		<td class="item-handle"><i class="acms-admin-icon-sort"></i></td>
-		<!-- BEGIN\ item.{i}.group:loop -->
-		<!-- BEGIN\ type:touch#text -->
+	<tr>
 		<td>
-			<input type="text" name="\{name\}[\\\{i\\\}]" value="\\{\{name\}\\}" />
-		</td>
-		<!-- END\ type:touch#text -->
-		<!-- BEGIN\ type:touch#textarea -->
-		<td>
-			<textarea name="\{name\}[\\\{i\\\}]">\\{\{name\}\\}</textarea>
-		</td>
-		<!-- END\ type:touch#textarea -->
-		<!-- BEGIN\ type:touch#select -->
-		<td>
-			<select name="\{name\}[\\\{i\\\}]">
-				<option value=""></option>
-				<!-- BEGIN\\ item.{i}.group.\{i\}.option:loop -->
-				<option value="\\{value\\}"\\\{\{name\}:selected#\{value}\\\}>\\{label\\}</option>
-				<!-- END\\ item.{i}.group.\{i\}.option:loop -->
+			<select data-bind="path">
+				<option value="path">通常画像</option>
+				<option value="tinyPath">tiny画像</option>
+				<option value="largePath">large画像</option>
+				<option value="squarePath">square画像</option>
 			</select>
 		</td>
-		<!-- END\ type:touch#select -->
-		<!-- BEGIN\ type:touch#radio -->
 		<td>
-			<!-- BEGIN\\ item.{i}.group.\{i\}.option:loop -->
-			<label class="acms-admin-form-radio"><input type="radio" name="\{name\}[\\\\{i\\\\}]" value="\\{value\\}" \\\{\{name\}:checked#\{value\}\\\}/>
-				<i class="acms-admin-ico-radio"></i>\{label\}</label>
-			<!-- END\\ item.{i}.group.\{i\}.option:loop -->
+			<div class="acms-form-group">
+				<div class="controls">
+					<select name="normal" data-bind="normal">
+						<option value="size">size</option>
+						<option value="width">width</option>
+						<option value="height">height</option>
+					</select>
+					<span class="input-append">
+						<input type="text" autocomplete="off" name="normalSize" data-bind="normalSize" /><span class="add-on"> px</span>
+					</span>
+				</div>
+			</div>
 		</td>
-		<!-- END\ type:touch#radio -->
-		<!-- BEGIN\ type:touch#checkbox -->
 		<td>
-			<!-- BEGIN\\ item.{i}.group.\{i\}.option:loop -->
-			<label class="acms-admin-form-checkbox">
-				<input type="checkbox" name="\{name\}[\\\\{i\\\\}]" value="\\{value\\}"\\\{\{name\}:checked#\{value\}\\\} />
-				<i class="acms-admin-ico-checkbox"></i>\{label\}
-			</label>
-			<!-- END\\ item.{i}.group.\{i\}.option:loop -->
+			<div class="acms-form-group">
+				<label class="acms-admin-form-checkbox">
+						<input type="checkbox" value="check" data-bind="alt"/>
+						<i class="acms-admin-ico-checkbox"></i> alt表示する
+				</label>
+			</div>
 		</td>
-		<!-- END\ type:touch#checkbox -->
-		<!-- BEGIN\ type:touch#image -->
-		<td>
-			<!-- BEGIN\ \{name\}@path:veil -->
-			<img src="%\{ARCHIVES_DIR\}\{\{name\}@\{path\}\}" />
-			<label class="acms-admin-form-checkbox">
-				<input type="checkbox" name="\{name\}@edit" value="delete" />
-				<i class="acms-admin-ico-checkbox"></i> 削除
-			</label>
-			<!-- END\ \{name\}@path:veil -->
-			<input type="hidden" name="\{name\}@old[\\\{i\\\}]" value="\{\{name\}@path\}" />
-			<input type="file" name="\{name\}[\\\{i\\\}]"/><br />
-			<!-- BEGIN\ alt:veil -->
-			代替テキスト:<input type="text" name="\{name\}@alt[\\\{i\\\}]" value="\{\{name\}@alt\}" size="40" />
-			<!-- END\ alt:veil -->
-			<!-- BEGIN\ normal:veil -->
-			<input type="hidden" name="\{name\}@\{normal\}[\\\{i\\\}]" value="\{normalSize\}" />
-			<!-- END\ normal:veil -->
-			<!-- BEGIN\ tiny:veil -->
-			<input type="hidden" name="\{name\}@\{tiny\}[\\\{i\\\}]" value="\{tinySize\}" />
-			<!-- END\ tiny:veil -->
-			<!-- BEGIN\ large:veil -->
-			<input type="hidden" name="\{name\}@\{large\}[\\\{i\\\}]" value="\{largeSize\}" />
-			<!-- END\ large:veil -->
-			<!-- BEGIN\ square:veil -->
-			<input type="hidden" name="\{name\}@\{square\}[\\\{i\\\}]" value="\{squareSize\}" />
-			<!-- END\ square:veil -->
-		</td>	
-		<!-- END\ type:touch#image -->
-		<!-- END\ item.{i}.group:loop -->
-	<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
 	</tr>
-	<!-- END\\ {name}:loop -->
-	<tr class="sortable-item item-template">
-		<td class="item-handle"><i class="acms-admin-icon-sort"></i></td>
-		<!-- BEGIN\ item.{i}.group:loop -->
-		<!-- BEGIN\ type:touch#text -->
+	<tr>
+		<th class="acms-admin-table-left">tiny画像生成<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="通常画像よりも小さい画像を生成できます。"></i></th>
+		<th class="acms-admin-table-left">large画像生成<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="通常画像よりも大きい画像を生成できます。"></i></th>
+		<th class="acms-admin-table-left">square画像生成<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="通常画像を指定したサイズで中央から正方形にトリミングして生成します。"></i></th>
+	</tr>
+	<tr>
 		<td>
-			<input type="text" name="\{name\}[]" value="" />
+			<div class="acms-form-group">
+				<div class="controls">
+					<select name="tiny" data-bind="tiny">
+						<option value="">つくらない</option>
+						<option value="tinyWidth">width</option>
+						<option value="tinyHeight">height</option>
+					</select>
+					<span class="input-append">
+						<input type="text" autocomplete="off" name="tinySize" data-bind="tinySize" /><span class="add-on"> px</span>
+					</span>
+				</div>
+			</div>
 		</td>
-		<!-- END\ type:touch#text -->
-		<!-- BEGIN\ type:touch#textarea -->
 		<td>
-			<textarea name="\{name\}[]"></textarea>
+			<div class="acms-form-group">
+				<div class="controls">
+					<select name="large" data-bind="large">
+						<option value="">つくらない</option>
+						<option value="largeWidth">width</option>
+						<option value="largeHeight">height</option>
+					</select>
+					<span class="input-append">
+						<input type="text" autocomplete="off" name="largeSize" data-bind="largeSize" class="span1" /><span class="add-on"> px</span>
+					</span>
+				</div>
+			</div>
 		</td>
-		<!-- END\ type:touch#textarea -->
-		<!-- BEGIN\ type:touch#select -->
 		<td>
-			<select name="\{name\}[]">
-				<option value=""></option>
-				<!-- BEGIN\\ item.{i}.group.\{i\}.option:loop -->
-				<option value="\\{value\\}">\\{label\\}</option>
-				<!-- END\\ item.{i}.group.\{i\}.option:loop -->
-			</select>
+			<div class="acms-form-group">
+				<div class="controls">
+					<select name="square" data-bind="square">
+						<option value="">つくらない</option>
+						<option value="squareWidth">width</option>
+					</select>
+					<span class="input-append">
+						<input type="text" autocomplete="off" name="squareSize" data-bind="squareSize" /><span class="add-on"> px</span>
+					</span>
+				</div>
+			</div>
 		</td>
-		<!-- END\ type:touch#select -->
-		<!-- BEGIN\ type:touch#radio -->
-		<td>
-			<!-- BEGIN\\ item.{i}.group.\{i\}.option:loop -->
-			<label class="acms-admin-form-radio"><input type="radio" name="\{name\}[]" value="\\{value\\}" />
-				<i class="acms-admin-ico-radio"></i>\{label\}</label>
-			<!-- END\\ item.{i}.group.\{i\}.option:loop -->
-		</td>
-		<!-- END\ type:touch#radio -->
-		<!-- BEGIN\ type:touch#checkbox -->
-		<td>
-			<!-- BEGIN\\ item.{i}.group.\{i\}.option:loop -->
-			<label class="acms-admin-form-checkbox">
-				<input type="checkbox" name="\{name\}[]" value="\\{value\\}"/>
-				<i class="acms-admin-ico-checkbox"></i>\{label\}
-			</label>
-			<!-- END\\ item.{i}.group.\{i\}.option:loop -->
-		</td>
-		<!-- END\ type:touch#checkbox -->
-		<!-- BEGIN\ type:touch#image -->
-		<td>
-			<input type="file" name="\{name\}[]"/><br />
-			<!-- BEGIN\ alt:veil -->
-			代替テキスト:<input type="text" name="\{name\}@alt[]" value="" size="40" />
-			<!-- END\ alt:veil -->
-			<!-- BEGIN\ normal:veil -->
-			<input type="hidden" name="\{name\}@\{normal\}[]" value="\{normalSize\}" />
-			<!-- END\ normal:veil -->
-			<!-- BEGIN\ tiny:veil -->
-			<input type="hidden" name="\{name\}@\{tiny\}[]" value="\{tinySize\}" />
-			<!-- END\ tiny:veil -->
-			<!-- BEGIN\ large:veil -->
-			<input type="hidden" name="\{name\}@\{large\}[]" value="\{largeSize\}" />
-			<!-- END\ large:veil -->
-			<!-- BEGIN\ square:veil -->
-			<input type="hidden" name="\{name\}@\{square\}[]" value="\{squareSize\}" />
-			<!-- END\ square:veil -->
-		</td>
-		<!-- END\ type:touch#image -->
-
-		<!-- END\ item.{i}.group:loop -->
-		<td><input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" /></td>
 	</tr>
 </table>
-<!-- BEGIN\ square:veil -->
-<input type="hidden" name="@{name}[]" value="\{name\}@squarePath" />
-<input type="hidden" name="@{name}[]" value="\{name\}@squareAlt" />
-<input type="hidden" name="@{name}[]" value="\{name\}@squareX" />
-<input type="hidden" name="@{name}[]" value="\{name\}@squareY" />
-<!-- END\ square:veil -->
-<!-- BEGIN\ large:veil -->
-<input type="hidden" name="@{name}[]" value="\{name\}@largePath" />
-<input type="hidden" name="@{name}[]" value="\{name\}@largeAlt" />
-<input type="hidden" name="@{name}[]" value="\{name\}@largeX" />
-<input type="hidden" name="@{name}[]" value="\{name\}@largeY" />
-<!-- END\ large:veil -->
-<!-- BEGIN\ tiny:veil -->
-<input type="hidden" name="@{name}[]" value="\{name\}@tinyPath" />
-<input type="hidden" name="@{name}[]" value="\{name\}@tinyAlt" />
-<input type="hidden" name="@{name}[]" value="\{name\}@tinyX" />
-<input type="hidden" name="@{name}[]" value="\{name\}@tinyY" />
-<!-- END\ tiny:veil -->
-<!-- BEGIN\ type:touch#image -->
-<input type="hidden" name="@{name}[]" value="\{name\}@alt" />
-<input type="hidden" name="@{name}[]" value="\{name\}@path" />
-<input type="hidden" name="@{name}[]" value="\{name\}@x" />
-<input type="hidden" name="@{name}[]" value="\{name\}@y" />
-<input type="hidden" name="@{name}[]" value="\{name\}@edit" />
-<input type="hidden" name="@{name}[]" value="\{name\}@old" />
-<input type="hidden" name="\{name\}:extension" value="image" />
-<!-- END\ type:touch#image -->
-<input type="hidden" name="field[]" value="\{name\}" />
-<!-- END\ item.{i}.group:loop -->
-<input type="hidden" name="field[]" value="@{name}" />
-<!-- END type:touch#group -->
+</script>
+<script type="text/cfm-template" id="file">
+<table class="adminTable acms-admin-table-admin-edit customFieldBasicTable">
+	<tr>
+		<th class="acms-admin-table-left">ファイルの拡張子（任意）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="アップロードするファイルの拡張子となります。"></i></th>
+		<th class="acms-admin-table-left">固定のファイル名（任意）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="設定しないとファイル名がランダムの文字列となります。"></i></th>
+	</tr>
+	<tr>
+		<td><input type="text" value="" data-bind="extension" class="acms-admin-form-width-full"></td>
+		<td><input type="text" value="" data-bind="fileName" class="acms-admin-form-width-full"></td>
+	</tr>
+</table>
+</script>
+<script type="text/cfm-template" id="file_group">
+<table class="adminTable acms-admin-table-admin-edit customFieldBasicTable">
+	<tr>
+		<th class="acms-admin-table-left">ファイルの拡張子（任意）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="アップロードするファイルの拡張子となります。"></i></th>
+	</tr>
+	<tr>
+		<td><input type="text" value="" data-bind="extension" class="acms-admin-form-width-full"></td>
+	</tr>
+</table>
+</script>
+<!-- カスタムフィールドグループ -->
+<script type="text/cfm-template" id="group">
+	<hr class="customFieldLine">
+	<table class="adminTable acms-admin-table-admin-edit customFieldBasicTable">
+		<tr>
+			<th class="acms-admin-table-left">type（必須）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="フィールドのタイプとなります。選択しないと生成ボタンを押してもソースコードが生成されません。"></i></th>
+			<th class="acms-admin-table-left">タイトル（必須）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="見出しになります。"></i></th>
+			<th class="acms-admin-table-left">フィールド（必須）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="フィールド名です。name属性として使用されます。"></i></th>
+		</tr>
+		<tr>
+			<td><!-- #include id="type_select_group" --></td>
+			<td><input type="text" value="" data-bind="title" class="acms-admin-form-width-full"></td>
+			<td><input type="text" value="" data-bind="name" class="acms-admin-form-width-full"></td>
+		</tr>
+	</table>
+
+	<!-- セレクトのとき -->
+	<!-- BEGIN type:touch#select -->
+	<p class="customFieldBold">option要素<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="セレクトボックス用の項目になります。"></i></p>
+	<!-- #include id="option" -->
+
+	<!-- END type:touch#select -->
+
+	<!-- ラジオボタンのとき -->
+	<!-- BEGIN type:touch#radio -->
+	<p class="customFieldBold">input要素<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ラジオボタン用の項目になります。"></i></p>
+	<!-- #include id="option" -->
+
+	<!-- END type:touch#radio -->
+
+	<!-- ファイルの時 -->
+	<!-- BEGIN type:touch#file -->
+	<!-- #include id="file_group" -->
+	<!-- END type:touch#file -->
+
+	<!-- 画像のとき -->
+	<!-- BEGIN type:touch#image -->
+	<!-- #include id="image" -->
+	<!-- END type:touch#image -->
+</script>
+<script type="text/cfm-template" id="type_selectUnit">
+	<select id="type" data-bind="type" data-action="update" class="acms-admin-form-width-full">
+		<option value="text">テキスト</option>
+		<option value="select">セレクトボックス</option>
+		<option value="radio">ラジオボタン</option>
+		<option value="textarea">テキストエリア</option>
+		<option value="file">ファイル</option>
+		<option value="image">画像</option>
+	</select>
+</script>
+<script type="text/cfm-template" id="unit">
+	<table class="adminTable acms-admin-table-admin-edit customFieldBasicTable">
+		<tr>
+			<th class="acms-admin-table-left">type（必須）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="フィールドのタイプとなります。選択しないと生成ボタンを押してもソースコードが生成されません。"></i></th>
+			<th class="acms-admin-table-left">タイトル（必須）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="見出しになります。"></i></th>
+			<th class="acms-admin-table-left">フィールド（必須）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="フィールド名です。name属性として使用されます。"></i></th>
+		</tr>
+		<tr>
+			<td><!-- #include id="type_selectUnit" --></td>
+			<td><input type="text" value="" data-bind="title" class="acms-admin-form-width-full"></td>
+			<td><input type="text" value="" data-bind="name" class="acms-admin-form-width-full"></td>
+		</tr>
+	</table>
+
+	<!-- セレクトのとき -->
+	<!-- BEGIN type:touch#select -->
+	<p class="customFieldBold">option要素<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="セレクトボックス用の項目になります。"></i></p>
+	<!-- #include id="option" -->
+	<!-- END type:touch#select -->
+
+	<!-- ラジオボタンのとき -->
+	<!-- BEGIN type:touch#radio -->
+	<p class="customFieldBold">input要素<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ラジオボタン用の項目になります。"></i></p>
+	<!-- #include id="option" -->
+	<!-- END type:touch#radio -->
+
+	<!-- ファイルのとき -->
+	<!-- BEGIN type:touch#file -->
+	<!-- #include id="file" -->
+	<!-- END type:touch#file -->
+
+	<!-- 画像のとき -->
+	<!-- BEGIN type:touch#image -->
+	<!-- #include id="image" -->
+	<!-- END type:touch#image -->
+</script>
+<script type="text/cfm-template" id="generator">
+	<p>
+		<label class="acms-admin-form-radio">
+		<input type="radio" data-bind="mode" name="mode" value="normal" data-action="refresh">
+		<i class="acms-admin-ico-radio"></i>カスタムフィールド
+		</label>
+		<label class="acms-admin-form-radio">
+		<input type="radio" data-bind="mode" name="mode" value="group" data-action="refresh">
+		<i class="acms-admin-ico-radio"></i>カスタムフィールドグループ
+		</label>
+		<label class="acms-admin-form-radio">
+		<input type="radio" data-bind="mode" name="mode" value="unit" data-action="refresh">
+		<i class="acms-admin-ico-radio"></i>カスタムユニット
+		</label>
+	</p>
+	<h2 class="acms-admin-admin-title2">基本設定</h2>
+	<div class="acms-admin-filter">
+		<!-- #include id="converterList" -->
+
+		<!-- BEGIN alert:veil -->
+		<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close" data-action="removeAlert">×</button>typeとタイトルとフィールド、全てを入力しないとソースコードを生成できません。</p>
+		<!-- END alert:veil -->
+		<!-- BEGIN mode:touch#normal -->
+			<table class="adminTable acms-admin-table-admin-edit customFieldBasicTable">
+				<tr>
+					<th class="acms-admin-table-left">type（必須）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="フィールドのタイプとなります。選択しないと生成ボタンを押してもソースコードが生成されません。"></i></th>
+					<th class="acms-admin-table-left">タイトル（必須）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="見出しになります。"></i></th>
+					<th class="acms-admin-table-left">フィールド（必須）<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="フィールド名です。name属性として使用されます。"></i></th>
+				</tr>
+				<tr>
+					<td><!-- #include id="type_select" --></td>
+					<td><input type="text" value="" data-bind="title" class="acms-admin-form-width-full"></td>
+					<td><input type="text" value="" data-bind="name" class="acms-admin-form-width-full"></td>
+				</tr>
+			</table>
+
+			<!-- セレクトのとき -->
+			<!-- BEGIN type:touch#select -->
+
+			<p class="customFieldBold">option要素<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="セレクトボックス用の項目になります。"></i></p>
+			<!-- #include id="option" -->
+
+			<!-- END type:touch#select -->
+
+
+			<!-- ラジオボタンのとき -->
+			<!-- BEGIN type:touch#radio -->
+
+			<p class="customFieldBold">input要素<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ラジオボタン用の項目になります。"></i></p>
+			<!-- #include id="option" -->
+
+			<!-- END type:touch#radio -->
+
+			<!-- チェックボックスのとき -->
+			<!-- BEGIN type:touch#checkbox -->
+
+			<p class="customFieldBold">input要素<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックボックス用の項目になります。"></i></p>
+			<!-- #include id="option" -->
+
+			<!-- END type:touch#checkbox -->
+
+			<!-- 画像のとき -->
+			<!-- BEGIN type:touch#image -->
+			<!-- #include id="image" -->
+			<!-- END type:touch#image -->
+
+			<!-- ファイルの時 -->
+			<!-- BEGIN type:touch#file -->
+			<!-- #include id="file" -->
+			<!-- END type:touch#file -->
+
+			<!-- バリデーター -->
+			<!-- #include id="validator" -->
+			<!-- 作成 -->
+			<!-- #include id="make" -->
+		<!-- END mode:touch#normal -->
+
+		<!-- グループのとき -->
+		<!-- BEGIN mode:touch#group -->
+		<!-- BEGIN groupAlert:veil -->
+		<p class="acms-admin-alert acms-admin-alert-danger"><button class="js-acms-alert-close" data-action="removeGroupAlert">×</button>group名を入力しないとgroupを生成できません。</p>
+		<!-- END groupAlert:veil -->
+		<table class="adminTable acms-admin-table-admin-edit customFieldBasicTable">
+			<tr>
+				<th class="acms-admin-table-left">groupタイトル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カスタムフィールドグループのテーブル用のタイトルとなります。"></i></th>
+				<th class="acms-admin-table-left" colspan="2">group名<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カスタムフィールドグループのフィールド名です。値を必ず入力してください。"></i></th>
+			</tr>
+			<tr>
+				<td><input type="text" value="" data-bind="groupTitle" class="acms-admin-form-width-full"></td>
+				<td><input type="text" value="" data-bind="groupName" class="acms-admin-form-width-full"></td>
+				<td>
+					<!-- BEGIN openGroup:empty -->
+					<button class="acms-admin-btn-admin" data-action="showGroup">グループ生成</button>
+					<!-- END openGroup:empty -->
+					<!-- BEGIN openGroup:veil -->
+					<button class="acms-admin-btn-admin acms-admin-btn-disabled" data-action="showGroup" disabled>グループ生成</button>
+					<!-- END openGroup:veil -->
+				</td>
+			</tr>
+		</table>
+		<!-- BEGIN openGroup:veil -->
+		<div data-id="group"></div>
+		<p>
+		<button data-action="clearGroupInput" class="acms-admin-btn-admin">クリア</button>
+		<button data-action="addGroup" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save">生成</button>
+		</p>
+		<!-- END openGroup:veil -->
+		<!-- END mode:touch#group -->
+		<!-- ユニットの時 -->
+		<!-- BEGIN mode:touch#unit -->
+		<div data-id="unit" class="acms-admin-form"></div>
+		<p>
+		<button data-action="clearUnitInput" class="acms-admin-btn-admin">クリア</button>
+		<button data-action="addUnit" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save">生成</button>
+		</p>
+		<!-- END mode:touch#unit -->
+	</div>
+	<div class="acms-admin-tabs">
+		<ul class="js-acms_tabs">
+			<li><a href="#source" class="js-acms_tab<!-- BEGIN editMode:touch#source --> js-acms_tab-active<!-- END editMode:touch#source -->" data-bind="editMode" data-action="update">ソース</a></li>
+			<li><a href="#preview" class="js-acms_tab<!-- BEGIN editMode:touch#preview --> js-acms_tab-active<!-- END editMode:touch#preview -->" data-bind="editMode" data-action="update">プレビュー</a></li>
+		</ul>
+		<div class="acms-admin-tabs-panel">
+			<p>
+				<label class="acms-admin-form-checkbox">
+					<input type="checkbox" data-bind="acmscss" value="true" data-action="toggleCss">
+					<i class="acms-admin-ico-checkbox"></i>
+					acms-admin.cssを使用する
+				</label>
+				<!-- BEGIN chrome:veil -->
+					<button data-action="copy" class="acms-admin-btn-admin">ソースをコピー</button>
+				<!-- END chrome:veil -->
+				<!-- BEGIN mode:touch#normal -->
+					<button data-action="historyClear" class="acms-admin-btn-admin acms-admin-btn-admin-danger">履歴クリア</button>
+				<!-- END mode:touch#normal -->
+				<!-- BEGIN mode:touch#group -->
+					<button data-action="clearGroup" class="acms-admin-btn-admin acms-admin-btn-admin-danger">履歴クリア</button>
+				<!-- END mode:touch#group -->
+				<!-- BEGIN mode:touch#unit -->
+					<button data-action="clearUnit" class="acms-admin-btn-admin acms-admin-btn-admin-danger">履歴クリア</button>
+				<!-- END mode:touch#unit -->
+			</p>
+			<!-- BEGIN editMode:touch#source -->
+			<pre class="prettyprint lang-html linenums" data-id="prettyPrint"></pre>
+			<!-- END editMode:touch#source -->
+			<!-- BEGIN editMode:touch#preview -->
+			<div class="customFieldPreview">
+				<div data-id="prettyPrint"></div>
+			</div>
+			<!-- END editMode:touch#preview -->
+		</div>
+	</div>
+</script>
+<div data-id="generator" class="acms-admin-form"></div>
+
+
+<script type="text/cfm-template" id="prettyPrint">
+<!-- BEGIN mode:touch#normal -->
+<table<!-- BEGIN acmscss:veil --> class="acms-admin-table-admin-edit"<!-- END acmscss:veil -->>
+<!-- BEGIN item:loop -->
+	<!-- BEGIN type:touch#text -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<input type="text" name="{name}" value="{{name}}"<!-- \BEGIN acmscss:veil --> class="acms-admin-form-width-full"<!-- \END acmscss:veil -->/>
+			<input type="hidden" name="field[]" value="{name}" />
+			<!-- #include id="validatorTmp" -->
+		</td>
+	</tr>
+	<!-- END type:touch#text -->
+	<!-- BEGIN type:touch#textarea -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<textarea name="{name}"<!-- \BEGIN acmscss:veil --> class="acms-admin-form-width-full"<!-- \END acmscss:veil -->>{{name}}</textarea>
+			<input type="hidden" name="field[]" value="{name}" />
+			<!-- #include id="validatorTmp" -->
+		</td>
+	</tr>
+	<!-- END type:touch#textarea -->
+	<!-- BEGIN type:touch#select -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<select name="{name}"<!-- \BEGIN acmscss:veil --> class="acms-admin-form-width-full"<!-- \END acmscss:veil -->>
+				<option value=""></option>
+				<!-- \BEGIN item.{i}.option:loop -->
+				<!-- \BEGIN value:veil -->
+				<option value="\{value\}"{{name}:selected#\{value\}}>\{label\}</option>
+				<!-- \END value:veil -->
+				<!-- \END item.{i}.option:loop -->
+			</select>
+			<input type="hidden" name="field[]" value="{name}" />
+			<!-- #include id="validatorTmp" -->
+		</td>
+	</tr>
+	<!-- END type:touch#select -->
+	<!-- BEGIN type:touch#radio -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<!-- \BEGIN item.{i}.option:loop -->
+			<!-- \BEGIN value:veil -->
+			<label<!-- \\BEGIN acmscss:veil --> class="acms-admin-form-radio"<!-- \\END acmscss:veil -->><input type="radio" name="{name}" value="\{value\}"{{name}:checked#\{value\}} /><!-- \\BEGIN acmscss:veil --><i class="acms-admin-ico-radio"></i><!-- \\END acmscss:veil -->\{label\}</label>
+			<!-- \END value:veil -->
+			<!-- \END item.{i}.option:loop -->
+			<input type="hidden" name="field[]" value="{name}" />
+			<!-- #include id="validatorTmp" -->
+		</td>
+	</tr>
+	<!-- END type:touch#radio -->
+	<!-- BEGIN type:touch#checkbox -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<!-- \BEGIN item.{i}.option:loop -->
+			<!-- \BEGIN value:veil -->
+			<label<!-- \\BEGIN acmscss:veil --> class="acms-admin-form-checkbox"<!-- \\END acmscss:veil --> for="input-{name}-\{value\}">
+				<input type="checkbox" name="{name}[]" value="\{value\}" id="input-{name}-\{value\}"{{name}:checked#\{value\}} />
+				<!-- \\BEGIN acmscss:veil --><i class="acms-admin-ico-checkbox"></i><!-- \\END acmscss:veil -->\{label\}
+			</label>
+			<!-- \END value:veil -->
+			<!-- \END item.{i}.option:loop -->
+			<input type="hidden" name="field[]" value="{name}" />
+			<!-- #include id="validatorTmp" -->
+		</td>
+	</tr>
+	<!-- END type:touch#checkbox -->
+	<!-- BEGIN type:touch#image -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<!-- BEGIN\ {name}@path:veil -->
+			<img src="%\{ARCHIVES_DIR\}{{name}@{path}}" />
+			<input type="hidden" name="{name}@old" value="{{name}@path}" /><br />
+			<label<!-- \BEGIN acmscss:veil --> class="acms-admin-form-checkbox"<!-- \END acmscss:veil -->>
+				<input type="checkbox" name="{name}@edit" value="delete" />
+				<!-- \BEGIN acmscss:veil --><i class="acms-admin-ico-checkbox"></i> <!-- \END acmscss:veil -->削除
+			</label>
+			<!-- END\ {name}@path:veil -->
+			<input type="file" name="{name}" size="20" /><br />
+			<!-- BEGIN alt:veil -->
+			代替テキスト:<input type="text" name="{name}@alt" value="{{name}@alt}" size="40" />
+			<!-- END alt:veil -->
+			<input type="hidden" name="field[]" value="{name}" />
+			<input type="hidden" name="{name}:extension" value="image" />
+			<input type="hidden" name="{name}@{normal}" value="{normalSize}" />
+			<!-- BEGIN tiny:veil -->
+			<input type="hidden" name="{name}@{tiny}" value="{tinySize}" />
+			<!-- END tiny:veil -->
+
+			<!-- BEGIN large:veil -->
+			<input type="hidden" name="{name}@{large}" value="{largeSize}" />
+			<!-- END large:veil -->
+
+			<!-- BEGIN square:veil -->
+			<input type="hidden" name="{name}@{square}" value="{squareSize}" />
+			<!-- END square:veil -->
+
+			<input type="hidden" name="{name}@filename" value="" />
+			<!-- #include id="validatorTmp" -->
+		</td>
+	</tr>
+	<!-- END type:touch#image -->
+	<!-- BEGIN type:touch#file -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<!-- BEGIN\ {name}@path:veil -->
+			<input type="hidden" name="{name}@old" value="{{name}@path}" />
+			<input type="hidden" name="{name}@secret" value="{{name}@secret}" />
+			<input type="hidden" name="{name}@fileSize" value="{{name}@fileSize}" />
+			<label for="input-checkbox-{name}@edit"<!-- BEGIN\ acmscss:veil --> class="acms-admin-form-checkbox"<!-- END\ acmscss:veil -->>
+				<input type="checkbox" name="{name}@edit" value="delete" id="input-checkbox-{name}@edit" />
+				<!-- BEGIN\ acmscss:veil --><i class="acms-admin-ico-checkbox"></i> <!-- END\ acmscss:veil -->削除
+			</label>
+			<a href="%\{ARCHIVES_DIR\}{{name}@path}"><img src="/images/fileicon/<!-- BEGIN extension:veil -->{extension}<!-- END extension:veil --><!-- BEGIN extension:empty -->file<!-- END extension:empty -->.gif" width="64" height="64"<!-- BEGIN extension:veil --> alt="{extension}"<!-- END extension:veil --><!-- BEGIN extension:empty --> alt="file"<!-- END extension:empty --> /></a>
+			<!-- END\ {name}@path:veil -->
+			<input type="file" name="{name}" />
+			<input type="hidden" name="field[]" value="{name}" />
+			<input type="hidden" name="{name}@baseName" value="{{name}@baseName}" />
+			<input type="hidden" name="{name}:extension" value="file" />
+			<!-- BEGIN extension:veil -->
+			<input type="hidden" name="{name}@extension" value="{extension}" />
+			<!-- END extension:veil -->
+			<!-- BEGIN fileName:veil -->
+			<input type="hidden" name="{name}@filename" value="{fileName}" />
+			<!-- END fileName:veil -->
+		</td>
+	</tr>
+	<!-- END type:touch#file -->
 <!-- END item:loop -->
+</table>
+<!-- END mode:touch#normal -->
+<!-- BEGIN mode:touch#group -->
+<!-- BEGIN groupTitle:veil -->
+<h2<!-- BEGIN acmscss:veil --> class="acms-admin-admin-title2"<!-- END acmscss:veil -->>{groupTitle}</h2>
+<!-- END groupTitle:veil -->
+<table class="js-fieldgroup-sortable<!-- BEGIN acmscss:veil --> adminTable acms-admin-table-admin-edit<!-- END acmscss:veil -->">
+	<!-- BEGIN groupName:veil -->
+	<thead<!-- BEGIN acmscss:veil --> class="acms-admin-hide-sp"<!-- END acmscss:veil -->>
+		<tr>
+			<th<!-- BEGIN acmscss:veil --> class="acms-admin-table-left acms-admin-admin-config-table-item-handle"<!-- END acmscss:veil -->>&nbsp;</th>
+			<!-- BEGIN group:loop -->
+			<th<!-- \BEGIN acmscss:veil --> class="acms-admin-table-left"<!-- \END acmscss:veil -->>{title}</th>
+			<!-- END group:loop -->
+			<th<!-- BEGIN acmscss:veil --> class="acms-admin-table-left acms-admin-admin-config-table-action"<!-- END acmscss:veil -->>削除</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN\ {groupName}:loop -->
+		<tr class="sortable-item">
+			<td class="item-handle"><!-- BEGIN acmscss:veil --><i class="acms-admin-icon-sort"></i><!-- END acmscss:veil --></td>
+			<!-- BEGIN group:loop -->
+			<!-- BEGIN type:touch#text -->
+			<td>
+				<input type="text" name="{name}[\\{i\\}]" value="\{{name}\}"<!-- \BEGIN acmscss:veil --> class="acms-admin-form-width-full"<!-- \END acmscss:veil -->/>
+			</td>
+			<!-- END type:touch#text -->
+			<!-- BEGIN type:touch#textarea -->
+			<td>
+				<textarea name="{name}[\\{i\\}]"<!-- \BEGIN acmscss:veil --> class="acms-admin-form-width-full"<!-- \END acmscss:veil -->>\{{name}\}</textarea>
+			</td>
+			<!-- END type:touch#textarea -->
+			<!-- BEGIN type:touch#select -->
+			<td>
+				<select name="{name}[\\{i\\}]"<!-- \BEGIN acmscss:veil --> class="acms-admin-form-width-full"<!-- \END acmscss:veil -->>
+					<option value=""></option>
+					<!-- BEGIN\ group.{i}.option:loop -->
+					<option value="\{value\}"\\{{name}:selected#{value}\}>\{label\}</option>
+					<!-- END\ group.{i}.option:loop -->
+				</select>
+			</td>
+			<!-- END type:touch#select -->
+			<!-- BEGIN type:touch#radio -->
+			<td>
+				<!-- BEGIN\ group.{i}.option:loop -->
+				<label<!-- \\BEGIN acmscss:veil --> class="acms-admin-form-radio"<!-- \\END acmscss:veil -->><input type="radio" name="{name}[\\\{i\\\}]" value="\{value\}" \\{{name}:checked#{value}\\}/>
+					<!-- \\BEGIN acmscss:veil --><i class="acms-admin-ico-radio"></i><!-- \\END acmscss:veil -->{label}</label>
+				<!-- END\ group.{i}.option:loop -->
+			</td>
+			<!-- END type:touch#radio -->
+			<!-- BEGIN type:touch#file -->
+			<td>
+				<!-- BEGIN\ {name}@path:veil -->
+				<label<!-- BEGIN\ acmscss:veil --> class="acms-admin-form-checkbox"<!-- END\ acmscss:veil -->>
+					<input type="checkbox" name="{name}@edit[\\{i\\}]" value="delete" />
+					<!-- BEGIN\ acmscss:veil --><i class="acms-admin-ico-checkbox"></i><!-- END\ acmscss:veil --> 削除
+				</label>
+				<a href="%\{ARCHIVES_DIR\}{{name}@path}"><img src="/images/fileicon/<!-- BEGIN extension:veil -->{extension}<!-- END extension:veil --><!-- BEGIN extension:empty -->file<!-- END extension:empty -->.gif" width="64" height="64"<!-- BEGIN extension:veil --> alt="{extension}"<!-- END extension:veil --><!-- BEGIN extension:empty --> alt="file"<!-- END extension:empty --> /></a>
+				<!-- END\ {name}@path:veil -->
+				<input type="hidden" name="{name}@old[\\{i\\}]" value="\{{name}@path\}" />
+				<input type="file" name="{name}[\\{i\\}]"/><br />
+				<!-- BEGIN alt:veil -->
+				代替テキスト:<input type="text" name="{name}@alt[\\{i\\}]" value="\{{name}@alt\}" size="40" />
+				<!-- END alt:veil -->
+				<!-- BEGIN normal:veil -->
+				<input type="hidden" name="{name}@{normal}[\\{i\\}]" value="{normalSize}" />
+				<!-- END normal:veil -->
+				<!-- BEGIN tiny:veil -->
+				<input type="hidden" name="{name}@{tiny}[\\{i\\}]" value="{tinySize}" />
+				<!-- END tiny:veil -->
+				<!-- BEGIN large:veil -->
+				<input type="hidden" name="{name}@{large}[\\{i\\}]" value="{largeSize}" />
+				<!-- END large:veil -->
+				<!-- BEGIN square:veil -->
+				<input type="hidden" name="{name}@{square}[\\{i\\}]" value="{squareSize}" />
+				<!-- END square:veil -->
+			</td>
+			<!-- END type:touch#file -->
+			<!-- BEGIN type:touch#image -->
+			<td>
+				<!-- BEGIN\ {name}@path:veil -->
+				<img src="%\{ARCHIVES_DIR\}\{{name}@{path}\}" />
+				<label<!-- BEGIN\ acmscss:veil --> class="acms-admin-form-checkbox"<!-- END\ acmscss:veil -->>
+					<input type="checkbox" name="{name}@edit" value="delete" />
+					<!-- BEGIN\ acmscss:veil --><i class="acms-admin-ico-checkbox"></i><!-- END\ acmscss:veil --> 削除
+				</label>
+				<!-- END\ {name}@path:veil -->
+				<input type="hidden" name="{name}@old[\\{i\\}]" value="\{{name}@path\}" />
+				<input type="file" name="{name}[\\{i\\}]"/><br />
+				<!-- BEGIN alt:veil -->
+				代替テキスト:<input type="text" name="{name}@alt[\\{i\\}]" value="\{{name}@alt\}" size="40" />
+				<!-- END alt:veil -->
+				<!-- BEGIN normal:veil -->
+				<input type="hidden" name="{name}@{normal}[\\{i\\}]" value="{normalSize}" />
+				<!-- END normal:veil -->
+				<!-- BEGIN tiny:veil -->
+				<input type="hidden" name="{name}@{tiny}[\\{i\\}]" value="{tinySize}" />
+				<!-- END tiny:veil -->
+				<!-- BEGIN large:veil -->
+				<input type="hidden" name="{name}@{large}[\\{i\\}]" value="{largeSize}" />
+				<!-- END large:veil -->
+				<!-- BEGIN square:veil -->
+				<input type="hidden" name="{name}@{square}[\\{i\\}]" value="{squareSize}" />
+				<!-- END square:veil -->
+			</td>
+			<!-- END type:touch#image -->
+			<!-- END group:loop -->
+		<td><input type="button" class="item-delete<!-- BEGIN acmscss:veil --> acms-admin-btn-admin acms-admin-btn-admin-danger<!-- END acmscss:veil -->" value="削除" /></td>
+		</tr>
+		<!-- END\ {groupName}:loop -->
+		<tr class="sortable-item item-template">
+			<td class="item-handle"><!-- BEGIN acmscss:veil --><i class="acms-admin-icon-sort"></i><!-- END acmscss:veil --></td>
+			<!-- BEGIN group:loop -->
+			<!-- BEGIN type:touch#text -->
+			<td>
+				<input type="text" name="{name}[]" value=""<!-- \BEGIN acmscss:veil --> class="acms-admin-form-width-full"<!-- \END acmscss:veil -->/>
+			</td>
+			<!-- END type:touch#text -->
+			<!-- BEGIN type:touch#textarea -->
+			<td>
+				<textarea name="{name}[]"<!-- \BEGIN acmscss:veil --> class="acms-admin-form-width-full"<!-- \END acmscss:veil -->></textarea>
+			</td>
+			<!-- END type:touch#textarea -->
+			<!-- BEGIN type:touch#select -->
+			<td>
+				<select name="{name}[]"<!-- \BEGIN acmscss:veil --> class="acms-admin-form-width-full"<!-- \END acmscss:veil -->>
+					<option value=""></option>
+					<!-- BEGIN\ group.{i}.option:loop -->
+					<option value="\{value\}">\{label\}</option>
+					<!-- END\ group.{i}.option:loop -->
+				</select>
+			</td>
+			<!-- END type:touch#select -->
+			<!-- BEGIN type:touch#radio -->
+			<td>
+				<!-- BEGIN\ group.{i}.option:loop -->
+				<label<!-- BEGIN\\ acmscss:veil --> class="acms-admin-form-radio"<!-- END\\ acmscss:veil -->><input type="radio" name="{name}[]" value="\{value\}" />
+					<!-- BEGIN\\ acmscss:veil --><i class="acms-admin-ico-radio"></i><!-- END\\ acmscss:veil -->{label}</label>
+				<!-- END\ group.{i}.option:loop -->
+			</td>
+			<!-- END type:touch#radio -->
+			<!-- BEGIN type:touch#file -->
+			<td>
+				<input type="file" name="{name}[]" />
+				<!-- BEGIN extension:veil -->
+				<input type="hidden" name="{name}@extension[]" value="{extension}" />
+				<!-- END extension:veil -->
+				<!-- BEGIN fileName:veil -->
+				<input type="hidden" name="{name}@filename[]" value="{fileName}" />
+				<!-- END fileName:veil -->
+			</td>
+			<!-- END type:touch#file -->
+			<!-- BEGIN type:touch#image -->
+			<td>
+				<input type="file" name="{name}[]"/><br />
+				<!-- BEGIN alt:veil -->
+				代替テキスト:<input type="text" name="{name}@alt[]" value="" size="40" />
+				<!-- END alt:veil -->
+				<!-- BEGIN normal:veil -->
+				<input type="hidden" name="{name}@{normal}[]" value="{normalSize}" />
+				<!-- END normal:veil -->
+				<!-- BEGIN tiny:veil -->
+				<input type="hidden" name="{name}@{tiny}[]" value="{tinySize}" />
+				<!-- END tiny:veil -->
+				<!-- BEGIN large:veil -->
+				<input type="hidden" name="{name}@{large}[]" value="{largeSize}" />
+				<!-- END large:veil -->
+				<!-- BEGIN square:veil -->
+				<input type="hidden" name="{name}@{square}[]" value="{squareSize}" />
+				<!-- END square:veil -->
+			</td>
+			<!-- END type:touch#image -->
+			<!-- END group:loop -->
+			<td><input type="button" class="item-delete<!-- BEGIN acmscss:veil --> acms-admin-btn-admin acms-admin-btn-admin-danger<!-- END acmscss:veil -->" value="削除" /></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr><td colspan="4"><input type="button" class="item-insert<!-- BEGIN acmscss:veil --> acms-admin-btn-admin<!-- END acmscss:veil -->" value="追加" /></td>
+		</tr>
+	</tfoot>
+	<!-- END groupName:veil -->
+</table>
+<!-- BEGIN groupName:veil -->
+<!-- BEGIN group:loop -->
+<!-- BEGIN type:touch#image -->
+<!-- BEGIN square:veil -->
+<input type="hidden" name="@{groupName}[]" value="{name}@squarePath" />
+<input type="hidden" name="@{groupName}[]" value="{name}@squareAlt" />
+<input type="hidden" name="@{groupName}[]" value="{name}@squareX" />
+<input type="hidden" name="@{groupName}[]" value="{name}@squareY" />
+<!-- END square:veil -->
+<!-- BEGIN large:veil -->
+<input type="hidden" name="@{groupName}[]" value="{name}@largePath" />
+<input type="hidden" name="@{groupName}[]" value="{name}@largeAlt" />
+<input type="hidden" name="@{groupName}[]" value="{name}@largeX" />
+<input type="hidden" name="@{groupName}[]" value="{name}@largeY" />
+<!-- END large:veil -->
+<!-- BEGIN tiny:veil -->
+<input type="hidden" name="@{groupName}[]" value="{name}@tinyPath" />
+<input type="hidden" name="@{groupName}[]" value="{name}@tinyAlt" />
+<input type="hidden" name="@{groupName}[]" value="{name}@tinyX" />
+<input type="hidden" name="@{groupName}[]" value="{name}@tinyY" />
+<!-- END tiny:veil -->
+<input type="hidden" name="@{groupName}[]" value="{name}@alt" />
+<input type="hidden" name="@{groupName}[]" value="{name}@path" />
+<input type="hidden" name="@{groupName}[]" value="{name}@x" />
+<input type="hidden" name="@{groupName}[]" value="{name}@y" />
+<input type="hidden" name="@{groupName}[]" value="{name}@edit" />
+<input type="hidden" name="@{groupName}[]" value="{name}@old" />
+<input type="hidden" name="{name}:extension" value="image" />
+<!-- END type:touch#image -->
+<!-- BEGIN type:touch#file -->
+<input type="hidden" name="@{groupName}[]" value="{name}@alt" />
+<input type="hidden" name="@{groupName}[]" value="{name}@path" />
+<input type="hidden" name="@{groupName}[]" value="{name}@edit" />
+<input type="hidden" name="@{groupName}[]" value="{name}@old" />
+<input type="hidden" name="{name}:extension" value="file" />
+<!-- END type:touch#file -->
+<input type="hidden" name="@{groupName}[]" value="{name}" />
+<input type="hidden" name="field[]" value="{name}" />
+<!-- END group:loop -->
+<input type="hidden" name="field[]" value="@{groupName}" />
+<!-- END groupName:veil -->
+<!-- END mode:touch#group -->
+<!-- BEGIN mode:touch#unit -->
+<table<!-- BEGIN acmscss:veil --> class="acms-admin-table-admin-edit"<!-- END acmscss:veil -->>
+	<!-- BEGIN unit:loop -->
+	<!-- BEGIN type:touch#text -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<input type="text" name="{name}{id}" value="{{name}}"<!-- \BEGIN acmscss:veil --> class="acms-admin-form-width-full"<!-- \END acmscss:veil -->/>
+			<input type="hidden" name="unit{id}[]" value="{name}{id}" />
+			<!-- #include id="validatorTmp" -->
+		</td>
+	</tr>
+	<!-- END type:touch#text -->
+	<!-- BEGIN type:touch#textarea -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<textarea name="{name}{id}"<!-- \BEGIN acmscss:veil --> class="acms-admin-form-width-full"<!-- \END acmscss:veil -->>{{name}}</textarea>
+			<input type="hidden" name="unit{id}[]" value="{name}{id}" />
+			<!-- #include id="validatorTmp" -->
+		</td>
+	</tr>
+	<!-- END type:touch#textarea -->
+	<!-- BEGIN type:touch#select -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<select name="{name}{id}"<!-- \BEGIN acmscss:veil --> class="acms-admin-form-width-full"<!-- \END acmscss:veil -->>
+				<option value=""></option>
+				<!-- \BEGIN unit.{i}.option:loop -->
+				<!-- \BEGIN value:veil -->
+				<option value="\{value\}"{{name}:selected#\{value\}}>\{label\}</option>
+				<!-- END value:veil -->
+				<!-- \END unit.{i}.option:loop -->
+			</select>
+			<input type="hidden" name="unit{id}[]" value="{name}{id}" />
+			<!-- #include id="validatorTmp" -->
+		</td>
+	</tr>
+	<!-- END type:touch#select -->
+	<!-- BEGIN type:touch#radio -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<!-- \BEGIN unit.{i}.option:loop -->
+			<!-- \BEGIN value:veil -->
+			<label<!-- BEGIN\\ acmscss:veil --> class="acms-admin-form-radio"<!-- END\\ acmscss:veil -->><input type="radio" name="{name}{id}" value="\{value\}"{{name}:checked#\{value\}} /><!-- BEGIN\\ acmscss:veil --><i class="acms-admin-ico-radio"></i><!-- END\\ acmscss:veil -->\{label\}</label>
+			<!-- \END value:veil -->
+			<!-- \END unit.{i}.option:loop -->
+			<input type="hidden" name="unit{id}[]" value="{name}{id}" />
+			<!-- #include id="validatorTmp" -->
+		</td>
+	</tr>
+	<!-- END type:touch#radio -->
+	<!-- BEGIN type:touch#image -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<!-- BEGIN\ {name}@path:veil -->
+			<img src="%\{ARCHIVES_DIR\}{{name}@{path}}" />
+			<input type="hidden" name="{name}{id}@old" value="{{name}@path}" /><br />
+			<label<!-- BEGIN\ acmscss:veil --> class="acms-admin-form-checkbox"<!-- END\ acmscss:veil -->>
+				<input type="checkbox" name="{name}{id}@edit" value="delete" />
+				<!-- BEGIN\ acmscss:veil --><i class="acms-admin-ico-checkbox"></i><!-- END\ acmscss:veil --> 削除
+			</label>
+			<!-- END\ {name}@path:veil -->
+			<input type="file" name="{name}{id}" size="20" /><br />
+			<!-- BEGIN alt:veil -->
+			代替テキスト:<input type="text" name="{name}{id}@alt" value="{{name}@alt}" size="40" />
+			<!-- END alt:veil -->
+			<input type="hidden" name="unit{id}[]" value="{name}{id}" />
+			<input type="hidden" name="{name}{id}:extension" value="image" />
+			<input type="hidden" name="{name}{id}@{normal}" value="{normalSize}" />
+			<!-- BEGIN tiny:veil -->
+			<input type="hidden" name="{name}{id}@{tiny}" value="{tinySize}" />
+			<!-- END tiny:veil -->
+
+			<!-- BEGIN large:veil -->
+			<input type="hidden" name="{name}{id}@{large}" value="{largeSize}" />
+			<!-- END large:veil -->
+
+			<!-- BEGIN square:veil -->
+			<input type="hidden" name="{name}{id}@{square}" value="{squareSize}" />
+			<!-- END square:veil -->
+
+			<input type="hidden" name="{name}{id}@filename" value="" />
+			<!-- #include id="validatorTmp" -->
+		</td>
+	</tr>
+	<!-- END type:touch#image -->
+	<!-- BEGIN type:touch#file -->
+	<tr>
+		<th>{title}</th>
+		<td>
+			<!-- BEGIN\ {name}@path:veil -->
+			<input type="hidden" name="{name}{id}@old" value="{{name}@path}" />
+			<input type="hidden" name="{name}{id}@secret" value="{{name}@secret}" />
+			<input type="hidden" name="{name}{id}@fileSize" value="{{name}@fileSize}" />
+			<label for="input-checkbox-{name}@edit"<!-- BEGIN\ acmscss:veil --> class="acms-admin-form-checkbox"<!-- END\ acmscss:veil -->>
+				<input type="checkbox" name="{name}{id}@edit" value="delete" id="input-checkbox-{name}@edit" />
+				<!-- BEGIN\ acmscss:veil --><i class="acms-admin-ico-checkbox"></i><!-- END\ acmscss:veil --> 削除
+			</label>
+			<a href="%\{ARCHIVES_DIR\}{{name}@path}"><img src="/images/fileicon/<!-- BEGIN extension:veil -->{extension}<!-- END extension:veil --><!-- BEGIN extension:empty -->file<!-- END extension:empty -->.gif" width="64" height="64"<!-- BEGIN extension:veil --> alt="{extension}"<!-- END extension:veil --><!-- BEGIN extension:empty --> alt="file"<!-- END extension:empty --> /></a>
+			<!-- END\ {name}@path:veil -->
+			<input type="file" name="{name}{id}" size="20" />
+			<input type="hidden" name="unit{id}[]" value="{name}{id}" />
+			<input type="hidden" name="{name}{id}@baseName" value="{{name}@baseName}" />
+			<input type="hidden" name="{name}{id}:extension" value="file" />
+			<!-- BEGIN extension:veil -->
+			<input type="hidden" name="{name}{id}@extension" value="{extension}" />
+			<!-- END extension:veil -->
+			<!-- BEGIN fileName:veil -->
+			<input type="hidden" name="{name}{id}@filename" value="{fileName}" />
+			<!-- END fileName:veil -->
+		</td>
+	</tr>
+	<!-- END type:touch#file -->
+	<!-- END unit:loop -->
+</table>
+<!-- END mode:touch#unit -->
 </script>

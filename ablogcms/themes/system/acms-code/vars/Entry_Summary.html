@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/vars.css" />
-<!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lte IE 9]><script src="/js/html5shiv.min.js"></script><![endif]-->
 </head>
 <body>
 	<h1>Entry_Summary</h1>
@@ -47,6 +47,8 @@
 			<var>cid<span>カテゴリーID</span></var>
 			<var>uid<span>ユーザーID</span></var>
 			<var>bid<span>ブログID</span></var>
+			<var>entry:loop.class (v2.5.1 later)<span>コンフィグで設定したクラス名</span></var>
+			
 			<fieldset><legend>new<span>新規エントリーブロック</span></legend></fieldset>
 			
 			<fieldset class="veil"><legend class="veil">categoryField:veil</legend>
@@ -88,7 +90,11 @@
 				<var>left<span>leftからの相対位置(中央寄せ)</span></var>
 				<var>top<span>topからの相対位置(中央寄せ)</span></var>
 			</fieldset>
-			<fieldset><legend>noimage<span>画像なし</span></legend></fieldset>
+			<fieldset>
+				<legend>noimage<span>画像なし</span></legend>
+				<var>noImgX<span>横サイズ</span></var>
+				<var>noImgY<span>縦サイズ</span></var>
+			</fieldset>
 			<var>tinyPath<span>小さい画像パス</span></var>
 			<var>tinyX<span>小さい画像横サイズ</span></var>
 			<var>tinyY<span>小さい画像縦サイズ</span></var>

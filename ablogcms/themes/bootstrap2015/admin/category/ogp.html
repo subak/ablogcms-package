@@ -1,0 +1,23 @@
+<h3 class="acms-admin-admin-title2">メタ情報の設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+	<tr>
+		<th>画像</th>
+		<td>
+			<!-- BEGIN category_ogpImage@path:veil -->
+			<img src="%{ARCHIVES_DIR}{category_ogpImage@path}" width="400"><br>
+			<input type="hidden" name="category_ogpImage@old" value="{category_ogpImage@path}">
+			<label>
+				<input type="checkbox" name="category_ogpImage@edit" value="delete">削除
+			</label>
+			<!-- END category_ogpImage@path:veil -->
+			<input type="file" name="category_ogpImage" size="20">
+			<input type="hidden" name="field[]" value="category_ogpImage">
+			<input type="hidden" name="category_ogpImage:extension" value="image">
+			<input type="hidden" name="category_ogpImage@size" value="640">
+			<input type="hidden" name="category_ogpImage@tinyWidth" value="280">
+			<input type="hidden" name="category_ogpImage@largeWidth" value="1280">
+			<input type="hidden" name="category_ogpImage@squareWidth" value="200">
+			<input type="hidden" name="category_ogpImage@filename" value="">
+		</td>
+	</tr>
+</table>

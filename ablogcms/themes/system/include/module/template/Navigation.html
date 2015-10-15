@@ -1,13 +1,45 @@
+<!-- BEGIN layout#display -->
 <!-- BEGIN_MODULE Navigation -->
-<div class="acms-admin-navbar acms-admin-margin-bottom-medium clearfix">
-<!-- BEGIN navigation:loop -->
-	<!-- BEGIN ul#front --><ul><!-- END ul#front -->
-		<!-- BEGIN li#front --><li {attr} class="c_{level}" ><!-- END li#front -->
-			<!-- BEGIN link#front --><a href="{url}" target="{target}"><!-- END link#front -->
-			<!-- BEGIN label:veil -->{label}[raw]<!-- BEGIN label:veil -->
-			<!-- BEGIN link#rear --></a><!-- END link#rear -->
-		<!-- BEGIN li#rear --></li><!-- END li#rear -->
-	<!-- BEGIN ul#rear --></ul><!-- END ul#rear -->
-<!-- END navigation:loop -->
+<div>
+	<!--#include file="/admin/module/setting.html"-->
+	<div class="acms-admin-navbar acms-admin-margin-bottom-medium clearfix">
+	<!-- BEGIN navigation:loop -->
+		<!-- BEGIN ul#front --><ul><!-- END ul#front -->
+			<!-- BEGIN li#front --><li {attr} class="c_{level}" ><!-- END li#front -->
+				<!-- BEGIN link#front --><a href="{url}" target="{target}"><!-- END link#front -->
+				<!-- BEGIN label:veil -->{label}[raw]<!-- BEGIN label:veil -->
+				<!-- BEGIN link#rear --></a><!-- END link#rear -->
+			<!-- BEGIN li#rear --></li><!-- END li#rear -->
+		<!-- BEGIN ul#rear --></ul><!-- END ul#rear -->
+	<!-- END navigation:loop -->
+	</div>
 </div>
 <!-- END_MODULE Navigation -->
+<!-- END layout#display -->
+
+<!-- BEGIN layout#dummy -->
+<div class="acms-admin-navbar acms-admin-margin-bottom-medium clearfix">
+	<ul>
+		<li class="c_1">
+			<a href="#navigation" target="_self">
+			ナビゲーション
+			</a>
+		</li>
+		<li class="c_1">
+			<a href="#navigation" target="_self">
+			ナビゲーション
+			</a>
+		</li>
+		<li class="c_1">
+			<a href="#navigation" target="_self">
+			ナビゲーション
+			</a>
+		</li>
+		<li class="c_1">
+			<a href="#navigation" target="_self">
+			ナビゲーション
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- END layout#dummy -->

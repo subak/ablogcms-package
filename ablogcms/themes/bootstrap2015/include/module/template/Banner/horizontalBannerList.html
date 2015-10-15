@@ -9,10 +9,10 @@
 	<ul class="listInlineBanner clearfix">
 		<!-- BEGIN banner:loop -->
 		<!-- BEGIN banner#src -->
-		<li class="acms-col-md-4 text-center">{src}[raw]</li>
+		<li class="{banner:loop.class} text-center">{src}[raw]</li>
 		<!-- END banner#src -->
 		<!-- BEGIN banner#img -->
-		<li class="acms-col-md-4 text-center"><a href="{url}" target="{target}"><img src="%{ARCHIVES_DIR}{img}" alt="{alt}" class="img-responsive" /></a></li>
+		<li class="{banner:loop.class} text-center"><a href="{url}" target="{target}"><img src="%{ARCHIVES_DIR}{img}" alt="{alt}" class="img-responsive" /></a></li>
 		<!-- END banner#img -->
 		<!-- END banner:loop -->
 	</ul>

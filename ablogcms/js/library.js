@@ -14,8 +14,8 @@ ACMS.Library.scrollTo   = function ( x, y, m, k, offset, callback )
             return;
         }
 
-        var left = document.body.scrollLeft || document.documentElement.scrollLeft;
-        var top  = document.body.scrollTop  || document.documentElement.scrollTop;
+        var left = Math.floor(document.body.scrollLeft || document.documentElement.scrollLeft);
+        var top  = Math.floor(document.body.scrollTop  || document.documentElement.scrollTop);
 
         var h = Math.floor((-1 * (left - x) * k));
         var v = Math.floor((-1 * (top  - y) * k));
@@ -25,8 +25,12 @@ ACMS.Library.scrollTo   = function ( x, y, m, k, offset, callback )
         // Android2.x〜3.xの標準ブラウザで、document.body.scrollXxxの更新が遅い
         // scrollBy直後に参照すると、更新されていないため条件を正しく評価できない
         lazyEvaluator = function () {
-            return ((h == 0) || ((left + h) != (document.body.scrollLeft || document.documentElement.scrollLeft)))
-                && ((v == 0) || ((top + v)  != (document.body.scrollTop  || document.documentElement.scrollTop)));
+            var scrollTop, scrollLeft;
+            scrollTop   = document.body.scrollTop  || document.documentElement.scrollTop;
+            scrollLeft  = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+            return ( (h === 0) || Math.abs((left + h) - scrollLeft) > 1 )
+                && ( (v === 0) || Math.abs((top + v)  - scrollTop) > 1 );
         };
 
         setTimeout(arguments.callee, m);
@@ -336,3 +340,24 @@ ACMS.Library.toggleNotify = function ( name, options )
         });
     }
 };
+
+if (!Array.prototype.some) {
+    Array.prototype.some = function(fun /*, thisp */) {
+        "use strict";
+        if (this == null) throw new TypeError();
+
+        var t = Object(this),
+        len = t.length >>> 0;
+
+        if (typeof fun != "function") throw new TypeError();
+
+        var thisp = arguments[1];
+
+        for (var i = 0; i < len; i++) {
+          if (i in t && fun.call(thisp, t[i], i, t))
+            return true;
+        }
+
+        return false;
+    };
+}

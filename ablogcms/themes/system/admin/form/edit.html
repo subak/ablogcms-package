@@ -57,6 +57,16 @@
 				<p style="color:red;">フォーム名が入力されていません</p><!-- END name:validator#required -->
 			</td>
 		</tr>
+		<tr>
+			<th>グローバル<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックをすると、このフォームIDが下の階層のブログでも使用できます。"></i></th>
+			<td>
+				<input type="hidden" name="scope" value="local" />
+				<label for="input-checkbox-scope" class="acms-admin-form-checkbox">
+					<input type="checkbox" name="scope" value="global"{scope:checked#global} id="input-checkbox-scope" /><i class="acms-admin-ico-checkbox"></i>下の階層のブログが利用することを許可する
+				</label>
+				<input type="hidden" name="form[]" value="scope" />
+			</td>
+		</tr>
 	</table>
 	<!-- BEGIN mail -->
 	<h3 class="acms-admin-admin-title2">一般メール設定</h3>

@@ -1,0 +1,364 @@
+/* ----------------
+エントリーの部分
+------------------ */
+.blogEntry{
+	&WithBorder{
+		padding-bottom: 20px;
+		border-bottom: 1px solid #979797;
+		margin-bottom: 40px;
+	}
+	&Date{
+		font-family: Verdana;
+		font-size: 16px;
+		color: #888888;
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
+	&Header{
+		a:hover{
+			text-decoration: underline;
+		}
+	}
+	&Title{
+		font-size: 24px;
+		color: #333333;
+		margin: 0 0 15px 0;
+		line-height: 1.4em;
+		.linkColor(#333333);
+		.textDecoration();
+	}
+	&TagList,
+	&CategoryList{
+		padding: 0;
+		margin: 0;
+		font-size: 14px;
+		display: inline;
+		.linkColor(#2262AC);
+		.textDecoration();
+		&Arrow{
+			display: inline-block;
+			margin-left: 10px;
+		}
+		&Wrap{
+			max-width: 50%;
+			padding: 0 20px 0 0;
+			margin: 0 0 10px 0;
+			float: left;
+		}
+		&Icon{
+			font-size: 18px;
+			color: #999999;
+			display: inline;
+			&:before{
+				vertical-align: middle;
+			}
+		}
+		@media screen and (max-width:767px){
+			&Wrap{
+				max-width: 100%;
+				float: none;
+			}
+		}
+		li{
+			padding-right: 5px;
+			list-style-type: none;
+			display: inline-block;
+			&:first-child{
+				padding-left: 5px;
+			}
+		}
+	}
+	&SocialBtn{
+		float: left;
+		display: block;
+		line-height: 1px;
+		margin-bottom: 10px;
+		margin-top: 5px;
+		&Facebook{
+			margin-right: 15px;
+			span{
+				vertical-align: top !important;
+			}
+		}
+		&Twitter{
+			margin-right:15px;
+		}
+		&Gplus{
+
+		}
+	}
+	&ContinueLinkWrapper{
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+	&ContinueLink{
+		border-radius: 5px;
+		font-size: 14px;
+		line-height: 1.5;
+		display: block;
+		padding: 10px;
+		float: right;
+		max-width: 400px;
+		text-decoration: none;
+		.btnRollover();
+		&:link,
+		&:hover,
+		&:visited{
+			text-decoration: none;
+			color: #FFFFFF;
+		}
+	}
+	&Content{
+		line-height: 2em;
+		p{
+			margin-bottom: 30px;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+		h2{
+			font-size: 24px;
+			color: #333333;
+			margin-bottom: 25px;
+		}
+		h3 {
+			font-size: 20px;
+			color: #333333;
+			margin-bottom: 15px;
+		}
+		h4,
+		h5 {
+			font-size: 18px;
+			color: #333333;
+			margin-bottom: 15px;
+		}
+		ul{
+			padding: 0 10px;
+			margin: 0 0 30px 0;
+
+			li{
+				position: relative;
+				font-size: 16px;
+				color: #333333;
+				list-style-type: none;
+				padding-left: 35px;
+				&:before{
+					position: absolute;
+					top: 14px;
+					left: 20px;
+					content:"";
+					display: inline-block;
+					background: #CACACA;
+					width: 6px;
+					height: 6px;
+					border-radius: 3px;
+					margin-right: 8px;
+				}
+			}
+		}
+		ol{
+			padding-left: 45px;
+		}
+		dt{
+			margin-bottom: 15px;
+		}
+		dd{
+			padding-left: 15px;
+			margin-bottom: 15px;
+		}
+		&Table,
+		table{
+			font-size: 16px;
+			color: #333333;
+			width: 100%;
+			margin-bottom: 20px;
+			th{
+				padding: 10px;
+				background: #EEEEEE;
+				border: 1px solid #999999;
+				text-align: left;
+			}
+			td{
+				padding: 10px;
+				border: 1px solid #999999;
+				text-align: left;
+			}
+		}
+		blockquote{
+			border: 1px solid #999999;
+			border-left: 7px solid #999999;
+			padding: 20px 10px;
+		}
+		.caption{
+			margin: 0 0 10px 0;
+			text-align: center;
+			font-size: 14px;
+			line-height: 1;
+			color: #666666;
+		}
+		.prettyprint{
+			margin: 0 0 20px 0;
+			ol{
+				padding-left: 30px;
+				margin: 0;
+				line-height: 2em;
+			}
+			li{
+				line-height: 1.5;
+				word-break: break-all;
+			}
+		}
+		.entry-container{
+			clear: both;
+		}
+		@media screen and (max-width:767px){
+			.entry-container{
+				-ms-overflow-x: auto;
+					overflow-x: auto;
+			}
+			&Table,
+			table{
+				th,
+				td{
+					white-space: nowrap;
+				}
+			}
+			&TableWrapper{
+				-ms-overflow-x: auto;
+					overflow-x: auto;
+			}
+		}
+	}
+	&SocialBox{
+		background: #FAFAFA;
+		padding: 20px 0 10px 0;
+		margin-bottom: 20px;
+		&List{
+			padding: 0;
+			margin: 0 auto;
+			display: table;
+			li{
+				display: block;
+				float: left;
+				list-style-type: none;
+				margin-right: 15px;
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+		}
+		.fb-like{
+			vertical-align: top;
+		}
+	}
+	&FooterText{
+		font-size: 13px;
+		color: #777777;
+		margin: 0 0 25px 0;
+		a:hover{
+			text-decoration: underline;
+		}
+	}
+	&SeoHeading{
+		display: block;
+		width: 100%;
+		padding: 7px 0;
+		text-align: center;
+		background: #E3E3E3;
+		outline: 0;
+		margin: 0 !important;
+		font-size: 16px !important;
+		a,
+		:link,
+		:visited{
+			text-decoration: none;
+			color: rgb(0, 0, 238);
+			display: block;
+		}
+		&:hover{
+			background: #D0D0D0;
+		}
+	}
+}
+/* ----------------
+ページャー/シリアルナビ
+------------------ */
+.blogSerialNav{
+	position: relative;
+	height: 35px;
+	margin-bottom: 30px;
+	font-size: 14px;
+	ul{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		list-style-type: none;
+		display: block;
+	}
+	a,
+	a:link,
+	a:hover,
+	a:visited{
+		display: block;
+		width: 100%;
+		color: #FFFFFF;
+		text-decoration: none;
+		overflow: hidden;
+		white-space: nowrap;
+		-ms-text-overflow: ellipsis;
+			text-overflow: ellipsis;
+		.btnRollover();
+		border-radius: 5px;
+	}
+	&Prev{
+		max-width: 230px;
+		float: left;
+		a{
+			padding: 5px 10px;
+		}
+	}
+	&Index{
+		width: 60px;
+		top: 0;
+		left: 50%;
+		margin-left: -30px;
+		position: absolute;
+		text-align: center;
+		a{
+			padding: 5px 0;
+		}
+	}
+	&Next{
+		max-width: 230px;
+		text-align: right;
+		float: right;
+		a{
+			padding: 5px 10px;
+		}
+	}
+	@media screen and (max-width:767px){
+		height: auto;
+		ul{
+			margin: 0 -10px;
+		}
+		li{
+			position: static;
+			padding: 5px 10px;
+		}
+		&Prev{
+			float: left;
+			width: 50%;
+		}
+		&Next{
+			float: right;
+			width: 50%;
+		}
+		&Index{
+			width: 100%;
+			clear: both;
+			margin: 10px 0 0 0;
+			max-width: 100%;
+		}
+	}
+}

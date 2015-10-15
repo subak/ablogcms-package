@@ -20,7 +20,7 @@
 		<select name="limit" id="filter-limit"><!-- BEGIN limit:loop -->
 			<option value="{limit}"{selected}>{limit}</option><!-- END limit:loop -->
 		</select>
-		
+
 		<input type="hidden" name="bid" value="%{BID}" />
 		<input type="submit" name="ACMS_POST_2GET" value="表示" class="acms-admin-btn-admin acms-admin-btn-admin-info acms-admin-width-sp" />
 		<input type="hidden" name="admin" value="approval_index" />
@@ -34,9 +34,9 @@
 		<thead>
 			<tr>
 				<th class="acms-admin-show-sp">日時</th>
-				<th class="acms-admin-hide-sp">タイプ</th>
-				<th class="acms-admin-hide-sp">EID / タイトル / RVID / バージョン名</th>
-				<th class="acms-admin-hide-sp">操作ユーザー</th>
+				<th class="acms-admin-hide-sp acms-admin-text-nowrap">タイプ</th>
+				<th class="acms-admin-hide-sp acms-admin-text-nowrap">EID / タイトル / <br>RVID / バージョン名</th>
+				<th class="acms-admin-hide-sp acms-admin-text-nowrap">操作ユーザー</th>
 				<th class="acms-admin-show-sp">コメント</th>
 			</tr>
 		</thead>
@@ -51,15 +51,17 @@
 				<td>
 					<small>
 						<!-- BEGIN type#reject -->
-						<span class="acms-admin-label acms-admin-label-warning admin-status-label">承認却下</span><!-- END type#reject --><!-- BEGIN type#public -->
-						<span class="acms-admin-label acms-admin-label-info admin-status-label">最終承認</span><!-- END type#public --><!-- BEGIN type#request -->
-						<span class="acms-admin-label admin-status-label">承認依頼</span><!-- END type#request --><!-- BEGIN type#trash -->
-						<span class="acms-admin-label acms-admin-label-danger admin-status-label">削除依頼</span><!-- END type#trash -->
+						<span class="acms-admin-label acms-admin-label-warning admin-status-label acms-admin-text-nowrap">承認却下</span><!-- END type#reject --><!-- BEGIN type#public -->
+						<span class="acms-admin-label acms-admin-label-info admin-status-label acms-admin-text-nowrap">最終承認</span><!-- END type#public --><!-- BEGIN type#request -->
+						<span class="acms-admin-label admin-status-label acms-admin-text-nowrap">承認依頼</span><!-- END type#request --><!-- BEGIN type#trash -->
+						<span class="acms-admin-label acms-admin-label-danger admin-status-label acms-admin-text-nowrap">削除依頼</span><!-- END type#trash -->
 					</small>
 				</td>
 				<td><!-- BEGIN_IF [{entryTitle}/nem/] -->
+					<div class="acms-admin-margin-bottom-mini">
 					<span class="acms-admin-label label-default">{eid}</span>
-					<a href="{entryUrl}">{entryTitle}</a><!-- END_IF -->
+						<a href="{entryUrl}">{entryTitle}</a>
+					</div><!-- END_IF -->
 
 					<!-- BEGIN_IF [{title}/nem/] -->
 					<span class="acms-admin-label label-default">{rvid}</span>

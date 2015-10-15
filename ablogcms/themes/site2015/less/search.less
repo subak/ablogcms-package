@@ -1,0 +1,29 @@
+/* ------------------------------
+　　検索フォーム
+------------------------------ */
+.searchForm {
+	.btnSearch{
+		padding: 10px 20px;
+		.font-size(16);
+		filter: none; /* IEでのグラデーションを上書き */
+		background: #333;
+		color: #FFF;
+		border-radius: 0 4px 4px 0;
+		border: 1px solid #333;
+		&:hover {
+			background: #666;
+		}
+	}
+	input[type="search"] {
+		padding: 9px 10px;
+		height: 40px;
+		.font-size(16);
+		.box-sizing(border-box);
+	}
+}
+input[type="search"].searchFormInput {
+	padding-top: 5px;
+	padding-bottom: 4px;
+	.font-size(20);
+	.box-sizing(border-box);
+}

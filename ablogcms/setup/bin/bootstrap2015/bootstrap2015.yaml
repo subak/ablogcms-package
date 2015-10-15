@@ -26,7 +26,7 @@ category: ''
     category_blog_id: 1
 column: ''
   - 
-    column_id: 3
+    column_id: 1
     column_sort: 1
     column_align: 'center'
     column_type: 'image'
@@ -44,7 +44,7 @@ column: ''
     column_entry_id: 1
     column_blog_id: 1
   - 
-    column_id: 4
+    column_id: 2
     column_sort: 2
     column_align: 'auto'
     column_type: 'text'
@@ -64,7 +64,7 @@ column: ''
     column_entry_id: 1
     column_blog_id: 1
   - 
-    column_id: 5
+    column_id: 3
     column_sort: 1
     column_align: 'center'
     column_type: 'image'
@@ -82,7 +82,7 @@ column: ''
     column_entry_id: 2
     column_blog_id: 1
   - 
-    column_id: 6
+    column_id: 4
     column_sort: 1
     column_align: 'center'
     column_type: 'image'
@@ -100,7 +100,7 @@ column: ''
     column_entry_id: 3
     column_blog_id: 1
   - 
-    column_id: 7
+    column_id: 5
     column_sort: 1
     column_align: 'center'
     column_type: 'image'
@@ -118,7 +118,7 @@ column: ''
     column_entry_id: 4
     column_blog_id: 1
   - 
-    column_id: 8
+    column_id: 6
     column_sort: 1
     column_align: 'center'
     column_type: 'image'
@@ -136,7 +136,7 @@ column: ''
     column_entry_id: 5
     column_blog_id: 1
   - 
-    column_id: 10
+    column_id: 7
     column_sort: 1
     column_align: 'center'
     column_type: 'image'
@@ -154,7 +154,7 @@ column: ''
     column_entry_id: 6
     column_blog_id: 1
   - 
-    column_id: 12
+    column_id: 8
     column_sort: 9
     column_align: 'auto'
     column_type: 'text'
@@ -174,7 +174,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 11
+    column_id: 9
     column_sort: 10
     column_align: 'auto'
     column_type: 'text'
@@ -194,7 +194,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 21
+    column_id: 10
     column_sort: 11
     column_align: 'auto'
     column_type: 'text'
@@ -214,7 +214,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 9
+    column_id: 11
     column_sort: 22
     column_align: 'auto'
     column_type: 'text'
@@ -237,7 +237,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 2
+    column_id: 12
     column_sort: 21
     column_align: 'auto'
     column_type: 'text'
@@ -257,7 +257,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 22
+    column_id: 13
     column_sort: 2
     column_align: 'auto'
     column_type: 'text'
@@ -277,7 +277,7 @@ column: ''
     column_entry_id: 8
     column_blog_id: 1
   - 
-    column_id: 24
+    column_id: 14
     column_sort: 2
     column_align: 'auto'
     column_type: 'text'
@@ -297,7 +297,7 @@ column: ''
     column_entry_id: 9
     column_blog_id: 1
   - 
-    column_id: 25
+    column_id: 15
     column_sort: 1
     column_align: 'center'
     column_type: 'image'
@@ -315,7 +315,7 @@ column: ''
     column_entry_id: 8
     column_blog_id: 1
   - 
-    column_id: 26
+    column_id: 16
     column_sort: 1
     column_align: 'center'
     column_type: 'image'
@@ -333,7 +333,7 @@ column: ''
     column_entry_id: 10
     column_blog_id: 1
   - 
-    column_id: 80
+    column_id: 17
     column_sort: 24
     column_align: 'auto'
     column_type: 'video'
@@ -351,7 +351,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 79
+    column_id: 18
     column_sort: 23
     column_align: 'left'
     column_type: 'video'
@@ -369,7 +369,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 14
+    column_id: 19
     column_sort: 14
     column_align: 'auto'
     column_type: 'text'
@@ -389,7 +389,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 15
+    column_id: 20
     column_sort: 15
     column_align: 'auto'
     column_type: 'text'
@@ -409,7 +409,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 16
+    column_id: 21
     column_sort: 16
     column_align: 'auto'
     column_type: 'text'
@@ -429,7 +429,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 17
+    column_id: 22
     column_sort: 17
     column_align: 'auto'
     column_type: 'text'
@@ -450,7 +450,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 18
+    column_id: 23
     column_sort: 18
     column_align: 'auto'
     column_type: 'text'
@@ -471,7 +471,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 33
+    column_id: 24
     column_sort: 4
     column_align: 'auto'
     column_type: 'image'
@@ -489,7 +489,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 28
+    column_id: 25
     column_sort: 5
     column_align: 'left'
     column_type: 'image'
@@ -507,7 +507,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 29
+    column_id: 26
     column_sort: 6
     column_align: 'left'
     column_type: 'image'
@@ -525,7 +525,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 30
+    column_id: 27
     column_sort: 7
     column_align: 'auto'
     column_type: 'image'
@@ -543,7 +543,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 27
+    column_id: 28
     column_sort: 8
     column_align: 'auto'
     column_type: 'text'
@@ -563,7 +563,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 39
+    column_id: 29
     column_sort: 1
     column_align: 'center'
     column_type: 'image'
@@ -581,7 +581,7 @@ column: ''
     column_entry_id: 11
     column_blog_id: 1
   - 
-    column_id: 23
+    column_id: 30
     column_sort: 1
     column_align: 'center'
     column_type: 'image'
@@ -599,7 +599,7 @@ column: ''
     column_entry_id: 9
     column_blog_id: 1
   - 
-    column_id: 41
+    column_id: 31
     column_sort: 1
     column_align: 'center'
     column_type: 'image'
@@ -617,7 +617,7 @@ column: ''
     column_entry_id: 12
     column_blog_id: 1
   - 
-    column_id: 43
+    column_id: 32
     column_sort: 1
     column_align: 'center'
     column_type: 'image'
@@ -635,7 +635,7 @@ column: ''
     column_entry_id: 13
     column_blog_id: 1
   - 
-    column_id: 44
+    column_id: 33
     column_sort: 2
     column_align: 'auto'
     column_type: 'text'
@@ -655,7 +655,7 @@ column: ''
     column_entry_id: 13
     column_blog_id: 1
   - 
-    column_id: 19
+    column_id: 34
     column_sort: 19
     column_align: 'auto'
     column_type: 'text'
@@ -675,7 +675,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 1
+    column_id: 35
     column_sort: 20
     column_align: 'auto'
     column_type: 'text'
@@ -696,7 +696,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 20
+    column_id: 36
     column_sort: 12
     column_align: 'auto'
     column_type: 'text'
@@ -716,7 +716,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 13
+    column_id: 37
     column_sort: 13
     column_align: 'center'
     column_type: 'text'
@@ -736,7 +736,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 34
+    column_id: 38
     column_sort: 1
     column_align: 'auto'
     column_type: 'text'
@@ -756,7 +756,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 31
+    column_id: 39
     column_sort: 2
     column_align: 'center'
     column_type: 'image'
@@ -774,7 +774,7 @@ column: ''
     column_entry_id: 7
     column_blog_id: 1
   - 
-    column_id: 32
+    column_id: 40
     column_sort: 3
     column_align: 'left'
     column_type: 'image'
@@ -825,21 +825,21 @@ config: ''
     config_value: 'off'
     config_sort: 4
     config_rule_id: ''
-    config_module_id: 8
+    config_module_id: 6
     config_blog_id: 1
   - 
     config_key: 'category_list_level'
     config_value: ''
     config_sort: 4
     config_rule_id: ''
-    config_module_id: 9
+    config_module_id: 7
     config_blog_id: 1
   - 
     config_key: 'banner_order'
     config_value: 'sort-asc'
     config_sort: 1
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'file_extension_movie'
@@ -849,39 +849,39 @@ config: ''
     config_module_id: ''
     config_blog_id: 1
   - 
-    config_key: 'entry_photo_image_x'
-    config_value: 160
-    config_sort: 9
+    config_key: 'entry_photo_indexing'
+    config_value: 'on'
+    config_sort: 4
     config_rule_id: ''
-    config_module_id: 5
+    config_module_id: 3
     config_blog_id: 1
   - 
     config_key: 'banner-ccc7df9a5559cf63d57d8ae2108f34a1@tinyY'
     config_value: ''
     config_sort: 28
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'entry_list_offset'
     config_value: 0
     config_sort: 3
     config_rule_id: ''
-    config_module_id: 8
+    config_module_id: 6
     config_blog_id: 1
   - 
     config_key: 'category_list_amount'
     config_value: 'on'
     config_sort: 3
     config_rule_id: ''
-    config_module_id: 9
+    config_module_id: 7
     config_blog_id: 1
   - 
     config_key: 'banner_limit'
     config_value: ''
     config_sort: 2
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'tpl_detail'
@@ -902,21 +902,21 @@ config: ''
     config_value: ''
     config_sort: 31
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'entry_list_limit'
     config_value: 10
     config_sort: 2
     config_rule_id: ''
-    config_module_id: 8
+    config_module_id: 6
     config_blog_id: 1
   - 
     config_key: 'banner-0af7053d2a67c74c15895957af418dd3@fileSize'
     config_value: 11376
     config_sort: 3
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'file_extension_movie'
@@ -933,39 +933,39 @@ config: ''
     config_module_id: 2
     config_blog_id: 1
   - 
-    config_key: 'entry_photo_hidden_current_entry'
+    config_key: 'entry_photo_secret'
     config_value: 'off'
-    config_sort: 8
+    config_sort: 5
     config_rule_id: ''
-    config_module_id: 5
+    config_module_id: 3
     config_blog_id: 1
   - 
     config_key: 'banner_timestart'
     config_value: '00:00:00'
     config_sort: 80
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'entry_list_order'
     config_value: 'datetime-desc'
     config_sort: 1
     config_rule_id: ''
-    config_module_id: 8
+    config_module_id: 6
     config_blog_id: 1
   - 
     config_key: 'category_list_amount_zero'
     config_value: 'on'
     config_sort: 2
     config_rule_id: ''
-    config_module_id: 9
+    config_module_id: 7
     config_blog_id: 1
   - 
     config_key: 'banner-0af7053d2a67c74c15895957af418dd3@largePath'
     config_value: ''
     config_sort: 4
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'tpl_404'
@@ -986,7 +986,7 @@ config: ''
     config_value: ''
     config_sort: 5
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'tpl_admin'
@@ -1003,32 +1003,32 @@ config: ''
     config_module_id: ''
     config_blog_id: 1
   - 
-    config_key: 'mo_entry_photo_notfound'
-    config_value: 'off'
-    config_sort: 7
+    config_key: 'entry_photo_unit'
+    config_value: 1
+    config_sort: 6
     config_rule_id: ''
-    config_module_id: 5
+    config_module_id: 3
     config_blog_id: 1
   - 
     config_key: 'banner-e89ce2e546654bd51a1e085fa6a62acc@tinyX'
     config_value: ''
     config_sort: 61
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'category_list_order'
     config_value: 'amount-desc'
     config_sort: 1
     config_rule_id: ''
-    config_module_id: 9
+    config_module_id: 7
     config_blog_id: 1
   - 
     config_key: 'banner-0af7053d2a67c74c15895957af418dd3@largeY'
     config_value: ''
     config_sort: 6
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'file_extension_movie'
@@ -1045,25 +1045,25 @@ config: ''
     config_module_id: 2
     config_blog_id: 1
   - 
-    config_key: 'entry_photo_unit'
-    config_value: 1
-    config_sort: 6
+    config_key: 'entry_photo_loop_class'
+    config_value: 'col-xs-6 col-md-3'
+    config_sort: 7
     config_rule_id: ''
-    config_module_id: 5
+    config_module_id: 3
     config_blog_id: 1
   - 
     config_key: 'banner_img'
     config_value: '001/201504/fc1b782cfc1f45ab6636a80b223e828c.jpg'
     config_sort: 73
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-0af7053d2a67c74c15895957af418dd3@largeAlt'
     config_value: ''
     config_sort: 7
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'tpl_entry_edit'
@@ -1080,25 +1080,18 @@ config: ''
     config_module_id: ''
     config_blog_id: 1
   - 
-    config_key: 'entry_photo_secret'
-    config_value: 'off'
-    config_sort: 5
-    config_rule_id: ''
-    config_module_id: 5
-    config_blog_id: 1
-  - 
     config_key: 'banner-ccc7df9a5559cf63d57d8ae2108f34a1@largeY'
     config_value: ''
     config_sort: 23
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-0af7053d2a67c74c15895957af418dd3@largeFileSize'
     config_value: ''
     config_sort: 8
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'tpl_entry_add'
@@ -1122,11 +1115,11 @@ config: ''
     config_module_id: 2
     config_blog_id: 1
   - 
-    config_key: 'entry_photo_indexing'
-    config_value: 'on'
-    config_sort: 4
+    config_key: 'mo_entry_photo_notfound'
+    config_value: 'off'
+    config_sort: 8
     config_rule_id: ''
-    config_module_id: 5
+    config_module_id: 3
     config_blog_id: 1
   - 
     config_key: 'entry_body_user_info_on'
@@ -1140,7 +1133,7 @@ config: ''
     config_value: ''
     config_sort: 9
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'tpl_login'
@@ -1157,25 +1150,18 @@ config: ''
     config_module_id: 2
     config_blog_id: 1
   - 
-    config_key: 'entry_photo_offset'
-    config_value: 0
-    config_sort: 3
-    config_rule_id: ''
-    config_module_id: 5
-    config_blog_id: 1
-  - 
     config_key: 'banner-ccc7df9a5559cf63d57d8ae2108f34a1@tinyAlt'
     config_value: ''
     config_sort: 29
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-0af7053d2a67c74c15895957af418dd3@tinyX'
     config_value: ''
     config_sort: 10
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'file_extension_movie'
@@ -1185,25 +1171,25 @@ config: ''
     config_module_id: ''
     config_blog_id: 1
   - 
-    config_key: 'entry_photo_limit'
-    config_value: 8
-    config_sort: 2
+    config_key: 'entry_photo_hidden_current_entry'
+    config_value: 'off'
+    config_sort: 9
     config_rule_id: ''
-    config_module_id: 5
+    config_module_id: 3
     config_blog_id: 1
   - 
     config_key: 'banner-e89ce2e546654bd51a1e085fa6a62acc@squareY'
     config_value: ''
     config_sort: 67
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-0af7053d2a67c74c15895957af418dd3@tinyY'
     config_value: ''
     config_sort: 11
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'file_extension_movie'
@@ -1224,7 +1210,7 @@ config: ''
     config_value: ''
     config_sort: 12
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'file_extension_movie'
@@ -1234,18 +1220,11 @@ config: ''
     config_module_id: ''
     config_blog_id: 1
   - 
-    config_key: 'entry_photo_order'
-    config_value: 'datetime-desc'
-    config_sort: 1
-    config_rule_id: ''
-    config_module_id: 5
-    config_blog_id: 1
-  - 
     config_key: 'banner-0af7053d2a67c74c15895957af418dd3@tinyFileSize'
     config_value: ''
     config_sort: 13
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'file_extension_movie'
@@ -1266,14 +1245,14 @@ config: ''
     config_value: ''
     config_sort: 13
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-0af7053d2a67c74c15895957af418dd3@squarePath'
     config_value: ''
     config_sort: 14
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'file_extension_movie'
@@ -1294,7 +1273,7 @@ config: ''
     config_value: ''
     config_sort: 15
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'entry_summary_fulltext'
@@ -1308,7 +1287,7 @@ config: ''
     config_value: ''
     config_sort: 16
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_media_size'
@@ -1329,7 +1308,7 @@ config: ''
     config_value: ''
     config_sort: 17
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'file_extension_movie'
@@ -1343,14 +1322,14 @@ config: ''
     config_value: ''
     config_sort: 63
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-0af7053d2a67c74c15895957af418dd3@squareFileSize'
     config_value: ''
     config_sort: 18
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'file_extension_movie'
@@ -1371,14 +1350,14 @@ config: ''
     config_value: ''
     config_sort: 15
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-0af7053d2a67c74c15895957af418dd3@secret'
     config_value: ''
     config_sort: 19
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: '@column_media_size_group'
@@ -1392,21 +1371,21 @@ config: ''
     config_value: ''
     config_sort: 33
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-ccc7df9a5559cf63d57d8ae2108f34a1@squareX'
     config_value: ''
     config_sort: 32
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-7a50df14addf2dc98ad9a38adf8e6a9c@fileSize'
     config_value: ''
     config_sort: 20
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'mo_entry_summary_notfound'
@@ -1420,7 +1399,7 @@ config: ''
     config_value: ''
     config_sort: 21
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_media_size_label'
@@ -1441,7 +1420,7 @@ config: ''
     config_value: ''
     config_sort: 22
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'entry_summary_secret'
@@ -1455,14 +1434,14 @@ config: ''
     config_value: ''
     config_sort: 52
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-7a50df14addf2dc98ad9a38adf8e6a9c@largeY'
     config_value: ''
     config_sort: 23
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'entry_summary_indexing'
@@ -1476,14 +1455,14 @@ config: ''
     config_value: ''
     config_sort: 72
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-7a50df14addf2dc98ad9a38adf8e6a9c@largeAlt'
     config_value: ''
     config_sort: 24
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_video_display_size'
@@ -1497,7 +1476,7 @@ config: ''
     config_value: ''
     config_sort: 25
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_video_size'
@@ -1518,7 +1497,7 @@ config: ''
     config_value: ''
     config_sort: 26
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'entry_summary_offset'
@@ -1532,14 +1511,14 @@ config: ''
     config_value: ''
     config_sort: 27
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-7a50df14addf2dc98ad9a38adf8e6a9c@tinyX'
     config_value: ''
     config_sort: 27
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_media_size_label'
@@ -1560,14 +1539,14 @@ config: ''
     config_value: ''
     config_sort: 66
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-7a50df14addf2dc98ad9a38adf8e6a9c@tinyY'
     config_value: ''
     config_sort: 28
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_media_size'
@@ -1581,14 +1560,14 @@ config: ''
     config_value: '_blank'
     config_sort: 78
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-7a50df14addf2dc98ad9a38adf8e6a9c@tinyAlt'
     config_value: ''
     config_sort: 29
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'entry_summary_order'
@@ -1602,14 +1581,14 @@ config: ''
     config_value: ''
     config_sort: 22
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-7a50df14addf2dc98ad9a38adf8e6a9c@tinyFileSize'
     config_value: ''
     config_sort: 30
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_media_display_size'
@@ -1630,7 +1609,7 @@ config: ''
     config_value: ''
     config_sort: 31
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_media_size_label'
@@ -1644,35 +1623,35 @@ config: ''
     config_value: ''
     config_sort: 56
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-7a50df14addf2dc98ad9a38adf8e6a9c@squareX'
     config_value: ''
     config_sort: 32
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'banner_datestart'
     config_value: '1000-01-01'
     config_sort: 79
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner_attr1'
     config_value: ''
     config_sort: 76
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-7a50df14addf2dc98ad9a38adf8e6a9c@squareY'
     config_value: ''
     config_sort: 33
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_media_display_size'
@@ -1693,21 +1672,21 @@ config: ''
     config_value: ''
     config_sort: 34
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@secret'
     config_value: ''
     config_sort: 53
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-7a50df14addf2dc98ad9a38adf8e6a9c@squareFileSize'
     config_value: ''
     config_sort: 35
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_map_size_label'
@@ -1721,7 +1700,7 @@ config: ''
     config_value: ''
     config_sort: 36
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_map_size_label'
@@ -1735,21 +1714,21 @@ config: ''
     config_value: 'open'
     config_sort: 37
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'banner-e89ce2e546654bd51a1e085fa6a62acc@largeFileSize'
     config_value: ''
     config_sort: 59
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner_src'
     config_value: ''
     config_sort: 38
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_map_size_label'
@@ -1770,7 +1749,7 @@ config: ''
     config_value: '001/201503/1413fd042cb711df46c4bb4ce416fde9.png'
     config_sort: 39
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: '@column_map_size_group'
@@ -1784,7 +1763,7 @@ config: ''
     config_value: 'http://www.a-blogcms.jp'
     config_sort: 40
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_map_size'
@@ -1798,14 +1777,14 @@ config: ''
     config_value: ''
     config_sort: 64
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner_alt'
     config_value: 'a-blog cms のブランドサイトへ'
     config_sort: 41
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_media_size'
@@ -1819,28 +1798,28 @@ config: ''
     config_value: ''
     config_sort: 16
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner_attr1'
     config_value: ''
     config_sort: 42
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'banner-e89ce2e546654bd51a1e085fa6a62acc@secret'
     config_value: ''
     config_sort: 70
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner_attr2'
     config_value: ''
     config_sort: 43
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: '@column_map_size_group'
@@ -1861,28 +1840,28 @@ config: ''
     config_value: '_blank'
     config_sort: 44
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'banner_datestart'
     config_value: '1000-01-01'
     config_sort: 45
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'banner_attr2'
     config_value: ''
     config_sort: 77
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner_timestart'
     config_value: '00:00:00'
     config_sort: 46
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_map_display_size'
@@ -1896,14 +1875,14 @@ config: ''
     config_value: ''
     config_sort: 17
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner_dateend'
     config_value: '9999-12-31'
     config_sort: 47
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: 'column_map_display_size'
@@ -1924,7 +1903,7 @@ config: ''
     config_value: '23:59:59'
     config_sort: 48
     config_rule_id: ''
-    config_module_id: 10
+    config_module_id: 8
     config_blog_id: 1
   - 
     config_key: '@column_image_size_group'
@@ -1952,21 +1931,21 @@ config: ''
     config_value: ''
     config_sort: 21
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner_dateend'
     config_value: '9999-12-31'
     config_sort: 81
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-ccc7df9a5559cf63d57d8ae2108f34a1@tinyPath'
     config_value: ''
     config_sort: 26
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_map_size'
@@ -1980,7 +1959,7 @@ config: ''
     config_value: ''
     config_sort: 62
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_map_display_size'
@@ -2001,7 +1980,7 @@ config: ''
     config_value: ''
     config_sort: 55
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: '@column_image_size_group'
@@ -2015,14 +1994,14 @@ config: ''
     config_value: ''
     config_sort: 60
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner_alt'
     config_value: 'a-blog cms のサイトへ'
     config_sort: 75
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_map_display_size'
@@ -2036,7 +2015,7 @@ config: ''
     config_value: ''
     config_sort: 25
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_image_size'
@@ -2057,7 +2036,7 @@ config: ''
     config_value: ''
     config_sort: 14
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'entry_body_category_field_on'
@@ -2092,7 +2071,7 @@ config: ''
     config_value: ''
     config_sort: 54
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_image_size_label'
@@ -2106,14 +2085,14 @@ config: ''
     config_value: '23:59:59'
     config_sort: 82
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-ccc7df9a5559cf63d57d8ae2108f34a1@fileSize'
     config_value: ''
     config_sort: 20
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: '@column_image_size_group'
@@ -2155,7 +2134,7 @@ config: ''
     config_value: 'http://www.a-blogcms.jp'
     config_sort: 74
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_image_size_criterion'
@@ -2169,7 +2148,7 @@ config: ''
     config_value: 'open'
     config_sort: 71
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_image_size'
@@ -2183,7 +2162,7 @@ config: ''
     config_value: ''
     config_sort: 65
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_image_display_size'
@@ -2197,7 +2176,7 @@ config: ''
     config_value: ''
     config_sort: 51
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_image_size_criterion'
@@ -2253,7 +2232,7 @@ config: ''
     config_value: ''
     config_sort: 69
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'unit_group_label'
@@ -2274,7 +2253,7 @@ config: ''
     config_value: ''
     config_sort: 58
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_image_size_criterion'
@@ -2295,7 +2274,7 @@ config: ''
     config_value: ''
     config_sort: 30
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'unit_group_label'
@@ -2372,14 +2351,14 @@ config: ''
     config_value: ''
     config_sort: 68
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-e89ce2e546654bd51a1e085fa6a62acc@largeY'
     config_value: ''
     config_sort: 57
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_form_add_type_label'
@@ -2400,7 +2379,7 @@ config: ''
     config_value: ''
     config_sort: 24
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'unit_group_class'
@@ -2421,7 +2400,7 @@ config: ''
     config_value: ''
     config_sort: 19
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_form_add_type'
@@ -2435,7 +2414,7 @@ config: ''
     config_value: ''
     config_sort: 18
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_form_add_type'
@@ -2456,7 +2435,7 @@ config: ''
     config_value: ''
     config_sort: 12
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'column_form_add_type'
@@ -3079,98 +3058,98 @@ config: ''
     config_value: '%{BASE_URL}news/'
     config_sort: 3
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_uri'
     config_value: '%{BASE_URL}gallery/'
     config_sort: 4
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_attr'
     config_value: ''
     config_sort: 5
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_attr'
     config_value: ''
     config_sort: 6
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_a_attr'
     config_value: ''
     config_sort: 7
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_a_attr'
     config_value: ''
     config_sort: 8
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_parent'
     config_value: 0
     config_sort: 9
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_parent'
     config_value: 0
     config_sort: 10
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_target'
     config_value: '_self'
     config_sort: 11
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_target'
     config_value: '_self'
     config_sort: 12
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_label'
     config_value: 'ギャラリー'
     config_sort: 2
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_label'
     config_value: 'お知らせ'
     config_sort: 1
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_publish'
     config_value: 'on'
     config_sort: 13
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'navigation_publish'
     config_value: 'on'
     config_sort: 14
     config_rule_id: ''
-    config_module_id: 7
+    config_module_id: 5
     config_blog_id: 1
   - 
     config_key: 'entry_body_micropage'
@@ -3317,154 +3296,147 @@ config: ''
     config_value: 'entry'
     config_sort: 5
     config_rule_id: ''
-    config_module_id: 9
+    config_module_id: 7
     config_blog_id: 1
   - 
     config_key: 'category_list_field'
     config_value: 'on'
     config_sort: 6
     config_rule_id: ''
-    config_module_id: 9
+    config_module_id: 7
     config_blog_id: 1
   - 
-    config_key: 'entry_photo_image_y'
-    config_value: 160
-    config_sort: 10
+    config_key: 'entry_photo_offset'
+    config_value: 0
+    config_sort: 3
     config_rule_id: ''
-    config_module_id: 5
+    config_module_id: 3
     config_blog_id: 1
   - 
-    config_key: 'entry_photo_image_trim'
-    config_value: 'off'
-    config_sort: 11
+    config_key: 'entry_photo_limit'
+    config_value: 8
+    config_sort: 2
     config_rule_id: ''
-    config_module_id: 5
-    config_blog_id: 1
-  - 
-    config_key: 'entry_photo_image_zoom'
-    config_value: 'off'
-    config_sort: 12
-    config_rule_id: ''
-    config_module_id: 5
+    config_module_id: 3
     config_blog_id: 1
   - 
     config_key: 'banner-ccc7df9a5559cf63d57d8ae2108f34a1@squareAlt'
     config_value: ''
     config_sort: 34
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-ccc7df9a5559cf63d57d8ae2108f34a1@squareFileSize'
     config_value: ''
     config_sort: 35
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-ccc7df9a5559cf63d57d8ae2108f34a1@secret'
     config_value: ''
     config_sort: 36
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@fileSize'
     config_value: ''
     config_sort: 37
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@largePath'
     config_value: ''
     config_sort: 38
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@largeX'
     config_value: ''
     config_sort: 39
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@largeY'
     config_value: ''
     config_sort: 40
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@largeAlt'
     config_value: ''
     config_sort: 41
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@largeFileSize'
     config_value: ''
     config_sort: 42
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@tinyPath'
     config_value: ''
     config_sort: 43
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@tinyX'
     config_value: ''
     config_sort: 44
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@tinyY'
     config_value: ''
     config_sort: 45
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@tinyAlt'
     config_value: ''
     config_sort: 46
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@tinyFileSize'
     config_value: ''
     config_sort: 47
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@squarePath'
     config_value: ''
     config_sort: 48
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@squareX'
     config_value: ''
     config_sort: 49
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-5daec170cce984590ce4cdd1bf0f4599@squareY'
     config_value: ''
     config_sort: 50
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'tpl_top'
@@ -3485,350 +3457,350 @@ config: ''
     config_value: ' class="cur"'
     config_sort: 22
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_micropager_delta'
     config_value: 1
     config_sort: 21
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_micropage'
     config_value: 'off'
     config_sort: 20
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_serial_navi_ignore_category'
     config_value: 'off'
     config_sort: 19
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_serial_navi_on'
     config_value: 'on'
     config_sort: 18
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_pager_cur_attr'
     config_value: ' class="active"'
     config_sort: 17
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_pager_delta'
     config_value: 3
     config_sort: 16
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_pager_on'
     config_value: 'on'
     config_sort: 15
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_notfound_status_404'
     config_value: 'off'
     config_sort: 14
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_comment_on'
     config_value: 'on'
     config_sort: 13
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_detail_date_on'
     config_value: 'on'
     config_sort: 12
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_date_on'
     config_value: 'on'
     config_sort: 11
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_show_all_index'
     config_value: 'off'
     config_sort: 10
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_summary_on'
     config_value: 'on'
     config_sort: 9
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_tag_on'
     config_value: 'on'
     config_sort: 8
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_newtime'
     config_value: 259200
     config_sort: 7
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_indexing'
     config_value: 'on'
     config_sort: 6
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_image_viewer'
     config_value: ' rel="prettyPhoto[]"'
     config_sort: 5
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_offset'
     config_value: 0
     config_sort: 4
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_limit'
     config_value: 1
     config_sort: 3
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_category_order'
     config_value: 'child_order'
     config_sort: 2
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_order'
     config_value: 'datetime-desc'
     config_sort: 1
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_category_info_on'
     config_value: 'on'
     config_sort: 23
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_user_info_on'
     config_value: 'off'
     config_sort: 24
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_blog_info_on'
     config_value: 'off'
     config_sort: 25
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_entry_field_on'
     config_value: 'on'
     config_sort: 26
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_category_field_on'
     config_value: 'off'
     config_sort: 27
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_user_field_on'
     config_value: 'off'
     config_sort: 28
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'entry_body_blog_field_on'
     config_value: 'off'
     config_sort: 29
     config_rule_id: ''
-    config_module_id: 11
+    config_module_id: 9
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_category_order'
     config_value: 'sort-asc'
     config_sort: 1
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_category_indexing'
     config_value: 'on'
     config_sort: 2
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_level'
     config_value: 1
     config_sort: 3
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_entry_amount_zero'
     config_value: 'on'
     config_sort: 4
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_category_field_on'
     config_value: 'off'
     config_sort: 5
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_order'
     config_value: 'datetime-desc'
     config_sort: 6
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_limit'
     config_value: 3
     config_sort: 7
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_offset'
     config_value: 0
     config_sort: 8
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_newtime'
     config_value: 259200
     config_sort: 9
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_indexing'
     config_value: 'on'
     config_sort: 10
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_secret'
     config_value: 'off'
     config_sort: 11
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_unit'
     config_value: 1
     config_sort: 12
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'mo_category_entry_summary_notfound'
     config_value: 'on'
     config_sort: 13
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_entry_field_on'
     config_value: 'off'
     config_sort: 14
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_image_on'
     config_value: 'on'
     config_sort: 15
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_noimage'
     config_value: 'on'
     config_sort: 16
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_image_x'
     config_value: 100
     config_sort: 17
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_image_y'
     config_value: 100
     config_sort: 18
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_image_trim'
     config_value: 'on'
     config_sort: 19
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_image_zoom'
     config_value: 'off'
     config_sort: 20
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'category_entry_summary_image_center'
     config_value: 'off'
     config_sort: 21
     config_rule_id: ''
-    config_module_id: 13
+    config_module_id: 11
     config_blog_id: 1
   - 
     config_key: 'theme'
@@ -4335,11 +4307,11 @@ config: ''
     config_module_id: 2
     config_blog_id: 1
   - 
-    config_key: 'entry_photo_image_center'
-    config_value: 'on'
-    config_sort: 13
+    config_key: 'entry_photo_order'
+    config_value: 'datetime-desc'
+    config_sort: 1
     config_rule_id: ''
-    config_module_id: 5
+    config_module_id: 3
     config_blog_id: 1
   - 
     config_key: 'file_extension_audio'
@@ -4388,119 +4360,119 @@ config: ''
     config_value: 'datetime-desc'
     config_sort: 1
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'entry_photo_limit'
     config_value: 1
     config_sort: 2
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'entry_photo_offset'
     config_value: 0
     config_sort: 3
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'entry_photo_indexing'
     config_value: 'on'
     config_sort: 4
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'entry_photo_secret'
     config_value: 'off'
     config_sort: 5
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'entry_photo_unit'
     config_value: 1
     config_sort: 6
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'mo_entry_photo_notfound'
     config_value: 'off'
     config_sort: 7
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'entry_photo_hidden_current_entry'
     config_value: 'off'
     config_sort: 8
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'entry_photo_image_x'
     config_value: 160
     config_sort: 9
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'entry_photo_image_y'
     config_value: 160
     config_sort: 10
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'entry_photo_image_trim'
     config_value: 'off'
     config_sort: 11
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'entry_photo_image_zoom'
     config_value: 'off'
     config_sort: 12
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'entry_photo_image_center'
     config_value: 'on'
     config_sort: 13
     config_rule_id: ''
-    config_module_id: 19
+    config_module_id: 15
     config_blog_id: 1
   - 
     config_key: 'entry_list_hidden_current_entry'
     config_value: 'off'
     config_sort: 4
     config_rule_id: ''
-    config_module_id: 20
+    config_module_id: 16
     config_blog_id: 1
   - 
     config_key: 'entry_list_offset'
     config_value: 0
     config_sort: 3
     config_rule_id: ''
-    config_module_id: 20
+    config_module_id: 16
     config_blog_id: 1
   - 
     config_key: 'entry_list_limit'
     config_value: 5
     config_sort: 2
     config_rule_id: ''
-    config_module_id: 20
+    config_module_id: 16
     config_blog_id: 1
   - 
     config_key: 'entry_list_order'
     config_value: 'datetime-desc'
     config_sort: 1
     config_rule_id: ''
-    config_module_id: 20
+    config_module_id: 16
     config_blog_id: 1
   - 
     config_key: 'column_form_add_type'
@@ -4577,77 +4549,504 @@ config: ''
     config_value: ''
     config_sort: 11
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-44beed0b1a60ca2b4251a615411ea9e3@tinyX'
     config_value: ''
     config_sort: 10
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-44beed0b1a60ca2b4251a615411ea9e3@tinyPath'
     config_value: ''
     config_sort: 9
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-44beed0b1a60ca2b4251a615411ea9e3@largeFileSize'
     config_value: ''
     config_sort: 8
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-44beed0b1a60ca2b4251a615411ea9e3@largeAlt'
     config_value: ''
     config_sort: 7
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-44beed0b1a60ca2b4251a615411ea9e3@largeY'
     config_value: ''
     config_sort: 6
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-44beed0b1a60ca2b4251a615411ea9e3@largeX'
     config_value: ''
     config_sort: 5
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-44beed0b1a60ca2b4251a615411ea9e3@largePath'
     config_value: ''
     config_sort: 4
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner-44beed0b1a60ca2b4251a615411ea9e3@fileSize'
     config_value: 37758
     config_sort: 3
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner_limit'
     config_value: ''
     config_sort: 2
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
     config_blog_id: 1
   - 
     config_key: 'banner_order'
     config_value: 'sort-asc'
     config_sort: 1
     config_rule_id: ''
-    config_module_id: 6
+    config_module_id: 4
+    config_blog_id: 1
+  - 
+    config_key: 'manage_revisions'
+    config_value: 'on'
+    config_sort: 11
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'form_edit_action_direct'
+    config_value: 'off'
+    config_sort: 12
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'media_library'
+    config_value: 'off'
+    config_sort: 13
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'login_cookie_lifetime'
+    config_value: 864000
+    config_sort: 14
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'login_auto_redirect'
+    config_value: 'on'
+    config_sort: 15
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'login_admin_path'
+    config_value: ''
+    config_sort: 16
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'subscribe'
+    config_value: 'on'
+    config_sort: 17
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'subscribe_activation'
+    config_value: 'on'
+    config_sort: 18
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'subscribe_auth'
+    config_value: 'subscriber'
+    config_sort: 19
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'session_contributor_only_own_entry'
+    config_value: 'off'
+    config_sort: 20
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'snslogin'
+    config_value: 'on'
+    config_sort: 21
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'snslogin_auth'
+    config_value: 'subscriber'
+    config_sort: 22
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'comment'
+    config_value: 'off'
+    config_sort: 23
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'manage_approval'
+    config_value: 'on'
+    config_sort: 10
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'mailmagazine'
+    config_value: 'off'
+    config_sort: 9
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'feed_output_disable'
+    config_value: 'off'
+    config_sort: 8
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'log_access_save_period'
+    config_value: 30
+    config_sort: 7
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'log_access'
+    config_value: 'post'
+    config_sort: 6
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'cache_expire_client'
+    config_value: 0
+    config_sort: 5
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'cache_sensitivity'
+    config_value: 'high'
+    config_sort: 4
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'cache_expire'
+    config_value: 86400
+    config_sort: 3
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'cache_auto_generate'
+    config_value: 'off'
+    config_sort: 2
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'cache'
+    config_value: 'off'
+    config_sort: 1
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'comment_status'
+    config_value: 'open'
+    config_sort: 24
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'comment_black_list'
+    config_value: ''
+    config_sort: 25
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'comment_cookie_lifetime'
+    config_value: 864000
+    config_sort: 26
+    config_rule_id: ''
+    config_module_id: ''
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_order'
+    config_value: 'datetime-desc'
+    config_sort: 1
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_limit'
+    config_value: 1
+    config_sort: 2
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_offset'
+    config_value: 0
+    config_sort: 3
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_newtime'
+    config_value: 259200
+    config_sort: 4
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_indexing'
+    config_value: 'on'
+    config_sort: 5
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_secret'
+    config_value: 'off'
+    config_sort: 6
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_unit'
+    config_value: 1
+    config_sort: 7
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'mo_entry_summary_notfound'
+    config_value: 'on'
+    config_sort: 8
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_notfound_status_404'
+    config_value: 'off'
+    config_sort: 9
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_date'
+    config_value: 'off'
+    config_sort: 10
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_fulltext'
+    config_value: 'on'
+    config_sort: 11
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_tag'
+    config_value: 'on'
+    config_sort: 12
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_hidden_current_entry'
+    config_value: 'off'
+    config_sort: 13
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_image_on'
+    config_value: 'on'
+    config_sort: 14
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_noimage'
+    config_value: 'on'
+    config_sort: 15
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_image_x'
+    config_value: 100
+    config_sort: 16
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_image_y'
+    config_value: 100
+    config_sort: 17
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_image_trim'
+    config_value: 'on'
+    config_sort: 18
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_image_zoom'
+    config_value: 'off'
+    config_sort: 19
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_image_center'
+    config_value: 'off'
+    config_sort: 20
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_pager_on'
+    config_value: 'on'
+    config_sort: 21
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_pager_delta'
+    config_value: 3
+    config_sort: 22
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_pager_cur_attr'
+    config_value: ' class="cur"'
+    config_sort: 23
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_category_on'
+    config_value: 'on'
+    config_sort: 24
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_user_on'
+    config_value: 'off'
+    config_sort: 25
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_blog_on'
+    config_value: 'off'
+    config_sort: 26
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_entry_field'
+    config_value: 'on'
+    config_sort: 27
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_category_field_on'
+    config_value: 'off'
+    config_sort: 28
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_user_field_on'
+    config_value: 'off'
+    config_sort: 29
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_summary_blog_field_on'
+    config_value: 'off'
+    config_sort: 30
+    config_rule_id: ''
+    config_module_id: 17
+    config_blog_id: 1
+  - 
+    config_key: 'entry_photo_image_x'
+    config_value: 160
+    config_sort: 10
+    config_rule_id: ''
+    config_module_id: 3
+    config_blog_id: 1
+  - 
+    config_key: 'entry_photo_image_y'
+    config_value: 160
+    config_sort: 11
+    config_rule_id: ''
+    config_module_id: 3
+    config_blog_id: 1
+  - 
+    config_key: 'entry_photo_image_trim'
+    config_value: 'off'
+    config_sort: 12
+    config_rule_id: ''
+    config_module_id: 3
+    config_blog_id: 1
+  - 
+    config_key: 'entry_photo_image_zoom'
+    config_value: 'off'
+    config_sort: 13
+    config_rule_id: ''
+    config_module_id: 3
+    config_blog_id: 1
+  - 
+    config_key: 'entry_photo_image_center'
+    config_value: 'on'
+    config_sort: 14
+    config_rule_id: ''
+    config_module_id: 3
     config_blog_id: 1
 comment: ''
 dashboard: ''
@@ -4666,14 +5065,14 @@ entry: ''
     entry_datetime: '2015-03-13 10:00:11'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-02 09:20:50'
+    entry_posted_datetime: '2015-08-04 06:39:05'
     entry_updated_datetime: '2015-03-13 12:17:15'
     entry_summary_range: ''
     entry_indexing: 'on'
-    entry_primary_image: 3
+    entry_primary_image: 1
     entry_current_rev_id: 1
     entry_last_update_user_id: 1
-    entry_hash: 'c5a79edd82d0a928fa5187bab2ebeac9'
+    entry_hash: '83519dac6f3a1c9a9a8c303e48ad4593'
     entry_category_id: 1
     entry_user_id: 1
     entry_form_id: 0
@@ -4692,14 +5091,14 @@ entry: ''
     entry_datetime: '2015-03-13 10:31:45'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-02 09:21:44'
+    entry_posted_datetime: '2015-08-04 06:39:26'
     entry_updated_datetime: '2015-04-13 15:24:22'
     entry_summary_range: ''
     entry_indexing: 'on'
-    entry_primary_image: 5
+    entry_primary_image: 3
     entry_current_rev_id: 1
     entry_last_update_user_id: 1
-    entry_hash: 'a478bdf3248845d3e562f27a397b19f5'
+    entry_hash: '004de97cc903db1090ac72ca64600d15'
     entry_category_id: 2
     entry_user_id: 1
     entry_form_id: 0
@@ -4718,14 +5117,14 @@ entry: ''
     entry_datetime: '2015-03-13 10:31:50'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-02 09:22:18'
+    entry_posted_datetime: '2015-08-04 06:40:06'
     entry_updated_datetime: '2015-04-13 15:27:00'
     entry_summary_range: ''
     entry_indexing: 'on'
-    entry_primary_image: 6
+    entry_primary_image: 4
     entry_current_rev_id: 1
     entry_last_update_user_id: 1
-    entry_hash: '7daf90a7a51a9773a69f9fa5a1785545'
+    entry_hash: '06197017da5ac7e252c22f6441b270da'
     entry_category_id: 2
     entry_user_id: 1
     entry_form_id: 0
@@ -4744,14 +5143,14 @@ entry: ''
     entry_datetime: '2015-03-13 10:31:54'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-02 09:22:20'
+    entry_posted_datetime: '2015-08-04 06:40:23'
     entry_updated_datetime: '2015-04-13 15:25:13'
     entry_summary_range: ''
     entry_indexing: 'on'
-    entry_primary_image: 7
+    entry_primary_image: 5
     entry_current_rev_id: 1
     entry_last_update_user_id: 1
-    entry_hash: 'a44f47bb0dcc2c9c0e5978c72a8fd573'
+    entry_hash: '7a2b447ef77fee070ee7d76a01a9a43d'
     entry_category_id: 2
     entry_user_id: 1
     entry_form_id: 0
@@ -4770,14 +5169,14 @@ entry: ''
     entry_datetime: '2015-03-13 10:31:58'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-02 09:22:23'
+    entry_posted_datetime: '2015-08-04 06:40:32'
     entry_updated_datetime: '2015-04-13 15:27:57'
     entry_summary_range: ''
     entry_indexing: 'on'
-    entry_primary_image: 8
+    entry_primary_image: 6
     entry_current_rev_id: 1
     entry_last_update_user_id: 1
-    entry_hash: 'ff022628c3da05c992a6e417fee48b00'
+    entry_hash: 'e0842ca77410d0556cb0ca9d6322b1be'
     entry_category_id: 2
     entry_user_id: 1
     entry_form_id: 0
@@ -4796,14 +5195,14 @@ entry: ''
     entry_datetime: '2015-03-13 10:32:03'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-02 09:22:31'
+    entry_posted_datetime: '2015-08-04 06:41:08'
     entry_updated_datetime: '2015-04-13 15:28:13'
     entry_summary_range: ''
     entry_indexing: 'on'
-    entry_primary_image: 10
+    entry_primary_image: 7
     entry_current_rev_id: 1
     entry_last_update_user_id: 1
-    entry_hash: '99dfb55ad77549bcd2123aa446aabe8b'
+    entry_hash: '453f2e207fd5dca064b1e03fe02caf44'
     entry_category_id: 2
     entry_user_id: 1
     entry_form_id: 0
@@ -4822,14 +5221,14 @@ entry: ''
     entry_datetime: '2015-03-13 10:32:58'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-02 09:23:20'
+    entry_posted_datetime: '2015-08-04 06:41:47'
     entry_updated_datetime: '2015-04-14 20:43:56'
     entry_summary_range: 2
     entry_indexing: 'on'
-    entry_primary_image: 31
+    entry_primary_image: 39
     entry_current_rev_id: 1
     entry_last_update_user_id: 1
-    entry_hash: '4a45a5ecc4f86567add88cdaeec13c18'
+    entry_hash: '9ad2aef86714ba1e9c70e0684ecd6f1f'
     entry_category_id: 1
     entry_user_id: 1
     entry_form_id: 0
@@ -4848,14 +5247,14 @@ entry: ''
     entry_datetime: '2015-03-13 12:22:45'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-02 09:23:37'
+    entry_posted_datetime: '2015-08-04 06:42:36'
     entry_updated_datetime: '2015-03-13 12:24:24'
     entry_summary_range: ''
     entry_indexing: 'on'
-    entry_primary_image: 25
+    entry_primary_image: 15
     entry_current_rev_id: 1
     entry_last_update_user_id: 1
-    entry_hash: '6bb9c020977d1ee5920b9e6aa72b5f4e'
+    entry_hash: 'b7b6cdf10a96763878c3bbbd37d06662'
     entry_category_id: 1
     entry_user_id: 1
     entry_form_id: 0
@@ -4874,14 +5273,14 @@ entry: ''
     entry_datetime: '2015-03-13 12:23:18'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-02 09:24:05'
+    entry_posted_datetime: '2015-08-04 06:43:22'
     entry_updated_datetime: '2015-04-13 15:23:31'
     entry_summary_range: ''
     entry_indexing: 'on'
-    entry_primary_image: 23
+    entry_primary_image: 30
     entry_current_rev_id: 1
     entry_last_update_user_id: 1
-    entry_hash: '4205cc5d50a8f5c2e19707cc4d332e9d'
+    entry_hash: '53fe924981b945e9cf6f2901b573d448'
     entry_category_id: 1
     entry_user_id: 1
     entry_form_id: 0
@@ -4900,14 +5299,14 @@ entry: ''
     entry_datetime: '2015-03-13 13:45:58'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-02 09:24:40'
+    entry_posted_datetime: '2015-08-04 06:44:20'
     entry_updated_datetime: '2015-04-13 15:28:33'
     entry_summary_range: ''
     entry_indexing: 'on'
-    entry_primary_image: 26
+    entry_primary_image: 16
     entry_current_rev_id: 1
     entry_last_update_user_id: 1
-    entry_hash: '58a8102efae545ffc4d14e0524f28237'
+    entry_hash: '4632634f8fd75347ebb00f77b305d9ad'
     entry_category_id: 2
     entry_user_id: 1
     entry_form_id: 0
@@ -4926,14 +5325,14 @@ entry: ''
     entry_datetime: '2015-04-13 15:28:36'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-13 15:28:53'
+    entry_posted_datetime: '2015-08-04 06:45:13'
     entry_updated_datetime: '2015-04-13 15:28:53'
     entry_summary_range: ''
     entry_indexing: 'on'
-    entry_primary_image: 39
+    entry_primary_image: 29
     entry_current_rev_id: 0
     entry_last_update_user_id: 1
-    entry_hash: '036e4009acb010ce2f56e47ed72ee1c4'
+    entry_hash: 'ed2f0657efed6391ba2bc9b99510f7dc'
     entry_category_id: 2
     entry_user_id: 1
     entry_form_id: 0
@@ -4952,14 +5351,14 @@ entry: ''
     entry_datetime: '2015-04-13 15:28:57'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-13 15:29:15'
+    entry_posted_datetime: '2015-08-04 06:45:23'
     entry_updated_datetime: '2015-04-13 15:29:15'
     entry_summary_range: ''
     entry_indexing: 'on'
-    entry_primary_image: 41
+    entry_primary_image: 31
     entry_current_rev_id: 0
     entry_last_update_user_id: 1
-    entry_hash: 'f1d25ff49106560e12d021b750da1178'
+    entry_hash: '1790ffaa7e1a927d5af4e1ed4fc7c9b3'
     entry_category_id: 2
     entry_user_id: 1
     entry_form_id: 0
@@ -4978,14 +5377,14 @@ entry: ''
     entry_datetime: '2015-04-14 11:40:14'
     entry_start_datetime: '1000-01-01 00:00:00'
     entry_end_datetime: '9999-12-31 23:59:59'
-    entry_posted_datetime: '2015-04-14 11:41:35'
+    entry_posted_datetime: '2015-08-04 06:46:00'
     entry_updated_datetime: '2015-04-17 15:22:41'
     entry_summary_range: ''
     entry_indexing: 'on'
-    entry_primary_image: 43
+    entry_primary_image: 32
     entry_current_rev_id: 1
     entry_last_update_user_id: 1
-    entry_hash: '7877e4d4da35ed52c8e25b2c8ea4fcdd'
+    entry_hash: '5ee195dc7122462a1e442941a1a9e0a9'
     entry_category_id: 1
     entry_user_id: 1
     entry_form_id: 0
@@ -5000,7 +5399,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 17
+    field_mid: 13
     field_blog_id: 1
   - 
     field_key: 'entry_meta_description'
@@ -5035,7 +5434,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 6
+    field_mid: 4
     field_blog_id: 1
   - 
     field_key: 'entry_meta_description'
@@ -5070,18 +5469,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 3
-    field_blog_id: 1
-  - 
-    field_key: 'module_heading'
-    field_value: 'フォトギャラリー'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 5
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_heading'
@@ -5092,7 +5480,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 8
+    field_mid: 6
     field_blog_id: 1
   - 
     field_key: 'module_heading'
@@ -5103,7 +5491,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 9
+    field_mid: 7
     field_blog_id: 1
   - 
     field_key: 'module_image@fileSize'
@@ -5114,7 +5502,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 18
+    field_mid: 14
     field_blog_id: 1
   - 
     field_key: 'module_detail'
@@ -5125,7 +5513,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 3
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@y'
@@ -5136,7 +5524,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 18
+    field_mid: 14
     field_blog_id: 1
   - 
     field_key: 'module_image@x'
@@ -5147,7 +5535,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 18
+    field_mid: 14
     field_blog_id: 1
   - 
     field_key: 'module_image@path'
@@ -5158,7 +5546,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 18
+    field_mid: 14
     field_blog_id: 1
   - 
     field_key: 'module_text_color'
@@ -5169,7 +5557,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 18
+    field_mid: 14
     field_blog_id: 1
   - 
     field_key: 'module_bg_color'
@@ -5180,7 +5568,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 18
+    field_mid: 14
     field_blog_id: 1
   - 
     field_key: 'module_btn_link'
@@ -5191,7 +5579,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 18
+    field_mid: 14
     field_blog_id: 1
   - 
     field_key: 'dateAppearCategory'
@@ -5205,8 +5593,41 @@ field: ''
     field_mid: ''
     field_blog_id: 1
   - 
+    field_key: 'hero_image@squarePath'
+    field_value: '001/201504/square-330da236e74782f8e9a2cc65d3f09308.jpg'
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: 1
+    field_mid: ''
+    field_blog_id: 1
+  - 
+    field_key: 'hero_image@tinyFileSize'
+    field_value: 21191
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: 1
+    field_mid: ''
+    field_blog_id: 1
+  - 
     field_key: 'hero_image@tinyY'
     field_value: 152
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: 1
+    field_mid: ''
+    field_blog_id: 1
+  - 
+    field_key: 'hero_image@tinyPath'
+    field_value: '001/201504/tiny-330da236e74782f8e9a2cc65d3f09308.jpg'
     field_sort: 1
     field_search: 'off'
     field_eid: ''
@@ -5238,74 +5659,8 @@ field: ''
     field_mid: ''
     field_blog_id: 1
   - 
-    field_key: 'hero_image@tinyPath'
-    field_value: '001/201504/tiny-330da236e74782f8e9a2cc65d3f09308.jpg'
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: 1
-    field_mid: ''
-    field_blog_id: 1
-  - 
     field_key: 'hero_image@largeY'
     field_value: 650
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: 1
-    field_mid: ''
-    field_blog_id: 1
-  - 
-    field_key: 'hero_image@largeX'
-    field_value: 1200
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: 1
-    field_mid: ''
-    field_blog_id: 1
-  - 
-    field_key: 'hero_image@largePath'
-    field_value: '001/201504/large-330da236e74782f8e9a2cc65d3f09308.jpg'
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: 1
-    field_mid: ''
-    field_blog_id: 1
-  - 
-    field_key: 'hero_image@fileSize'
-    field_value: 88274
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: 1
-    field_mid: ''
-    field_blog_id: 1
-  - 
-    field_key: 'hero_image@y'
-    field_value: 347
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: 1
-    field_mid: ''
-    field_blog_id: 1
-  - 
-    field_key: 'hero_image@x'
-    field_value: 640
     field_sort: 1
     field_search: 'off'
     field_eid: ''
@@ -5345,7 +5700,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_detail'
@@ -5358,7 +5713,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_btn_text'
@@ -5369,7 +5724,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_btn_link'
@@ -5380,7 +5735,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@path'
@@ -5391,7 +5746,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@x'
@@ -5402,7 +5757,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@y'
@@ -5413,7 +5768,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@fileSize'
@@ -5424,7 +5779,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@largePath'
@@ -5435,7 +5790,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@largeX'
@@ -5446,7 +5801,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@largeY'
@@ -5457,7 +5812,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@largeFileSize'
@@ -5468,7 +5823,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@tinyPath'
@@ -5479,7 +5834,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@tinyX'
@@ -5490,7 +5845,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@tinyY'
@@ -5501,7 +5856,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@tinyFileSize'
@@ -5512,7 +5867,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@squarePath'
@@ -5523,7 +5878,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@squareX'
@@ -5534,7 +5889,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@squareY'
@@ -5545,7 +5900,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@squareFileSize'
@@ -5556,7 +5911,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image@secret'
@@ -5567,7 +5922,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 14
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@squareY'
@@ -5578,7 +5933,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@squareFileSize'
@@ -5589,7 +5944,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@tinyFileSize'
@@ -5600,7 +5955,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@squarePath'
@@ -5611,7 +5966,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@squareX'
@@ -5622,7 +5977,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@tinyY'
@@ -5633,7 +5988,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@tinyPath'
@@ -5644,7 +5999,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@tinyX'
@@ -5655,7 +6010,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@largeFileSize'
@@ -5666,7 +6021,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@largeY'
@@ -5677,7 +6032,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@largeX'
@@ -5688,7 +6043,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@largePath'
@@ -5699,7 +6054,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@fileSize'
@@ -5710,7 +6065,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@y'
@@ -5721,7 +6076,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@x'
@@ -5732,7 +6087,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_image_side@path'
@@ -5743,7 +6098,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_btn_link'
@@ -5754,7 +6109,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_btn_text'
@@ -5765,7 +6120,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_detail'
@@ -5786,7 +6141,7 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'module_heading'
@@ -5797,7 +6152,84 @@ field: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 15
+    field_mid: ''
+    field_blog_id: 1
+  - 
+    field_key: 'hero_image@largeX'
+    field_value: 1200
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: 1
+    field_mid: ''
+    field_blog_id: 1
+  - 
+    field_key: 'hero_image@largePath'
+    field_value: '001/201504/large-330da236e74782f8e9a2cc65d3f09308.jpg'
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: 1
+    field_mid: ''
+    field_blog_id: 1
+  - 
+    field_key: 'hero_image@y'
+    field_value: 347
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: 1
+    field_mid: ''
+    field_blog_id: 1
+  - 
+    field_key: 'hero_image@fileSize'
+    field_value: 88274
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: 1
+    field_mid: ''
+    field_blog_id: 1
+  - 
+    field_key: 'hero_image@x'
+    field_value: 640
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: 1
+    field_mid: ''
+    field_blog_id: 1
+  - 
+    field_key: 'twitterAccount'
+    field_value: 'ablogcms'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: 1
+    field_mid: ''
+    field_blog_id: 1
+  - 
+    field_key: 'gplusAccount'
+    field_value: '100557566142160949993/posts'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: 1
+    field_mid: ''
     field_blog_id: 1
   - 
     field_key: 'hero_image@path'
@@ -5813,6 +6245,17 @@ field: ''
   - 
     field_key: 'hero_text_color'
     field_value: '#FFF'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: 1
+    field_mid: ''
+    field_blog_id: 1
+  - 
+    field_key: 'facebookAccount'
+    field_value: 'ablogcms'
     field_sort: 1
     field_search: 'on'
     field_eid: ''
@@ -5855,6 +6298,387 @@ field: ''
     field_mid: ''
     field_blog_id: 1
   - 
+    field_key: 'module_detail'
+    field_value: '受付時間：9時〜17時'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 14
+    field_blog_id: 1
+  - 
+    field_key: 'module_btn_text'
+    field_value: 'お問い合わせをする'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 14
+    field_blog_id: 1
+  - 
+    field_key: 'module_heading'
+    field_value: 'お問い合わせはこちらから'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 14
+    field_blog_id: 1
+  - 
+    field_key: 'step_detail'
+    field_value: >
+      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+    field_sort: 3
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 12
+    field_blog_id: 1
+  - 
+    field_key: 'step_detail'
+    field_value: >
+      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+    field_sort: 2
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 12
+    field_blog_id: 1
+  - 
+    field_key: 'step_heading'
+    field_value: 'ステップ3'
+    field_sort: 3
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 12
+    field_blog_id: 1
+  - 
+    field_key: 'step_detail'
+    field_value: >
+      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 12
+    field_blog_id: 1
+  - 
+    field_key: 'step_num'
+    field_value: 3
+    field_sort: 3
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 12
+    field_blog_id: 1
+  - 
+    field_key: 'step_heading'
+    field_value: 'ステップ1'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 12
+    field_blog_id: 1
+  - 
+    field_key: 'step_heading'
+    field_value: 'ステップ2'
+    field_sort: 2
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 12
+    field_blog_id: 1
+  - 
+    field_key: 'step_num'
+    field_value: 1
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 12
+    field_blog_id: 1
+  - 
+    field_key: 'step_num'
+    field_value: 2
+    field_sort: 2
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 12
+    field_blog_id: 1
+  - 
+    field_key: 'module_detail'
+    field_value: 'サンプルテキストサンプルテキストサンプルテキストサンプルテキスト'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 12
+    field_blog_id: 1
+  - 
+    field_key: 'module_heading'
+    field_value: 'サンプル大見出し'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 12
+    field_blog_id: 1
+  - 
+    field_key: 'side_image@largeFileSize'
+    field_value: 6157
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_image@largeX'
+    field_value: 459
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_image@largeY'
+    field_value: 458
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_image@largePath'
+    field_value: '001/201504/large-1ab36509e72cc3d569913d33cbfadcef.png'
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_image@fileSize'
+    field_value: 6157
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_image@x'
+    field_value: 459
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_image@y'
+    field_value: 458
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_image@path'
+    field_value: '001/201504/1ab36509e72cc3d569913d33cbfadcef.png'
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: '@customFieldGroup'
+    field_value: 'side_detail'
+    field_sort: 2
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: '@customFieldGroup'
+    field_value: 'side_heading'
+    field_sort: 1
+    field_search: 'off'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_detail'
+    field_value: >
+      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+    field_sort: 3
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_detail'
+    field_value: >
+      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+    field_sort: 2
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_detail'
+    field_value: >
+      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_heading'
+    field_value: 'サンプル見出し2'
+    field_sort: 2
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_heading'
+    field_value: 'サンプル見出し3'
+    field_sort: 3
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'side_heading'
+    field_value: 'サンプル見出し1'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'module_heading'
+    field_value: 'フォトギャラリー'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 3
+    field_blog_id: 1
+  - 
+    field_key: 'module_detail'
+    field_value: 'ここにはお知らせに掲載された写真が表示されます。'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 3
+    field_blog_id: 1
+  - 
+    field_key: 'module_detail'
+    field_value: >
+      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
+    field_key: 'module_heading'
+    field_value: 'サンプル大見出し'
+    field_sort: 1
+    field_search: 'on'
+    field_eid: ''
+    field_cid: ''
+    field_uid: ''
+    field_bid: ''
+    field_mid: 13
+    field_blog_id: 1
+  - 
     field_key: 'hero_title'
     field_value: 'Bootstrap theme'
     field_sort: 1
@@ -5879,8 +6703,8 @@ field: ''
     field_mid: ''
     field_blog_id: 1
   - 
-    field_key: 'googleplus_url'
-    field_value: 'https://plus.google.com/100557566142160949993/posts'
+    field_key: 'siteFooter'
+    field_value: '&copy; Bootstrap 2015 &middot; <a href="http://www.a-blogcms.jp">a-blog cms</a>'
     field_sort: 1
     field_search: 'on'
     field_eid: ''
@@ -5890,441 +6714,125 @@ field: ''
     field_mid: ''
     field_blog_id: 1
   - 
-    field_key: 'facebook_url'
-    field_value: 'https://www.facebook.com/ablogcms'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: 1
-    field_mid: ''
-    field_blog_id: 1
-  - 
-    field_key: 'twitter_url'
-    field_value: 'https://twitter.com/ablogcms'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: 1
-    field_mid: ''
-    field_blog_id: 1
-  - 
-    field_key: 'meta_blogDesc'
-    field_value: >
-      このコンテンツは a-blog cms
-      のテスト用に作られたコンテンツで、実在のものではありません。
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: 1
-    field_mid: ''
-    field_blog_id: 1
-  - 
-    field_key: 'meta_blogTitle'
-    field_value: 'Bootstrap theme'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: 1
-    field_mid: ''
-    field_blog_id: 1
-  - 
-    field_key: 'module_detail'
-    field_value: '受付時間：9時〜17時'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 18
-    field_blog_id: 1
-  - 
-    field_key: 'module_btn_text'
-    field_value: 'お問い合わせをする'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 18
-    field_blog_id: 1
-  - 
-    field_key: 'module_heading'
-    field_value: 'お問い合わせはこちらから'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 18
-    field_blog_id: 1
-  - 
-    field_key: 'step_detail'
-    field_value: >
-      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
-    field_sort: 3
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: 'step_detail'
-    field_value: >
-      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
-    field_sort: 2
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: 'step_heading'
-    field_value: 'ステップ3'
-    field_sort: 3
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: 'step_detail'
-    field_value: >
-      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: 'step_num'
-    field_value: 3
-    field_sort: 3
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: 'step_heading'
-    field_value: 'ステップ1'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: 'step_heading'
-    field_value: 'ステップ2'
-    field_sort: 2
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: 'step_num'
-    field_value: 1
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: 'step_num'
-    field_value: 2
-    field_sort: 2
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: 'module_detail'
-    field_value: 'サンプルテキストサンプルテキストサンプルテキストサンプルテキスト'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: 'module_heading'
-    field_value: 'サンプル大見出し'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: 'side_image@largeFileSize'
-    field_value: 6157
+    field_key: 'side_image@tinyX'
+    field_value: 280
     field_sort: 1
     field_search: 'off'
     field_eid: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 17
+    field_mid: 13
     field_blog_id: 1
   - 
-    field_key: 'side_image@largeX'
-    field_value: 459
+    field_key: 'side_image@tinyY'
+    field_value: 280
     field_sort: 1
     field_search: 'off'
     field_eid: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 17
+    field_mid: 13
     field_blog_id: 1
   - 
-    field_key: 'side_image@largeY'
-    field_value: 458
+    field_key: 'side_image@tinyFileSize'
+    field_value: 51895
     field_sort: 1
     field_search: 'off'
     field_eid: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 17
+    field_mid: 13
     field_blog_id: 1
   - 
-    field_key: 'side_image@largePath'
-    field_value: '001/201504/large-1ab36509e72cc3d569913d33cbfadcef.png'
+    field_key: 'side_image@squarePath'
+    field_value: '001/201504/square-1ab36509e72cc3d569913d33cbfadcef.png'
     field_sort: 1
     field_search: 'off'
     field_eid: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 17
+    field_mid: 13
     field_blog_id: 1
   - 
-    field_key: 'side_image@fileSize'
-    field_value: 6157
+    field_key: 'side_image@squareX'
+    field_value: 200
     field_sort: 1
     field_search: 'off'
     field_eid: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 17
+    field_mid: 13
     field_blog_id: 1
   - 
-    field_key: 'side_image@x'
-    field_value: 459
+    field_key: 'side_image@squareY'
+    field_value: 200
     field_sort: 1
     field_search: 'off'
     field_eid: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 17
+    field_mid: 13
     field_blog_id: 1
   - 
-    field_key: 'side_image@y'
-    field_value: 458
+    field_key: 'side_image@squareFileSize'
+    field_value: 25970
     field_sort: 1
     field_search: 'off'
     field_eid: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'side_image@path'
-    field_value: '001/201504/1ab36509e72cc3d569913d33cbfadcef.png'
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
+    field_mid: 13
     field_blog_id: 1
   - 
     field_key: '@customFieldGroup'
-    field_value: 'side_detail'
-    field_sort: 2
+    field_value: 'step_num'
+    field_sort: 1
     field_search: 'off'
     field_eid: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 17
+    field_mid: 12
     field_blog_id: 1
   - 
     field_key: '@customFieldGroup'
-    field_value: 'side_heading'
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'side_detail'
-    field_value: >
-      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
-    field_sort: 3
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'side_detail'
-    field_value: >
-      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+    field_value: 'step_heading'
     field_sort: 2
-    field_search: 'on'
+    field_search: 'off'
     field_eid: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 17
+    field_mid: 12
     field_blog_id: 1
   - 
-    field_key: 'side_detail'
-    field_value: >
-      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'side_heading'
-    field_value: 'サンプル見出し2'
-    field_sort: 2
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'side_heading'
-    field_value: 'サンプル見出し3'
+    field_key: '@customFieldGroup'
+    field_value: 'step_detail'
     field_sort: 3
-    field_search: 'on'
+    field_search: 'off'
     field_eid: ''
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 17
+    field_mid: 12
     field_blog_id: 1
   - 
-    field_key: 'side_heading'
-    field_value: 'サンプル見出し1'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'module_detail'
-    field_value: 'ここにはお知らせに掲載された写真が表示されます。'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 5
-    field_blog_id: 1
-  - 
-    field_key: 'module_detail'
+    field_key: 'entry_meta_description'
     field_value: >
-      サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+      この記事はお知らせのエントリーです。この記事はお知らせのエントリーです。この記事はお知らせのエントリーです。
     field_sort: 1
     field_search: 'on'
-    field_eid: ''
+    field_eid: 13
     field_cid: ''
     field_uid: ''
     field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'module_heading'
-    field_value: 'サンプル大見出し'
-    field_sort: 1
-    field_search: 'on'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'hero_image@tinyFileSize'
-    field_value: 21191
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: 1
-    field_mid: ''
-    field_blog_id: 1
-  - 
-    field_key: 'hero_image@squarePath'
-    field_value: '001/201504/square-330da236e74782f8e9a2cc65d3f09308.jpg'
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: 1
     field_mid: ''
     field_blog_id: 1
   - 
@@ -6360,141 +6868,8 @@ field: ''
     field_bid: 1
     field_mid: ''
     field_blog_id: 1
-  - 
-    field_key: 'side_image@tinyX'
-    field_value: 280
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'side_image@tinyY'
-    field_value: 280
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'side_image@tinyFileSize'
-    field_value: 51895
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'side_image@squarePath'
-    field_value: '001/201504/square-1ab36509e72cc3d569913d33cbfadcef.png'
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'side_image@squareX'
-    field_value: 200
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'side_image@squareY'
-    field_value: 200
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: 'side_image@squareFileSize'
-    field_value: 25970
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 17
-    field_blog_id: 1
-  - 
-    field_key: '@customFieldGroup'
-    field_value: 'step_num'
-    field_sort: 1
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: '@customFieldGroup'
-    field_value: 'step_heading'
-    field_sort: 2
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: '@customFieldGroup'
-    field_value: 'step_detail'
-    field_sort: 3
-    field_search: 'off'
-    field_eid: ''
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: 16
-    field_blog_id: 1
-  - 
-    field_key: 'entry_meta_description'
-    field_value: >
-      この記事はお知らせのエントリーです。この記事はお知らせのエントリーです。この記事はお知らせのエントリーです。
-    field_sort: 1
-    field_search: 'on'
-    field_eid: 13
-    field_cid: ''
-    field_uid: ''
-    field_bid: ''
-    field_mid: ''
-    field_blog_id: 1
 form: ''
 fulltext: ''
-  - 
-    fulltext_value: |
-      a-blog cms 192.168.10.124
-      
-      #FFF #000 # もっと見る Bootstrap theme このコンテンツは a-blog cms のテスト用に作られたコンテンツで、実在のものではありません。 https://plus.google.com/100557566142160949993/posts https://www.facebook.com/ablogcms https://twitter.com/ablogcms このコンテンツは a-blog cms のテスト用に作られたコンテンツで、実在のものではありません。 Bootstrap theme
-    fulltext_ngram: ''
-    fulltext_eid: ''
-    fulltext_cid: ''
-    fulltext_uid: ''
-    fulltext_bid: 1
-    fulltext_blog_id: 1
   - 
     fulltext_value: |
       
@@ -6638,12 +7013,12 @@ module: ''
     module_status: 'open'
     module_scope: 'local'
     module_bid: ''
-    module_bid_axis: ''
+    module_bid_axis: 'self'
     module_uid: ''
     module_uid_scope: 'local'
     module_cid: ''
     module_cid_scope: 'local'
-    module_cid_axis: ''
+    module_cid_axis: 'self'
     module_eid: ''
     module_eid_scope: 'local'
     module_keyword: ''
@@ -6698,7 +7073,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 5
+    module_id: 3
     module_identifier: 'photoGallery'
     module_name: 'Entry_Photo'
     module_label: 'フォトギャラリー一覧'
@@ -6732,7 +7107,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 6
+    module_id: 4
     module_identifier: 'banner'
     module_name: 'Banner'
     module_label: 'バナー一覧'
@@ -6740,12 +7115,12 @@ module: ''
     module_status: 'open'
     module_scope: 'local'
     module_bid: ''
-    module_bid_axis: ''
+    module_bid_axis: 'self'
     module_uid: ''
     module_uid_scope: 'local'
     module_cid: ''
     module_cid_scope: 'local'
-    module_cid_axis: ''
+    module_cid_axis: 'self'
     module_eid: ''
     module_eid_scope: 'local'
     module_keyword: ''
@@ -6766,7 +7141,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 7
+    module_id: 5
     module_identifier: 'globalNavi'
     module_name: 'Navigation'
     module_label: 'グローバルナビゲーション'
@@ -6774,12 +7149,12 @@ module: ''
     module_status: 'open'
     module_scope: 'local'
     module_bid: ''
-    module_bid_axis: ''
+    module_bid_axis: 'self'
     module_uid: ''
     module_uid_scope: 'local'
     module_cid: ''
     module_cid_scope: 'local'
-    module_cid_axis: ''
+    module_cid_axis: 'self'
     module_eid: ''
     module_eid_scope: 'local'
     module_keyword: ''
@@ -6800,7 +7175,7 @@ module: ''
     module_layout_use: 0
     module_blog_id: 1
   - 
-    module_id: 8
+    module_id: 6
     module_identifier: 'recentEntry'
     module_name: 'Entry_List'
     module_label: '最新の記事一覧'
@@ -6834,7 +7209,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 9
+    module_id: 7
     module_identifier: 'categoryList'
     module_name: 'Category_List'
     module_label: 'カテゴリーの一覧'
@@ -6842,7 +7217,7 @@ module: ''
     module_status: 'open'
     module_scope: 'local'
     module_bid: ''
-    module_bid_axis: ''
+    module_bid_axis: 'self'
     module_uid: ''
     module_uid_scope: 'local'
     module_cid: ''
@@ -6868,7 +7243,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 10
+    module_id: 8
     module_identifier: 'asideBanner'
     module_name: 'Banner'
     module_label: '外部リンク用バナー'
@@ -6902,7 +7277,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 11
+    module_id: 9
     module_identifier: 'entry_body'
     module_name: 'Entry_Body'
     module_label: 'エントリーボディ'
@@ -6936,7 +7311,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 12
+    module_id: 10
     module_identifier: 'entry_calendar'
     module_name: 'Entry_Calendar'
     module_label: 'エントリーカレンダー'
@@ -6970,7 +7345,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 13
+    module_id: 11
     module_identifier: 'category_entry_summary'
     module_name: 'Category_EntrySummary'
     module_label: 'カテゴリーエントリーサマリー'
@@ -7004,7 +7379,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 16
+    module_id: 12
     module_identifier: 'fieldStep'
     module_name: 'Blog_Field'
     module_label: 'カスタムフィールド（ステップ紹介）'
@@ -7012,12 +7387,12 @@ module: ''
     module_status: 'open'
     module_scope: 'local'
     module_bid: ''
-    module_bid_axis: ''
+    module_bid_axis: 'self'
     module_uid: ''
     module_uid_scope: 'local'
     module_cid: ''
     module_cid_scope: 'local'
-    module_cid_axis: ''
+    module_cid_axis: 'self'
     module_eid: ''
     module_eid_scope: 'local'
     module_keyword: ''
@@ -7038,7 +7413,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 17
+    module_id: 13
     module_identifier: 'fieldSideImage'
     module_name: 'Blog_Field'
     module_label: 'カスタムフィールド （サイドイメージ付き）'
@@ -7046,12 +7421,12 @@ module: ''
     module_status: 'open'
     module_scope: 'local'
     module_bid: ''
-    module_bid_axis: ''
+    module_bid_axis: 'self'
     module_uid: ''
     module_uid_scope: 'local'
     module_cid: ''
     module_cid_scope: 'local'
-    module_cid_axis: ''
+    module_cid_axis: 'self'
     module_eid: ''
     module_eid_scope: 'local'
     module_keyword: ''
@@ -7072,7 +7447,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 18
+    module_id: 14
     module_identifier: 'fieldSuggest'
     module_name: 'Blog_Field'
     module_label: 'カスタムフィールド（誘導エリア）'
@@ -7080,12 +7455,12 @@ module: ''
     module_status: 'open'
     module_scope: 'local'
     module_bid: ''
-    module_bid_axis: ''
+    module_bid_axis: 'self'
     module_uid: ''
     module_uid_scope: 'local'
     module_cid: ''
     module_cid_scope: 'local'
-    module_cid_axis: ''
+    module_cid_axis: 'self'
     module_eid: ''
     module_eid_scope: 'local'
     module_keyword: ''
@@ -7106,7 +7481,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 19
+    module_id: 15
     module_identifier: 'photoOne'
     module_name: 'Entry_Photo'
     module_label: 'エントリーフォト 一件表示'
@@ -7140,7 +7515,7 @@ module: ''
     module_layout_use: 1
     module_blog_id: 1
   - 
-    module_id: 20
+    module_id: 16
     module_identifier: 'newsSecond'
     module_name: 'Entry_List'
     module_label: '新着エントリー 2件目表示'
@@ -7173,6 +7548,40 @@ module: ''
     module_custom_field: 1
     module_layout_use: 1
     module_blog_id: 1
+  - 
+    module_id: 17
+    module_identifier: 'ogpSummary'
+    module_name: 'Entry_Summary'
+    module_label: 'OGPの設定'
+    module_description: ''
+    module_status: 'open'
+    module_scope: 'global'
+    module_bid: ''
+    module_bid_axis: 'self'
+    module_uid: ''
+    module_uid_scope: 'local'
+    module_cid: ''
+    module_cid_scope: 'local'
+    module_cid_axis: 'self'
+    module_eid: ''
+    module_eid_scope: 'global'
+    module_keyword: ''
+    module_keyword_scope: 'local'
+    module_tag: ''
+    module_tag_scope: 'local'
+    module_field: ''
+    module_field_scope: 'local'
+    module_start: ''
+    module_start_scope: 'local'
+    module_end: ''
+    module_end_scope: 'local'
+    module_page: ''
+    module_page_scope: 'local'
+    module_order: ''
+    module_order_scope: 'local'
+    module_custom_field: 0
+    module_layout_use: 0
+    module_blog_id: 1
 rule: ''
 tag: ''
 trackback: ''
@@ -7185,7 +7594,7 @@ layout_grid: ''
     layout_grid_parent: 4
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 8
+    layout_grid_mid: 6
     layout_grid_preview: 0
     layout_grid_tpl: 'list_line.html'
   - 
@@ -7195,7 +7604,7 @@ layout_grid: ''
     layout_grid_parent: 3
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7205,7 +7614,7 @@ layout_grid: ''
     layout_grid_parent: 2
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7225,7 +7634,7 @@ layout_grid: ''
     layout_grid_parent: 4
     layout_grid_col: 2
     layout_grid_row: 1
-    layout_grid_mid: 6
+    layout_grid_mid: 4
     layout_grid_preview: 0
     layout_grid_tpl: 'asideBannerList.html'
   - 
@@ -7235,7 +7644,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 8
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7245,7 +7654,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 7
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7255,7 +7664,7 @@ layout_grid: ''
     layout_grid_parent: 14
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 9
+    layout_grid_mid: 7
     layout_grid_preview: 0
     layout_grid_tpl: 'list_image.html'
   - 
@@ -7265,7 +7674,7 @@ layout_grid: ''
     layout_grid_parent: 12
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 5
+    layout_grid_mid: 3
     layout_grid_preview: 0
     layout_grid_tpl: 'photo_title.html'
   - 
@@ -7275,7 +7684,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 6
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7285,7 +7694,7 @@ layout_grid: ''
     layout_grid_parent: 10
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 6
+    layout_grid_mid: 4
     layout_grid_preview: 0
     layout_grid_tpl: 'horizontalBannerList.html'
   - 
@@ -7295,7 +7704,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 5
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7305,7 +7714,7 @@ layout_grid: ''
     layout_grid_parent: 7
     layout_grid_col: 2
     layout_grid_row: 1
-    layout_grid_mid: 4
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: 'summary_list.html'
   - 
@@ -7315,7 +7724,7 @@ layout_grid: ''
     layout_grid_parent: 7
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 3
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: 'summary_thumbnail.html'
   - 
@@ -7325,7 +7734,7 @@ layout_grid: ''
     layout_grid_parent: 5
     layout_grid_col: 1
     layout_grid_row: 2
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7335,7 +7744,7 @@ layout_grid: ''
     layout_grid_parent: 5
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 3
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: 'module_field.html'
   - 
@@ -7345,7 +7754,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 3
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7355,7 +7764,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 4
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7385,7 +7794,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 13
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7395,7 +7804,7 @@ layout_grid: ''
     layout_grid_parent: 40
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 12
+    layout_grid_mid: 10
     layout_grid_preview: 0
     layout_grid_tpl: 'horizontalCalendar.html'
   - 
@@ -7405,7 +7814,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 14
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7415,7 +7824,7 @@ layout_grid: ''
     layout_grid_parent: 42
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 13
+    layout_grid_mid: 11
     layout_grid_preview: 0
     layout_grid_tpl: 'entrySummary_media.html'
   - 
@@ -7425,7 +7834,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 12
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7435,7 +7844,7 @@ layout_grid: ''
     layout_grid_parent: 37
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 8
+    layout_grid_mid: 6
     layout_grid_preview: 0
     layout_grid_tpl: 'list_scrollSpy.html'
   - 
@@ -7445,7 +7854,7 @@ layout_grid: ''
     layout_grid_parent: 37
     layout_grid_col: 2
     layout_grid_row: 1
-    layout_grid_mid: 11
+    layout_grid_mid: 9
     layout_grid_preview: 0
     layout_grid_tpl: 'body_scrollSpy.html'
   - 
@@ -7455,7 +7864,7 @@ layout_grid: ''
     layout_grid_parent: 35
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 11
+    layout_grid_mid: 9
     layout_grid_preview: 0
     layout_grid_tpl: 'body.html'
   - 
@@ -7475,7 +7884,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 11
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7515,7 +7924,7 @@ layout_grid: ''
     layout_grid_parent: 24
     layout_grid_col: 1
     layout_grid_row: 5
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7535,7 +7944,7 @@ layout_grid: ''
     layout_grid_parent: 24
     layout_grid_col: 1
     layout_grid_row: 4
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7545,7 +7954,7 @@ layout_grid: ''
     layout_grid_parent: 27
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 3
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: 'summary_thumbnail.html'
   - 
@@ -7565,7 +7974,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 9
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7575,7 +7984,7 @@ layout_grid: ''
     layout_grid_parent: 22
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 5
+    layout_grid_mid: 3
     layout_grid_preview: 0
     layout_grid_tpl: 'photo_title.html'
   - 
@@ -7585,7 +7994,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 10
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7605,7 +8014,7 @@ layout_grid: ''
     layout_grid_parent: 19
     layout_grid_col: 2
     layout_grid_row: 1
-    layout_grid_mid: 8
+    layout_grid_mid: 6
     layout_grid_preview: 0
     layout_grid_tpl: 'list_pill.html'
   - 
@@ -7615,7 +8024,7 @@ layout_grid: ''
     layout_grid_parent: 19
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 8
+    layout_grid_mid: 6
     layout_grid_preview: 0
     layout_grid_tpl: 'list_panel.html'
   - 
@@ -7625,7 +8034,7 @@ layout_grid: ''
     layout_grid_parent: 18
     layout_grid_col: 1
     layout_grid_row: 3
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7635,7 +8044,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 8
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7645,7 +8054,7 @@ layout_grid: ''
     layout_grid_parent: 15
     layout_grid_col: 2
     layout_grid_row: 1
-    layout_grid_mid: 9
+    layout_grid_mid: 7
     layout_grid_preview: 0
     layout_grid_tpl: 'list_panel.html'
   - 
@@ -7655,7 +8064,7 @@ layout_grid: ''
     layout_grid_parent: 15
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 9
+    layout_grid_mid: 7
     layout_grid_preview: 0
     layout_grid_tpl: 'list_intro.html'
   - 
@@ -7665,7 +8074,7 @@ layout_grid: ''
     layout_grid_parent: 13
     layout_grid_col: 1
     layout_grid_row: 4
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7675,7 +8084,7 @@ layout_grid: ''
     layout_grid_parent: 13
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 9
+    layout_grid_mid: 7
     layout_grid_preview: 0
     layout_grid_tpl: 'list_image.html'
   - 
@@ -7685,7 +8094,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 7
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7695,7 +8104,7 @@ layout_grid: ''
     layout_grid_parent: 11
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 6
+    layout_grid_mid: 4
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7705,7 +8114,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 6
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7715,7 +8124,7 @@ layout_grid: ''
     layout_grid_parent: 7
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 6
+    layout_grid_mid: 4
     layout_grid_preview: 0
     layout_grid_tpl: 'horizontalBannerList.html'
   - 
@@ -7725,7 +8134,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 5
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7735,7 +8144,7 @@ layout_grid: ''
     layout_grid_parent: 9
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 10
+    layout_grid_mid: 8
     layout_grid_preview: 0
     layout_grid_tpl: 'asideBannerList.html'
   - 
@@ -7745,7 +8154,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 4
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7765,7 +8174,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 3
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7785,7 +8194,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 2
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7805,7 +8214,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7815,7 +8224,7 @@ layout_grid: ''
     layout_grid_parent: 9
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 14
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: 'jumbotron_customize.html'
   - 
@@ -7825,7 +8234,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7835,7 +8244,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 5
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7845,7 +8254,7 @@ layout_grid: ''
     layout_grid_parent: 7
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 5
+    layout_grid_mid: 3
     layout_grid_preview: 0
     layout_grid_tpl: 'photo_only.html'
   - 
@@ -7855,7 +8264,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 4
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7865,7 +8274,7 @@ layout_grid: ''
     layout_grid_parent: 5
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 15
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: 'jumbotron_customize_image.html'
   - 
@@ -7875,7 +8284,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 3
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7895,7 +8304,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 2
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7915,17 +8324,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 0
-    layout_grid_preview: 0
-    layout_grid_tpl: ''
-  - 
-    layout_grid_identifier: 'topLayout'
-    layout_grid_serial: 22
-    layout_grid_class: 'module'
-    layout_grid_parent: 21
-    layout_grid_col: 1
-    layout_grid_row: 1
-    layout_grid_mid: 18
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7935,7 +8334,17 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 7
-    layout_grid_mid: 0
+    layout_grid_mid: ''
+    layout_grid_preview: 0
+    layout_grid_tpl: ''
+  - 
+    layout_grid_identifier: 'topLayout'
+    layout_grid_serial: 22
+    layout_grid_class: 'module'
+    layout_grid_parent: 21
+    layout_grid_col: 1
+    layout_grid_row: 1
+    layout_grid_mid: 14
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7945,7 +8354,7 @@ layout_grid: ''
     layout_grid_parent: 18
     layout_grid_col: 2
     layout_grid_row: 1
-    layout_grid_mid: 20
+    layout_grid_mid: 16
     layout_grid_preview: 0
     layout_grid_tpl: 'list_line.html'
   - 
@@ -7955,7 +8364,7 @@ layout_grid: ''
     layout_grid_parent: 18
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 19
+    layout_grid_mid: 15
     layout_grid_preview: 0
     layout_grid_tpl: 'photo_title.html'
   - 
@@ -7965,7 +8374,7 @@ layout_grid: ''
     layout_grid_parent: 16
     layout_grid_col: 1
     layout_grid_row: 2
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -7980,22 +8389,22 @@ layout_grid: ''
     layout_grid_tpl: 'module_field.html'
   - 
     layout_grid_identifier: 'topLayout'
-    layout_grid_serial: 15
-    layout_grid_class: 'col12'
-    layout_grid_parent: 14
-    layout_grid_col: 1
-    layout_grid_row: 1
-    layout_grid_mid: 0
-    layout_grid_preview: 0
-    layout_grid_tpl: ''
-  - 
-    layout_grid_identifier: 'topLayout'
     layout_grid_serial: 16
     layout_grid_class: 'container-col-10'
     layout_grid_parent: 15
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 0
+    layout_grid_mid: ''
+    layout_grid_preview: 0
+    layout_grid_tpl: ''
+  - 
+    layout_grid_identifier: 'topLayout'
+    layout_grid_serial: 15
+    layout_grid_class: 'col12'
+    layout_grid_parent: 14
+    layout_grid_col: 1
+    layout_grid_row: 1
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -8005,7 +8414,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 5
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -8015,7 +8424,7 @@ layout_grid: ''
     layout_grid_parent: 12
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 5
+    layout_grid_mid: 3
     layout_grid_preview: 0
     layout_grid_tpl: 'photo_only_round.html'
   - 
@@ -8025,7 +8434,7 @@ layout_grid: ''
     layout_grid_parent: 1
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -8035,17 +8444,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 0
-    layout_grid_preview: 0
-    layout_grid_tpl: ''
-  - 
-    layout_grid_identifier: 'topLayout'
-    layout_grid_serial: 11
-    layout_grid_class: 'col12-space'
-    layout_grid_parent: 0
-    layout_grid_col: 1
-    layout_grid_row: 4
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -8055,7 +8454,17 @@ layout_grid: ''
     layout_grid_parent: 11
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 0
+    layout_grid_mid: ''
+    layout_grid_preview: 0
+    layout_grid_tpl: ''
+  - 
+    layout_grid_identifier: 'topLayout'
+    layout_grid_serial: 11
+    layout_grid_class: 'col12-space'
+    layout_grid_parent: 0
+    layout_grid_col: 1
+    layout_grid_row: 4
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -8065,17 +8474,7 @@ layout_grid: ''
     layout_grid_parent: 9
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 17
-    layout_grid_preview: 0
-    layout_grid_tpl: ''
-  - 
-    layout_grid_identifier: 'topLayout'
-    layout_grid_serial: 8
-    layout_grid_class: 'col12'
-    layout_grid_parent: 7
-    layout_grid_col: 1
-    layout_grid_row: 1
-    layout_grid_mid: 0
+    layout_grid_mid: 13
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -8085,7 +8484,17 @@ layout_grid: ''
     layout_grid_parent: 8
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 0
+    layout_grid_mid: ''
+    layout_grid_preview: 0
+    layout_grid_tpl: ''
+  - 
+    layout_grid_identifier: 'topLayout'
+    layout_grid_serial: 8
+    layout_grid_class: 'col12'
+    layout_grid_parent: 7
+    layout_grid_col: 1
+    layout_grid_row: 1
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -8095,17 +8504,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 3
-    layout_grid_mid: 0
-    layout_grid_preview: 0
-    layout_grid_tpl: ''
-  - 
-    layout_grid_identifier: 'topLayout'
-    layout_grid_serial: 5
-    layout_grid_class: 'container-col-10'
-    layout_grid_parent: 4
-    layout_grid_col: 1
-    layout_grid_row: 1
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -8115,7 +8514,17 @@ layout_grid: ''
     layout_grid_parent: 5
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 16
+    layout_grid_mid: 12
+    layout_grid_preview: 0
+    layout_grid_tpl: ''
+  - 
+    layout_grid_identifier: 'topLayout'
+    layout_grid_serial: 5
+    layout_grid_class: 'container-col-10'
+    layout_grid_parent: 4
+    layout_grid_col: 1
+    layout_grid_row: 1
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -8125,7 +8534,7 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 2
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -8135,7 +8544,7 @@ layout_grid: ''
     layout_grid_parent: 3
     layout_grid_col: 1
     layout_grid_row: 2
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''
   - 
@@ -8155,6 +8564,6 @@ layout_grid: ''
     layout_grid_parent: 0
     layout_grid_col: 1
     layout_grid_row: 1
-    layout_grid_mid: 0
+    layout_grid_mid: ''
     layout_grid_preview: 0
     layout_grid_tpl: ''

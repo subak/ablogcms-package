@@ -1,0 +1,33 @@
+/* ------------------------------
+ フッター
+------------------------------ */
+.footer {
+	padding: 10px 0;
+	border-top: 1px solid #EFEFEF;
+}
+/* ソーシャルボタン */
+.socialBtn {
+	.transition(opacity .2s linear);
+	&:hover,
+	&:active,
+	&:focus,
+	&:visited {
+		color: #FFF;
+		text-decoration: none;
+	}
+	&.facebookBtn {
+		/* Facebook */
+		background: @facebook-color;
+	}
+	&.twitterBtn {
+		/* Twitter */
+		background: @twitter-color;
+	}
+	&.gplusBtn {
+		/* Google + */
+		background: @gplus-color;
+	}
+	&:hover {
+		.opacity(.6);
+	}
+}

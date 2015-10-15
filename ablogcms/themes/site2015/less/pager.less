@@ -1,0 +1,107 @@
+/* ------------------------------
+　　ページャー
+------------------------------ */
+.pager {
+	list-style: none;
+	margin: 0 -5px 50px -5px;
+	padding: 0;
+	text-align: center;
+	li {
+		display: inline-block;
+		margin: 0 5px;
+		&.cur { /* 現在いる位置 */
+			padding: 5px 20px;
+			color: #FFF;
+			background: #999999;
+			border-radius: 3px;
+		}
+	}
+}
+.pagerLink {
+	display: block;
+	padding: 5px 20px;
+	color: #333;
+	border-radius: 3px;
+	background: @base-color;
+	&:visited,
+	&:focus,
+	&:active {
+		color: #333;
+	}
+	&:hover {
+		color: #FFF;
+		text-decoration: none;
+		background: #333;
+	}
+}
+.pagerLinkForward {
+	float: right;
+}
+.pagerLinkPrev {
+	float: left;
+}
+@media screen and (min-width: @breakpoint-md-min){
+	.pagerLink {
+		padding: 5px 10px;
+	}
+	.pager {
+		li {
+			&.cur { /* 現在いる位置 */
+				padding: 5px 10px;
+			}
+		}
+	}
+}
+
+/* 前後リンク */
+.serialNav {
+	list-style: none;
+	margin: -@entry-margin-bottom 0 60px 0;
+	padding: 0;
+	.serialNavItem {
+		display: block;
+		float: none;
+	}
+	.serialNavItemPrev {
+		text-align: left;
+	}
+	.serialNavItemNext {
+		text-align: right;
+	}
+	a {
+		display: block;
+		padding: 25px 0;
+		border-bottom: 1px solid @base-color;
+		color: #333;
+		&:hover,
+		&:visited,
+		&:focus,
+		&:active {
+			color: inherit;
+			text-decoration: none;
+		}
+		&:hover {
+			background: @base-color;
+		}
+	}
+}
+@media screen and (min-width: @breakpoint-md-min){
+	.serialNav {
+		margin: 0 0 60px 0;
+		border: 0;
+		.serialNavItemPrev {
+			float: left;
+		}
+		.serialNavItemNext {
+			float: right;
+		}
+		a {
+			display: inline;
+			border: 0;
+			&:hover {
+				text-decoration: underline;
+				background: 0;
+			}
+		}
+	}
+}

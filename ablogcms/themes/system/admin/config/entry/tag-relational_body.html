@@ -33,6 +33,13 @@
 		</td>
 	</tr>
 	<tr>
+		<th>ループ内クラス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="指定したクラスをエントリーに設定できます。例えばグリッドシステムのカラム数など設定してください。"></i></th>
+		<td>
+			<input type="text" name="entry_tag-relational_loop_class" value="{entry_tag-relational_loop_class}" size="4" class="acms-admin-form-width-medium" />
+			<input type="hidden" name="config[]" value="entry_tag-relational_loop_class" />
+		</td>
+	</tr>
+	<tr>
 		<th>インデキシング<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="チェックを外すと、インデキシングされていないエントリーも表示されます。"></i></th>
 		<td>
 			<input type="hidden" name="entry_tag-relational_indexing" value="off" />
@@ -55,6 +62,18 @@
 			<label for="input-checkbox-mo_entry_tag-relational_notfound" class="acms-admin-form-checkbox"><input type="checkbox" name="mo_entry_tag-relational_notfound" value="on"{mo_entry_tag-relational_notfound:checked#on} id="input-checkbox-mo_entry_tag-relational_notfound" /><i class="acms-admin-ico-checkbox"></i>指定された条件のエントリーが一つもない場合にnot foundを表示する</label>
 			<input type="hidden" name="config[]" value="mo_entry_tag-relational_notfound" />
 			<br />( チェックなしで何も表示しない )
+		</td>
+	</tr>
+	<tr>
+		<th>サマリー<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="テキストユニットの先頭から任意の文字量を出力できます。"></i></th>
+		<td>
+			文字数:
+			<input type="text" name="entry_tag-relational_fulltext_width" value="{entry_tag-relational_fulltext_width}" />
+			<input type="hidden" name="config[]" value="entry_tag-relational_fulltext_width" />
+
+			追加文字:
+			<input type="text" name="entry_tag-relational_fulltext_marker" value="{entry_tag-relational_fulltext_marker}" />
+			<input type="hidden" name="config[]" value="entry_tag-relational_fulltext_marker" />
 		</td>
 	</tr>
 </table>

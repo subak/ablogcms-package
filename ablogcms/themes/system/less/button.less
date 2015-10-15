@@ -1,4 +1,4 @@
-/* ------------------------------  
+/* ------------------------------
  ボタン デフォルト
 ------------------------------- */
 .acms-btn {
@@ -36,21 +36,21 @@
 		border-color: #137AF3;
 	}
 
-	// --------------- 
+	// ---------------
 	// primary
-	// --------------- 
+	// ---------------
 	&.acms-btn-primary {
 		border: @acms-btn-primary-border;
-		.btn-color(@acms-btn-primary-start-color; @acms-btn-primary-end-color; @acms-btn-text-color;);
-		
+		.btn-color(@acms-btn-primary-start-color, @acms-btn-primary-end-color, @acms-btn-text-color);
+
 		// hover
 		&:hover,
 		&.hover{
 			border: @acms-btn-primary-hover-border;
-			.btn-color(@acms-btn-primary-hover-start-color; @acms-btn-primary-hover-end-color; @acms-btn-text-color;);
+			.btn-color(@acms-btn-primary-hover-start-color, @acms-btn-primary-hover-end-color, @acms-btn-text-color);
 			text-decoration: none;
 		}
-		
+
 		// 色
 		&:link,
 		&:hover,
@@ -58,36 +58,36 @@
 		&:visited {
 			color: @acms-btn-text-color;
 		}
-		
+
 		// active
 		&.active,
 		&:active {
 			border: @acms-btn-primary-active-border;
-			.btn-color-active(@acms-btn-primary-active-bg; @acms-btn-text-color; @acms-btn-primary-active-inset;);
+			.btn-color-active(@acms-btn-primary-active-bg, @acms-btn-text-color, @acms-btn-primary-active-inset);
 			text-decoration: none;
 		}
-		
+
 		// focus
 		&:focus {
 			outline: none;
 			border-color: @acms-btn-primary-focus-border-color;
-		}	
+		}
 	}
 
-	// --------------- 
+	// ---------------
 	// info
-	// --------------- 
+	// ---------------
 	&.acms-btn-info {
 		border: @acms-btn-info-border;
-		.btn-color(@acms-btn-info-start-color; @acms-btn-info-end-color; @acms-btn-text-color;);
-		
+		.btn-color(@acms-btn-info-start-color, @acms-btn-info-end-color, @acms-btn-text-color);
+
 		// hover
 		&:hover {
 			border: @acms-btn-info-hover-border;
-			.btn-color(@acms-btn-info-hover-start-color; @acms-btn-info-hover-end-color; @acms-btn-text-color;);
+			.btn-color(@acms-btn-info-hover-start-color, @acms-btn-info-hover-end-color, @acms-btn-text-color);
 			text-decoration: none;
 		}
-		
+
 		// 色
 		&:link ,
 		&:hover,
@@ -95,15 +95,15 @@
 		&:visited {
 			color: @acms-btn-text-color;
 		}
-		
+
 		// active
 		&.active,
 		&:active {
 			border: @acms-btn-info-active-border;
-			.btn-color-active(@acms-btn-info-active-bg; @acms-btn-text-color; @acms-btn-info-active-inset;);
+			.btn-color-active(@acms-btn-info-active-bg, @acms-btn-text-color, @acms-btn-info-active-inset);
 			text-decoration: none;
 		}
-		
+
 		// focus
 		&:focus {
 			outline: none;
@@ -111,20 +111,20 @@
 		}
 	}
 
-	// --------------- 
+	// ---------------
 	// success
-	// --------------- 
+	// ---------------
 	&.acms-btn-success {
 		border: @acms-btn-success-border;
-		.btn-color(@acms-btn-success-start-color; @acms-btn-success-end-color; @acms-btn-text-color;);
-		
+		.btn-color(@acms-btn-success-start-color, @acms-btn-success-end-color, @acms-btn-text-color);
+
 		// hover
 		&:hover {
 			border: @acms-btn-success-hover-border;
-			.btn-color(@acms-btn-success-hover-start-color; @acms-btn-success-hover-end-color; @acms-btn-text-color;);
+			.btn-color(@acms-btn-success-hover-start-color, @acms-btn-success-hover-end-color, @acms-btn-text-color);
 			text-decoration: none;
 		}
-		
+
 		// 色
 		&:link ,
 		&:hover,
@@ -132,15 +132,15 @@
 		&:visited {
 			color: @acms-btn-text-color;
 		}
-		
+
 		// active
 		&.active,
 		&:active {
 			border: @acms-btn-success-active-border;
-			.btn-color-active(@acms-btn-success-active-bg; @acms-btn-text-color; @acms-btn-success-active-inset;);
+			.btn-color-active(@acms-btn-success-active-bg, @acms-btn-text-color, @acms-btn-success-active-inset);
 			text-decoration: none;
 		}
-		
+
 		// focus
 		&:focus {
 			outline: none;
@@ -148,20 +148,20 @@
 		}
 	}
 
-	// --------------- 
+	// ---------------
 	// warning
-	// --------------- 
+	// ---------------
 	&.acms-btn-warning {
 		border: @acms-btn-warning-border;
-		.btn-color(@acms-btn-warning-start-color; @acms-btn-warning-end-color; @acms-btn-text-color;);
-		
+		.btn-color(@acms-btn-warning-start-color, @acms-btn-warning-end-color, @acms-btn-text-color);
+
 		// hover
 		&:hover {
 			border: @acms-btn-warning-hover-border;
-			.btn-color(@acms-btn-warning-hover-start-color; @acms-btn-warning-hover-end-color; @acms-btn-text-color;);
+			.btn-color(@acms-btn-warning-hover-start-color, @acms-btn-warning-hover-end-color, @acms-btn-text-color);
 			text-decoration: none;
 		}
-		
+
 		// 色
 		&:link ,
 		&:hover,
@@ -169,15 +169,15 @@
 		&:visited {
 			color: @acms-btn-text-color;
 		}
-		
+
 		// active
 		&.active,
 		&:active {
 			border: @acms-btn-warning-active-border;
-			.btn-color-active(@acms-btn-warning-active-bg; @acms-btn-text-color; @acms-btn-warning-active-inset;);
+			.btn-color-active(@acms-btn-warning-active-bg, @acms-btn-text-color, @acms-btn-warning-active-inset);
 			text-decoration: none;
 		}
-		
+
 		// focus
 		&:focus {
 			outline: none;
@@ -185,20 +185,20 @@
 		}
 	}
 
-	// --------------- 
+	// ---------------
 	// danger
-	// --------------- 
+	// ---------------
 	&.acms-btn-danger {
 		border: @acms-btn-danger-border;
-		.btn-color(@acms-btn-danger-start-color; @acms-btn-danger-end-color; @acms-btn-text-color;);
-		
+		.btn-color(@acms-btn-danger-start-color, @acms-btn-danger-end-color, @acms-btn-text-color);
+
 		// hover
 		&:hover {
 			border: @acms-btn-danger-hover-border;
-			.btn-color(@acms-btn-danger-hover-start-color; @acms-btn-danger-hover-end-color; @acms-btn-text-color;);
+			.btn-color(@acms-btn-danger-hover-start-color, @acms-btn-danger-hover-end-color, @acms-btn-text-color);
 			text-decoration: none;
 		}
-		
+
 		// 色
 		&:link ,
 		&:hover,
@@ -206,15 +206,15 @@
 		&:visited {
 			color: @acms-btn-text-color;
 		}
-		
+
 		// active
 		&.active,
 		&:active {
 			border: @acms-btn-danger-active-border;
-			.btn-color-active(@acms-btn-danger-active-bg; @acms-btn-text-color; @acms-btn-danger-active-inset;);
+			.btn-color-active(@acms-btn-danger-active-bg, @acms-btn-text-color, @acms-btn-danger-active-inset);
 			text-decoration: none;
 		}
-		
+
 		// focus
 		&:focus {
 			outline: none;
@@ -222,9 +222,9 @@
 		}
 	}
 
-	// --------------- 
+	// ---------------
 	// link
-	// --------------- 
+	// ---------------
 	&.acms-btn-link,
 	.acms-btn-link:hover,
 	.acms-btn-link:active,
@@ -235,22 +235,22 @@
 		background: none;
 		border-radius: 0;
 	}
-	
+
 	// hover
 	&.acms-btn-link:hover {
 		color: @acms-btn-link-color-hover;
 	}
-	
+
 	// active
 	&.acms-btn-link:active {
 		box-shadow:none;
 	}
-	
+
 }
 
 /* ---------------
  ボタン フラット
---------------- */ 
+--------------- */
 .acms-btn-flat {
 	.acms-btn-flat;
 	.btn-flat-color;
@@ -263,6 +263,11 @@
 		color: @acms-btn-flat-text-default-color;
 		.btn-flat-color(@bg-color:#EEEEEE, @border: 1px solid #A7A7A7);
 		text-decoration: none;
+	}
+
+	&:visited,
+	a&:visited {
+		color: @acms-btn-flat-text-default-color;
 	}
 
 	&:active,
@@ -288,6 +293,12 @@
 		.btn-flat-color(@acms-btn-flat-primary-hover-color, @acms-btn-flat-primary-hover-border);
 		text-decoration: none;
 	}
+
+	&:visited,
+	a&:visited {
+		color: @acms-btn-flat-text-color;
+	}
+
 	&:active,
 	a&:active,
 	&.acms-btn-active,
@@ -311,6 +322,12 @@
 		.btn-flat-color(@acms-btn-flat-info-hover-color, @acms-btn-flat-info-hover-border);
 		text-decoration: none;
 	}
+
+	&:visited,
+	a&:visited {
+		color: @acms-btn-flat-text-color;
+	}
+
 	&:active,
 	a&:active,
 	&.acms-btn-active,
@@ -334,6 +351,12 @@
 		.btn-flat-color(@acms-btn-flat-success-hover-color, @acms-btn-flat-success-hover-border);
 		text-decoration: none;
 	}
+
+	&:visited,
+	a&:visited {
+		color: @acms-btn-flat-text-color;
+	}
+
 	&:active,
 	a&:active,
 	&.acms-btn-active,
@@ -357,6 +380,12 @@
 		.btn-flat-color(@acms-btn-flat-warning-hover-color, @acms-btn-flat-warning-hover-border);
 		text-decoration: none;
 	}
+
+	&:visited,
+	a&:visited {
+		color: @acms-btn-flat-text-color;
+	}
+
 	&:active,
 	a&:active,
 	&.acms-btn-active,
@@ -380,6 +409,12 @@
 		.btn-flat-color(@acms-btn-flat-danger-hover-color, @acms-btn-flat-danger-hover-border);
 		text-decoration: none;
 	}
+
+	&:visited,
+	a&:visited {
+		color: @acms-btn-flat-text-color;
+	}
+
 	&:active,
 	a&:active,
 	&.acms-btn-active,
@@ -438,18 +473,18 @@
 	text-decoration: none;
 }
 
-// --------------- 
+// ---------------
 // 管理画面のボタン primary
-// --------------- 
+// ---------------
 .acms-btn-admin-primary {
 	border: @acms-btn-primary-border;
-	.btn-color(@acms-btn-primary-start-color; @acms-btn-primary-end-color; @acms-btn-text-color;);
-	
+	.btn-color(@acms-btn-primary-start-color, @acms-btn-primary-end-color, @acms-btn-text-color);
+
 	// hover
 	&:hover,
 	&.hover{
 		border: @acms-btn-primary-hover-border;
-		.btn-color(@acms-btn-primary-hover-start-color; @acms-btn-primary-hover-end-color; @acms-btn-text-color;);
+		.btn-color(@acms-btn-primary-hover-start-color, @acms-btn-primary-hover-end-color, @acms-btn-text-color);
 		text-decoration: none;
 	}
 
@@ -465,7 +500,7 @@
 	&.active,
 	&:active {
 		border: @acms-btn-primary-active-border;
-		.btn-color-active(@acms-btn-primary-active-bg; @acms-btn-text-color; @acms-btn-primary-active-inset;);
+		.btn-color-active(@acms-btn-primary-active-bg, @acms-btn-text-color, @acms-btn-primary-active-inset);
 		text-decoration: none;
 	}
 
@@ -475,16 +510,16 @@
 	}
 }
 
-// --------------- 
+// ---------------
 // 管理画面のボタン info
-// --------------- 
+// ---------------
 .acms-btn-admin-info {
 	border: @acms-btn-info-border;
-	.btn-color(@acms-btn-info-start-color; @acms-btn-info-end-color; @acms-btn-text-color;);
+	.btn-color(@acms-btn-info-start-color, @acms-btn-info-end-color, @acms-btn-text-color);
 	// hover
 	&:hover {
 		border: @acms-btn-info-hover-border;
-		.btn-color(@acms-btn-info-hover-start-color; @acms-btn-info-hover-end-color; @acms-btn-text-color;);
+		.btn-color(@acms-btn-info-hover-start-color, @acms-btn-info-hover-end-color, @acms-btn-text-color);
 		text-decoration: none;
 	}
 
@@ -500,7 +535,7 @@
 	&.active,
 	&:active {
 		border: @acms-btn-info-active-border;
-		.btn-color-active(@acms-btn-info-active-bg; @acms-btn-text-color; @acms-btn-info-active-inset;);
+		.btn-color-active(@acms-btn-info-active-bg, @acms-btn-text-color, @acms-btn-info-active-inset);
 		text-decoration: none;
 	}
 
@@ -510,20 +545,20 @@
 	}
 }
 
-// --------------- 
+// ---------------
 // 管理画面のボタン danger
-// --------------- 
+// ---------------
 .acms-btn-admin-danger {
 	border: @acms-btn-danger-border;
-	.btn-color(@acms-btn-danger-start-color; @acms-btn-danger-end-color; @acms-btn-text-color;);
-	
+	.btn-color(@acms-btn-danger-start-color, @acms-btn-danger-end-color, @acms-btn-text-color);
+
 	// hover
 	&:hover {
 		border: @acms-btn-danger-hover-border;
-		.btn-color(@acms-btn-danger-hover-start-color; @acms-btn-danger-hover-end-color; @acms-btn-text-color;);
+		.btn-color(@acms-btn-danger-hover-start-color, @acms-btn-danger-hover-end-color, @acms-btn-text-color);
 		text-decoration: none;
 	}
-	
+
 	// 文字カラー
 	&:link ,
 	&:hover,
@@ -536,7 +571,7 @@
 	&.active,
 	&:active {
 		border: @acms-btn-danger-active-border;
-		.btn-color-active(@acms-btn-danger-active-bg; @acms-btn-text-color; @acms-btn-danger-active-inset;);
+		.btn-color-active(@acms-btn-danger-active-bg, @acms-btn-text-color, @acms-btn-danger-active-inset);
 		text-decoration: none;
 	}
 
@@ -569,9 +604,9 @@ a.acms-btn-admin{
 }
 
 
-// --------------- 
+// ---------------
 // ユーティリティ
-// --------------- 
+// ---------------
 
 // disabled
 .acms-btn-disabled,

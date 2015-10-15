@@ -42,6 +42,13 @@
     Key: 
     Default: 
     Extra: 
+  alias_scope: 
+    Field: alias_scope
+    Type: varchar(8)
+    Null: NO
+    Key: 
+    Default: local
+    Extra: 
   alias_description: 
     Field: alias_description
     Type: varchar(255)
@@ -1486,6 +1493,13 @@
     Key: 
     Default: 
     Extra: 
+  form_scope: 
+    Field: form_scope
+    Type: varchar(8)
+    Null: NO
+    Key: 
+    Default: local
+    Extra: 
   form_data: 
     Field: form_data
     Type: longtext
@@ -1616,7 +1630,7 @@
     Extra: 
   layout_grid_tpl: 
     Field: layout_grid_tpl
-    Type: varchar(256)
+    Type: varchar(255)
     Null: YES
     Key: 
     Default: 
@@ -1899,14 +1913,14 @@
     Extra: 
   media_file_name: 
     Field: media_file_name
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: 
     Default: 
     Extra: 
   media_file_size: 
     Field: media_file_size
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: 
     Default: 
@@ -1920,21 +1934,21 @@
     Extra: 
   media_field_1: 
     Field: media_field_1
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: 
     Default: 
     Extra: 
   media_field_2: 
     Field: media_field_2
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: 
     Default: 
     Extra: 
   media_field_3: 
     Field: media_field_3
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: 
     Default: 
@@ -1948,21 +1962,21 @@
     Extra: 
   media_field_1: 
     Field: media_field_1
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: 
     Default: 
     Extra: 
   media_field_2: 
     Field: media_field_2
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: 
     Default: 
     Extra: 
   media_field_3: 
     Field: media_field_3
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: 
     Default: 
@@ -1984,7 +1998,7 @@
 %{PREFIX}media_tag: 
   media_tag_name: 
     Field: media_tag_name
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: 
     Default: 
@@ -2782,7 +2796,7 @@
 %{PREFIX}sequence_plugin: 
   sequence_plugin_key: 
     Field: sequence_plugin_key
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: PRI
     Default: 
@@ -3569,7 +3583,7 @@
     Extra: 
   user_icon: 
     Field: user_icon
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: 
     Default: 
@@ -3654,7 +3668,7 @@
     Extra: 
   usergroup_name: 
     Field: usergroup_name
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: 
     Default: 
@@ -3712,7 +3726,7 @@
     Extra: 
   workflow_name: 
     Field: workflow_name
-    Type: varchar(256)
+    Type: varchar(255)
     Null: NO
     Key: 
     Default: 

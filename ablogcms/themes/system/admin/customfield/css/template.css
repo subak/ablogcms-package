@@ -1,0 +1,107 @@
+.customFieldCopied{
+	position: fixed;
+	top: 50%;
+	left: 0;
+	background-color:rgba(0,0,0,0);
+	padding: 10px;
+	color:#FFFFFF;
+	text-align: center;
+	width: 100%;
+	-webkit-transition: background-color .2s ease-in;
+	   -moz-transition: background-color .2s ease-in;
+	    -ms-transition: background-color .2s ease-in;
+	     -o-transition: background-color .2s ease-in;
+	        transition: background-color .2s ease-in;
+}
+.customFieldLine{
+	height: 1px;
+	background-color: #CCCCCC;
+	border: none;
+}
+.customFieldValidatorArea{
+	background-color: #E0E0E3;
+	border: 1px solid #CCCCCC;
+	padding: 10px;
+}
+.customFieldValidatorArea .acms-admin-icon-tooltip{
+	margin-left: 10px;
+}
+.customFieldBold .acms-admin-icon-tooltip{
+	margin-left: 10px;
+}
+.customFieldOptionTable{
+	width: 100%;
+}
+.customFieldOptionTable tr{
+	border-bottom: 1px solid #CCCCCC;
+}
+.customFieldOptionTable th,
+.customFieldOptionTable td{
+	border: none;
+}
+.customFieldOptionTable th:first-child,
+.customFieldOptionTable td:first-child{
+	padding-left: 0;
+}
+.customFieldOptionTable th:last-child,
+.customFieldOptionTable td:last-child{
+	padding-right: 0;
+}
+.customFieldOptionTable td:last-child{
+	width: 50px;
+}
+.customFieldOptionTable .acms-admin-btn-admin{
+	margin-right: 0 !important;
+}
+.customFieldOptionTableInput{
+	display: table;
+	width: 100%;
+}
+.customFieldOptionTableAppend{
+	display: table-cell;
+	width: 50px;
+}
+.customFieldOptionTable input{
+	display: table-cell;
+}
+.customFieldBasicTable{
+	border-top: none;
+}
+.customFieldBasicTable tr{
+	border: none;
+}
+.customFieldBasicTable tr:last-child td{
+	border-bottom: none;
+}
+.customFieldBasicTable th:first-child,
+.customFieldBasicTable td:first-child{
+	padding-left: 0 !important;
+}
+.customFieldCopied.active{
+	background-color:rgba(0,0,0,0.5);
+}
+#converter{
+	background-color:rgba(0,0,0,0.5);
+}
+.customFieldBold{
+	font-weight: bold;
+}
+.customFieldOptionBlock{
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+.customFieldCopyBtn{
+	position: relative;
+	top: -2px;
+}
+.prettyprint{
+	margin-top: -5px;
+}
+.customFieldPreview{
+	background-color: #FFFFFF;
+	padding: 15px;
+}
+.customFieldPreview input[type=text],
+.customFieldPreview textarea{
+	color: #DDDDDD;
+}

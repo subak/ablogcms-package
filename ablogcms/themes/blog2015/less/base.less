@@ -1,0 +1,76 @@
+/* ----------------
+acms.cssの上書き
+------------------ */
+@media screen and (max-width:767px){
+	.acms-entry [class*=column-eximage-].nocaption,
+	.acms-entry [class*=column-image-].nocaption,
+	.acms-entry [class*=column-map-],
+	.acms-entry [class*=column-media-].nocaption,
+	.acms-entry [class*=column-video-],
+	.acms-entry [class*=column-yolp-],
+	.acms-entry [class*=column-youtube-]{
+		text-align: center;
+	}
+	.column-eximage-left,
+	.column-image-left,
+	.column-media-left{
+		float: none;
+		text-align: center;
+	}
+	.column-eximage-right,
+	.column-image-right,
+	.column-media-right{
+		float: none;
+		text-align: center;
+	}
+}
+.detail-fade-head{
+	text-decoration: none;
+	font-size: 14px;
+	&:link,
+	&:hover,
+	&:visited{
+		text-decoration: none;
+	}
+}
+.fieldTitle{
+	padding: 0 !important;
+	font-size: 16px !important;
+	margin: 10px 0;
+	a,
+	:link,
+	:hover,
+	:visited{
+		text-decoration: none;
+	}
+}
+#entryForm{
+	font-size: 14px;
+}
+.acms-admin-edit-info-heading a:link{
+	color:#FFFFFF;
+}
+/* ----------------
+全体
+------------------ */
+body{
+	color: #333333;
+	font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, 'メイリオ', 'ＭＳ Ｐゴシック', 'MS PGothic', Verdana, sans-serif;
+}
+*{
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+a:visited{
+	color: #5E5CBA;
+}
+a:link{
+	color: #006DD9;
+	text-decoration: none;
+}
+.blogContainer{
+	max-width: @blogContainerWidth;
+	margin: 0 auto;
+	padding: 25px 10px 50px 10px;
+}

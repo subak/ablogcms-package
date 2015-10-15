@@ -1,0 +1,46 @@
+/* ----------------
+タグクラウド
+------------------ */
+.blogTagCloud{
+	padding: 0;
+	margin: 0 0 35px 0;
+	color: #2262AC;
+	a,
+	a:link,
+	a:visited{
+		color: #2262AC;
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
+	li{
+		list-style-type: none;
+		display: inline;
+	}
+}
+@iter: 25;
+.loop(@i,@n) when (@i < @n) {
+	.blogTagCloudItem@{i}{
+		& when (@i >= 1) and (@i <= 2){
+			font-size: 12px;
+		}
+		& when (@i >= 3) and (@i <= 5){
+			font-size: 14px;
+		}
+		& when (@i >= 6) and (@i < 13){
+			font-size: 16px;
+		}
+		& when (@i >= 14) and (@i < 17){
+			font-size: 18px;
+		}
+		& when (@i >= 20) {
+			font-size: 20px;
+		}
+		& when (@i >= 10){
+			font-weight: bold;
+		}
+	}
+	.loop(@i+1,@n);
+}
+.loop(1,@iter);

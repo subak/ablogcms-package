@@ -15,11 +15,11 @@
 <!--#include file="/include/mainVisual.html" -->
 <!--#include file="/include/globalNavigation.html" -->
 <!-- オフキャンバス開閉ボタン -->
-<span class="blogHeaderNaviBtn" id="nav-open-btn">
+<button class="blogHeaderNaviBtn" id="nav-open-btn">
 	<span class="blogHeaderNaviBtnLine"></span>
 	<span class="blogHeaderNaviBtnLine"></span>
 	<span class="blogHeaderNaviBtnLine"></span>
-</span>
+</button>
 
 <div class="acms-container blogContainer">
 	<div class="acms-grid-r">
@@ -28,7 +28,7 @@
 			<!-- 管理画面 -->
 			<!--#include file="/admin/action.html"-->
 
-			<!-- 検索結果 -->
+			<!-- 検索時のタイトル -->
 			<!--#include file="/include/searchResult.html"-->
 
 			<!-- タグフィルター -->
@@ -37,14 +37,8 @@
 			<!-- エントリーボディー -->
 			<!--#include file="/include/entryBody.html"-->
 
-			<!-- トップページのSEOチェック -->
-			<!--#include file="/include/top_check.html" -->
-
-			<!-- インデックスページのSEOチェック -->
-			<!--#include file="/include/index_check.html" -->
-
-			<!-- エントリーページのSEOチェック -->
-			<!--#include file="/include/entry_check.html" -->
+			<!-- 現在のページのSEOチェック -->
+			<!--#include file="/include/%{VIEW}_check.html" -->
 			</main>
 		</div>
 		<div class="acms-col-md-3">
@@ -87,6 +81,5 @@
 <!--#include file="/include/footer.html" -->
 </div>
 </div>
-<script src="/js/off-canvas/main.js"></script>
 </body>
 </html>

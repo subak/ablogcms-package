@@ -1,0 +1,122 @@
+/* ------------------------------
+　　お問い合わせ
+------------------------------ */
+.contactBox {
+	p {
+		&.message {
+			margin: 0 0 35px 0;
+			padding: 0 10px;
+			font-weight: bold;
+			color: @primary-color;
+		}
+		&.contactNo {
+			margin: 0;
+			.font-size(30);
+			font-weight: bold;
+			color: #333;
+			a {
+				color: inherit;
+			}
+		}
+		&.errorText {
+			/* エラー文 */
+			margin: 5px 0 0 0;
+			color: @primary-color;
+		}
+	}
+	table.contactForm {
+		border-right: 1px solid @base-color;
+		border-bottom: 1px solid @base-color;
+		border-left: 1px solid @base-color;
+		tr {
+			background: #FFF;
+		}
+	}
+	@media screen and (min-width: @breakpoint-sm-min){
+		th,
+		td {
+			display: table-cell;
+		}
+	}
+	@media screen and (min-width: @breakpoint-md-min){
+		th {
+			width: 260px;
+		}
+
+	}
+}
+
+/* ステップ */
+.contactBox {
+	.mailStep {
+		margin: 0 10px 35px 10px;
+		padding: 0 10px;
+		background: @base-color;
+		/* カウンターの設定 */
+		counter-reset: mailStep;
+	}
+	.mailStepItem {
+		float: left;
+		list-style: none;
+		margin: 0 10px;
+		padding: 18px 0 14px;
+		color: #999;
+		.font-size(16);
+		font-weight: bold;
+		border-bottom: 4px solid transparent;
+		&:before {
+			/* カウンターの設定 */
+			counter-increment: mailStep;
+			content: counter(mailStep)".";
+		}
+	}
+	.mailStepItemCurrent {
+		color: #333;
+		border-bottom: 4px solid @secondary-color;
+	}
+	@media screen and (min-width: @breakpoint-md-min){
+		.mailStep {
+			height: 60px;
+		}
+	}
+}
+/* 送信ボタン */
+.formBtnBox {
+	margin: 0 10px 50px 10px;
+	text-align: center;
+}
+.formBtn {
+	display: inline-block;
+}
+.formBtnReturn {
+	float: left;
+}
+.formBtnSend {
+	float: right;
+}
+@media screen and (min-width: @breakpoint-md-min){
+	.formBtn {
+	}
+	.formBtnReturn {
+		float: none;
+	}
+	.formBtnSend {
+		float: none;
+		max-width: 360px;
+		width: 100%;
+	}
+}
+/* ラベル */
+.labelRequired {
+	margin: 0 5px;
+	padding: 2px 8px;
+	color: #FFF;
+	.font-size(12);
+	border-radius: 3px;
+	background: @primary-color;
+}
+@media screen and (min-width: @breakpoint-md-min){
+	.labelRequired {
+		float: right;
+	}
+}

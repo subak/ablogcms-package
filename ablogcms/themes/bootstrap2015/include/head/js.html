@@ -1,21 +1,17 @@
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lte IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="/js/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 <![endif]-->
+<script src="%{JS_LIB_JQUERY_DIR}jquery-1.11.1.min.js" charset="UTF-8"></script>
 <!-- BEGIN_MODULE Js -->
 <script type="text/javascript" src="/acms.js{arguments}" charset="UTF-8" id="acms-js"></script>
 <!-- END_MODULE Js -->
-<script>
-	ACMS.Ready(function() {
-		new ACMS.SyncLoader()
-			.next('%{HTTP_THEMES_DIR}/system/js/off-canvas/modernizr.js')
-			.next('%{HTTP_THEMES_DIR}bootstrap2015/js/waypoints.js')
-			.next('%{HTTP_THEMES_DIR}bootstrap2015/js/a-bootstrap.js')
-			.next('%{HTTP_THEMES_DIR}bootstrap2015/js/bootstrap.min.js')
-			.load();
-	});
-</script>
+<script src="/js/off-canvas/modernizr.js"></script>
+<script src="/js/waypoints.js"></script>
+<script src="/js/a-bootstrap.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
 <!--BEGIN_MODULE Touch_Unlogin -->
 <!-- BEGIN_MODULE Blog_Field -->
 {googleAnalytics}[raw]

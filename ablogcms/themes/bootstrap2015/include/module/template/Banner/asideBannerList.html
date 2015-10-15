@@ -5,10 +5,10 @@
 <ul class="list-unstyled listVerticalBanner">
 	<!-- BEGIN banner:loop -->
 	<!-- BEGIN banner#src -->
-	<li>{src}[raw]</li>
+	<li class="{banner:loop.class}">{src}[raw]</li>
 	<!-- END banner#src -->
 	<!-- BEGIN banner#img -->
-	<li><a href="{url}" target="{target}"><img src="%{ARCHIVES_DIR}{img}" width="{x}" height="{y}" alt="{alt}" class="img-responsive" /></a></li>
+	<li class="{banner:loop.class}"><a href="{url}" target="{target}"><img src="%{ARCHIVES_DIR}{img}" width="{x}" height="{y}" alt="{alt}" class="img-responsive" /></a></li>
 	<!-- END banner#img -->
 	<!-- END banner:loop -->
 </ul>

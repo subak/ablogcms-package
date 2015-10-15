@@ -5,7 +5,7 @@
 	<div class="acms-admin-edit-info">
 		<p>
 			※以下の内容は管理者のみに表示されています。
-			<a href="https://www.google.co.jp/search?q=site:%{INHERLINK}" target="_brank">googleで確認</a> | 
+			<a href="https://www.google.co.jp/search?q=site:%{INHERLINK}" target="_brank">googleで確認</a> |
 			<a href="http://search.yahoo.co.jp/search?p=site:%{INHERLINK}" target="_brank">yahooで確認</a>
 		</p>
 		<h3 class="acms-admin-edit-info-heading">情報設定<!-- BEGIN_MODULE Touch_SessionWithCompilation --> <span class="editLink">[<a href="%{BLOG_URL}bid/%{BID}/admin/blog_edit/">編集</a>]</span><!-- END_MODULE Touch_SessionWithCompilation --></h3>
@@ -31,6 +31,10 @@
 					<span class="acms-admin-label acms-label-danger acms-inline-space">sitemapに出力しない</span><!-- END_IF --><!-- BEGIN_IF [{blog_meta_rss}/eq/disabled] -->
 					<span class="acms-admin-label acms-label-danger acms-inline-space">RSSに出力しない</span><!-- END_IF --></td>
 			</tr><!-- END blog_meta_info:veil -->
+			<!-- BEGIN_MODULE Blog_Field --><!-- BEGIN ogpImage:veil --><tr>
+			<th>OGP画像 - <small>og:image</small></th>
+			<td><img src="%{HTTP_ARCHIVES_DIR}{ogpImage@path}" alt="OGP画像" class="acms-admin-edit-info-ogpimage"></td>
+		</tr><!-- END ogpImage:veil --><!-- END_MODULE Blog_Field -->
 		</table>
 	</div>
 </section>

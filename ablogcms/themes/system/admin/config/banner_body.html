@@ -18,6 +18,13 @@
 			<input type="hidden" name="config[]" value="banner_limit" />
 		</td>
 	</tr>
+	<tr>
+		<th>ループ内クラス<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="指定したクラスをバナーに設定できます。例えばグリッドシステムのカラム数設定などにご利用ください。"></i></th>
+		<td>
+			<input type="text" name="banner_loop_class" value="{banner_loop_class}" size="4" class="acms-admin-form-width-medium" />
+			<input type="hidden" name="config[]" value="banner_loop_class" />
+		</td>
+	</tr>
 </table>
 
 <h2 class="acms-admin-admin-title2">画像データ</h2>
@@ -34,7 +41,7 @@
 	<tr data-sort-level="parallel" data-sort-name="banner-{id}@sort">
 		<td class="item-handle acms-admin-hide-sp" style="cursor: move;"><i class="acms-admin-icon-sort"></i></td>
 		<td class="borderRight alignCenter">
-			<span class="acms-admin-hide-pc acms-admin-show-sp">表示順</span>
+			<span class="acms-admin-hide acms-admin-show-sp">表示順</span>
 			<select name="banner-{id}@sort"><!-- BEGIN sort:loop -->
 				<option value="{value}"{selected}>{label}</option><!-- END sort:loop -->
 			</select>
@@ -46,7 +53,7 @@
 			<input type="hidden" name="config[]" value="banner-{id}@status" />
 		</td>
 		<td>
-			<span class="acms-admin-hide-pc acms-admin-show-sp">バナー</span>
+			<span class="acms-admin-hide acms-admin-show-sp">バナー</span>
 			<!-- BEGIN banner#src -->
 			<table class="">
 				<tr>

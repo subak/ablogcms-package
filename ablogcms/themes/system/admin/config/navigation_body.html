@@ -16,7 +16,7 @@
 	<tr data-sort-level="level-{level}-{pseq}" data-sort-name="navigation@sort">
 		<td class="item-handle acms-admin-hide-sp" style="cursor: move;"><i class="acms-admin-icon-sort"></i></td>
 		<td nowrap="nowrap">
-			<span class="acms-admin-hide-pc acms-admin-show-sp">表示順</span>
+			<span class="acms-admin-hide acms-admin-show-sp">表示順</span>
 			<!-- BEGIN indent:loop --><!-- BEGIN descendant -->&#9475;<!-- END descendant --><!-- BEGIN descendant#last -->&#12288;<!-- END descendant#last --><!-- BEGIN child -->&#9507;<!-- END child --><!-- BEGIN child#last -->&#9495;<!-- END child#last --><!-- END indent:loop -->
 			<select name="navigation@sort[]"><!-- BEGIN sort:loop -->
 				<option value="{value}"{selected}>{label}</option><!-- END sort:loop -->
@@ -28,11 +28,11 @@
 			<input type="hidden" name="config[]" value="navigation_publish-{seq}" />
 		</td>
 		<td>
-			<span class="acms-admin-hide-pc acms-admin-show-sp">リンク名</span>
+			<span class="acms-admin-hide acms-admin-show-sp">リンク名</span>
 			<input type="text" name="navigation_label[]" value="{label}[raw]" size="" class="acms-admin-form-width-full" />
 		</td>
 		<td nowrap="nowrap">
-			<span class="acms-admin-hide-pc acms-admin-show-sp">URL</span>
+			<span class="acms-admin-hide acms-admin-show-sp">URL</span>
 			<input type="text" name="navigation_uri[]" value="{uri}" size="" class="acms-admin-form-width-full" />
 			<input type="hidden" name="navigation_target-{seq}" value="_self" />
 		</td>
@@ -41,15 +41,15 @@
 			<input type="hidden" name="config[]" value="navigation_target-{seq}" />
 		</td>
 		<td>
-			<span class="acms-admin-hide-pc acms-admin-show-sp">属性</span>
+			<span class="acms-admin-hide acms-admin-show-sp">属性</span>
 			<input type="text" name="navigation_attr[]" value="{attr}[escape]" size="8" class="acms-admin-form-width-full" />
 		</td>
 		<td>
-			<span class="acms-admin-hide-pc acms-admin-show-sp">子要素属性</span>
+			<span class="acms-admin-hide acms-admin-show-sp">子要素属性</span>
 			<input type="text" name="navigation_a_attr[]" value="{a_attr}[escape]" size="8" class="acms-admin-form-width-full" />
 		</td>
 		<td class="acms-admin-show-sp acms-admin-width-sp acms-admin-border-bottom-sp">
-			<span class="acms-admin-hide-pc acms-admin-show-sp">親</span>
+			<span class="acms-admin-hide acms-admin-show-sp">親</span>
 			<select name="navigation_parent[]">
 				<option value="">なし</option><!-- BEGIN parent:loop -->
 				<option value="{value}"{selected}>{indent}[raw]{label}[raw]</option><!-- END parent:loop -->

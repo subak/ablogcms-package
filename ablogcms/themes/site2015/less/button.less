@@ -1,0 +1,128 @@
+/* ------------------------------
+　　ボタン
+------------------------------ */
+.btn {
+	border: 0;
+	background: @btn-end-color;
+	.btn-base();
+	.btn-small();
+	&:hover {
+		.btn-color(@btn-start-color, @btn-end-color, #FFF);
+	}
+	&:active,
+	&:focus {
+		background: @btn-active-color;
+	}
+}
+/* ボタン　色付き */
+.btnAttention {
+	border: 0;
+	background: @attentionBtn-end-color;
+	.btn-base();
+	.btn-small();
+	&:hover {
+		.btn-color(@attentionBtn-start-color, @attentionBtn-end-color, #FFF);
+	}
+	&:active,
+	&:focus {
+		background: @attentionBtn-active-color;
+	}
+}
+
+/* ボタンサイズ大 */
+.btnLarge {
+	background: @btn-end-color;
+	.btn-base();
+	.btn-large();
+	.box-sizing(border-box);
+	.transition(background-color .25s linear);
+	&:hover {
+		background: @btn-hover-color;
+	}
+	&:active,
+	&:focus {
+		background: @btn-active-color;
+	}
+}
+/* ボタンサイズ大 色付き */
+.btnAttentionLarge {
+	background: @attentionBtn-end-color;
+	.btn-base();
+	.btn-large();
+	.box-sizing(border-box);
+	.transition(background-color .25s linear);
+	&:hover {
+		background: @attentionBtn-hover-color;
+	}
+	&:active,
+	&:focus {
+		background: @attentionBtn-active-color;
+	}
+}
+/* デスクトップ：最大360pxボタン */
+.btnBlockLarge {
+	width: 100%;
+	background: @btn-end-color;
+	.btn-base();
+	.btn-large();
+	.box-sizing(border-box);
+	.transition(background-color .25s linear);
+	&:hover {
+		background: @btn-hover-color;
+	}
+	&:active,
+	&:focus {
+		background: @btn-active-color;
+	}
+}
+/* デスクトップ：最大360pxボタン 色付き */
+.btnAttentionBlockLarge {
+	width: 100%;
+	background: @attentionBtn-end-color;
+	.btn-base();
+	.btn-large();
+	.box-sizing(border-box);
+	.transition(background-color .25s linear);
+	&:hover {
+		background: @attentionBtn-hover-color;
+	}
+	&:active,
+	&:focus {
+		background: @attentionBtn-active-color;
+	}
+}
+@media (min-width : @breakpoint-md-min) {
+	.btnBlockLarge {
+		max-width: 360px;
+	}
+	.btnAttentionBlockLarge {
+		max-width: 360px;
+	}
+}
+@media (max-width : @breakpoint-md-max) {
+	.btnSearchBlock {
+		.btnSearchBlock()
+	}
+}
+
+
+
+/* ボーダーボタン */
+.homeBtn {
+	margin: 20px 0 10px;
+}
+.btnBorder {
+	display: inline-block;
+	padding: 7px 10px;
+	color: #333;
+	.font-size(16);
+	border-radius: 4px;
+	border: 1px solid #CCC;
+	[class*='acms-icon-'] {
+		color: #CCC;
+		.font-size(14);
+	}
+	&:hover {
+		text-decoration: none;
+	}
+}

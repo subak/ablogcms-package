@@ -6,39 +6,37 @@
 	<h2 class="moduleHeading">%{CATEGORY_NAME}</h2>
 </div>
 <ul class="summaryDefault">
-
 	<!-- BEGIN unit:loop -->
 	<!-- BEGIN entry:loop -->
-	<li class="summaryDefaultEntry js-autoheight-r js-biggerlink">
+	<li class="summaryDefaultEntry js-autoheight-r js-biggerlink {entry:loop.class}">
 		<div class="acms-summary">
 			<div class="summaryDefaultEntryImageWrap acms-summary-image">
 				<div style="width:{x}px; height:{y}px; overflow:hidden; position:relative;"><!-- BEGIN image:veil -->
 					<img src="%{ROOT_DIR}{path}" width="{imgX}" height="{imgY}" style="left:{left}px; top:{top}px; position:relative;" /><!-- END image:veil --><!-- BEGIN noimage -->
-					noimage
+					<img src="/images/noImage.png" width="{noImgX}" />
 					<!-- END noimage -->
 				</div>
 			</div>
 			<div class="acms-summary-body">
 				<p class="summaryTitle acms-summary-heading"><a href="{url}">{title}</a></p>
-				<p class="summaryDetail">{summary}[trim(80, '...')]</p>
+				<p class="summaryDetail">{summary}[trim(500, '...')]</p>
 			</div>
 		</div>
-	</li><!-- END entry:loop -->
-	<hr class="clearHidden" /><!-- END unit:loop -->
-
+	</li><!-- END entry:loop --><!-- END unit:loop -->
+	<hr class="clearHidden" />
 </ul>
 
 	<!-- BEGIN pager:veil -->
 <!-- ページ送り　開始▼▼ -->
-<nav class="acms-pager-container">
-<ul class="acms-pager">
-	<!-- BEGIN backLink --><li><a href="{url}">&lt;&lt;&nbsp;前へ</a></li><!-- END backLink -->
-	<!-- BEGIN firstPage:veil --><li{pageCurAttr}[raw]><span><a href="{firstPageUrl}">{firstPage}</a></span></li><!-- END firstPage:veil -->
-	<!-- BEGIN page:loop --><li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --></span></li><!-- END page:loop -->
-	<!-- BEGIN lastPage:veil --><li{pageCurAttr}[raw]><span><a href="{lastPageUrl}">{lastPage}</a></span></li><!-- END lastPage:veil -->
-	<!-- BEGIN forwardLink --><li><a href="{url}">次へ&nbsp;&gt;&gt;</a></li><!-- END forwardLink -->
+<div class="acms-pager-container">
+<ul class="pager">
+	<!-- BEGIN backLink --><li><a href="{url}" aria-label="前へ" class="pagerLink"><span aria-hidden="true">&laquo;</span></a></li><!-- END backLink -->
+	<!-- BEGIN firstPage:veil --><li {pageCurAttr}[raw]><span><a href="{firstPageUrl}" class="pagerLink">{firstPage}</a></span></li><li>…</li><!-- END firstPage:veil -->
+	<!-- BEGIN page:loop --><li{pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}" class="pagerLink"><!-- END link#front -->{page}<!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --></span></li><!-- END page:loop -->
+	<!-- BEGIN lastPage:veil --><li>…</li><li{pageCurAttr}[raw]><span><a href="{lastPageUrl}" class="pagerLink">{lastPage}</a></span></li><!-- END lastPage:veil -->
+	<!-- BEGIN forwardLink --><li><a href="{url}" aria-label="次へ" class="pagerLink"><span aria-hidden="true">&raquo;</span></a></li><!-- END forwardLink -->
 </ul>
-</nav>
+</div>
 <!-- ページ送り　終了▲▲ -->
 	<!-- END pager:veil -->
 </section>

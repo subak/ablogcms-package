@@ -80,15 +80,19 @@
 				</ul>
 
 				<div id="tab{id}_ja" class="acms-admin-tabs-panel">
-					<table class="entryFormColumnTable">
+					<table class="js-img_resize entryFormColumnTable">
 						<tr>
-							<!-- BEGIN preview:veil -->
+							<!-- BEGIN_IF [{tiny}/nem/] -->
 							<td class="entryFormFileentryFormImages">
-								<a href="%{HTTP_ARCHIVES_DIR}{popup}" rel="prettyPhoto[]"><img src="%{ARCHIVES_DIR}{tiny}" width="{tinyX}" height="{tinyY}" alt="プレビュー" class="entryFormFileImage" /></a>
+								<a href="%{HTTP_ARCHIVES_DIR}{popup}" rel="prettyPhoto[]"><img src="%{ARCHIVES_DIR}{tiny}" width="{tinyX}" height="{tinyY}" alt="プレビュー" class="js-img_resize_preview entryFormFileImage" /></a>
 							</td>
-							<!-- END preview:veil -->
+							<!-- ELSE -->
+							<td class="entryFormFileentryFormImages">
+								<img src="" width="280" alt="プレビュー" class="js-img_resize_preview entryFormFileImage" style="display:none;" />
+							</td>
+							<!-- END_IF -->
 							<td class="entryFormFileControl">
-								<input type="file" name="image_file_{id}[]" size="20" accept="image/*" />
+								<input type="file" name="image_file_{id}[]" size="20" accept="image/*" class="js-img_resize_input" />
 								<br />
 								<div class="acms-admin-form-group">
 									<select name="image_edit_{id}[]" class="acms-admin-select-block">
@@ -128,15 +132,19 @@
 					</table>
 				</div>
 				<div id="tab{id}_en" class="acms-admin-tabs-panel">
-					<table class="entryFormColumnTable {diff}">
+					<table class="js-img_resize entryFormColumnTable {diff}">
 						<tr>
-							<!-- BEGIN preview2:veil -->
+							<!-- BEGIN_IF [{tiny2}/nem/] -->
 							<td class="entryFormFileentryFormImages">
-								<a href="%{HTTP_ARCHIVES_DIR}{popup2}" rel="prettyPhoto[]"><img src="%{ARCHIVES_DIR}{tiny2}" width="{tinyX2}" height="{tinyY2}" alt="プレビュー" class="entryFormFileImage" /></a>
+								<a href="%{HTTP_ARCHIVES_DIR}{popup2}" rel="prettyPhoto[]"><img src="%{ARCHIVES_DIR}{tiny2}" width="{tinyX2}" height="{tinyY2}" alt="プレビュー" class="js-img_resize_preview entryFormFileImage" /></a>
 							</td>
-							<!-- END preview2:veil -->
+							<!-- ELSE -->
+							<td class="entryFormFileentryFormImages">
+								<img src="" width="280" alt="プレビュー" class="js-img_resize_preview entryFormFileImage" style="display:none;" />
+							</td>
+							<!-- END_IF -->
 							<td class="entryFormFileControl">
-								<input type="file" name="image_file_{id}[]" size="20" accept="image/*" />
+								<input type="file" name="image_file_{id}[]" size="20" accept="image/*" class="js-img_resize_input" />
 								<br />
 								<div class="acms-admin-form-group">
 									<select name="image_edit_{id}[]" class="acms-admin-select-block">

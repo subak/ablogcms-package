@@ -1,0 +1,73 @@
+/* ----------------
+フッター
+------------------ */
+.blogFooter{
+	padding: 20px 10px 15px 10px;
+	background: #424242;
+	&Inner{
+		max-width: @blogContainerWidth;
+		margin: 0 auto;
+	}
+	&List{
+		padding: 0;
+		margin: 0 0 10px 0;
+		text-align: center;
+		li{
+			display: inline-block;
+			padding: 0 10px 0 5px;
+			margin-bottom: 10px;
+			border-right: 1px solid #979797;
+			&:last-child{
+				border-right: none;
+			}
+		}
+		a,
+		a:link,
+		a:hover,
+		a:visited{
+			font-size: 14px;
+			color: #FFFFFF;
+			text-decoration: none;
+		}
+	}
+	&Img{
+		vertical-align: middle;
+		margin-left: 5px;
+	}
+	&Copyright{
+		text-align: center;
+		font-size: 14px;
+		color: #DDDDDD;
+		margin: 0;
+	}
+	&BackToTop{
+		display: none;
+	}
+	@media screen and (max-width:767px){
+		padding-bottom: 20px;
+		&List{
+			text-align: left;
+		}
+		&BackToTop{
+			&:link,
+			&:hover,
+			&:visited{
+				color: #333333;
+				text-decoration: none;
+			}
+			display: block;
+			text-align: center;
+			width: 100%;
+			height: 38px;
+			background: #FFFFFF;
+			line-height: 38px;
+			font-size: 16px;
+			color: #333333;
+			margin-top: 10px;
+			> span{
+				color: #D0021B;
+				margin-right: 5px;
+			}
+		}
+	}
+}
