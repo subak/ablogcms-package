@@ -1,5 +1,4 @@
 Dockerfile
-docker
 docker-compose.yml
 
 *.iml
